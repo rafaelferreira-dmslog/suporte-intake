@@ -51,24 +51,109 @@
         }
 
         body.light-theme {
-            --bg-primary: #f1f5f9;
+            --bg-primary: #f0f4fa;
             --bg-secondary: #ffffff;
-            --bg-tertiary: #e2e8f0;
-            --text-main: #0f172a;
-            --text-muted: #475569;
+            --bg-tertiary: #e8eef7;
+            --accent-primary: #005290;
+            --accent-secondary: #643585;
+            --accent-neon: #7b9415;
+            --text-main: #0a1628;
+            --text-muted: #4a6080;
             --success: #7b9415;
-            --warning: #d97706;
-            --danger: #dc2626;
-            --border-color: rgba(0, 82, 144, 0.12);
-            --card-glow: rgba(0, 82, 144, 0.05);
-            --row-hover-bg: rgba(0, 82, 144, 0.03);
-            --filters-bg: rgba(0, 82, 144, 0.02);
-            --logo-gradient-start: #0f172a;
-            --success-bg: rgba(123, 148, 21, 0.12);
+            --warning: #c07a00;
+            --danger: #c0251a;
+            --border-color: rgba(0, 82, 144, 0.15);
+            --card-glow: rgba(0, 82, 144, 0.08);
+            --row-hover-bg: rgba(0, 82, 144, 0.05);
+            --filters-bg: rgba(0, 82, 144, 0.03);
+            --logo-gradient-start: #0a1628;
+            --success-bg: rgba(123, 148, 21, 0.1);
             --success-border: rgba(123, 148, 21, 0.3);
-            --danger-bg: rgba(220, 38, 38, 0.12);
-            --danger-border: rgba(220, 38, 38, 0.3);
+            --danger-bg: rgba(192, 37, 26, 0.1);
+            --danger-border: rgba(192, 37, 26, 0.3);
         }
+
+        /* === LIGHT THEME OVERRIDES === */
+        body.light-theme header {
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid rgba(0, 82, 144, 0.18);
+            box-shadow: 0 2px 16px rgba(0, 82, 144, 0.08);
+        }
+
+        body.light-theme .glass-panel {
+            background: #ffffff;
+            border: 1px solid rgba(0, 82, 144, 0.13);
+            box-shadow: 0 4px 24px rgba(0, 82, 144, 0.07), 0 1px 3px rgba(0,0,0,0.04);
+            backdrop-filter: none;
+        }
+
+        body.light-theme .glass-panel:hover {
+            border-color: rgba(0, 82, 144, 0.28);
+            box-shadow: 0 8px 32px rgba(0, 82, 144, 0.12), 0 2px 6px rgba(0,0,0,0.06);
+        }
+
+        body.light-theme .btn-secondary {
+            background: #f0f4fa;
+            color: #0a1628;
+            border: 1px solid rgba(0, 82, 144, 0.2);
+        }
+
+        body.light-theme .btn-secondary:hover {
+            background: #e0eaf5;
+            border-color: rgba(0, 82, 144, 0.4);
+        }
+
+        body.light-theme select,
+        body.light-theme input[type="text"],
+        body.light-theme input[type="date"],
+        body.light-theme input[type="search"] {
+            background: #f8faff;
+            border: 1px solid rgba(0, 82, 144, 0.2);
+            color: #0a1628;
+        }
+
+        body.light-theme select:focus,
+        body.light-theme input:focus {
+            border-color: #005290;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 82, 144, 0.12);
+        }
+
+        body.light-theme table thead th {
+            background: #f0f4fa;
+            border-bottom: 2px solid rgba(0, 82, 144, 0.15);
+            color: #005290;
+        }
+
+        body.light-theme table tbody tr:nth-child(even) td {
+            background: rgba(0, 82, 144, 0.025);
+        }
+
+        body.light-theme table tbody tr:hover td {
+            background: rgba(0, 82, 144, 0.06);
+        }
+
+        body.light-theme .kpi-card {
+            background: #ffffff;
+            border: 1px solid rgba(0, 82, 144, 0.1);
+            box-shadow: 0 2px 12px rgba(0, 82, 144, 0.06);
+        }
+
+        body.light-theme .upload-section {
+            border-color: rgba(0, 82, 144, 0.2);
+            background: rgba(0, 82, 144, 0.02);
+        }
+
+        body.light-theme .upload-section:hover {
+            border-color: #005290;
+            background: rgba(0, 82, 144, 0.05);
+        }
+
+        body.light-theme ::-webkit-scrollbar-track { background: #f0f4fa; }
+        body.light-theme ::-webkit-scrollbar-thumb { background: rgba(0, 82, 144, 0.2); }
+        body.light-theme ::-webkit-scrollbar-thumb:hover { background: #005290; }
+
+
 
         /* Smooth transitions for theme toggling */
         body, header, .glass-panel, table, th, td, input, select, button, tr:hover td, .filters-bar {
