@@ -22,6 +22,14 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
     
+    <!-- jsPDF and jsPDF-AutoTable CDN for SLA PDF Reports -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Define global jsPDF for compatibility with plugins
+        window.jsPDF = window.jspdf.jsPDF;
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+    
     <style>
         :root {
             /* Company Palette: #005290 (Blue), #7E3B94 (Brand Secondary), #B1D020 (Lime Green), #643585 (Brand Secondary Dark) */
@@ -786,10 +794,11 @@
         </div>
         <div class="header-actions">
             <button class="btn btn-secondary" id="btn-theme-toggle">☀️ Modo Claro</button>
-            <div style="display:flex; flex-direction:column; align-items:flex-end; gap:2px;">
+            <div style="position: relative; display: flex; align-items: center;">
+                <span id="last-refresh-time" style="position: absolute; top: -14px; right: 4px; font-size: 10px; color: var(--text-muted); white-space: nowrap;"></span>
                 <button class="btn btn-success" id="btn-refresh-sheets" title="Recarrega os dados da planilha online">🔄 Atualizar Dados</button>
-                <span id="last-refresh-time" style="font-size:11px; color:var(--text-muted); padding-right:4px;"></span>
             </div>
+            <button class="btn btn-secondary hide" id="btn-export-sla-pdf" title="Exportar Relatório SLA em PDF">📄 Relatório SLA</button>
             <button class="btn btn-primary" id="btn-upload">📁 Importar Planilha Jira</button>
             <input type="file" id="csv-file-input" accept=".csv" style="display: none;">
             <button class="btn btn-secondary" id="btn-example-data">Ver Dados de Exemplo</button>
@@ -797,6 +806,19 @@
     </header>
 
     <main class="main-container">
+        <!-- Warning Banner for AppSheet/Jira Sync Delay -->
+        <div style="background-color: rgba(255, 170, 0, 0.15); border-left: 4px solid #ffaa00; padding: 12px 20px; border-radius: 6px; margin-bottom: 24px; color: var(--text-main); font-size: 14px; display: flex; align-items: center; gap: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffaa00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <div>
+                <strong style="display: block; margin-bottom: 4px;">Aviso de Sincronização: AppSheet ↔ Jira</strong>
+                Lembre-se de que as informações preenchidas no AppSheet têm um delay de até <strong>6 horas</strong> para serem integradas e refletirem no Jira (e neste dashboard). Durante esse intervalo, chamados podem temporariamente aparecer como fora do SLA ou com status desatualizado.
+            </div>
+        </div>
+
         <!-- Dashboard Content (Initially Hidden until data is loaded) -->
         <div id="dashboard-content" class="hide" style="display: flex; flex-direction: column; gap: 32px;">
             
@@ -912,10 +934,10 @@
                     <div class="kpi-value" id="kpi-inside">0</div>
                     <div class="kpi-trend" style="color: var(--success)">Atendimento no prazo</div>
                 </div>
-                <div class="glass-panel kpi-card kpi-danger">
-                    <h2 class="kpi-title">SLA Estourado</h2>
-                    <div class="kpi-value" id="kpi-breached">0</div>
-                    <div class="kpi-trend" style="color: var(--danger)">Fora do prazo recomendado</div>
+                <div class="glass-panel kpi-card kpi-danger" id="kpi-alternating-card" style="cursor: pointer; transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;" title="Clique para alternar métrica">
+                    <h2 class="kpi-title" id="kpi-alt-title" style="transition: opacity 0.15s ease;">SLA Estourado</h2>
+                    <div class="kpi-value" id="kpi-alt-value" style="transition: opacity 0.15s ease;">0</div>
+                    <div class="kpi-trend" id="kpi-alt-trend" style="transition: opacity 0.15s ease; color: var(--danger)">Fora do prazo recomendado</div>
                 </div>
             </div>
 
@@ -1132,7 +1154,7 @@
         <div class="glass-panel modal-content" style="background: var(--bg-secondary); padding: 32px;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; border-bottom: 1px solid var(--border-color); padding-bottom: 16px;">
                 <div>
-                    <span id="modal-key-badge" class="badge badge-info" style="font-size: 14px; padding: 6px 12px; margin-bottom: 8px;">SUP-1234</span>
+                    <a id="modal-key-link" href="#" target="_blank" style="text-decoration: none;" title="Abrir chamado no Jira"><span id="modal-key-badge" class="badge badge-info" style="font-size: 14px; padding: 6px 12px; margin-bottom: 8px; cursor: pointer;">SUP-1234</span></a>
                     <h2 id="modal-summary" style="font-family: var(--font-title); font-size: 22px; font-weight: 700; color: white;">Resumo do Chamado</h2>
                 </div>
                 <button id="modal-close" style="background: none; border: none; color: var(--text-muted); font-size: 24px; cursor: pointer; transition: color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--text-muted)'">&times;</button>
@@ -1200,6 +1222,12 @@
         let rawTicketsData = [];
         let filteredTicketsData = [];
         let chartsInstance = {};
+
+        // Alternating KPI Card state
+        let currentAltMode = 0; // 0: SLA Estourado, 1: Chamados em Aberto
+        let altBreachedValue = 0;
+        let altOpenValue = 0;
+        let altInterval = null;
 
         // DOM elements
         const btnUpload = document.getElementById('btn-upload');
@@ -1610,19 +1638,23 @@
                 let colaborador = getRowValue(row, ["Colaborador", "Reporter", "Creator", "Requester"]) || "Desconhecido";
                 let email = getRowValue(row, ["email", "Email", "E-mail"]) || "";
                 let rawCausaRaiz = getRowValue(row, ["Causa raiz final", "Causa Raiz", "Causa Raiz Final", "Root Cause"]) || "";
-                let crLower = rawCausaRaiz.toLowerCase();
-                let causaRaiz = "Impacto não mapeado"; // Default fallback para garantir só as 5 categorias
+                let crLower = rawCausaRaiz.toLowerCase().trim();
+                let causaRaiz = "Pendente de Classificação";
                 
-                if (crLower.includes("requisito")) {
+                if (crLower === "") {
+                    causaRaiz = "Pendente de Classificação";
+                } else if (crLower.includes("requisito")) {
                     causaRaiz = "Falha de Requisito";
                 } else if (crLower.includes("desenvolvimento") || crLower.includes("bug")) {
                     causaRaiz = "Falha Desenvolvimento";
                 } else if (crLower.includes("operacional") || crLower.includes("infraestrutura") || crLower.includes("hardware") || crLower.includes("acessos") || crLower.includes("dúvida") || crLower.includes("solicitação")) {
                     causaRaiz = "Falha Operacional";
-                } else if (crLower.includes("impacto")) {
+                } else if (crLower.includes("impacto") || crLower.includes("não mapeado") || crLower.includes("nao mapeado")) {
                     causaRaiz = "Impacto não mapeado";
                 } else if (crLower.includes("regra de negócio") || crLower.includes("regra de negocio")) {
                     causaRaiz = "Regra de Negócio";
+                } else {
+                    causaRaiz = "Impacto não mapeado"; // Se tiver algum texto diferente, cai no fallback padrão
                 }
                 
                 let resolucaoTexto = getRowValue(row, ["Resolução do chamado", "Resolução", "Resolution Detail"]) || "Não detalhado";
@@ -1684,6 +1716,8 @@
             // Switch UI states
             emptyState.classList.add('hide');
             dashboardContent.classList.remove('hide');
+            const btnExportPdf = document.getElementById('btn-export-sla-pdf');
+            // if (btnExportPdf) btnExportPdf.classList.remove('hide'); // Hiding button from production for now
         }
 
         // Helper to escape HTML values
@@ -1901,10 +1935,22 @@
             const slaPct = total > 0 ? Math.round((inside / total) * 100) : 0;
             
             document.getElementById('kpi-total').textContent = total;
-            if (document.getElementById('kpi-breached')) {
-                document.getElementById('kpi-breached').textContent = breached;
-            }
             document.getElementById('kpi-inside').textContent = inside;
+
+            // Set global variables for alternating card
+            altBreachedValue = breached;
+            altOpenValue = open;
+            
+            // Immediate update of current visible alternating mode
+            const titleEl = document.getElementById('kpi-alt-title');
+            const valueEl = document.getElementById('kpi-alt-value');
+            if (titleEl && valueEl) {
+                if (currentAltMode === 0) {
+                    valueEl.textContent = altBreachedValue;
+                } else {
+                    valueEl.textContent = altOpenValue;
+                }
+            }
             
             const kpiSla = document.getElementById('kpi-sla-pct');
             kpiSla.textContent = `${slaPct}%`;
@@ -2051,11 +2097,12 @@
                     datasets: [{
                         data: causeValues.length > 0 ? causeValues : [0],
                         backgroundColor: [
-                            'rgba(0, 82, 144, 0.75)',  // Primary Blue
-                            'rgba(126, 59, 148, 0.75)', // Secondary Accent
-                            'rgba(177, 208, 32, 0.75)', // Lime Green
-                            'rgba(100, 53, 133, 0.75)', // Secondary Dark
-                            'rgba(239, 68, 68, 0.75)'   // Warning Red
+                            'rgba(0, 82, 144, 0.75)',   // Primary Blue
+                            'rgba(126, 59, 148, 0.75)',  // Secondary Accent
+                            'rgba(177, 208, 32, 0.75)',   // Lime Green
+                            'rgba(100, 53, 133, 0.75)',  // Secondary Dark
+                            'rgba(239, 68, 68, 0.75)',    // Warning Red
+                            'rgba(148, 163, 184, 0.75)'  // Slate Gray (Pendente de Classificação)
                         ],
                         borderColor: isLight ? 'rgba(255, 255, 255, 0.8)' : 'rgba(19, 27, 46, 0.8)',
                         borderWidth: 2
@@ -2105,11 +2152,11 @@
                 let evolutionData = [];
                 
                 const earliestDate = filteredTicketsData.length > 0 
-                    ? new Date(Math.min(...filteredTicketsData.map(t => t.criado.getTime())))
+                    ? new Date(filteredTicketsData.reduce((min, t) => Math.min(min, t.criado.getTime()), filteredTicketsData[0].criado.getTime()))
                     : new Date();
 
                 const latestDate = filteredTicketsData.length > 0 
-                    ? new Date(Math.max(...filteredTicketsData.map(t => t.criado.getTime())))
+                    ? new Date(filteredTicketsData.reduce((max, t) => Math.max(max, t.criado.getTime()), filteredTicketsData[0].criado.getTime()))
                     : new Date();
 
                 const spanMs = latestDate.getTime() - earliestDate.getTime();
@@ -2124,31 +2171,39 @@
                                      (spanDays > 1 && spanDays <= 7);
 
                 if (isSingleDay) {
-                    // Group by Hourly buckets (07:30 - 12:00 and 12:00 - 17:18)
-                    const morningKey = "07:30 - 12:00";
-                    const afternoonKey = "12:00 - 17:18";
-                    
-                    const buckets = {
-                        [morningKey]: 0,
-                        [afternoonKey]: 0
-                    };
+                    // Group by Hourly buckets dynamically
+                    const buckets = {};
+                    let minHour = 24, maxHour = -1;
                     
                     filteredTicketsData.forEach(t => {
                         if (!t.criado) return;
-                        const hours = t.criado.getHours();
-                        const mins = t.criado.getMinutes();
-                        const totalMins = hours * 60 + mins;
-                        
-                        if (totalMins < 720) { // Before 12:00
-                            buckets[morningKey]++;
-                        } else {
-                            buckets[afternoonKey]++;
-                        }
+                        const h = t.criado.getHours();
+                        if (h < minHour) minHour = h;
+                        if (h > maxHour) maxHour = h;
                     });
                     
-                    evolutionLabels = [morningKey, afternoonKey];
-                    evolutionData = [buckets[morningKey], buckets[afternoonKey]];
-                } 
+                    if (minHour === 24) {
+                        evolutionLabels = ["Sem dados"];
+                        evolutionData = [0];
+                    } else {
+                        // Maintain at least the business hours range (07:00 - 18:00) for a nice chart
+                        if (minHour > 7) minHour = 7;
+                        if (maxHour < 18) maxHour = 18;
+                        
+                        for (let h = minHour; h <= maxHour; h++) {
+                            buckets[`${String(h).padStart(2, '0')}:00`] = 0;
+                        }
+                        
+                        filteredTicketsData.forEach(t => {
+                            if (!t.criado) return;
+                            const h = t.criado.getHours();
+                            buckets[`${String(h).padStart(2, '0')}:00`]++;
+                        });
+                        
+                        evolutionLabels = Object.keys(buckets);
+                        evolutionData = Object.values(buckets);
+                    }
+                }
                 else if (isWeeklySpan) {
                     // Group by weekdays of the target week (Monday to Sunday)
                     const weekMonday = (datePreset === 'week') ? getStartOfWeek(new Date()) : getStartOfWeek(earliestDate);
@@ -2336,7 +2391,7 @@
                 let slaBadgeClass = t.isSlaMet ? 'badge-success' : 'badge-danger';
 
                 tr.innerHTML = `
-                    <td><strong>${t.chave}</strong></td>
+                    <td><a href="https://dmslog-ti.atlassian.net/browse/${t.chave}?atlOrigin=eyJpIjoiMTIzYmNiNTlkYjg5NGYxNmE3ZDc5ODYzZDYzZDU3YjUiLCJwIjoiaiJ9" target="_blank" style="color: var(--accent-primary); text-decoration: none; font-weight: 700;" onclick="event.stopPropagation();" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'"><strong>${t.chave}</strong></a></td>
                     <td><span class="badge ${critClass}">${t.criticidade}</span></td>
                     <td title="${t.resumo}">${t.resumo}</td>
                     <td>${t.responsavel}</td>
@@ -2351,8 +2406,15 @@
 
         // Open modal detail view
         function openModal(ticket) {
-            document.getElementById('modal-key-badge').textContent = ticket.chave;
-            document.getElementById('modal-key-badge').className = `badge badge-info`;
+            const keyBadge = document.getElementById('modal-key-badge');
+            if (keyBadge) {
+                keyBadge.textContent = ticket.chave;
+                keyBadge.className = `badge badge-info`;
+            }
+            const keyLink = document.getElementById('modal-key-link');
+            if (keyLink) {
+                keyLink.href = `https://dmslog-ti.atlassian.net/browse/${ticket.chave}?atlOrigin=eyJpIjoiMTIzYmNiNTlkYjg5NGYxNmE3ZDc5ODYzZDYzZDU3YjUiLCJwIjoiaiJ9`;
+            }
             document.getElementById('modal-summary').textContent = ticket.resumo;
             document.getElementById('modal-criticidade').textContent = ticket.criticidadeTexto;
             document.getElementById('modal-responsavel').textContent = ticket.responsavel;
@@ -2599,6 +2661,493 @@
         autoRefreshTimer = setInterval(() => {
             fetchFromGoogleSheets(false);
         }, AUTO_REFRESH_INTERVAL_MS);
+
+        // =====================================================================
+        // RELATÓRIO SLA EM PDF (jsPDF + AutoTable)
+        // =====================================================================
+        
+        function generateSLAReportPDF() {
+            if (filteredTicketsData.length === 0) {
+                showToast("Nenhum dado disponível para exportar.", "⚠️");
+                return;
+            }
+
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+            
+            // Fonts
+            doc.setFont("helvetica", "normal");
+
+            // Setup colors (Light Print-Friendly)
+            const primaryColor = [0, 82, 144];      // #005290
+            const successColor = [123, 148, 21];     // #7b9415
+            const dangerColor = [192, 37, 26];       // #c0251a
+            const textColor = [10, 22, 40];          // Dark main
+            const textMuted = [100, 116, 139];       // Muted
+
+            // Header Layout
+            doc.setFillColor(...primaryColor);
+            doc.rect(10, 10, 190, 6, 'F'); // Top bar
+
+            doc.setTextColor(...textColor);
+            doc.setFontSize(20);
+            doc.setFont("helvetica", "bold");
+            doc.text("Suporte Intake", 10, 24);
+            
+            doc.setFontSize(13);
+            doc.setFont("helvetica", "normal");
+            doc.setTextColor(...textMuted);
+            doc.text("Relatório Analítico de SLA e Compliance", 10, 30);
+
+            const timestamp = formatBrDate(new Date());
+            doc.setFontSize(8);
+            doc.text(`Gerado em: ${timestamp}`, 200, 24, { align: 'right' });
+
+            // Active Filters Metadata Block
+            const presetEl = document.getElementById('filter-date-preset-top');
+            const critEl = document.getElementById('filter-criticidade-top');
+            const respEl = document.getElementById('filter-responsavel-top');
+            const deptoEl = document.getElementById('filter-departamento-top');
+            const searchEl = document.getElementById('filter-search-top');
+            const statusEl = document.getElementById('filter-status-top');
+            const causeEl = document.getElementById('filter-causa-raiz-top');
+
+            const presetText = presetEl ? presetEl.options[presetEl.selectedIndex].text : "Todo o Histórico";
+            const critText = critEl && critEl.value ? critEl.value : "Todas";
+            const respText = respEl && respEl.value ? respEl.value : "Todos";
+            const deptoText = deptoEl && deptoEl.value ? deptoEl.value : "Todos";
+            const statusText = statusEl && statusEl.value ? statusEl.value : "Todos";
+            const causeText = causeEl && causeEl.value ? causeEl.value : "Todas";
+            const searchText = searchEl && searchEl.value ? searchEl.value : "Nenhuma";
+
+            // Box for filters
+            doc.setFillColor(248, 250, 252);
+            doc.setDrawColor(226, 232, 240);
+            doc.roundedRect(10, 35, 190, 16, 2, 2, 'FD');
+            
+            doc.setTextColor(...textColor);
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(8);
+            doc.text("Filtros Aplicados:", 14, 40);
+
+            doc.setFont("helvetica", "normal");
+            doc.text(`Período: ${presetText}  |  Criticidade: ${critText}  |  Responsável: ${respText}  |  Status: ${statusText}`, 14, 45);
+            doc.text(`Causa Raiz: ${causeText}  |  Depto: ${deptoText}  |  Pesquisa: "${searchText}"`, 14, 49);
+
+            // KPIs Panel
+            const total = filteredTicketsData.length;
+            const inside = filteredTicketsData.filter(t => t.isSlaMet).length;
+            const breached = total - inside;
+            const compliance = total > 0 ? Math.round((inside / total) * 100) : 100;
+
+            // 4 boxes side by side
+            const boxWidth = 44;
+            const boxGap = 4.6;
+            const kpisY = 56;
+            const kpiValues = [
+                { title: "TOTAL CHAMADOS", val: total.toString(), color: primaryColor },
+                { title: "ADERÊNCIA SLA", val: `${compliance}%`, color: compliance >= 95 ? successColor : dangerColor },
+                { title: "DENTRO DO SLA", val: inside.toString(), color: successColor },
+                { title: "SLA ESTOURADO", val: breached.toString(), color: breached > 0 ? dangerColor : primaryColor }
+            ];
+
+            kpiValues.forEach((kpi, idx) => {
+                const x = 10 + idx * (boxWidth + boxGap);
+                doc.setFillColor(248, 250, 252);
+                doc.setDrawColor(226, 232, 240);
+                doc.roundedRect(x, kpisY, boxWidth, 18, 2, 2, 'FD');
+                
+                // Color left border of box
+                doc.setFillColor(...kpi.color);
+                doc.rect(x, kpisY, 2, 18, 'F');
+
+                doc.setTextColor(...textMuted);
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(7);
+                doc.text(kpi.title, x + 4, kpisY + 5);
+
+                doc.setTextColor(...textColor);
+                doc.setFontSize(14);
+                doc.setFont("helvetica", "bold");
+                doc.text(kpi.val, x + 4, kpisY + 13);
+            });
+
+            let currentY = 82;
+
+            // Determine grouping type
+            const presetVal = presetEl ? presetEl.value : 'all';
+            
+            // Find Date limits based on current selection
+            let earliestDate = filteredTicketsData.length > 0 
+                ? new Date(filteredTicketsData.reduce((min, t) => Math.min(min, t.criado.getTime()), filteredTicketsData[0].criado.getTime()))
+                : new Date();
+            let latestDate = filteredTicketsData.length > 0 
+                ? new Date(filteredTicketsData.reduce((max, t) => Math.max(max, t.criado.getTime()), filteredTicketsData[0].criado.getTime()))
+                : new Date();
+
+            const isSingleDay = (presetVal === 'today') || 
+                                (presetVal === 'custom' && earliestDate.toDateString() === latestDate.toDateString()) ||
+                                (document.getElementById('filter-criado-date-top') && document.getElementById('filter-criado-date-top').value !== "");
+
+            const isWeeklySpan = (presetVal === 'week') || 
+                                 (presetVal === 'custom' && (latestDate.getTime() - earliestDate.getTime()) <= 7 * 24 * 60 * 60 * 1000);
+
+            if (isSingleDay) {
+                // Relatório Diário - Tabela de chamados individuais
+                doc.setTextColor(...textColor);
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(12);
+                doc.text("Detalhamento dos Chamados do Dia", 10, currentY);
+
+                const headers = ['Chave', 'Criticidade', 'Resumo', 'Responsável', 'Criado', 'Status SLA', 'Tempo Útil'];
+                const rows = filteredTicketsData.map(t => [
+                    t.chave,
+                    t.criticidade,
+                    t.resumo.substring(0, 35) + (t.resumo.length > 35 ? '...' : ''),
+                    t.responsavel,
+                    formatBrDate(t.criado),
+                    t.statusSla,
+                    t.tempoGastoTexto
+                ]);
+
+                doc.autoTable({
+                    startY: currentY + 3,
+                    head: [headers],
+                    body: rows,
+                    theme: 'striped',
+                    headStyles: { fillColor: primaryColor, textColor: [255, 255, 255], fontStyle: 'bold', fontSize: 8 },
+                    styles: { fontSize: 8, cellPadding: 2 },
+                    columnStyles: {
+                        2: { cellWidth: 45 }, // Resumo
+                        4: { cellWidth: 26 }, // Criado
+                        6: { cellWidth: 18 }  // Tempo útil
+                    },
+                    didParseCell: function(data) {
+                        if (data.section === 'body') {
+                            const val = String(data.cell.raw);
+                            if (val === 'Dentro do SLA') {
+                                data.cell.styles.textColor = successColor;
+                                data.cell.styles.fontStyle = 'bold';
+                            } else if (val === 'SLA Estourado') {
+                                data.cell.styles.textColor = dangerColor;
+                                data.cell.styles.fontStyle = 'bold';
+                            } else if (val === 'P0' || val.startsWith('P0')) {
+                                data.cell.styles.textColor = [255, 42, 42];
+                                data.cell.styles.fontStyle = 'bold';
+                            }
+                        }
+                    }
+                });
+            }
+            else if (isWeeklySpan) {
+                // Relatório Semanal - Agrupado por Dia
+                doc.setTextColor(...textColor);
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(12);
+                doc.text("Desempenho de SLA por Dia da Semana", 10, currentY);
+
+                // Helper to get date boundaries
+                const getStartOfWeek = (d) => {
+                    const date = new Date(d);
+                    const day = date.getDay();
+                    const diff = date.getDate() - day + (day === 0 ? -6 : 1); // Monday
+                    const monday = new Date(date.setDate(diff));
+                    monday.setHours(0, 0, 0, 0);
+                    return monday;
+                };
+
+                const weekMonday = (presetVal === 'week') ? getStartOfWeek(new Date()) : getStartOfWeek(earliestDate);
+                const daysNames = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
+                
+                const tableRows = [];
+                for (let i = 0; i < 7; i++) {
+                    const d = new Date(weekMonday);
+                    d.setDate(d.getDate() + i);
+                    
+                    const dayTickets = filteredTicketsData.filter(t => t.criado.toDateString() === d.toDateString());
+                    const dayTotal = dayTickets.length;
+                    
+                    // Skip weekends if no tickets exist to keep it clean
+                    if ((i === 5 || i === 6) && dayTotal === 0) continue;
+
+                    const dayInside = dayTickets.filter(t => t.isSlaMet).length;
+                    const dayCompliance = dayTotal > 0 ? Math.round((dayInside / dayTotal) * 100) : 100;
+                    const dayStatus = dayTotal > 0 ? (dayCompliance >= 95 ? "SLA Batido" : "SLA Não Batido") : "Sem Chamados";
+
+                    const dayStr = d.getDate().toString().padStart(2, '0');
+                    const monthStr = (d.getMonth() + 1).toString().padStart(2, '0');
+                    
+                    tableRows.push([
+                        daysNames[i],
+                        `${dayStr}/${monthStr}/${d.getFullYear()}`,
+                        dayTotal.toString(),
+                        dayInside.toString(),
+                        `${dayCompliance}%`,
+                        dayStatus
+                    ]);
+                }
+
+                const headers = ['Dia da Semana', 'Data', 'Total Chamados', 'Dentro do SLA', 'Aderência %', 'Status SLA'];
+
+                doc.autoTable({
+                    startY: currentY + 3,
+                    head: [headers],
+                    body: tableRows,
+                    theme: 'striped',
+                    headStyles: { fillColor: primaryColor, textColor: [255, 255, 255], fontStyle: 'bold', fontSize: 8 },
+                    styles: { fontSize: 8, cellPadding: 2.5 },
+                    didParseCell: function(data) {
+                        if (data.section === 'body') {
+                            const val = String(data.cell.raw);
+                            if (val === 'SLA Batido') {
+                                data.cell.styles.textColor = successColor;
+                                data.cell.styles.fontStyle = 'bold';
+                            } else if (val === 'SLA Não Batido') {
+                                data.cell.styles.textColor = dangerColor;
+                                data.cell.styles.fontStyle = 'bold';
+                            } else if (val === 'Sem Chamados') {
+                                data.cell.styles.textColor = textMuted;
+                            }
+                        }
+                    }
+                });
+
+                // Add Offenders Table
+                addOffendersTable(doc, filteredTicketsData, successColor, dangerColor, primaryColor, currentY);
+            }
+            else {
+                // Relatório Mensal ou Longo - Agrupado por Semana (Segunda a Domingo)
+                doc.setTextColor(...textColor);
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(12);
+                doc.text("Desempenho de SLA por Período Semanal", 10, currentY);
+
+                // Helper to get start and end dates of weeks in range
+                const getStartOfWeek = (d) => {
+                    const date = new Date(d);
+                    const day = date.getDay();
+                    const diff = date.getDate() - day + (day === 0 ? -6 : 1);
+                    const monday = new Date(date.setDate(diff));
+                    monday.setHours(0, 0, 0, 0);
+                    return monday;
+                };
+
+                const startMonday = getStartOfWeek(earliestDate);
+                const tableRows = [];
+
+                let currentMonday = new Date(startMonday);
+                while (currentMonday <= latestDate) {
+                    const currentSunday = new Date(currentMonday);
+                    currentSunday.setDate(currentMonday.getDate() + 6);
+                    currentSunday.setHours(23, 59, 59, 999);
+
+                    const weekTickets = filteredTicketsData.filter(t => t.criado >= currentMonday && t.criado <= currentSunday);
+                    const weekTotal = weekTickets.length;
+
+                    if (weekTotal > 0) {
+                        const weekInside = weekTickets.filter(t => t.isSlaMet).length;
+                        const weekCompliance = Math.round((weekInside / weekTotal) * 100);
+                        const weekStatus = weekCompliance >= 95 ? "SLA Batido" : "SLA Não Batido";
+
+                        const startStr = `${currentMonday.getDate().toString().padStart(2, '0')}/${(currentMonday.getMonth() + 1).toString().padStart(2, '0')}`;
+                        const endStr = `${currentSunday.getDate().toString().padStart(2, '0')}/${(currentSunday.getMonth() + 1).toString().padStart(2, '0')}`;
+
+                        tableRows.push([
+                            `Semana de ${startStr} a ${endStr}`,
+                            weekTotal.toString(),
+                            weekInside.toString(),
+                            `${weekCompliance}%`,
+                            weekStatus
+                        ]);
+                    }
+
+                    // Go to next Monday
+                    currentMonday.setDate(currentMonday.getDate() + 7);
+                }
+
+                const headers = ['Período da Semana', 'Total Chamados', 'Dentro do SLA', 'Aderência %', 'Status SLA'];
+
+                doc.autoTable({
+                    startY: currentY + 3,
+                    head: [headers],
+                    body: tableRows,
+                    theme: 'striped',
+                    headStyles: { fillColor: primaryColor, textColor: [255, 255, 255], fontStyle: 'bold', fontSize: 8 },
+                    styles: { fontSize: 8, cellPadding: 2.5 },
+                    didParseCell: function(data) {
+                        if (data.section === 'body') {
+                            const val = String(data.cell.raw);
+                            if (val === 'SLA Batido') {
+                                data.cell.styles.textColor = successColor;
+                                data.cell.styles.fontStyle = 'bold';
+                            } else if (val === 'SLA Não Batido') {
+                                data.cell.styles.textColor = dangerColor;
+                                data.cell.styles.fontStyle = 'bold';
+                            }
+                        }
+                    }
+                });
+
+                // Add Offenders Table
+                addOffendersTable(doc, filteredTicketsData, successColor, dangerColor, primaryColor, currentY);
+            }
+
+            // Page numbers footer adding callback
+            const pageCount = doc.internal.getNumberOfPages();
+            for (let i = 1; i <= pageCount; i++) {
+                doc.setPage(i);
+                doc.setFontSize(8);
+                doc.setTextColor(...textMuted);
+                doc.text(`Página ${i} de ${pageCount}`, 105, 287, { align: 'center' });
+                doc.text("Suporte Intake - Relatório Analítico de SLA", 10, 287);
+            }
+
+            // Save PDF with context-friendly name
+            const filename = `relatorio-sla-intake_${presetVal}_${timestamp.replace(/[\/\s:]/g, '-')}.pdf`;
+            doc.save(filename);
+            showToast("Relatório SLA baixado com sucesso!", "📥");
+        }
+
+        // Helper to add list of SLA offenders (tickets that breached SLA)
+        function addOffendersTable(doc, tickets, successColor, dangerColor, primaryColor, fallbackY) {
+            const offenders = tickets.filter(t => !t.isSlaMet);
+            
+            let finalY = (doc.lastAutoTable && typeof doc.lastAutoTable.finalY === 'number' && !isNaN(doc.lastAutoTable.finalY))
+                ? doc.lastAutoTable.finalY + 12
+                : (typeof fallbackY === 'number' && !isNaN(fallbackY) ? fallbackY + 15 : 120);
+            
+            // Check if Y coordinate fits on current page (A4 page height is 297mm, leave margin of 30mm)
+            if (finalY > 250) {
+                doc.addPage();
+                finalY = 20;
+            }
+
+            doc.setTextColor(10, 22, 40);
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(11);
+            doc.text(`Chamados Ofensores de SLA (Total: ${offenders.length})`, 10, finalY);
+
+            if (offenders.length === 0) {
+                doc.setFont("helvetica", "normal");
+                doc.setFontSize(9);
+                doc.setTextColor(...successColor); // Green success
+                doc.text("Parabéns! Nenhum chamado estourou o SLA neste período.", 10, finalY + 6);
+                return;
+            }
+
+            const headers = ['Chave', 'Criticidade', 'Resumo', 'Responsável', 'Tempo Útil', 'Causa Raiz'];
+            const rows = offenders.map(t => [
+                t.chave,
+                t.criticidade,
+                t.resumo.substring(0, 45) + (t.resumo.length > 45 ? '...' : ''),
+                t.responsavel,
+                t.tempoGastoTexto,
+                t.causaRaiz
+            ]);
+
+            doc.autoTable({
+                startY: finalY + 3,
+                head: [headers],
+                body: rows,
+                theme: 'striped',
+                headStyles: { fillColor: dangerColor, textColor: [255, 255, 255], fontStyle: 'bold', fontSize: 8 },
+                styles: { fontSize: 8, cellPadding: 2 },
+                columnStyles: {
+                    2: { cellWidth: 55 }, // Resumo
+                    4: { cellWidth: 22 }, // Tempo Útil
+                    5: { cellWidth: 35 }  // Causa Raiz
+                },
+                didParseCell: function(data) {
+                    if (data.section === 'body') {
+                        if (data.column.index === 0) {
+                            data.cell.styles.fontStyle = 'bold';
+                        }
+                    }
+                }
+            });
+        }
+
+        // PDF Export button click listener
+        const btnExportSlaPdf = document.getElementById('btn-export-sla-pdf');
+        if (btnExportSlaPdf) {
+            btnExportSlaPdf.addEventListener('click', () => {
+                try {
+                    generateSLAReportPDF();
+                } catch (err) {
+                    console.error("Erro na geração do PDF:", err);
+                    showToast("Erro ao gerar PDF: " + err.message, "❌");
+                }
+            });
+        }
+
+        // === GOOGLE SHEETS: Auto-refresh every 5 minutes ===
+        autoRefreshTimer = setInterval(() => {
+            fetchFromGoogleSheets(false);
+        }, AUTO_REFRESH_INTERVAL_MS);
+
+        // =====================================================================
+        // ALTERNATING KPI CARD (SLA Estourado / Chamados em Aberto)
+        // =====================================================================
+        
+        function updateAlternatingKPI() {
+            const titleEl = document.getElementById('kpi-alt-title');
+            const valueEl = document.getElementById('kpi-alt-value');
+            const trendEl = document.getElementById('kpi-alt-trend');
+            const cardEl = document.getElementById('kpi-alternating-card');
+
+            if (!titleEl || !valueEl || !trendEl) return;
+
+            // Soft transition
+            titleEl.style.opacity = '0';
+            valueEl.style.opacity = '0';
+            trendEl.style.opacity = '0';
+
+            setTimeout(() => {
+                if (currentAltMode === 0) {
+                    // SLA Estourado
+                    titleEl.textContent = "SLA Estourado";
+                    valueEl.textContent = altBreachedValue;
+                    trendEl.textContent = "Fora do prazo recomendado";
+                    trendEl.style.color = "var(--danger)";
+                    if (cardEl) {
+                        cardEl.className = "glass-panel kpi-card kpi-danger";
+                    }
+                } else {
+                    // Chamados em Aberto
+                    titleEl.textContent = "Chamados em Aberto";
+                    valueEl.textContent = altOpenValue;
+                    trendEl.textContent = "Aguardando resolução";
+                    trendEl.style.color = "var(--warning)";
+                    if (cardEl) {
+                        cardEl.className = "glass-panel kpi-card kpi-warning";
+                    }
+                }
+
+                titleEl.style.opacity = '1';
+                valueEl.style.opacity = '1';
+                trendEl.style.opacity = '1';
+            }, 150);
+        }
+
+        function startKPIAlternator() {
+            if (altInterval) clearInterval(altInterval);
+            altInterval = setInterval(() => {
+                currentAltMode = (currentAltMode + 1) % 2;
+                updateAlternatingKPI();
+            }, 6000);
+        }
+
+        const altCard = document.getElementById('kpi-alternating-card');
+        if (altCard) {
+            altCard.addEventListener('click', () => {
+                currentAltMode = (currentAltMode + 1) % 2;
+                updateAlternatingKPI();
+                startKPIAlternator(); // Reset timer on manual click
+            });
+        }
+
+        // Initialize alternator
+        startKPIAlternator();
 
     </script>
 </body>
