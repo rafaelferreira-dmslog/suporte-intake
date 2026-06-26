@@ -1393,63 +1393,42 @@
                 btn.disabled = true;
             }
 
-            // Try multiple strategies: direct first, then CORS proxies as fallback
-            const strategies = [
-                GOOGLE_SHEETS_CSV_URL,
-                `https://api.allorigins.win/raw?url=${encodeURIComponent(GOOGLE_SHEETS_CSV_URL)}`,
-                `https://corsproxy.io/?url=${encodeURIComponent(GOOGLE_SHEETS_CSV_URL)}`
-            ];
+            // Add cache-busting timestamp so each request is fresh
+            const cacheBust = `${GOOGLE_SHEETS_CSV_URL}&t=${Date.now()}`;
 
-            let csvText = null;
-
-            for (const url of strategies) {
-                try {
-                    const response = await fetch(url, { cache: 'no-store' });
-                    if (response.ok) {
-                        csvText = await response.text();
-                        break;
+            Papa.parse(cacheBust, {
+                download: true,
+                header: true,
+                skipEmptyLines: true,
+                complete: function(results) {
+                    if (btn) {
+                        btn.textContent = '🔄 Atualizar Dados';
+                        btn.disabled = false;
                     }
-                } catch (err) {
-                    console.warn('Tentativa falhou, tentando próxima estratégia...', err.message);
-                }
-            }
-
-            try {
-                if (!csvText) throw new Error('Todas as tentativas de conexão falharam');
-
-                Papa.parse(csvText, {
-                    header: true,
-                    skipEmptyLines: true,
-                    complete: function(results) {
-                        try {
-                            const data = results.data;
-                            if (!data || data.length === 0) {
-                                showToast("Planilha online está vazia!", "⚠️");
-                                return;
-                            }
-                            parseAndLoadTickets(data);
-                            if (showSuccessToast) showToast("✅ Dados atualizados da planilha online!", "✅");
-                            updateLastRefreshTime();
-                        } catch (e) {
-                            console.error(e);
-                            showToast("Erro ao processar dados: " + e.message, "❌");
+                    try {
+                        const data = results.data;
+                        if (!data || data.length === 0) {
+                            showToast("Planilha online está vazia!", "⚠️");
+                            return;
                         }
-                    },
-                    error: function(err) {
-                        showToast("Erro ao processar CSV: " + err.message, "❌");
+                        parseAndLoadTickets(data);
+                        if (showSuccessToast) showToast("✅ Dados atualizados da planilha online!", "✅");
+                        updateLastRefreshTime();
+                    } catch (e) {
+                        console.error(e);
+                        showToast("Erro ao processar dados: " + e.message, "❌");
                     }
-                });
-            } catch (err) {
-                console.error(err);
-                showToast("❌ Não foi possível carregar a planilha online. Verifique sua conexão.", "❌");
-            } finally {
-                if (btn) {
-                    btn.textContent = '🔄 Atualizar Dados';
-                    btn.disabled = false;
+                },
+                error: function(err) {
+                    if (btn) {
+                        btn.textContent = '🔄 Atualizar Dados';
+                        btn.disabled = false;
+                    }
+                    console.error('PapaParse fetch error:', err);
+                    showToast("❌ Não foi possível carregar a planilha online. Verifique sua conexão.", "❌");
                 }
-            }
+            });
         }
-
 
         function updateLastRefreshTime() {
             const el = document.getElementById('last-refresh-time');
