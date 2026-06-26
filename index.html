@@ -155,9 +155,15 @@
 
 
 
-        /* Smooth transitions for theme toggling */
-        body, header, .glass-panel, table, th, td, input, select, button, tr:hover td, .filters-bar {
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+        /* Transitions only on key structural elements — NOT on table cells (too many elements) */
+        body, header, .glass-panel, .btn, .kpi-card, .filter-input, .filter-group {
+            transition: background-color 0.25s ease, color 0.2s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        /* Pattern used by GitHub/Linear: disable ALL transitions during theme switch */
+        body.no-transition, body.no-transition * {
+            transition: none !important;
         }
 
         * {
@@ -2394,22 +2400,53 @@
         const btnThemeToggle = document.getElementById('btn-theme-toggle');
         
         function updateChartThemes(isLight) {
-            const textColor = isLight ? '#475569' : '#94a3b8';
+            const textColor = isLight ? '#4a6080' : '#94a3b8';
             const gridColor = isLight ? 'rgba(0, 82, 144, 0.08)' : 'rgba(255, 255, 255, 0.05)';
             
+            // Update Chart.js global defaults
             Chart.defaults.color = textColor;
             Chart.defaults.borderColor = gridColor;
+
+            // Update existing chart instances in-place (no destroy/recreate = fast)
+            Object.values(chartsInstance).forEach(chart => {
+                if (!chart) return;
+
+                // Update scale colors
+                if (chart.options.scales) {
+                    Object.values(chart.options.scales).forEach(scale => {
+                        if (scale.ticks) scale.ticks.color = textColor;
+                        if (scale.grid)  scale.grid.color  = gridColor;
+                        if (scale.border) scale.border.color = gridColor;
+                    });
+                }
+
+                // Update legend color
+                if (chart.options.plugins?.legend?.labels) {
+                    chart.options.plugins.legend.labels.color = textColor;
+                }
+
+                // Redraw without animation
+                chart.update('none');
+            });
         }
 
         if (btnThemeToggle) {
             btnThemeToggle.addEventListener('click', () => {
+                // Disable ALL transitions during switch (prevents 700+ cells animating simultaneously)
+                document.body.classList.add('no-transition');
+
                 document.body.classList.toggle('light-theme');
                 const isLight = document.body.classList.contains('light-theme');
                 btnThemeToggle.textContent = isLight ? "🌙 Modo Escuro" : "☀️ Modo Claro";
                 localStorage.setItem('theme', isLight ? 'light' : 'dark');
-                
                 updateChartThemes(isLight);
-                renderCharts();
+
+                // Re-enable transitions after browser repaints (next frame)
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        document.body.classList.remove('no-transition');
+                    });
+                });
             });
         }
 
