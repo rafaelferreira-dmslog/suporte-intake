@@ -636,10 +636,14 @@
             border: 1px solid rgba(14, 165, 233, 0.3);
         }
 
-        .badge-crit-p0 { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
-        .badge-crit-p1 { background: #ffedd5; color: #c2410c; border: 1px solid #fed7aa; }
-        .badge-crit-p2 { background: #fef9c3; color: #854d0e; border: 1px solid #fef08a; }
-        .badge-crit-p3 { background: #dbeafe; color: #1e40af; border: 1px solid #bfdbfe; }
+        .badge-crit-p0 { background: #ff2a2a; color: #ffffff; border: 1px solid #cc0000; font-weight: 800; box-shadow: 0 0 10px rgba(255, 42, 42, 0.3); }
+        .badge-crit-p1 { background: rgba(0, 82, 144, 0.15); color: #3399ff; border: 1px solid rgba(0, 163, 255, 0.4); }
+        .badge-crit-p2 { background: rgba(123, 148, 21, 0.15); color: #B1D020; border: 1px solid rgba(177, 208, 32, 0.4); }
+        .badge-crit-p3 { background: rgba(100, 53, 133, 0.15); color: #c471ed; border: 1px solid rgba(196, 113, 237, 0.4); }
+        
+        body.light-theme .badge-crit-p1 { background: rgba(0, 82, 144, 0.1); color: #005290; border-color: rgba(0, 82, 144, 0.3); }
+        body.light-theme .badge-crit-p2 { background: rgba(123, 148, 21, 0.1); color: #6a8012; border-color: rgba(123, 148, 21, 0.3); }
+        body.light-theme .badge-crit-p3 { background: rgba(100, 53, 133, 0.1); color: #643585; border-color: rgba(100, 53, 133, 0.3); }
 
         /* Modal Details */
         .modal {
@@ -1958,6 +1962,9 @@
             const critInsideData = critCodes.map(code => filteredTicketsData.filter(t => t.criticidade === code && t.isSlaMet).length);
             const critBreachedData = critCodes.map(code => filteredTicketsData.filter(t => t.criticidade === code && !t.isSlaMet).length);
 
+            const prioColorsSolid = ['#ff2a2a', '#3399ff', '#B1D020', '#c471ed'];
+            const prioColorsFaded = ['rgba(255, 42, 42, 0.2)', 'rgba(51, 153, 255, 0.2)', 'rgba(177, 208, 32, 0.2)', 'rgba(196, 113, 237, 0.2)'];
+
             const ctxCrit = document.getElementById('chart-sla-criticidade').getContext('2d');
             chartsInstance.criticidade = new Chart(ctxCrit, {
                 type: 'bar',
@@ -1967,13 +1974,15 @@
                         {
                             label: 'Dentro do SLA',
                             data: critInsideData,
-                            backgroundColor: '#B1D020', // Corporate Lime Green
+                            backgroundColor: prioColorsFaded,
+                            borderColor: prioColorsSolid,
+                            borderWidth: 1,
                             borderRadius: 6
                         },
                         {
                             label: 'SLA Estourado',
                             data: critBreachedData,
-                            backgroundColor: '#7E3B94', // Corporate Secondary Accent
+                            backgroundColor: prioColorsSolid,
                             borderRadius: 6
                         }
                     ]
