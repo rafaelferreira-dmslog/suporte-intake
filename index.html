@@ -1393,13 +1393,29 @@
                 btn.disabled = true;
             }
 
+            // Try multiple strategies: direct first, then CORS proxies as fallback
+            const strategies = [
+                GOOGLE_SHEETS_CSV_URL,
+                `https://api.allorigins.win/raw?url=${encodeURIComponent(GOOGLE_SHEETS_CSV_URL)}`,
+                `https://corsproxy.io/?url=${encodeURIComponent(GOOGLE_SHEETS_CSV_URL)}`
+            ];
+
+            let csvText = null;
+
+            for (const url of strategies) {
+                try {
+                    const response = await fetch(url, { cache: 'no-store' });
+                    if (response.ok) {
+                        csvText = await response.text();
+                        break;
+                    }
+                } catch (err) {
+                    console.warn('Tentativa falhou, tentando próxima estratégia...', err.message);
+                }
+            }
+
             try {
-                const proxyUrl = `https://corsproxy.io/?url=${encodeURIComponent(GOOGLE_SHEETS_CSV_URL)}`;
-                const response = await fetch(proxyUrl);
-
-                if (!response.ok) throw new Error(`Falha na conexão: ${response.status}`);
-
-                const csvText = await response.text();
+                if (!csvText) throw new Error('Todas as tentativas de conexão falharam');
 
                 Papa.parse(csvText, {
                     header: true,
@@ -1433,6 +1449,7 @@
                 }
             }
         }
+
 
         function updateLastRefreshTime() {
             const el = document.getElementById('last-refresh-time');
