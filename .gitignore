@@ -1,0 +1,22 @@
+# Dependências e builds
+node_modules/
+.vercel/
+dist/
+build/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos sensíveis
+*.env
+.env.local
+.env.production
+
+# Arquivos temporários
+*.log
+*.tmp
+
+# Agentes (não precisam ir pro GitHub)
+.agents/
