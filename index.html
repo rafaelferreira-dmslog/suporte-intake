@@ -819,7 +819,7 @@
                         <select id="filter-date-preset-top" class="filter-input">
                             <option value="all">Todo o Histórico</option>
                             <option value="today">Hoje</option>
-                            <option value="week">Esta Semana</option>
+                            <option value="week" selected>Esta Semana</option>
                             <option value="month">Este Mês</option>
                             <option value="30days">Últimos 30 Dias</option>
                             <option value="custom">Personalizado...</option>
@@ -1522,12 +1522,39 @@
             });
         }
 
+        let lastRefreshTimestamp = null;
+        let refreshIntervalId = null;
+
+        function startDynamicCounter() {
+            if (refreshIntervalId) clearInterval(refreshIntervalId);
+            
+            refreshIntervalId = setInterval(() => {
+                const el = document.getElementById('last-refresh-time');
+                if (!el || !lastRefreshTimestamp) return;
+
+                const secondsElapsed = Math.floor((Date.now() - lastRefreshTimestamp) / 1000);
+                
+                if (secondsElapsed < 15) {
+                    el.textContent = `Atualizado agora mesmo`;
+                } else if (secondsElapsed < 60) {
+                    el.textContent = `Atualizado há ${secondsElapsed} segundos`;
+                } else if (secondsElapsed < 3600) {
+                    const mins = Math.floor(secondsElapsed / 60);
+                    const secs = secondsElapsed % 60;
+                    el.textContent = `Atualizado há ${mins}m e ${secs}s`;
+                } else {
+                    const hours = Math.floor(secondsElapsed / 3600);
+                    const mins = Math.floor((secondsElapsed % 3600) / 60);
+                    el.textContent = `Atualizado há ${hours}h e ${mins}m`;
+                }
+            }, 1000);
+        }
+
         function updateLastRefreshTime() {
+            lastRefreshTimestamp = Date.now();
             const el = document.getElementById('last-refresh-time');
-            if (el) {
-                const now = new Date();
-                el.textContent = `Última atualização: ${now.toLocaleTimeString('pt-BR')}`;
-            }
+            if (el) el.textContent = `Atualizado agora mesmo`;
+            startDynamicCounter();
         }
 
         // Parse CSV fields, calculate SLA status, and populate dashboard
