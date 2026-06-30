@@ -1907,6 +1907,14 @@
                 skipEmptyLines: true,
                 complete: function(results) {
                     rawChangelogs = results.data || [];
+                    // Injeta histórico de teste local
+                    rawChangelogs.push(
+                        { "Chave": "SI-9999", "Data": "2026-06-29T10:00:00.000-0300", "Autor": "Sistema", "Campo": "status", "De": "Submissão", "Para": "Aguardando Informação" },
+                        { "Chave": "SI-9999", "Data": "2026-06-29T14:00:00.000-0300", "Autor": "Sistema", "Campo": "status", "De": "Aguardando Informação", "Para": "Em Atendimento" },
+                        { "Chave": "SI-9999", "Data": "2026-06-29T15:00:00.000-0300", "Autor": "Helena Almeida", "Campo": "status", "De": "Em Atendimento", "Para": "Done" },
+                        { "Chave": "SI-8888", "Data": "2026-06-29T10:00:00.000-0300", "Autor": "Sistema", "Campo": "status", "De": "Submissão", "Para": "Aguardando Correção" },
+                        { "Chave": "SI-8888", "Data": "2026-06-29T14:00:00.000-0300", "Autor": "Helena Almeida", "Campo": "status", "De": "Aguardando Correção", "Para": "Done" }
+                    );
                     console.log(`Carregados ${rawChangelogs.length} registros de histórico.`);
                 },
                 error: function(err) {
