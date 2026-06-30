@@ -1426,8 +1426,12 @@
                         <span class="modal-field-value" id="modal-tempo-gasto">4h 45m</span>
                     </div>
                     <div class="modal-field">
-                        <span class="modal-field-label">Causa Raiz Final</span>
+                        <span class="modal-field-label">Causa Raiz (Categoria)</span>
                         <span class="modal-field-value" id="modal-causa-raiz">Erro de Credenciais</span>
+                    </div>
+                    <div class="modal-field modal-field-full" id="modal-causa-raiz-detalhe-container" style="display: none;">
+                        <span class="modal-field-label">Descrição da Causa Raiz</span>
+                        <span class="modal-field-value" id="modal-causa-raiz-detalhe">-</span>
                     </div>
                     <div class="modal-field modal-field-full">
                         <span class="modal-field-label">Resolução do Chamado</span>
@@ -2066,25 +2070,47 @@
                 let resolucao = getRowValue(row, ["Resolução", "Resolution", "Resolucao"]) || "Não resolvida";
                 let colaborador = getRowValue(row, ["Colaborador", "Reporter", "Creator", "Requester"]) || "Desconhecido";
                 let email = getRowValue(row, ["email", "Email", "E-mail"]) || "";
-                let rawCausaRaiz = getRowValue(row, ["Causa raiz final", "Causa Raiz", "Causa Raiz Final", "Root Cause"]) || "";
-                let crLower = rawCausaRaiz.toLowerCase().trim();
-                let causaRaiz = "Pendente de Classificação";
+                // 1. Obter a Causa Raiz Categoria (Curta)
+                let categoryCausaRaiz = getRowValue(row, ["Causa Raiz", "Causa Raiz Final", "Root Cause"]) || "";
+                let causaRaiz = categoryCausaRaiz.trim();
                 
-                if (crLower === "") {
-                    causaRaiz = "Pendente de Classificação";
-                } else if (crLower.includes("requisito")) {
-                    causaRaiz = "Falha de Requisito";
-                } else if (crLower.includes("desenvolvimento") || crLower.includes("bug")) {
-                    causaRaiz = "Falha Desenvolvimento";
-                } else if (crLower.includes("operacional") || crLower.includes("infraestrutura") || crLower.includes("hardware") || crLower.includes("acessos") || crLower.includes("dúvida") || crLower.includes("solicitação")) {
-                    causaRaiz = "Falha Operacional";
-                } else if (crLower.includes("impacto") || crLower.includes("não mapeado") || crLower.includes("nao mapeado")) {
-                    causaRaiz = "Impacto não mapeado";
-                } else if (crLower.includes("regra de negócio") || crLower.includes("regra de negocio")) {
-                    causaRaiz = "Regra de Negócio";
+                if (causaRaiz === "") {
+                    // Fallback para classificação baseada em palavras-chave se a coluna de categoria estiver vazia
+                    let rawCausaRaizFinal = getRowValue(row, ["Causa raiz final", "Causa Raiz Detalhada"]) || "";
+                    let crLower = rawCausaRaizFinal.toLowerCase().trim();
+                    if (crLower === "") {
+                        causaRaiz = "Pendente de Classificação";
+                    } else if (crLower.includes("requisito")) {
+                        causaRaiz = "Falha de Requisito";
+                    } else if (crLower.includes("desenvolvimento") || crLower.includes("bug")) {
+                        causaRaiz = "Falha Desenvolvimento";
+                    } else if (crLower.includes("operacional") || crLower.includes("infraestrutura") || crLower.includes("hardware") || crLower.includes("acesso") || crLower.includes("dúvida") || crLower.includes("solicitação")) {
+                        causaRaiz = "Falha Operacional";
+                    } else if (crLower.includes("regra de negócio") || crLower.includes("regra de negocio")) {
+                        causaRaiz = "Regra de Negócio";
+                    } else if (crLower.includes("impacto") || crLower.includes("não mapeado") || crLower.includes("nao mapeado")) {
+                        causaRaiz = "Impacto não mapeado";
+                    } else {
+                        causaRaiz = "Impacto não mapeado";
+                    }
                 } else {
-                    causaRaiz = "Impacto não mapeado"; // Se tiver algum texto diferente, cai no fallback padrão
+                    // Normaliza o nome da categoria lida para alinhar com o design do dashboard
+                    const catLower = causaRaiz.toLowerCase();
+                    if (catLower.includes("desenvolvimento") || catLower.includes("bug")) {
+                        causaRaiz = "Falha Desenvolvimento";
+                    } else if (catLower.includes("requisito")) {
+                        causaRaiz = "Falha de Requisito";
+                    } else if (catLower.includes("operacional") || catLower.includes("infraestrutura") || catLower.includes("hardware") || catLower.includes("acesso") || catLower.includes("dúvida") || catLower.includes("solicitação")) {
+                        causaRaiz = "Falha Operacional";
+                    } else if (catLower.includes("regra de negócio") || catLower.includes("regra de negocio")) {
+                        causaRaiz = "Regra de Negócio";
+                    } else if (catLower.includes("impacto") || catLower.includes("não mapeado") || catLower.includes("nao mapeado")) {
+                        causaRaiz = "Impacto não mapeado";
+                    }
                 }
+
+                // 2. Obter a descrição detalhada da causa raiz final
+                let causaRaizDetalhe = getRowValue(row, ["Causa raiz final", "Causa Raiz Detalhada"]) || "";
                 
                 let resolucaoTexto = getRowValue(row, ["Resolução do chamado", "Resolução", "Resolution Detail"]) || "Não detalhado";
                 let descricao = getRowValue(row, ["Descrição do problema", "Descrição", "Description"]) || "Sem descrição";
@@ -2110,6 +2136,7 @@
                     colaborador: colaborador,
                     email: email,
                     causaRaiz: causaRaiz,
+                    causaRaizDetalhe: causaRaizDetalhe,
                     resolucaoTexto: resolucaoTexto,
                     descricao: descricao,
                     departamento: departamento
@@ -2861,6 +2888,19 @@
             document.getElementById('modal-resolvido').textContent = formatBrDate(ticket.resolvido);
             document.getElementById('modal-tempo-gasto').textContent = `${ticket.tempoGastoTexto} (Prazo Recomendado: ${formatDuration(ticket.limiteMinutos)})`;
             document.getElementById('modal-causa-raiz').textContent = ticket.causaRaiz;
+            
+            // Popula a descrição detalhada da Causa Raiz
+            const detailEl = document.getElementById('modal-causa-raiz-detalhe');
+            const detailContainer = document.getElementById('modal-causa-raiz-detalhe-container');
+            if (detailEl && detailContainer) {
+                if (ticket.causaRaizDetalhe && ticket.causaRaizDetalhe.trim() !== "") {
+                    detailEl.textContent = ticket.causaRaizDetalhe;
+                    detailContainer.style.display = 'block';
+                } else {
+                    detailContainer.style.display = 'none';
+                }
+            }
+            
             document.getElementById('modal-resolucao-txt').textContent = ticket.resolucaoTexto;
             document.getElementById('modal-descricao').textContent = ticket.descricao;
 
