@@ -1,0 +1,20 @@
+Chave,Data,Autor,Campo,De,Para
+SI-7214,2026-06-26T12:20:23.487-0300,Automation for Jira,Link,,This work item is blocked by GA-1077
+SI-7214,2026-06-26T13:01:42.757-0300,luiz.henrique,Reclassificação solicitação,,Solicitação de cadastro
+SI-7214,2026-06-26T13:01:42.757-0300,luiz.henrique,Criticidade final,,P2 - Média
+SI-7214,2026-06-26T13:01:42.757-0300,luiz.henrique,Resolução do chamado,,"Ticket concluído. Cadastro realizado."
+SI-7214,2026-06-26T13:22:01.337-0300,Helena Almeida,resolution,,Done
+SI-7214,2026-06-26T13:22:01.337-0300,Helena Almeida,status,Submissão,Done
+SI-7214,2026-06-26T13:22:03.771-0300,Helena Almeida,assignee,,Helena Almeida
+SI-7192,2026-06-26T06:15:44.086-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-7192,2026-06-26T06:15:44.815-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7192,2026-06-26T06:15:47.544-0300,Rafael Ferreira,resolution,,Done
+SI-7192,2026-06-26T06:15:47.544-0300,Rafael Ferreira,status,Submissão,Done
+SI-7192,2026-06-26T06:57:16.951-0300,luiz.henrique,Reclassificação solicitação,,Incidente
+SI-7192,2026-06-26T06:57:16.951-0300,luiz.henrique,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7192,2026-06-26T06:57:16.951-0300,luiz.henrique,Causa Raiz,,Falha Desenvolvimento
+SI-7192,2026-06-26T06:57:16.951-0300,luiz.henrique,Criticidade final,,P0 - Crítica
+SI-7192,2026-06-26T06:57:16.951-0300,luiz.henrique,Resolução do chamado,,"Identificado que a Ordem não era vinculada efetivamente ao agenciamento (Booking) no momento da inserção, resultando no travamento e bloqueio do documento correspondente. Realizada a liberação manual do documento e a regularização do vínculo da Ordem pela equipe técnica. Orientado ao usuário que o fluxo foi restabelecido e o documento encontra-se liberado para as movimentações operacionais. A solução definitiva para mitigar esse comportamento na inserção está em andamento por meio do INTAKE-559."
+SI-7192,2026-06-26T06:57:16.951-0300,luiz.henrique,Causa raiz potencial,,Falha de processamento na rotina transacional de vinculação da Ordem ao agenciamento.
+SI-7192,2026-06-26T06:57:16.951-0300,luiz.henrique,Causa raiz final,,"O problema ocorreu devido a uma interrupção no fluxo de comunicação interna do sistema durante o procedimento de inserção da Ordem no agenciamento. A correção estrutural está sendo realizada através do INTAKE-559."
+SI-7192,2026-06-26T06:57:16.951-0300,luiz.henrique,Justificativa Causa Raiz final,,A inconsistência reside na falta de tratamento de exceção adequado na rotina de persistência.

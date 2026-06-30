@@ -774,6 +774,221 @@
         .hide {
             display: none !important;
         }
+
+        /* Clear Filters Button */
+        .clear-field-btn {
+            position: absolute;
+            right: 10px;
+            bottom: 8px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1;
+            cursor: pointer;
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: none; /* hidden by default */
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            transition: all 0.2s ease;
+        }
+        .clear-field-btn:hover {
+            color: #ef4444;
+            background: rgba(239, 68, 68, 0.1);
+        }
+        /* Make room so text doesn't overlap X */
+        select.filter-input {
+            padding-right: 32px;
+        }
+        input.filter-input {
+            padding-right: 32px;
+        }
+        
+        .btn-danger-outline {
+            background-color: rgba(239, 68, 68, 0.1) !important;
+            color: #ef4444 !important;
+            border-color: rgba(239, 68, 68, 0.3) !important;
+        }
+
+        /* Auto Refresh Switch */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 36px;
+            height: 20px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--border-color);
+            transition: .2s;
+            border-radius: 20px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .2s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: var(--success);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(16px);
+        }
+
+        /* Modal Tab Styling */
+        .modal-tabs {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+        .modal-tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-family: var(--font-title);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            padding: 8px 16px;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+        .modal-tab-btn:hover {
+            color: white;
+        }
+        .modal-tab-btn.active {
+            color: var(--accent-primary);
+            border-bottom-color: var(--accent-primary);
+        }
+
+        /* History Timeline Styling */
+        .history-timeline {
+            max-height: 400px;
+            overflow-y: auto;
+            padding: 8px;
+            position: relative;
+        }
+        .history-timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 10px;
+            bottom: 10px;
+            width: 2px;
+            background: var(--border-color);
+        }
+        .timeline-item {
+            position: relative;
+            padding-left: 45px;
+            margin-bottom: 24px;
+        }
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        .timeline-badge {
+            position: absolute;
+            left: 11px;
+            top: 4px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--bg-secondary);
+            border: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            z-index: 1;
+            transition: all 0.2s ease;
+        }
+        .timeline-item.status-change .timeline-badge {
+            border-color: var(--accent-primary);
+            background: var(--accent-primary-dim);
+        }
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 16px;
+            transition: transform 0.2s ease;
+        }
+        .timeline-content:hover {
+            transform: translateX(4px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+        .timeline-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .timeline-author {
+            font-weight: 700;
+            color: white;
+        }
+        .timeline-date {
+            font-family: monospace;
+        }
+        .timeline-changes {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            font-size: 13px;
+        }
+        .timeline-change-item {
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+        .timeline-change-item:last-child {
+            margin-bottom: 0;
+        }
+        .timeline-field {
+            font-weight: 700;
+            color: var(--accent-secondary);
+        }
+        .timeline-value-old {
+            color: #ef5350;
+            text-decoration: line-through;
+            opacity: 0.8;
+            margin: 0 4px;
+        }
+        .timeline-value-new {
+            color: #66bb6a;
+            margin: 0 4px;
+        }
+        .timeline-no-changes {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 32px 0;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -794,6 +1009,13 @@
         </div>
         <div class="header-actions">
             <button class="btn btn-secondary" id="btn-theme-toggle">☀️ Modo Claro</button>
+            <div style="display: flex; align-items: center; gap: 8px; margin-right: 4px;">
+                <span style="font-size: 11px; color: var(--text-muted); font-weight: 700; text-transform: uppercase; white-space: nowrap;">Atualização Auto.</span>
+                <label class="switch" title="Ativa a consulta automática periódica à planilha Google Sheets (a cada 5 minutos)">
+                    <input type="checkbox" id="chk-auto-refresh">
+                    <span class="slider"></span>
+                </label>
+            </div>
             <div style="position: relative; display: flex; align-items: center;">
                 <span id="last-refresh-time" style="position: absolute; top: -14px; right: 4px; font-size: 10px; color: var(--text-muted); white-space: nowrap;"></span>
                 <button class="btn btn-success" id="btn-refresh-sheets" title="Recarrega os dados da planilha online">🔄 Atualizar Dados</button>
@@ -847,6 +1069,7 @@
                             <option value="today">Hoje</option>
                             <option value="week" selected>Esta Semana</option>
                             <option value="month">Este Mês</option>
+                            <option value="7days">Últimos 7 Dias</option>
                             <option value="30days">Últimos 30 Dias</option>
                             <option value="custom">Personalizado...</option>
                         </select>
@@ -913,6 +1136,10 @@
                         <select id="filter-departamento-top" class="filter-input">
                             <option value="">Todos</option>
                         </select>
+                    </div>
+
+                    <div class="filter-group" style="align-self: flex-end; margin-left: auto;">
+                        <button class="btn btn-secondary" id="btn-clear-all-top" title="Limpar todos os filtros da barra superior">🧹 Limpar Filtros</button>
                     </div>
                 </div>
             </div>
@@ -1043,6 +1270,7 @@
                                 <option value="today">Hoje</option>
                                 <option value="week">Esta Semana</option>
                                 <option value="month">Este Mês</option>
+                                <option value="7days">Últimos 7 Dias</option>
                                 <option value="30days">Últimos 30 Dias</option>
                                 <option value="custom">Personalizado...</option>
                             </select>
@@ -1110,6 +1338,10 @@
                                 <option value="">Todos</option>
                             </select>
                         </div>
+
+                        <div class="filter-group" style="align-self: flex-end; margin-left: auto;">
+                            <button class="btn btn-secondary" id="btn-clear-all-bottom" title="Limpar todos os filtros da tabela detalhada">🧹 Limpar Filtros</button>
+                        </div>
                     </div>
                 </div>
 
@@ -1159,44 +1391,59 @@
                 </div>
                 <button id="modal-close" style="background: none; border: none; color: var(--text-muted); font-size: 24px; cursor: pointer; transition: color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--text-muted)'">&times;</button>
             </div>
+            <!-- Modal Tabs -->
+            <div class="modal-tabs">
+                <button class="modal-tab-btn active" data-tab="details" onclick="switchModalTab('details')">Detalhes do Chamado</button>
+                <button class="modal-tab-btn" data-tab="history" onclick="switchModalTab('history')">Histórico de Alterações</button>
+            </div>
             
-            <div class="modal-grid">
-                <div class="modal-field">
-                    <span class="modal-field-label">Criticidade Final</span>
-                    <span class="modal-field-value" id="modal-criticidade">P1 - Alta 8h</span>
-                </div>
+            <!-- Tab 1: Details -->
+            <div id="modal-tab-details" class="modal-tab-content">
+                <div class="modal-grid">
+                    <div class="modal-field">
+                        <span class="modal-field-label">Criticidade Final</span>
+                        <span class="modal-field-value" id="modal-criticidade">P1 - Alta 8h</span>
+                    </div>
 
-                <div class="modal-field">
-                    <span class="modal-field-label">Responsável</span>
-                    <span class="modal-field-value" id="modal-responsavel">João da Silva</span>
+                    <div class="modal-field">
+                        <span class="modal-field-label">Responsável</span>
+                        <span class="modal-field-value" id="modal-responsavel">João da Silva</span>
+                    </div>
+                    <div class="modal-field">
+                        <span class="modal-field-label">Colaborador / Requerente</span>
+                        <span class="modal-field-value" id="modal-colaborador">Maria Souza</span>
+                    </div>
+                    <div class="modal-field">
+                        <span class="modal-field-label">Data de Criação</span>
+                        <span class="modal-field-value" id="modal-criado">25/06/2026 09:30</span>
+                    </div>
+                    <div class="modal-field">
+                        <span class="modal-field-label">Data de Resolução</span>
+                        <span class="modal-field-value" id="modal-resolvido">25/06/2026 14:15</span>
+                    </div>
+                    <div class="modal-field">
+                        <span class="modal-field-label">Tempo Gasto (Útil)</span>
+                        <span class="modal-field-value" id="modal-tempo-gasto">4h 45m</span>
+                    </div>
+                    <div class="modal-field">
+                        <span class="modal-field-label">Causa Raiz Final</span>
+                        <span class="modal-field-value" id="modal-causa-raiz">Erro de Credenciais</span>
+                    </div>
+                    <div class="modal-field modal-field-full">
+                        <span class="modal-field-label">Resolução do Chamado</span>
+                        <span class="modal-field-value" id="modal-resolucao-txt">Senha resetada e nova senha temporária enviada ao colaborador.</span>
+                    </div>
+                    <div class="modal-field modal-field-full">
+                        <span class="modal-field-label">Descrição do Problema</span>
+                        <span class="modal-field-value" id="modal-descricao">Usuário relatou dificuldade de acesso ao sistema corporativo...</span>
+                    </div>
                 </div>
-                <div class="modal-field">
-                    <span class="modal-field-label">Colaborador / Requerente</span>
-                    <span class="modal-field-value" id="modal-colaborador">Maria Souza</span>
-                </div>
-                <div class="modal-field">
-                    <span class="modal-field-label">Data de Criação</span>
-                    <span class="modal-field-value" id="modal-criado">25/06/2026 09:30</span>
-                </div>
-                <div class="modal-field">
-                    <span class="modal-field-label">Data de Resolução</span>
-                    <span class="modal-field-value" id="modal-resolvido">25/06/2026 14:15</span>
-                </div>
-                <div class="modal-field">
-                    <span class="modal-field-label">Tempo Gasto (Útil)</span>
-                    <span class="modal-field-value" id="modal-tempo-gasto">4h 45m</span>
-                </div>
-                <div class="modal-field">
-                    <span class="modal-field-label">Causa Raiz Final</span>
-                    <span class="modal-field-value" id="modal-causa-raiz">Erro de Credenciais</span>
-                </div>
-                <div class="modal-field modal-field-full">
-                    <span class="modal-field-label">Resolução do Chamado</span>
-                    <span class="modal-field-value" id="modal-resolucao-txt">Senha resetada e nova senha temporária enviada ao colaborador.</span>
-                </div>
-                <div class="modal-field modal-field-full">
-                    <span class="modal-field-label">Descrição do Problema</span>
-                    <span class="modal-field-value" id="modal-descricao">Usuário relatou dificuldade de acesso ao sistema corporativo...</span>
+            </div>
+
+            <!-- Tab 2: History Timeline -->
+            <div id="modal-tab-history" class="modal-tab-content" style="display: none;">
+                <div class="history-timeline" id="modal-history-timeline">
+                    <!-- Gerado dinamicamente via JS -->
                 </div>
             </div>
         </div>
@@ -1215,12 +1462,14 @@
         // O Apps Script da planilha envia os dados para este repositório a cada hora
         // =====================================================================
         const DATA_CSV_URL = './data.csv';
+        const CHANGELOG_CSV_URL = './changelog.csv';
         const AUTO_REFRESH_INTERVAL_MS = 5 * 60 * 1000; // Atualiza a cada 5 minutos
         let autoRefreshTimer = null;
         // =====================================================================
 
         let rawTicketsData = [];
         let filteredTicketsData = [];
+        let rawChangelogs = [];
         let chartsInstance = {};
 
         // Alternating KPI Card state
@@ -1537,6 +1786,7 @@
                         parseAndLoadTickets(data);
                         if (showSuccessToast) showToast("✅ Dados atualizados!", "✅");
                         updateLastRefreshTime();
+                        fetchChangelogs();
                     } catch (e) {
                         console.error(e);
                         showToast("Erro ao processar dados: " + e.message, "❌");
@@ -1552,6 +1802,51 @@
                     if (showSuccessToast) showToast("❌ Não foi possível carregar os dados automáticos.", "❌");
                 }
             });
+        }
+
+        async function fetchChangelogs() {
+            const url = `${CHANGELOG_CSV_URL}?t=${Date.now()}`;
+            Papa.parse(url, {
+                download: true,
+                header: true,
+                skipEmptyLines: true,
+                complete: function(results) {
+                    rawChangelogs = results.data || [];
+                    console.log(`Carregados ${rawChangelogs.length} registros de histórico.`);
+                },
+                error: function(err) {
+                    console.warn('changelog.csv não encontrado ou falhou ao carregar.');
+                }
+            });
+        }
+
+        function switchModalTab(tabName) {
+            const tabs = document.querySelectorAll('.modal-tab-btn');
+            const contents = document.querySelectorAll('.modal-tab-content');
+            
+            tabs.forEach(btn => {
+                if (btn.getAttribute('data-tab') === tabName) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            contents.forEach(content => {
+                if (content.id === `modal-tab-${tabName}`) {
+                    content.style.display = 'block';
+                } else {
+                    content.style.display = 'none';
+                }
+            });
+        }
+
+        function formatBrDateTime(dateStr) {
+            if (!dateStr) return '';
+            let d = new Date(dateStr);
+            if (isNaN(d.getTime())) return dateStr;
+            const pad = (n) => String(n).padStart(2, '0');
+            return `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()} ${pad(d.getHours())}:${pad(d.getMinutes())}`;
         }
 
         let lastRefreshTimestamp = null;
@@ -1862,6 +2157,12 @@
                 maxDate.setHours(23, 59, 59, 999);
             } else if (datePreset === 'month') {
                 minDate = new Date(now.getFullYear(), now.getMonth(), 1, 0, 0, 0, 0);
+                maxDate = new Date();
+                maxDate.setHours(23, 59, 59, 999);
+            } else if (datePreset === '7days') {
+                minDate = new Date();
+                minDate.setDate(minDate.getDate() - 7);
+                minDate.setHours(0, 0, 0, 0);
                 maxDate = new Date();
                 maxDate.setHours(23, 59, 59, 999);
             } else if (datePreset === '30days') {
@@ -2406,6 +2707,9 @@
 
         // Open modal detail view
         function openModal(ticket) {
+            // Garante que a aba de Detalhes inicie ativa
+            switchModalTab('details');
+
             const keyBadge = document.getElementById('modal-key-badge');
             if (keyBadge) {
                 keyBadge.textContent = ticket.chave;
@@ -2425,6 +2729,85 @@
             document.getElementById('modal-causa-raiz').textContent = ticket.causaRaiz;
             document.getElementById('modal-resolucao-txt').textContent = ticket.resolucaoTexto;
             document.getElementById('modal-descricao').textContent = ticket.descricao;
+
+            // Renderiza o Histórico (Timeline)
+            const timelineContainer = document.getElementById('modal-history-timeline');
+            if (timelineContainer) {
+                timelineContainer.innerHTML = '';
+                
+                // Filtra o histórico para o chamado atual
+                const ticketHistory = rawChangelogs.filter(item => {
+                    const keyVal = getRowValue(item, ['Chave', 'key', 'issuekey']);
+                    return String(keyVal).trim().toLowerCase() === String(ticket.chave).trim().toLowerCase();
+                });
+
+                if (ticketHistory.length === 0) {
+                    timelineContainer.innerHTML = '<div class="timeline-no-changes">Nenhuma alteração registrada para este chamado.</div>';
+                } else {
+                    // Agrupa alterações simultâneas (mesmo autor e data)
+                    const grouped = {};
+                    ticketHistory.forEach(item => {
+                        const dateVal = getRowValue(item, ['Data', 'date', 'created']);
+                        const authorVal = getRowValue(item, ['Autor', 'author', 'displayName']);
+                        const fieldVal = getRowValue(item, ['Campo', 'field']);
+                        const fromVal = getRowValue(item, ['De', 'from', 'fromString']);
+                        const toVal = getRowValue(item, ['Para', 'to', 'toString']);
+
+                        const groupKey = `${dateVal}_${authorVal}`;
+                        if (!grouped[groupKey]) {
+                            grouped[groupKey] = {
+                                data: dateVal,
+                                autor: authorVal,
+                                items: []
+                            };
+                        }
+                        grouped[groupKey].items.push({
+                            campo: fieldVal,
+                            de: fromVal,
+                            para: toVal
+                        });
+                    });
+
+                    // Ordena cronologicamente (do mais recente para o mais antigo)
+                    const sortedGroups = Object.values(grouped).sort((a, b) => {
+                        return new Date(b.data) - new Date(a.data);
+                    });
+
+                    sortedGroups.forEach(group => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.className = 'timeline-item';
+                        
+                        let itemsHtml = '';
+                        group.items.forEach(change => {
+                            // Limpa/formata campos de ID para texto amigável se necessário
+                            const fieldName = change.campo;
+                            const oldVal = change.de ? `<span class="timeline-value-old">${change.de}</span>` : '<i>Nenhum</i>';
+                            const newVal = change.para ? `<span class="timeline-value-new">${change.para}</span>` : '<i>Nenhum</i>';
+                            
+                            itemsHtml += `
+                                <li class="timeline-change-item">
+                                    Alterou <span class="timeline-field">${fieldName}</span> de ${oldVal} para ${newVal}
+                                </li>
+                            `;
+                        });
+
+                        itemDiv.innerHTML = `
+                            <div class="timeline-badge">✏️</div>
+                            <div class="timeline-content">
+                                <div class="timeline-meta">
+                                    <span class="timeline-author">${group.autor}</span>
+                                    <span class="timeline-date">${formatBrDateTime(group.data)}</span>
+                                </div>
+                                <ul class="timeline-changes">
+                                    ${itemsHtml}
+                                </ul>
+                            </div>
+                        `;
+                        timelineContainer.appendChild(itemDiv);
+                    });
+                }
+            }
+
             detailsModal.classList.add('active');
         }
 
@@ -2560,8 +2943,25 @@
 
         // --- Demo Data and Sample CSV Export ---
 
+        let isShowingMockData = false;
+
         // Preload dummy mock data when user requests
         document.getElementById('btn-example-data').addEventListener('click', () => {
+            const btn = document.getElementById('btn-example-data');
+            
+            if (isShowingMockData) {
+                btn.innerHTML = 'Ver Dados de Exemplo';
+                btn.classList.remove('btn-danger-outline');
+                isShowingMockData = false;
+                showToast("Recarregando dados originais...", "🔄");
+                fetchFromGoogleSheets(true);
+                return;
+            }
+
+            btn.innerHTML = 'Remover Dados de Exemplo';
+            btn.classList.add('btn-danger-outline');
+            isShowingMockData = true;
+
             showToast("Carregando dados fictícios de exemplo...", "📊");
             
             const now = new Date();
@@ -2657,10 +3057,50 @@
         // === GOOGLE SHEETS: Auto-load on page open ===
         fetchFromGoogleSheets(false);
 
-        // === GOOGLE SHEETS: Auto-refresh every 5 minutes ===
-        autoRefreshTimer = setInterval(() => {
-            fetchFromGoogleSheets(false);
-        }, AUTO_REFRESH_INTERVAL_MS);
+        // === AUTO REFRESH LOGIC ===
+        const chkAutoRefresh = document.getElementById('chk-auto-refresh');
+        
+        function startAutoRefresh() {
+            stopAutoRefresh();
+            autoRefreshTimer = setInterval(() => {
+                fetchFromGoogleSheets(false);
+            }, AUTO_REFRESH_INTERVAL_MS);
+        }
+        
+        function stopAutoRefresh() {
+            if (autoRefreshTimer) {
+                clearInterval(autoRefreshTimer);
+                autoRefreshTimer = null;
+            }
+        }
+
+        if (chkAutoRefresh) {
+            // Restore saved preference
+            const savedAutoRefresh = localStorage.getItem('autoRefreshEnabled');
+            
+            // Default behavior: disabled on local server, enabled in production
+            const isLocal = ['localhost', '127.0.0.1', ''].includes(window.location.hostname) || window.location.protocol === 'file:';
+            const defaultEnabled = !isLocal;
+            
+            const isEnabled = savedAutoRefresh !== null ? savedAutoRefresh === 'true' : defaultEnabled;
+            chkAutoRefresh.checked = isEnabled;
+            
+            if (isEnabled) {
+                startAutoRefresh();
+            }
+
+            chkAutoRefresh.addEventListener('change', () => {
+                if (chkAutoRefresh.checked) {
+                    startAutoRefresh();
+                    localStorage.setItem('autoRefreshEnabled', 'true');
+                    showToast("Atualização automática ativada (5m)", "🔄");
+                } else {
+                    stopAutoRefresh();
+                    localStorage.setItem('autoRefreshEnabled', 'false');
+                    showToast("Atualização automática desativada", "⏹️");
+                }
+            });
+        }
 
         // =====================================================================
         // RELATÓRIO SLA EM PDF (jsPDF + AutoTable)
@@ -3080,10 +3520,7 @@
             });
         }
 
-        // === GOOGLE SHEETS: Auto-refresh every 5 minutes ===
-        autoRefreshTimer = setInterval(() => {
-            fetchFromGoogleSheets(false);
-        }, AUTO_REFRESH_INTERVAL_MS);
+        // (Auto-refresh interval removed from here, handled dynamically above)
 
         // =====================================================================
         // ALTERNATING KPI CARD (SLA Estourado / Chamados em Aberto)
@@ -3128,6 +3565,83 @@
                 trendEl.style.opacity = '1';
             }, 150);
         }
+
+        // Logic for clear buttons (Individual Xs and Global Clears)
+        function injectClearButtons() {
+            // Add clear X to all filter groups
+            const filterGroups = document.querySelectorAll('.filter-group');
+            filterGroups.forEach(group => {
+                const input = group.querySelector('.filter-input');
+                if (input) {
+                    group.style.position = 'relative';
+                    const btn = document.createElement('button');
+                    btn.className = 'clear-field-btn';
+                    btn.innerHTML = '&times;';
+                    btn.title = 'Limpar filtro';
+                    
+                    if (input.tagName === 'SELECT') {
+                        btn.style.right = '28px';
+                    }
+                    
+                    group.appendChild(btn);
+                    
+                    const checkValue = () => {
+                        const val = input.value;
+                        const hasValue = val !== '' && val !== 'all';
+                        btn.style.display = hasValue ? 'flex' : 'none';
+                    };
+                    
+                    input.addEventListener('change', checkValue);
+                    input.addEventListener('input', checkValue);
+                    
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        if (input.tagName === 'SELECT') {
+                            input.selectedIndex = 0;
+                            if (input.id.includes('date-preset')) input.value = 'all';
+                        } else {
+                            input.value = '';
+                        }
+                        
+                        // Fire change event to sync top/bottom and trigger rendering
+                        const event = new Event('change');
+                        input.dispatchEvent(event);
+                    });
+                }
+            });
+
+            // Global clear buttons
+            const clearAll = () => {
+                const inputs = document.querySelectorAll('.filter-input');
+                inputs.forEach(input => {
+                    if (input.tagName === 'SELECT') {
+                        input.selectedIndex = 0;
+                        if (input.id.includes('date-preset')) input.value = 'all';
+                    } else {
+                        input.value = '';
+                    }
+                    
+                    // Manually hide X buttons without triggering heavy change events
+                    const btn = input.parentElement.querySelector('.clear-field-btn');
+                    if (btn) btn.style.display = 'none';
+                });
+                
+                // Hide custom date groups if they are open
+                const customDates = document.querySelectorAll('.filter-group[id^="custom-date-"]');
+                customDates.forEach(g => g.classList.add('hide'));
+
+                showToast("Filtros limpos", "🧹");
+                applyFiltersAndRender();
+            };
+
+            const btnClearTop = document.getElementById('btn-clear-all-top');
+            const btnClearBottom = document.getElementById('btn-clear-all-bottom');
+            if (btnClearTop) btnClearTop.addEventListener('click', clearAll);
+            if (btnClearBottom) btnClearBottom.addEventListener('click', clearAll);
+        }
+
+        // Run injection on load
+        window.addEventListener('DOMContentLoaded', injectClearButtons);
 
         function startKPIAlternator() {
             if (altInterval) clearInterval(altInterval);

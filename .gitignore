@@ -20,3 +20,6 @@ desktop.ini
 
 # Agentes (não precisam ir pro GitHub)
 .agents/
+
+# Scripts locais
+start_server.bat
