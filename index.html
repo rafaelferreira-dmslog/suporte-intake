@@ -1704,6 +1704,101 @@
             }
         }
 
+        // SLA Utility: Calculate active SLA minutes by tracing ticket status transitions
+        function calculateTicketActiveSlaMinutes(ticketKey, criadoDate, resolvidoDate, currentStatus) {
+            if (!criadoDate) return 0;
+            const endDate = resolvidoDate || new Date();
+            
+            // Filter and extract status transitions for this card from changelogs
+            const ticketHistory = rawChangelogs.filter(item => {
+                const keyVal = getRowValue(item, ['Chave', 'key', 'issuekey']);
+                return String(keyVal).trim().toLowerCase() === String(ticketKey).trim().toLowerCase();
+            });
+
+            const statusChanges = ticketHistory
+                .filter(item => {
+                    const fieldVal = getRowValue(item, ['Campo', 'field']);
+                    return String(fieldVal).trim().toLowerCase() === 'status';
+                })
+                .map(item => {
+                    const dateVal = getRowValue(item, ['Data', 'date', 'created']);
+                    const fromVal = getRowValue(item, ['De', 'from', 'fromString']);
+                    const toVal = getRowValue(item, ['Para', 'to', 'toString']);
+                    return {
+                        date: new Date(dateVal),
+                        from: String(fromVal || '').trim(),
+                        to: String(toVal || '').trim()
+                    };
+                })
+                .sort((a, b) => a.date - b.date); // Oldest first
+
+            // If no status transitions, the card stayed in currentStatus the whole time
+            if (statusChanges.length === 0) {
+                return calculateIntervalActiveMins(currentStatus, criadoDate, endDate, 0);
+            }
+
+            let activeSlaMins = 0;
+            let currentIntervalStart = criadoDate;
+            let currentIntervalStatus = statusChanges[0].from || 'Submissão';
+
+            for (let i = 0; i < statusChanges.length; i++) {
+                const change = statusChanges[i];
+                const changeDate = change.date;
+
+                // Handle out-of-order date bounds due to timezone/clock drifts
+                if (changeDate < currentIntervalStart) continue;
+                if (changeDate > endDate) break;
+
+                const intervalActive = calculateIntervalActiveMins(
+                    currentIntervalStatus,
+                    currentIntervalStart,
+                    changeDate,
+                    activeSlaMins
+                );
+                activeSlaMins += intervalActive;
+
+                currentIntervalStart = changeDate;
+                currentIntervalStatus = change.to;
+            }
+
+            // Final interval up to target end date
+            if (currentIntervalStart < endDate) {
+                const finalIntervalActive = calculateIntervalActiveMins(
+                    currentIntervalStatus,
+                    currentIntervalStart,
+                    endDate,
+                    activeSlaMins
+                );
+                activeSlaMins += finalIntervalActive;
+            }
+
+            return activeSlaMins;
+        }
+
+        // Calculate active SLA minutes for a single status interval
+        function calculateIntervalActiveMins(status, start, end, accumulatedSlaBefore) {
+            const totalBusinessMins = calculateBusinessMinutes(start, end);
+            const statusLower = String(status).toLowerCase().trim();
+
+            if (statusLower === 'aguardando correção' || statusLower === 'aguardando correcao') {
+                // Fully paused
+                return 0;
+            }
+
+            if (statusLower === 'aguardando informação' || statusLower === 'aguardando informacao') {
+                // Paused up to the limit of accumulated SLA minutes before entering this status
+                const allowedPause = accumulatedSlaBefore;
+                if (totalBusinessMins <= allowedPause) {
+                    return 0; // Fully paused
+                } else {
+                    return totalBusinessMins - allowedPause; // Partially paused, excess counts
+                }
+            }
+
+            // Normal statuses count fully
+            return totalBusinessMins;
+        }
+
         // Format duration into human readable text (Days, Hours, Minutes)
         function formatDuration(minutes) {
             if (minutes <= 0) return "0m";
@@ -1886,6 +1981,36 @@
 
         // Parse CSV fields, calculate SLA status, and populate dashboard
         function parseAndLoadTickets(rows) {
+            // Injeta os cartões de teste de SLA localmente para validação
+            rows.push(
+                {
+                    "Chave": "SI-9999",
+                    "Resumo": "Teste de SLA: Aguardando Informação (SLA Estourado - 5h Úteis)",
+                    "Responsável": "Suporte",
+                    "Prioridade": "P0 - Crítica",
+                    "Criticidade final": "P0 - Crítica",
+                    "Status": "Concluído",
+                    "Criado": "Mon Jun 29 2026 08:00:00 GMT-0300 (Brasilia Standard Time)",
+                    "Atualizado(a)": "Mon Jun 29 2026 15:00:00 GMT-0300 (Brasilia Standard Time)",
+                    "Resolvido": "Mon Jun 29 2026 15:00:00 GMT-0300 (Brasilia Standard Time)",
+                    "Colaborador": "Teste",
+                    "email": "teste@dmslog.com"
+                },
+                {
+                    "Chave": "SI-8888",
+                    "Resumo": "Teste de SLA: Aguardando Correção (Dentro do SLA - 2h Úteis)",
+                    "Responsável": "Suporte",
+                    "Prioridade": "P0 - Crítica",
+                    "Criticidade final": "P0 - Crítica",
+                    "Status": "Concluído",
+                    "Criado": "Mon Jun 29 2026 08:00:00 GMT-0300 (Brasilia Standard Time)",
+                    "Atualizado(a)": "Mon Jun 29 2026 14:00:00 GMT-0300 (Brasilia Standard Time)",
+                    "Resolvido": "Mon Jun 29 2026 14:00:00 GMT-0300 (Brasilia Standard Time)",
+                    "Colaborador": "Teste",
+                    "email": "teste@dmslog.com"
+                }
+            );
+
             rawTicketsData = rows.map((row, index) => {
                 let criadoVal = getRowValue(row, ["Criado", "Data de Criação", "Created"]);
                 let resolvidoVal = getRowValue(row, ["Resolvido", "Data de Resolução", "Resolved"]);
@@ -1917,18 +2042,19 @@
                     limitMins = 2940; // 5 days * 588 = 2940
                 }
                 
-                // Calculate SLA business minutes
+                // Safe lookup of key fields needed before SLA calculation
+                let chave = getRowValue(row, ["Chave", "Key", "Issue Key"]) || `CH-${1000 + index}`;
+                let status = getRowValue(row, ["Status", "State"]) || "Aberto";
+
+                // Calculate SLA business minutes using history transitions
                 let isResolved = !!resolvido;
-                let businessMins = calculateBusinessMinutes(criado, resolvido || new Date());
+                let businessMins = calculateTicketActiveSlaMinutes(chave, criado, resolvido, status);
                 
                 let isSlaMet = businessMins <= limitMins;
                 let statusSla = isSlaMet ? "Dentro do SLA" : "SLA Estourado";
                 
-                // Safe lookup of other fields
-                let chave = getRowValue(row, ["Chave", "Key", "Issue Key"]) || `CH-${1000 + index}`;
                 let resumo = getRowValue(row, ["Resumo", "Summary", "Title"]) || "Sem título";
                 let responsavel = getRowValue(row, ["Responsável", "Assignee", "Responsavel"]) || "Não atribuído";
-                let status = getRowValue(row, ["Status", "State"]) || "Aberto";
                 let resolucao = getRowValue(row, ["Resolução", "Resolution", "Resolucao"]) || "Não resolvida";
                 let colaborador = getRowValue(row, ["Colaborador", "Reporter", "Creator", "Requester"]) || "Desconhecido";
                 let email = getRowValue(row, ["email", "Email", "E-mail"]) || "";
