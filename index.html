@@ -1453,6 +1453,118 @@
         </div>
     </div>
 
+    <!-- Modal for report filters -->
+    <div class="modal" id="report-filter-modal">
+        <div class="glass-panel modal-content" style="background: var(--bg-secondary); padding: 32px; max-width: 600px; width: 90%; margin: 40px auto; max-height: 90vh; overflow-y: auto;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 16px;">
+                <div>
+                    <h2 style="font-family: var(--font-title); font-size: 22px; font-weight: 700; color: white;">📄 Configurações do Relatório SLA</h2>
+                </div>
+                <button id="modal-report-close" style="background: none; border: none; color: var(--text-muted); font-size: 24px; cursor: pointer; transition: color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--text-muted)'">&times;</button>
+            </div>
+            
+            <div class="modal-grid">
+                <!-- Filtros copiados do dashboard -->
+                <div class="modal-field">
+                    <span class="modal-field-label">Período de Criação</span>
+                    <select id="modal-report-date-preset" class="filter-input" style="width: 100%; box-sizing: border-box; margin-top: 6px; padding: 8px;">
+                        <option value="all">Todos os Chamados</option>
+                        <option value="today">Hoje</option>
+                        <option value="yesterday">Ontem</option>
+                        <option value="7days">Últimos 7 dias</option>
+                        <option value="30days">Últimos 30 dias</option>
+                        <option value="current-month">Mês Atual</option>
+                        <option value="previous-month">Mês Anterior</option>
+                        <option value="custom">Período Customizado</option>
+                    </select>
+                </div>
+                
+                <div class="modal-field">
+                    <span class="modal-field-label">Criticidade</span>
+                    <select id="modal-report-criticidade" class="filter-input" style="width: 100%; box-sizing: border-box; margin-top: 6px; padding: 8px;">
+                        <option value="">Todas</option>
+                        <option value="P0">P0 - Crítica</option>
+                        <option value="P1">P1 - Alta</option>
+                        <option value="P2">P2 - Média</option>
+                        <option value="P3">P3 - Baixa</option>
+                    </select>
+                </div>
+
+                <div class="modal-field modal-field-full hide" id="modal-report-custom-dates-group">
+                    <div style="display: flex; gap: 12px;">
+                        <div style="flex: 1;">
+                            <span class="modal-field-label">Data Inicial</span>
+                            <input type="date" id="modal-report-start-date" class="filter-input" style="width: 100%; box-sizing: border-box; margin-top: 6px; padding: 6px 12px;">
+                        </div>
+                        <div style="flex: 1;">
+                            <span class="modal-field-label">Data Final</span>
+                            <input type="date" id="modal-report-end-date" class="filter-input" style="width: 100%; box-sizing: border-box; margin-top: 6px; padding: 6px 12px;">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-field">
+                    <span class="modal-field-label">Responsável</span>
+                    <select id="modal-report-responsavel" class="filter-input" style="width: 100%; box-sizing: border-box; margin-top: 6px; padding: 8px;">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                
+                <div class="modal-field">
+                    <span class="modal-field-label">Colaborador / Requerente</span>
+                    <select id="modal-report-colaborador" class="filter-input" style="width: 100%; box-sizing: border-box; margin-top: 6px; padding: 8px;">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+
+                <div class="modal-field modal-field-full">
+                    <span class="modal-field-label">Causa Raiz</span>
+                    <select id="modal-report-causa-raiz" class="filter-input" style="width: 100%; box-sizing: border-box; margin-top: 6px; padding: 8px;">
+                        <option value="">Todos</option>
+                    </select>
+                </div>
+                
+                <div style="grid-column: 1 / -1; height: 1px; background: var(--border-color); margin: 8px 0;"></div>
+                
+                <!-- Opções de Configuração -->
+                <div class="modal-field">
+                    <span class="modal-field-label">Agrupamento das Tabelas</span>
+                    <select id="modal-report-grouping" class="filter-input" style="width: 100%; box-sizing: border-box; margin-top: 6px; padding: 8px;">
+                        <option value="auto">Automático (baseado no período)</option>
+                        <option value="details">Detalhado (Chamados Individuais)</option>
+                        <option value="day">Agrupar por Dia</option>
+                        <option value="week">Agrupar por Semana</option>
+                        <option value="assignee">Agrupar por Responsável</option>
+                        <option value="root_cause">Agrupar por Causa Raiz</option>
+                    </select>
+                </div>
+                
+                <div class="modal-field">
+                    <span class="modal-field-label">Orientação da Página</span>
+                    <select id="modal-report-orientation" class="filter-input" style="width: 100%; box-sizing: border-box; margin-top: 6px; padding: 8px;">
+                        <option value="portrait">Retrato (Vertical)</option>
+                        <option value="landscape">Paisagem (Horizontal)</option>
+                    </select>
+                </div>
+                
+                <div class="modal-field modal-field-full" style="display: flex; align-items: center; gap: 8px; padding-top: 8px;">
+                    <input type="checkbox" id="modal-report-breached-only" style="width: 18px; height: 18px; cursor: pointer; accent-color: var(--accent-primary); margin: 0;">
+                    <label for="modal-report-breached-only" class="modal-field-label" style="margin: 0; cursor: pointer; user-select: none;">Mostrar apenas chamados fora do SLA (Estourados)</label>
+                </div>
+                
+                <div class="modal-field modal-field-full">
+                    <span class="modal-field-label">Observações / Comentários (Cabeçalho do PDF)</span>
+                    <input type="text" id="modal-report-comments" class="filter-input" placeholder="Ex: Relatório mensal consolidado de incidentes." style="width: 100%; box-sizing: border-box; margin-top: 6px; padding: 8px;">
+                </div>
+            </div>
+            
+            <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px; border-top: 1px solid var(--border-color); padding-top: 16px;">
+                <button class="btn btn-secondary" id="btn-cancel-report-modal" style="margin: 0;">Cancelar</button>
+                <button class="btn btn-primary" id="btn-generate-report-pdf" style="margin: 0;">📄 Gerar PDF</button>
+            </div>
+        </div>
+    </div>
+
     <!-- Toast Notification -->
     <div class="toast" id="toast">
         <span id="toast-icon">ℹ️</span>
@@ -1665,6 +1777,10 @@
                 }
                 
                 let effEnd = Math.max(450, endMinutes);
+                if (endMinutes > 1038) {
+                    effEnd = 1038;
+                }
+                
                 let diff = effEnd - effStart;
                 return diff > 0 ? diff : 0;
             } else {
@@ -1700,6 +1816,9 @@
                 if (lastDayOfWeek !== 0 && lastDayOfWeek !== 6) {
                     let endMinutes = target.getHours() * 60 + target.getMinutes();
                     let effEnd = Math.max(450, endMinutes);
+                    if (endMinutes > 1038) {
+                        effEnd = 1038;
+                    }
                     let diff = effEnd - 450;
                     if (diff > 0) totalMinutes += diff;
                 }
@@ -1899,14 +2018,6 @@
                 skipEmptyLines: true,
                 complete: function(changelogResults) {
                     rawChangelogs = changelogResults.data || [];
-                    // Injeta histórico de teste local
-                    rawChangelogs.push(
-                        { "Chave": "SI-9999", "Data": "2026-06-29T10:00:00.000-0300", "Autor": "Sistema", "Campo": "status", "De": "Submissão", "Para": "Aguardando Informação" },
-                        { "Chave": "SI-9999", "Data": "2026-06-29T14:00:00.000-0300", "Autor": "Sistema", "Campo": "status", "De": "Aguardando Informação", "Para": "Em Atendimento" },
-                        { "Chave": "SI-9999", "Data": "2026-06-29T15:00:00.000-0300", "Autor": "Helena Almeida", "Campo": "status", "De": "Em Atendimento", "Para": "Done" },
-                        { "Chave": "SI-8888", "Data": "2026-06-29T10:00:00.000-0300", "Autor": "Sistema", "Campo": "status", "De": "Submissão", "Para": "Aguardando Correção" },
-                        { "Chave": "SI-8888", "Data": "2026-06-29T14:00:00.000-0300", "Autor": "Helena Almeida", "Campo": "status", "De": "Aguardando Correção", "Para": "Done" }
-                    );
                     console.log(`Carregados ${rawChangelogs.length} registros de histórico.`);
 
                     // 2. Depois carrega os chamados principais (data.csv)
@@ -2036,35 +2147,7 @@
                 }
             }
 
-            // Injeta os cartões de teste de SLA localmente para validação
-            rows.push(
-                {
-                    "Chave": "SI-9999",
-                    "Resumo": "Teste de SLA: Aguardando Informação (SLA Estourado - 5h Úteis)",
-                    "Responsável": "Suporte",
-                    "Prioridade": "P0 - Crítica",
-                    "Criticidade final": "P0 - Crítica",
-                    "Status": "Concluído",
-                    "Criado": "Mon Jun 29 2026 08:00:00 GMT-0300 (Brasilia Standard Time)",
-                    "Atualizado(a)": "Mon Jun 29 2026 15:00:00 GMT-0300 (Brasilia Standard Time)",
-                    "Resolvido": "Mon Jun 29 2026 15:00:00 GMT-0300 (Brasilia Standard Time)",
-                    "Colaborador": "Teste",
-                    "email": "teste@dmslog.com"
-                },
-                {
-                    "Chave": "SI-8888",
-                    "Resumo": "Teste de SLA: Aguardando Correção (Dentro do SLA - 2h Úteis)",
-                    "Responsável": "Suporte",
-                    "Prioridade": "P0 - Crítica",
-                    "Criticidade final": "P0 - Crítica",
-                    "Status": "Concluído",
-                    "Criado": "Mon Jun 29 2026 08:00:00 GMT-0300 (Brasilia Standard Time)",
-                    "Atualizado(a)": "Mon Jun 29 2026 14:00:00 GMT-0300 (Brasilia Standard Time)",
-                    "Resolvido": "Mon Jun 29 2026 14:00:00 GMT-0300 (Brasilia Standard Time)",
-                    "Colaborador": "Teste",
-                    "email": "teste@dmslog.com"
-                }
-            );
+
 
             rawTicketsData = rows.map((row, index) => {
                 let criadoVal = getRowValue(row, ["Criado", "Data de Criação", "Created"]);
@@ -2216,7 +2299,7 @@
             emptyState.classList.add('hide');
             dashboardContent.classList.remove('hide');
             const btnExportPdf = document.getElementById('btn-export-sla-pdf');
-            // if (btnExportPdf) btnExportPdf.classList.remove('hide'); // Hiding button from production for now
+            if (btnExportPdf) btnExportPdf.classList.remove('hide');
         }
 
         // Helper to escape HTML values
@@ -2243,9 +2326,18 @@
                 if (selectBottom) selectBottom.innerHTML = html;
             }
 
+            function populateModalSelect(id, values, defaultText = "Todos") {
+                const select = document.getElementById(id);
+                if (select) {
+                    select.innerHTML = `<option value="">${defaultText}</option>` + 
+                        values.map(val => `<option value="${escapeHtml(val)}">${escapeHtml(val)}</option>`).join('');
+                }
+            }
+
             // Responsável
             const uniqueResps = [...new Set(rawTicketsData.map(t => t.responsavel))].sort();
             populateSelect('filter-responsavel-top', 'filter-responsavel-bottom', uniqueResps);
+            populateModalSelect('modal-report-responsavel', uniqueResps, "Todos");
 
             // Status
             const uniqueStatus = [...new Set(rawTicketsData.map(t => t.status))].sort();
@@ -2254,10 +2346,15 @@
             // Causa Raiz
             const uniqueCauses = [...new Set(rawTicketsData.map(t => t.causaRaiz).filter(c => c && c.trim() !== ""))].sort();
             populateSelect('filter-causa-raiz-top', 'filter-causa-raiz-bottom', uniqueCauses, "Todas");
+            populateModalSelect('modal-report-causa-raiz', uniqueCauses, "Todas");
 
             // Departamento
             const uniqueDeptos = [...new Set(rawTicketsData.map(t => t.departamento).filter(d => d && d.trim() !== "Não informado" && d.trim() !== ""))].sort();
             populateSelect('filter-departamento-top', 'filter-departamento-bottom', uniqueDeptos);
+
+            // Colaborador (Modal only)
+            const uniqueColabs = [...new Set(rawTicketsData.map(t => t.colaborador).filter(c => c && c.trim() !== ""))].sort();
+            populateModalSelect('modal-report-colaborador', uniqueColabs, "Todos");
         }
 
         // Synchronize top and bottom filters
@@ -3323,14 +3420,95 @@
         // RELATÓRIO SLA EM PDF (jsPDF + AutoTable)
         // =====================================================================
         
-        function generateSLAReportPDF() {
-            if (filteredTicketsData.length === 0) {
-                showToast("Nenhum dado disponível para exportar.", "⚠️");
+        function generateSLAReportPDF(options = {}) {
+            // 1. Filtrar os chamados com base nas escolhas do modal
+            let reportData = [...rawTicketsData];
+            
+            // Filtragem por período de data
+            const presetVal = options.datePreset || 'all';
+            let minDate = null;
+            let maxDate = null;
+            const now = new Date();
+            
+            if (presetVal === 'today') {
+                minDate = new Date();
+                minDate.setHours(0, 0, 0, 0);
+                maxDate = new Date();
+                maxDate.setHours(23, 59, 59, 999);
+            } else if (presetVal === 'yesterday') {
+                minDate = new Date();
+                minDate.setDate(minDate.getDate() - 1);
+                minDate.setHours(0, 0, 0, 0);
+                maxDate = new Date();
+                maxDate.setDate(maxDate.getDate() - 1);
+                maxDate.setHours(23, 59, 59, 999);
+            } else if (presetVal === '7days') {
+                minDate = new Date();
+                minDate.setDate(minDate.getDate() - 7);
+                minDate.setHours(0, 0, 0, 0);
+                maxDate = new Date();
+                maxDate.setHours(23, 59, 59, 999);
+            } else if (presetVal === '30days') {
+                minDate = new Date();
+                minDate.setDate(minDate.getDate() - 30);
+                minDate.setHours(0, 0, 0, 0);
+                maxDate = new Date();
+                maxDate.setHours(23, 59, 59, 999);
+            } else if (presetVal === 'current-month') {
+                minDate = new Date(now.getFullYear(), now.getMonth(), 1, 0, 0, 0, 0);
+                maxDate = new Date();
+                maxDate.setHours(23, 59, 59, 999);
+            } else if (presetVal === 'previous-month') {
+                minDate = new Date(now.getFullYear(), now.getMonth() - 1, 1, 0, 0, 0, 0);
+                maxDate = new Date(now.getFullYear(), now.getMonth(), 0, 23, 59, 59, 999);
+            } else if (presetVal === 'custom') {
+                if (options.startDate) {
+                    minDate = new Date(options.startDate + "T00:00:00");
+                }
+                if (options.endDate) {
+                    maxDate = new Date(options.endDate + "T23:59:59");
+                }
+            }
+
+            if (minDate || maxDate) {
+                reportData = reportData.filter(t => {
+                    if (!t.criado) return false;
+                    const time = t.criado.getTime();
+                    if (minDate && time < minDate.getTime()) return false;
+                    if (maxDate && time > maxDate.getTime()) return false;
+                    return true;
+                });
+            }
+
+            // Filtros adicionais do modal
+            if (options.criticidade) {
+                reportData = reportData.filter(t => t.criticidade === options.criticidade);
+            }
+            if (options.responsavel) {
+                reportData = reportData.filter(t => t.responsavel === options.responsavel);
+            }
+            if (options.colaborador) {
+                reportData = reportData.filter(t => t.colaborador === options.colaborador);
+            }
+            if (options.causaRaiz) {
+                reportData = reportData.filter(t => t.causaRaiz === options.causaRaiz);
+            }
+            if (options.breachedOnly) {
+                reportData = reportData.filter(t => !t.isSlaMet);
+            }
+
+            if (reportData.length === 0) {
+                showToast("Nenhum chamado atende aos filtros selecionados.", "⚠️");
                 return;
             }
 
             const { jsPDF } = window.jspdf;
-            const doc = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' });
+            const isLandscape = options.orientation === 'landscape';
+            const doc = new jsPDF({ 
+                orientation: isLandscape ? 'landscape' : 'portrait', 
+                unit: 'mm', 
+                format: 'a4' 
+            });
             
             // Fonts
             doc.setFont("helvetica", "normal");
@@ -3342,9 +3520,13 @@
             const textColor = [10, 22, 40];          // Dark main
             const textMuted = [100, 116, 139];       // Muted
 
+            const pageWidth = isLandscape ? 297 : 210;
+            const pageHeight = isLandscape ? 210 : 297;
+            const printableWidth = pageWidth - 20;    // 190mm in portrait, 277mm in landscape
+
             // Header Layout
             doc.setFillColor(...primaryColor);
-            doc.rect(10, 10, 190, 6, 'F'); // Top bar
+            doc.rect(10, 10, printableWidth, 6, 'F'); // Top bar
 
             doc.setTextColor(...textColor);
             doc.setFontSize(20);
@@ -3358,49 +3540,49 @@
 
             const timestamp = formatBrDate(new Date());
             doc.setFontSize(8);
-            doc.text(`Gerado em: ${timestamp}`, 200, 24, { align: 'right' });
+            doc.text(`Gerado em: ${timestamp}`, pageWidth - 10, 24, { align: 'right' });
 
             // Active Filters Metadata Block
-            const presetEl = document.getElementById('filter-date-preset-top');
-            const critEl = document.getElementById('filter-criticidade-top');
-            const respEl = document.getElementById('filter-responsavel-top');
-            const deptoEl = document.getElementById('filter-departamento-top');
-            const searchEl = document.getElementById('filter-search-top');
-            const statusEl = document.getElementById('filter-status-top');
-            const causeEl = document.getElementById('filter-causa-raiz-top');
-
-            const presetText = presetEl ? presetEl.options[presetEl.selectedIndex].text : "Todo o Histórico";
-            const critText = critEl && critEl.value ? critEl.value : "Todas";
-            const respText = respEl && respEl.value ? respEl.value : "Todos";
-            const deptoText = deptoEl && deptoEl.value ? deptoEl.value : "Todos";
-            const statusText = statusEl && statusEl.value ? statusEl.value : "Todos";
-            const causeText = causeEl && causeEl.value ? causeEl.value : "Todas";
-            const searchText = searchEl && searchEl.value ? searchEl.value : "Nenhuma";
+            const presetText = options.datePresetText || "Todo o Histórico";
+            const critText = options.criticidade || "Todas";
+            const respText = options.responsavel || "Todos";
+            const colabText = options.colaborador || "Todos";
+            const causeText = options.causaRaiz || "Todas";
+            const breachedText = options.breachedOnly ? "Sim (Apenas Estourados)" : "Não (Todos)";
 
             // Box for filters
+            const filtersY = 35;
+            const filtersHeight = options.comments ? 23 : 17;
+            
             doc.setFillColor(248, 250, 252);
             doc.setDrawColor(226, 232, 240);
-            doc.roundedRect(10, 35, 190, 16, 2, 2, 'FD');
+            doc.roundedRect(10, filtersY, printableWidth, filtersHeight, 2, 2, 'FD');
             
             doc.setTextColor(...textColor);
             doc.setFont("helvetica", "bold");
             doc.setFontSize(8);
-            doc.text("Filtros Aplicados:", 14, 40);
+            doc.text("Filtros Aplicados:", 14, filtersY + 5);
 
             doc.setFont("helvetica", "normal");
-            doc.text(`Período: ${presetText}  |  Criticidade: ${critText}  |  Responsável: ${respText}  |  Status: ${statusText}`, 14, 45);
-            doc.text(`Causa Raiz: ${causeText}  |  Depto: ${deptoText}  |  Pesquisa: "${searchText}"`, 14, 49);
+            doc.text(`Período: ${presetText}  |  Criticidade: ${critText}  |  Responsável: ${respText}  |  Colaborador: ${colabText}`, 14, filtersY + 10);
+            doc.text(`Causa Raiz: ${causeText}  |  Apenas Fora do SLA: ${breachedText}`, 14, filtersY + 14);
+            
+            if (options.comments) {
+                doc.setFont("helvetica", "italic");
+                doc.setTextColor(100, 116, 139);
+                doc.text(`Observações: ${options.comments}`, 14, filtersY + 19);
+            }
 
             // KPIs Panel
-            const total = filteredTicketsData.length;
-            const inside = filteredTicketsData.filter(t => t.isSlaMet).length;
+            const total = reportData.length;
+            const inside = reportData.filter(t => t.isSlaMet).length;
             const breached = total - inside;
             const compliance = total > 0 ? Math.round((inside / total) * 100) : 100;
 
             // 4 boxes side by side
-            const boxWidth = 44;
-            const boxGap = 4.6;
-            const kpisY = 56;
+            const boxWidth = isLandscape ? 65 : 44;
+            const boxGap = isLandscape ? 5.6 : 4.6;
+            const kpisY = filtersY + filtersHeight + 5;
             const kpiValues = [
                 { title: "TOTAL CHAMADOS", val: total.toString(), color: primaryColor },
                 { title: "ADERÊNCIA SLA", val: `${compliance}%`, color: compliance >= 95 ? successColor : dangerColor },
@@ -3429,38 +3611,38 @@
                 doc.text(kpi.val, x + 4, kpisY + 13);
             });
 
-            let currentY = 82;
+            let currentY = kpisY + 18 + 8;
 
             // Determine grouping type
-            const presetVal = presetEl ? presetEl.value : 'all';
+            const groupingMode = options.grouping || 'auto';
             
             // Find Date limits based on current selection
-            let earliestDate = filteredTicketsData.length > 0 
-                ? new Date(filteredTicketsData.reduce((min, t) => Math.min(min, t.criado.getTime()), filteredTicketsData[0].criado.getTime()))
+            let earliestDate = reportData.length > 0 
+                ? new Date(reportData.reduce((min, t) => Math.min(min, t.criado ? t.criado.getTime() : Infinity), reportData[0].criado ? reportData[0].criado.getTime() : Date.now()))
                 : new Date();
-            let latestDate = filteredTicketsData.length > 0 
-                ? new Date(filteredTicketsData.reduce((max, t) => Math.max(max, t.criado.getTime()), filteredTicketsData[0].criado.getTime()))
+            let latestDate = reportData.length > 0 
+                ? new Date(reportData.reduce((max, t) => Math.max(max, t.criado ? t.criado.getTime() : -Infinity), reportData[0].criado ? reportData[0].criado.getTime() : Date.now()))
                 : new Date();
 
-            const isSingleDay = (presetVal === 'today') || 
-                                (presetVal === 'custom' && earliestDate.toDateString() === latestDate.toDateString()) ||
-                                (document.getElementById('filter-criado-date-top') && document.getElementById('filter-criado-date-top').value !== "");
+            let isSingleDay = (presetVal === 'today') || 
+                                (presetVal === 'custom' && earliestDate.toDateString() === latestDate.toDateString());
 
-            const isWeeklySpan = (presetVal === 'week') || 
+            let isWeeklySpan = (presetVal === 'week') || 
                                  (presetVal === 'custom' && (latestDate.getTime() - earliestDate.getTime()) <= 7 * 24 * 60 * 60 * 1000);
 
-            if (isSingleDay) {
-                // Relatório Diário - Tabela de chamados individuais
+            // Execute grouping option
+            if (groupingMode === 'details' || (groupingMode === 'auto' && isSingleDay)) {
+                // Relatório Detalhado - Chamados individuais
                 doc.setTextColor(...textColor);
                 doc.setFont("helvetica", "bold");
                 doc.setFontSize(12);
-                doc.text("Detalhamento dos Chamados do Dia", 10, currentY);
+                doc.text("Detalhamento Individual dos Chamados", 10, currentY);
 
                 const headers = ['Chave', 'Criticidade', 'Resumo', 'Responsável', 'Criado', 'Status SLA', 'Tempo Útil'];
-                const rows = filteredTicketsData.map(t => [
+                const rows = reportData.map(t => [
                     t.chave,
                     t.criticidade,
-                    t.resumo.substring(0, 35) + (t.resumo.length > 35 ? '...' : ''),
+                    t.resumo.substring(0, isLandscape ? 60 : 35) + (t.resumo.length > (isLandscape ? 60 : 35) ? '...' : ''),
                     t.responsavel,
                     formatBrDate(t.criado),
                     t.statusSla,
@@ -3475,7 +3657,7 @@
                     headStyles: { fillColor: primaryColor, textColor: [255, 255, 255], fontStyle: 'bold', fontSize: 8 },
                     styles: { fontSize: 8, cellPadding: 2 },
                     columnStyles: {
-                        2: { cellWidth: 45 }, // Resumo
+                        2: { cellWidth: isLandscape ? 120 : 45 }, // Resumo
                         4: { cellWidth: 26 }, // Criado
                         6: { cellWidth: 18 }  // Tempo útil
                     },
@@ -3496,52 +3678,48 @@
                     }
                 });
             }
-            else if (isWeeklySpan) {
-                // Relatório Semanal - Agrupado por Dia
+            else if (groupingMode === 'day' || (groupingMode === 'auto' && isWeeklySpan)) {
+                // Relatório por Dia
                 doc.setTextColor(...textColor);
                 doc.setFont("helvetica", "bold");
                 doc.setFontSize(12);
-                doc.text("Desempenho de SLA por Dia da Semana", 10, currentY);
+                doc.text("Desempenho de SLA por Dia", 10, currentY);
 
-                // Helper to get date boundaries
-                const getStartOfWeek = (d) => {
-                    const date = new Date(d);
-                    const day = date.getDay();
-                    const diff = date.getDate() - day + (day === 0 ? -6 : 1); // Monday
-                    const monday = new Date(date.setDate(diff));
-                    monday.setHours(0, 0, 0, 0);
-                    return monday;
-                };
-
-                const weekMonday = (presetVal === 'week') ? getStartOfWeek(new Date()) : getStartOfWeek(earliestDate);
-                const daysNames = ["Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado", "Domingo"];
-                
                 const tableRows = [];
-                for (let i = 0; i < 7; i++) {
-                    const d = new Date(weekMonday);
-                    d.setDate(d.getDate() + i);
-                    
-                    const dayTickets = filteredTicketsData.filter(t => t.criado.toDateString() === d.toDateString());
+                let currentDay = new Date(earliestDate);
+                currentDay.setHours(0, 0, 0, 0);
+                
+                let limitDate = new Date(latestDate);
+                limitDate.setHours(23, 59, 59, 999);
+
+                let daysCount = 0;
+                while (currentDay <= limitDate && daysCount < 40) {
+                    const d = new Date(currentDay);
+                    const dayTickets = reportData.filter(t => t.criado && t.criado.toDateString() === d.toDateString());
                     const dayTotal = dayTickets.length;
                     
-                    // Skip weekends if no tickets exist to keep it clean
-                    if ((i === 5 || i === 6) && dayTotal === 0) continue;
-
-                    const dayInside = dayTickets.filter(t => t.isSlaMet).length;
-                    const dayCompliance = dayTotal > 0 ? Math.round((dayInside / dayTotal) * 100) : 100;
-                    const dayStatus = dayTotal > 0 ? (dayCompliance >= 95 ? "SLA Batido" : "SLA Não Batido") : "Sem Chamados";
-
-                    const dayStr = d.getDate().toString().padStart(2, '0');
-                    const monthStr = (d.getMonth() + 1).toString().padStart(2, '0');
+                    if (dayTotal > 0) {
+                        const dayInside = dayTickets.filter(t => t.isSlaMet).length;
+                        const dayCompliance = dayTotal > 0 ? Math.round((dayInside / dayTotal) * 100) : 100;
+                        const dayStatus = dayTotal > 0 ? (dayCompliance >= 95 ? "SLA Batido" : "SLA Não Batido") : "Sem Chamados";
+                        
+                        const daysNames = ["Domingo", "Segunda-feira", "Terça-feira", "Quarta-feira", "Quinta-feira", "Sexta-feira", "Sábado"];
+                        const dayOfWeekName = daysNames[d.getDay()];
+                        const dayStr = d.getDate().toString().padStart(2, '0');
+                        const monthStr = (d.getMonth() + 1).toString().padStart(2, '0');
+                        
+                        tableRows.push([
+                            dayOfWeekName,
+                            `${dayStr}/${monthStr}/${d.getFullYear()}`,
+                            dayTotal.toString(),
+                            dayInside.toString(),
+                            `${dayCompliance}%`,
+                            dayStatus
+                        ]);
+                    }
                     
-                    tableRows.push([
-                        daysNames[i],
-                        `${dayStr}/${monthStr}/${d.getFullYear()}`,
-                        dayTotal.toString(),
-                        dayInside.toString(),
-                        `${dayCompliance}%`,
-                        dayStatus
-                    ]);
+                    currentDay.setDate(currentDay.getDate() + 1);
+                    daysCount++;
                 }
 
                 const headers = ['Dia da Semana', 'Data', 'Total Chamados', 'Dentro do SLA', 'Aderência %', 'Status SLA'];
@@ -3562,24 +3740,21 @@
                             } else if (val === 'SLA Não Batido') {
                                 data.cell.styles.textColor = dangerColor;
                                 data.cell.styles.fontStyle = 'bold';
-                            } else if (val === 'Sem Chamados') {
-                                data.cell.styles.textColor = textMuted;
                             }
                         }
                     }
                 });
 
                 // Add Offenders Table
-                addOffendersTable(doc, filteredTicketsData, successColor, dangerColor, primaryColor, currentY);
+                addOffendersTable(doc, reportData, successColor, dangerColor, primaryColor, currentY, isLandscape);
             }
-            else {
-                // Relatório Mensal ou Longo - Agrupado por Semana (Segunda a Domingo)
+            else if (groupingMode === 'week' || (groupingMode === 'auto' && !isSingleDay && !isWeeklySpan)) {
+                // Relatório por Semana
                 doc.setTextColor(...textColor);
                 doc.setFont("helvetica", "bold");
                 doc.setFontSize(12);
                 doc.text("Desempenho de SLA por Período Semanal", 10, currentY);
 
-                // Helper to get start and end dates of weeks in range
                 const getStartOfWeek = (d) => {
                     const date = new Date(d);
                     const day = date.getDay();
@@ -3593,12 +3768,13 @@
                 const tableRows = [];
 
                 let currentMonday = new Date(startMonday);
-                while (currentMonday <= latestDate) {
+                let weeksCount = 0;
+                while (currentMonday <= latestDate && weeksCount < 20) {
                     const currentSunday = new Date(currentMonday);
                     currentSunday.setDate(currentMonday.getDate() + 6);
                     currentSunday.setHours(23, 59, 59, 999);
 
-                    const weekTickets = filteredTicketsData.filter(t => t.criado >= currentMonday && t.criado <= currentSunday);
+                    const weekTickets = reportData.filter(t => t.criado >= currentMonday && t.criado <= currentSunday);
                     const weekTotal = weekTickets.length;
 
                     if (weekTotal > 0) {
@@ -3618,8 +3794,8 @@
                         ]);
                     }
 
-                    // Go to next Monday
                     currentMonday.setDate(currentMonday.getDate() + 7);
+                    weeksCount++;
                 }
 
                 const headers = ['Período da Semana', 'Total Chamados', 'Dentro do SLA', 'Aderência %', 'Status SLA'];
@@ -3646,7 +3822,83 @@
                 });
 
                 // Add Offenders Table
-                addOffendersTable(doc, filteredTicketsData, successColor, dangerColor, primaryColor, currentY);
+                addOffendersTable(doc, reportData, successColor, dangerColor, primaryColor, currentY, isLandscape);
+            }
+            else if (groupingMode === 'assignee') {
+                // Relatório por Responsável
+                doc.setTextColor(...textColor);
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(12);
+                doc.text("Desempenho de SLA por Responsável", 10, currentY);
+
+                const resps = [...new Set(reportData.map(t => t.responsavel))].sort();
+                const tableRows = resps.map(resp => {
+                    const respTickets = reportData.filter(t => t.responsavel === resp);
+                    const totalTickets = respTickets.length;
+                    const insideTickets = respTickets.filter(t => t.isSlaMet).length;
+                    const complianceRate = totalTickets > 0 ? Math.round((insideTickets / totalTickets) * 100) : 100;
+                    const avgTime = totalTickets > 0 ? Math.round(respTickets.reduce((sum, t) => sum + t.tempoGastoMinutos, 0) / totalTickets) : 0;
+                    
+                    return [
+                        resp,
+                        totalTickets.toString(),
+                        insideTickets.toString(),
+                        (totalTickets - insideTickets).toString(),
+                        `${complianceRate}%`,
+                        formatDuration(avgTime)
+                    ];
+                });
+
+                const headers = ['Responsável', 'Total Chamados', 'Dentro SLA', 'Estourados', 'Aderência %', 'Tempo Médio Útil'];
+                doc.autoTable({
+                    startY: currentY + 3,
+                    head: [headers],
+                    body: tableRows,
+                    theme: 'striped',
+                    headStyles: { fillColor: primaryColor, textColor: [255, 255, 255], fontStyle: 'bold', fontSize: 8 },
+                    styles: { fontSize: 8, cellPadding: 2.5 }
+                });
+
+                // Add Offenders Table
+                addOffendersTable(doc, reportData, successColor, dangerColor, primaryColor, currentY, isLandscape);
+            }
+            else if (groupingMode === 'root_cause') {
+                // Relatório por Causa Raiz
+                doc.setTextColor(...textColor);
+                doc.setFont("helvetica", "bold");
+                doc.setFontSize(12);
+                doc.text("Desempenho de SLA por Causa Raiz", 10, currentY);
+
+                const causes = [...new Set(reportData.map(t => t.causaRaiz).filter(c => c && c.trim() !== ""))].sort();
+                const tableRows = causes.map(cause => {
+                    const causeTickets = reportData.filter(t => t.causaRaiz === cause);
+                    const totalTickets = causeTickets.length;
+                    const insideTickets = causeTickets.filter(t => t.isSlaMet).length;
+                    const complianceRate = totalTickets > 0 ? Math.round((insideTickets / totalTickets) * 100) : 100;
+                    const avgTime = totalTickets > 0 ? Math.round(causeTickets.reduce((sum, t) => sum + t.tempoGastoMinutos, 0) / totalTickets) : 0;
+                    
+                    return [
+                        cause,
+                        totalTickets.toString(),
+                        insideTickets.toString(),
+                        (totalTickets - insideTickets).toString(),
+                        `${complianceRate}%`,
+                        formatDuration(avgTime)
+                    ];
+                });
+
+                const headers = ['Causa Raiz', 'Total Chamados', 'Dentro SLA', 'Estourados', 'Aderência %', 'Tempo Médio Útil'];
+                doc.autoTable({
+                    startY: currentY + 3,
+                    head: [headers],
+                    body: tableRows,
+                    theme: 'striped',
+                    headStyles: { fillColor: primaryColor, textColor: [255, 255, 255], fontStyle: 'bold', fontSize: 8 },
+                    styles: { fontSize: 8, cellPadding: 2.5 }
+                });
+
+                // Add Offenders Table
+                addOffendersTable(doc, reportData, successColor, dangerColor, primaryColor, currentY, isLandscape);
             }
 
             // Page numbers footer adding callback
@@ -3655,26 +3907,30 @@
                 doc.setPage(i);
                 doc.setFontSize(8);
                 doc.setTextColor(...textMuted);
-                doc.text(`Página ${i} de ${pageCount}`, 105, 287, { align: 'center' });
-                doc.text("Suporte Intake - Relatório Analítico de SLA", 10, 287);
+                doc.text(`Página ${i} de ${pageCount}`, pageWidth / 2, pageHeight - 10, { align: 'center' });
+                doc.text("Suporte Intake - Relatório Analítico de SLA", 10, pageHeight - 10);
             }
 
             // Save PDF with context-friendly name
-            const filename = `relatorio-sla-intake_${presetVal}_${timestamp.replace(/[\/\s:]/g, '-')}.pdf`;
+            const cleanPresetName = presetVal.replace(/[^a-zA-Z0-9]/g, '_');
+            const cleanTimestamp = timestamp.replace(/[\/\s:]/g, '-');
+            const filename = `relatorio-sla-intake_${cleanPresetName}_${cleanTimestamp}.pdf`;
             doc.save(filename);
             showToast("Relatório SLA baixado com sucesso!", "📥");
         }
 
         // Helper to add list of SLA offenders (tickets that breached SLA)
-        function addOffendersTable(doc, tickets, successColor, dangerColor, primaryColor, fallbackY) {
+        function addOffendersTable(doc, tickets, successColor, dangerColor, primaryColor, fallbackY, isLandscape = false) {
             const offenders = tickets.filter(t => !t.isSlaMet);
             
             let finalY = (doc.lastAutoTable && typeof doc.lastAutoTable.finalY === 'number' && !isNaN(doc.lastAutoTable.finalY))
                 ? doc.lastAutoTable.finalY + 12
                 : (typeof fallbackY === 'number' && !isNaN(fallbackY) ? fallbackY + 15 : 120);
             
-            // Check if Y coordinate fits on current page (A4 page height is 297mm, leave margin of 30mm)
-            if (finalY > 250) {
+            const pageHeight = isLandscape ? 210 : 297;
+            
+            // Check if Y coordinate fits on current page (A4 page height limit check)
+            if (finalY > (pageHeight - 45)) {
                 doc.addPage();
                 finalY = 20;
             }
@@ -3696,7 +3952,7 @@
             const rows = offenders.map(t => [
                 t.chave,
                 t.criticidade,
-                t.resumo.substring(0, 45) + (t.resumo.length > 45 ? '...' : ''),
+                t.resumo.substring(0, isLandscape ? 60 : 45) + (t.resumo.length > (isLandscape ? 60 : 45) ? '...' : ''),
                 t.responsavel,
                 t.tempoGastoTexto,
                 t.causaRaiz
@@ -3710,7 +3966,7 @@
                 headStyles: { fillColor: dangerColor, textColor: [255, 255, 255], fontStyle: 'bold', fontSize: 8 },
                 styles: { fontSize: 8, cellPadding: 2 },
                 columnStyles: {
-                    2: { cellWidth: 55 }, // Resumo
+                    2: { cellWidth: isLandscape ? 120 : 55 }, // Resumo
                     4: { cellWidth: 22 }, // Tempo Útil
                     5: { cellWidth: 35 }  // Causa Raiz
                 },
@@ -3724,12 +3980,114 @@
             });
         }
 
-        // PDF Export button click listener
+        // Toggle custom date inputs in report modal
+        function toggleModalCustomDates() {
+            const presetEl = document.getElementById('modal-report-date-preset');
+            const presetVal = presetEl ? presetEl.value : 'all';
+            const datesGroup = document.getElementById('modal-report-custom-dates-group');
+            if (datesGroup) {
+                if (presetVal === 'custom') {
+                    datesGroup.classList.remove('hide');
+                } else {
+                    datesGroup.classList.add('hide');
+                    const startEl = document.getElementById('modal-report-start-date');
+                    const endEl = document.getElementById('modal-report-end-date');
+                    if (startEl) startEl.value = '';
+                    if (endEl) endEl.value = '';
+                }
+            }
+        }
+
+        // Open Report Modal and copy default filters (Opção B)
+        function openReportFilterModal() {
+            const modal = document.getElementById('report-filter-modal');
+            if (!modal) return;
+
+            // Sync from dashboard filters
+            const dashPreset = document.getElementById('filter-date-preset-top');
+            const dashStart = document.getElementById('filter-date-start-top');
+            const dashEnd = document.getElementById('filter-date-end-top');
+            const dashCrit = document.getElementById('filter-criticidade-top');
+            const dashResp = document.getElementById('filter-responsavel-top');
+            const dashCause = document.getElementById('filter-causa-raiz-top');
+
+            document.getElementById('modal-report-date-preset').value = dashPreset ? dashPreset.value : 'all';
+            document.getElementById('modal-report-start-date').value = dashStart ? dashStart.value : '';
+            document.getElementById('modal-report-end-date').value = dashEnd ? dashEnd.value : '';
+            document.getElementById('modal-report-criticidade').value = dashCrit ? dashCrit.value : '';
+            document.getElementById('modal-report-responsavel').value = dashResp ? dashResp.value : '';
+            document.getElementById('modal-report-causa-raiz').value = dashCause ? dashCause.value : '';
+            document.getElementById('modal-report-colaborador').value = '';
+
+            // Resets config options
+            document.getElementById('modal-report-grouping').value = 'auto';
+            document.getElementById('modal-report-orientation').value = 'portrait';
+            document.getElementById('modal-report-breached-only').checked = false;
+            document.getElementById('modal-report-comments').value = '';
+
+            toggleModalCustomDates();
+            modal.classList.add('active');
+        }
+
+        function closeReportFilterModal() {
+            const modal = document.getElementById('report-filter-modal');
+            if (modal) modal.classList.remove('active');
+        }
+
+        // Hook up Modal triggers and handlers
         const btnExportSlaPdf = document.getElementById('btn-export-sla-pdf');
         if (btnExportSlaPdf) {
-            btnExportSlaPdf.addEventListener('click', () => {
+            btnExportSlaPdf.addEventListener('click', openReportFilterModal);
+        }
+
+        const btnCancelReportModal = document.getElementById('btn-cancel-report-modal');
+        if (btnCancelReportModal) {
+            btnCancelReportModal.addEventListener('click', closeReportFilterModal);
+        }
+
+        const btnReportClose = document.getElementById('modal-report-close');
+        if (btnReportClose) {
+            btnReportClose.addEventListener('click', closeReportFilterModal);
+        }
+
+        const reportFilterModalEl = document.getElementById('report-filter-modal');
+        window.addEventListener('click', (e) => {
+            if (e.target === reportFilterModalEl) {
+                closeReportFilterModal();
+            }
+        });
+
+        const modalReportDatePreset = document.getElementById('modal-report-date-preset');
+        if (modalReportDatePreset) {
+            modalReportDatePreset.addEventListener('change', toggleModalCustomDates);
+        }
+
+        // Generate PDF click listener
+        const btnGenerateReportPdf = document.getElementById('btn-generate-report-pdf');
+        if (btnGenerateReportPdf) {
+            btnGenerateReportPdf.addEventListener('click', () => {
+                const presetEl = document.getElementById('modal-report-date-preset');
+                const presetVal = presetEl ? presetEl.value : 'all';
+                const presetText = presetEl ? presetEl.options[presetEl.selectedIndex].text : "Todo o Histórico";
+                
+                const options = {
+                    datePreset: presetVal,
+                    datePresetText: presetText,
+                    startDate: document.getElementById('modal-report-start-date').value,
+                    endDate: document.getElementById('modal-report-end-date').value,
+                    criticidade: document.getElementById('modal-report-criticidade').value,
+                    responsavel: document.getElementById('modal-report-responsavel').value,
+                    colaborador: document.getElementById('modal-report-colaborador').value,
+                    causaRaiz: document.getElementById('modal-report-causa-raiz').value,
+                    grouping: document.getElementById('modal-report-grouping').value,
+                    orientation: document.getElementById('modal-report-orientation').value,
+                    breachedOnly: document.getElementById('modal-report-breached-only').checked,
+                    comments: document.getElementById('modal-report-comments').value.trim()
+                };
+                
                 try {
-                    generateSLAReportPDF();
+                    generateSLAReportPDF(options);
+                    closeReportFilterModal();
                 } catch (err) {
                     console.error("Erro na geração do PDF:", err);
                     showToast("Erro ao gerar PDF: " + err.message, "❌");
