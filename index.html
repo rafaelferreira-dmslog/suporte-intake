@@ -1467,7 +1467,7 @@
         // =====================================================================
         const DATA_CSV_URL = './data.csv';
         const CHANGELOG_CSV_URL = './changelog.csv';
-        const AUTO_REFRESH_INTERVAL_MS = 5 * 60 * 1000; // Atualiza a cada 5 minutos
+        const AUTO_REFRESH_INTERVAL_MS = 30 * 60 * 1000; // Atualiza a cada 30 minutos
         let autoRefreshTimer = null;
         // =====================================================================
 
@@ -1709,15 +1709,17 @@
         }
 
         // SLA Utility: Calculate active SLA minutes by tracing ticket status transitions
-        function calculateTicketActiveSlaMinutes(ticketKey, criadoDate, resolvidoDate, currentStatus) {
+        function calculateTicketActiveSlaMinutes(ticketKey, criadoDate, resolvidoDate, currentStatus, changelogsIndexed) {
             if (!criadoDate) return 0;
             const endDate = resolvidoDate || new Date();
             
-            // Filter and extract status transitions for this card from changelogs
-            const ticketHistory = rawChangelogs.filter(item => {
-                const keyVal = getRowValue(item, ['Chave', 'key', 'issuekey']);
-                return String(keyVal).trim().toLowerCase() === String(ticketKey).trim().toLowerCase();
-            });
+            // Fast lookup using the pre-indexed map to avoid O(N*M) browser freeze
+            const ticketHistory = changelogsIndexed 
+                ? (changelogsIndexed[String(ticketKey).trim().toLowerCase()] || [])
+                : rawChangelogs.filter(item => {
+                    const keyVal = getRowValue(item, ['Chave', 'key', 'issuekey']);
+                    return String(keyVal).trim().toLowerCase() === String(ticketKey).trim().toLowerCase();
+                  });
 
             const statusChanges = ticketHistory
                 .filter(item => {
@@ -2020,6 +2022,20 @@
 
         // Parse CSV fields, calculate SLA status, and populate dashboard
         function parseAndLoadTickets(rows) {
+            // Build index map for rawChangelogs to optimize SLA calculation lookup (from O(N*M) to O(N+M))
+            const changelogsIndexed = {};
+            for (let i = 0; i < rawChangelogs.length; i++) {
+                const item = rawChangelogs[i];
+                const keyVal = getRowValue(item, ['Chave', 'key', 'issuekey']);
+                if (keyVal) {
+                    const keyStr = String(keyVal).trim().toLowerCase();
+                    if (!changelogsIndexed[keyStr]) {
+                        changelogsIndexed[keyStr] = [];
+                    }
+                    changelogsIndexed[keyStr].push(item);
+                }
+            }
+
             // Injeta os cartões de teste de SLA localmente para validação
             rows.push(
                 {
@@ -2087,7 +2103,7 @@
 
                 // Calculate SLA business minutes using history transitions
                 let isResolved = !!resolvido;
-                let businessMins = calculateTicketActiveSlaMinutes(chave, criado, resolvido, status);
+                let businessMins = calculateTicketActiveSlaMinutes(chave, criado, resolvido, status, changelogsIndexed);
                 
                 let isSlaMet = businessMins <= limitMins;
                 let statusSla = isSlaMet ? "Dentro do SLA" : "SLA Estourado";
@@ -3294,7 +3310,7 @@
                 if (chkAutoRefresh.checked) {
                     startAutoRefresh();
                     localStorage.setItem('autoRefreshEnabled', 'true');
-                    showToast("Atualização automática ativada (5m)", "🔄");
+                    showToast("Atualização automática ativada (30m)", "🔄");
                 } else {
                     stopAutoRefresh();
                     localStorage.setItem('autoRefreshEnabled', 'false');
