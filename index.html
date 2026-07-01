@@ -1736,8 +1736,15 @@
                 })
                 .sort((a, b) => a.date - b.date); // Oldest first
 
-            // If no status transitions, the card stayed in currentStatus the whole time
+            // If no status transitions, the card stayed in currentStatus the whole time.
+            // If the ticket is currently in a final completed status, it means it was active until completed.
             if (statusChanges.length === 0) {
+                const statusClean = String(currentStatus).toLowerCase().trim()
+                    .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                const finalStatuses = ['concluido', 'done', 'finalizado definitivamente', 'resolvido', 'fechado', 'backlog'];
+                if (finalStatuses.includes(statusClean)) {
+                    return calculateBusinessMinutes(criadoDate, endDate);
+                }
                 return calculateIntervalActiveMins(currentStatus, criadoDate, endDate, 0);
             }
 
@@ -1798,7 +1805,8 @@
                 'done',
                 'concluido',
                 'resolvido',
-                'fechado'
+                'fechado',
+                'backlog'
             ];
 
             if (fullyPausedStatuses.includes(statusClean)) {
@@ -1881,9 +1889,37 @@
                 btn.disabled = true;
             }
 
-            // Cache-bust para sempre pegar a versão mais recente
-            const url = `${DATA_CSV_URL}?t=${Date.now()}`;
+            // 1. Primeiro carrega o histórico (changelog.csv)
+            const changelogUrl = `${CHANGELOG_CSV_URL}?t=${Date.now()}`;
+            Papa.parse(changelogUrl, {
+                download: true,
+                header: true,
+                skipEmptyLines: true,
+                complete: function(changelogResults) {
+                    rawChangelogs = changelogResults.data || [];
+                    // Injeta histórico de teste local
+                    rawChangelogs.push(
+                        { "Chave": "SI-9999", "Data": "2026-06-29T10:00:00.000-0300", "Autor": "Sistema", "Campo": "status", "De": "Submissão", "Para": "Aguardando Informação" },
+                        { "Chave": "SI-9999", "Data": "2026-06-29T14:00:00.000-0300", "Autor": "Sistema", "Campo": "status", "De": "Aguardando Informação", "Para": "Em Atendimento" },
+                        { "Chave": "SI-9999", "Data": "2026-06-29T15:00:00.000-0300", "Autor": "Helena Almeida", "Campo": "status", "De": "Em Atendimento", "Para": "Done" },
+                        { "Chave": "SI-8888", "Data": "2026-06-29T10:00:00.000-0300", "Autor": "Sistema", "Campo": "status", "De": "Submissão", "Para": "Aguardando Correção" },
+                        { "Chave": "SI-8888", "Data": "2026-06-29T14:00:00.000-0300", "Autor": "Helena Almeida", "Campo": "status", "De": "Aguardando Correção", "Para": "Done" }
+                    );
+                    console.log(`Carregados ${rawChangelogs.length} registros de histórico.`);
 
+                    // 2. Depois carrega os chamados principais (data.csv)
+                    fetchMainTickets(showSuccessToast, btn);
+                },
+                error: function(err) {
+                    console.warn('changelog.csv não encontrado ou falhou ao carregar.');
+                    // Se falhar o histórico, carrega mesmo assim os chamados principais
+                    fetchMainTickets(showSuccessToast, btn);
+                }
+            });
+        }
+
+        function fetchMainTickets(showSuccessToast, btn) {
+            const url = `${DATA_CSV_URL}?t=${Date.now()}`;
             Papa.parse(url, {
                 download: true,
                 header: true,
@@ -1902,7 +1938,6 @@
                         parseAndLoadTickets(data);
                         if (showSuccessToast) showToast("✅ Dados atualizados!", "✅");
                         updateLastRefreshTime();
-                        fetchChangelogs();
                     } catch (e) {
                         console.error(e);
                         showToast("Erro ao processar dados: " + e.message, "❌");
@@ -1914,32 +1949,7 @@
                         btn.disabled = false;
                     }
                     console.warn('data.csv não encontrado ainda — use o botão de upload manual por enquanto.');
-                    // Não mostra toast de erro na carga inicial (ainda não tem data.csv)
                     if (showSuccessToast) showToast("❌ Não foi possível carregar os dados automáticos.", "❌");
-                }
-            });
-        }
-
-        async function fetchChangelogs() {
-            const url = `${CHANGELOG_CSV_URL}?t=${Date.now()}`;
-            Papa.parse(url, {
-                download: true,
-                header: true,
-                skipEmptyLines: true,
-                complete: function(results) {
-                    rawChangelogs = results.data || [];
-                    // Injeta histórico de teste local
-                    rawChangelogs.push(
-                        { "Chave": "SI-9999", "Data": "2026-06-29T10:00:00.000-0300", "Autor": "Sistema", "Campo": "status", "De": "Submissão", "Para": "Aguardando Informação" },
-                        { "Chave": "SI-9999", "Data": "2026-06-29T14:00:00.000-0300", "Autor": "Sistema", "Campo": "status", "De": "Aguardando Informação", "Para": "Em Atendimento" },
-                        { "Chave": "SI-9999", "Data": "2026-06-29T15:00:00.000-0300", "Autor": "Helena Almeida", "Campo": "status", "De": "Em Atendimento", "Para": "Done" },
-                        { "Chave": "SI-8888", "Data": "2026-06-29T10:00:00.000-0300", "Autor": "Sistema", "Campo": "status", "De": "Submissão", "Para": "Aguardando Correção" },
-                        { "Chave": "SI-8888", "Data": "2026-06-29T14:00:00.000-0300", "Autor": "Helena Almeida", "Campo": "status", "De": "Aguardando Correção", "Para": "Done" }
-                    );
-                    console.log(`Carregados ${rawChangelogs.length} registros de histórico.`);
-                },
-                error: function(err) {
-                    console.warn('changelog.csv não encontrado ou falhou ao carregar.');
                 }
             });
         }
