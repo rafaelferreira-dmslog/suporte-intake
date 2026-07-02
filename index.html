@@ -2160,6 +2160,8 @@
                 
                 let criado = parseJiraDate(criadoVal);
                 let resolvido = parseJiraDate(resolvidoVal);
+                let atualizadoVal = getRowValue(row, ["Atualizado(a)", "Updated", "Data de Atualização", "Atualizado"]);
+                let atualizado = parseJiraDate(atualizadoVal);
                 
                 // Detect Criticidade code (P0, P1, P2, P3) supporting English priorities
                 let criticidade = "P3";
@@ -2183,6 +2185,46 @@
                 // Safe lookup of key fields needed before SLA calculation
                 let chave = getRowValue(row, ["Chave", "Key", "Issue Key"]) || `CH-${1000 + index}`;
                 let status = getRowValue(row, ["Status", "State"]) || "Aberto";
+
+                // Override status and resolved date from history changelogs if it has more recent status transitions (bypasses AppSheet delay)
+                const keyStr = String(chave).trim().toLowerCase();
+                const ticketHistory = changelogsIndexed ? (changelogsIndexed[keyStr] || []) : [];
+                const statusChanges = ticketHistory
+                    .filter(item => {
+                        const fieldVal = getRowValue(item, ['Campo', 'field']);
+                        return String(fieldVal).trim().toLowerCase() === 'status';
+                    })
+                    .map(item => {
+                        const dateVal = getRowValue(item, ['Data', 'date', 'created']);
+                        const fromVal = getRowValue(item, ['De', 'from', 'fromString']);
+                        const toVal = getRowValue(item, ['Para', 'to', 'toString']);
+                        return {
+                            date: parseJiraDate(dateVal),
+                            from: String(fromVal || '').trim(),
+                            to: String(toVal || '').trim()
+                        };
+                    })
+                    .sort((a, b) => a.date - b.date); // Oldest first
+
+                if (statusChanges.length > 0) {
+                    const latestChange = statusChanges[statusChanges.length - 1];
+                    if (latestChange && latestChange.date && (!atualizado || latestChange.date > atualizado)) {
+                        let targetStatus = latestChange.to;
+                        if (String(targetStatus).toLowerCase().trim() === 'done') {
+                            targetStatus = 'Concluído';
+                        }
+                        status = targetStatus;
+                        
+                        const statusClean = String(status).toLowerCase().trim()
+                            .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                        const finalStatuses = ['concluido', 'done', 'finalizado definitivamente', 'resolvido', 'fechado', 'backlog'];
+                        if (finalStatuses.includes(statusClean)) {
+                            resolvido = latestChange.date;
+                        } else {
+                            resolvido = null;
+                        }
+                    }
+                }
 
                 // Calculate SLA business minutes using history transitions
                 let isResolved = !!resolvido;
