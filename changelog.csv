@@ -55748,6 +55748,7 @@ SI-7343,2026-07-01T19:00:59.017-0300,Sistema,Justificativa Causa Raiz final,,"A 
 SI-7353,2026-07-01T17:56:18.281-0300,Rafael Ferreira,resolution,,Done
 SI-7353,2026-07-01T17:56:18.281-0300,Rafael Ferreira,status,Submissão,Done
 SI-7353,2026-07-01T17:56:18.746-0300,Rafael Ferreira,Rank,,Ranked higher
+SI-7353,2026-07-02T11:53:18.665-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7352,2026-07-01T17:48:21.591-0300,Rafael Ferreira,assignee,,Ricardo Barbosa Machado
 SI-7352,2026-07-01T17:51:22.678-0300,Rafael Ferreira,resolution,,Done
 SI-7352,2026-07-01T17:51:22.678-0300,Rafael Ferreira,status,Submissão,Done
@@ -55764,6 +55765,10 @@ SI-7357,2026-07-02T08:35:09.209-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7357,2026-07-02T08:35:10.882-0300,Rafael Ferreira,resolution,,Done
 SI-7357,2026-07-02T08:35:10.882-0300,Rafael Ferreira,status,Submissão,Done
 SI-7357,2026-07-02T08:35:11.377-0300,Rafael Ferreira,Rank,,Ranked higher
+SI-7358,2026-07-02T11:47:24.084-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7358,2026-07-02T11:47:28.146-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7358,2026-07-02T11:47:33.015-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7358,2026-07-02T11:47:33.015-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
 SI-7360,2026-07-02T08:48:38.074-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7360,2026-07-02T08:48:38.950-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7360,2026-07-02T08:48:41.626-0300,Rafael Ferreira,resolution,,Done
@@ -55791,6 +55796,11 @@ SI-7365,2026-07-02T11:26:08.136-0300,Ricardo Barbosa Machado,status,Em Atendimen
 SI-7364,2026-07-02T11:11:13.577-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7364,2026-07-02T11:11:16.606-0300,Bruno Silva,resolution,,Done
 SI-7364,2026-07-02T11:11:16.606-0300,Bruno Silva,status,Submissão,Done
+SI-7369,2026-07-02T11:48:53.798-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7369,2026-07-02T11:49:00.139-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7369,2026-07-02T11:49:04.439-0300,Ricardo Barbosa Machado,status,Em Atendimento,Encaminhado DS
+SI-7369,2026-07-02T11:49:10.750-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7369,2026-07-02T11:49:10.750-0300,Ricardo Barbosa Machado,status,Encaminhado DS,Done
 SI-7368,2026-07-02T11:26:21.220-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7368,2026-07-02T11:26:22.823-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-7368,2026-07-02T11:26:27.121-0300,Rafael Ferreira,resolution,,Done
@@ -55800,3 +55810,17 @@ SI-7367,2026-07-02T10:59:22.420-0300,Ricardo Barbosa Machado,status,Submissão,E
 SI-7367,2026-07-02T10:59:24.817-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7367,2026-07-02T10:59:24.817-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
 SI-7367,2026-07-02T10:59:30.021-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7372,2026-07-02T12:41:30.731-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7372,2026-07-02T12:41:32.607-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7372,2026-07-02T12:41:34.741-0300,Ricardo Barbosa Machado,status,Em Atendimento,Encaminhado DS
+SI-7372,2026-07-02T12:41:37.508-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7372,2026-07-02T12:41:37.508-0300,Ricardo Barbosa Machado,status,Encaminhado DS,Done
+SI-7371,2026-07-02T12:10:01.003-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7371,2026-07-02T12:10:03.323-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7371,2026-07-02T12:10:05.831-0300,Ricardo Barbosa Machado,status,Em Atendimento,Aguardando correção
+SI-7371,2026-07-02T12:10:07.924-0300,Ricardo Barbosa Machado,status,Aguardando correção,Encaminhado DS
+SI-7371,2026-07-02T12:10:10.077-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7371,2026-07-02T12:10:10.077-0300,Ricardo Barbosa Machado,status,Encaminhado DS,Done
+SI-7370,2026-07-02T12:10:31.340-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7370,2026-07-02T12:10:34.318-0300,Bruno Silva,resolution,,Done
+SI-7370,2026-07-02T12:10:34.318-0300,Bruno Silva,status,Submissão,Done
