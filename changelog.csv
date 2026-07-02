@@ -56007,7 +56007,20 @@ SI-7374,2026-07-02T14:21:00.629-0300,Bruno Silva,status,Submissão,Done
 SI-7373,2026-07-02T13:30:29.319-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7373,2026-07-02T13:30:32.379-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7373,2026-07-02T13:30:32.379-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7379,2026-07-02T15:12:29.255-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7379,2026-07-02T15:12:31.784-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7379,2026-07-02T15:12:33.679-0300,Ricardo Barbosa Machado,status,Em Atendimento,Finalizado Definitivamente
+SI-7379,2026-07-02T15:12:35.996-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7379,2026-07-02T15:12:35.996-0300,Ricardo Barbosa Machado,status,Finalizado Definitivamente,Done
+SI-7378,2026-07-02T15:25:47.260-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7378,2026-07-02T15:25:55.452-0300,Rafael Ferreira,resolution,,Done
+SI-7378,2026-07-02T15:25:55.452-0300,Rafael Ferreira,status,Submissão,Done
+SI-7378,2026-07-02T15:25:55.935-0300,Rafael Ferreira,Rank,,Ranked lower
 SI-7377,2026-07-02T14:39:32.374-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7377,2026-07-02T15:25:57.592-0300,Rafael Ferreira,resolution,,Done
+SI-7377,2026-07-02T15:25:57.592-0300,Rafael Ferreira,status,Submissão,Done
+SI-7377,2026-07-02T15:25:58.075-0300,Rafael Ferreira,Rank,,Ranked lower
 SI-7376,2026-07-02T14:20:55.744-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7376,2026-07-02T14:20:58.336-0300,Bruno Silva,resolution,,Done
 SI-7376,2026-07-02T14:20:58.336-0300,Bruno Silva,status,Submissão,Done
+SI-7380,2026-07-02T14:50:26.946-0300,Sistema,Link,,This work item is blocked by GA-1116
