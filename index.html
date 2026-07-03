@@ -2361,8 +2361,11 @@
                 const selectTop = document.getElementById(idTop);
                 const selectBottom = document.getElementById(idBottom);
                 
-                const html = `<option value="">${defaultText}</option>` + 
-                    values.map(val => `<option value="${escapeHtml(val)}">${escapeHtml(val)}</option>`).join('');
+                let html = `<option value="">${defaultText}</option>`;
+                if (idTop === 'filter-status-top') {
+                    html += `<option value="!= Concluído">!= Concluído</option>`;
+                }
+                html += values.map(val => `<option value="${escapeHtml(val)}">${escapeHtml(val)}</option>`).join('');
                 
                 if (selectTop) selectTop.innerHTML = html;
                 if (selectBottom) selectBottom.innerHTML = html;
@@ -2551,7 +2554,17 @@
                 const matchesResp = filterResp === "" || t.responsavel === filterResp;
 
                 // Status filter
-                const matchesStatus = filterStatus === "" || t.status === filterStatus;
+                let matchesStatus = true;
+                if (filterStatus !== "") {
+                    if (filterStatus === "!= Concluído") {
+                        const statusClean = String(t.status).toLowerCase().trim()
+                            .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                        const finalStatuses = ['concluido', 'done', 'finalizado definitivamente', 'resolvido', 'fechado', 'backlog'];
+                        matchesStatus = !finalStatuses.includes(statusClean);
+                    } else {
+                        matchesStatus = t.status === filterStatus;
+                    }
+                }
 
                 // SLA Status filter
                 const matchesSlaStatus = filterSlaStatus === "" || t.statusSla === filterSlaStatus;
