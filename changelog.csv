@@ -56320,6 +56320,9 @@ SI-7387,2026-07-02T19:05:35.258-0300,Sistema,Resolução do chamado,,Foi necess�
 SI-7387,2026-07-02T19:05:35.258-0300,Sistema,Causa raiz potencial,,Indisponibilidade api do siscomex no momento da aprovação(Portal único)
 SI-7387,2026-07-02T19:05:35.258-0300,Sistema,Causa raiz final,,Indisponibilidade api do siscomex no momento da aprovação(Portal único)
 SI-7387,2026-07-02T19:05:35.258-0300,Sistema,Justificativa Causa Raiz final,,Indisponibilidade api do siscomex no momento da aprovação(Portal único)
+SI-7400,2026-07-03T08:49:12.910-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7400,2026-07-03T08:49:17.298-0300,Bruno Silva,resolution,,Done
+SI-7400,2026-07-03T08:49:17.298-0300,Bruno Silva,status,Submissão,Done
 SI-7399,2026-07-03T08:42:06.994-0300,Rafael Ferreira,assignee,,Bruno Silva
 SI-7399,2026-07-03T08:43:38.818-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7399,2026-07-03T08:43:41.073-0300,Rafael Ferreira,resolution,,Done
