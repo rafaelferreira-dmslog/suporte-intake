@@ -56353,13 +56353,74 @@ SI-7393,2026-07-03T08:42:12.566-0300,Rafael Ferreira,status,Submissão,Done
 SI-7393,2026-07-03T08:42:13.052-0300,Rafael Ferreira,Rank,,Ranked higher
 SI-7404,2026-07-03T08:37:21.293-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7404,2026-07-03T08:37:41.267-0300,Rafael Ferreira,assignee,Rafael Ferreira,
+SI-7404,2026-07-03T11:11:02.263-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7404,2026-07-03T11:11:05.360-0300,Bruno Silva,resolution,,Done
+SI-7404,2026-07-03T11:11:05.360-0300,Bruno Silva,status,Submissão,Done
 SI-7403,2026-07-03T08:37:49.313-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7403,2026-07-03T08:37:51.052-0300,Rafael Ferreira,resolution,,Done
 SI-7403,2026-07-03T08:37:51.052-0300,Rafael Ferreira,status,Submissão,Done
 SI-7403,2026-07-03T08:37:51.712-0300,Rafael Ferreira,Rank,,Ranked higher
+SI-7401,2026-07-03T10:51:58.291-0300,Bruno Silva,assignee,,Eduardo Felipe de Lima Rebello
+SI-7401,2026-07-03T10:52:01.389-0300,Bruno Silva,resolution,,Done
+SI-7401,2026-07-03T10:52:01.389-0300,Bruno Silva,status,Submissão,Done
+SI-7416,2026-07-03T10:52:08.796-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7416,2026-07-03T10:52:15.567-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7416,2026-07-03T10:52:17.712-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7416,2026-07-03T10:52:17.712-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
 SI-7415,2026-07-03T10:30:17.823-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7415,2026-07-03T10:30:20.673-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7415,2026-07-03T10:30:24.326-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7415,2026-07-03T10:30:24.326-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
+SI-7415,2026-07-03T10:47:28.602-0300,Ricardo Barbosa Machado,description,,"*📘 CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+*1️⃣ Identificação do Chamado*
+
+* *Módulo:* CCT / Módulo Operations (Aba Documents)
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção
+* *Título Sugerido:* ""Comportamento inesperado da aplicação: divergência visual no cadeado impede rejeição de documento no CCT""
+
+*2️⃣ Entendimento do Problema*
+
+* *Passo a Passo:* 1. Acessar a tela de documentos do processo/booking. 2. Verificar o status do cadeado do documento de manifestação de carga (que visualmente consta como aberto). 3. Tentar acionar o botão para rejeitar/cancelar o manifesto. 4. A ação é bloqueada pelo sistema.
+* *Comportamento Esperado vs. Atual:* * _Esperado:_ O status visual do cadeado na interface deve refletir com exatidão o status real no banco de dados. Se estiver aberto, a rejeição deve ser permitida; se estiver fechado, deve constar visualmente como fechado.
+** _Atual:_ O cadeado apresenta-se visualmente aberto (Frontend), mas no banco de dados (Backend) encontra-se fechado. Isso mantém o botão de rejeição desabilitado, induzindo o usuário a acreditar que possui restrição de permissão.
+
+*3️⃣ Análise Técnica Inicial*
+
+* *Histórico/Logs:* Verificado pelo N1 que existe uma divergência direta de status da informação: o frontend está renderizando o componente do cadeado como ""aberto"", enquanto a consulta ao banco de dados confirma que o status real da entidade é ""fechado"".
+* *Parametrização/Perfil:* A validação confirmou que não se trata de divergência de cadastro ou falta de permissão do usuário, mas sim de dados inconsistentes na renderização da interface.
+* *Reprodutibilidade:* Constante (ocorrência sistemática gerando múltiplos chamados recorrentes na operação).
+
+*4️⃣ Avaliação de Impacto*
+
+* *Abrangência:* Múltiplos usuários do time operacional responsáveis pelo envio e controle do CCT.
+* *Criticidade:* Media
+* *Justificativa da criticidade:* Impede o fluxo operacional de manifestação e liberação da carga, apresentando risco de atraso na entrega urgente à companhia aérea e potenciais penalidades por quebra de deadline.
+* *Workaround:* Sim. Identificar o ID exato da Order/Assembly no banco de dados para forçar a abertura manual do respectivo cadeado ({{order_orderlock}} ou tabelas vinculadas), permitindo a continuidade do fluxo emergencial pelo colaborador.
+
+*5️⃣ Tentativas de Resolução*
+
+* *Ações realizadas pelo Service Desk:* Diagnóstico técnico da divergência entre interface (UI) e banco de dados. Mapeamento da recorrência do sintoma na operação.
+* *Hipóteses já descartadas:* Falha operacional de preenchimento, limitação de perfil/permissões de acesso do usuário.
+
+*6️⃣ Causa Raiz Potencial (hipótese N1)*
+
+* Falha de sincronização ou comportamento inesperado da aplicação na camada de apresentação (frontend), que não está consumindo ou atualizando corretamente o estado real do bloqueio (cadeado) registrado no banco de dados.
+
+*7️⃣ Justificativa Técnica para Escalonamento*
+
+* *Por que o N1 não consegue resolver:* Trata-se de uma inconsistência em nível de código (interface vs. backend) que requer atuação direta na aplicação para corrigir a renderização do componente para todos os usuários.
+* *O que se espera do próximo time:* Análise e correção do código que gerencia o status visual do cadeado na aba de documentos, garantindo o sincronismo com o banco de dados. Adicionalmente, suporte imediato para destravar o processo específico relatado, garantindo a entrega da carga na companhia aérea.
+* *Nível sugerido:* Sustentação (N2/N3).
+
+*📝 DESCRIÇÃO OTIMIZADA (PARA O CHAMADO)*
+
+O usuário relatou impossibilidade de realizar o cancelamento/rejeição do cargo manifest no sistema, operação necessária em caráter de urgência para a entrega da carga à companhia aérea. Em análise primária, o N1 identificou um comportamento inesperado da aplicação: existe uma divergência de sincronização entre a interface e o banco de dados. O cadeado do documento aparece visualmente como ""aberto"" para o usuário, mas no backend/banco de dados o status real é ""fechado"".
+
+Esse cenário mantém o botão de rejeição travado e induz o usuário ao erro de achar que não possui permissão, gerando chamados recorrentes. A situação é de criticidade alta devido à urgência no prazo com a companhia aérea. Solicito apoio da Sustentação para correção do componente visual do cadeado e intervenção no banco para destravar o processo urgente em andamento (aguardando o usuário informar a numeração da Order/Booking)."
+SI-7415,2026-07-03T10:47:34.599-0300,Ricardo Barbosa Machado,Encaminhado para:,,Sustentação
+SI-7415,2026-07-03T10:47:37.928-0300,Sistema,Link,,This work item is blocked by SUS-257
+SI-7415,2026-07-03T10:47:41.419-0300,Ricardo Barbosa Machado,Encaminhado para:,Sustentação,
 SI-7413,2026-07-03T10:12:22.899-0300,Sistema,Link,,This work item is blocked by GA-1126
 SI-7410,2026-07-03T09:52:21.492-0300,Sistema,Link,,This work item is blocked by GA-1125
