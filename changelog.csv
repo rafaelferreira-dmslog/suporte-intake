@@ -56320,6 +56320,10 @@ SI-7387,2026-07-02T19:05:35.258-0300,Sistema,Resolução do chamado,,Foi necess�
 SI-7387,2026-07-02T19:05:35.258-0300,Sistema,Causa raiz potencial,,Indisponibilidade api do siscomex no momento da aprovação(Portal único)
 SI-7387,2026-07-02T19:05:35.258-0300,Sistema,Causa raiz final,,Indisponibilidade api do siscomex no momento da aprovação(Portal único)
 SI-7387,2026-07-02T19:05:35.258-0300,Sistema,Justificativa Causa Raiz final,,Indisponibilidade api do siscomex no momento da aprovação(Portal único)
+SI-7392,2026-07-03T13:18:48.074-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7392,2026-07-03T13:18:54.108-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7392,2026-07-03T13:26:59.844-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7392,2026-07-03T13:26:59.844-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
 SI-7400,2026-07-03T08:49:12.910-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7400,2026-07-03T08:49:17.298-0300,Bruno Silva,resolution,,Done
 SI-7400,2026-07-03T08:49:17.298-0300,Bruno Silva,status,Submissão,Done
@@ -56364,6 +56368,10 @@ SI-7401,2026-07-03T10:51:58.291-0300,Bruno Silva,assignee,,Eduardo Felipe de Lim
 SI-7401,2026-07-03T10:52:01.389-0300,Bruno Silva,resolution,,Done
 SI-7401,2026-07-03T10:52:01.389-0300,Bruno Silva,status,Submissão,Done
 SI-7401,2026-07-03T12:30:28.450-0300,Ricardo Barbosa Machado,assignee,Eduardo Felipe de Lima Rebello,Ricardo Barbosa Machado
+SI-7418,2026-07-03T12:53:47.341-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7418,2026-07-03T12:54:03.079-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-7418,2026-07-03T12:54:06.025-0300,Rafael Ferreira,resolution,,Done
+SI-7418,2026-07-03T12:54:06.025-0300,Rafael Ferreira,status,Submissão,Done
 SI-7416,2026-07-03T10:52:08.796-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7416,2026-07-03T10:52:15.567-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7416,2026-07-03T10:52:17.712-0300,Ricardo Barbosa Machado,resolution,,Done
@@ -56439,6 +56447,10 @@ SI-7424,2026-07-03T12:34:31.342-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7424,2026-07-03T12:34:35.134-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7424,2026-07-03T12:34:37.291-0300,Rafael Ferreira,resolution,,Done
 SI-7424,2026-07-03T12:34:37.291-0300,Rafael Ferreira,status,Submissão,Done
+SI-7423,2026-07-03T12:57:50.215-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7423,2026-07-03T12:57:55.588-0300,Rafael Ferreira,resolution,,Done
+SI-7423,2026-07-03T12:57:55.588-0300,Rafael Ferreira,status,Submissão,Done
+SI-7423,2026-07-03T12:57:56.023-0300,Rafael Ferreira,Rank,,Ranked lower
 SI-7422,2026-07-03T12:41:24.603-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7422,2026-07-03T12:41:27.089-0300,Rafael Ferreira,resolution,,Done
 SI-7422,2026-07-03T12:41:27.089-0300,Rafael Ferreira,status,Submissão,Done
@@ -56446,9 +56458,31 @@ SI-7422,2026-07-03T12:41:27.538-0300,Rafael Ferreira,Rank,,Ranked lower
 SI-7420,2026-07-03T12:09:05.129-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7420,2026-07-03T12:09:09.202-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7420,2026-07-03T12:09:09.202-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7419,2026-07-03T13:09:03.288-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7419,2026-07-03T13:09:09.559-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-7419,2026-07-03T13:09:11.380-0300,Rafael Ferreira,resolution,,Done
+SI-7419,2026-07-03T13:09:11.380-0300,Rafael Ferreira,status,Submissão,Done
+SI-7433,2026-07-03T13:05:41.631-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7433,2026-07-03T13:05:41.631-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7433,2026-07-03T13:05:42.705-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7431,2026-07-03T13:15:58.697-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7431,2026-07-03T13:16:00.946-0300,Rafael Ferreira,resolution,,Done
+SI-7431,2026-07-03T13:16:00.946-0300,Rafael Ferreira,status,Submissão,Done
+SI-7431,2026-07-03T13:16:01.427-0300,Rafael Ferreira,Rank,,Ranked lower
+SI-7430,2026-07-03T12:57:41.641-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7430,2026-07-03T12:58:03.081-0300,Rafael Ferreira,resolution,,Done
+SI-7430,2026-07-03T12:58:03.081-0300,Rafael Ferreira,status,Submissão,Done
+SI-7430,2026-07-03T12:58:03.473-0300,Rafael Ferreira,Rank,,Ranked higher
+SI-7429,2026-07-03T12:56:31.855-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7429,2026-07-03T12:56:34.907-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7429,2026-07-03T12:56:34.907-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7428,2026-07-03T12:35:23.793-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7428,2026-07-03T12:35:26.732-0300,Rafael Ferreira,resolution,,Done
 SI-7428,2026-07-03T12:35:26.732-0300,Rafael Ferreira,status,Submissão,Done
+SI-7427,2026-07-03T12:57:41.253-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7427,2026-07-03T12:57:58.481-0300,Rafael Ferreira,resolution,,Done
+SI-7427,2026-07-03T12:57:58.481-0300,Rafael Ferreira,status,Submissão,Done
+SI-7427,2026-07-03T12:57:58.939-0300,Rafael Ferreira,Rank,,Ranked lower
 SI-7426,2026-07-03T12:35:01.159-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7426,2026-07-03T12:35:03.438-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7426,2026-07-03T12:35:05.988-0300,Rafael Ferreira,resolution,,Done
