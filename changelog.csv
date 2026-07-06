@@ -56564,6 +56564,7 @@ SI-7418,2026-07-03T18:56:29.667-0300,Sistema,Justificativa Causa Raiz final,,Fun
 SI-7417,2026-07-03T17:36:01.109-0300,Rafael Ferreira,resolution,,Done
 SI-7417,2026-07-03T17:36:01.109-0300,Rafael Ferreira,status,Submissão,Done
 SI-7417,2026-07-03T17:36:01.571-0300,Rafael Ferreira,Rank,,Ranked lower
+SI-7417,2026-07-06T08:05:26.102-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7416,2026-07-03T10:52:08.796-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7416,2026-07-03T10:52:15.567-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7416,2026-07-03T10:52:17.712-0300,Ricardo Barbosa Machado,resolution,,Done
@@ -56935,6 +56936,7 @@ SI-7436,2026-07-03T17:36:09.523-0300,Rafael Ferreira,Rank,,Ranked lower
 SI-7435,2026-07-03T17:36:07.567-0300,Rafael Ferreira,resolution,,Done
 SI-7435,2026-07-03T17:36:07.567-0300,Rafael Ferreira,status,Submissão,Done
 SI-7435,2026-07-03T17:36:08.026-0300,Rafael Ferreira,Rank,,Ranked lower
+SI-7435,2026-07-06T08:10:53.697-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7446,2026-07-03T17:36:21.548-0300,Rafael Ferreira,resolution,,Done
 SI-7446,2026-07-03T17:36:21.548-0300,Rafael Ferreira,status,Submissão,Done
 SI-7446,2026-07-03T17:36:21.960-0300,Rafael Ferreira,Rank,,Ranked higher
@@ -56942,6 +56944,7 @@ SI-7445,2026-07-03T15:03:19.924-0300,Sistema,Link,,This work item is blocked by 
 SI-7445,2026-07-03T17:36:17.495-0300,Rafael Ferreira,resolution,,Done
 SI-7445,2026-07-03T17:36:17.495-0300,Rafael Ferreira,status,Submissão,Done
 SI-7445,2026-07-03T17:36:17.867-0300,Rafael Ferreira,Rank,,Ranked higher
+SI-7445,2026-07-06T08:03:49.666-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7444,2026-07-03T17:36:16.296-0300,Rafael Ferreira,resolution,,Done
 SI-7444,2026-07-03T17:36:16.296-0300,Rafael Ferreira,status,Submissão,Done
 SI-7444,2026-07-03T17:36:16.895-0300,Rafael Ferreira,Rank,,Ranked higher
@@ -56954,3 +56957,12 @@ SI-7448,2026-07-03T17:36:25.083-0300,Rafael Ferreira,Rank,,Ranked higher
 SI-7447,2026-07-03T17:36:23.166-0300,Rafael Ferreira,resolution,,Done
 SI-7447,2026-07-03T17:36:23.166-0300,Rafael Ferreira,status,Submissão,Done
 SI-7447,2026-07-03T17:36:23.572-0300,Rafael Ferreira,Rank,,Ranked higher
+SI-7451,2026-07-06T08:23:03.012-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7451,2026-07-06T08:23:04.886-0300,Rafael Ferreira,resolution,,Done
+SI-7451,2026-07-06T08:23:04.886-0300,Rafael Ferreira,status,Submissão,Done
+SI-7451,2026-07-06T08:23:05.335-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7453,2026-07-06T07:59:44.345-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7453,2026-07-06T07:59:46.455-0300,Rafael Ferreira,resolution,,Done
+SI-7453,2026-07-06T07:59:46.455-0300,Rafael Ferreira,status,Submissão,Done
+SI-7453,2026-07-06T07:59:46.919-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7454,2026-07-06T07:49:20.895-0300,Sistema,Link,,This work item is blocked by GA-1133
