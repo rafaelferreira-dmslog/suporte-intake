@@ -56488,6 +56488,7 @@ SI-7406,2026-07-03T18:56:24.509-0300,Sistema,Justificativa Causa Raiz final,,Agu
 SI-7405,2026-07-03T17:35:50.406-0300,Rafael Ferreira,resolution,,Done
 SI-7405,2026-07-03T17:35:50.406-0300,Rafael Ferreira,status,Submissão,Done
 SI-7405,2026-07-03T17:35:50.900-0300,Rafael Ferreira,Rank,,Ranked lower
+SI-7405,2026-07-06T11:37:43.903-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7404,2026-07-03T08:37:21.293-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7404,2026-07-03T08:37:41.267-0300,Rafael Ferreira,assignee,Rafael Ferreira,
 SI-7404,2026-07-03T11:11:02.263-0300,Bruno Silva,assignee,,Bruno Silva
@@ -56933,6 +56934,7 @@ SI-7437,2026-07-03T18:56:38.318-0300,Sistema,Justificativa Causa Raiz final,,Em 
 SI-7436,2026-07-03T17:36:09.039-0300,Rafael Ferreira,resolution,,Done
 SI-7436,2026-07-03T17:36:09.039-0300,Rafael Ferreira,status,Submissão,Done
 SI-7436,2026-07-03T17:36:09.523-0300,Rafael Ferreira,Rank,,Ranked lower
+SI-7436,2026-07-06T11:41:47.180-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7435,2026-07-03T17:36:07.567-0300,Rafael Ferreira,resolution,,Done
 SI-7435,2026-07-03T17:36:07.567-0300,Rafael Ferreira,status,Submissão,Done
 SI-7435,2026-07-03T17:36:08.026-0300,Rafael Ferreira,Rank,,Ranked lower
@@ -56982,9 +56984,19 @@ SI-7456,2026-07-06T09:37:40.939-0300,Bruno Silva,status,Submissão,Done
 SI-7455,2026-07-06T09:19:52.276-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7455,2026-07-06T09:19:55.517-0300,Bruno Silva,resolution,,Done
 SI-7455,2026-07-06T09:19:55.517-0300,Bruno Silva,status,Submissão,Done
+SI-7463,2026-07-06T10:46:06.126-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7463,2026-07-06T10:46:08.672-0300,Bruno Silva,resolution,,Done
+SI-7463,2026-07-06T10:46:08.672-0300,Bruno Silva,status,Submissão,Done
+SI-7462,2026-07-06T10:46:21.999-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7462,2026-07-06T10:46:34.091-0300,Bruno Silva,resolution,,Done
+SI-7462,2026-07-06T10:46:34.091-0300,Bruno Silva,status,Submissão,Done
+SI-7461,2026-07-06T10:46:25.941-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7461,2026-07-06T10:46:30.142-0300,Bruno Silva,resolution,,Done
+SI-7461,2026-07-06T10:46:30.142-0300,Bruno Silva,status,Submissão,Done
 SI-7460,2026-07-06T10:27:40.480-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7460,2026-07-06T10:27:43.562-0300,Bruno Silva,resolution,,Done
 SI-7460,2026-07-06T10:27:43.562-0300,Bruno Silva,status,Submissão,Done
 SI-7459,2026-07-06T10:27:30.405-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7459,2026-07-06T10:27:33.274-0300,Bruno Silva,resolution,,Done
 SI-7459,2026-07-06T10:27:33.274-0300,Bruno Silva,status,Submissão,Done
+SI-7466,2026-07-06T11:16:21.342-0300,Sistema,Link,,This work item is blocked by GA-1136
