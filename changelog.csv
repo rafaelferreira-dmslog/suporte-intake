@@ -56955,6 +56955,7 @@ SI-7443,2026-07-03T17:36:14.977-0300,Rafael Ferreira,status,Submissão,Done
 SI-7443,2026-07-03T17:36:15.388-0300,Rafael Ferreira,Rank,,Ranked higher
 SI-7449,2026-07-06T09:37:44.176-0300,Bruno Silva,resolution,,Done
 SI-7449,2026-07-06T09:37:44.176-0300,Bruno Silva,status,Submissão,Done
+SI-7449,2026-07-06T11:50:00.305-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7448,2026-07-03T17:36:24.613-0300,Rafael Ferreira,resolution,,Done
 SI-7448,2026-07-03T17:36:24.613-0300,Rafael Ferreira,status,Submissão,Done
 SI-7448,2026-07-03T17:36:25.083-0300,Rafael Ferreira,Rank,,Ranked higher
@@ -56963,6 +56964,7 @@ SI-7447,2026-07-03T17:36:23.166-0300,Rafael Ferreira,status,Submissão,Done
 SI-7447,2026-07-03T17:36:23.572-0300,Rafael Ferreira,Rank,,Ranked higher
 SI-7452,2026-07-06T09:37:48.951-0300,Bruno Silva,resolution,,Done
 SI-7452,2026-07-06T09:37:48.951-0300,Bruno Silva,status,Submissão,Done
+SI-7452,2026-07-06T12:18:44.399-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7451,2026-07-06T08:23:03.012-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7451,2026-07-06T08:23:04.886-0300,Rafael Ferreira,resolution,,Done
 SI-7451,2026-07-06T08:23:04.886-0300,Rafael Ferreira,status,Submissão,Done
@@ -56978,12 +56980,24 @@ SI-7454,2026-07-06T09:10:22.448-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7454,2026-07-06T09:10:25.058-0300,Bruno Silva,resolution,,Done
 SI-7454,2026-07-06T09:10:25.058-0300,Bruno Silva,status,Submissão,Done
 SI-7458,2026-07-06T09:08:48.836-0300,Sistema,Link,,This work item is blocked by GA-1135
+SI-7458,2026-07-06T12:31:59.610-0300,Helena Almeida,assignee,,Helena Almeida
+SI-7458,2026-07-06T12:32:03.271-0300,Helena Almeida,resolution,,Done
+SI-7458,2026-07-06T12:32:03.271-0300,Helena Almeida,status,Submissão,Done
+SI-7458,2026-07-06T12:32:14.493-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. Credenciais do e-mail enviadas no privado. 
+SI-7458,2026-07-06T12:32:20.054-0300,Helena Almeida,Criticidade final,,P2 - Média
+SI-7457,2026-07-06T12:42:35.448-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7457,2026-07-06T12:42:38.030-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7457,2026-07-06T12:42:40.762-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7457,2026-07-06T12:42:40.762-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
 SI-7456,2026-07-06T09:37:37.078-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7456,2026-07-06T09:37:40.939-0300,Bruno Silva,resolution,,Done
 SI-7456,2026-07-06T09:37:40.939-0300,Bruno Silva,status,Submissão,Done
 SI-7455,2026-07-06T09:19:52.276-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7455,2026-07-06T09:19:55.517-0300,Bruno Silva,resolution,,Done
 SI-7455,2026-07-06T09:19:55.517-0300,Bruno Silva,status,Submissão,Done
+SI-7464,2026-07-06T12:01:03.289-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7464,2026-07-06T12:01:07.766-0300,Bruno Silva,resolution,,Done
+SI-7464,2026-07-06T12:01:07.766-0300,Bruno Silva,status,Submissão,Done
 SI-7463,2026-07-06T10:46:06.126-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7463,2026-07-06T10:46:08.672-0300,Bruno Silva,resolution,,Done
 SI-7463,2026-07-06T10:46:08.672-0300,Bruno Silva,status,Submissão,Done
@@ -56999,4 +57013,15 @@ SI-7460,2026-07-06T10:27:43.562-0300,Bruno Silva,status,Submissão,Done
 SI-7459,2026-07-06T10:27:30.405-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7459,2026-07-06T10:27:33.274-0300,Bruno Silva,resolution,,Done
 SI-7459,2026-07-06T10:27:33.274-0300,Bruno Silva,status,Submissão,Done
+SI-7467,2026-07-06T12:10:02.293-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7467,2026-07-06T12:10:09.027-0300,Bruno Silva,resolution,,Done
+SI-7467,2026-07-06T12:10:09.027-0300,Bruno Silva,status,Submissão,Done
 SI-7466,2026-07-06T11:16:21.342-0300,Sistema,Link,,This work item is blocked by GA-1136
+SI-7472,2026-07-06T12:38:50.695-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7472,2026-07-06T12:38:53.382-0300,Bruno Silva,resolution,,Done
+SI-7472,2026-07-06T12:38:53.382-0300,Bruno Silva,status,Submissão,Done
+SI-7471,2026-07-06T12:17:22.718-0300,Sistema,Link,,This work item is blocked by GA-1140
+SI-7470,2026-07-06T12:13:26.683-0300,Sistema,Link,,This work item is blocked by GA-1139
+SI-7469,2026-07-06T12:20:57.217-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7469,2026-07-06T12:21:01.358-0300,Bruno Silva,resolution,,Done
+SI-7469,2026-07-06T12:21:01.358-0300,Bruno Silva,status,Submissão,Done
