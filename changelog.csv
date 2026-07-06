@@ -2356,6 +2356,10 @@ SI-7180,2026-06-25T18:59:36.689-0300,Sistema,Resolução do chamado,,Aguardando 
 SI-7180,2026-06-25T18:59:36.689-0300,Sistema,Causa raiz potencial,,Aguardando correção
 SI-7180,2026-06-25T18:59:36.689-0300,Sistema,Causa raiz final,,Aguardando correção
 SI-7180,2026-06-25T18:59:36.689-0300,Sistema,Justificativa Causa Raiz final,,Aguardando correção
+SI-7180,2026-07-06T19:00:22.770-0300,Sistema,Resolução do chamado,Aguardando correção,Ajuste realizado!
+SI-7180,2026-07-06T19:00:22.770-0300,Sistema,Causa raiz potencial,Aguardando correção,Falha na sincronização das informações
+SI-7180,2026-07-06T19:00:22.770-0300,Sistema,Causa raiz final,Aguardando correção,Falha na sincronização das informações
+SI-7180,2026-07-06T19:00:22.770-0300,Sistema,Justificativa Causa Raiz final,Aguardando correção,Falha na sincronização das informações
 SI-7179,2026-06-25T17:44:57.176-0300,Rafael Ferreira,resolution,,Done
 SI-7179,2026-06-25T17:44:57.176-0300,Rafael Ferreira,status,Submissão,Done
 SI-7179,2026-06-25T17:44:57.607-0300,Rafael Ferreira,Rank,,Ranked lower
@@ -55727,6 +55731,14 @@ SI-7351,2026-07-01T16:04:23.677-0300,Sistema,Link,,This work item is blocked by 
 SI-7351,2026-07-01T17:56:16.478-0300,Rafael Ferreira,resolution,,Done
 SI-7351,2026-07-01T17:56:16.478-0300,Rafael Ferreira,status,Submissão,Done
 SI-7351,2026-07-06T12:56:59.818-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7351,2026-07-06T19:01:41.911-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7351,2026-07-06T19:01:41.911-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7351,2026-07-06T19:01:41.911-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-7351,2026-07-06T19:01:41.911-0300,Sistema,Criticidade final,,P2 - Média
+SI-7351,2026-07-06T19:01:41.911-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7351,2026-07-06T19:01:41.911-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7351,2026-07-06T19:01:41.911-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7351,2026-07-06T19:01:41.911-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7350,2026-07-01T16:30:53.609-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7350,2026-07-01T16:30:56.905-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7350,2026-07-01T16:30:56.905-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -56486,16 +56498,36 @@ SI-7406,2026-07-03T18:56:24.509-0300,Sistema,Resolução do chamado,,Aguardando 
 SI-7406,2026-07-03T18:56:24.509-0300,Sistema,Causa raiz potencial,,Aguardando correção
 SI-7406,2026-07-03T18:56:24.509-0300,Sistema,Causa raiz final,,Aguardando correção
 SI-7406,2026-07-03T18:56:24.509-0300,Sistema,Justificativa Causa Raiz final,,Aguardando correção
+SI-7406,2026-07-06T19:02:08.148-0300,Sistema,Resolução do chamado,Aguardando correção,Realizado o ajuste junto a equipe responsável.
+SI-7406,2026-07-06T19:02:08.148-0300,Sistema,Causa raiz potencial,Aguardando correção,Mudança de modal
+SI-7406,2026-07-06T19:02:08.148-0300,Sistema,Causa raiz final,Aguardando correção,Foi realizado a mudança de modal porém não realizado um ajuste específico.
+SI-7406,2026-07-06T19:02:08.148-0300,Sistema,Justificativa Causa Raiz final,Aguardando correção,Foi realizado a mudança de modal porém não realizado um ajuste específico.
 SI-7405,2026-07-03T17:35:50.406-0300,Rafael Ferreira,resolution,,Done
 SI-7405,2026-07-03T17:35:50.406-0300,Rafael Ferreira,status,Submissão,Done
 SI-7405,2026-07-03T17:35:50.900-0300,Rafael Ferreira,Rank,,Ranked lower
 SI-7405,2026-07-06T11:37:43.903-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7405,2026-07-06T19:02:07.416-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7405,2026-07-06T19:02:07.416-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7405,2026-07-06T19:02:07.416-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7405,2026-07-06T19:02:07.416-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7405,2026-07-06T19:02:07.416-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7405,2026-07-06T19:02:07.416-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7405,2026-07-06T19:02:07.416-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7405,2026-07-06T19:02:07.416-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7404,2026-07-03T08:37:21.293-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7404,2026-07-03T08:37:41.267-0300,Rafael Ferreira,assignee,Rafael Ferreira,
 SI-7404,2026-07-03T11:11:02.263-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7404,2026-07-03T11:11:05.360-0300,Bruno Silva,resolution,,Done
 SI-7404,2026-07-03T11:11:05.360-0300,Bruno Silva,status,Submissão,Done
 SI-7404,2026-07-06T13:22:10.171-0300,Ricardo Barbosa Machado,assignee,Bruno Silva,Ricardo Barbosa Machado
+SI-7404,2026-07-06T19:02:06.651-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7404,2026-07-06T19:02:06.651-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7404,2026-07-06T19:02:06.651-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7404,2026-07-06T19:02:06.651-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7404,2026-07-06T19:02:06.651-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7404,2026-07-06T19:02:06.651-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7404,2026-07-06T19:02:06.651-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7404,2026-07-06T19:02:06.651-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7403,2026-07-03T08:37:49.313-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7403,2026-07-03T08:37:51.052-0300,Rafael Ferreira,resolution,,Done
 SI-7403,2026-07-03T08:37:51.052-0300,Rafael Ferreira,status,Submissão,Done
@@ -56568,6 +56600,14 @@ SI-7417,2026-07-03T17:36:01.109-0300,Rafael Ferreira,resolution,,Done
 SI-7417,2026-07-03T17:36:01.109-0300,Rafael Ferreira,status,Submissão,Done
 SI-7417,2026-07-03T17:36:01.571-0300,Rafael Ferreira,Rank,,Ranked lower
 SI-7417,2026-07-06T08:05:26.102-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7417,2026-07-06T19:02:11.571-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7417,2026-07-06T19:02:11.571-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7417,2026-07-06T19:02:11.571-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7417,2026-07-06T19:02:11.571-0300,Sistema,Criticidade final,,P2 - Média
+SI-7417,2026-07-06T19:02:11.571-0300,Sistema,Resolução do chamado,,Ao acessar o booking o processo ja estava corretamente processado.
+SI-7417,2026-07-06T19:02:11.571-0300,Sistema,Causa raiz potencial,,Instabilidade momentânea API do portal único.
+SI-7417,2026-07-06T19:02:11.571-0300,Sistema,Causa raiz final,,Instabilidade momentânea API do portal único.
+SI-7417,2026-07-06T19:02:11.571-0300,Sistema,Justificativa Causa Raiz final,,Instabilidade momentânea API do portal único.
 SI-7416,2026-07-03T10:52:08.796-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7416,2026-07-03T10:52:15.567-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7416,2026-07-03T10:52:17.712-0300,Ricardo Barbosa Machado,resolution,,Done
@@ -56893,6 +56933,14 @@ SI-7434,2026-07-03T17:36:06.072-0300,Rafael Ferreira,resolution,,Done
 SI-7434,2026-07-03T17:36:06.072-0300,Rafael Ferreira,status,Submissão,Done
 SI-7434,2026-07-03T17:36:06.551-0300,Rafael Ferreira,Rank,,Ranked lower
 SI-7434,2026-07-06T17:20:55.571-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7434,2026-07-06T19:02:19.619-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7434,2026-07-06T19:02:19.619-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7434,2026-07-06T19:02:19.619-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7434,2026-07-06T19:02:19.619-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7434,2026-07-06T19:02:19.619-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7434,2026-07-06T19:02:19.619-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7434,2026-07-06T19:02:19.619-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7434,2026-07-06T19:02:19.619-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7442,2026-07-03T17:36:13.563-0300,Rafael Ferreira,resolution,,Done
 SI-7442,2026-07-03T17:36:13.563-0300,Rafael Ferreira,status,Submissão,Done
 SI-7442,2026-07-03T17:36:13.999-0300,Rafael Ferreira,Rank,,Ranked higher
@@ -56938,10 +56986,28 @@ SI-7436,2026-07-03T17:36:09.039-0300,Rafael Ferreira,resolution,,Done
 SI-7436,2026-07-03T17:36:09.039-0300,Rafael Ferreira,status,Submissão,Done
 SI-7436,2026-07-03T17:36:09.523-0300,Rafael Ferreira,Rank,,Ranked lower
 SI-7436,2026-07-06T11:41:47.180-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7436,2026-07-06T19:02:21.172-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7436,2026-07-06T19:02:21.172-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7436,2026-07-06T19:02:21.172-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7436,2026-07-06T19:02:21.172-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7436,2026-07-06T19:02:21.172-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7436,2026-07-06T19:02:21.172-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7436,2026-07-06T19:02:21.172-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7436,2026-07-06T19:02:21.172-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7435,2026-07-03T17:36:07.567-0300,Rafael Ferreira,resolution,,Done
 SI-7435,2026-07-03T17:36:07.567-0300,Rafael Ferreira,status,Submissão,Done
 SI-7435,2026-07-03T17:36:08.026-0300,Rafael Ferreira,Rank,,Ranked lower
 SI-7435,2026-07-06T08:10:53.697-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7435,2026-07-06T19:02:20.409-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-7435,2026-07-06T19:02:20.409-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7435,2026-07-06T19:02:20.409-0300,Sistema,Criticidade final,,P2 - Média
+SI-7435,2026-07-06T19:02:20.409-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7435,2026-07-06T19:02:20.409-0300,Sistema,Resolução do chamado,,"Informamos que a solicitação referente à ordem foi processada com sucesso. Após a confirmação do cancelamento do pagamento no sistema OMIE, realizamos os ajustes técnicos necessários em nosso banco de dados. A integração foi redefinida e o status da ordem atualizado, permitindo que o registro retorne corretamente para a aba de ordens consolidadas no sistema. Orientamos que o usuário siga com o fluxo operacional padrão a partir desta tela."
+SI-7435,2026-07-06T19:02:20.409-0300,Sistema,Causa raiz potencial,,"Necessidade de estorno ou correção de valores após o envio para pagamento no OMIE.
+Interrupção ou erro na sincronização automática de status entre o ERP OMIE e o DMSYS após o cancelamento.
+Limitação sistêmica que impede o retorno automático de ordens ""Pagas"" para o status ""Consolidada"" via interface do usuário."
+SI-7435,2026-07-06T19:02:20.409-0300,Sistema,Causa raiz final,,Ausência de um gatilho automatizado (webhook/callback) que realize o rollback do status da ordem no DMSYS e a limpeza dos metadados de envio (sent_omie_at) assim que um cancelamento é detectado ou executado no ERP OMIE.
+SI-7435,2026-07-06T19:02:20.409-0300,Sistema,Justificativa Causa Raiz final,,"A falha ocorre devido ao rígido acoplamento do status da ordem à data de envio para o ERP. Ao manter a coluna sent_omie_at preenchida, o sistema bloqueia a visualização da ordem em etapas anteriores (Consolidadas), pois interpreta que o ciclo financeiro está encerrado. A solução paliativa de ajuste via banco de dados (status para C e limpeza de sent_omie_at) resolve o sintoma imediato. Como medida de Melhoria Contínua, recomenda-se o mapeamento deste cenário de cancelamento para que o sistema execute essa limpeza de forma autônoma, eliminando a necessidade de abertura de chamados técnicos e garantindo agilidade à operação."
 SI-7446,2026-07-03T17:36:21.548-0300,Rafael Ferreira,resolution,,Done
 SI-7446,2026-07-03T17:36:21.548-0300,Rafael Ferreira,status,Submissão,Done
 SI-7446,2026-07-03T17:36:21.960-0300,Rafael Ferreira,Rank,,Ranked higher
@@ -56950,122 +57016,376 @@ SI-7445,2026-07-03T17:36:17.495-0300,Rafael Ferreira,resolution,,Done
 SI-7445,2026-07-03T17:36:17.495-0300,Rafael Ferreira,status,Submissão,Done
 SI-7445,2026-07-03T17:36:17.867-0300,Rafael Ferreira,Rank,,Ranked higher
 SI-7445,2026-07-06T08:03:49.666-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7445,2026-07-06T19:02:24.879-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-7445,2026-07-06T19:02:24.879-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-7445,2026-07-06T19:02:24.879-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7445,2026-07-06T19:02:24.879-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7445,2026-07-06T19:02:24.879-0300,Sistema,Resolução do chamado,,"A ordem estava na segunda página de ordens, não foi necessário nenhuma ação."
+SI-7445,2026-07-06T19:02:24.879-0300,Sistema,Causa raiz potencial,,Não realizada a consulta em outras abas
+SI-7445,2026-07-06T19:02:24.879-0300,Sistema,Causa raiz final,,Não realizada a consulta em outras abas
+SI-7445,2026-07-06T19:02:24.879-0300,Sistema,Justificativa Causa Raiz final,,Não realizada a consulta em outras abas
 SI-7444,2026-07-03T17:36:16.296-0300,Rafael Ferreira,resolution,,Done
 SI-7444,2026-07-03T17:36:16.296-0300,Rafael Ferreira,status,Submissão,Done
 SI-7444,2026-07-03T17:36:16.895-0300,Rafael Ferreira,Rank,,Ranked higher
 SI-7444,2026-07-06T17:26:27.711-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7444,2026-07-06T19:02:24.100-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7444,2026-07-06T19:02:24.100-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7444,2026-07-06T19:02:24.100-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7444,2026-07-06T19:02:24.100-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7444,2026-07-06T19:02:24.100-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7444,2026-07-06T19:02:24.100-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7444,2026-07-06T19:02:24.100-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7444,2026-07-06T19:02:24.100-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7443,2026-07-03T17:36:14.977-0300,Rafael Ferreira,resolution,,Done
 SI-7443,2026-07-03T17:36:14.977-0300,Rafael Ferreira,status,Submissão,Done
 SI-7443,2026-07-03T17:36:15.388-0300,Rafael Ferreira,Rank,,Ranked higher
 SI-7443,2026-07-06T17:40:36.422-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7443,2026-07-06T19:02:23.259-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7443,2026-07-06T19:02:23.259-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7443,2026-07-06T19:02:23.259-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-7443,2026-07-06T19:02:23.259-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-7443,2026-07-06T19:02:23.259-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7443,2026-07-06T19:02:23.259-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7443,2026-07-06T19:02:23.259-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7443,2026-07-06T19:02:23.259-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7449,2026-07-06T09:37:44.176-0300,Bruno Silva,resolution,,Done
 SI-7449,2026-07-06T09:37:44.176-0300,Bruno Silva,status,Submissão,Done
 SI-7449,2026-07-06T11:50:00.305-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7449,2026-07-06T19:02:26.334-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7449,2026-07-06T19:02:26.334-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7449,2026-07-06T19:02:26.334-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7449,2026-07-06T19:02:26.334-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7449,2026-07-06T19:02:26.334-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7449,2026-07-06T19:02:26.334-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7449,2026-07-06T19:02:26.334-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7449,2026-07-06T19:02:26.334-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7448,2026-07-03T17:36:24.613-0300,Rafael Ferreira,resolution,,Done
 SI-7448,2026-07-03T17:36:24.613-0300,Rafael Ferreira,status,Submissão,Done
 SI-7448,2026-07-03T17:36:25.083-0300,Rafael Ferreira,Rank,,Ranked higher
 SI-7447,2026-07-03T17:36:23.166-0300,Rafael Ferreira,resolution,,Done
 SI-7447,2026-07-03T17:36:23.166-0300,Rafael Ferreira,status,Submissão,Done
 SI-7447,2026-07-03T17:36:23.572-0300,Rafael Ferreira,Rank,,Ranked higher
+SI-7447,2026-07-06T19:02:25.586-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7447,2026-07-06T19:02:25.586-0300,Sistema,Criticidade final,,P2 - Média
+SI-7447,2026-07-06T19:02:25.586-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-7447,2026-07-06T19:02:25.586-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7447,2026-07-06T19:02:25.586-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7447,2026-07-06T19:02:25.586-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7447,2026-07-06T19:02:25.586-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7447,2026-07-06T19:02:25.586-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7452,2026-07-06T09:37:48.951-0300,Bruno Silva,resolution,,Done
 SI-7452,2026-07-06T09:37:48.951-0300,Bruno Silva,status,Submissão,Done
 SI-7452,2026-07-06T12:18:44.399-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7452,2026-07-06T19:02:27.792-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7452,2026-07-06T19:02:27.792-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7452,2026-07-06T19:02:27.792-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7452,2026-07-06T19:02:27.792-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7452,2026-07-06T19:02:27.792-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7452,2026-07-06T19:02:27.792-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7452,2026-07-06T19:02:27.792-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7452,2026-07-06T19:02:27.792-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7451,2026-07-06T08:23:03.012-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7451,2026-07-06T08:23:04.886-0300,Rafael Ferreira,resolution,,Done
 SI-7451,2026-07-06T08:23:04.886-0300,Rafael Ferreira,status,Submissão,Done
 SI-7451,2026-07-06T08:23:05.335-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7451,2026-07-06T19:02:26.984-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7451,2026-07-06T19:02:26.984-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7451,2026-07-06T19:02:26.984-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-7451,2026-07-06T19:02:26.984-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-7451,2026-07-06T19:02:26.984-0300,Sistema,Resolução do chamado,,"Bom dia Beatriz! Tudo bem?
+Analisamos o seu processo (Ordem 260540965) e identificamos que o que está ocorrendo não é uma falha do botão ""Update Quote"", mas sim a aplicação correta da regra de negócio da Unit atrelada a essa cobrança.
+O seu processo está utilizando a Unit Piece. A regra documentada para essa Unit determina que, ao chegar no Módulo Operacional, o sistema deve puxar automaticamente o valor do campo 'Total Items' (localizado na aba de itens da sua Order) para preencher a quantidade da cobrança no Add Selling.
+O que acontece é que, no módulo PM (cotação), o Freight Designer preenche a quantidade de forma manual, apenas como uma estimativa para o orçamento (chegando aos 1400 USD).
+
+Porém, no Operacional, o sistema ignora essa estimativa e recalcula a taxa baseando-se na realidade física da carga. Como você sinalizou no chamado que houve alteração manual, é muito provável que o campo de Total Items da sua Order tenha sido ajustado para refletir a carga real. A Unit reagiu instantaneamente a essa alteração, recalculando o total para os 1500 USD proporcionais.
+
+É por esse motivo que dar ""Update Quote"" não surte efeito: o sistema está programado para blindar a regra da Unit, priorizando a quantidade real da sua Order em vez da quantidade estimada pelo FD.
+
+Para que a cobrança no Add Selling volte a apresentar os 1400 USD esperados pelo FD, será necessário ajustar a quantidade no campo Total Items da aba itens da sua Order para que fique exatamente igual à quantidade base que o Pricing utilizou na hora de montar a cotação.
+Sigo à disposição caso tenha qualquer dúvida!"
+SI-7451,2026-07-06T19:02:26.984-0300,Sistema,Causa raiz potencial,,Regra de negócio
+SI-7451,2026-07-06T19:02:26.984-0300,Sistema,Causa raiz final,,Desconhecimento da regra de negócio
+SI-7451,2026-07-06T19:02:26.984-0300,Sistema,Justificativa Causa Raiz final,,Regra de negócio
 SI-7450,2026-07-06T09:37:46.211-0300,Bruno Silva,resolution,,Done
 SI-7450,2026-07-06T09:37:46.211-0300,Bruno Silva,status,Submissão,Done
 SI-7453,2026-07-06T07:59:44.345-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7453,2026-07-06T07:59:46.455-0300,Rafael Ferreira,resolution,,Done
 SI-7453,2026-07-06T07:59:46.455-0300,Rafael Ferreira,status,Submissão,Done
 SI-7453,2026-07-06T07:59:46.919-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7453,2026-07-06T19:02:28.448-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-7453,2026-07-06T19:02:28.448-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-7453,2026-07-06T19:02:28.448-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7453,2026-07-06T19:02:28.448-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7453,2026-07-06T19:02:28.448-0300,Sistema,Resolução do chamado,,Ao realizar a consulta o HAWB estava associado ao MAWB corretamente não sendo necessária nenhuma intervenção.
+SI-7453,2026-07-06T19:02:28.448-0300,Sistema,Causa raiz potencial,,Não realização do UPDATE na aba cct da ordem ou não aguardado o tempo de envio do master
+SI-7453,2026-07-06T19:02:28.448-0300,Sistema,Causa raiz final,,Não realização do UPDATE na aba cct da ordem ou não aguardado o tempo de envio do master
+SI-7453,2026-07-06T19:02:28.448-0300,Sistema,Justificativa Causa Raiz final,,Ao realizar a consulta via sys e portal único o HAWB estava corretamente associado.
 SI-7454,2026-07-06T07:49:20.895-0300,Sistema,Link,,This work item is blocked by GA-1133
 SI-7454,2026-07-06T09:10:22.448-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7454,2026-07-06T09:10:25.058-0300,Bruno Silva,resolution,,Done
 SI-7454,2026-07-06T09:10:25.058-0300,Bruno Silva,status,Submissão,Done
+SI-7454,2026-07-06T19:02:29.154-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7454,2026-07-06T19:02:29.154-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7454,2026-07-06T19:02:29.154-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7454,2026-07-06T19:02:29.154-0300,Sistema,Criticidade final,,P2 - Média
+SI-7454,2026-07-06T19:02:29.154-0300,Sistema,Resolução do chamado,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7454,2026-07-06T19:02:29.154-0300,Sistema,Causa raiz potencial,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7454,2026-07-06T19:02:29.154-0300,Sistema,Causa raiz final,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7454,2026-07-06T19:02:29.154-0300,Sistema,Justificativa Causa Raiz final,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
 SI-7458,2026-07-06T09:08:48.836-0300,Sistema,Link,,This work item is blocked by GA-1135
 SI-7458,2026-07-06T12:31:59.610-0300,Helena Almeida,assignee,,Helena Almeida
 SI-7458,2026-07-06T12:32:03.271-0300,Helena Almeida,resolution,,Done
 SI-7458,2026-07-06T12:32:03.271-0300,Helena Almeida,status,Submissão,Done
 SI-7458,2026-07-06T12:32:14.493-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. Credenciais do e-mail enviadas no privado. 
 SI-7458,2026-07-06T12:32:20.054-0300,Helena Almeida,Criticidade final,,P2 - Média
+SI-7458,2026-07-06T19:02:32.039-0300,Sistema,Reclassificação solicitação,,Solicitação de acesso
+SI-7458,2026-07-06T19:02:32.039-0300,Sistema,Resolução do chamado,Ticket concluído. Credenciais do e-mail enviadas no privado. ,Ticket concluído. Credenciais do e-mail enviadas no privado.
 SI-7457,2026-07-06T12:42:35.448-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7457,2026-07-06T12:42:38.030-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7457,2026-07-06T12:42:40.762-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7457,2026-07-06T12:42:40.762-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
+SI-7457,2026-07-06T19:02:31.373-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7457,2026-07-06T19:02:31.373-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7457,2026-07-06T19:02:31.373-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7457,2026-07-06T19:02:31.373-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-7457,2026-07-06T19:02:31.373-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7457,2026-07-06T19:02:31.373-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7457,2026-07-06T19:02:31.373-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7457,2026-07-06T19:02:31.373-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7456,2026-07-06T09:37:37.078-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7456,2026-07-06T09:37:40.939-0300,Bruno Silva,resolution,,Done
 SI-7456,2026-07-06T09:37:40.939-0300,Bruno Silva,status,Submissão,Done
+SI-7456,2026-07-06T19:02:30.650-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7456,2026-07-06T19:02:30.650-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-7456,2026-07-06T19:02:30.650-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7456,2026-07-06T19:02:30.650-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7456,2026-07-06T19:02:30.650-0300,Sistema,Resolução do chamado,,"Identificada a necessidade de ajuste no vínculo de ordens ao processo. Foi solicitado ao time responsável a liberação e o ajuste dos campos retidos no documento. Após a conclusão desse procedimento pelas equipes internas, o fluxo operacional poderá ser seguido normalmente."
+SI-7456,2026-07-06T19:02:30.650-0300,Sistema,Causa raiz potencial,,"Inconsistência cadastral ou retenção preventiva de registros no banco de dados do controle operacional, gerando um bloqueio lógico que impede a associação correta entre a ordem e o Booking"
+SI-7456,2026-07-06T19:02:30.650-0300,Sistema,Causa raiz final,,Identificado um ponto de atenção em que campos retidos e travados no documento que impediam que novos vínculos de ordens de serviço fossem associados a ele.
+SI-7456,2026-07-06T19:02:30.650-0300,Sistema,Justificativa Causa Raiz final,,"Bloqueio lógico operacional causado por dados retidos e travados na tabela de bookings do banco de dados operacional. A intervenção técnica por meio da equipe de DS para remoção manual das travas atua diretamente no nexo causal, eliminando o impedimento sistêmico e mitigando a reincidência do travamento no processo de match."
 SI-7455,2026-07-06T09:19:52.276-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7455,2026-07-06T09:19:55.517-0300,Bruno Silva,resolution,,Done
 SI-7455,2026-07-06T09:19:55.517-0300,Bruno Silva,status,Submissão,Done
+SI-7455,2026-07-06T19:02:29.863-0300,Sistema,Criticidade final,,P2 - Média
+SI-7455,2026-07-06T19:02:29.863-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7455,2026-07-06T19:02:29.863-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7455,2026-07-06T19:02:29.863-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7455,2026-07-06T19:02:29.863-0300,Sistema,Resolução do chamado,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7455,2026-07-06T19:02:29.863-0300,Sistema,Causa raiz potencial,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7455,2026-07-06T19:02:29.863-0300,Sistema,Causa raiz final,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7455,2026-07-06T19:02:29.863-0300,Sistema,Justificativa Causa Raiz final,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
 SI-7464,2026-07-06T12:01:03.289-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7464,2026-07-06T12:01:07.766-0300,Bruno Silva,resolution,,Done
 SI-7464,2026-07-06T12:01:07.766-0300,Bruno Silva,status,Submissão,Done
+SI-7464,2026-07-06T19:02:36.416-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-7464,2026-07-06T19:02:36.416-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7464,2026-07-06T19:02:36.416-0300,Sistema,Criticidade final,,P2 - Média
+SI-7464,2026-07-06T19:02:36.416-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7464,2026-07-06T19:02:36.416-0300,Sistema,Resolução do chamado,,Identificada a necessidade de ajuste na exibição de mensagens no painel de controle operacional. Verificou-se que as configurações de visualização foram impactadas após a importação de preferências de acesso de outro usuário. O painel foi reajustado para restabelecer a normalidade do fluxo de acompanhamento.
+SI-7464,2026-07-06T19:02:36.416-0300,Sistema,Causa raiz potencial,,"Sobrescrita de parâmetros de filtragem e identificação do perfil logado na sessão ativa, ocasionando a omissão de registros direcionados ao e-mail correto no banco do painel."
+SI-7464,2026-07-06T19:02:36.416-0300,Sistema,Causa raiz final,,"Identificado um ponto de atenção em que as mensagens eletrônicas não eram exibidas no painel de monitoramento devido à importação das configurações de perfil de outro colaborador. Esse procedimento alterou as regras de filtragem personalizadas da conta, fazendo com que o sistema ocultasse as informações voltadas ao usuário correto, exigindo uma redefinição dos parâmetros para normalizar a visualização."
+SI-7464,2026-07-06T19:02:36.416-0300,Sistema,Justificativa Causa Raiz final,,Conflito na parametrização de filtros do Cockpit causado pela ação manual de importação do profile de terceiros.
 SI-7463,2026-07-06T10:46:06.126-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7463,2026-07-06T10:46:08.672-0300,Bruno Silva,resolution,,Done
 SI-7463,2026-07-06T10:46:08.672-0300,Bruno Silva,status,Submissão,Done
+SI-7463,2026-07-06T19:02:35.626-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7463,2026-07-06T19:02:35.626-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7463,2026-07-06T19:02:35.626-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7463,2026-07-06T19:02:35.626-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-7463,2026-07-06T19:02:35.626-0300,Sistema,Resolução do chamado,,"Prezado usuário, informamos que o incidente relacionado ao cálculo do Selling da taxa Collect Fee foi identificado e corrigido. Para restabelecer a integridade dos valores, foi realizada a revalidação manual da taxa através do procedimento de deselação e seleção, o que forçou o sistema a processar o cálculo atualizado. A falha de sincronização visual foi sanada e o processo de faturamento pode seguir com segurança, evitando riscos de cobranças indevidas.
+A correção definitiva pode ser acompanhada através do:
+INTAKE-47"
+SI-7463,2026-07-06T19:02:35.626-0300,Sistema,Causa raiz potencial,,"inconsistência na atualização de variáveis de cálculo em tempo real (cache de interface).
+Divergência entre a fórmula aplicada no Front-end e a lógica processada no Back-end.
+Interrupção na rotina de sincronização de estado da aplicação após a seleção de taxas."
+SI-7463,2026-07-06T19:02:35.626-0300,Sistema,Causa raiz final,,"Inconsistência estrutural na especificação técnica (ENG-3808/3896), que estabeleceu uma fórmula matemática inválida para a regra de negócio, agravada por um bug de sincronização entre a interface do usuário (Front-end) e a persistência de dados (Banco/Back-end)."
+SI-7463,2026-07-06T19:02:35.626-0300,Sistema,Justificativa Causa Raiz final,,"O nexo causal identifica-se na fragilidade da validação da regra de negócio antes de sua implementação em produção. A falha na fórmula gera o erro de cálculo primário, enquanto a deficiência de sincronização da UI impede que o sistema se autocorra sem intervenção humana. A solução definitiva exige a revisão da especificação de engenharia para aplicar a fórmula correta e a correção da rotina de atualização de tela, garantindo que qualquer alteração no banco de dados seja refletida instantaneamente ao usuário, eliminando a necessidade de reprocessamento manual e garantindo a acuracidade do faturamento."
 SI-7462,2026-07-06T10:46:21.999-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7462,2026-07-06T10:46:34.091-0300,Bruno Silva,resolution,,Done
 SI-7462,2026-07-06T10:46:34.091-0300,Bruno Silva,status,Submissão,Done
+SI-7462,2026-07-06T19:02:34.859-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7462,2026-07-06T19:02:34.859-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7462,2026-07-06T19:02:34.859-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7462,2026-07-06T19:02:34.859-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-7462,2026-07-06T19:02:34.859-0300,Sistema,Resolução do chamado,,"Prezado usuário, informamos que o incidente relacionado ao cálculo do Selling da taxa Collect Fee foi identificado e corrigido. Para restabelecer a integridade dos valores, foi realizada a revalidação manual da taxa através do procedimento de deselação e seleção, o que forçou o sistema a processar o cálculo atualizado. A falha de sincronização visual foi sanada e o processo de faturamento pode seguir com segurança, evitando riscos de cobranças indevidas.
+A correção definitiva pode ser acompanhada através do:
+INTAKE-47"
+SI-7462,2026-07-06T19:02:34.859-0300,Sistema,Causa raiz potencial,,"Inconsistência na atualização de variáveis de cálculo em tempo real (cache de interface).
+Divergência entre a fórmula aplicada no Front-end e a lógica processada no Back-end.
+Interrupção na rotina de sincronização de estado da aplicação após a seleção de taxas."
+SI-7462,2026-07-06T19:02:34.859-0300,Sistema,Causa raiz final,,"Inconsistência estrutural na especificação técnica (ENG-3808/3896), que estabeleceu uma fórmula matemática inválida para a regra de negócio, agravada por um bug de sincronização entre a interface do usuário (Front-end) e a persistência de dados (Banco/Back-end)."
+SI-7462,2026-07-06T19:02:34.859-0300,Sistema,Justificativa Causa Raiz final,,"O nexo causal identifica-se na fragilidade da validação da regra de negócio antes de sua implementação em produção. A falha na fórmula gera o erro de cálculo primário, enquanto a deficiência de sincronização da UI impede que o sistema se autocorra sem intervenção humana. A solução definitiva exige a revisão da especificação de engenharia para aplicar a fórmula correta e a correção da rotina de atualização de tela, garantindo que qualquer alteração no banco de dados seja refletida instantaneamente ao usuário, eliminando a necessidade de reprocessamento manual e garantindo a acuracidade do faturamento."
 SI-7461,2026-07-06T10:46:25.941-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7461,2026-07-06T10:46:30.142-0300,Bruno Silva,resolution,,Done
 SI-7461,2026-07-06T10:46:30.142-0300,Bruno Silva,status,Submissão,Done
+SI-7461,2026-07-06T19:02:34.174-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-7461,2026-07-06T19:02:34.174-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7461,2026-07-06T19:02:34.174-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7461,2026-07-06T19:02:34.174-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7461,2026-07-06T19:02:34.174-0300,Sistema,Resolução do chamado,,"Prezado usuário, informamos que o incidente relacionado ao cálculo do Selling da taxa Collect Fee foi identificado e corrigido. Para restabelecer a integridade dos valores, foi realizada a revalidação manual da taxa através do procedimento de deselação e seleção, o que forçou o sistema a processar o cálculo atualizado. A falha de sincronização visual foi sanada e o processo de faturamento pode seguir com segurança, evitando riscos de cobranças indevidas.
+A correção definitiva pode ser acompanhada através do:
+INTAKE-47"
+SI-7461,2026-07-06T19:02:34.174-0300,Sistema,Causa raiz potencial,,"Inconsistência na atualização de variáveis de cálculo em tempo real (cache de interface).
+Divergência entre a fórmula aplicada no Front-end e a lógica processada no Back-end.
+Interrupção na rotina de sincronização de estado da aplicação após a seleção de taxas."
+SI-7461,2026-07-06T19:02:34.174-0300,Sistema,Causa raiz final,,"Inconsistência estrutural na especificação técnica (ENG-3808/3896), que estabeleceu uma fórmula matemática inválida para a regra de negócio, agravada por um bug de sincronização entre a interface do usuário (Front-end) e a persistência de dados (Banco/Back-end)."
+SI-7461,2026-07-06T19:02:34.174-0300,Sistema,Justificativa Causa Raiz final,,"O nexo causal identifica-se na fragilidade da validação da regra de negócio antes de sua implementação em produção. A falha na fórmula gera o erro de cálculo primário, enquanto a deficiência de sincronização da UI impede que o sistema se autocorra sem intervenção humana. A solução definitiva exige a revisão da especificação de engenharia para aplicar a fórmula correta e a correção da rotina de atualização de tela, garantindo que qualquer alteração no banco de dados seja refletida instantaneamente ao usuário, eliminando a necessidade de reprocessamento manual e garantindo a acuracidade do faturamento."
 SI-7460,2026-07-06T10:27:40.480-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7460,2026-07-06T10:27:43.562-0300,Bruno Silva,resolution,,Done
 SI-7460,2026-07-06T10:27:43.562-0300,Bruno Silva,status,Submissão,Done
+SI-7460,2026-07-06T19:02:33.376-0300,Sistema,Criticidade final,,P2 - Média
+SI-7460,2026-07-06T19:02:33.376-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7460,2026-07-06T19:02:33.376-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7460,2026-07-06T19:02:33.376-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7460,2026-07-06T19:02:33.376-0300,Sistema,Resolução do chamado,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7460,2026-07-06T19:02:33.376-0300,Sistema,Causa raiz potencial,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7460,2026-07-06T19:02:33.376-0300,Sistema,Causa raiz final,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7460,2026-07-06T19:02:33.376-0300,Sistema,Justificativa Causa Raiz final,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
 SI-7459,2026-07-06T10:27:30.405-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7459,2026-07-06T10:27:33.274-0300,Bruno Silva,resolution,,Done
 SI-7459,2026-07-06T10:27:33.274-0300,Bruno Silva,status,Submissão,Done
+SI-7459,2026-07-06T19:02:32.686-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7459,2026-07-06T19:02:32.686-0300,Sistema,Criticidade final,,P2 - Média
+SI-7459,2026-07-06T19:02:32.686-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7459,2026-07-06T19:02:32.686-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7459,2026-07-06T19:02:32.686-0300,Sistema,Resolução do chamado,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7459,2026-07-06T19:02:32.686-0300,Sistema,Causa raiz potencial,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7459,2026-07-06T19:02:32.686-0300,Sistema,Causa raiz final,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7459,2026-07-06T19:02:32.686-0300,Sistema,Justificativa Causa Raiz final,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
 SI-7467,2026-07-06T12:10:02.293-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7467,2026-07-06T12:10:09.027-0300,Bruno Silva,resolution,,Done
 SI-7467,2026-07-06T12:10:09.027-0300,Bruno Silva,status,Submissão,Done
+SI-7467,2026-07-06T19:02:38.673-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7467,2026-07-06T19:02:38.673-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-7467,2026-07-06T19:02:38.673-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7467,2026-07-06T19:02:38.673-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7467,2026-07-06T19:02:38.673-0300,Sistema,Resolução do chamado,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7467,2026-07-06T19:02:38.673-0300,Sistema,Causa raiz potencial,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7467,2026-07-06T19:02:38.673-0300,Sistema,Causa raiz final,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7467,2026-07-06T19:02:38.673-0300,Sistema,Justificativa Causa Raiz final,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
 SI-7466,2026-07-06T11:16:21.342-0300,Sistema,Link,,This work item is blocked by GA-1136
 SI-7466,2026-07-06T13:32:46.630-0300,Helena Almeida,assignee,,Helena Almeida
 SI-7466,2026-07-06T13:32:50.374-0300,Helena Almeida,resolution,,Done
 SI-7466,2026-07-06T13:32:50.374-0300,Helena Almeida,status,Submissão,Done
 SI-7466,2026-07-06T13:34:58.872-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. E-mail removido do e-mail de grupo. 
+SI-7466,2026-07-06T19:02:37.902-0300,Sistema,Reclassificação solicitação,,Requisição
+SI-7466,2026-07-06T19:02:37.902-0300,Sistema,Criticidade final,,P2 - Média
+SI-7466,2026-07-06T19:02:37.902-0300,Sistema,Resolução do chamado,Ticket concluído. E-mail removido do e-mail de grupo. ,Ticket concluído. E-mail removido do e-mail de grupo.
 SI-7465,2026-07-06T17:06:00.252-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7465,2026-07-06T17:06:01.940-0300,Rafael Ferreira,resolution,,Done
 SI-7465,2026-07-06T17:06:01.940-0300,Rafael Ferreira,status,Submissão,Done
 SI-7465,2026-07-06T17:06:02.473-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7465,2026-07-06T19:02:37.131-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-7465,2026-07-06T19:02:37.131-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7465,2026-07-06T19:02:37.131-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7465,2026-07-06T19:02:37.131-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7465,2026-07-06T19:02:37.131-0300,Sistema,Resolução do chamado,,"Identificada a emissão da Nota de Débito com divergência de valores, apresentando-se zerada apesar da visualização correta no momento da conferência. De tratativa imediata é necessário que seja realizado o cancelamento do documento inconsistente e efetuado o refaturamento do processo para a devida regularização financeira. Para mitigar a reincidência desta falha, foi aberto o intake 645 como solução definitiva para a correção do fluxo."
+SI-7465,2026-07-06T19:02:37.131-0300,Sistema,Causa raiz potencial,,"Instabilidade na rotina de persistência de dados (commit) no momento da transição entre os módulos Operacional e Financial, ou falha de comunicação com a API de faturamento que impediu a gravação de taxas acessórias na tabela order_charge."
+SI-7465,2026-07-06T19:02:37.131-0300,Sistema,Causa raiz final,,"O incidente ocorreu devido a uma falha técnica na rotina de sincronização de dados entre o módulo Operacional e o módulo Financeiro do sistema. Durante o processo de faturamento, o sistema realiza uma leitura prévia dos valores (preview) que funciona normalmente; entretanto, no momento de consolidar essas informações e gerar o documento definitivo, a gravação das taxas acessórias foi interrompida. Como o sistema não identificou essa interrupção como um erro crítico, ele permitiu a conclusão do faturamento, gerando uma Nota de Débito sem os valores correspondentes. A correção definitiva para este cenário foi mapeada e endereçada através do intake 645, que visa garantir que o documento só seja finalizado se todos os valores forem devidamente registrados."
+SI-7465,2026-07-06T19:02:37.131-0300,Sistema,Justificativa Causa Raiz final,,"A falha é decorrente de um comportamento assíncrono e da ausência de um controle transacional rígido (ACID) na rotina de faturamento. O nexo causal estabelece que a confirmação do faturamento está atrelada apenas ao sucesso da criação do registro mestre do documento, negligenciando a validação de sucesso na persistência dos registros dependentes na tabela order_charge."
 SI-7472,2026-07-06T12:38:50.695-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7472,2026-07-06T12:38:53.382-0300,Bruno Silva,resolution,,Done
 SI-7472,2026-07-06T12:38:53.382-0300,Bruno Silva,status,Submissão,Done
+SI-7472,2026-07-06T19:02:41.588-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7472,2026-07-06T19:02:41.588-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-7472,2026-07-06T19:02:41.588-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7472,2026-07-06T19:02:41.588-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-7472,2026-07-06T19:02:41.588-0300,Sistema,Resolução do chamado,,"Identificada uma inconsistência temporária na atualização do peso bruto consolidado. Foi realizado o procedimento de atualização no controle de segurança para que os valores fossem transmitidos normalmente para o documento, restabelecendo a paridade correta das informações na aba correspondente."
+SI-7472,2026-07-06T19:02:41.588-0300,Sistema,Causa raiz potencial,,Atraso no processamento do gatilho automático (trigger) responsável por sincronizar os metadados de peso bruto dos itens
+SI-7472,2026-07-06T19:02:41.588-0300,Sistema,Causa raiz final,,"Identificado um ponto de atenção em que as informações de peso bruto dos itens, embora inseridas de forma correta, não foram transmitidas de imediato para o documento de reserva devido a um atraso na execução do gatilho de sincronização. O procedimento de abrir e fechar a trava de segurança forçou uma nova verificação no banco de dados, recalculando os valores e solucionando a divergência apresentada de forma simples."
+SI-7472,2026-07-06T19:02:41.588-0300,Sistema,Justificativa Causa Raiz final,,"Falha operacional decorrente de uma quebra temporária no fluxo de atualização do Gross Weight consolidado na tabela de reservas. A reexecução manual do estado do cadeado acionou a rotina de recálculo no backend, atualizando as linhas da tabela operacional e prevenindo a manutenção do valor incorreto na base."
 SI-7471,2026-07-06T12:17:22.718-0300,Sistema,Link,,This work item is blocked by GA-1140
 SI-7471,2026-07-06T13:31:35.809-0300,Helena Almeida,resolution,,Done
 SI-7471,2026-07-06T13:31:35.809-0300,Helena Almeida,status,Submissão,Done
 SI-7471,2026-07-06T13:31:37.380-0300,Helena Almeida,assignee,,Helena Almeida
 SI-7471,2026-07-06T13:31:56.755-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. Códigos de acesso enviados nos comentários do chamado. 
 SI-7471,2026-07-06T13:32:01.177-0300,Helena Almeida,Criticidade final,,P2 - Média
+SI-7471,2026-07-06T19:02:40.891-0300,Sistema,Reclassificação solicitação,,Solicitação de acesso
+SI-7471,2026-07-06T19:02:40.891-0300,Sistema,Resolução do chamado,Ticket concluído. Códigos de acesso enviados nos comentários do chamado. ,Ticket concluído. Códigos de acesso enviados nos comentários do chamado.
 SI-7470,2026-07-06T12:13:26.683-0300,Sistema,Link,,This work item is blocked by GA-1139
 SI-7470,2026-07-06T13:29:25.531-0300,Helena Almeida,resolution,,Done
 SI-7470,2026-07-06T13:29:25.531-0300,Helena Almeida,status,Submissão,Done
 SI-7470,2026-07-06T13:29:30.101-0300,Helena Almeida,assignee,,Helena Almeida
 SI-7470,2026-07-06T13:29:40.192-0300,Helena Almeida,Criticidade final,,P2 - Média
 SI-7470,2026-07-06T13:29:47.443-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. Códigos de acesso enviados nos comentários do chamado. 
+SI-7470,2026-07-06T19:02:40.131-0300,Sistema,Reclassificação solicitação,,Solicitação de acesso
+SI-7470,2026-07-06T19:02:40.131-0300,Sistema,Resolução do chamado,Ticket concluído. Códigos de acesso enviados nos comentários do chamado. ,Ticket concluído. Códigos de acesso enviados nos comentários do chamado.
 SI-7469,2026-07-06T12:20:57.217-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7469,2026-07-06T12:21:01.358-0300,Bruno Silva,resolution,,Done
 SI-7469,2026-07-06T12:21:01.358-0300,Bruno Silva,status,Submissão,Done
+SI-7469,2026-07-06T19:02:39.461-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7469,2026-07-06T19:02:39.461-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7469,2026-07-06T19:02:39.461-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7469,2026-07-06T19:02:39.461-0300,Sistema,Criticidade final,,P2 - Média
+SI-7469,2026-07-06T19:02:39.461-0300,Sistema,Resolução do chamado,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7469,2026-07-06T19:02:39.461-0300,Sistema,Causa raiz potencial,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7469,2026-07-06T19:02:39.461-0300,Sistema,Causa raiz final,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7469,2026-07-06T19:02:39.461-0300,Sistema,Justificativa Causa Raiz final,,orientado a colaboradora entrar na salinha  (https://meet.google.com/tte-yhvb-nxe?authuser=0)
+SI-7477,2026-07-06T19:02:42.354-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7477,2026-07-06T19:02:42.354-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-7477,2026-07-06T19:02:42.354-0300,Sistema,Criticidade final,,P2 - Média
+SI-7477,2026-07-06T19:02:42.354-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7477,2026-07-06T19:02:42.354-0300,Sistema,Resolução do chamado,,Aguardando informação
+SI-7477,2026-07-06T19:02:42.354-0300,Sistema,Causa raiz potencial,,Aguardando informação
+SI-7477,2026-07-06T19:02:42.354-0300,Sistema,Causa raiz final,,Aguardando informação
+SI-7477,2026-07-06T19:02:42.354-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
 SI-7486,2026-07-06T14:24:26.404-0300,Sistema,Link,,This work item is blocked by GA-1144
 SI-7486,2026-07-06T15:15:34.950-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7486,2026-07-06T15:15:36.831-0300,Rafael Ferreira,resolution,,Done
 SI-7486,2026-07-06T15:15:36.831-0300,Rafael Ferreira,status,Submissão,Done
 SI-7486,2026-07-06T15:15:37.313-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7486,2026-07-06T19:02:45.867-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7486,2026-07-06T19:02:45.867-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7486,2026-07-06T19:02:45.867-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-7486,2026-07-06T19:02:45.867-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-7486,2026-07-06T19:02:45.867-0300,Sistema,Resolução do chamado,,Após verificações foi visto que o problema se tratava no microfone do fone e não do computador
+SI-7486,2026-07-06T19:02:45.867-0300,Sistema,Causa raiz potencial,,Após verificações foi visto que o problema se tratava no microfone do fone e não do computador
+SI-7486,2026-07-06T19:02:45.867-0300,Sistema,Causa raiz final,,Após verificações foi visto que o problema se tratava no microfone do fone e não do computador
+SI-7486,2026-07-06T19:02:45.867-0300,Sistema,Justificativa Causa Raiz final,,Após verificações foi visto que o problema se tratava no microfone do fone e não do computador
 SI-7485,2026-07-06T15:59:07.184-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7485,2026-07-06T15:59:09.147-0300,Rafael Ferreira,resolution,,Done
 SI-7485,2026-07-06T15:59:09.147-0300,Rafael Ferreira,status,Submissão,Done
 SI-7485,2026-07-06T15:59:09.630-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7485,2026-07-06T19:02:45.056-0300,Sistema,Incidente Pós-Deploy de Projeto?,,SIM
+SI-7485,2026-07-06T19:02:45.056-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7485,2026-07-06T19:02:45.056-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7485,2026-07-06T19:02:45.056-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7485,2026-07-06T19:02:45.056-0300,Sistema,Resolução do chamado,,"Identificamos que a ausência de migração dos custos de frete para o Financeiro foi causada pelo status incorreto do campo used, que constava como false na base de dados. Essa flag impedia que o sistema reconhecesse o custo como apto para integração.
+
+Pode por gentileza realizar o procedimento de abrir e fechar novamente o cadeado de order do booking, apenas o de order, o de charge manter fechado.
+
+A tratativa definitiva pode ser acompanhada pelo:
+
+INTAKE-25"
+SI-7485,2026-07-06T19:02:45.056-0300,Sistema,Causa raiz potencial,,Falha na comunicação  entre módulos operacional e financial
+SI-7485,2026-07-06T19:02:45.056-0300,Sistema,Causa raiz final,,"A implementação da melhoria ENG-3861 tornou o parâmetro used mandatório para a migração de dados, porém não mapeou o impacto colateral no fluxo de frete, onde o comportamento nativo do sistema (fechamento do cadeado) altera automaticamente esse campo para false, bloqueando o envio ao financeiro."
+SI-7485,2026-07-06T19:02:45.056-0300,Sistema,Justificativa Causa Raiz final,,"O nexo causal reside na colisão entre uma nova regra de validação rígida e um comportamento legado de automação de interface. A solução aplicada ajusta a lógica de backend para que a migração do frete considere o status do cadeado e a validade da taxa, em vez de depender exclusivamente de um campo que sofre reset automático. Essa medida de melhoria contínua isola os fluxos de Pickup e Freight, evitando que manutenções futuras em um serviço bloqueiem inadvertidamente a receita ou o contas a pagar de outro."
 SI-7484,2026-07-06T14:22:19.853-0300,Sistema,Link,,This work item is blocked by GA-1143
 SI-7484,2026-07-06T17:26:23.931-0300,Helena Almeida,status,Submissão,Aguardando Informação
 SI-7484,2026-07-06T17:26:26.840-0300,Helena Almeida,assignee,,Helena Almeida
 SI-7484,2026-07-06T18:28:54.497-0300,Helena Almeida,resolution,,Done
 SI-7484,2026-07-06T18:28:54.497-0300,Helena Almeida,status,Aguardando Informação,Done
+SI-7484,2026-07-06T19:02:44.352-0300,Sistema,Reclassificação solicitação,,Requisição
+SI-7484,2026-07-06T19:02:44.352-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-7484,2026-07-06T19:02:44.352-0300,Sistema,Resolução do chamado,,Aguardando Informação
 SI-7480,2026-07-06T14:16:37.715-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7480,2026-07-06T14:16:38.903-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7480,2026-07-06T14:16:41.525-0300,Rafael Ferreira,resolution,,Done
 SI-7480,2026-07-06T14:16:41.525-0300,Rafael Ferreira,status,Submissão,Done
+SI-7480,2026-07-06T19:02:43.685-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-7480,2026-07-06T19:02:43.685-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7480,2026-07-06T19:02:43.685-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7480,2026-07-06T19:02:43.685-0300,Sistema,Incidente Pós-Deploy de Projeto?,,SIM
+SI-7480,2026-07-06T19:02:43.685-0300,Sistema,Resolução do chamado,,"Identificamos que a ausência de migração dos custos de frete para o Financeiro foi causada pelo status incorreto do campo used, que constava como false na base de dados. Essa flag impedia que o sistema reconhecesse o custo como apto para integração.
+
+Pode por gentileza realizar o procedimento de abrir e fechar novamente o cadeado de order do booking, apenas o de order, o de charge manter fechado.
+
+A tratativa definitiva pode ser acompanhada pelo:
+
+INTAKE-25"
+SI-7480,2026-07-06T19:02:43.685-0300,Sistema,Causa raiz potencial,,Falha na comunicação  entre módulos operacional e financial
+SI-7480,2026-07-06T19:02:43.685-0300,Sistema,Causa raiz final,,"A implementação da melhoria ENG-3861 tornou o parâmetro used mandatório para a migração de dados, porém não mapeou o impacto colateral no fluxo de frete, onde o comportamento nativo do sistema (fechamento do cadeado) altera automaticamente esse campo para false, bloqueando o envio ao financeiro."
+SI-7480,2026-07-06T19:02:43.685-0300,Sistema,Justificativa Causa Raiz final,,"O nexo causal reside na colisão entre uma nova regra de validação rígida e um comportamento legado de automação de interface. A solução aplicada ajusta a lógica de backend para que a migração do frete considere o status do cadeado e a validade da taxa, em vez de depender exclusivamente de um campo que sofre reset automático. Essa medida de melhoria contínua isola os fluxos de Pickup e Freight, evitando que manutenções futuras em um serviço bloqueiem inadvertidamente a receita ou o contas a pagar de outro."
 SI-7479,2026-07-06T14:06:21.609-0300,Sistema,Link,,This work item is blocked by GA-1142
 SI-7478,2026-07-06T13:50:27.638-0300,Sistema,Link,,This work item is blocked by GA-1141
 SI-7478,2026-07-06T13:56:21.103-0300,Helena Almeida,resolution,,Done
@@ -57073,16 +57393,43 @@ SI-7478,2026-07-06T13:56:21.103-0300,Helena Almeida,status,Submissão,Done
 SI-7478,2026-07-06T13:56:22.986-0300,Helena Almeida,assignee,,Helena Almeida
 SI-7478,2026-07-06T13:56:37.138-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. E-mail adicionado conforme solicitado. 
 SI-7478,2026-07-06T13:56:43.235-0300,Helena Almeida,Criticidade final,,P2 - Média
+SI-7478,2026-07-06T19:02:42.979-0300,Sistema,Reclassificação solicitação,,Requisição
+SI-7478,2026-07-06T19:02:42.979-0300,Sistema,Resolução do chamado,Ticket concluído. E-mail adicionado conforme solicitado. ,Ticket concluído. E-mail adicionado conforme solicitado.
 SI-7488,2026-07-06T16:23:33.428-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7488,2026-07-06T16:23:35.524-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-7488,2026-07-06T17:41:01.734-0300,Rafael Ferreira,resolution,,Done
 SI-7488,2026-07-06T17:41:01.734-0300,Rafael Ferreira,status,Aguardando Informação,Done
 SI-7488,2026-07-06T17:41:02.335-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7488,2026-07-06T19:02:47.285-0300,Sistema,Criticidade final,,P2 - Média
+SI-7488,2026-07-06T19:02:47.285-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-7488,2026-07-06T19:02:47.285-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7488,2026-07-06T19:02:47.285-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7488,2026-07-06T19:02:47.285-0300,Sistema,Resolução do chamado,,Aguardando informação
+SI-7488,2026-07-06T19:02:47.285-0300,Sistema,Causa raiz potencial,,Aguardando informação
+SI-7488,2026-07-06T19:02:47.285-0300,Sistema,Causa raiz final,,Aguardando informação
+SI-7488,2026-07-06T19:02:47.285-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
 SI-7487,2026-07-06T15:33:31.160-0300,Sistema,Link,,This work item is blocked by GA-1148
 SI-7487,2026-07-06T18:28:27.126-0300,Helena Almeida,resolution,,Done
 SI-7487,2026-07-06T18:28:27.126-0300,Helena Almeida,status,Submissão,Done
 SI-7487,2026-07-06T18:28:31.537-0300,Helena Almeida,assignee,,Helena Almeida
+SI-7487,2026-07-06T19:02:46.535-0300,Sistema,Criticidade final,,P2 - Média
+SI-7487,2026-07-06T19:02:46.535-0300,Sistema,Reclassificação solicitação,,Solicitação de acesso
+SI-7487,2026-07-06T19:02:46.535-0300,Sistema,Resolução do chamado,,"Aguardando informação. Solicitamos, por gentileza, verificar e responder ao comentário inserido no ticket."
 SI-7490,2026-07-06T15:59:26.243-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7490,2026-07-06T15:59:27.989-0300,Rafael Ferreira,resolution,,Done
 SI-7490,2026-07-06T15:59:27.989-0300,Rafael Ferreira,status,Submissão,Done
 SI-7490,2026-07-06T15:59:28.382-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7490,2026-07-06T19:02:48.446-0300,Sistema,Incidente Pós-Deploy de Projeto?,,SIM
+SI-7490,2026-07-06T19:02:48.446-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7490,2026-07-06T19:02:48.446-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7490,2026-07-06T19:02:48.446-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7490,2026-07-06T19:02:48.446-0300,Sistema,Resolução do chamado,,"Identificamos que a ausência de migração dos custos de frete para o Financeiro foi causada pelo status incorreto do campo used, que constava como false na base de dados. Essa flag impedia que o sistema reconhecesse o custo como apto para integração.
+
+Pode por gentileza realizar o procedimento de abrir e fechar novamente o cadeado de order do booking, apenas o de order, o de charge manter fechado.
+
+A tratativa definitiva pode ser acompanhada pelo:
+
+INTAKE-25"
+SI-7490,2026-07-06T19:02:48.446-0300,Sistema,Causa raiz potencial,,Falha na comunicação  entre módulos operacional e financial
+SI-7490,2026-07-06T19:02:48.446-0300,Sistema,Causa raiz final,,"A implementação da melhoria ENG-3861 tornou o parâmetro used mandatório para a migração de dados, porém não mapeou o impacto colateral no fluxo de frete, onde o comportamento nativo do sistema (fechamento do cadeado) altera automaticamente esse campo para false, bloqueando o envio ao financeiro."
+SI-7490,2026-07-06T19:02:48.446-0300,Sistema,Justificativa Causa Raiz final,,"O nexo causal reside na colisão entre uma nova regra de validação rígida e um comportamento legado de automação de interface. A solução aplicada ajusta a lógica de backend para que a migração do frete considere o status do cadeado e a validade da taxa, em vez de depender exclusivamente de um campo que sofre reset automático. Essa medida de melhoria contínua isola os fluxos de Pickup e Freight, evitando que manutenções futuras em um serviço bloqueiem inadvertidamente a receita ou o contas a pagar de outro."
