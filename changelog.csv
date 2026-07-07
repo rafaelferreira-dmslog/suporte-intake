@@ -57433,3 +57433,8 @@ INTAKE-25"
 SI-7490,2026-07-06T19:02:48.446-0300,Sistema,Causa raiz potencial,,Falha na comunicação  entre módulos operacional e financial
 SI-7490,2026-07-06T19:02:48.446-0300,Sistema,Causa raiz final,,"A implementação da melhoria ENG-3861 tornou o parâmetro used mandatório para a migração de dados, porém não mapeou o impacto colateral no fluxo de frete, onde o comportamento nativo do sistema (fechamento do cadeado) altera automaticamente esse campo para false, bloqueando o envio ao financeiro."
 SI-7490,2026-07-06T19:02:48.446-0300,Sistema,Justificativa Causa Raiz final,,"O nexo causal reside na colisão entre uma nova regra de validação rígida e um comportamento legado de automação de interface. A solução aplicada ajusta a lógica de backend para que a migração do frete considere o status do cadeado e a validade da taxa, em vez de depender exclusivamente de um campo que sofre reset automático. Essa medida de melhoria contínua isola os fluxos de Pickup e Freight, evitando que manutenções futuras em um serviço bloqueiem inadvertidamente a receita ou o contas a pagar de outro."
+SI-7502,2026-07-07T07:56:22.887-0300,Sistema,Link,,This work item is blocked by GA-1150
+SI-7501,2026-07-07T07:47:22.864-0300,Sistema,Link,,This work item is blocked by GA-1149
+SI-7501,2026-07-07T08:44:07.420-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7501,2026-07-07T08:44:10.196-0300,Bruno Silva,resolution,,Done
+SI-7501,2026-07-07T08:44:10.196-0300,Bruno Silva,status,Submissão,Done
