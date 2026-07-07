@@ -57388,6 +57388,7 @@ SI-7484,2026-07-06T19:02:44.352-0300,Sistema,Criticidade final,,P3 - Baixa
 SI-7484,2026-07-06T19:02:44.352-0300,Sistema,Resolução do chamado,,Aguardando Informação
 SI-7483,2026-07-07T08:43:25.292-0300,Bruno Silva,resolution,,Done
 SI-7483,2026-07-07T08:43:25.292-0300,Bruno Silva,status,Submissão,Done
+SI-7483,2026-07-07T10:50:54.747-0300,Rafael Ferreira,assignee,,Eduardo Felipe de Lima Rebello
 SI-7482,2026-07-07T08:43:22.001-0300,Bruno Silva,resolution,,Done
 SI-7482,2026-07-07T08:43:22.001-0300,Bruno Silva,status,Submissão,Done
 SI-7482,2026-07-07T10:44:00.290-0300,Rafael Ferreira,assignee,,Rafael Ferreira
@@ -57477,11 +57478,17 @@ SI-7495,2026-07-07T08:43:50.340-0300,Bruno Silva,resolution,,Done
 SI-7495,2026-07-07T08:43:50.340-0300,Bruno Silva,status,Submissão,Done
 SI-7497,2026-07-07T08:43:53.188-0300,Bruno Silva,resolution,,Done
 SI-7497,2026-07-07T08:43:53.188-0300,Bruno Silva,status,Submissão,Done
+SI-7498,2026-07-07T11:40:23.344-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7498,2026-07-07T11:40:26.126-0300,Bruno Silva,resolution,,Done
+SI-7498,2026-07-07T11:40:26.126-0300,Bruno Silva,status,Submissão,Done
 SI-7500,2026-07-07T10:00:29.894-0300,Helena Almeida,resolution,,Done
 SI-7500,2026-07-07T10:00:29.894-0300,Helena Almeida,status,Submissão,Done
 SI-7500,2026-07-07T10:00:32.697-0300,Helena Almeida,assignee,,Helena Almeida
 SI-7500,2026-07-07T10:00:43.509-0300,Helena Almeida,Criticidade final,,P2 - Média
 SI-7500,2026-07-07T10:01:04.408-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. Cadastro realizado. 
+SI-7499,2026-07-07T11:16:21.280-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7499,2026-07-07T11:16:24.607-0300,Bruno Silva,resolution,,Done
+SI-7499,2026-07-07T11:16:24.607-0300,Bruno Silva,status,Submissão,Done
 SI-7503,2026-07-07T08:50:39.551-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7503,2026-07-07T08:50:41.747-0300,Rafael Ferreira,resolution,,Done
 SI-7503,2026-07-07T08:50:41.747-0300,Rafael Ferreira,status,Submissão,Done
@@ -57526,7 +57533,19 @@ SI-7514,2026-07-07T10:24:27.056-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7514,2026-07-07T10:24:29.529-0300,Rafael Ferreira,resolution,,Done
 SI-7514,2026-07-07T10:24:29.529-0300,Rafael Ferreira,status,Submissão,Done
 SI-7514,2026-07-07T10:24:30.868-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7512,2026-07-07T10:46:06.031-0300,Bruno Silva,assignee,,Rafael Ferreira
+SI-7512,2026-07-07T10:46:11.883-0300,Bruno Silva,resolution,,Done
+SI-7512,2026-07-07T10:46:11.883-0300,Bruno Silva,status,Submissão,Done
 SI-7511,2026-07-07T10:22:30.939-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7511,2026-07-07T10:22:33.817-0300,Rafael Ferreira,resolution,,Done
 SI-7511,2026-07-07T10:22:33.817-0300,Rafael Ferreira,status,Submissão,Done
 SI-7511,2026-07-07T10:22:34.281-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7520,2026-07-07T11:38:38.965-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7520,2026-07-07T11:38:40.820-0300,Rafael Ferreira,resolution,,Done
+SI-7520,2026-07-07T11:38:40.820-0300,Rafael Ferreira,status,Submissão,Done
+SI-7520,2026-07-07T11:38:41.442-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7519,2026-07-07T11:33:06.745-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7519,2026-07-07T11:33:09.124-0300,Rafael Ferreira,resolution,,Done
+SI-7519,2026-07-07T11:33:09.124-0300,Rafael Ferreira,status,Submissão,Done
+SI-7519,2026-07-07T11:33:09.859-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7516,2026-07-07T10:55:27.544-0300,Sistema,Link,,This work item is blocked by GA-1152
