@@ -57875,6 +57875,43 @@ SI-7551,2026-07-07T16:35:28.306-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7551,2026-07-07T16:35:30.223-0300,Rafael Ferreira,resolution,,Done
 SI-7551,2026-07-07T16:35:30.223-0300,Rafael Ferreira,status,Submissão,Done
 SI-7551,2026-07-07T16:35:30.732-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7549,2026-07-07T17:17:10.400-0300,Rafael Ferreira,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+*1️⃣ Identificação do Chamado*
+
+* *Módulo:* Cadastro / SSO Auth (Customer / Company / Groups)
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção
+* *Título Sugerido:* Erro de Banco de Dados (ProgrammingError) ao salvar Company/Group/Customer Matriz
+
+*2️⃣ Entendimento do Problema*
+
+* *Passo a Passo:* 1. Acessar o módulo de cadastro no sistema. 2. Preencher ou alterar as informações de uma Company, Group ou Customer definida como Matriz. 3. Acionar a ação de salvar.
+* *Comportamento Esperado vs. Atual:* * _Esperado:_ O cadastro/edição da matriz deve ser concluído com sucesso e persistido no banco de dados.
+** _Atual:_ O sistema bloqueia a ação e gera uma exceção no backend ({{ProgrammingError: operator does not exist: text[] @> character varying[]}}).
+* *Evidências:* Logs capturados via Elastic APM apontando o erro na query SQL atrelada à tabela {{sso_auth_ssouser}} (Culprit: {{elasticapm.instrumentation.packages.dbapi2._trace_sql}}).
+
+*3️⃣ Análise Técnica Inicial*
+
+* *Histórico/Logs:* O Traceback indica que a falha ocorre ao executar uma query SQL na coluna {{remote_company_id}} da tabela {{sso_auth_ssouser}}. O banco de dados recusa a transação por incompatibilidade de tipos de dados em uma operação de array.
+* *Parametrização/Perfil:* O erro é sistêmico e ocorre para *todos os usuários*, independentemente do perfil de acesso.
+
+*4️⃣ Avaliação de Impacto*
+
+* *Abrangência:* Geral. Afeta *todos os usuários* e bloqueia o salvamento de *todas* as Companys, Groups e Customers configurados como matrizes.
+* *Criticidade:* Crítica
+* *Justificativa:* O incidente ocorre em Produção, afeta 100% da base de usuários e impede completamente o registro ou atualização de matrizes, o que gera um bloqueio crítico e imediato na operação comercial e operacional.
+* *Workaround:* Não há solução paliativa em nível de interface, pois trata-se de um erro de persistência no backend.
+
+*5️⃣ Tentativas de Resolução*
+
+* *Ações Realizadas:* O Service Desk realizou o levantamento do log de erro gerado pela aplicação, identificando que a falha ocorre diretamente na instrução SQL. Ações de limpeza de cache ou revisão de acessos foram descartadas por se tratar de um erro de backend generalizado em Produção.
+
+*6️⃣ Justificativa Técnica para Escalonamento* O erro trata-se de um bug de sintaxe/tipagem ({{Type Casting}}) na comunicação entre o ORM da aplicação e o PostgreSQL. O N1 não tem acessos para alterar o código-fonte ou realizar modificações estruturais nas models do banco. O ticket está sendo escalonado como crítico para que a equipe de Desenvolvimento/Sustentação (N2/N3) realize a correção do casting na instrução SQL."
+SI-7549,2026-07-07T17:17:18.086-0300,Rafael Ferreira,Encaminhado para:,,Sustentação
+SI-7549,2026-07-07T17:17:22.312-0300,Sistema,Link,,This work item is blocked by SUS-260
+SI-7549,2026-07-07T17:18:40.506-0300,Rafael Ferreira,Solicitação,Incidente,
+SI-7549,2026-07-07T17:18:44.972-0300,Sistema,Link,,This work item is blocked by SUS-261
 SI-7548,2026-07-07T16:34:58.450-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7548,2026-07-07T16:35:09.209-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7548,2026-07-07T16:35:11.382-0300,Rafael Ferreira,resolution,,Done
@@ -57889,3 +57926,7 @@ SI-7540,2026-07-07T14:45:27.214-0300,Sistema,Link,,This work item is blocked by 
 SI-7555,2026-07-07T16:28:37.118-0300,Sistema,Link,,This work item is blocked by GA-1173
 SI-7554,2026-07-07T16:22:26.497-0300,Sistema,Link,,This work item is blocked by GA-1172
 SI-7553,2026-07-07T16:05:28.469-0300,Sistema,Link,,This work item is blocked by GA-1171
+SI-7558,2026-07-07T17:14:24.407-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7558,2026-07-07T17:14:26.872-0300,Rafael Ferreira,resolution,,Done
+SI-7558,2026-07-07T17:14:26.872-0300,Rafael Ferreira,status,Submissão,Done
+SI-7558,2026-07-07T17:14:27.390-0300,Rafael Ferreira,Classificação,,Ranked higher
