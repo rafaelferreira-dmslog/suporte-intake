@@ -1,8 +1,20 @@
 Chave,Resumo,Responsável,Criticidade final,Prioridade,Status,Resolução,Criado,Atualizado(a),Resolvido,Subproduto,Colaborador,email,Cargo,Causa Raiz,Causa raiz final,Causa raiz potencial,Justificativa Causa Raiz final,Resolução do chamado,Descrição do problema,Encaminhado para:,Departamento,Líder direto,Clusters DOC IA,Itens associados
-SI-7551,Dúvida,,,P0 - Crítica,Submissão,,Tue Jul 07 2026 15:33:18 GMT-0300 (Brasilia Standard Time),Tue Jul 07 2026 15:33:22 GMT-0300 (Brasilia Standard Time),,Não consigo vincular a ordem ao booking,Julianna Navarro,julianna.navarro@dmslog.com,Air Freight Operations Assistant,,,,,,Não consigo vincular a order no booking.,,Air Operations,,,GA-1170
+SI-7556,Incidente,,,P1 - Alta,Submissão,,Tue Jul 07 2026 16:31:19 GMT-0300 (Brasilia Standard Time),Tue Jul 07 2026 16:31:19 GMT-0300 (Brasilia Standard Time),,Valores divergentes na ND,Juliana de Mello Romao,juliana.mello@dmslog.com,Financial Assistant,,,,,,"O valor do collect fee está divergente ao faturar. O correto é BRL 74,26 (BRL 65 + 14,25%) mas está aparecendo BRL 75,01 no valor final.",,Financial,,,
+SI-7555,Solicitação de cadastro,,,P0 - Crítica,Submissão,,Tue Jul 07 2026 16:28:32 GMT-0300 (Brasilia Standard Time),Tue Jul 07 2026 16:28:37 GMT-0300 (Brasilia Standard Time),,Falha ao validar cliente,Rony Ghiu De Moraes Rego Da Silva,rony.ghiu@dmslog.com,Ocean Strategy Development Team Leader,,,,,,"Estamos fazendo a substituição de clientes na indústria Energy: De SHELL PETROLEO; Para: LUBRIZOL. A Lubrizol já estava validada para ciclo médio prazo porém conseguimos entrada antecipada para este ciclo. 
+
+Para validação no PM, modulo validation: 
+Cliente: LUBRIZOL
+CRM: https://sales.dmslog.com/crm/customer/17219/profile/
+Modal marítimo e aéreo
+Reason: Strong Relatioship
+Revalidation date: 31/12/2027",,Ocean Product,,,GA-1173
+SI-7554,Solicitação de cadastro,,,P1 - Alta,Submissão,,Tue Jul 07 2026 16:22:21 GMT-0300 (Brasilia Standard Time),Tue Jul 07 2026 16:22:26 GMT-0300 (Brasilia Standard Time),,Cadastro de City,Rose Ribeiro,rose.ribeiro@dmslog.com,Operations Agent,,,,,,Jersey Village,,Air Operations,,,GA-1172
+SI-7553,Solicitação de cadastro,,,P1 - Alta,Submissão,,Tue Jul 07 2026 16:05:18 GMT-0300 (Brasilia Standard Time),Tue Jul 07 2026 16:05:28 GMT-0300 (Brasilia Standard Time),,Erro 500,Samara De Abreu Cabral,samara.cabral@dmslog.com,Business Development Executive,,,,,,Não consigo alterar o sales industry para samara.cabral,,Energy Industry,,,GA-1171
+SI-7552,Incidente,,,P1 - Alta,Submissão,,Tue Jul 07 2026 15:57:19 GMT-0300 (Brasilia Standard Time),Tue Jul 07 2026 15:57:19 GMT-0300 (Brasilia Standard Time),,ND com taxa Zerada,Juliana de Mello Romao,juliana.mello@dmslog.com,Financial Assistant,,,,,,O valor total da ND após emissão ficou zerado.,,Financial,,,
+SI-7551,Dúvida,Rafael Ferreira,,P0 - Crítica,Concluído,Itens concluídos,Tue Jul 07 2026 15:33:18 GMT-0300 (Brasilia Standard Time),Tue Jul 07 2026 16:35:30 GMT-0300 (Brasilia Standard Time),Tue Jul 07 2026 16:35:30 GMT-0300 (Brasilia Standard Time),Não consigo vincular a ordem ao booking,Julianna Navarro,julianna.navarro@dmslog.com,Air Freight Operations Assistant,,,,,,Não consigo vincular a order no booking.,,Air Operations,,,GA-1170
 SI-7550,Incidente,,,P0 - Crítica,Submissão,,Tue Jul 07 2026 15:23:17 GMT-0300 (Brasilia Standard Time),Tue Jul 07 2026 15:23:17 GMT-0300 (Brasilia Standard Time),,Google Meet problemas com som,Aline Garrido Gardinal,aline.gardinal@dmslog.com,Air Freight Customer Care Specialist,,,,,,Nao consigo abrir o microfone,,Air Operations,,,
 SI-7549,Incidente,,,P0 - Crítica,Submissão,,Tue Jul 07 2026 15:12:18 GMT-0300 (Brasilia Standard Time),Tue Jul 07 2026 15:12:19 GMT-0300 (Brasilia Standard Time),,Erro 500,Juliana de Mello Romao,juliana.mello@dmslog.com,Financial Assistant,,,,,,"Mensagem de ""ERROR 500 INTERNAL SERVER ERROR"" aparece constantemente ao tentar faturar a order 260334219. O erro não se repete para as outras orders.",,Financial,,,
-SI-7548,Incidente,,,P0 - Crítica,Submissão,,Tue Jul 07 2026 15:11:24 GMT-0300 (Brasilia Standard Time),Tue Jul 07 2026 15:11:24 GMT-0300 (Brasilia Standard Time),,Charge não migrou para o financeiro,Bruna Nogueira Costa Pinho Silva,bruna.pinho@dmslog.com,Ocean Freight Operations Analyst,,,,,,"Seguem bookings;
+SI-7548,Incidente,Rafael Ferreira,,P0 - Crítica,Concluído,Itens concluídos,Tue Jul 07 2026 15:11:24 GMT-0300 (Brasilia Standard Time),Tue Jul 07 2026 16:35:11 GMT-0300 (Brasilia Standard Time),Tue Jul 07 2026 16:35:11 GMT-0300 (Brasilia Standard Time),Charge não migrou para o financeiro,Bruna Nogueira Costa Pinho Silva,bruna.pinho@dmslog.com,Ocean Freight Operations Analyst,,,,,,"Seguem bookings;
 MILMIA10794
 LONRIO05465
 CANRIG00128
@@ -17,7 +29,7 @@ BCNSSZ09292
 BCNSSZ09277
 ANRRIO12178
 ANRRIO12137
-ANRRIG06417",,Ocean Operations,,,
+ANRRIG06417",DS,Ocean Operations,,,
 SI-7547,Solicitação de cadastro,,,P1 - Alta,Submissão,,Tue Jul 07 2026 15:09:17 GMT-0300 (Brasilia Standard Time),Tue Jul 07 2026 15:09:22 GMT-0300 (Brasilia Standard Time),,"Não consigo criar (prospect, customer, grupo, stakeholder, bid insights, quotes estimate ou register swot)",Samara De Abreu Cabral,samara.cabral@dmslog.com,Business Development Executive,,,,,,"FAVOR CRIAR PROSPECT
 NAME (Nome que deve constar no Sys): TSEA ENERGIA 
  COMPANY NAME: TRANSFORMADORES E SERVICOS DE ENERGIA DAS AMERICAS S.A. 
