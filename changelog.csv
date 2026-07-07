@@ -56707,6 +56707,300 @@ SI-7413,2026-07-03T17:36:00.122-0300,Rafael Ferreira,Rank,,Ranked lower
 SI-7412,2026-07-03T17:35:58.012-0300,Rafael Ferreira,resolution,,Done
 SI-7412,2026-07-03T17:35:58.012-0300,Rafael Ferreira,status,Submissão,Done
 SI-7412,2026-07-03T17:35:58.416-0300,Rafael Ferreira,Rank,,Ranked lower
+SI-7412,2026-07-07T11:56:54.302-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7412,2026-07-07T12:05:03.427-0300,Eduardo Felipe de Lima Rebello,description,,"📘 CHECKLIST PADRÃO DE TRIAGEM (DMS)
+
+1️⃣ Identificação do Chamado
+
+Módulo: Comercial / Financial (Operacional Aéreo - Airfreight)
+
+Tipo/Classificação: Incidente
+
+Ambiente: Produção
+
+Título Sugerido: Erro de Divergência no valor de FUEL entre a SI e o Carrier Charge (Selling) no Modal Aéreo
+
+2️⃣ Entendimento do Problema
+
+Passo a Passo:
+
+Acessar a Order correspondente ao processo aéreo.
+
+Verificar os valores das taxas acordadas e gravadas na SI (Shipping Instruction).
+
+Acessar o painel Financial da Order e analisar a seção de Selling (Carrier Charge).
+
+Comparar os valores das taxas de VSC, Security e FUEL entre as duas telas.
+
+Comportamento Esperado vs. Atual:
+
+Esperado: O valor de FUEL no Selling deveria ser idêntico ao valor contido na SI ($17.60), visto que não houve atualização de cotação (Update Quote) e os parâmetros de cubagem/peso são os mesmos.
+
+Atual: O sistema apresenta o valor de USD 17.60 na SI, mas calcula/exibe USD 18.40 no Carrier Charge do Selling. As demais taxas (VSC e Security) mantêm o sincronismo correto.
+
+Evidências:
+
+!image-20260707-150050.png|width=1046,alt=""image-20260707-150050.png""!
+
+!image-20260707-150410.png|width=1048,alt=""image-20260707-150410.png""!
+
+!image-20260707-150450.png|width=890,alt=""image-20260707-150450.png""!
+
+
+
+3️⃣ Análise Técnica Inicial
+
+Histórico/Logs:  (Necessário extrair ou verificar se houve alguma modificação por lote ou atualização automática de tarifas de terceiros). O operador garante que a ação manual de ""Update Quote"" não foi realizada após a geração da SI.
+
+Parametrização/Perfil: As variáveis cruciais de cálculo estão idênticas para todas as taxas comparadas: Quantidade (46kgs), Unidade (C.W - Chargeable Weight) e Moeda (USD). O comportamento incorreto está isolado estritamente no item FUEL.
+
+4️⃣ Avaliação de Impacto
+
+Abrangência: Pontual (Registrado em uma Order específica, necessitando investigação se há repetição no modal).
+
+Criticidade: Média
+
+Justificativa: A divergência de valores financeiros impede o faturamento correto da Order, travando o fluxo comercial e o fechamento do processo com o cliente.
+
+Workaround: [PENDENTE: SOLICITAR AO USUÁRIO] (Verificar se a aplicação do paliativo padrão de abrir os cadeados financeiros, desmarcar e remarcar o campo ""Used"" na seção de Destination/Selling força o recálculo correto para o valor da SI).
+
+5️⃣ Tentativas de Resolução
+
+Ações Realizadas: O Service Desk validou o alinhamento das métricas de peso (46kgs na unit C.W), eliminando a hipótese de divergência por preenchimento incorreto de quantidades ou conversão de moedas entre as taxas correlacionadas (VSC e Security, que estão corretas).
+
+6️⃣ Justificativa Técnica para Escalonamento
+
+O chamado requer atuação de N2/Sustentação (Time de DS/Desenvolvimento), pois há uma quebra de integridade de dados entre a instrução de embarque gerada (SI) e o módulo financeiro de Selling. Como os parâmetros de entrada de cálculo são idênticos aos itens que funcionam, a persistência do valor divergente de USD 18.40 indica uma inconsistência interna na tabela de precificação ou um recálculo automático indevido executado pelo backend.
+
+📝 DESCRIÇÃO OTIMIZADA (PARA O CHAMADO)
+
+Prezada equipe de Sustentação / N2,
+
+Identificamos uma inconsistência de valores financeiros no módulo de Selling (Carrier Charge) em uma Order do modal Aéreo, especificamente no item de taxa FUEL.
+
+Cenário do Erro:
+
+Valor na SI (Shipping Instruction): USD 17.60
+
+Valor no Carrier Charge (Selling): USD 18.40
+
+Análises e Validações Realizadas:
+
+Constatamos que as variáveis de cálculo para as taxas VSC, Security e FUEL encontram-se perfeitamente idênticas: Quantity = 46 kgs, Unit = C.W (Chargeable Weight) e Currency = USD.
+
+As taxas de VSC e Security estão integrando corretamente e sem divergências. O erro manifesta-se estritamente no cálculo/migração do FUEL.
+
+O operador confirmou que não foi executado o comando ""Update Quote"" após a geração da SI, o que deveria blindar e manter a paridade com os valores originais da cotação.
+
+Solicitamos apoio para analisar o comportamento no banco de dados e realizar o ajuste/sincronização pertinente no painel financeiro para permitir o faturamento correto do processo.
+
+🕵️ CAUSA RAIZ POTENCIAL
+
+Com base nas características do comportamento sistêmico relatado, as principais hipóteses de causa raiz são:
+
+Divergência de Rate (Taxa Unitária) no Backend: Uma sutil diferença na tabela de precificação base (booking_airfreight ou equivalente) onde a taxa unitária do Fuel Surcharge aplicada automaticamente pelo sistema difere daquela que foi congelada no momento da emissão da SI.
+
+Gatilho Automático de Atualização (Job/Trigger): Alguma rotina automatizada do sistema pode ter recalculado a sobretaxa de combustível com base em tabelas vigentes de companhias aéreas ou flutuação cambial interna, ignorando a trava da geração da SI, mesmo sem a ação manual do usuário de atualizar a cotação.
+
+Inconsistência de Arredondamento ou Parâmetro Oculto: O item FUEL pode estar parametrizado no backend com regras de arredondamento ou mínimos tarifários distintos dos itens VSC e Security, gerando a diferença final de USD 0.80 sobre a pesagem de 46kgs."
+SI-7412,2026-07-07T12:05:04.463-0300,Eduardo Felipe de Lima Rebello,Attachment,,image-20260707-150450.png
+SI-7412,2026-07-07T12:05:04.463-0300,Eduardo Felipe de Lima Rebello,Attachment,,image-20260707-150410.png
+SI-7412,2026-07-07T12:05:04.463-0300,Eduardo Felipe de Lima Rebello,Attachment,,image-20260707-150050.png
+SI-7412,2026-07-07T12:06:33.547-0300,Eduardo Felipe de Lima Rebello,description,"📘 CHECKLIST PADRÃO DE TRIAGEM (DMS)
+
+1️⃣ Identificação do Chamado
+
+Módulo: Comercial / Financial (Operacional Aéreo - Airfreight)
+
+Tipo/Classificação: Incidente
+
+Ambiente: Produção
+
+Título Sugerido: Erro de Divergência no valor de FUEL entre a SI e o Carrier Charge (Selling) no Modal Aéreo
+
+2️⃣ Entendimento do Problema
+
+Passo a Passo:
+
+Acessar a Order correspondente ao processo aéreo.
+
+Verificar os valores das taxas acordadas e gravadas na SI (Shipping Instruction).
+
+Acessar o painel Financial da Order e analisar a seção de Selling (Carrier Charge).
+
+Comparar os valores das taxas de VSC, Security e FUEL entre as duas telas.
+
+Comportamento Esperado vs. Atual:
+
+Esperado: O valor de FUEL no Selling deveria ser idêntico ao valor contido na SI ($17.60), visto que não houve atualização de cotação (Update Quote) e os parâmetros de cubagem/peso são os mesmos.
+
+Atual: O sistema apresenta o valor de USD 17.60 na SI, mas calcula/exibe USD 18.40 no Carrier Charge do Selling. As demais taxas (VSC e Security) mantêm o sincronismo correto.
+
+Evidências:
+
+!image-20260707-150050.png|width=1046,alt=""image-20260707-150050.png""!
+
+!image-20260707-150410.png|width=1048,alt=""image-20260707-150410.png""!
+
+!image-20260707-150450.png|width=890,alt=""image-20260707-150450.png""!
+
+
+
+3️⃣ Análise Técnica Inicial
+
+Histórico/Logs:  (Necessário extrair ou verificar se houve alguma modificação por lote ou atualização automática de tarifas de terceiros). O operador garante que a ação manual de ""Update Quote"" não foi realizada após a geração da SI.
+
+Parametrização/Perfil: As variáveis cruciais de cálculo estão idênticas para todas as taxas comparadas: Quantidade (46kgs), Unidade (C.W - Chargeable Weight) e Moeda (USD). O comportamento incorreto está isolado estritamente no item FUEL.
+
+4️⃣ Avaliação de Impacto
+
+Abrangência: Pontual (Registrado em uma Order específica, necessitando investigação se há repetição no modal).
+
+Criticidade: Média
+
+Justificativa: A divergência de valores financeiros impede o faturamento correto da Order, travando o fluxo comercial e o fechamento do processo com o cliente.
+
+Workaround: [PENDENTE: SOLICITAR AO USUÁRIO] (Verificar se a aplicação do paliativo padrão de abrir os cadeados financeiros, desmarcar e remarcar o campo ""Used"" na seção de Destination/Selling força o recálculo correto para o valor da SI).
+
+5️⃣ Tentativas de Resolução
+
+Ações Realizadas: O Service Desk validou o alinhamento das métricas de peso (46kgs na unit C.W), eliminando a hipótese de divergência por preenchimento incorreto de quantidades ou conversão de moedas entre as taxas correlacionadas (VSC e Security, que estão corretas).
+
+6️⃣ Justificativa Técnica para Escalonamento
+
+O chamado requer atuação de N2/Sustentação (Time de DS/Desenvolvimento), pois há uma quebra de integridade de dados entre a instrução de embarque gerada (SI) e o módulo financeiro de Selling. Como os parâmetros de entrada de cálculo são idênticos aos itens que funcionam, a persistência do valor divergente de USD 18.40 indica uma inconsistência interna na tabela de precificação ou um recálculo automático indevido executado pelo backend.
+
+📝 DESCRIÇÃO OTIMIZADA (PARA O CHAMADO)
+
+Prezada equipe de Sustentação / N2,
+
+Identificamos uma inconsistência de valores financeiros no módulo de Selling (Carrier Charge) em uma Order do modal Aéreo, especificamente no item de taxa FUEL.
+
+Cenário do Erro:
+
+Valor na SI (Shipping Instruction): USD 17.60
+
+Valor no Carrier Charge (Selling): USD 18.40
+
+Análises e Validações Realizadas:
+
+Constatamos que as variáveis de cálculo para as taxas VSC, Security e FUEL encontram-se perfeitamente idênticas: Quantity = 46 kgs, Unit = C.W (Chargeable Weight) e Currency = USD.
+
+As taxas de VSC e Security estão integrando corretamente e sem divergências. O erro manifesta-se estritamente no cálculo/migração do FUEL.
+
+O operador confirmou que não foi executado o comando ""Update Quote"" após a geração da SI, o que deveria blindar e manter a paridade com os valores originais da cotação.
+
+Solicitamos apoio para analisar o comportamento no banco de dados e realizar o ajuste/sincronização pertinente no painel financeiro para permitir o faturamento correto do processo.
+
+🕵️ CAUSA RAIZ POTENCIAL
+
+Com base nas características do comportamento sistêmico relatado, as principais hipóteses de causa raiz são:
+
+Divergência de Rate (Taxa Unitária) no Backend: Uma sutil diferença na tabela de precificação base (booking_airfreight ou equivalente) onde a taxa unitária do Fuel Surcharge aplicada automaticamente pelo sistema difere daquela que foi congelada no momento da emissão da SI.
+
+Gatilho Automático de Atualização (Job/Trigger): Alguma rotina automatizada do sistema pode ter recalculado a sobretaxa de combustível com base em tabelas vigentes de companhias aéreas ou flutuação cambial interna, ignorando a trava da geração da SI, mesmo sem a ação manual do usuário de atualizar a cotação.
+
+Inconsistência de Arredondamento ou Parâmetro Oculto: O item FUEL pode estar parametrizado no backend com regras de arredondamento ou mínimos tarifários distintos dos itens VSC e Security, gerando a diferença final de USD 0.80 sobre a pesagem de 46kgs.","📘 CHECKLIST PADRÃO DE TRIAGEM (DMS)
+
+1️⃣ Identificação do Chamado
+
+Módulo: Comercial / Financial (Operacional Aéreo - Airfreight)
+
+Tipo/Classificação: Incidente
+
+Ambiente: Produção
+
+Título Sugerido: Erro de Divergência no valor de FUEL entre a SI e o Carrier Charge (Selling) no Modal Aéreo
+
+2️⃣ Entendimento do Problema
+
+Passo a Passo:
+
+Acessar a Order correspondente ao processo aéreo.
+
+Verificar os valores das taxas acordadas e gravadas na SI (Shipping Instruction).
+
+Acessar o painel Financial da Order e analisar a seção de Selling (Carrier Charge).
+
+Comparar os valores das taxas de VSC, Security e FUEL entre as duas telas.
+
+Comportamento Esperado vs. Atual:
+
+Esperado: O valor de FUEL no Selling deveria ser idêntico ao valor contido na SI ($17.60), visto que não houve atualização de cotação (Update Quote) e os parâmetros de cubagem/peso são os mesmos.
+
+Atual: O sistema apresenta o valor de USD 17.60 na SI, mas calcula/exibe USD 18.40 no Carrier Charge do Selling. As demais taxas (VSC e Security) mantêm o sincronismo correto.
+
+Evidências: 
+
+Link ORDER: [https://operational.dmslog.com/order/166382/selling/|https://operational.dmslog.com/order/166382/selling/]
+
+
+
+!image-20260707-150050.png|width=1046,alt=""image-20260707-150050.png""!
+
+!image-20260707-150410.png|width=1048,alt=""image-20260707-150410.png""!
+
+!image-20260707-150450.png|width=890,alt=""image-20260707-150450.png""!
+
+
+
+3️⃣ Análise Técnica Inicial
+
+Histórico/Logs:  (Necessário extrair ou verificar se houve alguma modificação por lote ou atualização automática de tarifas de terceiros). O operador garante que a ação manual de ""Update Quote"" não foi realizada após a geração da SI.
+
+Parametrização/Perfil: As variáveis cruciais de cálculo estão idênticas para todas as taxas comparadas: Quantidade (46kgs), Unidade (C.W - Chargeable Weight) e Moeda (USD). O comportamento incorreto está isolado estritamente no item FUEL.
+
+4️⃣ Avaliação de Impacto
+
+Abrangência: Pontual (Registrado em uma Order específica, necessitando investigação se há repetição no modal).
+
+Criticidade: Média
+
+Justificativa: A divergência de valores financeiros impede o faturamento correto da Order, travando o fluxo comercial e o fechamento do processo com o cliente.
+
+Workaround: [PENDENTE: SOLICITAR AO USUÁRIO] (Verificar se a aplicação do paliativo padrão de abrir os cadeados financeiros, desmarcar e remarcar o campo ""Used"" na seção de Destination/Selling força o recálculo correto para o valor da SI).
+
+5️⃣ Tentativas de Resolução
+
+Ações Realizadas: O Service Desk validou o alinhamento das métricas de peso (46kgs na unit C.W), eliminando a hipótese de divergência por preenchimento incorreto de quantidades ou conversão de moedas entre as taxas correlacionadas (VSC e Security, que estão corretas).
+
+6️⃣ Justificativa Técnica para Escalonamento
+
+O chamado requer atuação de N2/Sustentação (Time de DS/Desenvolvimento), pois há uma quebra de integridade de dados entre a instrução de embarque gerada (SI) e o módulo financeiro de Selling. Como os parâmetros de entrada de cálculo são idênticos aos itens que funcionam, a persistência do valor divergente de USD 18.40 indica uma inconsistência interna na tabela de precificação ou um recálculo automático indevido executado pelo backend.
+
+📝 DESCRIÇÃO OTIMIZADA (PARA O CHAMADO)
+
+Prezada equipe de Sustentação / N2,
+
+Identificamos uma inconsistência de valores financeiros no módulo de Selling (Carrier Charge) em uma Order do modal Aéreo, especificamente no item de taxa FUEL.
+
+Cenário do Erro:
+
+Valor na SI (Shipping Instruction): USD 17.60
+
+Valor no Carrier Charge (Selling): USD 18.40
+
+Análises e Validações Realizadas:
+
+Constatamos que as variáveis de cálculo para as taxas VSC, Security e FUEL encontram-se perfeitamente idênticas: Quantity = 46 kgs, Unit = C.W (Chargeable Weight) e Currency = USD.
+
+As taxas de VSC e Security estão integrando corretamente e sem divergências. O erro manifesta-se estritamente no cálculo/migração do FUEL.
+
+O operador confirmou que não foi executado o comando ""Update Quote"" após a geração da SI, o que deveria blindar e manter a paridade com os valores originais da cotação.
+
+Solicitamos apoio para analisar o comportamento no banco de dados e realizar o ajuste/sincronização pertinente no painel financeiro para permitir o faturamento correto do processo.
+
+🕵️ CAUSA RAIZ POTENCIAL
+
+Com base nas características do comportamento sistêmico relatado, as principais hipóteses de causa raiz são:
+
+Divergência de Rate (Taxa Unitária) no Backend: Uma sutil diferença na tabela de precificação base (booking_airfreight ou equivalente) onde a taxa unitária do Fuel Surcharge aplicada automaticamente pelo sistema difere daquela que foi congelada no momento da emissão da SI.
+
+Gatilho Automático de Atualização (Job/Trigger): Alguma rotina automatizada do sistema pode ter recalculado a sobretaxa de combustível com base em tabelas vigentes de companhias aéreas ou flutuação cambial interna, ignorando a trava da geração da SI, mesmo sem a ação manual do usuário de atualizar a cotação.
+
+Inconsistência de Arredondamento ou Parâmetro Oculto: O item FUEL pode estar parametrizado no backend com regras de arredondamento ou mínimos tarifários distintos dos itens VSC e Security, gerando a diferença final de USD 0.80 sobre a pesagem de 46kgs."
+SI-7412,2026-07-07T12:06:43.378-0300,Eduardo Felipe de Lima Rebello,Encaminhado para:,,Sustentação
+SI-7412,2026-07-07T12:06:47.249-0300,Sistema,Link,,This work item is blocked by SUS-259
 SI-7411,2026-07-03T13:52:44.902-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7411,2026-07-03T13:52:45.912-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7411,2026-07-03T13:52:48.559-0300,Rafael Ferreira,resolution,,Done
@@ -56947,6 +57241,8 @@ SI-7442,2026-07-03T17:36:13.999-0300,Rafael Ferreira,Rank,,Ranked higher
 SI-7441,2026-07-03T17:36:12.311-0300,Rafael Ferreira,resolution,,Done
 SI-7441,2026-07-03T17:36:12.311-0300,Rafael Ferreira,status,Submissão,Done
 SI-7441,2026-07-03T17:36:12.784-0300,Rafael Ferreira,Rank,,Ranked higher
+SI-7441,2026-07-07T12:26:07.337-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7441,2026-07-07T12:28:14.289-0300,Eduardo Felipe de Lima Rebello,Link,,This work item connects to SUS-259
 SI-7440,2026-07-03T14:34:23.332-0300,Sistema,Link,,This work item is blocked by GA-1128
 SI-7440,2026-07-03T16:15:23.352-0300,Helena Almeida,resolution,,Done
 SI-7440,2026-07-03T16:15:23.352-0300,Helena Almeida,status,Submissão,Done
@@ -57452,6 +57748,7 @@ SI-7492,2026-07-07T08:43:35.594-0300,Bruno Silva,resolution,,Done
 SI-7492,2026-07-07T08:43:35.594-0300,Bruno Silva,status,Submissão,Done
 SI-7491,2026-07-07T08:43:32.595-0300,Bruno Silva,resolution,,Done
 SI-7491,2026-07-07T08:43:32.595-0300,Bruno Silva,status,Submissão,Done
+SI-7491,2026-07-07T12:26:02.730-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7490,2026-07-06T15:59:26.243-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7490,2026-07-06T15:59:27.989-0300,Rafael Ferreira,resolution,,Done
 SI-7490,2026-07-06T15:59:27.989-0300,Rafael Ferreira,status,Submissão,Done
@@ -57474,10 +57771,13 @@ SI-7494,2026-07-07T08:43:47.952-0300,Bruno Silva,resolution,,Done
 SI-7494,2026-07-07T08:43:47.952-0300,Bruno Silva,status,Submissão,Done
 SI-7496,2026-07-07T08:43:55.454-0300,Bruno Silva,resolution,,Done
 SI-7496,2026-07-07T08:43:55.454-0300,Bruno Silva,status,Submissão,Done
+SI-7496,2026-07-07T11:57:27.680-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7495,2026-07-07T08:43:50.340-0300,Bruno Silva,resolution,,Done
 SI-7495,2026-07-07T08:43:50.340-0300,Bruno Silva,status,Submissão,Done
+SI-7495,2026-07-07T12:09:35.229-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7497,2026-07-07T08:43:53.188-0300,Bruno Silva,resolution,,Done
 SI-7497,2026-07-07T08:43:53.188-0300,Bruno Silva,status,Submissão,Done
+SI-7497,2026-07-07T11:57:16.015-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7498,2026-07-07T11:40:23.344-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7498,2026-07-07T11:40:26.126-0300,Bruno Silva,resolution,,Done
 SI-7498,2026-07-07T11:40:26.126-0300,Bruno Silva,status,Submissão,Done
@@ -57540,6 +57840,10 @@ SI-7511,2026-07-07T10:22:30.939-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7511,2026-07-07T10:22:33.817-0300,Rafael Ferreira,resolution,,Done
 SI-7511,2026-07-07T10:22:33.817-0300,Rafael Ferreira,status,Submissão,Done
 SI-7511,2026-07-07T10:22:34.281-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7521,2026-07-07T11:53:40.203-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7521,2026-07-07T11:53:50.694-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-7521,2026-07-07T11:53:53.378-0300,Rafael Ferreira,resolution,,Done
+SI-7521,2026-07-07T11:53:53.378-0300,Rafael Ferreira,status,Submissão,Done
 SI-7520,2026-07-07T11:38:38.965-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7520,2026-07-07T11:38:40.820-0300,Rafael Ferreira,resolution,,Done
 SI-7520,2026-07-07T11:38:40.820-0300,Rafael Ferreira,status,Submissão,Done
@@ -57548,4 +57852,9 @@ SI-7519,2026-07-07T11:33:06.745-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7519,2026-07-07T11:33:09.124-0300,Rafael Ferreira,resolution,,Done
 SI-7519,2026-07-07T11:33:09.124-0300,Rafael Ferreira,status,Submissão,Done
 SI-7519,2026-07-07T11:33:09.859-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7519,2026-07-07T11:49:05.562-0300,Bruno Silva,assignee,Rafael Ferreira,Bruno Silva
 SI-7516,2026-07-07T10:55:27.544-0300,Sistema,Link,,This work item is blocked by GA-1152
+SI-7516,2026-07-07T11:52:11.044-0300,Helena Almeida,assignee,,Helena Almeida
+SI-7516,2026-07-07T11:52:14.811-0300,Helena Almeida,resolution,,Done
+SI-7516,2026-07-07T11:52:14.811-0300,Helena Almeida,status,Submissão,Done
+SI-7516,2026-07-07T11:53:07.458-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. Já possui cadastro ativo no SYS com esse CNPJ.
