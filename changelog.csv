@@ -57873,6 +57873,7 @@ SI-7479,2026-07-08T00:59:19.808-0300,Sistema,Causa raiz final,,"Chamados de docs
 https://meet.google.com/tte-yhvb-nxe?authuser=0"
 SI-7479,2026-07-08T00:59:19.808-0300,Sistema,Justificativa Causa Raiz final,,"Chamados de docs ia devem ser tratados essa semana na sala de guerr:
 https://meet.google.com/tte-yhvb-nxe?authuser=0"
+SI-7479,2026-07-08T09:30:46.645-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7478,2026-07-06T13:50:27.638-0300,Sistema,Link,,This work item is blocked by GA-1141
 SI-7478,2026-07-06T13:56:21.103-0300,Helena Almeida,resolution,,Done
 SI-7478,2026-07-06T13:56:21.103-0300,Helena Almeida,status,Submissão,Done
@@ -58348,6 +58349,11 @@ SI-7549,2026-07-07T17:17:18.086-0300,Rafael Ferreira,Encaminhado para:,,Sustenta
 SI-7549,2026-07-07T17:17:22.312-0300,Sistema,Link,,This work item is blocked by SUS-260
 SI-7549,2026-07-07T17:18:40.506-0300,Rafael Ferreira,Solicitação,Incidente,
 SI-7549,2026-07-07T17:18:44.972-0300,Sistema,Link,,This work item is blocked by SUS-261
+SI-7549,2026-07-08T09:30:27.195-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7549,2026-07-08T09:30:28.785-0300,Rafael Ferreira,resolution,,Done
+SI-7549,2026-07-08T09:30:28.785-0300,Rafael Ferreira,status,Submissão,Done
+SI-7549,2026-07-08T09:30:29.266-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7549,2026-07-08T09:30:36.753-0300,Sistema,Link,,This work item is blocked by SUS-263
 SI-7548,2026-07-07T16:34:58.450-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7548,2026-07-07T16:35:09.209-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7548,2026-07-07T16:35:11.382-0300,Rafael Ferreira,resolution,,Done
@@ -58367,6 +58373,10 @@ SI-7548,2026-07-08T00:59:50.438-0300,Sistema,Causa raiz potencial,,Falha na comu
 SI-7548,2026-07-08T00:59:50.438-0300,Sistema,Causa raiz final,,"A implementação da melhoria ENG-3861 tornou o parâmetro used mandatório para a migração de dados, porém não mapeou o impacto colateral no fluxo de frete, onde o comportamento nativo do sistema (fechamento do cadeado) altera automaticamente esse campo para false, bloqueando o envio ao financeiro."
 SI-7548,2026-07-08T00:59:50.438-0300,Sistema,Justificativa Causa Raiz final,,"O nexo causal reside na colisão entre uma nova regra de validação rígida e um comportamento legado de automação de interface. A solução aplicada ajusta a lógica de backend para que a migração do frete considere o status do cadeado e a validade da taxa, em vez de depender exclusivamente de um campo que sofre reset automático. Essa medida de melhoria contínua isola os fluxos de Pickup e Freight, evitando que manutenções futuras em um serviço bloqueiem inadvertidamente a receita ou o contas a pagar de outro."
 SI-7547,2026-07-07T15:09:22.128-0300,Sistema,Link,,This work item is blocked by GA-1169
+SI-7547,2026-07-08T08:58:20.392-0300,Helena Almeida,assignee,,Helena Almeida
+SI-7547,2026-07-08T08:58:31.162-0300,Helena Almeida,resolution,,Done
+SI-7547,2026-07-08T08:58:31.162-0300,Helena Almeida,status,Submissão,Done
+SI-7547,2026-07-08T08:58:49.284-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. Cadastro realizado. 
 SI-7546,2026-07-07T15:04:24.622-0300,Sistema,Link,,This work item is blocked by GA-1168
 SI-7546,2026-07-07T17:54:52.345-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7546,2026-07-07T17:54:53.932-0300,Rafael Ferreira,assignee,,Rafael Ferreira
@@ -58444,6 +58454,10 @@ SI-7553,2026-07-08T00:59:51.291-0300,Sistema,Resolução do chamado,,Identificad
 SI-7553,2026-07-08T00:59:51.291-0300,Sistema,Causa raiz potencial,,"Falha na validação de dados no ato da transferência de titularidade, inconsistência de permissão vinculada ao usuário de destino ou exceção não tratada na rotina de atualização do formulário do CRM."
 SI-7553,2026-07-08T00:59:51.291-0300,Sistema,Causa raiz final,,O sistema apresentou uma falha interna de processamento ao tentar registrar a mudança da responsável comercial pelo cliente.
 SI-7553,2026-07-08T00:59:51.291-0300,Sistema,Justificativa Causa Raiz final,,O retorno de status  ao tentar modificar o vínculo do usuário no módulo de CRM indica uma exceção não tratada no servidor durante o processamento da requisição de update.
+SI-7552,2026-07-08T09:39:27.404-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7552,2026-07-08T09:39:28.907-0300,Rafael Ferreira,resolution,,Done
+SI-7552,2026-07-08T09:39:28.907-0300,Rafael Ferreira,status,Submissão,Done
+SI-7552,2026-07-08T09:39:29.329-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7558,2026-07-07T17:14:24.407-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7558,2026-07-07T17:14:26.872-0300,Rafael Ferreira,resolution,,Done
 SI-7558,2026-07-07T17:14:26.872-0300,Rafael Ferreira,status,Submissão,Done
@@ -58463,4 +58477,14 @@ SI-7558,2026-07-08T00:59:52.803-0300,Sistema,Causa raiz potencial,,Falha na comu
 SI-7558,2026-07-08T00:59:52.803-0300,Sistema,Causa raiz final,,"A implementação da melhoria ENG-3861 tornou o parâmetro used mandatório para a migração de dados, porém não mapeou o impacto colateral no fluxo de frete, onde o comportamento nativo do sistema (fechamento do cadeado) altera automaticamente esse campo para false, bloqueando o envio ao financeiro."
 SI-7558,2026-07-08T00:59:52.803-0300,Sistema,Justificativa Causa Raiz final,,"O nexo causal reside na colisão entre uma nova regra de validação rígida e um comportamento legado de automação de interface. A solução aplicada ajusta a lógica de backend para que a migração do frete considere o status do cadeado e a validade da taxa, em vez de depender exclusivamente de um campo que sofre reset automático. Essa medida de melhoria contínua isola os fluxos de Pickup e Freight, evitando que manutenções futuras em um serviço bloqueiem inadvertidamente a receita ou o contas a pagar de outro."
 SI-7563,2026-07-07T17:53:27.958-0300,Sistema,Link,,This work item is blocked by GA-1178
+SI-7563,2026-07-08T09:13:38.962-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7563,2026-07-08T09:13:51.251-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-7563,2026-07-08T09:13:54.962-0300,Rafael Ferreira,resolution,,Done
+SI-7563,2026-07-08T09:13:54.962-0300,Rafael Ferreira,status,Submissão,Done
 SI-7562,2026-07-07T17:49:21.071-0300,Sistema,Link,,This work item is blocked by GA-1177
+SI-7569,2026-07-08T09:39:23.637-0300,Sistema,Link,,This work item is blocked by GA-1180
+SI-7568,2026-07-08T09:39:23.672-0300,Sistema,Link,,This work item is blocked by GA-1179
+SI-7567,2026-07-08T09:36:12.364-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7567,2026-07-08T09:36:13.936-0300,Rafael Ferreira,resolution,,Done
+SI-7567,2026-07-08T09:36:13.936-0300,Rafael Ferreira,status,Submissão,Done
+SI-7567,2026-07-08T09:36:14.372-0300,Rafael Ferreira,Classificação,,Ranked higher
