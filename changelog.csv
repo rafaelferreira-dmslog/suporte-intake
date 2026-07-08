@@ -55859,6 +55859,7 @@ SI-7355,2026-07-02T17:05:16.437-0300,Rafael Ferreira,resolution,,Done
 SI-7355,2026-07-02T17:05:16.437-0300,Rafael Ferreira,status,Submissão,Done
 SI-7355,2026-07-02T17:05:16.921-0300,Rafael Ferreira,Rank,,Ranked lower
 SI-7355,2026-07-02T17:58:32.267-0300,Rafael Ferreira,Criticidade final,,P2 - Média
+SI-7355,2026-07-08T15:54:39.902-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7354,2026-07-01T18:01:20.490-0300,Sistema,Link,,This work item is blocked by GA-1115
 SI-7354,2026-07-01T18:27:31.688-0300,Helena Almeida,assignee,,Helena Almeida
 SI-7354,2026-07-01T18:27:34.401-0300,Helena Almeida,resolution,,Done
@@ -58291,6 +58292,9 @@ SI-7539,2026-07-07T14:43:27.686-0300,Sistema,Link,,This work item is blocked by 
 SI-7539,2026-07-08T10:59:51.123-0300,Rafael Ferreira,resolution,,Done
 SI-7539,2026-07-08T10:59:51.123-0300,Rafael Ferreira,status,Submissão,Done
 SI-7539,2026-07-08T10:59:51.623-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7539,2026-07-08T15:45:26.275-0300,Helena Almeida,assignee,,Helena Almeida
+SI-7539,2026-07-08T15:45:35.642-0300,Helena Almeida,Criticidade final,,P2 - Média
+SI-7539,2026-07-08T15:45:42.529-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. Cadastro realizado. 
 SI-7538,2026-07-07T14:34:24.341-0300,Sistema,Link,,This work item is blocked by GA-1161
 SI-7538,2026-07-07T17:53:31.333-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7538,2026-07-07T17:53:33.570-0300,Rafael Ferreira,resolution,,Done
@@ -58418,6 +58422,8 @@ SI-7528,2026-07-07T14:08:26.770-0300,Sistema,Link,,This work item is blocked by 
 SI-7528,2026-07-08T10:59:53.109-0300,Rafael Ferreira,resolution,,Done
 SI-7528,2026-07-08T10:59:53.109-0300,Rafael Ferreira,status,Submissão,Done
 SI-7528,2026-07-08T10:59:53.632-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7528,2026-07-08T15:48:06.068-0300,Helena Almeida,assignee,,Helena Almeida
+SI-7528,2026-07-08T15:48:19.826-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. Cadastro realizado. 
 SI-7551,2026-07-07T15:33:22.305-0300,Sistema,Link,,This work item is blocked by GA-1170
 SI-7551,2026-07-07T16:35:28.306-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7551,2026-07-07T16:35:30.223-0300,Rafael Ferreira,resolution,,Done
@@ -58800,3 +58806,4 @@ SI-7582,2026-07-08T14:08:37.728-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7582,2026-07-08T14:08:47.665-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7582,2026-07-08T14:08:51.239-0300,Rafael Ferreira,resolution,,Done
 SI-7582,2026-07-08T14:08:51.239-0300,Rafael Ferreira,status,Submissão,Done
+SI-7591,2026-07-08T15:52:25.575-0300,Sistema,Link,,This work item is blocked by GA-1183
