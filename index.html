@@ -2242,24 +2242,31 @@
                 let categoryCausaRaiz = getRowValue(row, ["Causa Raiz", "Causa Raiz Final", "Root Cause"]) || "";
                 let causaRaiz = categoryCausaRaiz.trim();
                 
+                const respLower = responsavel.toLowerCase();
+                const isGestaoAtivosResp = respLower.includes("helena") || respLower.includes("nicollas") || respLower.includes("nicolas");
+
                 if (causaRaiz === "") {
-                    // Fallback para classificação baseada em palavras-chave se a coluna de categoria estiver vazia
-                    let rawCausaRaizFinal = getRowValue(row, ["Causa raiz final", "Causa Raiz Detalhada"]) || "";
-                    let crLower = rawCausaRaizFinal.toLowerCase().trim();
-                    if (crLower === "") {
-                        causaRaiz = "Pendente de Classificação";
-                    } else if (crLower.includes("requisito")) {
-                        causaRaiz = "Falha de Requisito";
-                    } else if (crLower.includes("desenvolvimento") || crLower.includes("bug")) {
-                        causaRaiz = "Falha Desenvolvimento";
-                    } else if (crLower.includes("operacional") || crLower.includes("infraestrutura") || crLower.includes("hardware") || crLower.includes("acesso") || crLower.includes("dúvida") || crLower.includes("solicitação")) {
-                        causaRaiz = "Falha Operacional";
-                    } else if (crLower.includes("regra de negócio") || crLower.includes("regra de negocio")) {
-                        causaRaiz = "Regra de Negócio";
-                    } else if (crLower.includes("impacto") || crLower.includes("não mapeado") || crLower.includes("nao mapeado")) {
-                        causaRaiz = "Impacto não mapeado";
+                    if (isGestaoAtivosResp) {
+                        causaRaiz = "Gestão de Ativos";
                     } else {
-                        causaRaiz = "Impacto não mapeado";
+                        // Fallback para classificação baseada em palavras-chave se a coluna de categoria estiver vazia
+                        let rawCausaRaizFinal = getRowValue(row, ["Causa raiz final", "Causa Raiz Detalhada"]) || "";
+                        let crLower = rawCausaRaizFinal.toLowerCase().trim();
+                        if (crLower === "") {
+                            causaRaiz = "Pendente de Classificação";
+                        } else if (crLower.includes("requisito")) {
+                            causaRaiz = "Falha de Requisito";
+                        } else if (crLower.includes("desenvolvimento") || crLower.includes("bug")) {
+                            causaRaiz = "Falha Desenvolvimento";
+                        } else if (crLower.includes("operacional") || crLower.includes("infraestrutura") || crLower.includes("hardware") || crLower.includes("acesso") || crLower.includes("dúvida") || crLower.includes("solicitação")) {
+                            causaRaiz = "Falha Operacional";
+                        } else if (crLower.includes("regra de negócio") || crLower.includes("regra de negocio")) {
+                            causaRaiz = "Regra de Negócio";
+                        } else if (crLower.includes("impacto") || crLower.includes("não mapeado") || crLower.includes("nao mapeado")) {
+                            causaRaiz = "Impacto não mapeado";
+                        } else {
+                            causaRaiz = "Impacto não mapeado";
+                        }
                     }
                 } else {
                     // Normaliza o nome da categoria lida para alinhar com o design do dashboard
