@@ -57273,6 +57273,7 @@ SI-7434,2026-07-06T19:02:19.619-0300,Sistema,Justificativa Causa Raiz final,,Em 
 SI-7442,2026-07-03T17:36:13.563-0300,Rafael Ferreira,resolution,,Done
 SI-7442,2026-07-03T17:36:13.563-0300,Rafael Ferreira,status,Submissão,Done
 SI-7442,2026-07-03T17:36:13.999-0300,Rafael Ferreira,Rank,,Ranked higher
+SI-7442,2026-07-08T10:28:05.524-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7441,2026-07-03T17:36:12.311-0300,Rafael Ferreira,resolution,,Done
 SI-7441,2026-07-03T17:36:12.311-0300,Rafael Ferreira,status,Submissão,Done
 SI-7441,2026-07-03T17:36:12.784-0300,Rafael Ferreira,Rank,,Ranked higher
@@ -57309,6 +57310,7 @@ SI-7439,2026-07-03T18:56:39.729-0300,Sistema,Justificativa Causa Raiz final,,Em 
 SI-7438,2026-07-03T17:36:10.705-0300,Rafael Ferreira,resolution,,Done
 SI-7438,2026-07-03T17:36:10.705-0300,Rafael Ferreira,status,Submissão,Done
 SI-7438,2026-07-03T17:36:11.090-0300,Rafael Ferreira,Rank,,Ranked lower
+SI-7438,2026-07-08T10:28:35.397-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7437,2026-07-03T15:07:17.815-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7437,2026-07-03T15:07:21.090-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7437,2026-07-03T15:07:25.564-0300,Rafael Ferreira,resolution,,Done
@@ -57884,6 +57886,7 @@ SI-7478,2026-07-06T19:02:42.979-0300,Sistema,Reclassificação solicitação,,Re
 SI-7478,2026-07-06T19:02:42.979-0300,Sistema,Resolução do chamado,Ticket concluído. E-mail adicionado conforme solicitado. ,Ticket concluído. E-mail adicionado conforme solicitado.
 SI-7489,2026-07-07T08:43:28.769-0300,Bruno Silva,resolution,,Done
 SI-7489,2026-07-07T08:43:28.769-0300,Bruno Silva,status,Submissão,Done
+SI-7489,2026-07-08T10:08:55.335-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7488,2026-07-06T16:23:33.428-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7488,2026-07-06T16:23:35.524-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-7488,2026-07-06T17:41:01.734-0300,Rafael Ferreira,resolution,,Done
@@ -58082,6 +58085,9 @@ SI-7506,2026-07-08T00:59:32.607-0300,Sistema,Causa raiz final,,"O impedimento ao
 SI-7506,2026-07-08T00:59:32.607-0300,Sistema,Justificativa Causa Raiz final,,"A análise técnica do card SUS-215 atestou a ocorrência do erro relacional RelatedObjectDoesNotExist: Assembly has no datecontrol no arquivo src/booking/models/base.py (linha 489). A falha é engatilhada porque o backend, através da função update_customer_approval, tenta acessar de forma direta o atributo datecontrol.customer_approval_valid sem aplicar um tratamento defensivo para validar a existência do relacionamento OneToOne na tabela order_datecontrol. Considerando que nenhuma correção definitiva ou saneamento foi executado em ambiente produtivo, os processos que possuem essa lacuna de dados continuam apresentando o Erro 500. A resolução focada na melhoria contínua e eliminação da reincidência foi direcionada para o INTAKE-1557, que atuará na implementação de validações defensivas no código (para verificar a existência do objeto antes da manipulação) e na criação de rotinas para lidar com registros órfãos, mitigando o impacto na eficiência operacional apontado no discovery."
 SI-7505,2026-07-07T09:04:25.556-0300,Sistema,Link,,This work item is blocked by GA-1151
 SI-7505,2026-07-07T10:02:05.173-0300,Helena Almeida,assignee,,Nícollas Resende
+SI-7505,2026-07-08T10:09:26.483-0300,Rafael Ferreira,resolution,,Done
+SI-7505,2026-07-08T10:09:26.483-0300,Rafael Ferreira,status,Submissão,Done
+SI-7505,2026-07-08T10:09:27.062-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7504,2026-07-07T09:34:52.979-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7504,2026-07-07T09:34:54.788-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-7504,2026-07-07T10:17:40.983-0300,Rafael Ferreira,assignee,Rafael Ferreira,Bruno Silva
@@ -58190,6 +58196,17 @@ SI-7516,2026-07-07T11:53:07.458-0300,Helena Almeida,Resolução do chamado,,Tick
 SI-7516,2026-07-08T00:59:37.962-0300,Sistema,Criticidade final,,P1 - Alta
 SI-7516,2026-07-08T00:59:37.962-0300,Sistema,Reclassificação solicitação,,Solicitação de cadastro
 SI-7516,2026-07-08T00:59:37.962-0300,Sistema,Resolução do chamado,Ticket concluído. Já possui cadastro ativo no SYS com esse CNPJ.,"Aguardando informação. Solicitamos, por gentileza, verificar e responder ao comentário inserido no ticket."
+SI-7525,2026-07-08T10:02:36.848-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7525,2026-07-08T10:02:42.085-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7525,2026-07-08T10:02:42.085-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7523,2026-07-08T10:28:04.060-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-7523,2026-07-08T10:28:05.235-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7523,2026-07-08T10:28:07.981-0300,Rafael Ferreira,resolution,,Done
+SI-7523,2026-07-08T10:28:07.981-0300,Rafael Ferreira,status,Submissão,Done
+SI-7522,2026-07-08T10:27:48.612-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-7522,2026-07-08T10:27:51.104-0300,Rafael Ferreira,resolution,,Done
+SI-7522,2026-07-08T10:27:51.104-0300,Rafael Ferreira,status,Submissão,Done
+SI-7522,2026-07-08T10:27:53.712-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7539,2026-07-07T14:43:27.686-0300,Sistema,Link,,This work item is blocked by GA-1162
 SI-7538,2026-07-07T14:34:24.341-0300,Sistema,Link,,This work item is blocked by GA-1161
 SI-7538,2026-07-07T17:53:31.333-0300,Rafael Ferreira,Encaminhado para:,,DS
@@ -58458,6 +58475,10 @@ SI-7552,2026-07-08T09:39:27.404-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7552,2026-07-08T09:39:28.907-0300,Rafael Ferreira,resolution,,Done
 SI-7552,2026-07-08T09:39:28.907-0300,Rafael Ferreira,status,Submissão,Done
 SI-7552,2026-07-08T09:39:29.329-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7559,2026-07-08T10:20:41.445-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7559,2026-07-08T10:20:43.333-0300,Rafael Ferreira,resolution,,Done
+SI-7559,2026-07-08T10:20:43.333-0300,Rafael Ferreira,status,Submissão,Done
+SI-7559,2026-07-08T10:20:43.758-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7558,2026-07-07T17:14:24.407-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7558,2026-07-07T17:14:26.872-0300,Rafael Ferreira,resolution,,Done
 SI-7558,2026-07-07T17:14:26.872-0300,Rafael Ferreira,status,Submissão,Done
@@ -58482,9 +58503,15 @@ SI-7563,2026-07-08T09:13:51.251-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7563,2026-07-08T09:13:54.962-0300,Rafael Ferreira,resolution,,Done
 SI-7563,2026-07-08T09:13:54.962-0300,Rafael Ferreira,status,Submissão,Done
 SI-7562,2026-07-07T17:49:21.071-0300,Sistema,Link,,This work item is blocked by GA-1177
+SI-7565,2026-07-08T09:58:25.839-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7565,2026-07-08T09:58:27.974-0300,Rafael Ferreira,resolution,,Done
+SI-7565,2026-07-08T09:58:27.974-0300,Rafael Ferreira,status,Submissão,Done
+SI-7565,2026-07-08T09:58:28.439-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-7569,2026-07-08T09:39:23.637-0300,Sistema,Link,,This work item is blocked by GA-1180
 SI-7568,2026-07-08T09:39:23.672-0300,Sistema,Link,,This work item is blocked by GA-1179
 SI-7567,2026-07-08T09:36:12.364-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7567,2026-07-08T09:36:13.936-0300,Rafael Ferreira,resolution,,Done
 SI-7567,2026-07-08T09:36:13.936-0300,Rafael Ferreira,status,Submissão,Done
 SI-7567,2026-07-08T09:36:14.372-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7571,2026-07-08T09:53:26.385-0300,Sistema,Link,,This work item is blocked by GA-1181
+SI-7571,2026-07-08T10:41:11.641-0300,Nícollas Resende,assignee,,Nícollas Resende
