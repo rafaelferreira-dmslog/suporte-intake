@@ -58157,6 +58157,9 @@ SI-7514,2026-07-08T00:59:37.312-0300,Sistema,Resolução do chamado,,"Identifica
 SI-7514,2026-07-08T00:59:37.312-0300,Sistema,Causa raiz potencial,,Ausência de botão ou comando de exclusão no módulo de cotações (PM).
 SI-7514,2026-07-08T00:59:37.312-0300,Sistema,Causa raiz final,,"A impossibilidade de exclusão direta de uma proposta ou SD pelo colaborador ocorre devido a uma definição na regra de negócio e na arquitetura do sistema DMSYS. Para garantir que todas as interações comerciais e documentos gerados tenham total rastreabilidade e segurança, o sistema foi projetado para não permitir a deleção de registros de forma simplificada na interface. Essa mecânica atua como uma camada de proteção contra a perda de dados críticos."
 SI-7514,2026-07-08T00:59:37.312-0300,Sistema,Justificativa Causa Raiz final,,"A impossibilidade de exclusão direta de uma proposta ou SD pelo colaborador ocorre devido a uma definição na regra de negócio e na arquitetura do sistema DMSYS. Para garantir que todas as interações comerciais e documentos gerados tenham total rastreabilidade e segurança, o sistema foi projetado para não permitir a deleção de registros de forma simplificada na interface. Essa mecânica atua como uma camada de proteção contra a perda de dados críticos."
+SI-7513,2026-07-08T16:58:25.165-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7513,2026-07-08T16:58:27.470-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7513,2026-07-08T16:58:27.470-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7512,2026-07-07T10:46:06.031-0300,Bruno Silva,assignee,,Rafael Ferreira
 SI-7512,2026-07-07T10:46:11.883-0300,Bruno Silva,resolution,,Done
 SI-7512,2026-07-07T10:46:11.883-0300,Bruno Silva,status,Submissão,Done
@@ -58806,4 +58809,10 @@ SI-7582,2026-07-08T14:08:37.728-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7582,2026-07-08T14:08:47.665-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7582,2026-07-08T14:08:51.239-0300,Rafael Ferreira,resolution,,Done
 SI-7582,2026-07-08T14:08:51.239-0300,Rafael Ferreira,status,Submissão,Done
+SI-7592,2026-07-08T17:20:21.782-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7592,2026-07-08T17:20:23.729-0300,Rafael Ferreira,resolution,,Done
+SI-7592,2026-07-08T17:20:23.729-0300,Rafael Ferreira,status,Submissão,Done
+SI-7592,2026-07-08T17:20:24.347-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-7591,2026-07-08T15:52:25.575-0300,Sistema,Link,,This work item is blocked by GA-1183
+SI-7598,2026-07-08T17:24:24.781-0300,Sistema,Link,,This work item is blocked by GA-1187
+SI-7597,2026-07-08T17:14:28.402-0300,Sistema,Link,,This work item is blocked by GA-1186
