@@ -58208,6 +58208,9 @@ SI-7522,2026-07-08T10:27:51.104-0300,Rafael Ferreira,resolution,,Done
 SI-7522,2026-07-08T10:27:51.104-0300,Rafael Ferreira,status,Submissão,Done
 SI-7522,2026-07-08T10:27:53.712-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7539,2026-07-07T14:43:27.686-0300,Sistema,Link,,This work item is blocked by GA-1162
+SI-7539,2026-07-08T10:59:51.123-0300,Rafael Ferreira,resolution,,Done
+SI-7539,2026-07-08T10:59:51.123-0300,Rafael Ferreira,status,Submissão,Done
+SI-7539,2026-07-08T10:59:51.623-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7538,2026-07-07T14:34:24.341-0300,Sistema,Link,,This work item is blocked by GA-1161
 SI-7538,2026-07-07T17:53:31.333-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7538,2026-07-07T17:53:33.570-0300,Rafael Ferreira,resolution,,Done
@@ -58324,6 +58327,9 @@ SI-7530,2026-07-08T00:59:40.662-0300,Sistema,Causa raiz potencial,,"Falha na val
 SI-7530,2026-07-08T00:59:40.662-0300,Sistema,Causa raiz final,,O sistema apresentou uma falha interna de processamento ao tentar registrar a mudança da responsável comercial pelo cliente.
 SI-7530,2026-07-08T00:59:40.662-0300,Sistema,Justificativa Causa Raiz final,,O retorno de status  ao tentar modificar o vínculo do usuário no módulo de CRM indica uma exceção não tratada no servidor durante o processamento da requisição de update.
 SI-7528,2026-07-07T14:08:26.770-0300,Sistema,Link,,This work item is blocked by GA-1153
+SI-7528,2026-07-08T10:59:53.109-0300,Rafael Ferreira,resolution,,Done
+SI-7528,2026-07-08T10:59:53.109-0300,Rafael Ferreira,status,Submissão,Done
+SI-7528,2026-07-08T10:59:53.632-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7551,2026-07-07T15:33:22.305-0300,Sistema,Link,,This work item is blocked by GA-1170
 SI-7551,2026-07-07T16:35:28.306-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7551,2026-07-07T16:35:30.223-0300,Rafael Ferreira,resolution,,Done
@@ -58408,7 +58414,13 @@ SI-7546,2026-07-08T00:59:49.737-0300,Sistema,Causa raiz potencial,,"Falha na val
 SI-7546,2026-07-08T00:59:49.737-0300,Sistema,Causa raiz final,,O sistema apresentou uma falha interna de processamento ao tentar registrar a mudança da responsável comercial pelo cliente.
 SI-7546,2026-07-08T00:59:49.737-0300,Sistema,Justificativa Causa Raiz final,,O retorno de status  ao tentar modificar o vínculo do usuário no módulo de CRM indica uma exceção não tratada no servidor durante o processamento da requisição de update.
 SI-7545,2026-07-07T15:02:24.010-0300,Sistema,Link,,This work item is blocked by GA-1167
+SI-7545,2026-07-08T10:59:45.390-0300,Rafael Ferreira,resolution,,Done
+SI-7545,2026-07-08T10:59:45.390-0300,Rafael Ferreira,status,Submissão,Done
+SI-7545,2026-07-08T10:59:45.894-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7544,2026-07-07T14:58:19.643-0300,Sistema,Link,,This work item is blocked by GA-1166
+SI-7544,2026-07-08T10:59:46.848-0300,Rafael Ferreira,resolution,,Done
+SI-7544,2026-07-08T10:59:46.848-0300,Rafael Ferreira,status,Submissão,Done
+SI-7544,2026-07-08T10:59:47.467-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7543,2026-07-07T14:51:35.746-0300,Sistema,Link,,This work item is blocked by GA-1165
 SI-7543,2026-07-07T17:54:23.224-0300,Rafael Ferreira,resolution,,Done
 SI-7543,2026-07-07T17:54:23.224-0300,Rafael Ferreira,status,Submissão,Done
@@ -58423,6 +58435,9 @@ SI-7543,2026-07-08T00:59:48.915-0300,Sistema,Causa raiz potencial,,"Falha na val
 SI-7543,2026-07-08T00:59:48.915-0300,Sistema,Causa raiz final,,O sistema apresentou uma falha interna de processamento ao tentar registrar a mudança da responsável comercial pelo cliente.
 SI-7543,2026-07-08T00:59:48.915-0300,Sistema,Justificativa Causa Raiz final,,O retorno de status  ao tentar modificar o vínculo do usuário no módulo de CRM indica uma exceção não tratada no servidor durante o processamento da requisição de update.
 SI-7542,2026-07-07T14:49:21.991-0300,Sistema,Link,,This work item is blocked by GA-1164
+SI-7542,2026-07-08T10:59:49.119-0300,Rafael Ferreira,resolution,,Done
+SI-7542,2026-07-08T10:59:49.119-0300,Rafael Ferreira,status,Submissão,Done
+SI-7542,2026-07-08T10:59:49.589-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7541,2026-07-08T00:59:48.205-0300,Sistema,Causa Raiz,,Falha Operacional
 SI-7541,2026-07-08T00:59:48.205-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
 SI-7541,2026-07-08T00:59:48.205-0300,Sistema,Criticidade final,,P1 - Alta
@@ -58445,6 +58460,10 @@ SI-7540,2026-07-08T00:59:47.511-0300,Sistema,Causa raiz potencial,,"Falha na val
 SI-7540,2026-07-08T00:59:47.511-0300,Sistema,Causa raiz final,,O sistema apresentou uma falha interna de processamento ao tentar registrar a mudança da responsável comercial pelo cliente.
 SI-7540,2026-07-08T00:59:47.511-0300,Sistema,Justificativa Causa Raiz final,,O retorno de status  ao tentar modificar o vínculo do usuário no módulo de CRM indica uma exceção não tratada no servidor durante o processamento da requisição de update.
 SI-7555,2026-07-07T16:28:37.118-0300,Sistema,Link,,This work item is blocked by GA-1173
+SI-7555,2026-07-08T10:59:43.275-0300,Rafael Ferreira,resolution,,Done
+SI-7555,2026-07-08T10:59:43.275-0300,Rafael Ferreira,status,Submissão,Done
+SI-7555,2026-07-08T10:59:43.843-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7555,2026-07-08T11:41:16.400-0300,Rafael Ferreira,assignee,,Helena Almeida
 SI-7554,2026-07-07T16:22:26.497-0300,Sistema,Link,,This work item is blocked by GA-1172
 SI-7554,2026-07-07T17:55:57.342-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7554,2026-07-07T17:55:59.891-0300,Rafael Ferreira,resolution,,Done
@@ -58503,6 +58522,9 @@ SI-7563,2026-07-08T09:13:51.251-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7563,2026-07-08T09:13:54.962-0300,Rafael Ferreira,resolution,,Done
 SI-7563,2026-07-08T09:13:54.962-0300,Rafael Ferreira,status,Submissão,Done
 SI-7562,2026-07-07T17:49:21.071-0300,Sistema,Link,,This work item is blocked by GA-1177
+SI-7562,2026-07-08T10:59:40.501-0300,Rafael Ferreira,resolution,,Done
+SI-7562,2026-07-08T10:59:40.501-0300,Rafael Ferreira,status,Submissão,Done
+SI-7562,2026-07-08T10:59:40.996-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7565,2026-07-08T09:58:25.839-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7565,2026-07-08T09:58:27.974-0300,Rafael Ferreira,resolution,,Done
 SI-7565,2026-07-08T09:58:27.974-0300,Rafael Ferreira,status,Submissão,Done
@@ -58513,5 +58535,27 @@ SI-7567,2026-07-08T09:36:12.364-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7567,2026-07-08T09:36:13.936-0300,Rafael Ferreira,resolution,,Done
 SI-7567,2026-07-08T09:36:13.936-0300,Rafael Ferreira,status,Submissão,Done
 SI-7567,2026-07-08T09:36:14.372-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7566,2026-07-08T11:26:51.594-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-7566,2026-07-08T11:26:52.603-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7566,2026-07-08T11:26:55.150-0300,Rafael Ferreira,resolution,,Done
+SI-7566,2026-07-08T11:26:55.150-0300,Rafael Ferreira,status,Submissão,Done
+SI-7576,2026-07-08T10:55:22.011-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7576,2026-07-08T10:55:44.335-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7576,2026-07-08T10:55:44.335-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7575,2026-07-08T11:21:22.595-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7575,2026-07-08T11:21:25.803-0300,Bruno Silva,resolution,,Done
+SI-7575,2026-07-08T11:21:25.803-0300,Bruno Silva,status,Submissão,Done
+SI-7573,2026-07-08T11:21:01.147-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7573,2026-07-08T11:21:02.798-0300,Rafael Ferreira,resolution,,Done
+SI-7573,2026-07-08T11:21:02.798-0300,Rafael Ferreira,status,Submissão,Done
+SI-7572,2026-07-08T11:42:07.819-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7572,2026-07-08T11:42:10.456-0300,Bruno Silva,resolution,,Done
+SI-7572,2026-07-08T11:42:10.456-0300,Bruno Silva,status,Submissão,Done
 SI-7571,2026-07-08T09:53:26.385-0300,Sistema,Link,,This work item is blocked by GA-1181
 SI-7571,2026-07-08T10:41:11.641-0300,Nícollas Resende,assignee,,Nícollas Resende
+SI-7579,2026-07-08T11:50:45.896-0300,Bruno Silva,assignee,,Nícollas Resende
+SI-7579,2026-07-08T11:50:48.299-0300,Bruno Silva,resolution,,Done
+SI-7579,2026-07-08T11:50:48.299-0300,Bruno Silva,status,Submissão,Done
+SI-7580,2026-07-08T11:50:32.790-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7580,2026-07-08T11:50:35.724-0300,Bruno Silva,resolution,,Done
+SI-7580,2026-07-08T11:50:35.724-0300,Bruno Silva,status,Submissão,Done
