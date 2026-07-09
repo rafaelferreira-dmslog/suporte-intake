@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Gestão de Ativos - Em Desenvolvimento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #0b1326;
+            background-image: radial-gradient(circle at top right, rgba(255, 185, 95, 0.06) 0%, transparent 45%),
+                              radial-gradient(circle at bottom left, rgba(99, 102, 241, 0.04) 0%, transparent 45%);
+        }
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.01) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-[#0b1326] text-[#dae2fd] min-h-screen flex flex-col items-center justify-center font-sans overflow-hidden p-6">
+    <div class="glass-card relative max-w-lg w-full bg-white/[0.02] backdrop-blur-xl border border-white/5 rounded-2xl p-10 text-center shadow-2xl">
+        <div class="w-20 h-20 bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 rounded-full flex items-center justify-center mx-auto mb-8 animate-pulse">
+            <span class="material-symbols-outlined text-5xl">construction</span>
+        </div>
+        
+        <h1 class="text-3xl font-bold text-white mb-4 tracking-tight">Gestão de Ativos</h1>
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-sm font-semibold mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-yellow-500 animate-ping"></span>
+            Em Desenvolvimento
+        </div>
+        
+        <p class="text-gray-400 mb-8 leading-relaxed">
+            Estamos estruturando o novo painel para controle de inventário de hardware/software, ciclo de vida de equipamentos e termos de responsabilidade. Em breve estará disponível!
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onclick="window.location.href='../index.html'" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-white/5 border border-white/10 text-white rounded-lg hover:bg-white/10 hover:border-white/20 active:scale-95 transition-all duration-300 gap-2">
+                <span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                Voltar ao Portal
+            </button>
+            <button onclick="window.location.href='../Suporte-Intake/index.html'" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 hover:scale-105 active:scale-95 transition-all duration-300 gap-2">
+                <span class="material-symbols-outlined text-[18px]">dashboard</span>
+                Ir para Suporte Intake
+            </button>
+        </div>
+    </div>
+</body>
+</html>
