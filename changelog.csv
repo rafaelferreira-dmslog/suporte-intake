@@ -58167,6 +58167,13 @@ SI-7504,2026-07-08T00:59:31.849-0300,Sistema,Resolução do chamado,,Aguardando 
 SI-7504,2026-07-08T00:59:31.849-0300,Sistema,Causa raiz potencial,,Aguardando informação
 SI-7504,2026-07-08T00:59:31.849-0300,Sistema,Causa raiz final,,Aguardando informação
 SI-7504,2026-07-08T00:59:31.849-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
+SI-7504,2026-07-09T15:29:23.040-0300,Rafael Ferreira,resolution,,Done
+SI-7504,2026-07-09T15:29:23.040-0300,Rafael Ferreira,status,Aguardando Informação,Done
+SI-7504,2026-07-09T15:29:23.539-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7515,2026-07-09T15:43:42.472-0300,Rafael Ferreira,assignee,,Eduardo Felipe de Lima Rebello
+SI-7515,2026-07-09T15:43:56.138-0300,Rafael Ferreira,resolution,,Done
+SI-7515,2026-07-09T15:43:56.138-0300,Rafael Ferreira,status,Submissão,Done
+SI-7515,2026-07-09T15:43:56.788-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7514,2026-07-07T10:24:27.056-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7514,2026-07-07T10:24:29.529-0300,Rafael Ferreira,resolution,,Done
 SI-7514,2026-07-07T10:24:29.529-0300,Rafael Ferreira,status,Submissão,Done
@@ -58279,6 +58286,10 @@ SI-7518,2026-07-09T06:59:04.883-0300,Sistema,Resolução do chamado,Aguardando i
 SI-7518,2026-07-09T06:59:04.883-0300,Sistema,Causa raiz potencial,Aguardando informação,Fluxo de update quote não realizado.
 SI-7518,2026-07-09T06:59:04.883-0300,Sistema,Causa raiz final,Aguardando informação,Fluxo
 SI-7518,2026-07-09T06:59:04.883-0300,Sistema,Justificativa Causa Raiz final,Aguardando informação,Fluxo
+SI-7518,2026-07-09T15:44:28.100-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7518,2026-07-09T15:44:37.792-0300,Rafael Ferreira,resolution,,Done
+SI-7518,2026-07-09T15:44:37.792-0300,Rafael Ferreira,status,Submissão,Done
+SI-7518,2026-07-09T15:44:38.254-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7517,2026-07-09T11:43:05.601-0300,Ricardo Barbosa Machado,assignee,,Eduardo Felipe de Lima Rebello
 SI-7517,2026-07-09T11:43:08.489-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7517,2026-07-09T11:43:08.489-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -58317,6 +58328,9 @@ SI-7525,2026-07-09T06:59:07.503-0300,Sistema,Resolução do chamado,Em atendimen
 SI-7525,2026-07-09T06:59:07.503-0300,Sistema,Causa raiz potencial,Em atendimento,"Sobrecarga no servidor de e-mail, instabilidade na integração com o provedor de e-mail ou limite de envios por minuto atingido pelo usuário de automação."
 SI-7525,2026-07-09T06:59:07.503-0300,Sistema,Causa raiz final,Em atendimento,"Limitação técnica do método de disparo de e-mails atual frente ao volume de processamento da automação operacional, gerando gargalo no servidor de saída."
 SI-7525,2026-07-09T06:59:07.503-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A falha ocorreu devido ao conflito entre a alta performance da automação de processos e a capacidade limitada de entrega do protocolo de e-mail vigente. O nexo causal estabelece que, ao atingir o teto de envios simultâneos, o provedor bloqueia temporariamente a conta por segurança, resultando no ícone vermelho na timeline. A solução definitiva (migração para SMTP Relay via INTAKE-186) resolve o problema na raiz ao permitir um fluxo de saída profissional e escalável, eliminando a dependência de limites de contas individuais e garantindo que a Melhoria Contínua previna a reincidência de bloqueios por volume."
+SI-7524,2026-07-09T15:05:22.033-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7524,2026-07-09T15:05:24.212-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7524,2026-07-09T15:05:24.212-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7523,2026-07-08T10:28:04.060-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7523,2026-07-08T10:28:05.235-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7523,2026-07-08T10:28:07.981-0300,Rafael Ferreira,resolution,,Done
@@ -58341,6 +58355,10 @@ SI-7522,2026-07-08T12:58:49.390-0300,Sistema,Resolução do chamado,,"Realizada 
 SI-7522,2026-07-08T12:58:49.390-0300,Sistema,Causa raiz potencial,,Inexistência de funcionalidade nativa na interface de usuário para a edição do campo de modalidade em ordens já criadas; bloqueio sistêmico preventivo para evitar quebra de integridade de dados operacionais e financeiros já estabelecidos no processo.
 SI-7522,2026-07-08T12:58:49.390-0300,Sistema,Causa raiz final,,A impossibilidade de alterar o modal de aéreo para marítimo diretamente pela tela do sistema ocorre porque esta ação não é uma funcionalidade disponível nativamente para os usuários operacionais
 SI-7522,2026-07-08T12:58:49.390-0300,Sistema,Justificativa Causa Raiz final,,A tratativa para a alteração de modal em uma Order exige o acionamento da equipe de (DS) devido à ausência de funcionalidade nativa no SYS para essa finalidade.
+SI-7527,2026-07-09T15:45:19.248-0300,Rafael Ferreira,assignee,,Eduardo Felipe de Lima Rebello
+SI-7527,2026-07-09T15:45:22.656-0300,Rafael Ferreira,resolution,,Done
+SI-7527,2026-07-09T15:45:22.656-0300,Rafael Ferreira,status,Submissão,Done
+SI-7527,2026-07-09T15:45:23.133-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7539,2026-07-07T14:43:27.686-0300,Sistema,Link,,This work item is blocked by GA-1162
 SI-7539,2026-07-08T10:59:51.123-0300,Rafael Ferreira,resolution,,Done
 SI-7539,2026-07-08T10:59:51.123-0300,Rafael Ferreira,status,Submissão,Done
@@ -58793,6 +58811,9 @@ SI-7561,2026-07-08T12:59:02.714-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7561,2026-07-08T12:59:02.714-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7561,2026-07-08T12:59:02.714-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7561,2026-07-08T12:59:02.714-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7560,2026-07-09T15:16:23.863-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7560,2026-07-09T15:16:25.612-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7560,2026-07-09T15:16:25.612-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7565,2026-07-08T09:58:25.839-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7565,2026-07-08T09:58:27.974-0300,Rafael Ferreira,resolution,,Done
 SI-7565,2026-07-08T09:58:27.974-0300,Rafael Ferreira,status,Submissão,Done
@@ -59089,6 +59110,9 @@ SI-7589,2026-07-09T09:12:54.037-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7589,2026-07-09T09:12:56.412-0300,Rafael Ferreira,resolution,,Done
 SI-7589,2026-07-09T09:12:56.412-0300,Rafael Ferreira,status,Submissão,Done
 SI-7588,2026-07-09T11:40:11.769-0300,Nícollas Resende,assignee,,Nícollas Resende
+SI-7588,2026-07-09T14:57:43.136-0300,Rafael Ferreira,resolution,,Done
+SI-7588,2026-07-09T14:57:43.136-0300,Rafael Ferreira,status,Submissão,Done
+SI-7588,2026-07-09T14:57:43.648-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7593,2026-07-09T08:24:15.448-0300,Rafael Ferreira,assignee,,Jira Triage Agent
 SI-7593,2026-07-09T08:24:17.888-0300,Rafael Ferreira,assignee,Jira Triage Agent,Rafael Ferreira
 SI-7593,2026-07-09T08:24:19.839-0300,Rafael Ferreira,resolution,,Done
@@ -59109,6 +59133,9 @@ SI-7597,2026-07-09T08:09:37.874-0300,Rafael Ferreira,status,Submissão,Done
 SI-7597,2026-07-09T08:09:38.325-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-7597,2026-07-09T08:10:55.529-0300,Rafael Ferreira,assignee,,Helena Almeida
 SI-7596,2026-07-09T11:40:33.486-0300,Nícollas Resende,assignee,,Nícollas Resende
+SI-7596,2026-07-09T14:57:41.112-0300,Rafael Ferreira,resolution,,Done
+SI-7596,2026-07-09T14:57:41.112-0300,Rafael Ferreira,status,Submissão,Done
+SI-7596,2026-07-09T14:57:41.696-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7595,2026-07-09T08:15:48.480-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7595,2026-07-09T08:15:50.127-0300,Rafael Ferreira,resolution,,Done
 SI-7595,2026-07-09T08:15:50.127-0300,Rafael Ferreira,status,Submissão,Done
@@ -59146,12 +59173,27 @@ SI-7604,2026-07-09T11:38:02.951-0300,Bruno Silva,status,Submissão,Done
 SI-7612,2026-07-09T12:53:23.816-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7612,2026-07-09T12:53:26.783-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7612,2026-07-09T12:53:26.783-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7611,2026-07-09T15:04:38.109-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7611,2026-07-09T15:04:40.725-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7611,2026-07-09T15:04:40.725-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7610,2026-07-09T15:06:17.563-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7610,2026-07-09T15:06:20.275-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7610,2026-07-09T15:06:20.275-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7609,2026-07-09T15:06:47.530-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7609,2026-07-09T15:06:50.106-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7609,2026-07-09T15:06:50.106-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7608,2026-07-09T15:07:04.788-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7608,2026-07-09T15:07:06.550-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7608,2026-07-09T15:07:06.550-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7613,2026-07-09T11:00:53.101-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7613,2026-07-09T11:00:57.032-0300,Rafael Ferreira,resolution,,Done
 SI-7613,2026-07-09T11:00:57.032-0300,Rafael Ferreira,status,Submissão,Done
 SI-7613,2026-07-09T11:00:57.513-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-7618,2026-07-09T12:07:36.464-0300,Sistema,Link,,This work item is blocked by GA-1195
 SI-7617,2026-07-09T12:03:24.993-0300,Sistema,Link,,This work item is blocked by GA-1194
+SI-7617,2026-07-09T15:29:29.599-0300,Rafael Ferreira,resolution,,Done
+SI-7617,2026-07-09T15:29:29.599-0300,Rafael Ferreira,status,Submissão,Done
+SI-7617,2026-07-09T15:29:30.060-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7616,2026-07-09T11:57:20.020-0300,Sistema,Link,,This work item is blocked by GA-1193
 SI-7616,2026-07-09T14:43:22.645-0300,Rafael Ferreira,assignee,,Helena Almeida
 SI-7616,2026-07-09T14:43:25.326-0300,Rafael Ferreira,resolution,,Done
@@ -59242,6 +59284,24 @@ SI-7614,2026-07-09T14:21:33.209-0300,Sistema,Link,,This work item is blocked by 
 SI-7619,2026-07-09T14:16:25.880-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7619,2026-07-09T14:16:28.755-0300,Bruno Silva,resolution,,Done
 SI-7619,2026-07-09T14:16:28.755-0300,Bruno Silva,status,Submissão,Done
+SI-7627,2026-07-09T14:57:17.122-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-7627,2026-07-09T14:57:18.058-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7627,2026-07-09T14:57:35.272-0300,Rafael Ferreira,resolution,,Done
+SI-7627,2026-07-09T14:57:35.272-0300,Rafael Ferreira,status,Submissão,Done
+SI-7627,2026-07-09T14:57:35.699-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7626,2026-07-09T14:57:02.090-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7626,2026-07-09T14:57:06.555-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-7626,2026-07-09T14:57:37.004-0300,Rafael Ferreira,resolution,,Done
+SI-7626,2026-07-09T14:57:37.004-0300,Rafael Ferreira,status,Submissão,Done
+SI-7626,2026-07-09T14:57:37.468-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7625,2026-07-09T14:56:52.355-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-7625,2026-07-09T14:56:53.672-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7625,2026-07-09T14:57:32.989-0300,Rafael Ferreira,resolution,,Done
+SI-7625,2026-07-09T14:57:32.989-0300,Rafael Ferreira,status,Submissão,Done
+SI-7625,2026-07-09T14:57:33.475-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7624,2026-07-09T15:25:14.896-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7624,2026-07-09T15:25:16.926-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7624,2026-07-09T15:25:16.926-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7623,2026-07-09T14:29:04.206-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7623,2026-07-09T14:29:06.505-0300,Bruno Silva,resolution,,Done
 SI-7623,2026-07-09T14:29:06.505-0300,Bruno Silva,status,Submissão,Done
@@ -59256,3 +59316,8 @@ SI-7620,2026-07-09T14:42:54.666-0300,Rafael Ferreira,assignee,,Helena Almeida
 SI-7620,2026-07-09T14:42:57.687-0300,Rafael Ferreira,resolution,,Done
 SI-7620,2026-07-09T14:42:57.687-0300,Rafael Ferreira,status,Submissão,Done
 SI-7620,2026-07-09T14:42:58.251-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7628,2026-07-09T14:57:28.703-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-7628,2026-07-09T14:57:29.440-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7628,2026-07-09T14:57:39.395-0300,Rafael Ferreira,resolution,,Done
+SI-7628,2026-07-09T14:57:39.395-0300,Rafael Ferreira,status,Submissão,Done
+SI-7628,2026-07-09T14:57:39.883-0300,Rafael Ferreira,Classificação,,Ranked higher
