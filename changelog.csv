@@ -58922,6 +58922,10 @@ SI-7582,2026-07-09T06:59:30.080-0300,Sistema,Resolução do chamado,,"Identifica
 SI-7582,2026-07-09T06:59:30.080-0300,Sistema,Causa raiz potencial,,"Falha de processamento na rotina transacional de vinculação da Ordem ao agenciamento, gerando a retenção do documento em estado de bloqueio antes da conclusão do registro da Ordem."
 SI-7582,2026-07-09T06:59:30.080-0300,Sistema,Causa raiz final,,"O problema ocorreu devido a uma interrupção no fluxo de comunicação interna do sistema durante o procedimento de inserção da Ordem no agenciamento (Booking). Para que esse vínculo aconteça de maneira correta, o sistema precisa realizar duas etapas essenciais: registrar a Ordem e associar os documentos operacionais a ela. Ao iniciar o processo, o sistema ativa uma trava de segurança temporária no documento para garantir que nenhuma outra modificação simultânea cause conflitos ou duplicidade de dados. No entanto, o sistema sofreu uma interrupção antes de concluir o registro da Ordem. Como a Ordem não foi inserida de fato, o documento acabou permanecendo retido sob essa trava de segurança preventiva, impossibilitando novas edições por parte do usuário. A correção estrutural para otimizar esse fluxo e impedir novos travamentos durante a inserção está sendo realizada através do INTAKE-559."
 SI-7582,2026-07-09T06:59:30.080-0300,Sistema,Justificativa Causa Raiz final,,"A inconsistência reside na falta de tratamento de exceção adequado na rotina de persistência que vincula a Ordem ao Booking. O sistema executa o lock do status do documento correlato previamente à conclusão da transação da Ordem. Ocorrendo uma falha ou interrupção no processamento do registro da Ordem, a operação é abortada, mas o sistema não realiza o rollback do status de bloqueio do documento. Consequentemente, o documento permanece travado no banco de dados sem uma Ordem válida associada. O plano de ação estruturado no INTAKE-559 irá refatorar essa regra de negócio para unificar as operações em um bloco transacional atômico, garantindo a liberação automática do documento em caso de insucesso na inserção da Ordem."
+SI-7587,2026-07-09T10:10:01.236-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7587,2026-07-09T10:10:02.873-0300,Rafael Ferreira,resolution,,Done
+SI-7587,2026-07-09T10:10:02.873-0300,Rafael Ferreira,status,Submissão,Done
+SI-7587,2026-07-09T10:10:03.443-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7586,2026-07-09T06:59:31.025-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
 SI-7586,2026-07-09T06:59:31.025-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
 SI-7586,2026-07-09T06:59:31.025-0300,Sistema,Criticidade final,,P1 - Alta
@@ -58930,6 +58934,10 @@ SI-7586,2026-07-09T06:59:31.025-0300,Sistema,Resolução do chamado,,Aguardando 
 SI-7586,2026-07-09T06:59:31.025-0300,Sistema,Causa raiz potencial,,Aguardando correção
 SI-7586,2026-07-09T06:59:31.025-0300,Sistema,Causa raiz final,,Aguardando correção
 SI-7586,2026-07-09T06:59:31.025-0300,Sistema,Justificativa Causa Raiz final,,Aguardando correção
+SI-7585,2026-07-09T10:29:57.366-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7585,2026-07-09T10:29:59.212-0300,Rafael Ferreira,resolution,,Done
+SI-7585,2026-07-09T10:29:59.212-0300,Rafael Ferreira,status,Submissão,Done
+SI-7585,2026-07-09T10:29:59.624-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7590,2026-07-09T09:12:30.078-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7590,2026-07-09T09:12:37.585-0300,Rafael Ferreira,resolution,,Done
 SI-7590,2026-07-09T09:12:37.585-0300,Rafael Ferreira,status,Submissão,Done
