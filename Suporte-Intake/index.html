@@ -1730,7 +1730,7 @@
                     <!-- Card 1: Bugs -->
                     <div class="glass-panel insight-card clickable" onclick="showCategoryTickets('bugs')">
                         <div class="insight-icon">🐞</div>
-                        <h3 class="kpi-title">Bugs e Falhas de Desenvolvimento</h3>
+                        <h3 class="kpi-title">Falhas Desenvolvimento</h3>
                         <div class="insight-stat-value" id="insight-bugs-value">0</div>
                         <p class="insight-stat-desc" id="insight-bugs-desc">Carregando...</p>
                         <div class="click-hint">Clique para ver chamados &rarr;</div>
@@ -3308,7 +3308,7 @@
             let groupName = "";
 
             if (type === 'bugs') {
-                groupName = "Bugs e Falhas de Desenvolvimento";
+                groupName = "Falhas Desenvolvimento";
                 filteredList = tickets.filter(t => {
                     const causaLower = String(t.causaRaiz || '').toLowerCase();
                     const resumoLower = String(t.resumo || '').toLowerCase();
@@ -3438,7 +3438,7 @@
                 iaDetailsText += `  - ${sub}: ${count} chamados\n`;
             });
 
-            const summaryText = `📊 **Resumo Analítico da Operação - Suporte Intake**\n📅 **Período:** ${periodName}\n🎫 **Total de Chamados:** ${total}\n\n--------------------------------------------------\n🐞 **Bugs e Falhas de Desenvolvimento:**\n- Total: ${bugsCount} chamados (${bugsPct}% do volume total)\n\n🤖 **Chamados relacionados à Inteligência Artificial (Docs IA):**\n- Total: ${docsIaCount} chamados (${docsIaPct}% do volume total)\n- Principais problemas identificados:\n${iaDetailsText || "  - Nenhum registrado."}\n\n🎓 **Dúvidas Operacionais / Falhas Operacionais:**\n- Total: ${opCount} chamados (${opPct}% do volume total)\n- Nota: Estes chamados representam oportunidades de melhoria de treinamento/documentação do usuário.\n--------------------------------------------------\nGerado automaticamente pelo Dashboard do Suporte Intake em ${new Date().toLocaleDateString('pt-BR')}.`;
+            const summaryText = `📊 **Resumo Analítico da Operação - Suporte Intake**\n📅 **Período:** ${periodName}\n🎫 **Total de Chamados:** ${total}\n\n--------------------------------------------------\n🐞 **Falhas Desenvolvimento:**\n- Total: ${bugsCount} chamados (${bugsPct}% do volume total)\n\n🤖 **Chamados relacionados à Inteligência Artificial (Docs IA):**\n- Total: ${docsIaCount} chamados (${docsIaPct}% do volume total)\n- Principais problemas identificados:\n${iaDetailsText || "  - Nenhum registrado."}\n\n🎓 **Dúvidas Operacionais / Falhas Operacionais:**\n- Total: ${opCount} chamados (${opPct}% do volume total)\n- Nota: Estes chamados representam oportunidades de melhoria de treinamento/documentação do usuário.\n--------------------------------------------------\nGerado automaticamente pelo Dashboard do Suporte Intake em ${new Date().toLocaleDateString('pt-BR')}.`;
 
             navigator.clipboard.writeText(summaryText).then(() => {
                 showToast("Resumo copiado para a área de transferência!", "📋");
@@ -5418,6 +5418,18 @@
             const opCount = opTickets.length;
             const opPct = total > 0 ? ((opCount / total) * 100).toFixed(1) : 0;
             
+            const ativosTickets = tickets.filter(t => String(t.causaRaiz || '').toLowerCase().trim() === 'gestão de ativos');
+            const ativosCount = ativosTickets.length;
+            const ativosPct = total > 0 ? ((ativosCount / total) * 100).toFixed(1) : 0;
+
+            const requisitoTickets = tickets.filter(t => String(t.causaRaiz || '').toLowerCase().trim() === 'falha de requisito');
+            const requisitoCount = requisitoTickets.length;
+            const requisitoPct = total > 0 ? ((requisitoCount / total) * 100).toFixed(1) : 0;
+
+            const regraTickets = tickets.filter(t => String(t.causaRaiz || '').toLowerCase().trim() === 'regra de negócio');
+            const regraCount = regraTickets.length;
+            const regraPct = total > 0 ? ((regraCount / total) * 100).toFixed(1) : 0;
+            
             const slaMetTickets = tickets.filter(t => t.isSlaMet);
             const slaMetCount = slaMetTickets.length;
             const slaMetPct = total > 0 ? ((slaMetCount / total) * 100).toFixed(1) : 0;
@@ -5465,9 +5477,12 @@
             const metrics = [
                 ["Total de Chamados no Período", total, "100.0%", "Base Total"],
                 ["Índice de SLA Atendido", slaMetCount, `${slaMetPct}%`, slaMetPct >= 90 ? "Excelente" : (slaMetPct >= 80 ? "Atenção" : "Crítico")],
-                ["Bugs e Falhas de Desenvolvimento", bugsCount, `${bugsPct}%`, "Foco Dev / QA"],
+                ["Falhas Desenvolvimento", bugsCount, `${bugsPct}%`, "Foco Dev / QA"],
                 ["Chamados Relacionados à IA (Docs)", docsIaCount, `${docsIaPct}%`, "Ajustes de Modelo"],
-                ["Dúvidas Operacionais (FAQ / Treinamento)", opCount, `${opPct}%`, "Foco Capacitação"]
+                ["Dúvidas Operacionais (FAQ / Treinamento)", opCount, `${opPct}%`, "Foco Capacitação"],
+                ["Gestão de Ativos", ativosCount, `${ativosPct}%`, "Controle de Ativos"],
+                ["Falhas de Requisito", requisitoCount, `${requisitoPct}%`, "Foco Alinhamento"],
+                ["Regras de Negócio", regraCount, `${regraPct}%`, "Foco Processos"]
             ];
             
             metrics.forEach((m, idx) => {
@@ -5723,7 +5738,7 @@
 
         // Excel Tabs Configuration List (Including new tabs: Gestão de Ativos, Falha de Requisito, Regra de Negócio)
         const excelTabsConfig = [
-            { id: 'bugs', name: 'Bugs e Falhas de Dev', color: '991B1B', filter: t => {
+            { id: 'bugs', name: 'Falhas Desenvolvimento', color: '991B1B', filter: t => {
                 const causaLower = String(t.causaRaiz || '').toLowerCase();
                 const resumoLower = String(t.resumo || '').toLowerCase();
                 return causaLower.includes('desenvolvimento') || resumoLower.includes('bug');
