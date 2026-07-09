@@ -59153,6 +59153,106 @@ SI-7613,2026-07-09T11:00:57.513-0300,Rafael Ferreira,Classificação,,Ranked hig
 SI-7618,2026-07-09T12:07:36.464-0300,Sistema,Link,,This work item is blocked by GA-1195
 SI-7617,2026-07-09T12:03:24.993-0300,Sistema,Link,,This work item is blocked by GA-1194
 SI-7616,2026-07-09T11:57:20.020-0300,Sistema,Link,,This work item is blocked by GA-1193
+SI-7616,2026-07-09T14:43:22.645-0300,Rafael Ferreira,assignee,,Helena Almeida
+SI-7616,2026-07-09T14:43:25.326-0300,Rafael Ferreira,resolution,,Done
+SI-7616,2026-07-09T14:43:25.326-0300,Rafael Ferreira,status,Submissão,Done
+SI-7616,2026-07-09T14:43:25.811-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7615,2026-07-09T14:18:21.393-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7615,2026-07-09T14:18:23.854-0300,Bruno Silva,resolution,,Done
+SI-7615,2026-07-09T14:18:23.854-0300,Bruno Silva,status,Submissão,Done
 SI-7614,2026-07-09T12:35:28.720-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7614,2026-07-09T12:35:31.485-0300,Bruno Silva,resolution,,Done
 SI-7614,2026-07-09T12:35:31.485-0300,Bruno Silva,status,Submissão,Done
+SI-7614,2026-07-09T14:21:19.440-0300,Bruno Silva,description,,"1️⃣ Identificação do Chamado
+
+
+* *Módulo:* Compras / Vendas / Comercial (Aba de Itens / Fechamento de Pedido ou Contrato)
+
+* *Tipo/Classificação:* Incidente (Bug de Sistema)
+
+* *Ambiente:* Produção
+
+* *Título Sugerido:* Erro de validação de Margem (Selling/Buying) ao realizar o fechamento de cadeado na Aba de Itens
+
+
+2️⃣ Entendimento do Problema
+
+
+* *Passo a Passo:*
+
+* Acessar o módulo correspondente e abrir o registro/pedido em questão.
+
+* Navegar até a aba de Itens.
+
+* Tentar realizar a operação de ""fechar o cadeado"" para bloquear/finalizar a edição.
+
+* O sistema executa um comando de _Save_ (salvamento automático/trigger) antes da alteração do status do cadeado.
+
+* O sistema valida que as regras de {{selling}} (venda) e {{buying}} (compra) já estão fechadas/encerradas.
+
+* A validação impede o salvamento ({{Regra de Negócio: Não permitir alteração com selling/buying fechados}}).
+
+* O processo é abortado, o cadeado permanece aberto e o registro fica pendente no painel de BI.
+
+* *Comportamento Esperado vs. Atual:*
+
+* _Esperado:_ O sistema deve permitir o fechamento do cadeado (mudança de status de edição) sem disparar a validação impeditiva de alteração de valores de compra/venda, visto que se trata de uma ação de bloqueio e não de modificação de dados.
+
+* _Atual:_ O trigger de salvamento impede o fechamento do cadeado porque detecta que o período/status de compra e venda já está encerrado.
+
+* *Evidências:* Unable to save: there are closed locks on Add Buying Please open the locks before adding or editing items.
+
+
+3️⃣ Análise Técnica Inicial
+
+
+* *Histórico/Logs:* Erro de validação de integridade ou regra de negócio impeditiva durante o método {{OnSave}} da aba de itens.
+
+* *Parametrização/Perfil:* Perfil do operador possui permissão para fechar o cadeado, porém a trava sistêmica a nível de código impede a gravação do status.
+
+
+4️⃣ Avaliação de Impacto
+
+
+* *Abrangência:* Operação comercial / Faturamento (Impacta a sincronização de dados com o BI).
+
+* *Criticidade:* Alta
+
+* *Justificativa:* O bloqueio impede a finalização do fluxo operacional do item e gera inconsistência/atraso nos relatórios gerenciais e dashboards do BI (Business Intelligence).
+
+* *Workaround:* Não há paliativo via sistema. É necessário intervenção via banco ou correção do comportamento da aplicação.
+
+
+5️⃣ Tentativas de Resolução
+
+
+* *Ações Realizadas:* Identificado que a rotina de _Save_ é disparada automaticamente ao clicar no cadeado, gerando um loop lógico (não é possível fechar o cadeado porque o período está fechado, e o período não computa a finalização porque o cadeado está aberto).
+
+
+6️⃣ Justificativa Técnica para Escalonamento
+
+
+* O incidente trata-se de uma falha de lógica na ordem de execução dos eventos (Triggers/Métodos) do sistema (N2/N3 Desenvolvimento). A validação de {{selling}} e {{buying}} fechados não deveria reter a operação de alteração de metadados de controle (como o status do cadeado).
+
+
+🔍 CAUSA RAIZ POTENCIAL (PREVISTA)
+*Conflito de Lógica no Evento* {{OnSave}}*:* O gatilho de fechamento do cadeado está herdando ou acionando a rotina padrão de persistência de dados (Save) da aba de itens. Como as propriedades/status de {{buying}} e {{selling}} já constam como encerradas no banco de dados, a camada de persistência aplica a regra estrita de ""registro não editável"", rejeitando o próprio comando do sistema que iria apenas atualizar o status do cadeado para ""fechado""."
+SI-7614,2026-07-09T14:21:29.429-0300,Bruno Silva,Encaminhado para:,,Sustentação
+SI-7614,2026-07-09T14:21:33.209-0300,Sistema,Link,,This work item is blocked by SUS-266
+SI-7619,2026-07-09T14:16:25.880-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7619,2026-07-09T14:16:28.755-0300,Bruno Silva,resolution,,Done
+SI-7619,2026-07-09T14:16:28.755-0300,Bruno Silva,status,Submissão,Done
+SI-7623,2026-07-09T14:29:04.206-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7623,2026-07-09T14:29:06.505-0300,Bruno Silva,resolution,,Done
+SI-7623,2026-07-09T14:29:06.505-0300,Bruno Silva,status,Submissão,Done
+SI-7622,2026-07-09T14:24:39.762-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7622,2026-07-09T14:24:42.509-0300,Bruno Silva,resolution,,Done
+SI-7622,2026-07-09T14:24:42.509-0300,Bruno Silva,status,Submissão,Done
+SI-7621,2026-07-09T14:04:32.817-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7621,2026-07-09T14:04:36.675-0300,Bruno Silva,resolution,,Done
+SI-7621,2026-07-09T14:04:36.675-0300,Bruno Silva,status,Submissão,Done
+SI-7620,2026-07-09T13:50:23.805-0300,Sistema,Link,,This work item is blocked by GA-1197
+SI-7620,2026-07-09T14:42:54.666-0300,Rafael Ferreira,assignee,,Helena Almeida
+SI-7620,2026-07-09T14:42:57.687-0300,Rafael Ferreira,resolution,,Done
+SI-7620,2026-07-09T14:42:57.687-0300,Rafael Ferreira,status,Submissão,Done
+SI-7620,2026-07-09T14:42:58.251-0300,Rafael Ferreira,Classificação,,Ranked lower
