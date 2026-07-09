@@ -58672,6 +58672,10 @@ SI-7540,2026-07-09T06:59:15.598-0300,Sistema,Causa Raiz,Falha Desenvolvimento,Re
 SI-7540,2026-07-09T06:59:15.598-0300,Sistema,Causa raiz potencial,"Falha na validação de dados no ato da transferência de titularidade, inconsistência de permissão vinculada ao usuário de destino ou exceção não tratada na rotina de atualização do formulário do CRM.","Falha na validação de limites de inserção de registros no módulo de clientes ou estouro de cota de contas vinculadas a um único usuário na aplicação, provocando uma interrupção inesperada no processamento da página durante a gravação das alterações."
 SI-7540,2026-07-09T06:59:15.598-0300,Sistema,Causa raiz final,O sistema apresentou uma falha interna de processamento ao tentar registrar a mudança da responsável comercial pelo cliente.,"A plataforma possui uma regra estrutural interna projetada para organizar a distribuição de contas de clientes na carteira comercial. Essa diretriz estabelece um teto operacional fixo, limitando a vinculação de um mesmo colaborador como responsável pelo setor industrial de vendas a no máximo 30 clientes cadastrados simultaneamente."
 SI-7540,2026-07-09T06:59:15.598-0300,Sistema,Justificativa Causa Raiz final,O retorno de status  ao tentar modificar o vínculo do usuário no módulo de CRM indica uma exceção não tratada no servidor durante o processamento da requisição de update.,O nexo causal do incidente reside na ausência de tratamento de exceção preventivo na camada de aplicação para a regra de negócio que limita a 30 o número de clientes por colaborador.
+SI-7556,2026-07-09T12:04:57.748-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7556,2026-07-09T12:05:01.502-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7556,2026-07-09T12:05:06.277-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7556,2026-07-09T12:05:06.277-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
 SI-7555,2026-07-07T16:28:37.118-0300,Sistema,Link,,This work item is blocked by GA-1173
 SI-7555,2026-07-08T10:59:43.275-0300,Rafael Ferreira,resolution,,Done
 SI-7555,2026-07-08T10:59:43.275-0300,Rafael Ferreira,status,Submissão,Done
@@ -58757,6 +58761,10 @@ INTAKE-25"
 SI-7558,2026-07-08T00:59:52.803-0300,Sistema,Causa raiz potencial,,Falha na comunicação  entre módulos operacional e financial
 SI-7558,2026-07-08T00:59:52.803-0300,Sistema,Causa raiz final,,"A implementação da melhoria ENG-3861 tornou o parâmetro used mandatório para a migração de dados, porém não mapeou o impacto colateral no fluxo de frete, onde o comportamento nativo do sistema (fechamento do cadeado) altera automaticamente esse campo para false, bloqueando o envio ao financeiro."
 SI-7558,2026-07-08T00:59:52.803-0300,Sistema,Justificativa Causa Raiz final,,"O nexo causal reside na colisão entre uma nova regra de validação rígida e um comportamento legado de automação de interface. A solução aplicada ajusta a lógica de backend para que a migração do frete considere o status do cadeado e a validade da taxa, em vez de depender exclusivamente de um campo que sofre reset automático. Essa medida de melhoria contínua isola os fluxos de Pickup e Freight, evitando que manutenções futuras em um serviço bloqueiem inadvertidamente a receita ou o contas a pagar de outro."
+SI-7557,2026-07-09T12:06:11.985-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7557,2026-07-09T12:06:14.265-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7557,2026-07-09T12:06:16.490-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7557,2026-07-09T12:06:16.490-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
 SI-7564,2026-07-09T11:12:48.865-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7564,2026-07-09T11:12:51.444-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7564,2026-07-09T11:12:51.444-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
@@ -58803,6 +58811,10 @@ SI-7565,2026-07-08T12:59:04.063-0300,Sistema,Justificativa Causa Raiz final,,"Co
 :
 
 https://prnt.sc/3XVcCg-diuoH"
+SI-7570,2026-07-09T12:25:16.278-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7570,2026-07-09T12:25:18.295-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7570,2026-07-09T12:25:20.336-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7570,2026-07-09T12:25:20.336-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
 SI-7569,2026-07-08T09:39:23.637-0300,Sistema,Link,,This work item is blocked by GA-1180
 SI-7569,2026-07-08T15:35:17.757-0300,Helena Almeida,assignee,,Helena Almeida
 SI-7569,2026-07-08T15:35:19.875-0300,Helena Almeida,resolution,,Done
@@ -58861,6 +58873,11 @@ SI-7575,2026-07-08T12:59:08.310-0300,Sistema,Resolução do chamado,,"Verificado
 SI-7575,2026-07-08T12:59:08.310-0300,Sistema,Causa raiz potencial,,"Reconhecimento do documento de conhecimento de embarque (BOL) na estrutura de Master Air Waybill (MAWB) pelo sistema, gerando ausência de mapeamento automatizado para a sua transferência direta."
 SI-7575,2026-07-08T12:59:08.310-0300,Sistema,Causa raiz final,,"Identificado um ponto de atenção no processamento automático de determinados documentos de transporte, que são interpretados em uma categoria estrutural para a qual ainda não existe uma regra de integração automática direta. Como consequência dessa característica, as informações foram mapeadas pela inteligência artificial, mas não puderam ser transmitidas automaticamente. Para contornar esse comportamento não esperado e garantir a regularidade das atividades, o arquivo foi adicionado manualmente ao fluxo do respectivo acompanhamento de embarque."
 SI-7575,2026-07-08T12:59:08.310-0300,Sistema,Justificativa Causa Raiz final,,"O documento do tipo BOL é reconhecido no pipeline da IA na estrutura de MAWB, cenário que carece de mapeamento implementado no sistema para viabilizar a migração automática de dados para a order. A tratativa paliativa de inserção manual elimina o impacto imediato na operação. A mitigação definitiva da reincidência demanda o desenvolvimento e a homologação do mapeamento desta tipologia documental."
+SI-7574,2026-07-09T12:33:03.720-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7574,2026-07-09T12:33:05.832-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7574,2026-07-09T12:33:07.923-0300,Ricardo Barbosa Machado,status,Em Atendimento,Encaminhado DS
+SI-7574,2026-07-09T12:33:11.956-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7574,2026-07-09T12:33:11.956-0300,Ricardo Barbosa Machado,status,Encaminhado DS,Done
 SI-7573,2026-07-08T11:21:01.147-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7573,2026-07-08T11:21:02.798-0300,Rafael Ferreira,resolution,,Done
 SI-7573,2026-07-08T11:21:02.798-0300,Rafael Ferreira,status,Submissão,Done
@@ -58912,6 +58929,9 @@ SI-7577,2026-07-09T06:59:28.650-0300,Sistema,Resolução do chamado,,"Identifica
 SI-7577,2026-07-09T06:59:28.650-0300,Sistema,Causa raiz potencial,,"Sobrecarga no servidor de e-mail, instabilidade na integração com o provedor de e-mail ou limite de envios por minuto atingido pelo usuário de automação."
 SI-7577,2026-07-09T06:59:28.650-0300,Sistema,Causa raiz final,,"Limitação técnica do método de disparo de e-mails atual frente ao volume de processamento da automação operacional, gerando gargalo no servidor de saída."
 SI-7577,2026-07-09T06:59:28.650-0300,Sistema,Justificativa Causa Raiz final,,"A falha ocorreu devido ao conflito entre a alta performance da automação de processos e a capacidade limitada de entrega do protocolo de e-mail vigente. O nexo causal estabelece que, ao atingir o teto de envios simultâneos, o provedor bloqueia temporariamente a conta por segurança, resultando no ícone vermelho na timeline. A solução definitiva (migração para SMTP Relay via INTAKE-186) resolve o problema na raiz ao permitir um fluxo de saída profissional e escalável, eliminando a dependência de limites de contas individuais e garantindo que a Melhoria Contínua previna a reincidência de bloqueios por volume."
+SI-7581,2026-07-09T12:37:25.479-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7581,2026-07-09T12:37:26.723-0300,Rafael Ferreira,resolution,,Done
+SI-7581,2026-07-09T12:37:26.723-0300,Rafael Ferreira,status,Submissão,Done
 SI-7580,2026-07-08T11:50:32.790-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7580,2026-07-08T11:50:35.724-0300,Bruno Silva,resolution,,Done
 SI-7580,2026-07-08T11:50:35.724-0300,Bruno Silva,status,Submissão,Done
@@ -58951,6 +58971,117 @@ SI-7585,2026-07-09T10:29:57.366-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7585,2026-07-09T10:29:59.212-0300,Rafael Ferreira,resolution,,Done
 SI-7585,2026-07-09T10:29:59.212-0300,Rafael Ferreira,status,Submissão,Done
 SI-7585,2026-07-09T10:29:59.624-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7584,2026-07-09T12:01:49.372-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7584,2026-07-09T12:01:53.466-0300,Rafael Ferreira,status,Submissão,Em Atendimento
+SI-7584,2026-07-09T12:22:51.429-0300,Rafael Ferreira,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+h3. 1️⃣ Identificação do Chamado
+
+* *Módulo:* Financial (Faturamento / Contas a Receber)
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção ({{prd.dmslog.int}} / {{dms-operational}})
+* *Título Sugerido:* {{Erro na exibição de processo na Tela de Faturar após migração forçada (Send to Financial) — Assembly 260642646}}
+
+h3. 2️⃣ Entendimento do Problema
+
+* *Passo a Passo:*
+*# Acessar a Order / Assembly número {{260642646}} no módulo Operacional.
+*# Identificar que o processo de faturamento convencional não migrou automaticamente para o módulo Financeiro.
+*# Acionar o botão de contingência *""Send to Financial""* para forçar a migração dos valores.
+*# Verificar o log no AWS CloudWatch e constatar o registro de sucesso ({{""status"": ""success""}}) na ação de envio forçado ({{""action"": ""send_order_forced""}}) para as taxas de venda ({{""sub_action"": ""selling_charges""}}).
+*# Navegar até o módulo Financeiro e acessar a *Tela de Faturar* ou a *Tela de Periódicos*.
+*# Pesquisar pelo número do Assembly ou Booking e constatar que o processo não é localizado.
+* *Comportamento Esperado vs. Atual:*
+** _Esperado:_ Após o retorno positivo do trigger no log ({{success}}), os valores de venda do processo deveriam constar imediatamente na fila de faturamento para emissão de Contas a Receber.
+** _Atual:_ O microsserviço operacional executa o envio com sucesso, mas o processo permanece completamente invisível/indisponível nas telas financeiras de faturamento.
+* *Evidências:* Log da AWS CloudWatch apresentado no chamado indicando execução bem-sucedida em {{2026-07-09T14:51:01.323443Z}} para a Ordem ID {{164633}}.
+
+h3. 3️⃣ Análise Técnica Inicial
+
+* *Histórico/Logs:* O log de faturamento confirma que o payload de {{selling_charges}} foi disparado corretamente pelo backend operacional ({{dms-operational}}).
+
+h3. 4️⃣ Avaliação de Impacto
+
+* *Abrangência:* Restrito ao Assembly {{260642646}} / (Ordem ID {{164633}}).
+* *Criticidade:* Alta.
+* *Justificativa:* Impede o faturamento de serviços prestados pela DMS ao cliente, gerando atraso na emissão de faturas e impactando diretamente o fluxo de caixa de Contas a Receber.
+* *Workaround:* Não há. O botão paliativo padrão (""Send to Financial"") foi acionado e, embora acuse sucesso no log, não reflete o processo no frontend financeiro.
+
+h3. 5️⃣ Tentativas de Resolução
+
+* *Ações Realizadas:* Utilização do recurso de envio forçado via sistema (""Send to Financial"") e auditoria dos logs de integração de dados via CloudWatch.
+
+h3. 6️⃣ Justificativa Técnica para Escalonamento
+
+* O microsserviço de operação ({{dms-operational}}) processou e transmitiu as informações com sucesso. O comportamento indica que o registro está sendo bloqueado ou descartado na persistência do módulo {{Financial}}. Como as ações via interface gráfica esgotaram-se, faz-se necessário o escalonamento para o time de Sustentação/N2 para auditoria e ajuste diretamente via banco de dados.
+
+
+
+{quote}*PROBLEMA:* Falha na indexação/exibição de processo na fila de faturamento (Módulo Financial) após migração forçada.
+
+*DADOS DO PROCESSO:*
+
+* *Assembly Number:* 260642646
+* *Booking:* 33260530521
+* *Order ID (Interno):* 164633
+
+*DETALHES DA INVESTIGAÇÃO:* Foi realizada a tentativa de migração forçada utilizando o botão ""Send to Financial"" na Order. Analisando os eventos de log da AWS CloudWatch ({{logger: financial_migration}}), a rotina {{send_order_forced}} com a sub_action {{selling_charges}} retornou {{""status"": ""success""}}, confirmando o envio da perna de venda.
+
+Contudo, ao consultar o processo na *Tela de Faturar* e na *Tela de Periódicos*, o faturamento não localiza o registro de nenhuma forma. O fluxo operacional foi cumprido, mas a informação não está disponível na ponta financeira.
+
+*SOLICITAÇÃO AO N2/SUSTENTAÇÃO:*
+
+Solicitamos verificar se existe alguma trava a nível de banco de dados (tabela {{order_order}} ou correlatas do esquema financeiro) que esteja ocultando o registro da grid de faturamento.{quote}
+
+h3. 🔍 Causa Raiz Potencial
+
+Com base no mapeamento histórico de regras do DMSYS, a causa mais provável para esse cenário é uma inconsistência de *""Already Billed"" (Processo pré-marcado como faturado)* no banco de dados.
+
+Se em alguma movimentação anterior (ou devido a alguma inconsistência de sistema) a coluna {{billed_nf}} na tabela {{order_order}} do banco de dados do *Financial* tiver sido preenchida com alguma data residual, a API de faturamento entenderá que este processo já foi completamente faturado. Como consequência, mesmo que o botão ""Send to Financial"" envie as taxas com sucesso absoluto , a query da tela de faturar continuará ocultando o processo para evitar duplicidade de cobrança.
+
+
+
+*Correção esperada do time de Engenharia/DS:* Consultar {{SELECT billed_nf FROM order_order WHERE assembly_number = '260642646';}} e, caso haja uma data gravada indevidamente, limpá-la para que o processo volte a cair na fila operacional de faturamento.
+
+
+
+Print ordem presente no banco do financeiro:
+
+
+!image-20260709-150632.png|width=669,alt=""image-20260709-150632.png""!
+
+Print tela de faturar:
+
+
+!image-20260709-151030.png|width=669,alt=""image-20260709-151030.png""!
+
+Print tela de periódicos:
+
+
+!image-20260709-151054.png|width=669,alt=""image-20260709-151054.png""!
+
+!image-20260709-151115.png|width=669,alt=""image-20260709-151115.png""!
+
+
+
+Video do fluxo:
+
+
+[^google_screen_recording_2026-07-09T15-14-51.411Z.webm]"
+SI-7584,2026-07-09T12:22:53.639-0300,Rafael Ferreira,Attachment,,image-20260709-150632.png
+SI-7584,2026-07-09T12:22:53.639-0300,Rafael Ferreira,Attachment,,google_screen_recording_2026-07-09T15-14-51.411Z.webm
+SI-7584,2026-07-09T12:22:53.639-0300,Rafael Ferreira,Attachment,,image-20260709-151030.png
+SI-7584,2026-07-09T12:22:53.639-0300,Rafael Ferreira,Attachment,,image-20260709-151054.png
+SI-7584,2026-07-09T12:22:53.639-0300,Rafael Ferreira,Attachment,,image-20260709-151115.png
+SI-7584,2026-07-09T12:23:03.961-0300,Rafael Ferreira,resolution,,Done
+SI-7584,2026-07-09T12:23:03.961-0300,Rafael Ferreira,status,Em Atendimento,Done
+SI-7584,2026-07-09T12:23:08.244-0300,Rafael Ferreira,Encaminhado para:,,Sustentação
+SI-7584,2026-07-09T12:23:14.204-0300,Sistema,Link,,This work item is blocked by SUS-265
+SI-7584,2026-07-09T12:24:12.187-0300,Rafael Ferreira,Encaminhado para:,Sustentação,
+SI-7583,2026-07-09T12:28:25.861-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7583,2026-07-09T12:28:32.163-0300,Rafael Ferreira,resolution,,Done
+SI-7583,2026-07-09T12:28:32.163-0300,Rafael Ferreira,status,Submissão,Done
+SI-7583,2026-07-09T12:28:32.626-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7590,2026-07-09T09:12:30.078-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7590,2026-07-09T09:12:37.585-0300,Rafael Ferreira,resolution,,Done
 SI-7590,2026-07-09T09:12:37.585-0300,Rafael Ferreira,status,Submissão,Done
@@ -59000,6 +59131,9 @@ SI-7603,2026-07-09T08:26:21.333-0300,Sistema,Link,,This work item is blocked by 
 SI-7603,2026-07-09T08:40:28.890-0300,Bruno Silva,assignee,,Helena Almeida
 SI-7603,2026-07-09T08:40:33.871-0300,Bruno Silva,resolution,,Done
 SI-7603,2026-07-09T08:40:33.871-0300,Bruno Silva,status,Submissão,Done
+SI-7607,2026-07-09T11:56:17.866-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7607,2026-07-09T11:56:20.608-0300,Bruno Silva,resolution,,Done
+SI-7607,2026-07-09T11:56:20.608-0300,Bruno Silva,status,Submissão,Done
 SI-7606,2026-07-09T11:39:02.782-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7606,2026-07-09T11:39:05.948-0300,Bruno Silva,resolution,,Done
 SI-7606,2026-07-09T11:39:05.948-0300,Bruno Silva,status,Submissão,Done
@@ -59013,3 +59147,9 @@ SI-7613,2026-07-09T11:00:53.101-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7613,2026-07-09T11:00:57.032-0300,Rafael Ferreira,resolution,,Done
 SI-7613,2026-07-09T11:00:57.032-0300,Rafael Ferreira,status,Submissão,Done
 SI-7613,2026-07-09T11:00:57.513-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7618,2026-07-09T12:07:36.464-0300,Sistema,Link,,This work item is blocked by GA-1195
+SI-7617,2026-07-09T12:03:24.993-0300,Sistema,Link,,This work item is blocked by GA-1194
+SI-7616,2026-07-09T11:57:20.020-0300,Sistema,Link,,This work item is blocked by GA-1193
+SI-7614,2026-07-09T12:35:28.720-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7614,2026-07-09T12:35:31.485-0300,Bruno Silva,resolution,,Done
+SI-7614,2026-07-09T12:35:31.485-0300,Bruno Silva,status,Submissão,Done
