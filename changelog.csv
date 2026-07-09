@@ -58542,6 +58542,7 @@ SI-7551,2026-07-08T12:58:59.373-0300,Sistema,Justificativa Causa Raiz final,,"A 
 SI-7550,2026-07-09T15:47:48.406-0300,Rafael Ferreira,resolution,,Done
 SI-7550,2026-07-09T15:47:48.406-0300,Rafael Ferreira,status,Submissão,Done
 SI-7550,2026-07-09T15:47:48.915-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7550,2026-07-09T17:24:55.710-0300,Rafael Ferreira,Criticidade final,,P3 - Baixa
 SI-7549,2026-07-07T17:17:10.400-0300,Rafael Ferreira,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
 
 *1️⃣ Identificação do Chamado*
@@ -59159,10 +59160,15 @@ SI-7596,2026-07-09T11:40:33.486-0300,Nícollas Resende,assignee,,Nícollas Resen
 SI-7596,2026-07-09T14:57:41.112-0300,Rafael Ferreira,resolution,,Done
 SI-7596,2026-07-09T14:57:41.112-0300,Rafael Ferreira,status,Submissão,Done
 SI-7596,2026-07-09T14:57:41.696-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7596,2026-07-09T17:20:38.132-0300,Rafael Ferreira,Criticidade final,,P3 - Baixa
 SI-7595,2026-07-09T08:15:48.480-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7595,2026-07-09T08:15:50.127-0300,Rafael Ferreira,resolution,,Done
 SI-7595,2026-07-09T08:15:50.127-0300,Rafael Ferreira,status,Submissão,Done
 SI-7595,2026-07-09T08:15:50.653-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7594,2026-07-09T17:01:11.736-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7594,2026-07-09T17:01:14.955-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7594,2026-07-09T17:01:19.443-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7594,2026-07-09T17:01:19.443-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
 SI-7599,2026-07-08T17:59:25.307-0300,Sistema,Link,,This work item is blocked by GA-1189
 SI-7599,2026-07-09T08:09:33.286-0300,Rafael Ferreira,resolution,,Done
 SI-7599,2026-07-09T08:09:33.286-0300,Rafael Ferreira,status,Submissão,Done
@@ -59181,6 +59187,7 @@ SI-7603,2026-07-09T08:26:21.333-0300,Sistema,Link,,This work item is blocked by 
 SI-7603,2026-07-09T08:40:28.890-0300,Bruno Silva,assignee,,Helena Almeida
 SI-7603,2026-07-09T08:40:33.871-0300,Bruno Silva,resolution,,Done
 SI-7603,2026-07-09T08:40:33.871-0300,Bruno Silva,status,Submissão,Done
+SI-7603,2026-07-09T16:58:29.982-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. E-mail adicionado conforme solicitado.  
 SI-7607,2026-07-09T11:56:17.866-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7607,2026-07-09T11:56:20.608-0300,Bruno Silva,resolution,,Done
 SI-7607,2026-07-09T11:56:20.608-0300,Bruno Silva,status,Submissão,Done
