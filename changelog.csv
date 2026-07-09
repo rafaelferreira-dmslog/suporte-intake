@@ -58516,6 +58516,10 @@ SI-7529,2026-07-08T12:58:51.508-0300,Sistema,Resolução do chamado,,Ajustado in
 SI-7529,2026-07-08T12:58:51.508-0300,Sistema,Causa raiz potencial,,Selling faturado.
 SI-7529,2026-07-08T12:58:51.508-0300,Sistema,Causa raiz final,,Selling faturado.
 SI-7529,2026-07-08T12:58:51.508-0300,Sistema,Justificativa Causa Raiz final,,Selling faturado.
+SI-7529,2026-07-09T15:46:36.266-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7529,2026-07-09T15:46:38.090-0300,Rafael Ferreira,resolution,,Done
+SI-7529,2026-07-09T15:46:38.090-0300,Rafael Ferreira,status,Submissão,Done
+SI-7529,2026-07-09T15:46:38.569-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7528,2026-07-07T14:08:26.770-0300,Sistema,Link,,This work item is blocked by GA-1153
 SI-7528,2026-07-08T10:59:53.109-0300,Rafael Ferreira,resolution,,Done
 SI-7528,2026-07-08T10:59:53.109-0300,Rafael Ferreira,status,Submissão,Done
@@ -58535,6 +58539,9 @@ SI-7551,2026-07-08T12:58:59.373-0300,Sistema,Resolução do chamado,,"Identifica
 SI-7551,2026-07-08T12:58:59.373-0300,Sistema,Causa raiz potencial,,"Interrupção na comunicação entre os módulos de Booking e Order durante o processamento da remoção de uma Ordem, resultando em dados residuais (registros órfãos) na tabela de documentos."
 SI-7551,2026-07-08T12:58:59.373-0300,Sistema,Causa raiz final,,"O problema ocorreu devido a uma descontinuidade na comunicação interna do sistema no exato momento em que a Ordem foi removida do processo. Quando uma Ordem é desvinculada de um agenciamento (Booking), o sistema tem a instrução de executar duas ações conjuntas: remover a Ordem e limpar todos os documentos atrelados a ela, como o House Air Waybill (HAWB). No cenário relatado, o sistema conseguiu remover a Ordem com sucesso, mas sofreu uma falha de comunicação e parou antes de limpar os documentos. Como resultado, o agenciamento passou a identificar a existência de arquivos que pertenciam a uma Ordem inexistente no momento, criando um conflito de informações. Para proteger a integridade do processo e evitar problemas financeiros, o sistema ativou a trava de segurança, impedindo novas edições. Para garantir a melhoria contínua e evitar que os documentos fiquem ""presos"" durante futuras desvinculações, uma correção estrutural que torna esse processo de limpeza simultâneo já foi mapeada e será implementada através do INTAKE-559"
 SI-7551,2026-07-08T12:58:59.373-0300,Sistema,Justificativa Causa Raiz final,,"A falha decorre de uma deficiência de arquitetura na rotina de exclusão lógica de Ordens nos Bookings, que carece de propriedades ACID (especificamente atomicidade) em suas transações de banco de dados. Durante o processo de remoção, o ""desvínculo"" da Order é executado primeiro. Se houver alguma instabilidade ou latência logo em seguida, a atualização de status para inativar os metadados dos documentos atrelados (como os arquivos XFZB) falha. Isso gera um cenário de perda de integridade referencial: o Booking valida regras de edição checando documentos cujas conexões lógicas já não são reconhecidas pelo sistema, resultando no bloqueio da interface. O mapeamento via INTAKE-559 é fundamental como plano de ação corretiva, pois consistirá na refatoração dessa query, garantindo que o ""update/delete"" da Ordem e de todos os seus documentos ocorram em um único commit."
+SI-7550,2026-07-09T15:47:48.406-0300,Rafael Ferreira,resolution,,Done
+SI-7550,2026-07-09T15:47:48.406-0300,Rafael Ferreira,status,Submissão,Done
+SI-7550,2026-07-09T15:47:48.915-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7549,2026-07-07T17:17:10.400-0300,Rafael Ferreira,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
 
 *1️⃣ Identificação do Chamado*
@@ -58673,6 +58680,9 @@ SI-7541,2026-07-08T00:59:48.205-0300,Sistema,Resolução do chamado,,Aguardando 
 SI-7541,2026-07-08T00:59:48.205-0300,Sistema,Causa raiz potencial,,Aguardando informação
 SI-7541,2026-07-08T00:59:48.205-0300,Sistema,Causa raiz final,,Aguardando informação
 SI-7541,2026-07-08T00:59:48.205-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
+SI-7541,2026-07-09T15:47:12.613-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7541,2026-07-09T15:47:17.384-0300,Rafael Ferreira,resolution,,Done
+SI-7541,2026-07-09T15:47:17.384-0300,Rafael Ferreira,status,Submissão,Done
 SI-7540,2026-07-07T14:45:27.214-0300,Sistema,Link,,This work item is blocked by GA-1163
 SI-7540,2026-07-07T17:53:54.601-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7540,2026-07-07T17:53:57.181-0300,Rafael Ferreira,assignee,,Rafael Ferreira
@@ -58811,6 +58821,10 @@ SI-7561,2026-07-08T12:59:02.714-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7561,2026-07-08T12:59:02.714-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7561,2026-07-08T12:59:02.714-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7561,2026-07-08T12:59:02.714-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7561,2026-07-09T15:49:42.058-0300,Rafael Ferreira,assignee,,Eduardo Felipe de Lima Rebello
+SI-7561,2026-07-09T15:49:46.350-0300,Rafael Ferreira,resolution,,Done
+SI-7561,2026-07-09T15:49:46.350-0300,Rafael Ferreira,status,Submissão,Done
+SI-7561,2026-07-09T15:49:46.879-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7560,2026-07-09T15:16:23.863-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7560,2026-07-09T15:16:25.612-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7560,2026-07-09T15:16:25.612-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -58939,6 +58953,9 @@ SI-7579,2026-07-08T11:50:45.896-0300,Bruno Silva,assignee,,Nícollas Resende
 SI-7579,2026-07-08T11:50:48.299-0300,Bruno Silva,resolution,,Done
 SI-7579,2026-07-08T11:50:48.299-0300,Bruno Silva,status,Submissão,Done
 SI-7579,2026-07-08T12:59:09.741-0300,Sistema,Resolução do chamado,,Foi realizada uma atualização nos drivers de áudio do notebook do colaborador.
+SI-7578,2026-07-09T15:50:22.635-0300,Rafael Ferreira,assignee,,Nícollas Resende
+SI-7578,2026-07-09T15:50:27.601-0300,Rafael Ferreira,resolution,,Done
+SI-7578,2026-07-09T15:50:27.601-0300,Rafael Ferreira,status,Submissão,Done
 SI-7577,2026-07-08T13:17:30.404-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7577,2026-07-08T13:17:32.817-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7577,2026-07-08T13:17:32.817-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
@@ -58988,6 +59005,9 @@ SI-7586,2026-07-09T06:59:31.025-0300,Sistema,Resolução do chamado,,Aguardando 
 SI-7586,2026-07-09T06:59:31.025-0300,Sistema,Causa raiz potencial,,Aguardando correção
 SI-7586,2026-07-09T06:59:31.025-0300,Sistema,Causa raiz final,,Aguardando correção
 SI-7586,2026-07-09T06:59:31.025-0300,Sistema,Justificativa Causa Raiz final,,Aguardando correção
+SI-7586,2026-07-09T15:51:04.288-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7586,2026-07-09T15:51:07.680-0300,Rafael Ferreira,resolution,,Done
+SI-7586,2026-07-09T15:51:07.680-0300,Rafael Ferreira,status,Submissão,Done
 SI-7585,2026-07-09T10:29:57.366-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7585,2026-07-09T10:29:59.212-0300,Rafael Ferreira,resolution,,Done
 SI-7585,2026-07-09T10:29:59.212-0300,Rafael Ferreira,status,Submissão,Done
@@ -59123,6 +59143,9 @@ SI-7592,2026-07-08T17:20:23.729-0300,Rafael Ferreira,resolution,,Done
 SI-7592,2026-07-08T17:20:23.729-0300,Rafael Ferreira,status,Submissão,Done
 SI-7592,2026-07-08T17:20:24.347-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-7591,2026-07-08T15:52:25.575-0300,Sistema,Link,,This work item is blocked by GA-1183
+SI-7591,2026-07-09T15:51:34.352-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7591,2026-07-09T15:51:37.656-0300,Rafael Ferreira,resolution,,Done
+SI-7591,2026-07-09T15:51:37.656-0300,Rafael Ferreira,status,Submissão,Done
 SI-7598,2026-07-08T17:24:24.781-0300,Sistema,Link,,This work item is blocked by GA-1187
 SI-7598,2026-07-09T08:09:35.278-0300,Rafael Ferreira,resolution,,Done
 SI-7598,2026-07-09T08:09:35.278-0300,Rafael Ferreira,status,Submissão,Done
