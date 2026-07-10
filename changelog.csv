@@ -2953,6 +2953,10 @@ SI-7147,2026-07-02T13:02:15.587-0300,Sistema,Resolução do chamado,Em atendimen
 SI-7147,2026-07-02T13:02:15.587-0300,Sistema,Causa raiz potencial,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-7147,2026-07-02T13:02:15.587-0300,Sistema,Causa raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-7147,2026-07-02T13:02:15.587-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7147,2026-07-10T19:02:58.224-0300,Sistema,Resolução do chamado,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação.",Processo normalizado.
+SI-7147,2026-07-10T19:02:58.224-0300,Sistema,Causa raiz potencial,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação.",Processo apagado ou falha de comunicação
+SI-7147,2026-07-10T19:02:58.224-0300,Sistema,Causa raiz final,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação.",Intermitência temporaria
+SI-7147,2026-07-10T19:02:58.224-0300,Sistema,Justificativa Causa Raiz final,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação.",Intermitência temporaria
 SI-7146,2026-06-24T17:14:08.990-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7146,2026-06-24T17:14:11.514-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7146,2026-06-24T17:14:11.514-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -3225,6 +3229,10 @@ SI-7128,2026-06-25T18:59:07.996-0300,Sistema,Resolução do chamado,,Aguardando 
 SI-7128,2026-06-25T18:59:07.996-0300,Sistema,Causa raiz potencial,,Aguardando informação
 SI-7128,2026-06-25T18:59:07.996-0300,Sistema,Causa raiz final,,Aguardando informação
 SI-7128,2026-06-25T18:59:07.996-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
+SI-7128,2026-07-10T19:02:47.946-0300,Sistema,Resolução do chamado,Aguardando informação,"Encaminhado o caso para a equipe de sustentação técnica para análise detalhada do comportamento do sistema. Para garantir a correção definitiva e estrutural da divergência identificada na geração do documento, foi aberta uma solicitação formal de ajuste sob o registro INTAKE-1562."
+SI-7128,2026-07-10T19:02:47.946-0300,Sistema,Causa raiz potencial,Aguardando informação,"Falha na rotina de script que consolida e exporta as taxas do resumo financeiro para a emissão do documento físico, gerando uma duplicidade ou multiplicação indevida de itens lançados manualmente, ou erro de processamento na leitura da moeda e aplicação da taxa de conversão no fechamento do documento."
+SI-7128,2026-07-10T19:02:47.946-0300,Sistema,Causa raiz final,Aguardando informação,Identificou-se que o valor inserido manualmente a título de taxa de transporte no acompanhamento do processo operacional é registrado e exibido corretamente nas telas financeiras de consulta interna. INTAKE-1562.
+SI-7128,2026-07-10T19:02:47.946-0300,Sistema,Justificativa Causa Raiz final,Aguardando informação,O erro decorre de uma quebra de integridade de dados no fluxo de transição entre o módulo financeiro do processo operacional e o serviço de geração de documentos de saída.
 SI-7127,2026-06-24T11:16:23.259-0300,Sistema,Link,,This work item is blocked by GA-1056
 SI-7127,2026-06-24T11:39:35.508-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7127,2026-06-24T11:39:37.618-0300,Rafael Ferreira,resolution,,Done
@@ -4043,6 +4051,15 @@ SI-7080,2026-06-25T18:58:39.970-0300,Sistema,Resolução do chamado,Aguardando i
 SI-7080,2026-06-25T18:58:39.970-0300,Sistema,Causa raiz potencial,Aguardando informação,Falha de comunicação ou dessincronização entre a rotina de pré-visualização (preview) e o serviço de emissão final de faturamento dentro do Módulo Financial.
 SI-7080,2026-06-25T18:58:39.970-0300,Sistema,Causa raiz final,Aguardando informação,"O sistema de gestão financeira possui travas automáticas de segurança e conformidade fiscal. Uma vez que uma Nota de Débito é emitida e finalizada, o sistema congela o documento para assegurar que nenhuma alteração posterior modifique os registros já faturados."
 SI-7080,2026-06-25T18:58:39.970-0300,Sistema,Justificativa Causa Raiz final,Aguardando informação,A divergência observada entre a pré-visualização correta e a emissão incorreta da fatura evidencia uma falha na rotina de persistência de dados do Módulo Financial durante a consolidação do documento faturado.
+SI-7080,2026-07-10T19:02:24.689-0300,Sistema,Resolução do chamado,Orientado o colaborador responsável a realizar o cancelamento da fatura emitida para viabilizar a continuidade da investigação técnica.,"Orientado o colaborador responsável a realizar o cancelamento da fatura emitida para viabilizar a continuidade da investigação técnica.
+Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7080,2026-07-10T19:02:24.689-0300,Sistema,Causa raiz potencial,Falha de comunicação ou dessincronização entre a rotina de pré-visualização (preview) e o serviço de emissão final de faturamento dentro do Módulo Financial.,"Falha de comunicação ou dessincronização entre a rotina de pré-visualização (preview) e o serviço de emissão final de faturamento dentro do Módulo Financial.
+Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7080,2026-07-10T19:02:24.689-0300,Sistema,Causa raiz final,"O sistema de gestão financeira possui travas automáticas de segurança e conformidade fiscal. Uma vez que uma Nota de Débito é emitida e finalizada, o sistema congela o documento para assegurar que nenhuma alteração posterior modifique os registros já faturados.","O sistema de gestão financeira possui travas automáticas de segurança e conformidade fiscal. Uma vez que uma Nota de Débito é emitida e finalizada, o sistema congela o documento para assegurar que nenhuma alteração posterior modifique os registros já faturados.
+Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7080,2026-07-10T19:02:24.689-0300,Sistema,Justificativa Causa Raiz final,A divergência observada entre a pré-visualização correta e a emissão incorreta da fatura evidencia uma falha na rotina de persistência de dados do Módulo Financial durante a consolidação do documento faturado.,"A divergência observada entre a pré-visualização correta e a emissão incorreta da fatura evidencia uma falha na rotina de persistência de dados do Módulo Financial durante a consolidação do documento faturado.
+
+Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-7079,2026-06-23T17:26:29.196-0300,Rafael Ferreira,resolution,,Done
 SI-7079,2026-06-23T17:26:29.196-0300,Rafael Ferreira,status,Submissão,Done
 SI-7079,2026-06-23T17:26:29.708-0300,Rafael Ferreira,Rank,,Ranked lower
@@ -6166,6 +6183,26 @@ SI-6972,2026-06-22T12:58:08.135-0300,Sistema,Resolução do chamado,,Em atendime
 SI-6972,2026-06-22T12:58:08.135-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-6972,2026-06-22T12:58:08.135-0300,Sistema,Causa raiz final,,Em atendimento
 SI-6972,2026-06-22T12:58:08.135-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-6972,2026-07-10T19:01:34.895-0300,Sistema,Resolução do chamado,Em atendimento,"Boa tarde!
+Analisamos a sua solicitação referente à Ordem 260643735 e realizamos a prova real da matemática aplicada. Identificamos que o cálculo do sistema está 100% correto e não apresenta imprecisões.
+A divergência entre o seu cálculo manual e o do sistema ocorre porque o SYS aplica a fórmula contínua do CIF + 10% estabelecida na regra oficial de negócio
+. Para compor o valor real da mercadoria, a base do CIF utiliza estritamente o Frete de Venda cobrado do cliente (USD 241,74) tanto para a apólice de compra quanto para a de venda, sem arredondamentos intermediários.
+Veja o passo a passo exato validado no sistema:
+Base Inicial (CIF): FOB (582.437,33) + Frete de Venda (241,74) = USD 582.679,07
+1. Seguro Selling (0,10%):
+Valor Seguro preliminar: 582.679,07 x 0,10% = 582,68
+Base com Seguro: 582.679,07 + 582,68 = 583.261,75
+Base Final (Acréscimo de 10% da modalidade): 583.261,75 + 10% = 641.587,93
+Prêmio Final (Selling): 641.587,93 x 0,10% = USD 641,59
+2. Seguro Buying (0,05%):
+Valor Seguro preliminar: 582.679,07 x 0,05% = 291,34
+Base com Seguro: 582.679,07 + 291,34 = 582.970,41
+Base Final (Acréscimo de 10% da modalidade): 582.970,41 + 10% = 641.267,45
+Prêmio Final (Buying): 641.267,45 x 0,05% = USD 320,63
+Como os valores calculados pelo SYS estão matematicamente perfeitos e atrelados a um tarifário (Quote), o sistema não permite edição manual dessas taxas para garantir a integridade. Portanto, você pode seguir com a consolidação utilizando os custos originais gerados pelo sistema."
+SI-6972,2026-07-10T19:01:34.895-0300,Sistema,Causa raiz potencial,Em atendimento,"Regra de negócio, cálculos estão de acordo."
+SI-6972,2026-07-10T19:01:34.895-0300,Sistema,Causa raiz final,Em atendimento,"Regra de negócio, cálculos estão de acordo."
+SI-6972,2026-07-10T19:01:34.895-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Regra de neócio, calculos estão de acordo."
 SI-6971,2026-06-19T12:19:38.853-0300,Bruno Silva,resolution,,Done
 SI-6971,2026-06-19T12:19:38.853-0300,Bruno Silva,status,Submissão,Done
 SI-6971,2026-06-19T12:23:41.426-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
@@ -6192,6 +6229,17 @@ SI-6970,2026-06-22T12:58:06.958-0300,Sistema,Resolução do chamado,,Em atendime
 SI-6970,2026-06-22T12:58:06.958-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-6970,2026-06-22T12:58:06.958-0300,Sistema,Causa raiz final,,Em atendimento
 SI-6970,2026-06-22T12:58:06.958-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-6970,2026-07-10T19:01:33.751-0300,Sistema,Causa Raiz,Impacto não mapeado,Falha Operacional
+SI-6970,2026-07-10T19:01:33.751-0300,Sistema,Resolução do chamado,Em atendimento,"Olá! Tudo bem?
+Analisamos o seu chamado referente à Ordem 260643742 e realizamos a prova real dos cálculos do seguro. Identificamos que o sistema está calculando os valores corretamente e não há nenhuma imprecisão. Ele apenas está aplicando à risca as regras de negócio matemáticas e os conceitos aduaneiros da apólice.
+Explicando o motivo dos valores gerados pelo sistema:
+1. Sobre o Selling (USD 1.202,34): Para processos de exportação, a regra do sistema puxa o frete simples (e não o total com as taxas) para compor a base do CIF + 10%. Fazendo o cálculo exato sobre o FOB e o seu frete de venda, sem arredondamentos intermediários, o resultado final do prêmio atinge exatamente os USD 1.202,34 calculados.
+2. Sobre o Buying (USD 600,87): Aqui existe uma regra conceitual de negócio muito importante: na hora de compor a base de cálculo para a sua compra, o sistema ignora o seu frete de Buying e utiliza o seu frete de Selling como base. Isso ocorre porque a apólice da seguradora visa proteger o valor comercial total da mercadoria em trânsito (Carga + Frete cobrado do cliente). O sistema trava essa base e aplica a alíquota de compra (0,05%), resultando perfeitamente nos USD 600,87.
+Sobre o ajuste manual: Como os valores calculados pelo SYS estão matematicamente corretos e atrelados a um tarifário (Quote), o sistema não permite edição manual (override) nessas taxas para garantir a integridade da cotação.
+Sendo assim, não é necessário (nem permitido) realizarmos ajuste manual de centavos, e os custos gerados pelo SYS estão corretos e prontos para você seguir com a consolidação!"
+SI-6970,2026-07-10T19:01:33.751-0300,Sistema,Causa raiz potencial,Em atendimento,Regra de negócio
+SI-6970,2026-07-10T19:01:33.751-0300,Sistema,Causa raiz final,Em atendimento,Calculos aplicados corretamente de acordo com a regra aplicada.
+SI-6970,2026-07-10T19:01:33.751-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,Calculos aplicados corretamente de acordo com a regra aplicada.
 SI-6969,2026-06-19T12:20:39.268-0300,Bruno Silva,resolution,,Done
 SI-6969,2026-06-19T12:20:39.268-0300,Bruno Silva,status,Submissão,Done
 SI-6969,2026-06-19T12:53:04.613-0300,Sistema,Resolução do chamado,,"Identificado um comportamento não esperado no processamento automático da documentação de transporte marítimo. Realizada a atualização do código identificador digital do arquivo e disponibilizada a nova versão para a validação da colaboradora, assegurando a continuidade do fluxo operacional."
@@ -9073,6 +9121,10 @@ SI-6663,2026-06-17T13:04:55.452-0300,Sistema,Resolução do chamado,Aguardando i
 SI-6663,2026-06-17T13:04:55.452-0300,Sistema,Causa raiz potencial,Aguardando informação,"alha na lógica de processamento ou consolidação de encargos no módulo financeiro ao gerar a Debit Note, possivelmente causada por uma regra de multiplicação indevida ao ler a taxa de ""Other fees"" cadastrada no booking."
 SI-6663,2026-06-17T13:04:55.452-0300,Sistema,Causa raiz final,Aguardando informação,Sendo validada
 SI-6663,2026-06-17T13:04:55.452-0300,Sistema,Justificativa Causa Raiz final,Aguardando informação,A análise indica que existe um descasamento na integração entre os dados do booking e o motor de geração de documentos financeiros (Debit Note).
+SI-6663,2026-07-10T18:59:57.696-0300,Sistema,Resolução do chamado,O caso está sob análise da equipe de sustentação,"Encaminhado o caso para a equipe de sustentação técnica para análise detalhada do comportamento do sistema. Para garantir a correção definitiva e estrutural da divergência identificada na geração do documento, foi aberta uma solicitação formal de ajuste sob o registro INTAKE-1562."
+SI-6663,2026-07-10T18:59:57.696-0300,Sistema,Causa raiz potencial,"alha na lógica de processamento ou consolidação de encargos no módulo financeiro ao gerar a Debit Note, possivelmente causada por uma regra de multiplicação indevida ao ler a taxa de ""Other fees"" cadastrada no booking.","Falha na rotina de script que consolida e exporta as taxas do resumo financeiro para a emissão do documento físico, gerando uma duplicidade ou multiplicação indevida de itens lançados manualmente, ou erro de processamento na leitura da moeda e aplicação da taxa de conversão no fechamento do documento."
+SI-6663,2026-07-10T18:59:57.696-0300,Sistema,Causa raiz final,Sendo validada,"Identificou-se que o valor inserido manualmente a título de taxa de transporte no acompanhamento do processo operacional é registrado e exibido corretamente nas telas financeiras de consulta interna. Contudo, quando o sistema realiza a compilação desses dados para emitir a nota de débito final ao cliente, ocorre um comportamento incorreto na leitura dos dados que triplica o valor original de 260 NOK. Essa inconsistência impede que os valores declarados fiquem equivalentes, travando a emissão correta do documento e impossibilitando a conclusão do trâmite. A resolução definitiva dessa falha de cálculo sistêmico está sendo tratada de forma prioritária pela equipe de engenharia por meio do plano de ação INTAKE-1562."
+SI-6663,2026-07-10T18:59:57.696-0300,Sistema,Justificativa Causa Raiz final,A análise indica que existe um descasamento na integração entre os dados do booking e o motor de geração de documentos financeiros (Debit Note).,"O erro decorre de uma quebra de integridade de dados no fluxo de transição entre o módulo financeiro do processo operacional e o serviço de geração de documentos de saída. Embora o dado de entrada manual esteja correto no banco operacional, o componente responsável por renderizar a nota de débito aplica uma operação aritmética incorreta sobre a linha de cobrança específica. A abertura do INTAKE-1562 foca no ajuste dessa regra de transmissão de dados, assegurando que o valor final gerado seja exatamente o valor espelhado na tela financeira, o que mitiga riscos de faturamento errôneo e otimiza a acurácia dos processos fiscais da empresa."
 SI-6662,2026-06-15T17:18:39.991-0300,Rafael Ferreira,resolution,,Done
 SI-6662,2026-06-15T17:18:39.991-0300,Rafael Ferreira,status,Submissão,Done
 SI-6662,2026-06-15T17:24:06.954-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
@@ -55476,6 +55528,7 @@ SI-7318,2026-07-01T12:57:22.939-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7318,2026-07-01T12:57:22.939-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7318,2026-07-01T12:57:22.939-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7318,2026-07-01T12:57:22.939-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7318,2026-07-10T19:04:29.047-0300,Sistema,Resolução do chamado,Em atendimento,Ticket concluído. E-mail adicionado conforme solicitado.
 SI-7317,2026-07-01T10:23:35.552-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7317,2026-07-01T10:23:39.250-0300,Bruno Silva,resolution,,Done
 SI-7317,2026-07-01T10:23:39.250-0300,Bruno Silva,status,Submissão,Done
@@ -59175,6 +59228,10 @@ SI-7581,2026-07-10T13:05:06.627-0300,Sistema,Resolução do chamado,,Aguardando 
 SI-7581,2026-07-10T13:05:06.627-0300,Sistema,Causa raiz potencial,,Aguardando informação
 SI-7581,2026-07-10T13:05:06.627-0300,Sistema,Causa raiz final,,Aguardando informação
 SI-7581,2026-07-10T13:05:06.627-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
+SI-7581,2026-07-10T19:06:43.972-0300,Sistema,Resolução do chamado,Aguardando informação,A própria colaboradora resolveu seu problema não sendo necessário intervenção
+SI-7581,2026-07-10T19:06:43.972-0300,Sistema,Causa raiz potencial,Aguardando informação,Clientes não selecionados
+SI-7581,2026-07-10T19:06:43.972-0300,Sistema,Causa raiz final,Aguardando informação,A própria colaboradora resolveu seu problema não sendo necessário intervenção
+SI-7581,2026-07-10T19:06:43.972-0300,Sistema,Justificativa Causa Raiz final,Aguardando informação,A própria colaboradora resolveu seu problema não sendo necessário intervenção
 SI-7580,2026-07-08T11:50:32.790-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7580,2026-07-08T11:50:35.724-0300,Bruno Silva,resolution,,Done
 SI-7580,2026-07-08T11:50:35.724-0300,Bruno Silva,status,Submissão,Done
@@ -60143,6 +60200,14 @@ SI-7655,2026-07-10T13:06:09.480-0300,Sistema,Resolução do chamado,,"Identifica
 SI-7655,2026-07-10T13:06:09.480-0300,Sistema,Causa raiz potencial,,"Exclusão acidental por parte do usuário ou falha de sincronização de dados que resultou na alteração do status do assembly para ""cancelado"" (canceled_at preenchido) no banco de dados."
 SI-7655,2026-07-10T13:06:09.480-0300,Sistema,Causa raiz final,,"Ausência de funcionalidade nativa no sistema (front-end) para a restauração de ordens que sofreram soft delete, gerando dependência de intervenção técnica da equipe de dados."
 SI-7655,2026-07-10T13:06:09.480-0300,Sistema,Justificativa Causa Raiz final,,"A falha foi classificada como de requisito, pois o sistema permite a exclusão lógica do dado, mas não oferece autonomia para sua reversão. O nexo causal reside no fato de que, sem uma interface de recuperação, qualquer deleção torna o registro invisível e inacessível, impactando o fluxo operacional. A solução definitiva através do INTAKE-247 visa a melhoria contínua ao implementar o recurso de restauração, eliminando o tempo de espera do usuário e reduzindo o volume de chamados críticos para a equipe de tecnologia."
+SI-7654,2026-07-10T19:04:04.628-0300,Sistema,Criticidade final,,P2 - Média
+SI-7654,2026-07-10T19:04:04.628-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7654,2026-07-10T19:04:04.628-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7654,2026-07-10T19:04:04.628-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7654,2026-07-10T19:04:04.628-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7654,2026-07-10T19:04:04.628-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7654,2026-07-10T19:04:04.628-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7654,2026-07-10T19:04:04.628-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7653,2026-07-10T11:26:26.202-0300,Sistema,Link,,This work item is blocked by GA-1208
 SI-7653,2026-07-10T18:00:39.980-0300,Helena Almeida,resolution,,Done
 SI-7653,2026-07-10T18:00:39.980-0300,Helena Almeida,status,Submissão,Done
