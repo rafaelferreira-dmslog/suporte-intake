@@ -59943,6 +59943,7 @@ SI-7632,2026-07-10T10:05:35.920-0300,Rafael Ferreira,Link,,This work item is blo
 SI-7632,2026-07-10T10:48:34.036-0300,Rafael Ferreira,resolution,,Done
 SI-7632,2026-07-10T10:48:34.036-0300,Rafael Ferreira,status,Submissão,Done
 SI-7632,2026-07-10T10:48:34.486-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7632,2026-07-10T17:46:09.682-0300,Eduardo Felipe de Lima Rebello,assignee,Rafael Ferreira,Eduardo Felipe de Lima Rebello
 SI-7633,2026-07-10T10:09:59.957-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7633,2026-07-10T10:10:02.688-0300,Bruno Silva,resolution,,Done
 SI-7633,2026-07-10T10:10:02.688-0300,Bruno Silva,status,Submissão,Done
@@ -60143,6 +60144,10 @@ SI-7655,2026-07-10T13:06:09.480-0300,Sistema,Causa raiz potencial,,"Exclusão ac
 SI-7655,2026-07-10T13:06:09.480-0300,Sistema,Causa raiz final,,"Ausência de funcionalidade nativa no sistema (front-end) para a restauração de ordens que sofreram soft delete, gerando dependência de intervenção técnica da equipe de dados."
 SI-7655,2026-07-10T13:06:09.480-0300,Sistema,Justificativa Causa Raiz final,,"A falha foi classificada como de requisito, pois o sistema permite a exclusão lógica do dado, mas não oferece autonomia para sua reversão. O nexo causal reside no fato de que, sem uma interface de recuperação, qualquer deleção torna o registro invisível e inacessível, impactando o fluxo operacional. A solução definitiva através do INTAKE-247 visa a melhoria contínua ao implementar o recurso de restauração, eliminando o tempo de espera do usuário e reduzindo o volume de chamados críticos para a equipe de tecnologia."
 SI-7653,2026-07-10T11:26:26.202-0300,Sistema,Link,,This work item is blocked by GA-1208
+SI-7653,2026-07-10T18:00:39.980-0300,Helena Almeida,resolution,,Done
+SI-7653,2026-07-10T18:00:39.980-0300,Helena Almeida,status,Submissão,Done
+SI-7653,2026-07-10T18:00:44.585-0300,Helena Almeida,assignee,,Helena Almeida
+SI-7653,2026-07-10T18:00:57.394-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. Grupo de e-mail atualizado conforme solicitado.
 SI-7659,2026-07-10T13:26:38.043-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7659,2026-07-10T13:26:40.808-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7659,2026-07-10T13:26:40.808-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -60294,6 +60299,9 @@ SI-7661,2026-07-10T16:01:13.012-0300,Rafael Ferreira,Encaminhado para:,DS,Susten
 SI-7661,2026-07-10T16:01:18.283-0300,Sistema,Link,,This work item is blocked by SUS-268
 SI-7661,2026-07-10T16:01:26.283-0300,Rafael Ferreira,Encaminhado para:,Sustentação,
 SI-7660,2026-07-10T14:28:21.878-0300,Sistema,Link,,This work item is blocked by GA-1210
+SI-7660,2026-07-10T17:52:41.987-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7660,2026-07-10T17:52:41.987-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7660,2026-07-10T17:52:43.502-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7663,2026-07-10T15:16:11.567-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7663,2026-07-10T15:16:16.739-0300,Rafael Ferreira,resolution,,Done
 SI-7663,2026-07-10T15:16:16.739-0300,Rafael Ferreira,status,Submissão,Done
@@ -60308,3 +60316,4 @@ SI-7670,2026-07-10T17:01:05.277-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7670,2026-07-10T17:01:06.868-0300,Rafael Ferreira,resolution,,Done
 SI-7670,2026-07-10T17:01:06.868-0300,Rafael Ferreira,status,Submissão,Done
 SI-7670,2026-07-10T17:01:07.302-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7682,2026-07-10T18:26:21.907-0300,Sistema,Link,,This work item is blocked by GA-1216
