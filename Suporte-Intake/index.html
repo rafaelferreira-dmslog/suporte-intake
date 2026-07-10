@@ -2146,6 +2146,7 @@
             <button class="tab-btn active" id="tab-btn-graphs" onclick="switchDashboardTab('graphs')">📊 Análise Gráfica</button>
             <button class="tab-btn" id="tab-btn-insights" onclick="switchDashboardTab('insights')">💡 Insights Rápidos</button>
             <!-- <button class="tab-btn" id="tab-btn-productivity" onclick="switchDashboardTab('productivity')">👥 Produtividade Time</button> -->
+            <button class="tab-btn" id="tab-btn-sectors" onclick="switchDashboardTab('sectors')">🏢 Organograma &amp; Setores</button>
             <button class="tab-btn" id="tab-btn-facilita" onclick="switchDashboardTab('facilita')">⚡ Facilita Querys</button>
         </div>
 
@@ -2370,6 +2371,32 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        <!-- Predictor Section -->
+                        <div style="border-top: 1px solid var(--border-color); padding-top: 20px; margin-top: 20px;">
+                            <h2 style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px; text-transform: uppercase; font-weight: 700; color: var(--accent-primary);">🔮 Previsão &amp; Comparativo Mensal</h2>
+                            <div style="display: flex; flex-direction: column; gap: 10px; font-size: 13px;">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span style="color: var(--text-muted);" id="pred-lbl-current">Mês Atual (Até agora):</span>
+                                    <span id="pred-current-month" style="font-weight: 700; color: white;">--</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span style="color: var(--text-muted);" id="pred-lbl-prev-equiv">Mês Anterior (Mesmo Período):</span>
+                                    <span id="pred-prev-month-equiv" style="font-weight: 700; color: white;">--</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span style="color: var(--text-muted);" id="pred-lbl-prev-total">Mês Anterior (Fechado):</span>
+                                    <span id="pred-prev-month-total" style="font-weight: 700; color: white;">--</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; border-top: 1px dashed rgba(255,255,255,0.1); padding-top: 8px;">
+                                    <span style="color: var(--text-muted); font-weight: 600;">Estimativa p/ o Final do Mês:</span>
+                                    <span id="pred-projected-total" style="font-weight: 700; color: var(--success);">--</span>
+                                </div>
+                                <div id="pred-growth-badge" style="text-align: center; margin-top: 6px; font-size: 11px; font-weight: bold; padding: 4px 8px; border-radius: 4px; display: none;">
+                                    --
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2503,6 +2530,22 @@
                 <div class="month-filters-container" id="insights-month-filters">
                     <!-- Dynamic Month Buttons (e.g. "Todos", "Junho", "Julho") will be loaded here -->
                 </div>
+                
+                <!-- Insights Filter Bar -->
+                <div class="glass-panel" style="padding: 16px 20px; margin-bottom: 24px; display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 13px; color: var(--text-muted); font-weight: bold; text-transform: uppercase;">Departamento:</span>
+                        <select id="insights-filter-depto" onchange="updateInsightsDashboard()" class="filter-input" style="padding: 6px 12px; font-size: 13px; min-width: 180px; color: white; border-radius: 4px;">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 13px; color: var(--text-muted); font-weight: bold; text-transform: uppercase;">Colaborador:</span>
+                        <select id="insights-filter-colaborador" onchange="updateInsightsDashboard()" class="filter-input" style="padding: 6px 12px; font-size: 13px; min-width: 180px; color: white; border-radius: 4px;">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                </div>
 
                 <div class="glass-panel" style="padding: 24px; margin-bottom: 24px;">
                     <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;">
@@ -2629,6 +2672,149 @@
                     </div>
                 </div>
             </div>
+            <!-- Tab Content: Organograma & Setores -->
+            <div class="tab-content" id="tab-content-sectors">
+                <!-- Month Selection Shortcuts -->
+                <div class="month-filters-container" id="sectors-month-filters" style="margin-bottom: 20px;">
+                    <!-- Dynamic Month Buttons (e.g. "Todos", "Junho", "Julho") will be loaded here -->
+                </div>
+                
+                <!-- Custom Date Container -->
+                <div id="sectors-custom-date-container" style="display: none; gap: 12px; align-items: center; margin-bottom: 20px; background: rgba(255,255,255,0.02); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); max-width: max-content;">
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 11px; color: var(--text-muted); font-weight: bold; text-transform: uppercase;">Início:</span>
+                        <input type="date" id="sectors-date-start" onchange="updateSectorsTab()" class="filter-input" style="padding: 6px 10px; font-size: 12px; color: white;">
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <span style="font-size: 11px; color: var(--text-muted); font-weight: bold; text-transform: uppercase;">Fim:</span>
+                        <input type="date" id="sectors-date-end" onchange="updateSectorsTab()" class="filter-input" style="padding: 6px 10px; font-size: 12px; color: white;">
+                    </div>
+                </div>
+                <!-- Status Banner -->
+                <div class="glass-panel" style="padding: 16px 20px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+                    <div style="display: flex; align-items: center; gap: 12px;">
+                        <span style="font-size: 24px;">🏢</span>
+                        <div>
+                            <h3 style="font-family: var(--font-title); font-size: 16px; font-weight: 700; color: white;">Mapeamento do Organograma Corporativo</h3>
+                            <p style="font-size: 12px; color: var(--text-muted);" id="organograma-status-msg">Carregando organograma...</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <button class="btn btn-secondary" onclick="document.getElementById('organograma-file-input').click()" style="padding: 6px 12px; font-size: 13px; gap: 6px;">📁 Importar Organograma (.xlsx)</button>
+                        <input type="file" id="organograma-file-input" accept=".xlsx" style="display: none;" onchange="handleOrganogramaUpload(event)">
+                    </div>
+                </div>
+
+                <!-- KPI Grid -->
+                <div class="insights-grid" style="margin-bottom: 24px;">
+                    <div class="glass-panel insight-card">
+                        <div class="insight-icon">👥</div>
+                        <h3 class="kpi-title">Membros Mapeados</h3>
+                        <div class="insight-stat-value" id="sector-kpi-members">0</div>
+                        <p class="insight-stat-desc">Funcionários ativos no organograma</p>
+                    </div>
+                    <div class="glass-panel insight-card">
+                        <div class="insight-icon">🏆</div>
+                        <h3 class="kpi-title">Setor mais Demandante</h3>
+                        <div class="insight-stat-value" style="font-size: 20px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 4px 0;" id="sector-kpi-top-team">N/A</div>
+                        <p class="insight-stat-desc" id="sector-kpi-top-team-desc">Carregando...</p>
+                    </div>
+                    <div class="glass-panel insight-card">
+                        <div class="insight-icon">👑</div>
+                        <h3 class="kpi-title">Líder mais Demandado</h3>
+                        <div class="insight-stat-value" style="font-size: 20px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 4px 0;" id="sector-kpi-top-leader">N/A</div>
+                        <p class="insight-stat-desc" id="sector-kpi-top-leader-desc">Carregando...</p>
+                    </div>
+                    <div class="glass-panel insight-card">
+                        <div class="insight-icon">🎯</div>
+                        <h3 class="kpi-title">Aderência ao SLA</h3>
+                        <div class="insight-stat-value" id="sector-kpi-sla">0%</div>
+                        <p class="insight-stat-desc" id="sector-kpi-sla-desc">Média da árvore organizacional</p>
+                    </div>
+                </div>
+
+                <!-- Graph Row -->
+                <div class="graphs-grid" style="margin-bottom: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px;">
+                    <div class="glass-panel card" style="padding: 20px;">
+                        <h3 style="font-family: var(--font-title); font-size: 15px; font-weight: 700; color: white; margin-bottom: 16px;">🏢 Chamados por Time / Setor (Top 10)</h3>
+                        <div style="position: relative; height: 280px; width: 100%;">
+                            <canvas id="chart-sector-volume"></canvas>
+                        </div>
+                    </div>
+                    <div class="glass-panel card" style="padding: 20px;">
+                        <h3 style="font-family: var(--font-title); font-size: 15px; font-weight: 700; color: white; margin-bottom: 16px;">👑 Chamados por Líder de Equipe (Top 10)</h3>
+                        <div style="position: relative; height: 280px; width: 100%;">
+                            <canvas id="chart-leader-volume"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytical Table -->
+                <div class="glass-panel card" style="padding: 24px; margin-bottom: 24px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+                        <div>
+                            <h3 style="font-family: var(--font-title); font-size: 16px; font-weight: 700; color: white;">📊 Detalhamento Analítico por Setor &amp; Liderança</h3>
+                            <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Visão detalhada de volumetrias, SLAs, MTTR e causas raiz com base no cruzamento do organograma.</p>
+                        </div>
+                        <div style="display: flex; gap: 8px; align-items: center;">
+                            <span style="font-size: 12px; color: var(--text-muted); font-weight: bold; text-transform: uppercase;">Filtrar Setor:</span>
+                            <select id="sector-table-filter" onchange="renderSectorsTable()" class="filter-input" style="padding: 4px 8px; font-size: 12px; min-width: 180px; color: white; border-radius: 4px;">
+                                <option value="">Todos</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <thead>
+                                <tr style="border-bottom: 1px solid var(--border-color); font-size: 12px; color: var(--text-muted); text-transform: uppercase;">
+                                    <th style="text-align: left; padding: 12px 10px;">Setor / Time</th>
+                                    <th style="text-align: left; padding: 12px 10px;">Líder de Equipe</th>
+                                    <th style="text-align: center; padding: 12px 10px; width: 100px;">Chamados</th>
+                                    <th style="text-align: center; padding: 12px 10px; width: 100px;">SLA %</th>
+                                    <th style="text-align: center; padding: 12px 10px; width: 120px;">Tempo Médio (Hrs)</th>
+                                    <th style="text-align: left; padding: 12px 10px;">Principal Causa Raiz</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbody-sectors-detail">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Operational Failures Breakdown Panel -->
+                <div class="glass-panel card" style="padding: 24px; margin-bottom: 24px;" id="operational-failures-section">
+                    <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 16px; margin-bottom: 20px;">
+                        <h3 style="font-family: var(--font-title); font-size: 16px; font-weight: 700; color: white;">🚨 Central de Falhas Operacionais</h3>
+                        <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Visão analítica de retrabalhos e falhas da categoria "Falha Operacional" por setor, equipe e subproduto.</p>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+                        <!-- Column 1: Top Sectors -->
+                        <div style="background: rgba(239, 68, 68, 0.03); border: 1px solid rgba(239, 68, 68, 0.15); padding: 16px; border-radius: 8px;">
+                            <h4 style="font-size: 13px; font-weight: 700; color: #ef4444; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">🏢 Setores mais Impactados</h4>
+                            <div id="op-fail-sectors-list" style="display: flex; flex-direction: column; gap: 8px;">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                        
+                        <!-- Column 2: Top Leaders -->
+                        <div style="background: rgba(249, 115, 22, 0.03); border: 1px solid rgba(249, 115, 22, 0.15); padding: 16px; border-radius: 8px;">
+                            <h4 style="font-size: 13px; font-weight: 700; color: #f97316; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">👑 Equipes com mais Falhas</h4>
+                            <div id="op-fail-leaders-list" style="display: flex; flex-direction: column; gap: 8px;">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                        
+                        <!-- Column 3: Top Subproducts -->
+                        <div style="background: rgba(234, 179, 8, 0.03); border: 1px solid rgba(234, 179, 8, 0.15); padding: 16px; border-radius: 8px;">
+                            <h4 style="font-size: 13px; font-weight: 700; color: #eab308; text-transform: uppercase; margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">📦 Subprodutos com mais Erros</h4>
+                            <div id="op-fail-subproducts-list" style="display: flex; flex-direction: column; gap: 8px;">
+                                <!-- Populated dynamically -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="tab-content" id="tab-content-facilita">
                 <div class="facilita-grid">
                     <section class="facilita-panel-left">
@@ -3084,12 +3270,12 @@
             </div>
             
             <!-- Custom Excel Export Modal -->
-            <div class="modal" id="custom-excel-modal">
-                <div class="glass-panel modal-content" style="background: var(--bg-secondary); padding: 32px; max-width: 800px; width: 90%; max-height: 90vh; overflow-y: auto;">
+                        <div class="modal" id="custom-excel-modal">
+                <div class="glass-panel modal-content" style="background: var(--bg-secondary); padding: 32px; max-width: 850px; width: 95%; max-height: 90vh; overflow-y: auto;">
                     <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 16px;">
                         <div>
                             <h2 style="font-family: var(--font-title); font-size: 20px; font-weight: 700; color: white;">⚙️ Exportação Personalizada do Excel</h2>
-                            <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Selecione quais abas incluir e defina intervalos de data específicos para cada uma.</p>
+                            <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Customize as abas da sua planilha, incluindo filtros por data, subprodutos e colunas desejadas.</p>
                         </div>
                         <button onclick="closeCustomExcelModal()" style="background: none; border: none; color: var(--text-muted); font-size: 24px; cursor: pointer; transition: color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--text-muted)'">&times;</button>
                     </div>
@@ -3099,16 +3285,34 @@
                             <table style="width: 100%; border-collapse: collapse;">
                                 <thead>
                                     <tr style="border-bottom: 1px solid var(--border-color);">
-                                        <th style="width: 80px; text-align: center; padding: 12px 8px;">Incluir</th>
-                                        <th style="text-align: left; padding: 12px 8px;">Nome da Aba</th>
-                                        <th style="text-align: left; padding: 12px 8px; width: 220px;">Filtro de Data</th>
-                                        <th style="text-align: left; padding: 12px 8px; width: 300px;">Intervalo Personalizado</th>
+                                        <th style="width: 60px; text-align: center; padding: 12px 8px;">Incluir</th>
+                                        <th style="text-align: left; padding: 12px 8px;">Nome da Aba / Configurações</th>
+                                        <th style="text-align: left; padding: 12px 8px; width: 180px;">Filtro de Data</th>
+                                        <th style="text-align: left; padding: 12px 8px; width: 260px;">Intervalo Personalizado</th>
+                                        <th style="width: 90px; text-align: center; padding: 12px 8px;">Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody id="custom-excel-tbody">
                                     <!-- Rows will be dynamically loaded here by JS -->
                                 </tbody>
                             </table>
+                        </div>
+                        
+                        <!-- Add Custom Tab Action -->
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 8px; padding: 16px; background: rgba(255,255,255,0.02); border: 1px dashed var(--border-color); border-radius: 8px;">
+                            <div style="display: flex; gap: 12px; align-items: center; width: 100%;">
+                                <span style="font-size: 13px; color: var(--text-muted); font-weight: 600;">Nova Aba:</span>
+                                <select id="sel-add-tab-type" class="filter-input" style="padding: 6px 12px; font-size: 13px; max-width: 250px; border-radius: 4px; color: white;">
+                                    <option value="bugs">Falhas Desenvolvimento</option>
+                                    <option value="docsia">Falhas Docs IA</option>
+                                    <option value="operational">Falhas Operacionais</option>
+                                    <option value="ativos">Gestão de Ativos</option>
+                                    <option value="requisito">Falhas de Requisito</option>
+                                    <option value="regra">Regras de Negócio</option>
+                                    <option value="base">Base Geral de Chamados</option>
+                                </select>
+                                <button class="btn btn-primary" onclick="addCustomTabRow()" style="padding: 6px 12px; font-size: 13px; gap: 4px;">➕ Adicionar Aba</button>
+                            </div>
                         </div>
                     </div>
                     
@@ -3117,6 +3321,7 @@
                         <button class="btn btn-success" onclick="generateCustomExcel()">🚀 Exportar Planilha Customizada</button>
                     </div>
                 </div>
+            </div>
             </div>
 
         </div>
@@ -4094,6 +4299,9 @@
                 }
             }
 
+            // Enrich tickets with organograma
+            enrichTicketsWithOrganograma();
+
             // Populate filtering dropdowns
             populateFilters();
             
@@ -4171,10 +4379,12 @@
             // Departamento
             const uniqueDeptos = [...new Set(rawTicketsData.map(t => t.departamento).filter(d => d && d.trim() !== "Não informado" && d.trim() !== ""))].sort();
             populateSelect('filter-departamento-top', 'filter-departamento-bottom', uniqueDeptos);
+            populateModalSelect('insights-filter-depto', uniqueDeptos, "Todos");
 
             // Colaborador (Modal only)
             const uniqueColabs = [...new Set(rawTicketsData.map(t => t.colaborador).filter(c => c && c.trim() !== ""))].sort();
             populateModalSelect('modal-report-colaborador', uniqueColabs, "Todos");
+            populateModalSelect('insights-filter-colaborador', uniqueColabs, "Todos");
 
             // Subproduto
             const uniqueSubprodutos = [...new Set(rawTicketsData.map(t => t.subproduto).filter(s => s && s.trim() !== ""))].sort();
@@ -4405,6 +4615,16 @@
                     document.getElementById('empty-state').classList.add('hide');
                     updateAnalystProductivity();
                 }
+            } else if (tabName === 'sectors') {
+                document.getElementById('tab-btn-sectors').classList.add('active');
+                if (isEmpty) {
+                    document.getElementById('empty-state').classList.remove('hide');
+                } else {
+                    document.getElementById('tab-content-sectors').classList.add('active');
+                    document.getElementById('empty-state').classList.add('hide');
+                    buildSectorsMonthFilters();
+                    updateSectorsTab();
+                }
             } else if (tabName === 'facilita') {
                 document.getElementById('tab-btn-facilita').classList.add('active');
                 document.getElementById('tab-content-facilita').classList.add('active');
@@ -4480,6 +4700,20 @@
         function updateInsightsDashboard() {
             // Filter tickets for the selected insights month/preset
             let tickets = filterTicketsByDatePreset(rawTicketsData, currentInsightsMonth);
+
+            // Apply insights tab filters:
+            const deptoSelect = document.getElementById('insights-filter-depto');
+            const colabSelect = document.getElementById('insights-filter-colaborador');
+            
+            const filterDepto = deptoSelect ? deptoSelect.value : "";
+            const filterColab = colabSelect ? colabSelect.value : "";
+            
+            if (filterDepto) {
+                tickets = tickets.filter(t => t.departamento === filterDepto);
+            }
+            if (filterColab) {
+                tickets = tickets.filter(t => t.colaborador === filterColab);
+            }
 
             const total = tickets.length;
 
@@ -5036,6 +5270,7 @@
             let criticalCount = filteredTicketsData.filter(t => t.criticidade === "P0" || t.criticidade === "P1").length;
             let criticalPct = total > 0 ? Math.round((criticalCount / total) * 100) : 0;
             document.getElementById('stat-critical-pct').textContent = `${criticalPct}% (${criticalCount})`;
+            updateVolumePrediction();
         }
 
         // Render charts via Chart.js
@@ -7106,8 +7341,10 @@
             };
         }
 
-        // Excel Tabs Configuration List (Including new tabs: Gestão de Ativos, Falha de Requisito, Regra de Negócio)
-        const excelTabsConfig = [
+        // =====================================================================
+        // CUSTOM EXCEL EXPORT MULTI-TABS, SUBPRODUCTS, DEPTOS & COLABS
+        // =====================================================================
+        const DEFAULT_EXCEL_TABS_TEMPLATES = [
             { id: 'bugs', name: 'Falhas Desenvolvimento', color: '991B1B', filter: t => {
                 const causaLower = String(t.causaRaiz || '').toLowerCase();
                 const resumoLower = String(t.resumo || '').toLowerCase();
@@ -7131,103 +7368,134 @@
             { id: 'base', name: 'Base Geral de Chamados', color: '1D4ED8', filter: null }
         ];
 
-        // Custom Excel Modal Functions
         const EXPORTABLE_COLUMNS = [
             "Chave", "Resumo", "Responsável", "Criticidade final", "Prioridade", "Status", "Resolução",
             "Criado", "Atualizado(a)", "Resolvido", "Subproduto", "Colaborador", "email", "Cargo",
             "Causa Raiz", "Causa raiz final", "Causa raiz potencial", "Justificativa Causa Raiz final",
-            "Resolução do chamado", "Descrição do problema", "Encaminhado para:", "Departamento",
+            "Resolução do chamado", "Descrição do problem", "Encaminhado para:", "Departamento",
             "Líder direto", "Clusters DOC IA", "Itens associados"
         ];
 
-        function toggleTabColumns(tabId) {
-            const colsRow = document.getElementById(`cols-row-${tabId}`);
-            if (colsRow) {
-                const isHidden = colsRow.style.display === 'none';
-                colsRow.style.display = isHidden ? 'table-row' : 'none';
-            }
+        let activeExportTabs = [];
+
+        function getUniqueSubproducts() {
+            if (!rawTicketsData || rawTicketsData.length === 0) return [];
+            return [...new Set(rawTicketsData.map(t => t.subproduto || "Sem Subproduto").filter(Boolean))].sort();
         }
 
-        function toggleAllColumns(tabId, checkAll) {
+        function getUniqueDeptosList() {
+            if (!rawTicketsData || rawTicketsData.length === 0) return [];
+            return [...new Set(rawTicketsData.map(t => t.orgTeam || t.departamento || "Sem Setor").filter(Boolean))].sort();
+        }
+
+        function getUniqueColabsList() {
+            if (!rawTicketsData || rawTicketsData.length === 0) return [];
+            return [...new Set(rawTicketsData.map(t => t.colaborador || "Sem Colaborador").filter(Boolean))].sort();
+        }
+
+        function toggleTabColumns(tempId) {
+            closeAllTabOptions(tempId);
+            const colsRow = document.getElementById(`cols-row-${tempId}`);
+            if (colsRow) colsRow.style.display = colsRow.style.display === 'none' ? 'table-row' : 'none';
+        }
+
+        function toggleTabSubproducts(tempId) {
+            closeAllTabOptions(tempId);
+            const subprodsRow = document.getElementById(`subprods-row-${tempId}`);
+            if (subprodsRow) subprodsRow.style.display = subprodsRow.style.display === 'none' ? 'table-row' : 'none';
+        }
+
+        function toggleTabDeptos(tempId) {
+            closeAllTabOptions(tempId);
+            const deptosRow = document.getElementById(`deptos-row-${tempId}`);
+            if (deptosRow) deptosRow.style.display = deptosRow.style.display === 'none' ? 'table-row' : 'none';
+        }
+
+        function toggleTabColabs(tempId) {
+            closeAllTabOptions(tempId);
+            const colabsRow = document.getElementById(`colabs-row-${tempId}`);
+            if (colabsRow) colabsRow.style.display = colabsRow.style.display === 'none' ? 'table-row' : 'none';
+        }
+
+        function closeAllTabOptions(tempId) {
+            const ids = [`cols-row-${tempId}`, `subprods-row-${tempId}`, `deptos-row-${tempId}`, `colabs-row-${tempId}`];
+            ids.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.style.display = 'none';
+            });
+        }
+
+        function toggleAllColumns(tempId, checkAll) {
             EXPORTABLE_COLUMNS.forEach(col => {
-                const chk = document.getElementById(`chk-col-${tabId}-${col}`);
+                const chk = document.getElementById(`chk-col-${tempId}-${col}`);
                 if (chk) chk.checked = checkAll;
             });
         }
 
-        // Custom Excel Modal Functions
-        function openCustomExcelModal() {
-            if (!rawTicketsData || rawTicketsData.length === 0) {
-                showToast("Nenhum dado carregado para exportar!", "⚠️");
-                return;
-            }
-            
-            const tbody = document.getElementById('custom-excel-tbody');
-            if (!tbody) return;
-            
-            let html = excelTabsConfig.map(tab => {
-                const colsHtml = EXPORTABLE_COLUMNS.map(col => {
-                    return `
-                        <label style="display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-main); cursor: pointer; user-select: none;">
-                            <input type="checkbox" id="chk-col-${tab.id}-${col}" checked style="cursor: pointer; width: 14px; height: 14px;">
-                            ${col}
-                        </label>
-                    `;
-                }).join('');
-
-                return `
-                    <tr data-tab-id="${tab.id}" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        <td style="text-align: center; padding: 12px 8px; vertical-align: middle;">
-                            <input type="checkbox" id="chk-tab-${tab.id}" checked style="cursor: pointer; transform: scale(1.2);">
-                        </td>
-                        <td style="font-weight: 600; color: white; padding: 12px 8px; vertical-align: middle;">
-                            <div style="display: flex; align-items: center; gap: 8px;">
-                                <span>${tab.name}</span>
-                                <button class="btn btn-secondary btn-mini" onclick="toggleTabColumns('${tab.id}')" style="padding: 2px 6px; font-size: 10px; font-weight: normal; gap: 4px; display: inline-flex; border-radius: 4px;">⚙️ Colunas</button>
-                            </div>
-                        </td>
-                        <td style="padding: 12px 8px; vertical-align: middle;">
-                            <select id="sel-date-type-${tab.id}" onchange="toggleTabCustomDateInputs('${tab.id}')" class="filter-input" style="padding: 6px 10px; font-size: 13px; width: 100%;">
-                                <option value="dash">Mesmo do Dashboard</option>
-                                <option value="custom">Data Personalizada</option>
-                            </select>
-                        </td>
-                        <td style="padding: 12px 8px; vertical-align: middle;">
-                            <div id="date-inputs-${tab.id}" style="display: none; gap: 8px; align-items: center;">
-                                <input type="date" id="date-start-${tab.id}" class="filter-input" style="padding: 4px 8px; font-size: 12px; max-width: 120px;">
-                                <span style="color: var(--text-muted); font-size: 11px;">até</span>
-                                <input type="date" id="date-end-${tab.id}" class="filter-input" style="padding: 4px 8px; font-size: 12px; max-width: 120px;">
-                            </div>
-                            <span id="date-lbl-${tab.id}" style="color: var(--accent-primary); font-size: 12px; font-weight: 700;">Seguirá os filtros da tela</span>
-                        </td>
-                    </tr>
-                    <tr id="cols-row-${tab.id}" style="display: none; background: rgba(0, 0, 0, 0.25);">
-                        <td colspan="4" style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.05);">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-                                <span style="font-size: 11px; font-weight: bold; color: var(--accent-primary);">Colunas da aba "${tab.name}":</span>
-                                <div style="display: flex; gap: 6px;">
-                                    <button class="btn btn-secondary btn-mini" onclick="toggleAllColumns('${tab.id}', true)" style="padding: 2px 6px; font-size: 10px;">Marcar Todas</button>
-                                    <button class="btn btn-secondary btn-mini" onclick="toggleAllColumns('${tab.id}', false)" style="padding: 2px 6px; font-size: 10px;">Desmarcar Todas</button>
-                                </div>
-                            </div>
-                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px 12px;">
-                                ${colsHtml}
-                            </div>
-                        </td>
-                    </tr>
-                `;
-            }).join('');
-            
-            tbody.innerHTML = html;
-            
-            const modal = document.getElementById('custom-excel-modal');
-            if (modal) modal.classList.add('active');
+        function toggleAllSubproducts(tempId, checkAll) {
+            const allSubprods = getUniqueSubproducts();
+            allSubprods.forEach(subprod => {
+                const chk = document.getElementById(`chk-subprod-${tempId}-${subprod}`);
+                if (chk) chk.checked = checkAll;
+            });
         }
 
-        function toggleTabCustomDateInputs(tabId) {
-            const select = document.getElementById(`sel-date-type-${tabId}`);
-            const inputsDiv = document.getElementById(`date-inputs-${tabId}`);
-            const label = document.getElementById(`date-lbl-${tabId}`);
+        function toggleAllDeptos(tempId, checkAll) {
+            const allDeptos = getUniqueDeptosList();
+            allDeptos.forEach(depto => {
+                const chk = document.getElementById(`chk-depto-${tempId}-${depto}`);
+                if (chk) chk.checked = checkAll;
+            });
+        }
+
+        function toggleAllColabs(tempId, checkAll) {
+            const allColabs = getUniqueColabsList();
+            allColabs.forEach(colab => {
+                const chk = document.getElementById(`chk-colab-${tempId}-${colab}`);
+                if (chk) chk.checked = checkAll;
+            });
+        }
+
+        function filterSubproductsList(tempId, query) {
+            const q = query.toLowerCase().trim();
+            const grid = document.getElementById(`subprods-grid-${tempId}`);
+            if (!grid) return;
+            const labels = grid.getElementsByTagName('label');
+            for (let i = 0; i < labels.length; i++) {
+                const label = labels[i];
+                const name = label.getAttribute('data-subprod-name') || '';
+                label.style.display = name.includes(q) ? 'flex' : 'none';
+            }
+        }
+
+        function filterDeptosList(tempId, query) {
+            const q = query.toLowerCase().trim();
+            const grid = document.getElementById(`deptos-grid-${tempId}`);
+            if (!grid) return;
+            const labels = grid.getElementsByTagName('label');
+            for (let i = 0; i < labels.length; i++) {
+                const label = labels[i];
+                const name = label.getAttribute('data-depto-name') || '';
+                label.style.display = name.includes(q) ? 'flex' : 'none';
+            }
+        }
+
+        function filterColabsList(tempId, query) {
+            const q = query.toLowerCase().trim();
+            const grid = document.getElementById(`colabs-grid-${tempId}`);
+            if (!grid) return;
+            const labels = grid.getElementsByTagName('label');
+            for (let i = 0; i < labels.length; i++) {
+                const label = labels[i];
+                const name = label.getAttribute('data-colab-name') || '';
+                label.style.display = name.includes(q) ? 'flex' : 'none';
+            }
+        }
+
+        function toggleTabCustomDateInputs(tempId) {
+            const select = document.getElementById(`sel-date-type-${tempId}`);
+            const inputsDiv = document.getElementById(`date-inputs-${tempId}`);
+            const label = document.getElementById(`date-lbl-${tempId}`);
             
             if (select && select.value === 'custom') {
                 if (inputsDiv) inputsDiv.style.display = 'flex';
@@ -7238,12 +7506,339 @@
             }
         }
 
+        function syncExportTabsState() {
+            const allSubproducts = getUniqueSubproducts();
+            const allDeptos = getUniqueDeptosList();
+            const allColabs = getUniqueColabsList();
+
+            activeExportTabs.forEach(tab => {
+                const tempId = tab.tempId;
+                
+                const chkTab = document.getElementById(`chk-tab-${tempId}`);
+                if (chkTab) tab.included = chkTab.checked;
+                
+                const nameInput = document.getElementById(`input-tab-name-${tempId}`);
+                if (nameInput) tab.name = nameInput.value;
+                
+                const dateTypeSelect = document.getElementById(`sel-date-type-${tempId}`);
+                if (dateTypeSelect) tab.dateType = dateTypeSelect.value;
+                
+                const dateStartInput = document.getElementById(`date-start-${tempId}`);
+                if (dateStartInput) tab.dateStart = dateStartInput.value;
+                
+                const dateEndInput = document.getElementById(`date-end-${tempId}`);
+                if (dateEndInput) tab.dateEnd = dateEndInput.value;
+                
+                tab.selectedColumns = [];
+                EXPORTABLE_COLUMNS.forEach(col => {
+                    const chkCol = document.getElementById(`chk-col-${tempId}-${col}`);
+                    if (chkCol && chkCol.checked) {
+                        tab.selectedColumns.push(col);
+                    }
+                });
+                
+                tab.selectedSubproducts = [];
+                allSubproducts.forEach(subprod => {
+                    const chkSub = document.getElementById(`chk-subprod-${tempId}-${subprod}`);
+                    if (chkSub && chkSub.checked) {
+                        tab.selectedSubproducts.push(subprod);
+                    }
+                });
+
+                tab.selectedDeptos = [];
+                allDeptos.forEach(depto => {
+                    const chkDepto = document.getElementById(`chk-depto-${tempId}-${depto}`);
+                    if (chkDepto && chkDepto.checked) {
+                        tab.selectedDeptos.push(depto);
+                    }
+                });
+
+                tab.selectedColabs = [];
+                allColabs.forEach(colab => {
+                    const chkColab = document.getElementById(`chk-colab-${tempId}-${colab}`);
+                    if (chkColab && chkColab.checked) {
+                        tab.selectedColabs.push(colab);
+                    }
+                });
+            });
+        }
+
+        function renderCustomExcelRows() {
+            const tbody = document.getElementById('custom-excel-tbody');
+            if (!tbody) return;
+
+            const allSubproducts = getUniqueSubproducts();
+            const allDeptos = getUniqueDeptosList();
+            const allColabs = getUniqueColabsList();
+
+            tbody.innerHTML = activeExportTabs.map(tab => {
+                return `
+                    <tr data-tab-temp-id="${tab.tempId}" style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="text-align: center; padding: 12px 8px; vertical-align: middle;">
+                            <input type="checkbox" id="chk-tab-${tab.tempId}" ${tab.included ? 'checked' : ''} style="cursor: pointer; transform: scale(1.2);">
+                        </td>
+                        <td style="padding: 12px 8px; vertical-align: middle;">
+                            <div style="display: flex; flex-direction: column; gap: 6px;">
+                                <input type="text" id="input-tab-name-${tab.tempId}" value="${tab.name}" class="filter-input" style="padding: 6px 10px; font-size: 13px; font-weight: 600; color: white; width: 100%; border-radius: 4px;" maxlength="31" placeholder="Nome da Aba (max 31)">
+                                <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                                    <button class="btn btn-secondary btn-mini" onclick="toggleTabColumns('${tab.tempId}')" style="padding: 2px 6px; font-size: 10px; font-weight: normal; gap: 4px; border-radius: 4px;">⚙️ Colunas</button>
+                                    <button class="btn btn-secondary btn-mini" onclick="toggleTabSubproducts('${tab.tempId}')" style="padding: 2px 6px; font-size: 10px; font-weight: normal; gap: 4px; border-radius: 4px;">📦 Subprodutos</button>
+                                    <button class="btn btn-secondary btn-mini" onclick="toggleTabDeptos('${tab.tempId}')" style="padding: 2px 6px; font-size: 10px; font-weight: normal; gap: 4px; border-radius: 4px;">🏢 Setores</button>
+                                    <button class="btn btn-secondary btn-mini" onclick="toggleTabColabs('${tab.tempId}')" style="padding: 2px 6px; font-size: 10px; font-weight: normal; gap: 4px; border-radius: 4px;">👤 Membros</button>
+                                </div>
+                            </div>
+                        </td>
+                        <td style="padding: 12px 8px; vertical-align: middle;">
+                            <select id="sel-date-type-${tab.tempId}" onchange="toggleTabCustomDateInputs('${tab.tempId}')" class="filter-input" style="padding: 6px 10px; font-size: 13px; width: 100%;">
+                                <option value="dash" ${tab.dateType === 'dash' ? 'selected' : ''}>Mesmo do Dashboard</option>
+                                <option value="custom" ${tab.dateType === 'custom' ? 'selected' : ''}>Data Personalizada</option>
+                            </select>
+                        </td>
+                        <td style="padding: 12px 8px; vertical-align: middle;">
+                            <div id="date-inputs-${tab.tempId}" style="display: ${tab.dateType === 'custom' ? 'flex' : 'none'}; gap: 8px; align-items: center;">
+                                <input type="date" id="date-start-${tab.tempId}" value="${tab.dateStart}" class="filter-input" style="padding: 4px 8px; font-size: 12px; max-width: 120px;">
+                                <span style="color: var(--text-muted); font-size: 11px;">até</span>
+                                <input type="date" id="date-end-${tab.tempId}" value="${tab.dateEnd}" class="filter-input" style="padding: 4px 8px; font-size: 12px; max-width: 120px;">
+                            </div>
+                            <span id="date-lbl-${tab.tempId}" style="color: var(--accent-primary); font-size: 12px; font-weight: 700; display: ${tab.dateType === 'custom' ? 'none' : 'inline'};">Seguirá o período do painel</span>
+                        </td>
+                        <td style="text-align: center; padding: 12px 8px; vertical-align: middle;">
+                            <div style="display: flex; gap: 6px; justify-content: center;">
+                                <button onclick="duplicateExportTab('${tab.tempId}')" class="btn btn-secondary btn-mini" title="Copiar/Duplicar esta aba" style="padding: 4px 8px; display: inline-flex; align-items: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg></button>
+                                <button onclick="removeExportTab('${tab.tempId}')" class="btn btn-secondary btn-mini" title="Remover esta aba" style="padding: 4px 8px; color: var(--danger); border-color: rgba(239,68,68,0.2); display: inline-flex; align-items: center;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg></button>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr id="cols-row-${tab.tempId}" style="display: none; background: rgba(0, 0, 0, 0.25);">
+                        <td colspan="5" style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <span style="font-size: 11px; font-weight: bold; color: var(--accent-primary);">Colunas da aba:</span>
+                                <div style="display: flex; gap: 6px;">
+                                    <button class="btn btn-secondary btn-mini" onclick="toggleAllColumns('${tab.tempId}', true)" style="padding: 2px 6px; font-size: 10px;">Marcar Todas</button>
+                                    <button class="btn btn-secondary btn-mini" onclick="toggleAllColumns('${tab.tempId}', false)" style="padding: 2px 6px; font-size: 10px;">Desmarcar Todas</button>
+                                </div>
+                            </div>
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px 12px;">
+                                ${EXPORTABLE_COLUMNS.map(col => {
+                                    const isChecked = tab.selectedColumns.includes(col);
+                                    return `
+                                        <label style="display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-main); cursor: pointer; user-select: none;">
+                                            <input type="checkbox" id="chk-col-${tab.tempId}-${col}" ${isChecked ? 'checked' : ''} style="cursor: pointer; width: 14px; height: 14px;">
+                                            ${col}
+                                        </label>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr id="subprods-row-${tab.tempId}" style="display: none; background: rgba(0, 0, 0, 0.25);">
+                        <td colspan="5" style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <span style="font-size: 11px; font-weight: bold; color: var(--accent-primary);">Filtro de Subprodutos (Deixe vazio ou marque todos para exportar tudo):</span>
+                                <div style="display: flex; gap: 6px;">
+                                    <button class="btn btn-secondary btn-mini" onclick="toggleAllSubproducts('${tab.tempId}', true)" style="padding: 2px 6px; font-size: 10px;">Marcar Todos</button>
+                                    <button class="btn btn-secondary btn-mini" onclick="toggleAllSubproducts('${tab.tempId}', false)" style="padding: 2px 6px; font-size: 10px;">Desmarcar Todos</button>
+                                </div>
+                            </div>
+                            <input type="text" oninput="filterSubproductsList('${tab.tempId}', this.value)" placeholder="🔍 Filtrar lista de subprodutos..." class="filter-input" style="padding: 4px 8px; font-size: 11px; width: 100%; margin-bottom: 8px; border-radius: 4px;">
+                            
+                            <div id="subprods-grid-${tab.tempId}" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px 12px; max-height: 150px; overflow-y: auto; padding: 4px; background: rgba(0,0,0,0.15); border-radius: 4px;">
+                                ${allSubproducts.map(subprod => {
+                                    const isChecked = tab.selectedSubproducts.length === 0 || tab.selectedSubproducts.includes(subprod);
+                                    return `
+                                        <label data-subprod-name="${subprod.toLowerCase()}" style="display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-main); cursor: pointer; user-select: none;">
+                                            <input type="checkbox" id="chk-subprod-${tab.tempId}-${subprod}" ${isChecked ? 'checked' : ''} style="cursor: pointer; width: 14px; height: 14px;">
+                                            ${subprod}
+                                        </label>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr id="deptos-row-${tab.tempId}" style="display: none; background: rgba(0, 0, 0, 0.25);">
+                        <td colspan="5" style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <span style="font-size: 11px; font-weight: bold; color: var(--accent-primary);">Filtro de Setores (Deixe vazio ou marque todos para exportar tudo):</span>
+                                <div style="display: flex; gap: 6px;">
+                                    <button class="btn btn-secondary btn-mini" onclick="toggleAllDeptos('${tab.tempId}', true)" style="padding: 2px 6px; font-size: 10px;">Marcar Todos</button>
+                                    <button class="btn btn-secondary btn-mini" onclick="toggleAllDeptos('${tab.tempId}', false)" style="padding: 2px 6px; font-size: 10px;">Desmarcar Todos</button>
+                                </div>
+                            </div>
+                            <input type="text" oninput="filterDeptosList('${tab.tempId}', this.value)" placeholder="🔍 Filtrar lista de setores..." class="filter-input" style="padding: 4px 8px; font-size: 11px; width: 100%; margin-bottom: 8px; border-radius: 4px;">
+                            
+                            <div id="deptos-grid-${tab.tempId}" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px 12px; max-height: 150px; overflow-y: auto; padding: 4px; background: rgba(0,0,0,0.15); border-radius: 4px;">
+                                ${allDeptos.map(depto => {
+                                    const isChecked = tab.selectedDeptos.length === 0 || tab.selectedDeptos.includes(depto);
+                                    return `
+                                        <label data-depto-name="${depto.toLowerCase()}" style="display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-main); cursor: pointer; user-select: none;">
+                                            <input type="checkbox" id="chk-depto-${tab.tempId}-${depto}" ${isChecked ? 'checked' : ''} style="cursor: pointer; width: 14px; height: 14px;">
+                                            ${depto}
+                                        </label>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <tr id="colabs-row-${tab.tempId}" style="display: none; background: rgba(0, 0, 0, 0.25);">
+                        <td colspan="5" style="padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                                <span style="font-size: 11px; font-weight: bold; color: var(--accent-primary);">Filtro de Membros (Deixe vazio ou marque todos para exportar tudo):</span>
+                                <div style="display: flex; gap: 6px;">
+                                    <button class="btn btn-secondary btn-mini" onclick="toggleAllColabs('${tab.tempId}', true)" style="padding: 2px 6px; font-size: 10px;">Marcar Todos</button>
+                                    <button class="btn btn-secondary btn-mini" onclick="toggleAllColabs('${tab.tempId}', false)" style="padding: 2px 6px; font-size: 10px;">Desmarcar Todos</button>
+                                </div>
+                            </div>
+                            <input type="text" oninput="filterColabsList('${tab.tempId}', this.value)" placeholder="🔍 Filtrar lista de membros..." class="filter-input" style="padding: 4px 8px; font-size: 11px; width: 100%; margin-bottom: 8px; border-radius: 4px;">
+                            
+                            <div id="colabs-grid-${tab.tempId}" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 8px 12px; max-height: 150px; overflow-y: auto; padding: 4px; background: rgba(0,0,0,0.15); border-radius: 4px;">
+                                ${allColabs.map(colab => {
+                                    const isChecked = tab.selectedColabs.length === 0 || tab.selectedColabs.includes(colab);
+                                    return `
+                                        <label data-colab-name="${colab.toLowerCase()}" style="display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--text-main); cursor: pointer; user-select: none;">
+                                            <input type="checkbox" id="chk-colab-${tab.tempId}-${colab}" ${isChecked ? 'checked' : ''} style="cursor: pointer; width: 14px; height: 14px;">
+                                            ${colab}
+                                        </label>
+                                    `;
+                                }).join('')}
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function openCustomExcelModal() {
+            if (!rawTicketsData || rawTicketsData.length === 0) {
+                showToast("Nenhum dado carregado para exportar!", "⚠️");
+                return;
+            }
+
+            activeExportTabs = DEFAULT_EXCEL_TABS_TEMPLATES.map((tab, idx) => {
+                return {
+                    tempId: `tab_${idx}_${Date.now()}`,
+                    baseId: tab.id,
+                    name: tab.name,
+                    color: tab.color,
+                    filter: tab.filter,
+                    dateType: 'dash',
+                    dateStart: '',
+                    dateEnd: '',
+                    selectedColumns: [...EXPORTABLE_COLUMNS],
+                    selectedSubproducts: [],
+                    selectedDeptos: [],
+                    selectedColabs: [],
+                    included: true
+                };
+            });
+
+            renderCustomExcelRows();
+
+            const modal = document.getElementById('custom-excel-modal');
+            if (modal) modal.classList.add('active');
+        }
+
         function closeCustomExcelModal() {
             const modal = document.getElementById('custom-excel-modal');
             if (modal) modal.classList.remove('active');
         }
 
+        function addCustomTabRow() {
+            syncExportTabsState();
+            
+            const selType = document.getElementById('sel-add-tab-type');
+            if (!selType) return;
+            
+            const baseId = selType.value;
+            const template = DEFAULT_EXCEL_TABS_TEMPLATES.find(t => t.id === baseId);
+            if (!template) return;
+            
+            const newTab = {
+                tempId: `tab_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`,
+                baseId: template.id,
+                name: template.name + " (Cópia)",
+                color: template.color,
+                filter: template.filter,
+                dateType: 'dash',
+                dateStart: '',
+                dateEnd: '',
+                selectedColumns: [...EXPORTABLE_COLUMNS],
+                selectedSubproducts: [],
+                selectedDeptos: [],
+                selectedColabs: [],
+                included: true
+            };
+            
+            activeExportTabs.push(newTab);
+            renderCustomExcelRows();
+            showToast("Aba adicionada com sucesso!", "➕");
+        }
+
+        function duplicateExportTab(tempId) {
+            syncExportTabsState();
+            
+            const sourceTab = activeExportTabs.find(t => t.tempId === tempId);
+            if (!sourceTab) return;
+            
+            const duplicated = {
+                ...sourceTab,
+                tempId: `tab_${Date.now()}_${Math.random().toString(36).substr(2, 5)}`,
+                name: sourceTab.name + " (Cópia)",
+                selectedColumns: [...sourceTab.selectedColumns],
+                selectedSubproducts: [...sourceTab.selectedSubproducts],
+                selectedDeptos: [...sourceTab.selectedDeptos],
+                selectedColabs: [...sourceTab.selectedColabs]
+            };
+            
+            const idx = activeExportTabs.findIndex(t => t.tempId === tempId);
+            activeExportTabs.splice(idx + 1, 0, duplicated);
+            
+            renderCustomExcelRows();
+            showToast("Aba duplicada!", "👯");
+        }
+
+        function removeExportTab(tempId) {
+            syncExportTabsState();
+            
+            if (activeExportTabs.length <= 1) {
+                showToast("Você deve manter pelo menos uma aba para exportar!", "⚠️");
+                return;
+            }
+            
+            activeExportTabs = activeExportTabs.filter(t => t.tempId !== tempId);
+            renderCustomExcelRows();
+            showToast("Aba removida", "🗑️");
+        }
+
         function generateCustomExcel() {
+            syncExportTabsState();
+            
+            const includedTabs = activeExportTabs.filter(t => t.included);
+            if (includedTabs.length === 0) {
+                showToast("Selecione pelo menos uma aba para exportar!", "⚠️");
+                return;
+            }
+
+            const excelNameRegex = /[\\\\\\/\\?\\*\\[\\]]/;
+            for (let tab of includedTabs) {
+                const cleanName = tab.name.trim();
+                if (cleanName.length === 0) {
+                    showToast("O nome da aba não pode ser vazio!", "⚠️");
+                    return;
+                }
+                if (cleanName.length > 31) {
+                    showToast(`O nome da aba "${cleanName}" excede o limite de 31 caracteres!`, "⚠️");
+                    return;
+                }
+                if (excelNameRegex.test(cleanName)) {
+                    showToast(`O nome da aba "${cleanName}" contém caracteres inválidos (\\\\ / ? * [ ])!`, "⚠️");
+                    return;
+                }
+            }
+
             showToast("Gerando planilha personalizada...", "📊");
             closeCustomExcelModal();
             
@@ -7254,7 +7849,6 @@
                     workbook.lastModifiedBy = 'Suporte Intake';
                     workbook.created = new Date();
                     
-                    // Filter tickets for summary sheet (uses insights selected period)
                     let dashPeriodName = "Todo o Histórico";
                     let dashTickets = filterTicketsByDatePreset(rawTicketsData, currentInsightsMonth);
                     
@@ -7271,53 +7865,73 @@
                         }
                     }
                     
-                    // Create Capa / Summary Worksheet
-                    createSummaryWorksheet(workbook, dashTickets, dashPeriodName);
+                    // 1. Gather all tickets that are actually exported in any of the included tabs
+                    let allExportedTickets = [];
+                    const seenTicketIds = new Set();
                     
-                    // Create each category worksheet based on config
-                    excelTabsConfig.forEach(tab => {
-                        const includeChk = document.getElementById(`chk-tab-${tab.id}`);
-                        if (includeChk && includeChk.checked) {
-                            const dateTypeSelect = document.getElementById(`sel-date-type-${tab.id}`);
+                    includedTabs.forEach(tab => {
+                        let tabTickets = rawTicketsData;
+                        
+                        if (tab.dateType === 'custom') {
+                            let minDate = tab.dateStart ? new Date(tab.dateStart + 'T00:00:00') : null;
+                            let maxDate = tab.dateEnd ? new Date(tab.dateEnd + 'T23:59:59') : null;
                             
-                            let tabTickets = rawTicketsData;
-                            let dateType = dateTypeSelect ? dateTypeSelect.value : 'dash';
-                            
-                            if (dateType === 'custom') {
-                                const startInput = document.getElementById(`date-start-${tab.id}`);
-                                const endInput = document.getElementById(`date-end-${tab.id}`);
-                                
-                                let minDate = startInput && startInput.value ? new Date(startInput.value + 'T00:00:00') : null;
-                                let maxDate = endInput && endInput.value ? new Date(endInput.value + 'T23:59:59') : null;
-                                
-                                if (minDate || maxDate) {
-                                    tabTickets = rawTicketsData.filter(t => {
-                                        if (!t.criado) return false;
-                                        if (minDate && t.criado < minDate) return false;
-                                        if (maxDate && t.criado > maxDate) return false;
-                                        return true;
-                                    });
-                                }
-                            } else {
-                                // Default to dashboard selection
-                                tabTickets = dashTickets;
+                            if (minDate || maxDate) {
+                                tabTickets = rawTicketsData.filter(t => {
+                                    if (!t.criado) return false;
+                                    if (minDate && t.criado < minDate) return false;
+                                    if (maxDate && t.criado > maxDate) return false;
+                                    return true;
+                                });
                             }
-                            
-                            // Gather checked columns for this tab
-                            const selectedColumns = [];
-                            EXPORTABLE_COLUMNS.forEach(col => {
-                                const chk = document.getElementById(`chk-col-${tab.id}-${col}`);
-                                if (chk && chk.checked) {
-                                    selectedColumns.push(col);
-                                }
-                            });
-
-                            // Generate the category worksheet
-                            createCategoryWorksheet(workbook, tab.name, tabTickets, tab.filter, tab.color, selectedColumns);
+                        } else {
+                            tabTickets = dashTickets;
                         }
+                        
+                        // Apply tab-specific category filter:
+                        if (tab.filter) {
+                            tabTickets = tabTickets.filter(tab.filter);
+                        }
+                        
+                        // Apply tab-specific subproducts filter:
+                        if (tab.selectedSubproducts.length > 0) {
+                            tabTickets = tabTickets.filter(t => {
+                                const sub = t.subproduto || "Sem Subproduto";
+                                return tab.selectedSubproducts.includes(sub);
+                            });
+                        }
+
+                        // Apply tab-specific department filter:
+                        if (tab.selectedDeptos.length > 0) {
+                            tabTickets = tabTickets.filter(t => {
+                                const depto = t.orgTeam || t.departamento || "Sem Setor";
+                                return tab.selectedDeptos.includes(depto);
+                            });
+                        }
+
+                        // Apply tab-specific collaborator filter:
+                        if (tab.selectedColabs.length > 0) {
+                            tabTickets = tabTickets.filter(t => {
+                                const colab = t.colaborador || "Sem Colaborador";
+                                return tab.selectedColabs.includes(colab);
+                            });
+                        }
+                        
+                        // Add unique tickets to summary union
+                        tabTickets.forEach(t => {
+                            if (!seenTicketIds.has(t.id)) {
+                                seenTicketIds.add(t.id);
+                                allExportedTickets.push(t);
+                            }
+                        });
+                        
+                        // Re-generate category worksheet with exact filtered tickets list
+                        createCategoryWorksheet(workbook, tab.name.trim(), tabTickets, null, tab.color, tab.selectedColumns);
                     });
+
+                    // 2. Create Capa / Summary Worksheet based on allExportedTickets
+                    createSummaryWorksheet(workbook, allExportedTickets, "Filtros Personalizados da Exportação");
                     
-                    // Download workbook
                     workbook.xlsx.writeBuffer().then(buffer => {
                         const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
                         const url = window.URL.createObjectURL(blob);
@@ -7331,15 +7945,18 @@
                         
                         showToast("Planilha personalizada baixada!", "✅");
                     }).catch(err => {
-                        console.error("Erro ao escrever buffer xlsx personalizado:", err);
                         showToast("Erro ao exportar Planilha!", "❌");
+                        console.error("Erro na exportação personalizada:", err);
                     });
+                    
                 } catch (err) {
-                    console.error("Erro na exportação personalizada:", err);
-                    showToast("Erro na exportação: " + err.message, "❌");
+                    showToast("Erro ao exportar Planilha: " + err.message, "❌");
+                    console.error("Erro na exportação:", err);
                 }
-            }, 300);
+            }, 500);
         }
+
+        
 
         // Standard Excel Export
         function exportToExcel() {
@@ -7378,7 +7995,7 @@
                     createSummaryWorksheet(workbook, tickets, periodName);
                     
                     // 2. Create Category Sheets dynamically using config
-                    excelTabsConfig.forEach(tab => {
+                    DEFAULT_EXCEL_TABS_TEMPLATES.forEach(tab => {
                         createCategoryWorksheet(workbook, tab.name, tickets, tab.filter, tab.color);
                     });
                     
@@ -10182,8 +10799,916 @@ function initFacilitaQuerys() { init(); }
                     }
                 });
             }
-        }</script>
+        }
 
+        // =====================================================================
+        // TICKET VOLUME PREDICTOR & MONTH-OVER-MONTH COMPARISON
+        // =====================================================================
+        function updateVolumePrediction() {
+            if (!rawTicketsData || rawTicketsData.length === 0) return;
+
+            let referenceDate = new Date();
+            const dates = rawTicketsData.map(t => t.criado).filter(d => d instanceof Date && !isNaN(d));
+            if (dates.length > 0) {
+                referenceDate = new Date(Math.max(...dates));
+            }
+
+            const currYear = referenceDate.getFullYear();
+            const currMonth = referenceDate.getMonth();
+            const currDay = referenceDate.getDate();
+
+            let prevYear = currYear;
+            let prevMonth = currMonth - 1;
+            if (prevMonth < 0) {
+                prevMonth = 11;
+                prevYear--;
+            }
+
+            const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+            const currMonthName = monthNames[currMonth];
+            const prevMonthName = monthNames[prevMonth];
+
+            const currMonthTickets = rawTicketsData.filter(t => t.criado && t.criado.getFullYear() === currYear && t.criado.getMonth() === currMonth);
+            const prevMonthTickets = rawTicketsData.filter(t => t.criado && t.criado.getFullYear() === prevYear && t.criado.getMonth() === prevMonth);
+            const prevMonthEquivTickets = prevMonthTickets.filter(t => t.criado.getDate() <= currDay);
+
+            const daysInMonth = new Date(currYear, currMonth + 1, 0).getDate();
+            const projectedTotal = currDay > 0 ? Math.round((currMonthTickets.length / currDay) * daysInMonth) : 0;
+
+            const lblCurrent = document.getElementById('pred-lbl-current');
+            const lblPrevEquiv = document.getElementById('pred-lbl-prev-equiv');
+            const lblPrevTotal = document.getElementById('pred-lbl-prev-total');
+
+            if (lblCurrent) lblCurrent.textContent = `${currMonthName} (Até agora):`;
+            if (lblPrevEquiv) lblPrevEquiv.textContent = `${prevMonthName} (Mesmo Período):`;
+            if (lblPrevTotal) lblPrevTotal.textContent = `${prevMonthName} (Fechado):`;
+
+            document.getElementById('pred-current-month').textContent = currMonthTickets.length;
+            document.getElementById('pred-prev-month-equiv').textContent = prevMonthEquivTickets.length;
+            document.getElementById('pred-prev-month-total').textContent = prevMonthTickets.length;
+            document.getElementById('pred-projected-total').textContent = projectedTotal;
+
+            const diff = currMonthTickets.length - prevMonthEquivTickets.length;
+            const pctChange = prevMonthEquivTickets.length > 0 ? Math.round((diff / prevMonthEquivTickets.length) * 100) : 0;
+
+            const badge = document.getElementById('pred-growth-badge');
+            if (badge) {
+                badge.style.display = 'block';
+                if (pctChange > 0) {
+                    badge.innerHTML = `📈 +${pctChange}% em relação a ${prevMonthName}`;
+                    badge.style.background = 'rgba(239, 68, 68, 0.1)';
+                    badge.style.color = '#fca5a5';
+                    badge.style.border = '1px solid rgba(239, 68, 68, 0.25)';
+                } else if (pctChange < 0) {
+                    badge.innerHTML = `📉 ${pctChange}% em relação a ${prevMonthName}`;
+                    badge.style.background = 'rgba(16, 185, 129, 0.1)';
+                    badge.style.color = '#a7f3d0';
+                    badge.style.border = '1px solid rgba(16, 185, 129, 0.25)';
+                } else {
+                    badge.innerHTML = `➡️ Estável em relação a ${prevMonthName}`;
+                    badge.style.background = 'rgba(255, 255, 255, 0.05)';
+                    badge.style.color = 'var(--text-muted)';
+                    badge.style.border = '1px solid var(--border-color)';
+                }
+            }
+        }
+
+
+        // =====================================================================
+        // ORGANOGRAMA & SETORES CORE ENGINE
+        // =====================================================================
+        let organogramaData = null;
+        let sectorChartInstance = null;
+        let leaderChartInstance = null;
+
+        // Auto load on start
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add a small delay to ensure main app scripts are initialized
+            setTimeout(loadOrganogramaOnStartup, 800);
+        });
+
+        async function loadOrganogramaOnStartup() {
+            const statusEl = document.getElementById('organograma-status-msg');
+            try {
+                // Try automatic fetch from root
+                const response = await fetch('../Organograma.xlsx');
+                if (response.ok) {
+                    const arrayBuffer = await response.arrayBuffer();
+                    await parseOrganogramaWorkbook(arrayBuffer);
+                    if (statusEl) {
+                        statusEl.innerHTML = '<span style="color: var(--success); font-weight: bold;">✅ Organograma carregado automaticamente do repositório.</span>';
+                    }
+                    console.log("Organograma loaded automatically from root!");
+                    return;
+                }
+            } catch (e) {
+                console.log("Automatic organograma load failed, trying local cache...", e);
+            }
+
+            // Fallback to localStorage cache
+            loadOrganogramaFromCache();
+        }
+
+        function loadOrganogramaFromCache() {
+            const statusEl = document.getElementById('organograma-status-msg');
+            try {
+                const cached = localStorage.getItem('organograma_cache_v1');
+                if (cached) {
+                    const parsed = JSON.parse(cached);
+                    organogramaData = parsed;
+                    enrichTicketsWithOrganograma();
+                    if (statusEl) {
+                        statusEl.innerHTML = '<span style="color: #6366f1; font-weight: bold;">⚡ Organograma carregado do cache do navegador.</span>';
+                    }
+                    console.log("Organograma loaded from localStorage cache!");
+                    
+                    // If tickets are already loaded, refresh the active tab
+                    if (rawTicketsData && rawTicketsData.length > 0) {
+                        populateFilters();
+                        applyFiltersAndRender();
+                    }
+                } else {
+                    if (statusEl) {
+                        statusEl.innerHTML = '<span style="color: var(--warning); font-weight: bold;">⚠️ Organograma não carregado. Faça a importação manual para habilitar a análise de setores.</span>';
+                    }
+                }
+            } catch (e) {
+                console.error("Error loading organograma from cache:", e);
+                if (statusEl) {
+                    statusEl.innerHTML = '<span style="color: var(--danger); font-weight: bold;">❌ Erro ao ler organograma do cache.</span>';
+                }
+            }
+        }
+
+        async function handleOrganogramaUpload(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            showToast("Lendo arquivo do organograma...", "📂");
+            const reader = new FileReader();
+            reader.onload = async function(e) {
+                try {
+                    const arrayBuffer = e.target.result;
+                    await parseOrganogramaWorkbook(arrayBuffer);
+                    
+                    // Save to cache
+                    localStorage.setItem('organograma_cache_v1', JSON.stringify(organogramaData));
+                    
+                    const statusEl = document.getElementById('organograma-status-msg');
+                    if (statusEl) {
+                        statusEl.innerHTML = '<span style="color: var(--success); font-weight: bold;">✅ Organograma importado e salvo no navegador com sucesso!</span>';
+                    }
+                    showToast("Organograma importado com sucesso!", "✅");
+                } catch (err) {
+                    showToast("Erro ao importar organograma: " + err.message, "❌");
+                    console.error("Erro na importação manual:", err);
+                }
+            };
+            reader.readAsArrayBuffer(file);
+        }
+
+        async function parseOrganogramaWorkbook(arrayBuffer) {
+            const workbook = new ExcelJS.Workbook();
+            await workbook.xlsx.load(arrayBuffer);
+            
+            const sheet = workbook.getWorksheet('Organograma');
+            if (!sheet) {
+                throw new Error("Aba 'Organograma' não encontrada no arquivo!");
+            }
+            
+            const rows = [];
+            const headers = [];
+            
+            // Read headers row
+            sheet.getRow(1).eachCell((cell, colNum) => {
+                headers[colNum] = cell.value ? String(cell.value).toUpperCase().trim() : '';
+            });
+            
+            // Read data rows
+            sheet.eachRow((row, rowNum) => {
+                if (rowNum === 1) return; // Skip headers
+                const rowData = {};
+                row.eachCell((cell, colNum) => {
+                    const header = headers[colNum];
+                    if (header) {
+                        rowData[header] = cell.value;
+                    }
+                });
+                rows.push(rowData);
+            });
+            
+            // Map ID -> Employee Object
+            const empMap = {};
+            rows.forEach(r => {
+                if (r.ID) {
+                    const id = String(Math.round(Number(r.ID))).trim();
+                    empMap[id] = r;
+                }
+            });
+            
+            // Build lookup maps
+            const lookupMapByEmail = {};
+            const lookupMapByName = {};
+            let activeMembersCount = 0;
+            
+            rows.forEach(r => {
+                const id = r.ID ? String(Math.round(Number(r.ID))).trim() : '';
+                const name = r.NOME ? String(r.NOME).trim() : '';
+                const email = r.EMAIL ? String(r.EMAIL).trim().toLowerCase() : '';
+                const cargo = r.CARGO ? String(r.CARGO).trim() : '';
+                const centroCusto = r.CENTRO_CUSTO ? String(r.CENTRO_CUSTO).trim() : '';
+                const ativo = r.ATIVO === true || String(r.ATIVO).toLowerCase() === 'true';
+                
+                if (ativo) activeMembersCount++;
+                
+                let liderNome = '';
+                if (r.LIDERANÇA) {
+                    const lidId = String(Math.round(Number(r.LIDERANÇA))).trim();
+                    const leader = empMap[lidId];
+                    if (leader) {
+                        liderNome = String(leader.NOME).trim();
+                    }
+                }
+                
+                const empInfo = {
+                    id,
+                    name,
+                    email,
+                    cargo,
+                    centroCusto,
+                    liderNome,
+                    ativo
+                };
+                
+                if (email) lookupMapByEmail[email] = empInfo;
+                if (name) lookupMapByName[name.toLowerCase()] = empInfo;
+            });
+            
+            organogramaData = {
+                byEmail: lookupMapByEmail,
+                byName: lookupMapByName,
+                activeCount: activeMembersCount
+            };
+            
+            // Enrich tickets and reload UI
+            enrichTicketsWithOrganograma();
+            
+            if (rawTicketsData && rawTicketsData.length > 0) {
+                populateFilters();
+                applyFiltersAndRender();
+                
+                const activeTab = document.querySelector('.tab-btn.active');
+                if (activeTab && activeTab.id === 'tab-btn-sectors') {
+                    updateSectorsTab();
+                }
+            }
+        }
+
+        function enrichTicketsWithOrganograma() {
+            if (!rawTicketsData || !organogramaData) return;
+            
+            rawTicketsData.forEach(t => {
+                let empInfo = null;
+                
+                // 1. Map by email
+                if (t.email) {
+                    empInfo = organogramaData.byEmail[t.email.toLowerCase().trim()];
+                }
+                
+                // 2. Map by name
+                if (!empInfo && t.colaborador) {
+                    empInfo = organogramaData.byName[t.colaborador.toLowerCase().trim()];
+                }
+                
+                if (empInfo) {
+                    t.orgTeam = empInfo.centroCusto || "Sem Setor";
+                    t.orgLider = empInfo.liderNome || "Sem Líder";
+                    t.orgCargo = empInfo.cargo || "Sem Cargo";
+                } else {
+                    t.orgTeam = t.departamento || "Sem Setor";
+                    t.orgLider = t.liderDireto || "Sem Líder";
+                    t.orgCargo = "Sem Cargo";
+                }
+            });
+            console.log("Tickets enriched with organograma hierarchy!");
+        }
+
+        let currentSectorsMonth = 'all';
+
+        function buildSectorsMonthFilters() {
+            const container = document.getElementById('sectors-month-filters');
+            if (!container) return;
+
+            const monthsMap = {};
+            const monthNames = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+            rawTicketsData.forEach(t => {
+                if (t.criado) {
+                    const monthKey = t.criado.getMonth();
+                    const yearKey = t.criado.getFullYear();
+                    const key = `${yearKey}-\s${monthKey}`.replace('\\s', '');
+                    if (!monthsMap[key]) {
+                        monthsMap[key] = {
+                            month: monthKey,
+                            year: yearKey,
+                            name: `${monthNames[monthKey]} ${yearKey}`,
+                            count: 0
+                        };
+                    }
+                    monthsMap[key].count++;
+                }
+            });
+
+            const sortedMonths = Object.values(monthsMap).sort((a, b) => {
+                if (a.year !== b.year) return b.year - a.year;
+                return b.month - a.month;
+            });
+
+            const presets = [
+                { key: 'all', name: 'Todo o Histórico', count: rawTicketsData.length },
+                { key: 'today', name: 'Hoje', count: filterTicketsByDatePreset(rawTicketsData, 'today').length },
+                { key: 'week', name: 'Esta Semana', count: filterTicketsByDatePreset(rawTicketsData, 'week').length },
+                { key: '7days', name: 'Últimos 7 Dias', count: filterTicketsByDatePreset(rawTicketsData, '7days').length },
+                { key: '30days', name: 'Últimos 30 Dias', count: filterTicketsByDatePreset(rawTicketsData, '30days').length },
+                { key: 'month', name: 'Este Mês', count: filterTicketsByDatePreset(rawTicketsData, 'month').length },
+                { key: 'custom', name: '📅 Período Personalizado', count: 1 }
+            ];
+
+            let html = '';
+            presets.forEach(p => {
+                if (p.count > 0 || p.key === 'all') {
+                    html += '<button class="month-filter-btn ' + (currentSectorsMonth === p.key ? 'active' : '') + '" onclick="selectSectorsMonth(\'' + p.key + '\')">' + p.name + '</button>';
+                }
+            });
+
+            sortedMonths.forEach(m => {
+                const key = m.year + '-' + m.month;
+                html += '<button class="month-filter-btn ' + (currentSectorsMonth === key ? 'active' : '') + '" onclick="selectSectorsMonth(\'' + key + '\')">' + m.name + ' (' + m.count + ')</button>';
+            });
+
+            container.innerHTML = html;
+
+            // Show or hide Custom Date Picker container
+            const customDateDiv = document.getElementById('sectors-custom-date-container');
+            if (customDateDiv) {
+                customDateDiv.style.display = (currentSectorsMonth === 'custom') ? 'flex' : 'none';
+            }
+        }
+
+        function selectSectorsMonth(monthKey) {
+            currentSectorsMonth = monthKey;
+            buildSectorsMonthFilters();
+            updateSectorsTab();
+        }
+
+        function updateSectorsTab() {
+            if (!rawTicketsData || rawTicketsData.length === 0) return;
+
+            // Update Active Members Count KPI
+            const membersKpi = document.getElementById('sector-kpi-members');
+            if (membersKpi) {
+                membersKpi.textContent = organogramaData ? organogramaData.activeCount : "N/A";
+            }
+
+            // Get tickets filtered by selected Sectors Month or Custom range
+            let tickets = [];
+            if (currentSectorsMonth === 'custom') {
+                const startVal = document.getElementById('sectors-date-start') ? document.getElementById('sectors-date-start').value : "";
+                const endVal = document.getElementById('sectors-date-end') ? document.getElementById('sectors-date-end').value : "";
+                const minDate = startVal ? new Date(startVal + 'T00:00:00') : null;
+                const maxDate = endVal ? new Date(endVal + 'T23:59:59') : null;
+                
+                tickets = rawTicketsData.filter(t => {
+                    if (!t.criado) return false;
+                    if (minDate && t.criado < minDate) return false;
+                    if (maxDate && t.criado > maxDate) return false;
+                    return true;
+                });
+            } else {
+                tickets = filterTicketsByDatePreset(rawTicketsData, currentSectorsMonth);
+            }
+            
+            const total = tickets.length;
+
+            if (total === 0) {
+                document.getElementById('sector-kpi-top-team').textContent = "N/A";
+                document.getElementById('sector-kpi-top-team-desc').textContent = "Sem chamados no período";
+                document.getElementById('sector-kpi-top-leader').textContent = "N/A";
+                document.getElementById('sector-kpi-top-leader-desc').textContent = "Sem chamados no período";
+                document.getElementById('sector-kpi-sla').textContent = "0%";
+                
+                if (sectorChartInstance) sectorChartInstance.destroy();
+                if (leaderChartInstance) leaderChartInstance.destroy();
+                renderSectorsTable();
+                renderOperationalFailures(tickets);
+                return;
+            }
+
+            // Compute statistics per sector (team) and leader
+            const sectorVolume = {};
+            const leaderVolume = {};
+
+            tickets.forEach(t => {
+                const team = t.orgTeam || "Sem Setor";
+                const leader = t.orgLider || "Sem Líder";
+                
+                sectorVolume[team] = (sectorVolume[team] || 0) + 1;
+                leaderVolume[leader] = (leaderVolume[leader] || 0) + 1;
+            });
+
+            // Find Top Sector
+            const sortedSectors = Object.entries(sectorVolume).sort((a, b) => b[1] - a[1]);
+            const topSector = sortedSectors[0];
+            const topSectorNameEl = document.getElementById('sector-kpi-top-team');
+            const topSectorDescEl = document.getElementById('sector-kpi-top-team-desc');
+            if (topSectorNameEl && topSectorDescEl) {
+                topSectorNameEl.textContent = topSector ? topSector[0] : "N/A";
+                topSectorDescEl.innerHTML = topSector ? `Responsável por <strong>${topSector[1]} chamados</strong> (${((topSector[1] / total) * 100).toFixed(1)}%)` : "N/A";
+            }
+
+            // Find Top Leader
+            const sortedLeaders = Object.entries(leaderVolume).sort((a, b) => b[1] - a[1]);
+            const topLeader = sortedLeaders[0];
+            const topLeaderNameEl = document.getElementById('sector-kpi-top-leader');
+            const topLeaderDescEl = document.getElementById('sector-kpi-top-leader-desc');
+            if (topLeaderNameEl && topLeaderDescEl) {
+                topLeaderNameEl.textContent = topLeader ? topLeader[0] : "N/A";
+                topLeaderDescEl.innerHTML = topLeader ? `Subordinados abriram <strong>${topLeader[1]} chamados</strong>` : "N/A";
+            }
+
+            // Average SLA
+            const totalSlaMet = tickets.filter(t => t.isSlaMet).length;
+            const avgSlaPct = total > 0 ? Math.round((totalSlaMet / total) * 100) : 0;
+            const slaKpiEl = document.getElementById('sector-kpi-sla');
+            if (slaKpiEl) {
+                slaKpiEl.textContent = `${avgSlaPct}%`;
+                slaKpiEl.style.color = avgSlaPct >= 90 ? 'var(--success)' : (avgSlaPct >= 80 ? 'var(--warning)' : 'var(--danger)');
+            }
+
+            // Draw Charts
+            renderSectorChart(sortedSectors.slice(0, 10));
+            renderLeaderChart(sortedLeaders.slice(0, 10));
+
+            // Populate sector filter dropdown and table
+            populateSectorDropdown(Object.keys(sectorVolume));
+            renderSectorsTable();
+
+            // Populate operational failures rankings
+            renderOperationalFailures(tickets);
+        }
+
+        function renderSectorChart(data) {
+            const ctx = document.getElementById('chart-sector-volume');
+            if (!ctx) return;
+
+            if (sectorChartInstance) sectorChartInstance.destroy();
+
+            const labels = data.map(d => d[0]);
+            const values = data.map(d => d[1]);
+
+            sectorChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Chamados',
+                        data: values,
+                        backgroundColor: 'rgba(99, 102, 241, 0.65)',
+                        borderColor: '#818cf8',
+                        borderWidth: 1.5,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#1e293b', titleColor: '#fff', bodyColor: '#cbd5e1' }
+                    },
+                    scales: {
+                        y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8', font: { size: 10 } } },
+                        x: { grid: { display: false }, ticks: { color: '#94a3b8', font: { size: 9 } } }
+                    }
+                }
+            });
+        }
+
+        function renderLeaderChart(data) {
+            const ctx = document.getElementById('chart-leader-volume');
+            if (!ctx) return;
+
+            if (leaderChartInstance) leaderChartInstance.destroy();
+
+            const labels = data.map(d => d[0]);
+            const values = data.map(d => d[1]);
+
+            leaderChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Chamados',
+                        data: values,
+                        backgroundColor: 'rgba(13, 148, 136, 0.65)',
+                        borderColor: '#2dd4bf',
+                        borderWidth: 1.5,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { backgroundColor: '#1e293b', titleColor: '#fff', bodyColor: '#cbd5e1' }
+                    },
+                    scales: {
+                        y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#94a3b8', font: { size: 10 } } },
+                        x: { grid: { display: false }, ticks: { color: '#94a3b8', font: { size: 9 } } }
+                    }
+                }
+            });
+        }
+
+        function populateSectorDropdown(sectors) {
+            const select = document.getElementById('sector-table-filter');
+            if (!select) return;
+
+            const selectedVal = select.value;
+            select.innerHTML = '<option value="">Todos os Setores</option>';
+            
+            sectors.sort().forEach(sec => {
+                select.innerHTML += `<option value="	ext{${sec}}">${sec}</option>`.replace('text{${sec}}', '${sec}');
+            });
+
+            select.value = selectedVal;
+        }
+
+        function renderSectorsTable() {
+            const tbody = document.getElementById('tbody-sectors-detail');
+            const selectFilter = document.getElementById('sector-table-filter');
+            if (!tbody) return;
+
+            const filterVal = selectFilter ? selectFilter.value : "";
+            
+            let tickets = [];
+            if (currentSectorsMonth === 'custom') {
+                const startVal = document.getElementById('sectors-date-start') ? document.getElementById('sectors-date-start').value : "";
+                const endVal = document.getElementById('sectors-date-end') ? document.getElementById('sectors-date-end').value : "";
+                const minDate = startVal ? new Date(startVal + 'T00:00:00') : null;
+                const maxDate = endVal ? new Date(endVal + 'T23:59:59') : null;
+                
+                tickets = rawTicketsData.filter(t => {
+                    if (!t.criado) return false;
+                    if (minDate && t.criado < minDate) return false;
+                    if (maxDate && t.criado > maxDate) return false;
+                    return true;
+                });
+            } else {
+                tickets = filterTicketsByDatePreset(rawTicketsData, currentSectorsMonth);
+            }
+
+            // Compute statistics aggregated by Sector
+            const dataMap = {};
+            tickets.forEach(t => {
+                const team = t.orgTeam || "Sem Setor";
+                const leader = t.orgLider || "Sem Líder";
+
+                if (!dataMap[team]) {
+                    dataMap[team] = {
+                        team: team,
+                        leader: leader,
+                        count: 0,
+                        slaMet: 0,
+                        resolvedCount: 0,
+                        sumMins: 0,
+                        causes: {}
+                    };
+                }
+
+                const item = dataMap[team];
+                item.count++;
+                if (t.isSlaMet) item.slaMet++;
+                
+                if (t.isResolved) {
+                    item.resolvedCount++;
+                    item.sumMins += t.tempoGastoMinutos || 0;
+                }
+
+                if (t.causaRaiz) {
+                    item.causes[t.causaRaiz] = (item.causes[t.causaRaiz] || 0) + 1;
+                }
+            });
+
+            let items = Object.values(dataMap);
+            if (filterVal) {
+                items = items.filter(item => item.team === filterVal);
+            }
+
+            items.sort((a, b) => b.count - a.count);
+
+            tbody.innerHTML = items.map(item => {
+                const slaPct = item.count > 0 ? Math.round((item.slaMet / item.count) * 100) : 0;
+                const avgHrs = item.resolvedCount > 0 ? ((item.sumMins / item.resolvedCount) / 60).toFixed(1) : "--";
+                
+                const sortedCauses = Object.entries(item.causes).sort((a, b) => b[1] - a[1]);
+                const topCause = sortedCauses.length > 0 ? `· ${sortedCauses[0][0]} (${sortedCauses[0][1]})` : "N/A";
+
+                return `
+                    <tr onclick="openSectorDetailsDrawer('${item.team}')" 
+                        onmouseover="this.style.background='rgba(255,255,255,0.03)'" 
+                        onmouseout="this.style.background='transparent'"
+                        style="cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px; transition: background 0.15s ease;">
+                        <td style="padding: 12px 10px; font-weight: bold; color: white; display: flex; align-items: center; gap: 6px;">🏢 ${item.team}</td>
+                        <td style="padding: 12px 10px; color: var(--text-main);">${item.leader}</td>
+                        <td style="padding: 12px 10px; text-align: center; font-weight: bold; color: var(--accent-primary);">${item.count}</td>
+                        <td style="padding: 12px 10px; text-align: center; font-weight: bold; color: ${slaPct >= 90 ? 'var(--success)' : (slaPct >= 80 ? 'var(--warning)' : 'var(--danger)')}">${slaPct}%</td>
+                        <td style="padding: 12px 10px; text-align: center; color: var(--text-muted);">${avgHrs} h</td>
+                        <td style="padding: 12px 10px; color: var(--text-muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 250px;" title="&nbsp;${topCause}">${topCause}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            if (items.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="6" style="text-align: center; padding: 24px; color: var(--text-muted);">Nenhum setor ou líder com chamados abertos neste período.</td>
+                    </tr>
+                `;
+            }
+        }
+
+        // =====================================================================
+        // SECTOR DETAILS DRAWER & OPERATIONAL FAILURES RANKS
+        // =====================================================================
+        let activeSectorName = null;
+
+        function openSectorDetailsDrawer(teamName) {
+            activeSectorName = teamName;
+            
+            const drawer = document.getElementById('sector-details-drawer');
+            if (!drawer) return;
+
+            // Fill header values
+            document.getElementById('drawer-sector-name').textContent = `🏢 ${teamName}`;
+            
+            // Resolve team leader
+            let leaderName = "Sem Líder Mapeado";
+            const tickets = filterTicketsByDatePreset(rawTicketsData, currentSectorsMonth).filter(t => t.orgTeam === teamName);
+            if (tickets.length > 0) {
+                leaderName = `Liderado por ${tickets[0].orgLider}`;
+            }
+            document.getElementById('drawer-sector-leader').textContent = leaderName;
+
+            // KPIs
+            const total = tickets.length;
+            const metCount = tickets.filter(t => t.isSlaMet).length;
+            const slaPct = total > 0 ? Math.round((metCount / total) * 100) : 0;
+
+            const resolvedTickets = tickets.filter(t => t.isResolved);
+            let mttrStr = "--";
+            if (resolvedTickets.length > 0) {
+                const sumMins = resolvedTickets.reduce((acc, t) => acc + (t.tempoGastoMinutos || 0), 0);
+                const avgHrs = ((sumMins / resolvedTickets.length) / 60).toFixed(1);
+                mttrStr = `${avgHrs} hrs`;
+            }
+
+            document.getElementById('drawer-sector-kpi-total').textContent = total;
+            
+            const slaEl = document.getElementById('drawer-sector-kpi-sla');
+            slaEl.textContent = `${slaPct}%`;
+            slaEl.style.color = slaPct >= 90 ? 'var(--success)' : (slaPct >= 80 ? 'var(--warning)' : 'var(--danger)');
+            
+            document.getElementById('drawer-sector-kpi-mttr').textContent = mttrStr;
+
+            // Populate local drawer filter dropdowns
+            const subprods = [...new Set(tickets.map(t => t.subproduto || "Sem Subproduto"))].sort();
+            const causas = [...new Set(tickets.map(t => t.causaRaiz || "Sem Causa"))].sort();
+
+            const subprodSelect = document.getElementById('drawer-sector-filter-subprod');
+            subprodSelect.innerHTML = '<option value="">Todos os Subprodutos</option>';
+            subprods.forEach(s => {
+                subprodSelect.innerHTML += `<option value="${s}">${s}</option>`;
+            });
+
+            const causaSelect = document.getElementById('drawer-sector-filter-causa');
+            causaSelect.innerHTML = '<option value="">Todas as Causas</option>';
+            causas.forEach(c => {
+                causaSelect.innerHTML += `<option value="${c}">${c}</option>`;
+            });
+
+            // Render tickets list
+            renderSectorDrawerTickets();
+
+            // Slide in
+            drawer.style.right = '0';
+        }
+
+        function closeSectorDrawer() {
+            const drawer = document.getElementById('sector-details-drawer');
+            if (drawer) drawer.style.right = '-550px';
+            activeSectorName = null;
+        }
+
+        function renderSectorDrawerTickets() {
+            if (!activeSectorName) return;
+
+            const tbody = document.getElementById('drawer-sector-tickets-tbody');
+            if (!tbody) return;
+
+            const filterSub = document.getElementById('drawer-sector-filter-subprod').value;
+            const filterCausa = document.getElementById('drawer-sector-filter-causa').value;
+
+            let tickets = filterTicketsByDatePreset(rawTicketsData, currentSectorsMonth)
+                .filter(t => t.orgTeam === activeSectorName);
+
+            if (filterSub) {
+                tickets = tickets.filter(t => (t.subproduto || "Sem Subproduto") === filterSub);
+            }
+            if (filterCausa) {
+                tickets = tickets.filter(t => (t.causaRaiz || "Sem Causa") === filterCausa);
+            }
+
+            tbody.innerHTML = tickets.map(t => {
+                return `
+                    <tr onclick="closeSectorDrawer(); showTicketDetails('${t.id}')"
+                        onmouseover="this.style.background='rgba(255,255,255,0.03)'"
+                        onmouseout="this.style.background='transparent'"
+                        style="cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 12px; transition: background 0.15s ease;">
+                        <td style="padding: 10px 6px; font-weight: bold; color: var(--accent-primary);">${t.chave}</td>
+                        <td style="padding: 10px 6px; color: var(--text-main); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 260px;" title="${t.resumo}">${t.resumo}</td>
+                        <td style="padding: 10px 6px; text-align: center;">
+                            <span class="label-info ${t.isSlaMet ? 'badge-green' : 'badge-red'}" style="font-size: 9px; padding: 2px 4px;">
+                                ${t.isSlaMet ? 'OK' : 'ESTOURADO'}
+                            </span>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            if (tickets.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="3" style="text-align: center; padding: 20px; color: var(--text-muted);">Nenhum chamado corresponde aos filtros locais.</td>
+                    </tr>
+                `;
+            }
+        }
+
+        function renderOperationalFailures(tickets) {
+            const opFailTickets = tickets.filter(t => String(t.causaRaiz || '').toLowerCase().trim() === 'falha operacional');
+            const totalOpFails = opFailTickets.length;
+
+            const sectorsList = document.getElementById('op-fail-sectors-list');
+            const leadersList = document.getElementById('op-fail-leaders-list');
+            const subprodsList = document.getElementById('op-fail-subproducts-list');
+
+            if (totalOpFails === 0) {
+                const emptyMsg = '<div style="font-size: 12px; color: var(--text-muted); padding: 12px 0; text-align: center;">Sem falhas operacionais registradas no período.</div>';
+                if (sectorsList) sectorsList.innerHTML = emptyMsg;
+                if (leadersList) leadersList.innerHTML = emptyMsg;
+                if (subprodsList) subprodsList.innerHTML = emptyMsg;
+                return;
+            }
+
+            // Group by Sectors
+            const sectorsMap = {};
+            opFailTickets.forEach(t => {
+                const k = t.orgTeam || t.departamento || "Sem Setor";
+                sectorsMap[k] = (sectorsMap[k] || 0) + 1;
+            });
+            const topSectors = Object.entries(sectorsMap).sort((a,b) => b[1] - a[1]).slice(0, 5);
+
+            // Group by Leaders
+            const leadersMap = {};
+            opFailTickets.forEach(t => {
+                const k = t.orgLider || t.liderDireto || "Sem Líder";
+                leadersMap[k] = (leadersMap[k] || 0) + 1;
+            });
+            const topLeaders = Object.entries(leadersMap).sort((a,b) => b[1] - a[1]).slice(0, 5);
+
+            // Group by Subproducts
+            const subprodsMap = {};
+            opFailTickets.forEach(t => {
+                const k = t.subproduto || "Sem Subproduto";
+                subprodsMap[k] = (subprodsMap[k] || 0) + 1;
+            });
+            const topSubprods = Object.entries(subprodsMap).sort((a,b) => b[1] - a[1]).slice(0, 5);
+
+            // Render lists
+            if (sectorsList) {
+                sectorsList.innerHTML = topSectors.map(([name, count]) => {
+                    const pct = Math.round((count / totalOpFails) * 100);
+                    return `
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; color: white;">
+                                <span>🏢 ${name}</span>
+                                <span>${count} chamados (${pct}%)</span>
+                            </div>
+                            <div style="height: 6px; width: 100%; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden;">
+                                <div style="height: 100%; width: ${pct}%; background: #ef4444; border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            if (leadersList) {
+                leadersList.innerHTML = topLeaders.map(([name, count]) => {
+                    const pct = Math.round((count / totalOpFails) * 100);
+                    return `
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; color: white;">
+                                <span>👑 ${name}</span>
+                                <span>${count} chamados (${pct}%)</span>
+                            </div>
+                            <div style="height: 6px; width: 100%; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden;">
+                                <div style="height: 100%; width: ${pct}%; background: #f97316; border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+
+            if (subprodsList) {
+                subprodsList.innerHTML = topSubprods.map(([name, count]) => {
+                    const pct = Math.round((count / totalOpFails) * 100);
+                    return `
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <div style="display: flex; justify-content: space-between; font-size: 11px; font-weight: 600; color: white;">
+                                <span>📦 ${name}</span>
+                                <span>${count} chamados (${pct}%)</span>
+                            </div>
+                            <div style="height: 6px; width: 100%; background: rgba(255,255,255,0.05); border-radius: 3px; overflow: hidden;">
+                                <div style="height: 100%; width: ${pct}%; background: #eab308; border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            }
+        }
+</script>
+
+
+    <!-- Slide-out Drawer for Sector Detail (Initially Off-screen) -->
+    <div id="sector-details-drawer" class="drawer-container" style="position: fixed; top: 0; right: -550px; width: 500px; height: 100vh; background: var(--bg-secondary); border-left: 1px solid var(--border-color); box-shadow: -10px 0 30px rgba(0,0,0,0.5); z-index: 1000; transition: right 0.3s ease; display: flex; flex-direction: column; overflow: hidden; backdrop-filter: blur(20px);">
+        <div class="drawer-header" style="padding: 24px 24px 20px 24px; border-bottom: 1px solid var(--border-color);">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; width: 100%;">
+                <div>
+                    <h2 id="drawer-sector-name" style="font-family: var(--font-title); font-size: 18px; font-weight: 700; color: white; margin: 0;"></h2>
+                    <p id="drawer-sector-leader" style="font-size: 12px; color: var(--accent-primary); font-weight: 600; margin: 4px 0 0 0;"></p>
+                </div>
+                <button onclick="closeSectorDrawer()" style="background: none; border: none; color: var(--text-muted); font-size: 28px; cursor: pointer; line-height: 1; padding: 0 4px;">&times;</button>
+            </div>
+            
+            <!-- Sector Drawer KPIs -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 16px; background: rgba(255, 255, 255, 0.03); padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
+                <div style="text-align: center;">
+                    <div style="font-size: 10px; color: var(--text-muted); text-transform: uppercase;">Total</div>
+                    <div id="drawer-sector-kpi-total" style="font-size: 16px; font-weight: 800; color: white; margin-top: 4px;">0</div>
+                </div>
+                <div style="text-align: center; border-left: 1px solid var(--border-color); border-right: 1px solid var(--border-color);">
+                    <div style="font-size: 10px; color: var(--text-muted); text-transform: uppercase;">SLA Met</div>
+                    <div id="drawer-sector-kpi-sla" style="font-size: 16px; font-weight: 800; color: var(--success); margin-top: 4px;">0%</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 10px; color: var(--text-muted); text-transform: uppercase;">MTTR</div>
+                    <div id="drawer-sector-kpi-mttr" style="font-size: 16px; font-weight: 800; color: var(--text-muted); margin-top: 4px;">--</div>
+                </div>
+            </div>
+            
+            <!-- Sector Drawer Filters -->
+            <div style="display: flex; gap: 8px; margin-top: 16px;">
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                    <span style="font-size: 10px; color: var(--text-muted); font-weight: bold; text-transform: uppercase;">Subproduto:</span>
+                    <select id="drawer-sector-filter-subprod" onchange="renderSectorDrawerTickets()" class="filter-input" style="padding: 6px; font-size: 11px; width: 100%; border-radius: 4px; color: white;"></select>
+                </div>
+                <div style="flex: 1; display: flex; flex-direction: column; gap: 4px;">
+                    <span style="font-size: 10px; color: var(--text-muted); font-weight: bold; text-transform: uppercase;">Causa Raiz:</span>
+                    <select id="drawer-sector-filter-causa" onchange="renderSectorDrawerTickets()" class="filter-input" style="padding: 6px; font-size: 11px; width: 100%; border-radius: 4px; color: white;"></select>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sector Drawer Body -->
+        <div style="flex: 1; overflow-y: auto; padding: 20px 24px;" id="drawer-sector-body">
+            <div class="table-responsive">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="border-bottom: 1px solid var(--border-color); font-size: 11px; color: var(--text-muted); text-transform: uppercase;">
+                            <th style="text-align: left; padding: 10px 6px;">Chave</th>
+                            <th style="text-align: left; padding: 10px 6px;">Resumo</th>
+                            <th style="text-align: center; padding: 10px 6px; width: 60px;">SLA</th>
+                        </tr>
+                    </thead>
+                    <tbody id="drawer-sector-tickets-tbody">
+                        <!-- Populated dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 
     <!-- Slide-out Drawer for Analyst Detail (Initially Off-screen) -->
     <div id="analyst-details-drawer" class="drawer-container">
