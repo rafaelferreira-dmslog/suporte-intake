@@ -60041,6 +60041,9 @@ SI-7642,2026-07-10T13:06:04.153-0300,Sistema,Causa raiz potencial,,Em atendiment
 SI-7642,2026-07-10T13:06:04.153-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7642,2026-07-10T13:06:04.153-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7641,2026-07-10T15:28:13.626-0300,Nícollas Resende,assignee,,Nícollas Resende
+SI-7641,2026-07-10T16:13:39.754-0300,Rafael Ferreira,resolution,,Done
+SI-7641,2026-07-10T16:13:39.754-0300,Rafael Ferreira,status,Submissão,Done
+SI-7641,2026-07-10T16:13:40.178-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7643,2026-07-10T10:14:25.835-0300,Sistema,Link,,This work item is blocked by GA-1206
 SI-7643,2026-07-10T10:48:19.392-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7643,2026-07-10T13:06:04.898-0300,Sistema,Criticidade final,,P2 - Média
@@ -60144,6 +60147,9 @@ SI-7659,2026-07-10T13:26:38.043-0300,Ricardo Barbosa Machado,assignee,,Ricardo B
 SI-7659,2026-07-10T13:26:40.808-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7659,2026-07-10T13:26:40.808-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7658,2026-07-10T15:41:49.410-0300,Nícollas Resende,assignee,,Nícollas Resende
+SI-7658,2026-07-10T16:13:38.165-0300,Rafael Ferreira,resolution,,Done
+SI-7658,2026-07-10T16:13:38.165-0300,Rafael Ferreira,status,Submissão,Done
+SI-7658,2026-07-10T16:13:38.631-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7662,2026-07-10T14:41:30.135-0300,Sistema,Link,,This work item is blocked by GA-1211
 SI-7662,2026-07-10T15:02:53.171-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7662,2026-07-10T15:20:09.320-0300,Rafael Ferreira,resolution,,Done
@@ -60153,7 +60159,148 @@ SI-7661,2026-07-10T15:20:27.903-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7661,2026-07-10T15:20:30.166-0300,Rafael Ferreira,resolution,,Done
 SI-7661,2026-07-10T15:20:30.166-0300,Rafael Ferreira,status,Submissão,Done
 SI-7661,2026-07-10T15:38:19.494-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7661,2026-07-10T16:01:07.732-0300,Rafael Ferreira,description,,"h2. 📘 CHECKLIST PADRÃO DE TRIAGEM (DMS)
+
+h3. 1️⃣ Identificação do Chamado
+
+* 
+*Módulo*: Controle Operacional / Armazém (tabela {{order_item}}).
+Google Docs+ 2
+
+* 
+*Tipo/Classificação*: Incidente.
+PDF+ 1
+
+* 
+*Ambiente*: Produção.
+PDF
+
+* 
+*Título Sugerido*: Erro de Divergência de Linhas de Itens e Multiplicação Anômala de Registros na Ordem 260437481.
+Google Docs+ 1
+
+
+h3. 2️⃣ Entendimento do Problema
+
+* *Passo a Passo*:
+*# Acessar o sistema DMSYS no módulo operacional.
+Google Docs+ 3
+
+*# Realizar a busca pela Ordem número 260437481.
+Google Docs+ 1
+
+*# Navegar até a aba de *Itens da Order* para verificar a consolidação com os Warehouse Receipts (WR).
+Google Docs+ 3
+
+*# Constatar a inconsistência visual e a divergência na contagem de linhas apresentadas.
+Google Docs+ 1
+
+* *Comportamento Esperado vs. Atual*:
+** 
+*Esperado*: O sistema deve exibir exatamente 1 linha de item em conformidade com o processo original do WR importado e 2 linhas nos itens correspondentes do fluxo complementar.
+Google Docs+ 2
+
+** 
+*Atual*: O sistema apresenta de forma errônea 5 linhas de itens em tela onde deveria constar apenas uma, enquanto o outro contador associado exibe 0 linhas.
+Google Docs+ 1
+
+* 
+*Evidências*: {{[PENDENTE: SOLICITAR AO USUÁRIO]}}.
+PDF
+
+
+h3. 3️⃣ Análise Técnico-Inicial
+
+* 
+*Histórico/Logs*: Foi realizada uma verificação preliminar via banco de dados operacional na tabela {{order_item}}. Constatou-se que houve a inserção correta do timestamp na coluna {{deleted_at}} para os 3 itens originais. Contudo, inexplicavelmente e de ontem para hoje, o sistema gerou e passou a exibir 5 linhas ativas onde deveria constar apenas uma.
+Google Docs+ 4
+
+* 
+*Parametrização/Perfil*: Validado que o comportamento não está associado a problemas de permissão de acesso do usuário, tratando-se de uma corrupção visual ou lógica no processamento dos registros da ordem.
+PDF
+
+
+h3. 4️⃣ Avaliação de Impacto
+
+* 
+*Abrangência*: Restrito inicialmente à Ordem 260437481, com alto risco de impactar processos de faturamento em lote ou fechamentos de faturamento/handover caso faça parte de um Assembly.
+Google Docs+ 2
+
+* 
+*Criticidade*: Alta.
+PDF
+
+* 
+*Justificativa*: A divergência crônica de itens impede que as equipes de Operacional Inland e Customer Care realizem a correta conferência e liberação documental do processo, travando o fluxo logístico normal.
+DOCX
+
+* 
+*Workaround*: Não aplicável. Não há solução paliativa disponível via tela para o usuário final, pois os dados em tela divergem do estado lógico esperado.
+Google Docs+ 2
+
+
+h3. 5️⃣ Tentativas de Resolução
+
+* 
+*Ações Realizadas*: O suporte realizou a análise das tabelas do banco de dados operacional confirmando que a deleção lógica foi aplicada, mas o microsserviço falhou ao ocultar os registros e acabou gerando linhas fantasmas adicionais.
+Google Docs+ 1
+
+
+h3. 6️⃣ Justificativa Técnica para Escalonamento
+
+* O chamado está sendo escalonado para o time de *Sustentação e Desenvolvimento (N2/N3)* pois envolve uma anomalia na persistência de dados da tabela {{order_item}}. Houve a gravação do timestamp na coluna {{deleted_at}}, mas ao invés de limpar o fluxo, o sistema gerou uma duplicação indevida de 5 registros em tela. O nível 1 não possui permissão para executar scripts corretivos ou reprocessar triggers de sincronização direta entre o DWSYS e o banco operacional.
+PDF+ 4
+
+
+h2. 
+
+{quote}*Prezada equipe de Sustentação e Desenvolvimento,*
+
+Solicitamos apoio para investigar e corrigir uma grave divergência ocorrida de ontem para hoje na aba de Itens da Ordem *260437481*. O comportamento do sistema sofreu uma alteração inesperada que quebrou a exibição das linhas de itens atreladas ao processo e aos Warehouse Receipts (WR).
+
+Google Docs+ 4
+
+
+
+*Cenário identificado em tela:* * O comportamento correto seria a exibição de 1 linha de item em determinado cenário e 2 linhas em outro. * Atualmente, o sistema apresenta 5 linhas de itens de forma incorreta e, paralelamente, exibe 0 linhas onde deveriam constar duas.
+
+Google Docs+ 1
+
+
+
+*Análise em Banco de Dados (OPERACIONAL):* Ao realizarmos uma consulta SELECT na tabela {{order_item}}, constatamos que houve a aplicação do timestamp na coluna {{deleted_at}} para os 3 itens anteriores. Contudo, mesmo com a exclusão lógica ativa, a query revelou que surgiram 5 linhas ativas no registro onde deveria constar apenas uma, apontando para uma provável falha de trigger ou loop no processamento do microsserviço de itens.
+
+Google Docs+ 4
+
+
+
+Como o problema impossibilita o andamento do processo operacional e a conferência de documentos, solicitamos a limpeza dos registros duplicados e a normalização do comportamento da Ordem.
+
+DOCX
+
+{quote}
+
+h2. 🔍 CAUSA RAIZ POTENCIAL
+
+Com base no comportamento do sistema DMSYS e nas tabelas afetadas, existem duas hipóteses fortes para a causa raiz:
+
+# 
+*Concorrência ou Conflito de Multi-SOP Ativa:* O sistema possui históricos documentados de bugs onde falhas ao cadastrar itens fazem com que o banco de dados retorne mais de uma SOP ativa simultaneamente para um mesmo {{assembly_id}}. Como apenas a linha da SOP atual deve ter o campo {{deleted_at}} vazio, o travamento dessa lógica pode corromper o recarregamento em tela e multiplicar as linhas de itens exibidas.
+Google Docs+ 3
+
+# 
+*Falha de Sincronização na API do DWSYS (Split de Itens):* Durante o reprocessamento de atualizações ou quando um novo WR/WRR é adicionado ou modificado em lote, o microsserviço pode ter interpretado a deleção dos 3 itens originais como um gatilho de reinserção múltipla, gerando um loop assíncrono que gravou as 5 linhas fantasmas na base operacional."
+SI-7661,2026-07-10T16:01:13.012-0300,Rafael Ferreira,Encaminhado para:,DS,Sustentação
+SI-7661,2026-07-10T16:01:18.283-0300,Sistema,Link,,This work item is blocked by SUS-268
+SI-7661,2026-07-10T16:01:26.283-0300,Rafael Ferreira,Encaminhado para:,Sustentação,
 SI-7660,2026-07-10T14:28:21.878-0300,Sistema,Link,,This work item is blocked by GA-1210
 SI-7663,2026-07-10T15:16:11.567-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7663,2026-07-10T15:16:16.739-0300,Rafael Ferreira,resolution,,Done
 SI-7663,2026-07-10T15:16:16.739-0300,Rafael Ferreira,status,Submissão,Done
+SI-7672,2026-07-10T16:29:23.861-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7672,2026-07-10T16:29:26.068-0300,Rafael Ferreira,resolution,,Done
+SI-7672,2026-07-10T16:29:26.068-0300,Rafael Ferreira,status,Submissão,Done
+SI-7672,2026-07-10T16:29:26.514-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-7671,2026-07-10T16:42:30.076-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7671,2026-07-10T16:42:33.678-0300,Rafael Ferreira,resolution,,Done
+SI-7671,2026-07-10T16:42:33.678-0300,Rafael Ferreira,status,Submissão,Done
