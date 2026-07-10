@@ -59688,6 +59688,9 @@ SI-7618,2026-07-09T12:07:36.464-0300,Sistema,Link,,This work item is blocked by 
 SI-7618,2026-07-10T10:21:42.838-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7618,2026-07-10T13:05:40.659-0300,Sistema,Criticidade final,,P2 - Média
 SI-7618,2026-07-10T13:05:40.659-0300,Sistema,Resolução do chamado,,Foi realizada a atualização dos drivers de áudio do notebook da colaboradora.
+SI-7618,2026-07-10T15:20:02.705-0300,Rafael Ferreira,resolution,,Done
+SI-7618,2026-07-10T15:20:02.705-0300,Rafael Ferreira,status,Submissão,Done
+SI-7618,2026-07-10T15:20:03.283-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7617,2026-07-09T12:03:24.993-0300,Sistema,Link,,This work item is blocked by GA-1194
 SI-7617,2026-07-09T15:29:29.599-0300,Rafael Ferreira,resolution,,Done
 SI-7617,2026-07-09T15:29:29.599-0300,Rafael Ferreira,status,Submissão,Done
@@ -60037,14 +60040,22 @@ SI-7642,2026-07-10T13:06:04.153-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7642,2026-07-10T13:06:04.153-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7642,2026-07-10T13:06:04.153-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7642,2026-07-10T13:06:04.153-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7641,2026-07-10T15:28:13.626-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7643,2026-07-10T10:14:25.835-0300,Sistema,Link,,This work item is blocked by GA-1206
 SI-7643,2026-07-10T10:48:19.392-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7643,2026-07-10T13:06:04.898-0300,Sistema,Criticidade final,,P2 - Média
 SI-7643,2026-07-10T13:06:04.898-0300,Sistema,Resolução do chamado,,Foi realizada a atualização dos drivers de áudio no notebook da colaboradora.
+SI-7643,2026-07-10T15:20:04.719-0300,Rafael Ferreira,resolution,,Done
+SI-7643,2026-07-10T15:20:04.719-0300,Rafael Ferreira,status,Submissão,Done
+SI-7643,2026-07-10T15:20:05.370-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7652,2026-07-10T11:21:25.348-0300,Sistema,Link,,This work item is blocked by GA-1207
 SI-7652,2026-07-10T12:47:13.659-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7652,2026-07-10T12:47:13.659-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7652,2026-07-10T12:47:15.786-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7651,2026-07-10T15:21:26.192-0300,Rafael Ferreira,assignee,,Ricardo Barbosa Machado
+SI-7651,2026-07-10T15:21:29.064-0300,Rafael Ferreira,resolution,,Done
+SI-7651,2026-07-10T15:21:29.064-0300,Rafael Ferreira,status,Submissão,Done
+SI-7651,2026-07-10T15:21:29.483-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7650,2026-07-10T11:54:12.595-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7650,2026-07-10T11:54:15.157-0300,Bruno Silva,resolution,,Done
 SI-7650,2026-07-10T11:54:15.157-0300,Bruno Silva,status,Submissão,Done
@@ -60082,6 +60093,9 @@ SI-7648,2026-07-10T13:06:07.226-0300,Sistema,Justificativa Causa Raiz final,,"Co
 SI-7647,2026-07-10T11:12:05.646-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7647,2026-07-10T13:06:06.359-0300,Sistema,Criticidade final,,P2 - Média
 SI-7647,2026-07-10T13:06:06.359-0300,Sistema,Resolução do chamado,,Foi atualizado o driver de áudio no notebook da colaboradora.
+SI-7647,2026-07-10T15:20:07.000-0300,Rafael Ferreira,resolution,,Done
+SI-7647,2026-07-10T15:20:07.000-0300,Rafael Ferreira,status,Submissão,Done
+SI-7647,2026-07-10T15:20:07.539-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7645,2026-07-10T10:48:45.212-0300,Rafael Ferreira,assignee,,Helena Almeida
 SI-7645,2026-07-10T10:48:48.009-0300,Rafael Ferreira,resolution,,Done
 SI-7645,2026-07-10T10:48:48.009-0300,Rafael Ferreira,status,Submissão,Done
@@ -60129,5 +60143,17 @@ SI-7653,2026-07-10T11:26:26.202-0300,Sistema,Link,,This work item is blocked by 
 SI-7659,2026-07-10T13:26:38.043-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7659,2026-07-10T13:26:40.808-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7659,2026-07-10T13:26:40.808-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7658,2026-07-10T15:41:49.410-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7662,2026-07-10T14:41:30.135-0300,Sistema,Link,,This work item is blocked by GA-1211
+SI-7662,2026-07-10T15:02:53.171-0300,Nícollas Resende,assignee,,Nícollas Resende
+SI-7662,2026-07-10T15:20:09.320-0300,Rafael Ferreira,resolution,,Done
+SI-7662,2026-07-10T15:20:09.320-0300,Rafael Ferreira,status,Submissão,Done
+SI-7662,2026-07-10T15:20:09.769-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7661,2026-07-10T15:20:27.903-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-7661,2026-07-10T15:20:30.166-0300,Rafael Ferreira,resolution,,Done
+SI-7661,2026-07-10T15:20:30.166-0300,Rafael Ferreira,status,Submissão,Done
+SI-7661,2026-07-10T15:38:19.494-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7660,2026-07-10T14:28:21.878-0300,Sistema,Link,,This work item is blocked by GA-1210
+SI-7663,2026-07-10T15:16:11.567-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7663,2026-07-10T15:16:16.739-0300,Rafael Ferreira,resolution,,Done
+SI-7663,2026-07-10T15:16:16.739-0300,Rafael Ferreira,status,Submissão,Done
