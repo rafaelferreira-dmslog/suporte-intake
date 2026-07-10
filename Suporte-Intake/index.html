@@ -2073,6 +2073,53 @@
             color: #a7f3d0;
         }
 
+        /* Searchable Select (Combobox) Premium Styles */
+        .searchable-select-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .searchable-select-dropdown {
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            right: 0;
+            max-height: 250px;
+            overflow-y: auto;
+            z-index: 1050;
+            background: var(--bg-secondary, #111827);
+            border: 1px solid var(--border-color, #374151);
+            border-radius: 8px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+            scrollbar-width: thin;
+        }
+        .searchable-select-dropdown::-webkit-scrollbar {
+            width: 6px;
+        }
+        .searchable-select-dropdown::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .searchable-select-dropdown::-webkit-scrollbar-thumb {
+            background-color: var(--border-color, #374151);
+            border-radius: 3px;
+        }
+        .searchable-select-item {
+            padding: 10px 14px;
+            cursor: pointer;
+            font-size: 13px;
+            color: var(--text-main, #f3f4f6);
+            transition: background 0.15s ease, color 0.15s ease;
+        }
+        .searchable-select-item:hover {
+            background: var(--accent-primary, #0ea5e9);
+            color: white;
+        }
+        .searchable-select-item.selected {
+            background: rgba(14, 165, 233, 0.2);
+            font-weight: 600;
+            border-left: 3px solid var(--accent-primary, #0ea5e9);
+        }
+
 </style>
 </head>
 <body>
@@ -2713,13 +2760,13 @@
                         <div class="insight-stat-value" id="sector-kpi-members">0</div>
                         <p class="insight-stat-desc">Funcionários ativos no organograma</p>
                     </div>
-                    <div class="glass-panel insight-card">
+                    <div class="glass-panel insight-card" style="cursor: pointer; transition: transform 0.15s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" onclick="handleTopTeamCardClick()">
                         <div class="insight-icon">🏆</div>
                         <h3 class="kpi-title">Setor mais Demandante</h3>
                         <div class="insight-stat-value" style="font-size: 20px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 4px 0;" id="sector-kpi-top-team">N/A</div>
                         <p class="insight-stat-desc" id="sector-kpi-top-team-desc">Carregando...</p>
                     </div>
-                    <div class="glass-panel insight-card">
+                    <div class="glass-panel insight-card" style="cursor: pointer; transition: transform 0.15s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'" onclick="handleTopLeaderCardClick()">
                         <div class="insight-icon">👑</div>
                         <h3 class="kpi-title">Líder mais Demandado</h3>
                         <div class="insight-stat-value" style="font-size: 20px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 4px 0;" id="sector-kpi-top-leader">N/A</div>
@@ -3386,6 +3433,10 @@
                         <span class="modal-field-label">Causa Raiz (Categoria)</span>
                         <span class="modal-field-value" id="modal-causa-raiz">Erro de Credenciais</span>
                     </div>
+                    <div class="modal-field">
+                        <span class="modal-field-label">Subproduto</span>
+                        <span class="modal-field-value" id="modal-subproduto">-</span>
+                    </div>
                     <div class="modal-field modal-field-full" id="modal-causa-raiz-detalhe-container" style="display: none;">
                         <span class="modal-field-label">Descrição da Causa Raiz</span>
                         <span class="modal-field-value" id="modal-causa-raiz-detalhe">-</span>
@@ -3545,6 +3596,27 @@
         let rawChangelogs = [];
         let chartsInstance = {};
         let selectedSubprodutosGlobal = [];
+        let currentModalTicket = null; // Guard ticket in modal for real-time stopwatch updates
+
+        // ─── Global Name-Matching Utilities ──────────────────────────────────────
+        /** Strips accents and lowercases a string for comparison only. */
+        function _normName(s) {
+            return String(s).trim().toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        }
+
+        /**
+         * Dice-coefficient on word tokens.
+         * Returns 0–1. Score ≥ 0.70 means the same person.
+         */
+        function _tokenOverlap(a, b) {
+            const ta = new Set(_normName(a).split(/\s+/).filter(Boolean));
+            const tb = new Set(_normName(b).split(/\s+/).filter(Boolean));
+            if (ta.size === 0 && tb.size === 0) return 1;
+            let shared = 0;
+            ta.forEach(t => { if (tb.has(t)) shared++; });
+            return (2 * shared) / (ta.size + tb.size);
+        }
+        // ─────────────────────────────────────────────────────────────────────────
 
         // Alternating KPI Card state
         let currentAltMode = 0; // 0: SLA Estourado, 1: Chamados em Aberto
@@ -3907,6 +3979,205 @@
             return totalBusinessMins;
         }
 
+        // SLA Utility: Calculate business seconds (Monday to Friday, 07:30 to 17:18)
+        // 35280 seconds per day. Supports overtime positively if closed after 17:18.
+        function calculateBusinessSeconds(startDate, endDate) {
+            if (!startDate || !endDate) return 0;
+            if (endDate < startDate) return 0;
+
+            let totalSeconds = 0;
+            
+            let current = new Date(startDate);
+            let target = new Date(endDate);
+            
+            let currentDayStr = current.toDateString();
+            let targetDayStr = target.toDateString();
+            
+            if (currentDayStr === targetDayStr) {
+                let dayOfWeek = current.getDay();
+                if (dayOfWeek === 0 || dayOfWeek === 6) return 0;
+                
+                let startSecs = (current.getHours() * 3600) + (current.getMinutes() * 60) + current.getSeconds();
+                let endSecs = (target.getHours() * 3600) + (target.getMinutes() * 60) + target.getSeconds();
+                
+                // Working hours bounds: 07:30 (27000 secs) and 17:18 (62280 secs)
+                let effStart = Math.max(27000, startSecs);
+                if (startSecs > 62280) effStart = 62280;
+                
+                let effEnd = Math.max(27000, endSecs);
+                if (endSecs > 62280) effEnd = 62280;
+                
+                let diff = effEnd - effStart;
+                return diff > 0 ? diff : 0;
+            } else {
+                // Different calendar days
+                // 1. First Day
+                let firstDayOfWeek = current.getDay();
+                if (firstDayOfWeek !== 0 && firstDayOfWeek !== 6) {
+                    let startSecs = (current.getHours() * 3600) + (current.getMinutes() * 60) + current.getSeconds();
+                    let effStart = Math.max(27000, startSecs);
+                    if (startSecs > 62280) effStart = 62280;
+                    let diff = 62280 - effStart;
+                    if (diff > 0) totalSeconds += diff;
+                }
+                
+                // 2. Middle Days
+                let temp = new Date(current);
+                temp.setDate(temp.getDate() + 1);
+                let targetMidnight = new Date(target);
+                targetMidnight.setHours(0, 0, 0, 0);
+                
+                while (temp < targetMidnight) {
+                    let dayOfWeek = temp.getDay();
+                    if (dayOfWeek !== 0 && dayOfWeek !== 6) {
+                        totalSeconds += 35280;
+                    }
+                    temp.setDate(temp.getDate() + 1);
+                }
+                
+                // 3. Last Day
+                let lastDayOfWeek = target.getDay();
+                if (lastDayOfWeek !== 0 && lastDayOfWeek !== 6) {
+                    let endSecs = (target.getHours() * 3600) + (target.getMinutes() * 60) + target.getSeconds();
+                    let effEnd = Math.max(27000, endSecs);
+                    if (endSecs > 62280) effEnd = 62280;
+                    let diff = effEnd - 27000;
+                    if (diff > 0) totalSeconds += diff;
+                }
+                
+                return totalSeconds;
+            }
+        }
+
+        // SLA Utility: Calculate active SLA seconds by tracing ticket status transitions
+        function calculateTicketActiveSlaSeconds(ticketKey, criadoDate, resolvidoDate, currentStatus, changelogsIndexed) {
+            if (!criadoDate) return 0;
+            const endDate = resolvidoDate || new Date();
+            
+            const ticketHistory = changelogsIndexed 
+                ? (changelogsIndexed[String(ticketKey).trim().toLowerCase()] || [])
+                : rawChangelogs.filter(item => {
+                    const keyVal = getRowValue(item, ['Chave', 'key', 'issuekey']);
+                    return String(keyVal).trim().toLowerCase() === String(ticketKey).trim().toLowerCase();
+                  });
+
+            const statusChanges = ticketHistory
+                .filter(item => {
+                    const fieldVal = getRowValue(item, ['Campo', 'field']);
+                    return String(fieldVal).trim().toLowerCase() === 'status';
+                })
+                .map(item => {
+                    const dateVal = getRowValue(item, ['Data', 'date', 'created']);
+                    const fromVal = getRowValue(item, ['De', 'from', 'fromString']);
+                    const toVal = getRowValue(item, ['Para', 'to', 'toString']);
+                    return {
+                        date: new Date(dateVal),
+                        from: String(fromVal || '').trim(),
+                        to: String(toVal || '').trim()
+                    };
+                })
+                .sort((a, b) => a.date - b.date);
+
+            if (statusChanges.length === 0) {
+                const statusClean = String(currentStatus).toLowerCase().trim()
+                    .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                const finalStatuses = ['concluido', 'done', 'finalizado definitivamente', 'resolvido', 'fechado', 'backlog'];
+                if (finalStatuses.includes(statusClean)) {
+                    return calculateBusinessSeconds(criadoDate, endDate);
+                }
+                return calculateIntervalActiveSeconds(currentStatus, criadoDate, endDate, 0);
+            }
+
+            let activeSlaSecs = 0;
+            let currentIntervalStart = criadoDate;
+            let currentIntervalStatus = statusChanges[0].from || 'Submissão';
+
+            for (let i = 0; i < statusChanges.length; i++) {
+                const change = statusChanges[i];
+                const changeDate = change.date;
+
+                if (changeDate < currentIntervalStart) continue;
+                if (changeDate > endDate) break;
+
+                const intervalActive = calculateIntervalActiveSeconds(
+                    currentIntervalStatus,
+                    currentIntervalStart,
+                    changeDate,
+                    activeSlaSecs
+                );
+                activeSlaSecs += intervalActive;
+
+                currentIntervalStart = changeDate;
+                currentIntervalStatus = change.to;
+            }
+
+            if (currentIntervalStart < endDate) {
+                const finalIntervalActive = calculateIntervalActiveSeconds(
+                    currentIntervalStatus,
+                    currentIntervalStart,
+                    endDate,
+                    activeSlaSecs
+                );
+                activeSlaSecs += finalIntervalActive;
+            }
+
+            return activeSlaSecs;
+        }
+
+        function calculateIntervalActiveSeconds(status, start, end, accumulatedSlaBefore) {
+            const totalBusinessSecs = calculateBusinessSeconds(start, end);
+            const statusClean = String(status).toLowerCase().trim()
+                .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+            const fullyPausedStatuses = [
+                'aguardando correcao',
+                'encaminhado sustentacao',
+                'encaminhado devops',
+                'concluido paleativamente',
+                'encaminhado qualidade',
+                'encaminhado ds',
+                'finalizado definitivamente',
+                'done',
+                'concluido',
+                'resolvido',
+                'fechado',
+                'backlog'
+            ];
+
+            if (fullyPausedStatuses.includes(statusClean)) {
+                return 0;
+            }
+
+            if (statusClean === 'aguardando informacao') {
+                const allowedPause = accumulatedSlaBefore;
+                if (totalBusinessSecs <= allowedPause) {
+                    return 0;
+                } else {
+                    return totalBusinessSecs - allowedPause;
+                }
+            }
+
+            return totalBusinessSecs;
+        }
+
+        // Format duration into human readable text including seconds (Days, Hours, Minutes, Seconds)
+        function formatDurationWithSeconds(seconds) {
+            if (seconds <= 0) return "0s";
+            let days = Math.floor(seconds / 35280); // 35280 secs = 1 business day
+            let remainder = seconds % 35280;
+            let hours = Math.floor(remainder / 3600);
+            let remainder2 = remainder % 3600;
+            let minutes = Math.floor(remainder2 / 60);
+            let secs = Math.floor(remainder2 % 60);
+            
+            let parts = [];
+            if (days > 0) parts.push(`${days}d`);
+            if (hours > 0) parts.push(`${hours}h`);
+            if (minutes > 0) parts.push(`${minutes}m`);
+            parts.push(`${secs}s`);
+            return parts.join(' ');
+        }
+
         // Format duration into human readable text (Days, Hours, Minutes)
         function formatDuration(minutes) {
             if (minutes <= 0) return "0m";
@@ -4105,9 +4376,58 @@
                 }
             }
 
+            // ─── Name Unification (CSV-level fuzzy fallback) ──────────────────────────
+            // Collect every raw name from CSV (both Responsável and Colaborador columns)
+            const _allRawNames = rows.flatMap(r => [
+                getRowValue(r, ["Responsável", "Assignee", "Responsavel"]) || "",
+                getRowValue(r, ["Colaborador", "Reporter", "Creator", "Requester"]) || ""
+            ]).map(s => s.trim()).filter(Boolean);
 
+            /**
+             * Build a Map<originalName, canonicalName> by grouping similar names.
+             * Canonical = the longest name in the cluster.
+             * Uses global _tokenOverlap. THRESHOLD = 0.70
+             */
+            function buildNameCanonMap(names) {
+                const THRESHOLD = 0.70;
+                const unique = [...new Set(names.map(n => n.trim()).filter(Boolean))];
+                // Union-Find structure
+                const parent = {};
+                unique.forEach(n => parent[n] = n);
+
+                function find(x) {
+                    if (parent[x] !== x) parent[x] = find(parent[x]);
+                    return parent[x];
+                }
+                function union(a, b) {
+                    const ra = find(a), rb = find(b);
+                    if (ra === rb) return;
+                    // canonical = the longer name
+                    if (ra.length >= rb.length) parent[rb] = ra;
+                    else parent[ra] = rb;
+                }
+
+                // Compare all pairs (O(N²) but N is small — unique collaborator count)
+                for (let i = 0; i < unique.length; i++) {
+                    for (let j = i + 1; j < unique.length; j++) {
+                        if (_tokenOverlap(unique[i], unique[j]) >= THRESHOLD) {
+                            union(unique[i], unique[j]);
+                        }
+                    }
+                }
+
+                // Build final map: each name → canonical root
+                const map = new Map();
+                unique.forEach(n => map.set(n, find(n)));
+                return map;
+            }
+
+            const _nameCanonMap = buildNameCanonMap(_allRawNames);
+
+            // ─────────────────────────────────────────────────────────────────────────
 
             rawTicketsData = rows.map((row, index) => {
+
                 let criadoVal = getRowValue(row, ["Criado", "Data de Criação", "Created"]);
                 let resolvidoVal = getRowValue(row, ["Resolvido", "Data de Resolução", "Resolved"]);
                 
@@ -4191,17 +4511,54 @@
                 let isSlaMet = businessMins <= limitMins;
                 let statusSla = isSlaMet ? "Dentro do SLA" : "SLA Estourado";
                 
+                // Calculate SLA active status
+                const statusClean = String(status).toLowerCase().trim()
+                    .normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                const fullyPausedStatuses = [
+                    'aguardando correcao',
+                    'encaminhado sustentacao',
+                    'encaminhado devops',
+                    'concluido paleativamente',
+                    'encaminhado qualidade',
+                    'encaminhado ds',
+                    'finalizado definitivamente',
+                    'done',
+                    'concluido',
+                    'resolvido',
+                    'fechado',
+                    'backlog'
+                ];
+                let isSlaActive = !resolvido && !fullyPausedStatuses.includes(statusClean);
+                if (isSlaActive && statusClean === 'aguardando informacao') {
+                    // For 'aguardando informacao', it is active only if the total business time spent in this status so far exceeds the allowed pause.
+                    const dummyStart = new Date(2026, 0, 5, 9, 0, 0); // Monday morning
+                    const dummyEnd = new Date(2026, 0, 5, 9, 0, 10);
+                    const s0 = calculateTicketActiveSlaSeconds(chave, criado, dummyStart, status, changelogsIndexed);
+                    const s1 = calculateTicketActiveSlaSeconds(chave, criado, dummyEnd, status, changelogsIndexed);
+                    isSlaActive = s1 > s0;
+                }
+
+                let tempoGastoSegundos = calculateTicketActiveSlaSeconds(chave, criado, resolvido, status, changelogsIndexed);
+
                 let resumo = getRowValue(row, ["Resumo", "Summary", "Title"]) || "Sem título";
                 let responsavel = getRowValue(row, ["Responsável", "Assignee", "Responsavel"]) || "Não atribuído";
                 let resolucao = getRowValue(row, ["Resolução", "Resolution", "Resolucao"]) || "Não resolvida";
                 let colaborador = getRowValue(row, ["Colaborador", "Reporter", "Creator", "Requester"]) || "Desconhecido";
+
+                // Apply name unification — map any variant to the canonical (most complete) form
+                if (responsavel !== "Não atribuído") {
+                    responsavel = _nameCanonMap.get(responsavel.trim()) ?? responsavel;
+                }
+                if (colaborador !== "Desconhecido") {
+                    colaborador = _nameCanonMap.get(colaborador.trim()) ?? colaborador;
+                }
                 let email = getRowValue(row, ["email", "Email", "E-mail"]) || "";
                 // 1. Obter a Causa Raiz Categoria (Curta)
                 let categoryCausaRaiz = getRowValue(row, ["Causa Raiz", "Causa Raiz Final", "Root Cause"]) || "";
                 let causaRaiz = categoryCausaRaiz.trim();
                 
-                const respLower = responsavel.toLowerCase();
-                const isGestaoAtivosResp = respLower.includes("helena") || respLower.includes("nicollas") || respLower.includes("nicolas");
+                const respNormalized = responsavel.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                const isGestaoAtivosResp = respNormalized.includes("helena") || respNormalized.includes("nicollas") || respNormalized.includes("nicolas");
 
                 if (causaRaiz === "") {
                     if (isGestaoAtivosResp) {
@@ -4242,6 +4599,10 @@
                     }
                 }
 
+                if ((causaRaiz === "" || causaRaiz === "Pendente de Classificação") && isGestaoAtivosResp) {
+                    causaRaiz = "Gestão de Ativos";
+                }
+
                 // 2. Obter a descrição detalhada da causa raiz final
                 let causaRaizDetalhe = getRowValue(row, ["Causa raiz final", "Causa Raiz Detalhada"]) || "";
                 
@@ -4260,7 +4621,7 @@
                     criado: criado,
                     resolvido: resolvido,
                     tempoGastoMinutos: businessMins,
-                    tempoGastoTexto: formatDuration(businessMins),
+                    tempoGastoTexto: formatDurationWithSeconds(tempoGastoSegundos),
                     limiteMinutos: limitMins,
                     criticidade: criticidade,
                     criticidadeTexto: criticidadeRaw,
@@ -4275,6 +4636,11 @@
                     descricao: descricao,
                     departamento: departamento,
                     subproduto: subproduto.trim(),
+                    searchableText: Object.values(row).map(val => val ? String(val).toLowerCase() : "").join(" | "),
+                    tempoGastoSegundos: tempoGastoSegundos,
+                    baseTempoGastoSegundos: tempoGastoSegundos,
+                    baseCalculationTime: new Date(),
+                    isSlaActive: isSlaActive,
                     rawRow: row
                 };
             });
@@ -4338,30 +4704,257 @@
                 .replace(/'/g, '&#039;');
         }
 
+        // Helper to turn any standard Select element into a premium searchable combobox
+        function makeSelectSearchable(selectId) {
+            const select = document.getElementById(selectId);
+            if (!select) return;
+
+            // Remove existing dropdown from body if it exists to avoid orphaned elements
+            if (select._searchableDropdown && select._searchableDropdown.parentNode) {
+                select._searchableDropdown.parentNode.removeChild(select._searchableDropdown);
+            }
+
+            // Check if wrapper already exists
+            let wrapper = select.parentElement;
+            if (!wrapper || !wrapper.classList.contains('searchable-select-wrapper')) {
+                wrapper = document.createElement('div');
+                wrapper.className = 'searchable-select-wrapper';
+                
+                // Copy layout styles from select to wrapper
+                wrapper.style.display = select.style.display === 'block' ? 'block' : 'inline-block';
+                wrapper.style.width = select.style.width || 'auto';
+                wrapper.style.minWidth = select.style.minWidth || '160px';
+                if (select.id === 'modal-report-colaborador') {
+                    wrapper.style.width = '100%';
+                }
+                
+                // Hide original select
+                select.style.display = 'none';
+                
+                // Insert wrapper before select
+                select.parentNode.insertBefore(wrapper, select);
+                wrapper.appendChild(select); // move select inside wrapper
+            } else {
+                // Clean up previous event listener to avoid memory leaks
+                if (wrapper._clickOutsideHandler) {
+                    document.removeEventListener('click', wrapper._clickOutsideHandler);
+                }
+                // Clear previous custom DOM elements inside wrapper except the hidden select
+                const children = [...wrapper.children];
+                children.forEach(child => {
+                    if (child !== select) {
+                        wrapper.removeChild(child);
+                    }
+                });
+            }
+
+            // Create search text input
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = 'Digite para buscar...';
+            
+            // Copy classes and styles
+            input.className = select.className + ' searchable-select-input';
+            if (select.getAttribute('style')) {
+                input.setAttribute('style', select.getAttribute('style'));
+            }
+            input.style.width = '100%';
+            input.style.boxSizing = 'border-box';
+            input.style.paddingRight = '28px'; // arrow space
+            input.style.display = 'block';
+
+            // Sync input value function
+            const updateInputValue = () => {
+                const selectedOption = select.options[select.selectedIndex];
+                input.value = selectedOption ? selectedOption.text : '';
+            };
+            updateInputValue();
+
+            // Listen for programmatical value updates from outside
+            select.addEventListener('change', () => {
+                updateInputValue();
+            });
+
+            // Dropdown element (Appended to body to bypass overflow: hidden)
+            const dropdown = document.createElement('div');
+            dropdown.className = 'searchable-select-dropdown';
+            dropdown.style.display = 'none';
+            dropdown.style.position = 'absolute';
+            dropdown.style.zIndex = '9999';
+            document.body.appendChild(dropdown);
+            
+            // Store reference on select
+            select._searchableDropdown = dropdown;
+            
+            // Arrow indicator
+            const arrow = document.createElement('span');
+            arrow.innerHTML = '&#9662;';
+            arrow.style.position = 'absolute';
+            arrow.style.right = '12px';
+            arrow.style.top = '50%';
+            arrow.style.transform = 'translateY(-50%)';
+            arrow.style.pointerEvents = 'none';
+            arrow.style.color = 'var(--text-muted, #9ca3af)';
+            arrow.style.fontSize = '12px';
+
+            wrapper.appendChild(input);
+            wrapper.appendChild(arrow);
+
+            // Dynamic dropdown positioning function
+            const updateDropdownPosition = () => {
+                const rect = input.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+                
+                dropdown.style.width = `${rect.width}px`;
+                dropdown.style.left = `${rect.left + scrollLeft}px`;
+                
+                const dropdownHeight = Math.min(250, dropdown.scrollHeight || 250);
+                const spaceBelow = window.innerHeight - rect.bottom;
+                
+                if (spaceBelow < dropdownHeight && rect.top > dropdownHeight) {
+                    // Position above the input
+                    dropdown.style.top = `${rect.top + scrollTop - dropdownHeight - 4}px`;
+                } else {
+                    // Position below the input
+                    dropdown.style.top = `${rect.bottom + scrollTop + 4}px`;
+                }
+            };
+
+            // Render options inside custom dropdown list
+            const renderOptions = (filterText = '') => {
+                dropdown.innerHTML = '';
+                const options = [...select.options];
+                const normalizedFilter = filterText.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+                const filtered = options.filter(opt => 
+                    opt.text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+                    .includes(normalizedFilter)
+                );
+
+                if (filtered.length === 0) {
+                    const noRes = document.createElement('div');
+                    noRes.textContent = 'Nenhum resultado';
+                    noRes.style.padding = '10px 14px';
+                    noRes.style.color = 'var(--text-muted, #9ca3af)';
+                    noRes.style.fontSize = '13px';
+                    dropdown.appendChild(noRes);
+                    return;
+                }
+
+                filtered.forEach(opt => {
+                    const item = document.createElement('div');
+                    item.className = 'searchable-select-item';
+                    if (opt.selected) {
+                        item.className += ' selected';
+                    }
+                    item.textContent = opt.text;
+
+                    item.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        select.value = opt.value;
+                        updateInputValue();
+                        dropdown.style.display = 'none';
+                        
+                        // Fire change event
+                        const event = new Event('change', { bubbles: true });
+                        select.dispatchEvent(event);
+                    });
+
+                    dropdown.appendChild(item);
+                });
+                
+                // Position after rendering options to get correct scrollHeight
+                updateDropdownPosition();
+            };
+
+            // Toggle dropdown behavior
+            input.addEventListener('focus', () => {
+                // Hide any other open searchable dropdowns
+                document.querySelectorAll('.searchable-select-dropdown').forEach(d => {
+                    if (d !== dropdown) d.style.display = 'none';
+                });
+                dropdown.style.display = 'block';
+                
+                // Highlight input text so typing overrides it
+                input.select();
+                
+                // Render ALL options on focus/click so they can browse
+                renderOptions('');
+            });
+
+            // If user clicks the input, select it again and show all options
+            input.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (dropdown.style.display !== 'block') {
+                    dropdown.style.display = 'block';
+                    input.select();
+                    renderOptions('');
+                }
+            });
+
+            input.addEventListener('input', () => {
+                dropdown.style.display = 'block';
+                renderOptions(input.value);
+            });
+
+            // Close on scroll to avoid alignment mismatch
+            const scrollHandler = () => {
+                dropdown.style.display = 'none';
+            };
+            window.addEventListener('scroll', scrollHandler, { passive: true });
+
+            // Click outside handler
+            const clickOutsideHandler = (e) => {
+                if (!wrapper.contains(e.target) && e.target !== dropdown && !dropdown.contains(e.target)) {
+                    dropdown.style.display = 'none';
+                    updateInputValue();
+                }
+            };
+            document.addEventListener('click', clickOutsideHandler);
+            
+            wrapper._clickOutsideHandler = (e) => {
+                clickOutsideHandler(e);
+                window.removeEventListener('scroll', scrollHandler);
+            };
+        }
+
+        function populateSelect(idTop, idBottom, values, defaultText = "Todos") {
+            const selectTop = document.getElementById(idTop);
+            const selectBottom = document.getElementById(idBottom);
+            
+            let html = `<option value="">${defaultText}</option>`;
+            if (idTop === 'filter-status-top') {
+                html += `<option value="!= Concluído">!= Concluído</option>`;
+            }
+            html += values.map(val => `<option value="${escapeHtml(val)}">${escapeHtml(val)}</option>`).join('');
+            
+            if (selectTop) {
+                selectTop.innerHTML = html;
+                if (idTop.includes('departamento') || idTop.includes('colaborador') || idTop.includes('depto')) {
+                    makeSelectSearchable(idTop);
+                }
+            }
+            if (selectBottom) {
+                selectBottom.innerHTML = html;
+                if (idBottom.includes('departamento') || idBottom.includes('colaborador') || idBottom.includes('depto')) {
+                    makeSelectSearchable(idBottom);
+                }
+            }
+        }
+
+        function populateModalSelect(id, values, defaultText = "Todos") {
+            const select = document.getElementById(id);
+            if (select) {
+                select.innerHTML = `<option value="">${defaultText}</option>` + 
+                    values.map(val => `<option value="${escapeHtml(val)}">${escapeHtml(val)}</option>`).join('');
+                if (id.includes('departamento') || id.includes('colaborador') || id.includes('depto')) {
+                    makeSelectSearchable(id);
+                }
+            }
+        }
+
         // Populate filters with unique values for both Top and Bottom bars
         function populateFilters() {
-            function populateSelect(idTop, idBottom, values, defaultText = "Todos") {
-                const selectTop = document.getElementById(idTop);
-                const selectBottom = document.getElementById(idBottom);
-                
-                let html = `<option value="">${defaultText}</option>`;
-                if (idTop === 'filter-status-top') {
-                    html += `<option value="!= Concluído">!= Concluído</option>`;
-                }
-                html += values.map(val => `<option value="${escapeHtml(val)}">${escapeHtml(val)}</option>`).join('');
-                
-                if (selectTop) selectTop.innerHTML = html;
-                if (selectBottom) selectBottom.innerHTML = html;
-            }
-
-            function populateModalSelect(id, values, defaultText = "Todos") {
-                const select = document.getElementById(id);
-                if (select) {
-                    select.innerHTML = `<option value="">${defaultText}</option>` + 
-                        values.map(val => `<option value="${escapeHtml(val)}">${escapeHtml(val)}</option>`).join('');
-                }
-            }
-
             // Responsável
             const uniqueResps = [...new Set(rawTicketsData.map(t => t.responsavel))].sort();
             populateSelect('filter-responsavel-top', 'filter-responsavel-bottom', uniqueResps);
@@ -4377,7 +4970,7 @@
             populateModalSelect('modal-report-causa-raiz', uniqueCauses, "Todas");
 
             // Departamento
-            const uniqueDeptos = [...new Set(rawTicketsData.map(t => t.departamento).filter(d => d && d.trim() !== "Não informado" && d.trim() !== ""))].sort();
+            const uniqueDeptos = [...new Set(rawTicketsData.map(t => t.orgTeam || t.departamento || "Sem Setor").filter(d => d && d.trim() !== "Não informado" && d.trim() !== ""))].sort();
             populateSelect('filter-departamento-top', 'filter-departamento-bottom', uniqueDeptos);
             populateModalSelect('insights-filter-depto', uniqueDeptos, "Todos");
 
@@ -4697,19 +5290,65 @@
             updateInsightsDashboard();
         }
 
-        function updateInsightsDashboard() {
-            // Filter tickets for the selected insights month/preset
-            let tickets = filterTicketsByDatePreset(rawTicketsData, currentInsightsMonth);
+        let lastSelectedInsightsDepto = "";
 
+        function syncInsightsColaboradorDropdown() {
+            const deptoSelect = document.getElementById('insights-filter-depto');
+            const colabSelect = document.getElementById('insights-filter-colaborador');
+            if (!deptoSelect || !colabSelect) return;
+
+            const selectedDepto = deptoSelect.value;
+            const previousSelectedColab = colabSelect.value;
+
+            // Filter tickets by selected department
+            const filteredTickets = selectedDepto 
+                ? rawTicketsData.filter(t => (t.orgTeam || t.departamento || "Sem Setor") === selectedDepto) 
+                : rawTicketsData;
+
+            // Extract unique collaborators
+            const uniqueColabs = [...new Set(filteredTickets.map(t => t.colaborador).filter(c => c && c.trim() !== ""))].sort();
+
+            // Repopulate collaborator dropdown options
+            populateModalSelect('insights-filter-colaborador', uniqueColabs, "Todos");
+
+            // Restore selection if still valid
+            if (uniqueColabs.includes(previousSelectedColab)) {
+                colabSelect.value = previousSelectedColab;
+                const wrapper = colabSelect.parentElement;
+                if (wrapper && wrapper.classList.contains('searchable-select-wrapper')) {
+                    const input = wrapper.querySelector('.searchable-select-input');
+                    if (input) input.value = previousSelectedColab || 'Todos';
+                }
+            } else {
+                colabSelect.value = "";
+                const wrapper = colabSelect.parentElement;
+                if (wrapper && wrapper.classList.contains('searchable-select-wrapper')) {
+                    const input = wrapper.querySelector('.searchable-select-input');
+                    if (input) input.value = 'Todos';
+                }
+            }
+        }
+
+        function updateInsightsDashboard() {
             // Apply insights tab filters:
             const deptoSelect = document.getElementById('insights-filter-depto');
             const colabSelect = document.getElementById('insights-filter-colaborador');
             
             const filterDepto = deptoSelect ? deptoSelect.value : "";
+            
+            // Check if department changed to cascade the collaborator dropdown options
+            if (filterDepto !== lastSelectedInsightsDepto) {
+                lastSelectedInsightsDepto = filterDepto;
+                syncInsightsColaboradorDropdown();
+            }
+
+            // Filter tickets for the selected insights month/preset
+            let tickets = filterTicketsByDatePreset(rawTicketsData, currentInsightsMonth);
+
             const filterColab = colabSelect ? colabSelect.value : "";
             
             if (filterDepto) {
-                tickets = tickets.filter(t => t.departamento === filterDepto);
+                tickets = tickets.filter(t => (t.orgTeam || t.departamento || "Sem Setor") === filterDepto);
             }
             if (filterColab) {
                 tickets = tickets.filter(t => t.colaborador === filterColab);
@@ -5026,8 +5665,10 @@
         function syncFilters(sourceId, value) {
             let targetId = sourceId.endsWith('-top') ? sourceId.replace('-top', '-bottom') : sourceId.replace('-bottom', '-top');
             let targetEl = document.getElementById(targetId);
-            if (targetEl) {
+            if (targetEl && targetEl.value !== value) {
                 targetEl.value = value;
+                targetEl.dispatchEvent(new Event('change', { bubbles: true }));
+                targetEl.dispatchEvent(new Event('input', { bubbles: true }));
             }
             if (sourceId.startsWith('filter-date-preset')) {
                 toggleCustomDates();
@@ -5160,12 +5801,8 @@
                     if (maxDate && (!t.criado || t.criado > maxDate)) return false;
                 }
 
-                // Search query filter
-                const matchesSearch = searchQuery === "" || 
-                    t.chave.toLowerCase().includes(searchQuery) ||
-                    t.resumo.toLowerCase().includes(searchQuery) ||
-                    t.colaborador.toLowerCase().includes(searchQuery) ||
-                    t.responsavel.toLowerCase().includes(searchQuery);
+                // Search query filter: Dynamic global search on pre-computed searchableText
+                const matchesSearch = searchQuery === "" || t.searchableText.includes(searchQuery);
 
                 // Severity filter
                 const matchesCrit = filterCrit === "" || t.criticidade === filterCrit;
@@ -5193,7 +5830,7 @@
                 const matchesCausaRaiz = filterCausaRaiz === "" || t.causaRaiz === filterCausaRaiz;
 
                 // Departamento filter
-                const matchesDepto = filterDepto === "" || t.departamento === filterDepto;
+                const matchesDepto = filterDepto === "" || (t.orgTeam || t.departamento || "Sem Setor") === filterDepto;
 
                 // Subproduto filter (multiselect)
                 let matchesSubproduto = true;
@@ -5670,6 +6307,8 @@
 
             filteredTicketsData.forEach(t => {
                 const tr = document.createElement('tr');
+                tr.setAttribute('data-ticket-chave', t.chave);
+                tr.setAttribute('data-resolved', String(t.isResolved));
                 tr.addEventListener('click', () => openModal(t));
 
                 let critClass = `badge-crit-${t.criticidade.toLowerCase()}`;
@@ -5691,6 +6330,7 @@
 
         // Open modal detail view
         function openModal(ticket) {
+            currentModalTicket = ticket;
             // Garante que a aba de Detalhes inicie ativa
             switchModalTab('details');
 
@@ -5711,6 +6351,7 @@
             document.getElementById('modal-resolvido').textContent = formatBrDate(ticket.resolvido);
             document.getElementById('modal-tempo-gasto').textContent = `${ticket.tempoGastoTexto} (Prazo Recomendado: ${formatDuration(ticket.limiteMinutos)})`;
             document.getElementById('modal-causa-raiz').textContent = ticket.causaRaiz;
+            document.getElementById('modal-subproduto').textContent = ticket.subproduto || "Não informado";
             
             // Popula a descrição detalhada da Causa Raiz
             const detailEl = document.getElementById('modal-causa-raiz-detalhe');
@@ -5811,11 +6452,13 @@
         // Close Modal events
         modalClose.addEventListener('click', () => {
             detailsModal.classList.remove('active');
+            currentModalTicket = null;
         });
 
         window.addEventListener('click', (e) => {
             if (e.target === detailsModal) {
                 detailsModal.classList.remove('active');
+                currentModalTicket = null;
             }
         });
 
@@ -6053,6 +6696,93 @@
 
         // === GOOGLE SHEETS: Auto-load on page open ===
         fetchFromGoogleSheets(false);
+
+        // === REAL-TIME SLA STOPWATCH TIMER ===
+        function startRealTimeSlaTimer() {
+            setInterval(() => {
+                if (!rawTicketsData || rawTicketsData.length === 0) return;
+                
+                // Active tab check
+                const activeTabBtn = document.querySelector('.tab-btn.active');
+                const activeTab = activeTabBtn ? activeTabBtn.id.replace('tab-btn-', '') : 'graphs';
+                const isTableVisible = activeTab === 'graphs' || activeTab === 'productivity';
+
+                let updatedAny = false;
+                let stateChanged = false;
+                const now = new Date();
+                
+                // Check if currently inside business hours (Option 2)
+                const prev = new Date(now.getTime() - 1000);
+                const isCurrentlyBusinessHours = calculateBusinessSeconds(prev, now) > 0;
+
+                rawTicketsData.forEach(t => {
+                    if (!t.isResolved && t.isSlaActive) {
+                        const previousSlaMet = t.isSlaMet;
+                        
+                        // Calculate elapsed business seconds since page load/data fetch (O(1) fast date arithmetic)
+                        const elapsed = calculateBusinessSeconds(t.baseCalculationTime, now);
+                        t.tempoGastoSegundos = t.baseTempoGastoSegundos + elapsed;
+                        t.tempoGastoMinutos = Math.floor(t.tempoGastoSegundos / 60);
+                        
+                        let text = formatDurationWithSeconds(t.tempoGastoSegundos);
+                        if (!isCurrentlyBusinessHours) {
+                            text += " ⏸️ (Fora do Expediente)";
+                        }
+                        t.tempoGastoTexto = text;
+                        
+                        t.isSlaMet = t.tempoGastoMinutos <= t.limiteMinutos;
+                        t.statusSla = t.isSlaMet ? "Dentro do SLA" : "SLA Estourado";
+                        
+                        if (t.isSlaMet !== previousSlaMet) {
+                            stateChanged = true;
+                        }
+                        updatedAny = true;
+                    }
+                });
+
+                if (updatedAny) {
+                    // Update visible table rows
+                    if (isTableVisible) {
+                        const openRows = tableBody.querySelectorAll('tr[data-resolved="false"]');
+                        openRows.forEach(tr => {
+                            const key = tr.getAttribute('data-ticket-chave');
+                            const ticket = rawTicketsData.find(t => t.chave === key);
+                            if (ticket && ticket.isSlaActive) {
+                                // Update SLA Badge cell (cell index 6)
+                                const slaCell = tr.cells[6];
+                                if (slaCell) {
+                                    let slaBadgeClass = ticket.isSlaMet ? 'badge-success' : 'badge-danger';
+                                    slaCell.innerHTML = `<span class="badge ${slaBadgeClass}">${ticket.statusSla}</span>`;
+                                }
+                                
+                                // Update Tempo Gasto cell (cell index 7)
+                                const tempoCell = tr.cells[7];
+                                if (tempoCell) {
+                                    tempoCell.textContent = ticket.tempoGastoTexto;
+                                }
+                            }
+                        });
+                    }
+
+                    // Update modal if open for an unresolved active ticket
+                    if (detailsModal.classList.contains('active') && currentModalTicket && !currentModalTicket.isResolved && currentModalTicket.isSlaActive) {
+                        const modalTempo = document.getElementById('modal-tempo-gasto');
+                        if (modalTempo) {
+                            modalTempo.textContent = `${currentModalTicket.tempoGastoTexto} (Prazo Recomendado: ${formatDuration(currentModalTicket.limiteMinutos)})`;
+                        }
+                    }
+
+                    // Refresh KPIs and charts if an SLA status changed
+                    if (stateChanged) {
+                        updateKPIs();
+                        renderCharts();
+                    }
+                }
+            }, 1000);
+        }
+
+        // Start the stopwatch
+        startRealTimeSlaTimer();
 
         // === AUTO REFRESH LOGIC ===
         const chkAutoRefresh = document.getElementById('chk-auto-refresh');
@@ -6693,6 +7423,15 @@
             const dashCrit = document.getElementById('filter-criticidade-top');
             const dashResp = document.getElementById('filter-responsavel-top');
             const dashCause = document.getElementById('filter-causa-raiz-top');
+            const dashDepto = document.getElementById('filter-departamento-top');
+            const activeDepto = dashDepto ? dashDepto.value : "";
+
+            // Filter collaborator list in the report modal by dashboard selected department
+            const filteredTicketsForColab = activeDepto 
+                ? rawTicketsData.filter(t => (t.orgTeam || t.departamento || "Sem Setor") === activeDepto) 
+                : rawTicketsData;
+            const uniqueColabsForModal = [...new Set(filteredTicketsForColab.map(t => t.colaborador).filter(c => c && c.trim() !== ""))].sort();
+            populateModalSelect('modal-report-colaborador', uniqueColabsForModal, "Todos");
 
             document.getElementById('modal-report-date-preset').value = dashPreset ? dashPreset.value : 'all';
             document.getElementById('modal-report-start-date').value = dashStart ? dashStart.value : '';
@@ -6861,9 +7600,9 @@
                             input.value = '';
                         }
                         
-                        // Fire change event to sync top/bottom and trigger rendering
-                        const event = new Event('change');
-                        input.dispatchEvent(event);
+                        // Fire change and input events to sync top/bottom and trigger rendering
+                        input.dispatchEvent(new Event('change', { bubbles: true }));
+                        input.dispatchEvent(new Event('input', { bubbles: true }));
                     });
                 }
             });
@@ -6882,6 +7621,12 @@
                     // Manually hide X buttons without triggering heavy change events
                     const btn = input.parentElement.querySelector('.clear-field-btn');
                     if (btn) btn.style.display = 'none';
+                });
+                
+                // Sync any searchable select inputs
+                document.querySelectorAll('.searchable-select-wrapper select').forEach(sel => {
+                    const event = new Event('change', { bubbles: true });
+                    sel.dispatchEvent(event);
                 });
                 
                 // Reset subproducts multiselect
@@ -11047,6 +11792,10 @@ function initFacilitaQuerys() { init(); }
             organogramaData = {
                 byEmail: lookupMapByEmail,
                 byName: lookupMapByName,
+                // Flat list of all official canonical names — used for fuzzy matching
+                canonicalNames: rows
+                    .map(r => r.NOME ? String(r.NOME).trim() : '')
+                    .filter(Boolean),
                 activeCount: activeMembersCount
             };
             
@@ -11064,36 +11813,74 @@ function initFacilitaQuerys() { init(); }
             }
         }
 
+        /**
+         * Find the official canonical name from the organogram for a given input name.
+         * Priority: 1) direct lookup, 2) fuzzy match against canonical names (threshold 0.70)
+         * Returns null if no organogram is loaded or no match found.
+         */
+        function findOrgCanonicalName(name) {
+            if (!organogramaData || !organogramaData.canonicalNames || !name) return null;
+            const nameTrimmed = name.trim();
+            // 1. Direct lookup (fast path)
+            const direct = organogramaData.byName[nameTrimmed.toLowerCase()];
+            if (direct) return direct.name;
+            // 2. Fuzzy lookup against all official canonical names
+            let bestMatch = null;
+            let bestScore = 0.70; // minimum threshold
+            organogramaData.canonicalNames.forEach(canon => {
+                const score = _tokenOverlap(nameTrimmed, canon);
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestMatch = canon;
+                }
+            });
+            return bestMatch; // null if nothing found
+        }
+
         function enrichTicketsWithOrganograma() {
             if (!rawTicketsData || !organogramaData) return;
-            
+
             rawTicketsData.forEach(t => {
                 let empInfo = null;
-                
-                // 1. Map by email
+
+                // 1. Match by email (most reliable — collaborador/requester)
                 if (t.email) {
                     empInfo = organogramaData.byEmail[t.email.toLowerCase().trim()];
                 }
-                
-                // 2. Map by name
+
+                // 2. Match by name (fallback)
                 if (!empInfo && t.colaborador) {
                     empInfo = organogramaData.byName[t.colaborador.toLowerCase().trim()];
                 }
-                
+
                 if (empInfo) {
                     t.orgTeam = empInfo.centroCusto || "Sem Setor";
                     t.orgLider = empInfo.liderNome || "Sem Líder";
                     t.orgCargo = empInfo.cargo || "Sem Cargo";
+
+                    // ── Canonicalize names via organogram (source of truth) ──
+                    // colaborador: matched by email → use official name directly
+                    if (empInfo.name) {
+                        t.colaborador = empInfo.name;
+                    }
                 } else {
                     t.orgTeam = t.departamento || "Sem Setor";
                     t.orgLider = t.liderDireto || "Sem Líder";
                     t.orgCargo = "Sem Cargo";
                 }
+
+                // ── Canonicalize responsavel via fuzzy match against organogram ──
+                // (responsavel = Assignee; tickets don't carry their email)
+                const orgRespCanon = findOrgCanonicalName(t.responsavel);
+                if (orgRespCanon) {
+                    t.responsavel = orgRespCanon;
+                }
             });
-            console.log("Tickets enriched with organograma hierarchy!");
+
+            console.log("Tickets enriched with organograma hierarchy + canonical names!");
         }
 
-        let currentSectorsMonth = 'all';
+        let currentSectorsMonth = 'today';
 
         function buildSectorsMonthFilters() {
             const container = document.getElementById('sectors-month-filters');
@@ -11219,6 +12006,7 @@ function initFacilitaQuerys() { init(); }
             // Find Top Sector
             const sortedSectors = Object.entries(sectorVolume).sort((a, b) => b[1] - a[1]);
             const topSector = sortedSectors[0];
+            currentTopSectorName = topSector ? topSector[0] : null;
             const topSectorNameEl = document.getElementById('sector-kpi-top-team');
             const topSectorDescEl = document.getElementById('sector-kpi-top-team-desc');
             if (topSectorNameEl && topSectorDescEl) {
@@ -11229,11 +12017,12 @@ function initFacilitaQuerys() { init(); }
             // Find Top Leader
             const sortedLeaders = Object.entries(leaderVolume).sort((a, b) => b[1] - a[1]);
             const topLeader = sortedLeaders[0];
+            currentTopLeaderName = topLeader ? topLeader[0] : null;
             const topLeaderNameEl = document.getElementById('sector-kpi-top-leader');
             const topLeaderDescEl = document.getElementById('sector-kpi-top-leader-desc');
             if (topLeaderNameEl && topLeaderDescEl) {
                 topLeaderNameEl.textContent = topLeader ? topLeader[0] : "N/A";
-                topLeaderDescEl.innerHTML = topLeader ? `Subordinados abriram <strong>${topLeader[1]} chamados</strong>` : "N/A";
+                topLeaderDescEl.innerHTML = topLeader ? `Liderados abriram <strong>${topLeader[1]} chamados</strong>` : "N/A";
             }
 
             // Average SLA
@@ -11421,7 +12210,12 @@ function initFacilitaQuerys() { init(); }
                         onmouseout="this.style.background='transparent'"
                         style="cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 13px; transition: background 0.15s ease;">
                         <td style="padding: 12px 10px; font-weight: bold; color: white; display: flex; align-items: center; gap: 6px;">🏢 ${item.team}</td>
-                        <td style="padding: 12px 10px; color: var(--text-main);">${item.leader}</td>
+                        <td style="padding: 12px 10px; color: var(--accent-primary); font-weight: bold; transition: color 0.15s ease;" 
+                            onmouseover="this.style.color='#818cf8'; this.style.textDecoration='underline';" 
+                            onmouseout="this.style.color='var(--accent-primary)'; this.style.textDecoration='none';" 
+                            onclick="event.stopPropagation(); openLeaderDetailsDrawer(this.innerText)">
+                            ${item.leader}
+                        </td>
                         <td style="padding: 12px 10px; text-align: center; font-weight: bold; color: var(--accent-primary);">${item.count}</td>
                         <td style="padding: 12px 10px; text-align: center; font-weight: bold; color: ${slaPct >= 90 ? 'var(--success)' : (slaPct >= 80 ? 'var(--warning)' : 'var(--danger)')}">${slaPct}%</td>
                         <td style="padding: 12px 10px; text-align: center; color: var(--text-muted);">${avgHrs} h</td>
@@ -11443,9 +12237,85 @@ function initFacilitaQuerys() { init(); }
         // SECTOR DETAILS DRAWER & OPERATIONAL FAILURES RANKS
         // =====================================================================
         let activeSectorName = null;
+        let activeLeaderName = null;
+        let activeMemberFilter = 'all';
+        let currentTopSectorName = null;
+        let currentTopLeaderName = null;
 
-        function openSectorDetailsDrawer(teamName) {
+        function getPillStyle(isActive) {
+            if (isActive) {
+                return "cursor: pointer; padding: 4px 10px; font-size: 11px; border-radius: 12px; transition: all 0.15s ease; font-weight: 600; display: inline-block; white-space: nowrap; color: white; background: linear-gradient(135deg, var(--accent-primary), #4f46e5); border: 1px solid transparent;";
+            } else {
+                return "cursor: pointer; padding: 4px 10px; font-size: 11px; border-radius: 12px; transition: all 0.15s ease; display: inline-block; white-space: nowrap; color: var(--text-main); background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);";
+            }
+        }
+
+        function renderMemberPills(members, totalCount) {
+            const container = document.getElementById('drawer-members-container');
+            const listEl = document.getElementById('drawer-members-list');
+            if (!container || !listEl) return;
+
+            if (members.length === 0) {
+                container.style.display = 'none';
+                return;
+            }
+
+            container.style.display = 'block';
+
+            let html = `
+                <span class="drawer-member-pill ${activeMemberFilter === 'all' ? 'active' : ''}" 
+                      style="${getPillStyle(activeMemberFilter === 'all')}"
+                      onclick="setDrawerMemberFilter('all')"
+                      onmouseover="this.style.background='rgba(99, 102, 241, 0.15)'; this.style.borderColor='rgba(99, 102, 241, 0.4)';"
+                      onmouseout="if(!this.classList.contains('active')) { this.style.background='rgba(255, 255, 255, 0.05)'; this.style.borderColor='rgba(255, 255, 255, 0.1)'; } else { this.style.background='linear-gradient(135deg, var(--accent-primary), #4f46e5)'; this.style.borderColor='transparent'; }">
+                    Todos (${totalCount})
+                </span>
+            `;
+
+            members.forEach(m => {
+                const isActive = activeMemberFilter === m.name;
+                html += `
+                    <span class="drawer-member-pill ${isActive ? 'active' : ''}" 
+                          style="${getPillStyle(isActive)}"
+                          onclick="setDrawerMemberFilter(this.getAttribute('data-name'))"
+                          data-name="${escapeHtml(m.name)}"
+                          onmouseover="this.style.background='rgba(99, 102, 241, 0.15)'; this.style.borderColor='rgba(99, 102, 241, 0.4)';"
+                          onmouseout="if(!this.classList.contains('active')) { this.style.background='rgba(255, 255, 255, 0.05)'; this.style.borderColor='rgba(255, 255, 255, 0.1)'; } else { this.style.background='linear-gradient(135deg, var(--accent-primary), #4f46e5)'; this.style.borderColor='transparent'; }">
+                        ${escapeHtml(m.name)} (${m.count})
+                    </span>
+                `;
+            });
+
+            listEl.innerHTML = html;
+        }
+
+        function setDrawerMemberFilter(name) {
+            activeMemberFilter = name;
+
+            // Re-render the pills so the active pill gets highlighted
+            const pills = document.querySelectorAll('.drawer-member-pill');
+            pills.forEach(pill => {
+                const pillName = pill.getAttribute('data-name') || 'all';
+                const isActive = pillName === name;
+                pill.style.cssText = getPillStyle(isActive);
+                if (isActive) pill.classList.add('active');
+                else pill.classList.remove('active');
+            });
+
+            // Refresh KPIs and ticket list without resetting pills
+            if (activeSectorName) {
+                openSectorDetailsDrawer(activeSectorName, false);
+            } else if (activeLeaderName) {
+                openLeaderDetailsDrawer(activeLeaderName, false);
+            }
+        }
+
+        function openSectorDetailsDrawer(teamName, resetFilter = true) {
             activeSectorName = teamName;
+            activeLeaderName = null;
+            if (resetFilter) {
+                activeMemberFilter = 'all';
+            }
             
             const drawer = document.getElementById('sector-details-drawer');
             if (!drawer) return;
@@ -11455,11 +12325,17 @@ function initFacilitaQuerys() { init(); }
             
             // Resolve team leader
             let leaderName = "Sem Líder Mapeado";
-            const tickets = filterTicketsByDatePreset(rawTicketsData, currentSectorsMonth).filter(t => t.orgTeam === teamName);
-            if (tickets.length > 0) {
-                leaderName = `Liderado por ${tickets[0].orgLider}`;
+            const allTickets = filterTicketsByDatePreset(rawTicketsData, currentSectorsMonth).filter(t => t.orgTeam === teamName);
+            if (allTickets.length > 0) {
+                leaderName = `Liderado por ${allTickets[0].orgLider}`;
             }
             document.getElementById('drawer-sector-leader').textContent = leaderName;
+
+            // Filter tickets by member filter
+            let tickets = allTickets;
+            if (activeMemberFilter !== 'all') {
+                tickets = allTickets.filter(t => t.colaborador === activeMemberFilter);
+            }
 
             // KPIs
             const total = tickets.length;
@@ -11498,6 +12374,32 @@ function initFacilitaQuerys() { init(); }
                 causaSelect.innerHTML += `<option value="${c}">${c}</option>`;
             });
 
+            // Re-render pills if resetting
+            if (resetFilter) {
+                let subordinates = [];
+                if (organogramaData) {
+                    subordinates = Object.values(organogramaData.byName)
+                        .filter(emp => emp.centroCusto === teamName && emp.ativo)
+                        .map(emp => emp.name);
+                }
+                const ticketColabs = [...new Set(allTickets.map(t => t.colaborador).filter(Boolean))];
+                const allMembers = [...new Set([...subordinates, ...ticketColabs])].sort();
+
+                const memberCounts = {};
+                allTickets.forEach(t => {
+                    if (t.colaborador) {
+                        memberCounts[t.colaborador] = (memberCounts[t.colaborador] || 0) + 1;
+                    }
+                });
+
+                const sortedMembers = allMembers.map(name => ({
+                    name,
+                    count: memberCounts[name] || 0
+                })).filter(m => m.count > 0).sort((a, b) => b.count - a.count);
+
+                renderMemberPills(sortedMembers, allTickets.length);
+            }
+
             // Render tickets list
             renderSectorDrawerTickets();
 
@@ -11509,10 +12411,120 @@ function initFacilitaQuerys() { init(); }
             const drawer = document.getElementById('sector-details-drawer');
             if (drawer) drawer.style.right = '-550px';
             activeSectorName = null;
+            activeLeaderName = null;
+        }
+
+        function openLeaderDetailsDrawer(leaderName, resetFilter = true) {
+            activeLeaderName = leaderName;
+            activeSectorName = null;
+            if (resetFilter) {
+                activeMemberFilter = 'all';
+            }
+            
+            const drawer = document.getElementById('sector-details-drawer');
+            if (!drawer) return;
+
+            // Fill header values
+            document.getElementById('drawer-sector-name').textContent = `👑 Líder: ${leaderName}`;
+            
+            // Resolve subordinates
+            let subordinates = [];
+            if (organogramaData) {
+                subordinates = Object.values(organogramaData.byName)
+                    .filter(emp => emp.liderNome === leaderName && emp.ativo)
+                    .map(emp => emp.name);
+            }
+            const subordinatesStr = subordinates.length > 0 ? `Liderados: ${subordinates.join(', ')}` : "Sem liderados mapeados";
+            document.getElementById('drawer-sector-leader').textContent = subordinatesStr;
+
+            // Get all tickets for this leader (their own + their subordinates')
+            const allTickets = filterTicketsByDatePreset(rawTicketsData, currentSectorsMonth)
+                .filter(t => t.orgLider === leaderName || t.colaborador === leaderName);
+
+            // Filter tickets by member filter
+            let tickets = allTickets;
+            if (activeMemberFilter !== 'all') {
+                tickets = allTickets.filter(t => t.colaborador === activeMemberFilter);
+            }
+
+            // KPIs
+            const total = tickets.length;
+            const metCount = tickets.filter(t => t.isSlaMet).length;
+            const slaPct = total > 0 ? Math.round((metCount / total) * 100) : 0;
+
+            const resolvedTickets = tickets.filter(t => t.isResolved);
+            let mttrStr = "--";
+            if (resolvedTickets.length > 0) {
+                const sumMins = resolvedTickets.reduce((acc, t) => acc + (t.tempoGastoMinutos || 0), 0);
+                const avgHrs = ((sumMins / resolvedTickets.length) / 60).toFixed(1);
+                mttrStr = `${avgHrs} hrs`;
+            }
+
+            document.getElementById('drawer-sector-kpi-total').textContent = total;
+            
+            const slaEl = document.getElementById('drawer-sector-kpi-sla');
+            slaEl.textContent = `${slaPct}%`;
+            slaEl.style.color = slaPct >= 90 ? 'var(--success)' : (slaPct >= 80 ? 'var(--warning)' : 'var(--danger)');
+            
+            document.getElementById('drawer-sector-kpi-mttr').textContent = mttrStr;
+
+            // Populate local drawer filter dropdowns
+            const subprods = [...new Set(tickets.map(t => t.subproduto || "Sem Subproduto"))].sort();
+            const causas = [...new Set(tickets.map(t => t.causaRaiz || "Sem Causa"))].sort();
+
+            const subprodSelect = document.getElementById('drawer-sector-filter-subprod');
+            subprodSelect.innerHTML = '<option value="">Todos os Subprodutos</option>';
+            subprods.forEach(s => {
+                subprodSelect.innerHTML += `<option value="${s}">${s}</option>`;
+            });
+
+            const causaSelect = document.getElementById('drawer-sector-filter-causa');
+            causaSelect.innerHTML = '<option value="">Todas as Causas</option>';
+            causas.forEach(c => {
+                causaSelect.innerHTML += `<option value="${c}">${c}</option>`;
+            });
+
+            // Re-render pills if resetting
+            if (resetFilter) {
+                const ticketColabs = [...new Set(allTickets.map(t => t.colaborador).filter(Boolean))];
+                const allMembers = [...new Set([...subordinates, ...ticketColabs])].sort();
+
+                const memberCounts = {};
+                allTickets.forEach(t => {
+                    if (t.colaborador) {
+                        memberCounts[t.colaborador] = (memberCounts[t.colaborador] || 0) + 1;
+                    }
+                });
+
+                const sortedMembers = allMembers.map(name => ({
+                    name,
+                    count: memberCounts[name] || 0
+                })).filter(m => m.count > 0).sort((a, b) => b.count - a.count);
+
+                renderMemberPills(sortedMembers, allTickets.length);
+            }
+
+            // Render tickets list
+            renderSectorDrawerTickets();
+
+            // Slide in
+            drawer.style.right = '0';
+        }
+
+        function handleTopTeamCardClick() {
+            if (currentTopSectorName && currentTopSectorName !== "N/A" && currentTopSectorName !== "Sem Setor") {
+                openSectorDetailsDrawer(currentTopSectorName);
+            }
+        }
+
+        function handleTopLeaderCardClick() {
+            if (currentTopLeaderName && currentTopLeaderName !== "N/A" && currentTopLeaderName !== "Sem Líder") {
+                openLeaderDetailsDrawer(currentTopLeaderName);
+            }
         }
 
         function renderSectorDrawerTickets() {
-            if (!activeSectorName) return;
+            if (!activeSectorName && !activeLeaderName) return;
 
             const tbody = document.getElementById('drawer-sector-tickets-tbody');
             if (!tbody) return;
@@ -11520,8 +12532,18 @@ function initFacilitaQuerys() { init(); }
             const filterSub = document.getElementById('drawer-sector-filter-subprod').value;
             const filterCausa = document.getElementById('drawer-sector-filter-causa').value;
 
-            let tickets = filterTicketsByDatePreset(rawTicketsData, currentSectorsMonth)
-                .filter(t => t.orgTeam === activeSectorName);
+            let tickets = [];
+            if (activeSectorName) {
+                tickets = filterTicketsByDatePreset(rawTicketsData, currentSectorsMonth)
+                    .filter(t => t.orgTeam === activeSectorName);
+            } else if (activeLeaderName) {
+                tickets = filterTicketsByDatePreset(rawTicketsData, currentSectorsMonth)
+                    .filter(t => t.orgLider === activeLeaderName || t.colaborador === activeLeaderName);
+            }
+
+            if (activeMemberFilter !== 'all') {
+                tickets = tickets.filter(t => t.colaborador === activeMemberFilter);
+            }
 
             if (filterSub) {
                 tickets = tickets.filter(t => (t.subproduto || "Sem Subproduto") === filterSub);
@@ -11530,22 +12552,24 @@ function initFacilitaQuerys() { init(); }
                 tickets = tickets.filter(t => (t.causaRaiz || "Sem Causa") === filterCausa);
             }
 
-            tbody.innerHTML = tickets.map(t => {
-                return `
-                    <tr onclick="closeSectorDrawer(); showTicketDetails('${t.id}')"
-                        onmouseover="this.style.background='rgba(255,255,255,0.03)'"
-                        onmouseout="this.style.background='transparent'"
-                        style="cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 12px; transition: background 0.15s ease;">
-                        <td style="padding: 10px 6px; font-weight: bold; color: var(--accent-primary);">${t.chave}</td>
-                        <td style="padding: 10px 6px; color: var(--text-main); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 260px;" title="${t.resumo}">${t.resumo}</td>
-                        <td style="padding: 10px 6px; text-align: center;">
-                            <span class="label-info ${t.isSlaMet ? 'badge-green' : 'badge-red'}" style="font-size: 9px; padding: 2px 4px;">
-                                ${t.isSlaMet ? 'OK' : 'ESTOURADO'}
-                            </span>
-                        </td>
-                    </tr>
+            tbody.innerHTML = '';
+            tickets.forEach(t => {
+                const tr = document.createElement('tr');
+                tr.onmouseover = () => tr.style.background = 'rgba(255,255,255,0.04)';
+                tr.onmouseout = () => tr.style.background = 'transparent';
+                tr.style.cssText = 'cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 12px; transition: background 0.15s ease;';
+                tr.addEventListener('click', () => openModal(t));
+                tr.innerHTML = `
+                    <td style="padding: 10px 6px; font-weight: bold; color: var(--accent-primary);">${t.chave}</td>
+                    <td style="padding: 10px 6px; color: var(--text-main); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 260px;" title="${escapeHtml(t.resumo)}">${escapeHtml(t.resumo)}</td>
+                    <td style="padding: 10px 6px; text-align: center;">
+                        <span class="label-info ${t.isSlaMet ? 'badge-green' : 'badge-red'}" style="font-size: 9px; padding: 2px 4px;">
+                            ${t.isSlaMet ? 'OK' : 'ESTOURADO'}
+                        </span>
+                    </td>
                 `;
-            }).join('');
+                tbody.appendChild(tr);
+            });
 
             if (tickets.length === 0) {
                 tbody.innerHTML = `
@@ -11660,6 +12684,12 @@ function initFacilitaQuerys() { init(); }
                     <p id="drawer-sector-leader" style="font-size: 12px; color: var(--accent-primary); font-weight: 600; margin: 4px 0 0 0;"></p>
                 </div>
                 <button onclick="closeSectorDrawer()" style="background: none; border: none; color: var(--text-muted); font-size: 28px; cursor: pointer; line-height: 1; padding: 0 4px;">&times;</button>
+            </div>
+            
+            <!-- Clickable Collaborator Pills List -->
+            <div id="drawer-members-container" style="margin-top: 14px; display: none;">
+                <span style="font-size: 10px; color: var(--text-muted); font-weight: bold; text-transform: uppercase; display: block; margin-bottom: 8px; letter-spacing: 0.5px;">👥 Integrantes / Colaboradores:</span>
+                <div id="drawer-members-list" style="display: flex; flex-wrap: wrap; gap: 6px; max-height: 100px; overflow-y: auto; padding-right: 4px;"></div>
             </div>
             
             <!-- Sector Drawer KPIs -->
