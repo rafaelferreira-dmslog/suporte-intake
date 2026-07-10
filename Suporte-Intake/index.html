@@ -3478,6 +3478,7 @@
                     <select id="modal-report-date-preset" class="filter-input" style="width: 100%; box-sizing: border-box; margin-top: 6px; padding: 8px;">
                         <option value="all">Todos os Chamados</option>
                         <option value="today">Hoje</option>
+                        <option value="week">Esta Semana</option>
                         <option value="yesterday">Ontem</option>
                         <option value="7days">Últimos 7 dias</option>
                         <option value="30days">Últimos 30 dias</option>
@@ -6855,6 +6856,14 @@
                 maxDate = new Date();
                 maxDate.setDate(maxDate.getDate() - 1);
                 maxDate.setHours(23, 59, 59, 999);
+            } else if (presetVal === 'week') {
+                minDate = new Date();
+                const day = minDate.getDay();
+                const diff = minDate.getDate() - day + (day === 0 ? -6 : 1); // Monday
+                minDate.setDate(diff);
+                minDate.setHours(0, 0, 0, 0);
+                maxDate = new Date();
+                maxDate.setHours(23, 59, 59, 999);
             } else if (presetVal === '7days') {
                 minDate = new Date();
                 minDate.setDate(minDate.getDate() - 7);
@@ -7490,7 +7499,7 @@
             btnGenerateReportPdf.addEventListener('click', () => {
                 const presetEl = document.getElementById('modal-report-date-preset');
                 const presetVal = presetEl ? presetEl.value : 'all';
-                const presetText = presetEl ? presetEl.options[presetEl.selectedIndex].text : "Todo o Histórico";
+                const presetText = presetEl ? (presetEl.options[presetEl.selectedIndex]?.text ?? "Todo o Histórico") : "Todo o Histórico";
                 
                 const options = {
                     datePreset: presetVal,
@@ -11893,7 +11902,7 @@ function initFacilitaQuerys() { init(); }
                 if (t.criado) {
                     const monthKey = t.criado.getMonth();
                     const yearKey = t.criado.getFullYear();
-                    const key = `${yearKey}-\s${monthKey}`.replace('\\s', '');
+                    const key = `${yearKey}-${monthKey}`;
                     if (!monthsMap[key]) {
                         monthsMap[key] = {
                             month: monthKey,
