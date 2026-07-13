@@ -60740,6 +60740,8 @@ SI-7675,2026-07-13T13:02:14.560-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7675,2026-07-13T13:02:14.560-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7675,2026-07-13T13:02:14.560-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7675,2026-07-13T13:02:14.560-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7675,2026-07-13T15:34:34.698-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7675,2026-07-13T15:34:34.698-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
 SI-7684,2026-07-13T12:27:42.434-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7684,2026-07-13T12:27:45.201-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7684,2026-07-13T12:27:47.780-0300,Ricardo Barbosa Machado,status,Em Atendimento,Encaminhado DS
@@ -60882,6 +60884,7 @@ SI-7697,2026-07-13T13:12:51.483-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7697,2026-07-13T13:12:51.483-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
 SI-7705,2026-07-13T14:21:14.341-0300,Bruno Silva,resolution,,Done
 SI-7705,2026-07-13T14:21:14.341-0300,Bruno Silva,status,Submissão,Done
+SI-7705,2026-07-13T15:34:44.351-0300,Ricardo Barbosa Machado,assignee,,Eduardo Felipe de Lima Rebello
 SI-7704,2026-07-13T14:20:21.989-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7704,2026-07-13T14:20:24.632-0300,Bruno Silva,resolution,,Done
 SI-7704,2026-07-13T14:20:24.632-0300,Bruno Silva,status,Submissão,Done
@@ -60928,7 +60931,15 @@ SI-7699,2026-07-13T13:02:31.210-0300,Sistema,Resolução do chamado,,"Identifica
 SI-7699,2026-07-13T13:02:31.210-0300,Sistema,Causa raiz potencial,,Inconsistência nos parâmetros lógicos do gatilho (trigger) automatizado ou descompasso no cruzamento de dados cadastrais necessários para o lançamento da taxa.
 SI-7699,2026-07-13T13:02:31.210-0300,Sistema,Causa raiz final,,A ausência da taxa de desconsolidação ocorreu devido a um comportamento não esperado no mecanismo automatizado que realiza o lançamento das cobranças.
 SI-7699,2026-07-13T13:02:31.210-0300,Sistema,Justificativa Causa Raiz final,,"Por conta de uma necessidade de ajuste na validação dos critérios do processo, o sistema não disparou o comando correto para incluir essa linha de forma automática na pasta de trabalho."
+SI-7712,2026-07-13T15:17:15.121-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7712,2026-07-13T15:17:18.001-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7712,2026-07-13T15:17:21.257-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7712,2026-07-13T15:17:21.257-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
 SI-7711,2026-07-13T13:43:22.930-0300,Sistema,Link,,This work item is blocked by GA-1221
+SI-7710,2026-07-13T15:01:17.422-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7710,2026-07-13T15:01:21.501-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7710,2026-07-13T15:01:26.616-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7710,2026-07-13T15:01:26.616-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
 SI-7709,2026-07-13T13:40:47.892-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7709,2026-07-13T13:40:50.256-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7709,2026-07-13T13:40:53.254-0300,Ricardo Barbosa Machado,status,Em Atendimento,Encaminhado DS
@@ -60939,5 +60950,13 @@ SI-7708,2026-07-13T14:23:40.294-0300,Bruno Silva,resolution,,Done
 SI-7708,2026-07-13T14:23:40.294-0300,Bruno Silva,status,Submissão,Done
 SI-7707,2026-07-13T14:21:32.331-0300,Bruno Silva,resolution,,Done
 SI-7707,2026-07-13T14:21:32.331-0300,Bruno Silva,status,Submissão,Done
+SI-7707,2026-07-13T15:34:50.338-0300,Ricardo Barbosa Machado,assignee,,Eduardo Felipe de Lima Rebello
 SI-7706,2026-07-13T14:21:20.805-0300,Bruno Silva,resolution,,Done
 SI-7706,2026-07-13T14:21:20.805-0300,Bruno Silva,status,Submissão,Done
+SI-7706,2026-07-13T15:34:47.057-0300,Ricardo Barbosa Machado,assignee,,Eduardo Felipe de Lima Rebello
+SI-7715,2026-07-13T15:33:46.605-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7715,2026-07-13T15:33:49.874-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7715,2026-07-13T15:33:52.039-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7715,2026-07-13T15:33:52.039-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
+SI-7717,2026-07-13T15:05:46.763-0300,Sistema,Link,,This work item is blocked by GA-1224
+SI-7717,2026-07-13T15:24:16.645-0300,Nícollas Resende,assignee,,Nícollas Resende
