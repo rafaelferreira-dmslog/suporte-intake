@@ -60251,6 +60251,7 @@ SI-7647,2026-07-10T15:20:07.000-0300,Rafael Ferreira,status,Submissão,Done
 SI-7647,2026-07-10T15:20:07.539-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7646,2026-07-13T09:04:03.770-0300,Bruno Silva,resolution,,Done
 SI-7646,2026-07-13T09:04:03.770-0300,Bruno Silva,status,Submissão,Done
+SI-7646,2026-07-13T10:15:37.300-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7645,2026-07-10T10:48:45.212-0300,Rafael Ferreira,assignee,,Helena Almeida
 SI-7645,2026-07-10T10:48:48.009-0300,Rafael Ferreira,resolution,,Done
 SI-7645,2026-07-10T10:48:48.009-0300,Rafael Ferreira,status,Submissão,Done
@@ -60492,6 +60493,9 @@ SI-7660,2026-07-11T00:58:05.534-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7660,2026-07-11T00:58:05.534-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7660,2026-07-11T00:58:05.534-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7660,2026-07-11T00:58:05.534-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7665,2026-07-13T10:06:19.492-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7665,2026-07-13T10:06:19.492-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7665,2026-07-13T10:06:20.677-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7663,2026-07-10T15:16:11.567-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7663,2026-07-10T15:16:16.739-0300,Rafael Ferreira,resolution,,Done
 SI-7663,2026-07-10T15:16:16.739-0300,Rafael Ferreira,status,Submissão,Done
@@ -60544,7 +60548,26 @@ SI-7669,2026-07-11T00:58:08.369-0300,Sistema,Causa raiz potencial,,"Falha de pro
 SI-7669,2026-07-11T00:58:08.369-0300,Sistema,Causa raiz final,,"problema ocorreu devido a uma interrupção no fluxo de comunicação interna do sistema durante o procedimento de inserção da Ordem no agenciamento (Booking). Para que esse vínculo aconteça de maneira correta, o sistema precisa realizar duas etapas essenciais: registrar a Ordem e associar os documentos operacionais a ela. Ao iniciar o processo, o sistema ativa uma trava de segurança temporária no documento para garantir que nenhuma outra modificação simultânea cause conflitos ou duplicidade de dados. No entanto, o sistema sofreu uma interrupção antes de concluir o registro da Ordem. Como a Ordem não foi inserida de fato, o documento acabou permanecendo retido sob essa trava de segurança preventiva, impossibilitando novas edições por parte do usuário. A correção estrutural para otimizar esse fluxo e impedir novos travamentos durante a inserção está sendo realizada através do INTAKE-559."
 SI-7669,2026-07-11T00:58:08.369-0300,Sistema,Justificativa Causa Raiz final,,"A inconsistência reside na falta de tratamento de exceção adequado na rotina de persistência que vincula a Ordem ao Booking. O sistema executa o lock do status do documento correlato previamente à conclusão da transação da Ordem. Ocorrendo uma falha ou interrupção no processamento do registro da Ordem, a operação é abortada, mas o sistema não realiza o rollback do status de bloqueio do documento. Consequentemente, o documento permanece travado no banco de dados sem uma Ordem válida associada. O plano de ação estruturado no INTAKE-559 irá refatorar essa regra de negócio para unificar as operações em um bloco transacional atômico, garantindo a liberação automática do documento em caso de insucesso na inserção da Ordem."
 SI-7682,2026-07-10T18:26:21.907-0300,Sistema,Link,,This work item is blocked by GA-1216
+SI-7682,2026-07-13T10:05:03.689-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7682,2026-07-13T10:05:03.689-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7682,2026-07-13T10:05:04.975-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7685,2026-07-13T09:36:35.662-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7685,2026-07-13T09:36:38.734-0300,Bruno Silva,resolution,,Done
 SI-7685,2026-07-13T09:36:38.734-0300,Bruno Silva,status,Submissão,Done
+SI-7690,2026-07-13T10:10:38.085-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7690,2026-07-13T10:10:40.982-0300,Bruno Silva,resolution,,Done
+SI-7690,2026-07-13T10:10:40.982-0300,Bruno Silva,status,Submissão,Done
+SI-7689,2026-07-13T10:10:48.821-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7689,2026-07-13T10:10:51.141-0300,Bruno Silva,resolution,,Done
+SI-7689,2026-07-13T10:10:51.141-0300,Bruno Silva,status,Submissão,Done
+SI-7688,2026-07-13T10:04:51.304-0300,Bruno Silva,assignee,,Nícollas Resende
+SI-7688,2026-07-13T10:04:58.869-0300,Bruno Silva,resolution,,Done
+SI-7688,2026-07-13T10:04:58.869-0300,Bruno Silva,status,Submissão,Done
 SI-7687,2026-07-13T08:41:23.878-0300,Sistema,Link,,This work item is blocked by GA-1217
+SI-7687,2026-07-13T10:04:48.784-0300,Bruno Silva,assignee,,Nícollas Resende
+SI-7687,2026-07-13T10:04:56.603-0300,Bruno Silva,resolution,,Done
+SI-7687,2026-07-13T10:04:56.603-0300,Bruno Silva,status,Submissão,Done
+SI-7686,2026-07-13T09:45:46.124-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7686,2026-07-13T09:45:49.937-0300,Bruno Silva,resolution,,Done
+SI-7686,2026-07-13T09:45:49.937-0300,Bruno Silva,status,Submissão,Done
+SI-7691,2026-07-13T10:04:24.358-0300,Sistema,Link,,This work item is blocked by GA-1218
