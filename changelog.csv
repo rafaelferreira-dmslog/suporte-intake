@@ -57619,6 +57619,48 @@ SI-7457,2026-07-06T19:02:31.373-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7457,2026-07-06T19:02:31.373-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7457,2026-07-06T19:02:31.373-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7457,2026-07-06T19:02:31.373-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7457,2026-07-14T17:19:51.910-0300,Ricardo Barbosa Machado,description,,"📘 CHECKLIST PADRÃO DE TRIAGEM (DMS)
+
+1️⃣ Identificação do Chamado Módulo: Operacional (Booking Aéreo / Charges) Tipo/Classificação: Incidente Ambiente: Produção Título Sugerido: ""Exceção Sistêmica: Desaparecimento de valores de Air Freight e desmarcação da flag Used no Carrier Charge""
+
+2️⃣ Entendimento do Problema Passo a Passo:
+
+# Preenchimento regular dos dados de charge no booking aéreo (plan, vendor, total freight no air freight e carrier charge).
+# MAWB (Master doméstico) gerado com sucesso consumindo as informações inseridas previamente.
+# Acesso posterior à aba de charges do booking (ID 48878). Comportamento Esperado vs. Atual: O comportamento esperado é que as charges migradas permaneçam marcadas como ""Used"" e com os dados mantidos após a geração do documento. O comportamento atual é o apagamento sistêmico dos valores preenchidos (plan, vendor e total freight no air freight sumiram) e a desmarcação indevida do campo ""Used"" nas charges de carrier. Evidências:
+
+* Print do MAWB aprovado contendo os valores que havíamos lançado.
+* Link do booking: [https://operational.dmslog.com/booking/air/48878/|https://operational.dmslog.com/booking/air/48878/]
+
+3️⃣ Análise Técnica Inicial Histórico/Logs: Consultas realizadas no banco demonstraram que houve uma modificação nos registros em data posterior à criação do Master, mas a aplicação não registrou o histórico de qual usuário realizou a alteração. As seguintes queries foram executadas para validação:
+
+* Para avaliar alteração nas charges: {{SELECT * FROM booking_airfreight WHERE booking_id = 48878;}} {{SELECT * FROM order_carriercharge WHERE object_id = 48878;}}
+* Para avaliar histórico de update da cotação: {{SELECT * FROM public.order_quoteupdatehistory WHERE order_id IN ('162446', '163675', '163894');}} Parametrização/Perfil: A interface (front-end) bloqueia a remoção manual do valor do freight, impossibilitando que um usuário tenha limpado o campo manualmente por engano. Reprodutibilidade: Ocorrência reportada no Booking 48878.
+
+4️⃣ Avaliação de Impacto Abrangência: Um processo travado (Booking 48878). Criticidade: Alta Justificativa da criticidade: A operação (usuária Renata) precisa fechar o processo urgentemente e está sistemicamente impedida devido à ausência dos valores e quebra do fluxo. Workaround: Não aplicado. A Base de Conhecimento ""Apoio ao sup"" sugere como ação paliativa solicitar ao time de DS a alteração do campo ""used"" de falso para verdadeiro na tabela {{booking_airfreight}}, porém há dados adicionais excluídos que requerem análise e restabelecimento.
+
+5️⃣ Tentativas de Resolução Ações realizadas pelo Service Desk: Investigação aprofundada via queries (descritas no item 3) para identificar a procedência do _update_. Hipóteses já descartadas:
+
+* Falha operacional (procedimento executado incorretamente pelo usuário): descartada pois a tela não permite a exclusão manual do freight.
+* Ação indevida via rotina de ""Update Quote"": descartada. Verificou-se que todas as ordens possuem planos iguais e a query comprovou que o último _update quote_ antecede a data de criação do Master.
+* Atualização via itens: descartada, visto que a query validou que a última atualização dos itens ocorreu de fato após a emissão do documento.
+
+6️⃣ Causa Raiz Potencial (hipótese N1) Comportamento inesperado da aplicação (possível _bug_ ou rotina em _background_) que executou uma exclusão lógica ou ""reset"" nas tabelas {{booking_airfreight}} e {{order_carriercharge}}, desmarcando as flags e apagando os valores de amarração após a geração do Master, sem gerar _trace_ de usuário logado na ação.
+
+7️⃣ Justificativa Técnica para Escalonamento Por que o N1 não consegue resolver: Limitação de acesso aos logs de depuração profundos do sistema para rastrear a origem da instrução que modificou as tabelas sem autor, além de não possuir alçada para restaurar todos os dados via banco (além da flag 'used') garantindo a integridade do processo financeiro. O que se espera do próximo time: Análise dos campos de _carrier charge_ e _origin charge_ no booking em questão para descobrir a causa do sumiço dos valores e da desmarcação. Auxílio na restauração/ajuste dos dados para que a usuária possa dar andamento e fechar o processo. Nível sugerido: Sustentação / N2
+
+📝 DESCRIÇÃO OTIMIZADA (PARA O CHAMADO) O presente chamado trata de um incidente de erro de processamento bloqueante no Booking Aéreo 48878 ([https://operational.dmslog.com/booking/air/48878/|https://operational.dmslog.com/booking/air/48878/]). A operação realizou o preenchimento correto das charges (plan, vendor e total freight) e gerou o MAWB doméstico com sucesso, com os valores refletidos adequadamente (conforme print anexo). Contudo, ao retornar ao processo, os valores haviam sumido do sistema e o campo ""used"" do _carrier charge_ foi desmarcado sozinho.
+
+Durante o _troubleshooting_, realizamos as seguintes consultas:
+
+# {{SELECT * FROM public.order_quoteupdatehistory WHERE order_id IN ('162446', '163675', '163894');}}
+# {{SELECT * FROM booking_airfreight WHERE booking_id = 48878;}}
+# {{SELECT * FROM order_carriercharge WHERE object_id = 48878;}}
+
+Com base nos resultados, descartamos a hipótese de falha operacional, pois (a) a tela bloqueia a exclusão manual do _freight_, (b) os planos nas _quotes_ são idênticos e o último _update quote_ é anterior à geração do documento, e (c) há o registro de uma alteração posterior ao Master nas tabelas mencionadas, mas sem log de usuário atrelado à ação. Escalonamos para a Sustentação analisar a origem desse comportamento sistêmico e auxiliar no restabelecimento dos dados para destravamento e fechamento urgente do processo por parte da operação."
+SI-7457,2026-07-14T17:19:58.696-0300,Ricardo Barbosa Machado,Encaminhado para:,,Sustentação
+SI-7457,2026-07-14T17:20:02.591-0300,Sistema,Link,,This work item is blocked by SUS-269
+SI-7457,2026-07-14T17:20:05.667-0300,Ricardo Barbosa Machado,Encaminhado para:,Sustentação,
 SI-7456,2026-07-06T09:37:37.078-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7456,2026-07-06T09:37:40.939-0300,Bruno Silva,resolution,,Done
 SI-7456,2026-07-06T09:37:40.939-0300,Bruno Silva,status,Submissão,Done
@@ -60980,6 +61022,9 @@ SI-7712,2026-07-13T18:58:54.520-0300,Sistema,Causa raiz potencial,,Em atendiment
 SI-7712,2026-07-13T18:58:54.520-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7712,2026-07-13T18:58:54.520-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7711,2026-07-13T13:43:22.930-0300,Sistema,Link,,This work item is blocked by GA-1221
+SI-7711,2026-07-14T17:34:06.921-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7711,2026-07-14T17:34:09.567-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7711,2026-07-14T17:34:09.567-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7710,2026-07-13T15:01:17.422-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7710,2026-07-13T15:01:21.501-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7710,2026-07-13T15:01:26.616-0300,Ricardo Barbosa Machado,resolution,,Done
@@ -61191,6 +61236,8 @@ SI-7727,2026-07-13T18:59:03.764-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7727,2026-07-13T18:59:03.764-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7727,2026-07-13T18:59:03.764-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7727,2026-07-13T18:59:03.764-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7726,2026-07-14T17:39:28.218-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7726,2026-07-14T17:39:28.218-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7725,2026-07-13T17:31:12.109-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7725,2026-07-13T17:31:14.548-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7725,2026-07-13T17:31:16.308-0300,Ricardo Barbosa Machado,status,Em Atendimento,Encaminhado DS
@@ -61205,11 +61252,15 @@ SI-7725,2026-07-13T18:59:03.109-0300,Sistema,Causa raiz potencial,,Em atendiment
 SI-7725,2026-07-13T18:59:03.109-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7725,2026-07-13T18:59:03.109-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7731,2026-07-13T18:33:30.411-0300,Sistema,Link,,This work item is blocked by GA-1228
+SI-7731,2026-07-14T17:39:36.406-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7731,2026-07-14T17:39:36.406-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7732,2026-07-14T09:46:48.787-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7732,2026-07-14T09:46:51.506-0300,Bruno Silva,resolution,,Done
 SI-7732,2026-07-14T09:46:51.506-0300,Bruno Silva,status,Submissão,Done
 SI-7733,2026-07-14T06:55:57.032-0300,Sistema,Link,,This work item is blocked by GA-1229
 SI-7733,2026-07-14T10:14:12.186-0300,Nícollas Resende,assignee,,Nícollas Resende
+SI-7733,2026-07-14T17:39:38.868-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7733,2026-07-14T17:39:38.868-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7738,2026-07-14T11:17:35.427-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7738,2026-07-14T11:17:38.259-0300,Bruno Silva,resolution,,Done
 SI-7738,2026-07-14T11:17:38.259-0300,Bruno Silva,status,Submissão,Done
@@ -61223,8 +61274,12 @@ SI-7735,2026-07-14T11:15:55.852-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7735,2026-07-14T11:15:58.913-0300,Bruno Silva,resolution,,Done
 SI-7735,2026-07-14T11:15:58.913-0300,Bruno Silva,status,Submissão,Done
 SI-7734,2026-07-14T08:29:35.315-0300,Sistema,Link,,This work item is blocked by GA-1230
+SI-7734,2026-07-14T17:39:42.549-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7734,2026-07-14T17:39:42.549-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7740,2026-07-14T09:38:26.966-0300,Sistema,Link,,This work item is blocked by GA-1231
 SI-7740,2026-07-14T11:47:31.780-0300,Bruno Silva,assignee,,Eduardo Felipe de Lima Rebello
+SI-7740,2026-07-14T17:39:46.594-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7740,2026-07-14T17:39:46.594-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7739,2026-07-14T11:41:11.590-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7739,2026-07-14T11:41:13.796-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7745,2026-07-14T12:17:19.157-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
@@ -61251,20 +61306,53 @@ SI-7746,2026-07-14T12:01:38.162-0300,Eduardo Felipe de Lima Rebello,resolution,,
 SI-7746,2026-07-14T12:01:38.162-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7746,2026-07-14T12:01:39.514-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7751,2026-07-14T12:30:38.776-0300,Sistema,Link,,This work item is blocked by GA-1235
+SI-7751,2026-07-14T17:25:14.255-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7751,2026-07-14T17:25:16.981-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7751,2026-07-14T17:25:16.981-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7750,2026-07-14T12:30:38.093-0300,Sistema,Link,,This work item is blocked by GA-1234
 SI-7750,2026-07-14T15:11:21.169-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7750,2026-07-14T15:11:26.729-0300,Nícollas Resende,resolution,,Done
 SI-7750,2026-07-14T15:11:26.729-0300,Nícollas Resende,status,Submissão,Done
 SI-7749,2026-07-14T12:04:32.611-0300,Sistema,Link,,This work item is blocked by GA-1233
+SI-7749,2026-07-14T17:39:50.874-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7749,2026-07-14T17:39:50.874-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7748,2026-07-14T16:34:26.400-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7748,2026-07-14T16:34:28.658-0300,Nícollas Resende,resolution,,Done
 SI-7748,2026-07-14T16:34:28.658-0300,Nícollas Resende,status,Submissão,Done
 SI-7755,2026-07-14T14:33:20.861-0300,Sistema,Link,,This work item is blocked by GA-1237
 SI-7755,2026-07-14T15:36:14.408-0300,Nícollas Resende,assignee,,Nícollas Resende
+SI-7755,2026-07-14T17:40:08.942-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7755,2026-07-14T17:40:08.942-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7754,2026-07-14T14:06:27.272-0300,Sistema,Link,,This work item is blocked by GA-1236
+SI-7754,2026-07-14T17:40:03.990-0300,Ricardo Barbosa Machado,status,Submissão,Finalizado Definitivamente
+SI-7754,2026-07-14T17:40:06.536-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7754,2026-07-14T17:40:06.536-0300,Ricardo Barbosa Machado,status,Finalizado Definitivamente,Done
+SI-7753,2026-07-14T17:39:55.214-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7753,2026-07-14T17:39:55.214-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7752,2026-07-14T14:14:25.304-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7752,2026-07-14T14:14:28.051-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7752,2026-07-14T14:14:28.051-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7762,2026-07-14T15:26:20.928-0300,Sistema,Link,,This work item is blocked by GA-1242
+SI-7761,2026-07-14T17:39:06.392-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7761,2026-07-14T17:39:08.706-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7761,2026-07-14T17:39:08.706-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7760,2026-07-14T17:24:41.393-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7760,2026-07-14T17:24:44.302-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7760,2026-07-14T17:24:46.218-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7760,2026-07-14T17:24:46.218-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
+SI-7759,2026-07-14T17:40:20.088-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7759,2026-07-14T17:40:20.088-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7758,2026-07-14T15:04:37.308-0300,Sistema,Link,,This work item is blocked by GA-1241
+SI-7758,2026-07-14T17:40:16.920-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7758,2026-07-14T17:40:16.920-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7757,2026-07-14T17:40:13.333-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7757,2026-07-14T17:40:13.333-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7756,2026-07-14T17:40:11.188-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7756,2026-07-14T17:40:11.188-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7764,2026-07-14T17:33:26.670-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7764,2026-07-14T17:33:31.055-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7764,2026-07-14T17:33:31.055-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7763,2026-07-14T16:14:22.107-0300,Sistema,Link,,This work item is blocked by GA-1243
+SI-7766,2026-07-14T17:27:29.172-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7766,2026-07-14T17:27:31.343-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7766,2026-07-14T17:27:31.343-0300,Ricardo Barbosa Machado,status,Submissão,Done
