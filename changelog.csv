@@ -61536,6 +61536,14 @@ SI-7754,2026-07-14T17:40:06.536-0300,Ricardo Barbosa Machado,status,Finalizado D
 SI-7753,2026-07-14T17:39:55.214-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7753,2026-07-14T17:39:55.214-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7753,2026-07-15T12:17:39.290-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7753,2026-07-15T13:05:14.401-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-7753,2026-07-15T13:05:14.401-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7753,2026-07-15T13:05:14.401-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-7753,2026-07-15T13:05:14.401-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7753,2026-07-15T13:05:14.401-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7753,2026-07-15T13:05:14.401-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7753,2026-07-15T13:05:14.401-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7753,2026-07-15T13:05:14.401-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7752,2026-07-14T14:14:25.304-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7752,2026-07-14T14:14:28.051-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7752,2026-07-14T14:14:28.051-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -61590,6 +61598,14 @@ SI-7757,2026-07-14T17:40:13.333-0300,Ricardo Barbosa Machado,status,Submissão,D
 SI-7756,2026-07-14T17:40:11.188-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7756,2026-07-14T17:40:11.188-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7756,2026-07-15T12:09:37.939-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7756,2026-07-15T13:05:15.714-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7756,2026-07-15T13:05:15.714-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7756,2026-07-15T13:05:15.714-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7756,2026-07-15T13:05:15.714-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7756,2026-07-15T13:05:15.714-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7756,2026-07-15T13:05:15.714-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7756,2026-07-15T13:05:15.714-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7756,2026-07-15T13:05:15.714-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7764,2026-07-14T17:33:26.670-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7764,2026-07-14T17:33:31.055-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7764,2026-07-14T17:33:31.055-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -61605,6 +61621,14 @@ SI-7763,2026-07-14T16:14:22.107-0300,Sistema,Link,,This work item is blocked by 
 SI-7770,2026-07-15T09:44:03.685-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7770,2026-07-15T09:44:06.445-0300,Bruno Silva,resolution,,Done
 SI-7770,2026-07-15T09:44:06.445-0300,Bruno Silva,status,Submissão,Done
+SI-7770,2026-07-15T13:05:19.051-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7770,2026-07-15T13:05:19.051-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7770,2026-07-15T13:05:19.051-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7770,2026-07-15T13:05:19.051-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-7770,2026-07-15T13:05:19.051-0300,Sistema,Resolução do chamado,,Identificado um ponto de atenção na criação de propostas comerciais em duplicidade após procedimento de clonagem. Aguardando o alinhamento com a liderança para obter a validação necessária.
+SI-7770,2026-07-15T13:05:19.051-0300,Sistema,Causa raiz potencial,,"Instabilidade na transação de persistência durante a clonagem de propostas comerciais, resultando em concorrência de requisições de gravação e inserção de registros nulos no banco de dados."
+SI-7770,2026-07-15T13:05:19.051-0300,Sistema,Causa raiz final,,"Identificou-se que, ao realizar a ação de clonar uma proposta comercial, ocorreu um comportamento não esperado no sistema que gerou três propostas duplicadas. Uma destas propostas não recebeu a numeração automática de identificação devido a uma interrupção na gravação dos dados."
+SI-7770,2026-07-15T13:05:19.051-0300,Sistema,Justificativa Causa Raiz final,,A duplicidade e a ausência do número de identificação ocorreram devido a uma falha de concorrência ou timeout na execução da API de clonagem na tabela de propostas. A exclusão manual das linhas duplicadas e órfãs mitigou o erro pontual.
 SI-7766,2026-07-14T17:27:29.172-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7766,2026-07-14T17:27:31.343-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7766,2026-07-14T17:27:31.343-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -61619,19 +61643,56 @@ SI-7766,2026-07-14T19:03:23.497-0300,Sistema,Justificativa Causa Raiz final,,Em 
 SI-7772,2026-07-15T09:28:48.721-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7772,2026-07-15T09:28:52.368-0300,Bruno Silva,resolution,,Done
 SI-7772,2026-07-15T09:28:52.368-0300,Bruno Silva,status,Submissão,Done
+SI-7772,2026-07-15T13:05:19.928-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7772,2026-07-15T13:05:19.928-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7772,2026-07-15T13:05:19.928-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7772,2026-07-15T13:05:19.928-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7772,2026-07-15T13:05:19.928-0300,Sistema,Resolução do chamado,,Bom dia! favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7772,2026-07-15T13:05:19.928-0300,Sistema,Causa raiz potencial,,Bom dia! favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7772,2026-07-15T13:05:19.928-0300,Sistema,Causa raiz final,,Bom dia! favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7772,2026-07-15T13:05:19.928-0300,Sistema,Justificativa Causa Raiz final,,Bom dia! favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7771,2026-07-15T13:41:51.966-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7771,2026-07-15T13:41:51.966-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7771,2026-07-15T13:41:53.998-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7773,2026-07-15T09:27:41.502-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7773,2026-07-15T09:27:44.159-0300,Bruno Silva,resolution,,Done
 SI-7773,2026-07-15T09:27:44.159-0300,Bruno Silva,status,Submissão,Done
+SI-7773,2026-07-15T13:05:20.687-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7773,2026-07-15T13:05:20.687-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7773,2026-07-15T13:05:20.687-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7773,2026-07-15T13:05:20.687-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7773,2026-07-15T13:05:20.687-0300,Sistema,Resolução do chamado,,Bom dia! favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7773,2026-07-15T13:05:20.687-0300,Sistema,Causa raiz potencial,,Bom dia! favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7773,2026-07-15T13:05:20.687-0300,Sistema,Causa raiz final,,Bom dia! favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7773,2026-07-15T13:05:20.687-0300,Sistema,Justificativa Causa Raiz final,,Bom dia! favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)
 SI-7774,2026-07-15T09:26:12.497-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7774,2026-07-15T09:26:15.039-0300,Bruno Silva,resolution,,Done
 SI-7774,2026-07-15T09:26:15.039-0300,Bruno Silva,status,Submissão,Done
+SI-7774,2026-07-15T13:05:21.581-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7774,2026-07-15T13:05:21.581-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7774,2026-07-15T13:05:21.581-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7774,2026-07-15T13:05:21.581-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7774,2026-07-15T13:05:21.581-0300,Sistema,Resolução do chamado,,Bom dia! favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7774,2026-07-15T13:05:21.581-0300,Sistema,Causa raiz potencial,,Bom dia! favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7774,2026-07-15T13:05:21.581-0300,Sistema,Causa raiz final,,Bom dia! favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7774,2026-07-15T13:05:21.581-0300,Sistema,Justificativa Causa Raiz final,,Bom dia! favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)
 SI-7777,2026-07-15T12:12:10.333-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7777,2026-07-15T12:12:12.971-0300,Bruno Silva,resolution,,Done
 SI-7777,2026-07-15T12:12:12.971-0300,Bruno Silva,status,Submissão,Done
+SI-7777,2026-07-15T13:05:23.317-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7777,2026-07-15T13:05:23.317-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7777,2026-07-15T13:05:23.317-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7777,2026-07-15T13:05:23.317-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7777,2026-07-15T13:05:23.317-0300,Sistema,Resolução do chamado,,Identificado um ponto de atenção referente à ausência de visualização de e-mails recebidos de solicitações de cotação do cliente Randon no painel operacional.
+SI-7777,2026-07-15T13:05:23.317-0300,Sistema,Causa raiz potencial,,Inconsistência na aplicação dos critérios restritivos configurados no cadastro do Profile (No-List) do usuário ou atraso temporário na fila de leitura da API de integração de mensagens do Gmail.
+SI-7777,2026-07-15T13:05:23.317-0300,Sistema,Causa raiz final,,Verificou-se que determinadas mensagens eletrônicas enviadas pelo cliente Randon com pedidos de precificação não estavam sendo exibidas no painel de controle da usuária.
+SI-7777,2026-07-15T13:05:23.317-0300,Sistema,Justificativa Causa Raiz final,,A análise presencial confirmou que não houve erro no backend ou falha de leitura de strings da query do Cockpit.
 SI-7775,2026-07-15T09:06:22.974-0300,Sistema,Link,,This work item is blocked by GA-1245
 SI-7775,2026-07-15T11:49:38.084-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7775,2026-07-15T11:49:40.864-0300,Nícollas Resende,resolution,,Done
 SI-7775,2026-07-15T11:49:40.864-0300,Nícollas Resende,status,Submissão,Done
+SI-7775,2026-07-15T13:05:22.477-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7775,2026-07-15T13:05:22.477-0300,Sistema,Resolução do chamado,,Foi realizado o cadastro conforme solicitado no chamado.
 SI-7791,2026-07-15T10:08:54.687-0300,Sistema,Link,,This work item is blocked by GA-1250
 SI-7791,2026-07-15T12:15:49.959-0300,Bruno Silva,assignee,,Eduardo Felipe de Lima Rebello
 SI-7790,2026-07-15T10:08:50.800-0300,Sistema,Link,,This work item is blocked by GA-1249
@@ -61640,3 +61701,5 @@ SI-7788,2026-07-15T10:08:49.524-0300,Sistema,Link,,This work item is blocked by 
 SI-7780,2026-07-15T10:08:33.934-0300,Sistema,Link,,This work item is blocked by GA-1246
 SI-7797,2026-07-15T11:29:26.058-0300,Sistema,Link,,This work item is blocked by GA-1251
 SI-7794,2026-07-15T12:06:05.036-0300,Nícollas Resende,assignee,,Nícollas Resende
+SI-7794,2026-07-15T13:05:23.977-0300,Sistema,Criticidade final,,P2 - Média
+SI-7794,2026-07-15T13:05:23.977-0300,Sistema,Resolução do chamado,,Foi realizada a atualização dos drivers de áudio do notebook da colaboradora.
