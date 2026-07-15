@@ -61618,6 +61618,9 @@ SI-7764,2026-07-14T19:03:22.814-0300,Sistema,Causa raiz potencial,,Em atendiment
 SI-7764,2026-07-14T19:03:22.814-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7764,2026-07-14T19:03:22.814-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7763,2026-07-14T16:14:22.107-0300,Sistema,Link,,This work item is blocked by GA-1243
+SI-7763,2026-07-15T14:13:23.933-0300,Nícollas Resende,assignee,,Nícollas Resende
+SI-7763,2026-07-15T14:13:26.783-0300,Nícollas Resende,resolution,,Done
+SI-7763,2026-07-15T14:13:26.783-0300,Nícollas Resende,status,Submissão,Done
 SI-7770,2026-07-15T09:44:03.685-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7770,2026-07-15T09:44:06.445-0300,Bruno Silva,resolution,,Done
 SI-7770,2026-07-15T09:44:06.445-0300,Bruno Silva,status,Submissão,Done
@@ -61703,3 +61706,4 @@ SI-7797,2026-07-15T11:29:26.058-0300,Sistema,Link,,This work item is blocked by 
 SI-7794,2026-07-15T12:06:05.036-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7794,2026-07-15T13:05:23.977-0300,Sistema,Criticidade final,,P2 - Média
 SI-7794,2026-07-15T13:05:23.977-0300,Sistema,Resolução do chamado,,Foi realizada a atualização dos drivers de áudio do notebook da colaboradora.
+SI-7807,2026-07-15T14:30:29.853-0300,Sistema,Link,,This work item is blocked by GA-1252
