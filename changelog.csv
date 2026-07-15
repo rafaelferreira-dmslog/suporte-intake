@@ -61637,6 +61637,12 @@ SI-7770,2026-07-15T13:05:19.051-0300,Sistema,Resolução do chamado,,Identificad
 SI-7770,2026-07-15T13:05:19.051-0300,Sistema,Causa raiz potencial,,"Instabilidade na transação de persistência durante a clonagem de propostas comerciais, resultando em concorrência de requisições de gravação e inserção de registros nulos no banco de dados."
 SI-7770,2026-07-15T13:05:19.051-0300,Sistema,Causa raiz final,,"Identificou-se que, ao realizar a ação de clonar uma proposta comercial, ocorreu um comportamento não esperado no sistema que gerou três propostas duplicadas. Uma destas propostas não recebeu a numeração automática de identificação devido a uma interrupção na gravação dos dados."
 SI-7770,2026-07-15T13:05:19.051-0300,Sistema,Justificativa Causa Raiz final,,A duplicidade e a ausência do número de identificação ocorreram devido a uma falha de concorrência ou timeout na execução da API de clonagem na tabela de propostas. A exclusão manual das linhas duplicadas e órfãs mitigou o erro pontual.
+SI-7768,2026-07-15T15:58:37.487-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7768,2026-07-15T15:58:40.868-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7768,2026-07-15T15:58:40.868-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7767,2026-07-15T15:53:01.689-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7767,2026-07-15T15:53:04.089-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7767,2026-07-15T15:53:04.089-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7766,2026-07-14T17:27:29.172-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7766,2026-07-14T17:27:31.343-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7766,2026-07-14T17:27:31.343-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -61695,12 +61701,68 @@ SI-7777,2026-07-15T13:05:23.317-0300,Sistema,Resolução do chamado,,Identificad
 SI-7777,2026-07-15T13:05:23.317-0300,Sistema,Causa raiz potencial,,Inconsistência na aplicação dos critérios restritivos configurados no cadastro do Profile (No-List) do usuário ou atraso temporário na fila de leitura da API de integração de mensagens do Gmail.
 SI-7777,2026-07-15T13:05:23.317-0300,Sistema,Causa raiz final,,Verificou-se que determinadas mensagens eletrônicas enviadas pelo cliente Randon com pedidos de precificação não estavam sendo exibidas no painel de controle da usuária.
 SI-7777,2026-07-15T13:05:23.317-0300,Sistema,Justificativa Causa Raiz final,,A análise presencial confirmou que não houve erro no backend ou falha de leitura de strings da query do Cockpit.
+SI-7776,2026-07-15T16:00:30.247-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7776,2026-07-15T16:00:32.646-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-7776,2026-07-15T16:00:34.617-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7776,2026-07-15T16:00:34.617-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
 SI-7775,2026-07-15T09:06:22.974-0300,Sistema,Link,,This work item is blocked by GA-1245
 SI-7775,2026-07-15T11:49:38.084-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7775,2026-07-15T11:49:40.864-0300,Nícollas Resende,resolution,,Done
 SI-7775,2026-07-15T11:49:40.864-0300,Nícollas Resende,status,Submissão,Done
 SI-7775,2026-07-15T13:05:22.477-0300,Sistema,Criticidade final,,P1 - Alta
 SI-7775,2026-07-15T13:05:22.477-0300,Sistema,Resolução do chamado,,Foi realizado o cadastro conforme solicitado no chamado.
+SI-7792,2026-07-15T16:03:51.215-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7792,2026-07-15T16:03:53.595-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7792,2026-07-15T16:03:53.595-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7792,2026-07-15T16:09:38.401-0300,Ricardo Barbosa Machado,description,,"📘 CHECKLIST PADRÃO DE TRIAGEM (DMS)
+
+1️⃣ Identificação do Chamado
+
+* Módulo: PM / Commercial Proposal
+* Tipo/Classificação: Incidente
+* Ambiente: Produção
+* Título Sugerido: Erro de inserção indevida de taxa ""DOC FEE"" ao realizar clonagem de proposta no Módulo PM
+
+2️⃣ Entendimento do Problema
+
+* Passo a Passo:
+*# Acessar o módulo PM / Commercial Proposal.
+*# Realizar a clonagem de uma proposta (exemplo: proposta 2026128987, referente à rota Shanghai x Rio Grande).
+*# Verificar a inserção de taxas na aba Origin Charges da nova proposta.
+* Comportamento Esperado vs. Atual:
+** Esperado: Caso a charge ou quote seja clonada, deverá manter as mesmas configurações da charge original. A charge ""DOC FEE"" deve ser aplicada apenas com POL: MIA e OFF: DMS MIAMI.
+** Atual: A taxa ""DOC FEE"" da DMS MIAMI é gerada indevidamente e de forma automática nas Origin Charges da nova proposta clonada, mesmo a rota sendo China x Brasil e a proposta original não possuindo essa taxa.
+
+3️⃣ Análise Técnica Inicial
+
+* Histórico/Logs: [PENDENTE: SOLICITAR AO USUÁRIO]
+* Parametrização/Perfil: A documentação estipula que a charge automática DOC FEE é configurada com POL: MIA, Vendor: DMS MIAMI e OFF: DMS MIAMI. Como as características do embarque relatado são Rota Shanghai x Rio Grande, País: CHINA e Agente: Parisi, a parametrização de origem da taxa não deveria ser engatilhada pelo sistema.
+* Reprodutibilidade: Intermitente (""Tem acontecido em algumas propostas"").
+
+4️⃣ Avaliação de Impacto
+
+* Abrangência: Indeterminada (afeta usuários que utilizam a função de clonagem no módulo PM).
+* Criticidade: Média
+* Justificativa da criticidade: O comportamento insere informações comerciais errôneas na nova proposta, impactando o fluxo operacional, mas existe a possibilidade de desvio da rotina falha.
+* Workaround: Sim. Em vez de utilizar a rotina de clonagem, o usuário pode criar a nova proposta comercial do zero, evitando que o gatilho indevido puxe a taxa incorreta. (Observação: Todas as charges automáticas não podem ser deletadas no PM após a criação, salvo exceções específicas).
+
+5️⃣ Tentativas de Resolução
+
+* Ações realizadas pelo Service Desk: Análise das regras macro de charges automáticas e validação das condições específicas para a incidência da taxa DOC FEE no PM. Identificação de desvio da regra de negócio documentada.
+* Hipóteses já descartadas: Erro operacional por preenchimento incorreto na proposta original, pois o usuário assegura que as taxas não constavam na proposta 2026128987.
+
+6️⃣ Causa Raiz Potencial (hipótese N1) Comportamento inesperado da aplicação na rotina sistêmica de clonagem. A funcionalidade pode estar sofrendo falha de limpeza de cache ou aplicando gatilhos de criação do tipo ""Always"" de forma indiscriminada, ignorando as validações de POL/OFF exigidas para o disparo da charge automática DOC FEE.
+
+7️⃣ Justificativa Técnica para Escalonamento
+
+* Por que o N1 não consegue resolver: Limitação de ferramenta e acesso ao código-fonte. O desvio na replicação dos dados da proposta exige investigação em banco de dados e correção do código da função de clonagem.
+* O que se espera do próximo time: Análise dos logs gerados durante a tentativa de clonagem da proposta 2026128987, identificação do gatilho sistêmico falho e aplicação de _bugfix_ para garantir que a clonagem respeite a integridade das regras da charge DOC FEE.
+* Nível sugerido: Sustentação / N2
+
+📝 DESCRIÇÃO OTIMIZADA (PARA O CHAMADO) O presente chamado relata um comportamento inesperado da aplicação no Módulo PM durante a utilização da função de clonagem de propostas comerciais. O usuário relata que, ao clonar propostas (a exemplo da proposta de origem 2026128987), a taxa ""DOC FEE"" da DMS MIAMI tem surgido indevidamente nas Origin Charges do processo clonado. De acordo com as diretrizes do sistema, se a charge ou quote for clonada, ela deve manter as mesmas configurações originais, e a taxa DOC FEE exige explicitamente POL: MIA e OFF: DMS MIAMI. No entanto, a proposta base referia-se a uma origem na China (Shanghai x Rio Grande, Agente Parisi) e já não possuía essas taxas em seu escopo. O problema tem se apresentado de forma intermitente. Escalonado para a Sustentação visando análise de logs no _backend_ para correção do desvio no código de clonagem de dados comerciais."
+SI-7792,2026-07-15T16:09:47.706-0300,Ricardo Barbosa Machado,Encaminhado para:,,Sustentação
+SI-7792,2026-07-15T16:09:51.553-0300,Sistema,Link,,This work item is blocked by SUS-270
+SI-7792,2026-07-15T16:09:58.127-0300,Ricardo Barbosa Machado,Encaminhado para:,Sustentação,
 SI-7791,2026-07-15T10:08:54.687-0300,Sistema,Link,,This work item is blocked by GA-1250
 SI-7791,2026-07-15T12:15:49.959-0300,Bruno Silva,assignee,,Eduardo Felipe de Lima Rebello
 SI-7790,2026-07-15T10:08:50.800-0300,Sistema,Link,,This work item is blocked by GA-1249
@@ -61708,6 +61770,12 @@ SI-7789,2026-07-15T10:08:50.354-0300,Sistema,Link,,This work item is blocked by 
 SI-7788,2026-07-15T10:08:49.524-0300,Sistema,Link,,This work item is blocked by GA-1247
 SI-7780,2026-07-15T10:08:33.934-0300,Sistema,Link,,This work item is blocked by GA-1246
 SI-7797,2026-07-15T11:29:26.058-0300,Sistema,Link,,This work item is blocked by GA-1251
+SI-7796,2026-07-15T16:19:04.307-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7796,2026-07-15T16:19:06.607-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7796,2026-07-15T16:19:06.607-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7795,2026-07-15T16:16:16.671-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7795,2026-07-15T16:16:19.730-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7795,2026-07-15T16:16:19.730-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7794,2026-07-15T12:06:05.036-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7794,2026-07-15T13:05:23.977-0300,Sistema,Criticidade final,,P2 - Média
 SI-7794,2026-07-15T13:05:23.977-0300,Sistema,Resolução do chamado,,Foi realizada a atualização dos drivers de áudio do notebook da colaboradora.
@@ -61715,10 +61783,25 @@ SI-7800,2026-07-15T15:09:34.877-0300,Ricardo Barbosa Machado,assignee,,Ricardo B
 SI-7800,2026-07-15T15:09:38.902-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7800,2026-07-15T15:09:41.424-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7800,2026-07-15T15:09:41.424-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
+SI-7799,2026-07-15T16:38:59.949-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7799,2026-07-15T16:39:02.369-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7799,2026-07-15T16:39:02.369-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7798,2026-07-15T16:27:47.821-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7798,2026-07-15T16:27:50.253-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7798,2026-07-15T16:27:50.253-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7807,2026-07-15T14:30:29.853-0300,Sistema,Link,,This work item is blocked by GA-1252
+SI-7807,2026-07-15T16:27:48.915-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7807,2026-07-15T16:27:51.907-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7807,2026-07-15T16:27:51.907-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7803,2026-07-15T15:35:10.629-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7803,2026-07-15T15:35:10.629-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7803,2026-07-15T15:35:11.690-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7801,2026-07-15T16:42:31.000-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7801,2026-07-15T16:42:33.059-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7801,2026-07-15T16:42:33.059-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7814,2026-07-15T16:17:56.877-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7814,2026-07-15T16:17:59.645-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7814,2026-07-15T16:17:59.645-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7813,2026-07-15T15:27:24.121-0300,Sistema,Link,,This work item is blocked by GA-1254
 SI-7812,2026-07-15T15:19:28.037-0300,Sistema,Link,,This work item is blocked by GA-1253
 SI-7812,2026-07-15T15:44:43.406-0300,Nícollas Resende,assignee,,Nícollas Resende
