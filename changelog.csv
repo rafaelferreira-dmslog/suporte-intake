@@ -62077,6 +62077,7 @@ SI-7814,2026-07-16T00:56:27.221-0300,Sistema,Justificativa Causa Raiz final,,Em 
 SI-7813,2026-07-15T15:27:24.121-0300,Sistema,Link,,This work item is blocked by GA-1254
 SI-7813,2026-07-15T17:30:28.157-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7813,2026-07-15T17:30:28.157-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7813,2026-07-16T11:58:51.922-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7812,2026-07-15T15:19:28.037-0300,Sistema,Link,,This work item is blocked by GA-1253
 SI-7812,2026-07-15T15:44:43.406-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7812,2026-07-15T15:44:46.300-0300,Nícollas Resende,resolution,,Done
@@ -62096,6 +62097,7 @@ SI-7811,2026-07-16T00:56:25.790-0300,Sistema,Causa raiz final,,"O transtorno ope
 SI-7811,2026-07-16T00:56:25.790-0300,Sistema,Justificativa Causa Raiz final,,"Do ponto de vista de infraestrutura lógica, o estouro do limite de indexação impede que o sistema de arquivos distribuído do Google Workspace crie novas entradas de metadados para aquela partição lógica específica de compartilhamento."
 SI-7810,2026-07-15T17:30:25.446-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7810,2026-07-15T17:30:25.446-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7810,2026-07-16T11:51:25.574-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7817,2026-07-15T16:50:01.443-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7817,2026-07-15T16:50:04.314-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7817,2026-07-15T16:50:04.314-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -62109,16 +62111,24 @@ SI-7817,2026-07-16T00:56:28.610-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7817,2026-07-16T00:56:28.610-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7816,2026-07-15T17:30:30.459-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7816,2026-07-15T17:30:30.459-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7816,2026-07-16T12:36:21.130-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7819,2026-07-16T09:43:11.277-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7819,2026-07-16T09:43:14.449-0300,Bruno Silva,resolution,,Done
 SI-7819,2026-07-16T09:43:14.449-0300,Bruno Silva,status,Submissão,Done
 SI-7818,2026-07-15T17:30:33.150-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7818,2026-07-15T17:30:33.150-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7818,2026-07-16T12:16:04.329-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7820,2026-07-16T12:42:42.222-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7820,2026-07-16T12:42:45.050-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7820,2026-07-16T12:42:45.050-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7826,2026-07-16T08:34:24.049-0300,Sistema,Link,,This work item is blocked by GA-1257
 SI-7823,2026-07-16T10:38:16.678-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7823,2026-07-16T10:38:19.557-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7823,2026-07-16T10:38:19.557-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7822,2026-07-16T08:03:29.060-0300,Sistema,Link,,This work item is blocked by GA-1256
+SI-7822,2026-07-16T12:02:32.806-0300,Nícollas Resende,assignee,,Nícollas Resende
+SI-7822,2026-07-16T12:02:35.852-0300,Nícollas Resende,resolution,,Done
+SI-7822,2026-07-16T12:02:35.852-0300,Nícollas Resende,status,Submissão,Done
 SI-7830,2026-07-16T11:30:20.715-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7830,2026-07-16T11:30:23.439-0300,Bruno Silva,resolution,,Done
 SI-7830,2026-07-16T11:30:23.439-0300,Bruno Silva,status,Submissão,Done
@@ -62195,3 +62205,4 @@ SI-7834,2026-07-16T11:03:52.703-0300,Bruno Silva,status,Submissão,Done
 SI-7833,2026-07-16T11:03:47.949-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7833,2026-07-16T11:03:50.339-0300,Bruno Silva,resolution,,Done
 SI-7833,2026-07-16T11:03:50.339-0300,Bruno Silva,status,Submissão,Done
+SI-7840,2026-07-16T12:23:49.931-0300,Sistema,Link,,This work item is blocked by GA-1261
