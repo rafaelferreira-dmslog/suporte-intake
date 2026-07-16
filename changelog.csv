@@ -61888,6 +61888,7 @@ SI-7780,2026-07-15T10:08:33.934-0300,Sistema,Link,,This work item is blocked by 
 SI-7797,2026-07-15T11:29:26.058-0300,Sistema,Link,,This work item is blocked by GA-1251
 SI-7797,2026-07-15T17:26:27.686-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7797,2026-07-15T17:26:27.686-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7797,2026-07-16T09:42:42.127-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7796,2026-07-15T16:19:04.307-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7796,2026-07-15T16:19:06.607-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7796,2026-07-15T16:19:06.607-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -62108,7 +62109,65 @@ SI-7817,2026-07-16T00:56:28.610-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7817,2026-07-16T00:56:28.610-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7816,2026-07-15T17:30:30.459-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7816,2026-07-15T17:30:30.459-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7819,2026-07-16T09:43:11.277-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7819,2026-07-16T09:43:14.449-0300,Bruno Silva,resolution,,Done
+SI-7819,2026-07-16T09:43:14.449-0300,Bruno Silva,status,Submissão,Done
 SI-7818,2026-07-15T17:30:33.150-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7818,2026-07-15T17:30:33.150-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7826,2026-07-16T08:34:24.049-0300,Sistema,Link,,This work item is blocked by GA-1257
 SI-7822,2026-07-16T08:03:29.060-0300,Sistema,Link,,This work item is blocked by GA-1256
+SI-7828,2026-07-16T09:33:44.693-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7828,2026-07-16T09:33:44.693-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7828,2026-07-16T09:33:46.208-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7828,2026-07-16T09:38:22.023-0300,Eduardo Felipe de Lima Rebello,description,,"h3. 1️⃣ Identificação do Chamado
+
+* 
+*Módulo:* Cockpit / Workflow
+* 
+*Tipo/Classificação:* Incidente
+* 
+*Ambiente:* Produção
+* *Título Sugerido:* Erro de carregamento infinito na coluna de Update ao pesquisar Order no Cockpit
+
+h3. 2️⃣ Entendimento do Problema
+
+* *Passo a Passo:*
+*# Acessar o módulo *Cockpit*.
+*# No campo de busca, inserir o número da *Order* desejada.
+*# Executar a consulta.
+*# Observar que o indicador da coluna *Update* fica intermitente (""rodando"") e não conclui a listagem, travando a visualização.
+* *Comportamento Esperado vs. Atual:*
+** 
+_Esperado:_ O sistema deve filtrar e renderizar rapidamente as atualizações da Order pesquisada.
+** _Atual:_ A coluna de *Update* entra em loop de carregamento, impedindo o término da consulta por questões de trava em tela.
+* 
+*Evidências:* {{[PENDENTE: SOLICITAR PRINT DA TELA E CONSOLE DEVTOOLS AO USUÁRIO]}}
+
+h3. 3️⃣ Análise Técnica Inicial
+
+* 
+*Histórico/Logs:* 
+* 
+*Parametrização/Perfil:* É necessário verificar se o *Profile* da colaboradora está muito abrangente (filtros vazios), o que sobrecarrega a query de busca ao trazer dados excessivos.
+
+h3. 4️⃣ Avaliação de Impacto
+
+* *Abrangência:* 1 usuária afetada diretamente, com impacto potencial na equipe operacional que utiliza a mesma visão.
+* *Criticidade:* Média
+* *Justificativa:* O incidente gera um bloqueio na consulta de atualizações dos processos diários, gerando atraso operacional e queda de produtividade.
+* 
+*Workaround:* Utilizar temporariamente a tela de *My Control* para verificar o status e informações gerais das ordens de forma direta sem passar pelo painel de cartões.
+
+h3. 5️⃣ Tentativas de Resolução
+
+* *Ações Realizadas:* Triagem inicial do relato. Identificado que o sintoma não se trata de queda geral, mas sim de uma lentidão/trava específica na query da coluna de atualizações.
+
+h3. 6️⃣ Justificativa Técnica para Escalonamento
+
+* A busca trava especificamente na renderização da coluna *Update*. Como o módulo passou por refatoração recente e agora inclui também estágios de _Proposals_, há fortes indícios de sobrecarga em banco de dados ou ineficiência na query quando acionada por parâmetros livres de texto. Encaminhado para o N2/Sustentação para análise de queries e locks de performance.
+
+h3. 💡 Causa Raiz Potencial
+
+Após o projeto de refatoração, a coluna *Update* passou a unificar e carregar um volume muito maior de interações (incluindo _notes_ e alterações de _Proposals_, _Orders_ e _Bookings_). Quando o usuário realiza uma busca por número de processo sem delimitar os filtros obrigatórios no *Profile*, o banco de dados executa uma consulta extremamente pesada , gerando uma concorrência de leitura (_lock_) ou _timeout_ na API que alimenta os cards de atualização."
+SI-7828,2026-07-16T09:38:28.890-0300,Eduardo Felipe de Lima Rebello,Encaminhado para:,,Sustentação
+SI-7828,2026-07-16T09:38:32.899-0300,Sistema,Link,,This work item is blocked by SUS-271
