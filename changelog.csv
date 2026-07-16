@@ -62119,6 +62119,12 @@ SI-7823,2026-07-16T10:38:16.678-0300,Eduardo Felipe de Lima Rebello,assignee,,Ed
 SI-7823,2026-07-16T10:38:19.557-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7823,2026-07-16T10:38:19.557-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7822,2026-07-16T08:03:29.060-0300,Sistema,Link,,This work item is blocked by GA-1256
+SI-7830,2026-07-16T11:30:20.715-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7830,2026-07-16T11:30:23.439-0300,Bruno Silva,resolution,,Done
+SI-7830,2026-07-16T11:30:23.439-0300,Bruno Silva,status,Submissão,Done
+SI-7829,2026-07-16T11:34:51.613-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7829,2026-07-16T11:34:54.284-0300,Bruno Silva,resolution,,Done
+SI-7829,2026-07-16T11:34:54.284-0300,Bruno Silva,status,Submissão,Done
 SI-7828,2026-07-16T09:33:44.693-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7828,2026-07-16T09:33:44.693-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7828,2026-07-16T09:33:46.208-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
@@ -62174,3 +62180,18 @@ h3. 💡 Causa Raiz Potencial
 Após o projeto de refatoração, a coluna *Update* passou a unificar e carregar um volume muito maior de interações (incluindo _notes_ e alterações de _Proposals_, _Orders_ e _Bookings_). Quando o usuário realiza uma busca por número de processo sem delimitar os filtros obrigatórios no *Profile*, o banco de dados executa uma consulta extremamente pesada , gerando uma concorrência de leitura (_lock_) ou _timeout_ na API que alimenta os cards de atualização."
 SI-7828,2026-07-16T09:38:28.890-0300,Eduardo Felipe de Lima Rebello,Encaminhado para:,,Sustentação
 SI-7828,2026-07-16T09:38:32.899-0300,Sistema,Link,,This work item is blocked by SUS-271
+SI-7827,2026-07-16T11:35:29.726-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7827,2026-07-16T11:35:33.381-0300,Bruno Silva,resolution,,Done
+SI-7827,2026-07-16T11:35:33.381-0300,Bruno Silva,status,Submissão,Done
+SI-7832,2026-07-16T11:14:44.649-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7832,2026-07-16T11:14:47.827-0300,Bruno Silva,resolution,,Done
+SI-7832,2026-07-16T11:14:47.827-0300,Bruno Silva,status,Submissão,Done
+SI-7831,2026-07-16T11:14:16.502-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7831,2026-07-16T11:14:19.325-0300,Bruno Silva,resolution,,Done
+SI-7831,2026-07-16T11:14:19.325-0300,Bruno Silva,status,Submissão,Done
+SI-7834,2026-07-16T11:03:38.689-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7834,2026-07-16T11:03:52.703-0300,Bruno Silva,resolution,,Done
+SI-7834,2026-07-16T11:03:52.703-0300,Bruno Silva,status,Submissão,Done
+SI-7833,2026-07-16T11:03:47.949-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7833,2026-07-16T11:03:50.339-0300,Bruno Silva,resolution,,Done
+SI-7833,2026-07-16T11:03:50.339-0300,Bruno Silva,status,Submissão,Done
