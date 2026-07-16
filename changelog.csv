@@ -61956,6 +61956,36 @@ SI-7798,2026-07-16T00:56:17.866-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7798,2026-07-16T00:56:17.866-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7798,2026-07-16T00:56:17.866-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7798,2026-07-16T00:56:17.866-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7798,2026-07-16T17:08:42.383-0300,Ricardo Barbosa Machado,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+1️⃣ *Identificação do Chamado* *Módulo:* Operacional e PM *Tipo/Classificação:* Incidente / Requisição (Alinhamento de Regra de Negócio) *Ambiente:* Produção *Título Sugerido:* ""Parametrização divergente - Excesso de charges de pick-up (>300 linhas) agrupadas por estado""
+
+2️⃣ *Entendimento do Problema* *Passo a Passo:*
+
+# Acessar o módulo Operacional e PM.
+# Consultar o fluxo de tarifário e as _charges_ de _pick-up_.
+# Filtrar por estados específicos (ex: Arizona, Ohio, Oregon).
+# Observar a quantidade de linhas de cobrança retornadas na tela. *Comportamento Esperado vs. Atual:*
+
+* *Atual:* O sistema exibe dados inconsistentes com um volume atípico, gerando um fluxo com mais de 300 linhas de _pick-up_ para o mesmo estado. Essa exibição aparenta não estar correta e causa severa poluição visual, considerando que a operação utiliza apenas 1 ou 2 linhas.
+* *Esperado:* O sistema exibir o fluxo correto de tarifas ou uma distribuição descentralizada (através da criação de clones para cada estado), apresentando uma interface limpa e alinhada à real necessidade operacional. 
+
+3️⃣ *Análise Técnica Inicial* *Histórico/Logs:* A análise de N1 constatou que não se trata de uma simples exceção sistêmica, mas de uma parametrização divergente na forma como o tarifário está agrupado. O caso já está sendo ativamente analisado pelo time de Qualidade para entender a incorreção no fluxo de mais de 300 linhas. *Parametrização/Perfil:* A arquitetura atual de cadastro (Regra de Negócio) unifica massivamente as _charges_ no escopo estadual. *Reprodutibilidade:* Constante.
+
+4️⃣ *Avaliação de Impacto* *Abrangência:* Usuários da Operação que atuam nos módulos Operacional e PM. *Criticidade:* Média. *Justificativa da criticidade:* O volume massivo de informações impacta a produtividade e a interface do usuário, atrasando o fluxo de trabalho. *Workaround:* Sim, a operação consegue seguir o trabalho pesquisando manualmente a linha desejada (1 ou 2) em meio às mais de 300 apresentadas, porém com lentidão.
+
+5️⃣ *Tentativas de Resolução* *Ações realizadas pelo Service Desk:* Identificado o comportamento inesperado da aplicação atrelado ao modelo de negócio. Sugerido alinhamento com o time de FD para criação de clones. O caso foi direcionado ao time de Qualidade para análise da inconsistência das linhas. *Hipóteses já descartadas:* Falha de processamento que impeça a continuação do trabalho.
+
+6️⃣ *Causa Raiz Potencial (hipótese N1)* Parametrização divergente / Regra de Negócio (O agrupamento excessivo de _charges_ no cadastro diverge da necessidade operacional, resultando em dados inconsistentes na tela).
+
+7️⃣ *Justificativa Técnica para Escalonamento* *Por que o N1 não consegue resolver:* Trata-se de uma questão estrutural que já está sob investigação do time de Qualidade e exige alinhamento entre Operação e FD para reestruturar a base de dados (criação de clones). *O que se espera do próximo time:* Que o time de Qualidade conclua a validação do fluxo atípico de _pick-ups_ e que a Sustentação aplique a descentralização do tarifário conforme alinhamento com FD. *Nível sugerido:* Sustentação (N2/N3) / Time de Qualidade.
+
+📝 *DESCRIÇÃO OTIMIZADA (PARA O CHAMADO)*
+
+O presente chamado relata um comportamento inesperado da aplicação nos módulos Operacional e PM, referente ao fluxo de _charges_ de _pick-up_. Ao consultar as tarifas de estados como Arizona, Ohio e Oregon, o sistema retorna um volume com mais de 300 linhas de cobrança agrupadas na mesma tela. Esse fluxo aparenta não estar correto, gerando poluição visual e lentidão no trabalho, uma vez que o usuário precisa utilizar apenas 1 ou 2 dessas linhas. O N1 identificou tratar-se de uma parametrização divergente (Regra de Negócio). Atualmente, o caso está sob análise do time de Qualidade para investigar a inconsistência desse volume de dados. Escalonamos o ticket para acompanhamento e para que seja executado o alinhamento necessário entre FD e Operação, visando a distribuição deste tarifário mediante a criação de clones específicos por estado, higienizando assim a visualização para os usuários finais."
+SI-7798,2026-07-16T17:08:46.450-0300,Ricardo Barbosa Machado,Encaminhado para:,,Sustentação
+SI-7798,2026-07-16T17:08:51.462-0300,Ricardo Barbosa Machado,Encaminhado para:,Sustentação,
+SI-7798,2026-07-16T17:08:51.803-0300,Sistema,Link,,This work item is blocked by SUS-272
 SI-7809,2026-07-15T17:25:28.154-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7809,2026-07-15T17:25:30.231-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7809,2026-07-15T17:25:30.231-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -62280,3 +62310,6 @@ SI-7848,2026-07-16T15:07:13.398-0300,Eduardo Felipe de Lima Rebello,status,Submi
 SI-7847,2026-07-16T16:43:00.468-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7847,2026-07-16T16:43:00.468-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7847,2026-07-16T16:43:01.768-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7852,2026-07-16T16:53:01.573-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7852,2026-07-16T16:53:03.924-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7852,2026-07-16T16:53:03.924-0300,Ricardo Barbosa Machado,status,Submissão,Done
