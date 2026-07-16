@@ -61663,6 +61663,9 @@ SI-7756,2026-07-15T13:05:15.714-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7756,2026-07-15T13:05:15.714-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7756,2026-07-15T13:05:15.714-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7756,2026-07-15T13:05:15.714-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7765,2026-07-16T14:46:45.606-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7765,2026-07-16T14:46:47.541-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7765,2026-07-16T14:46:47.541-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7764,2026-07-14T17:33:26.670-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7764,2026-07-14T17:33:31.055-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7764,2026-07-14T17:33:31.055-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -62223,6 +62226,9 @@ SI-7833,2026-07-16T11:03:47.949-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7833,2026-07-16T11:03:50.339-0300,Bruno Silva,resolution,,Done
 SI-7833,2026-07-16T11:03:50.339-0300,Bruno Silva,status,Submissão,Done
 SI-7840,2026-07-16T12:23:49.931-0300,Sistema,Link,,This work item is blocked by GA-1261
+SI-7840,2026-07-16T15:00:40.015-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7840,2026-07-16T15:00:42.366-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7840,2026-07-16T15:00:42.366-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7839,2026-07-16T13:14:36.881-0300,Ricardo Barbosa Machado,assignee,,Bruno Silva
 SI-7839,2026-07-16T13:14:39.314-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7839,2026-07-16T13:14:39.314-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -62241,4 +62247,24 @@ SI-7841,2026-07-16T13:14:57.102-0300,Ricardo Barbosa Machado,assignee,,Ricardo B
 SI-7841,2026-07-16T13:14:59.610-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7841,2026-07-16T13:14:59.610-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7846,2026-07-16T14:28:26.799-0300,Sistema,Link,,This work item is blocked by GA-1265
+SI-7846,2026-07-16T15:20:54.422-0300,Nícollas Resende,assignee,,Nícollas Resende
+SI-7846,2026-07-16T15:20:56.352-0300,Nícollas Resende,resolution,,Done
+SI-7846,2026-07-16T15:20:56.352-0300,Nícollas Resende,status,Submissão,Done
 SI-7845,2026-07-16T14:14:28.114-0300,Sistema,Link,,This work item is blocked by GA-1264
+SI-7845,2026-07-16T15:20:07.339-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7845,2026-07-16T15:20:10.634-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7845,2026-07-16T15:20:10.634-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7844,2026-07-16T15:07:36.038-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7844,2026-07-16T15:07:38.870-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7844,2026-07-16T15:07:38.870-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7850,2026-07-16T15:09:25.478-0300,Sistema,Link,,This work item is blocked by GA-1267
+SI-7850,2026-07-16T15:28:35.550-0300,Nícollas Resende,assignee,,Nícollas Resende
+SI-7850,2026-07-16T15:28:37.772-0300,Nícollas Resende,resolution,,Done
+SI-7850,2026-07-16T15:28:37.772-0300,Nícollas Resende,status,Submissão,Done
+SI-7849,2026-07-16T15:23:59.643-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7849,2026-07-16T15:24:01.944-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7849,2026-07-16T15:24:01.944-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7848,2026-07-16T14:54:26.972-0300,Sistema,Link,,This work item is blocked by GA-1266
+SI-7848,2026-07-16T15:07:11.206-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7848,2026-07-16T15:07:13.398-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7848,2026-07-16T15:07:13.398-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
