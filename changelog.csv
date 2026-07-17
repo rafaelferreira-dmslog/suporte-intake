@@ -62610,7 +62610,13 @@ SI-7852,2026-07-17T00:59:27.839-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7852,2026-07-17T00:59:27.839-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7852,2026-07-17T00:59:27.839-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7852,2026-07-17T00:59:27.839-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7853,2026-07-17T09:28:36.558-0300,Bruno Silva,assignee,,Eduardo Felipe de Lima Rebello
+SI-7853,2026-07-17T09:28:45.306-0300,Bruno Silva,resolution,,Done
+SI-7853,2026-07-17T09:28:45.306-0300,Bruno Silva,status,Submissão,Done
 SI-7856,2026-07-17T06:34:24.721-0300,Sistema,Link,,This work item is blocked by GA-1271
+SI-7856,2026-07-17T09:29:19.784-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7856,2026-07-17T09:29:22.020-0300,Bruno Silva,resolution,,Done
+SI-7856,2026-07-17T09:29:22.020-0300,Bruno Silva,status,Submissão,Done
 SI-7855,2026-07-17T06:19:20.803-0300,Sistema,Link,,This work item is blocked by GA-1270
 SI-7855,2026-07-17T08:32:17.416-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7855,2026-07-17T08:32:19.452-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
@@ -62622,3 +62628,9 @@ SI-7854,2026-07-17T08:27:59.498-0300,Eduardo Felipe de Lima Rebello,assignee,,Ed
 SI-7858,2026-07-17T08:28:48.377-0300,Bruno Silva,resolution,,Done
 SI-7858,2026-07-17T08:28:48.377-0300,Bruno Silva,status,Submissão,Done
 SI-7858,2026-07-17T08:29:06.040-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7857,2026-07-17T09:02:14.923-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7857,2026-07-17T09:02:18.081-0300,Bruno Silva,resolution,,Done
+SI-7857,2026-07-17T09:02:18.081-0300,Bruno Silva,status,Submissão,Done
+SI-7859,2026-07-17T09:27:13.886-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7859,2026-07-17T09:27:17.063-0300,Bruno Silva,resolution,,Done
+SI-7859,2026-07-17T09:27:17.063-0300,Bruno Silva,status,Submissão,Done
