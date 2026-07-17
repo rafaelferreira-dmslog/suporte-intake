@@ -1,4 +1,25 @@
 Chave,Resumo,Responsável,Criticidade final,Prioridade,Status,Resolução,Criado,Atualizado(a),Resolvido,Subproduto,Colaborador,email,Cargo,Causa Raiz,Causa raiz final,Causa raiz potencial,Justificativa Causa Raiz final,Resolução do chamado,Descrição do problema,Encaminhado para:,Departamento,Líder direto,Clusters DOC IA,Itens associados,Link da ordem,Módulo,Number,Qual a numeração do house?,Qual a numeração do master?,Qual a numeração da Order/Booking afetada ou do Master/House?,Qual numeração do master que o house deve estar associado?,Qual o link da ordem/booking?,Qual o link do alerta?,Qual o nome do alerta?,Qual o nome do programa?,Qual o nome e e-mail do grupo?,Qual o número da fatura/NF?,Qual o número da ordem/booking?,Qual o número da ND?,Qual o número da quote/proposal?
+SI-7889,Incidente,,,P0 - Crítica,Submissão,,Fri Jul 17 2026 18:40:19 GMT-0300 (Brasilia Standard Time),Fri Jul 17 2026 18:40:19 GMT-0300 (Brasilia Standard Time),,Data errada na aba control,Bruna Nogueira Costa Pinho Silva,bruna.pinho@dmslog.com,Ocean Freight Operations Analyst,,,,,,"Preencher Data do ""BUYING DEMURRAGE START DATE"" 31/05/2026 - para abrir a linha de ""BUY"" possibilitando gerar o custo a ser pago ao armador referente a demurrage. | ORDER 260335419
+
+container TEMU9681873;
+https://operational.dmslog.com/order/155000/container/23939/
+
+Correto BUY constar o total de USD 1.120,00
+
+Free time; 21 dias
+1 diária de USD 340,00
+2 diárias de USD 390,00",,Ocean Operations,,,,,Módulo Operations,,,,,,,,,,,,,,
+SI-7888,Incidente,,,P0 - Crítica,Submissão,,Fri Jul 17 2026 18:25:20 GMT-0300 (Brasilia Standard Time),Fri Jul 17 2026 18:25:20 GMT-0300 (Brasilia Standard Time),,Data errada na aba control,Bruna Nogueira Costa Pinho Silva,bruna.pinho@dmslog.com,Ocean Freight Operations Analyst,,,,,,"Preencher Data do ""BUYING DEMURRAGE START DATE"" 31/05/2026 - para abrir a linha de ""BUY"" possibilitando gerar o custo a ser pago ao armador referente a demurrage. | ORDER 260333414 - Em ambos as unidades da order.
+
+https://operational.dmslog.com/order/151439/container/23791/
+https://operational.dmslog.com/order/151439/container/23792/
+
+Correto BUY constar por container o total de USD 730,00.
+
+Free time; 21 dias
+1 diária de USD 340,00
+1 diária de USD 390,00",,Ocean Operations,,,,,Módulo Operations,,,,,,,,,,,,,,
+SI-7887,Incidente,,,P1 - Alta,Submissão,,Fri Jul 17 2026 18:07:18 GMT-0300 (Brasilia Standard Time),Fri Jul 17 2026 18:07:18 GMT-0300 (Brasilia Standard Time),,Os valores de buying estão divergentes,Renata Duarte Correia Venturine,renata.venturine@dmslog.com,Head Of Revenue Management,,,,,,CHARGE AUTOMATICA VCP RETIRAR,,Revenue Management,,,,,Módulo Operations,,,,,,https://operational.dmslog.com/order/166286/financial,,,,,,260644002,,
 SI-7886,Solicitação de acesso,Eduardo Felipe de Lima Rebello,,P2 - Média,Concluído,Itens concluídos,Fri Jul 17 2026 16:18:19 GMT-0300 (Brasilia Standard Time),Fri Jul 17 2026 16:24:02 GMT-0300 (Brasilia Standard Time),Fri Jul 17 2026 16:20:02 GMT-0300 (Brasilia Standard Time),Recuperar ordem excluída,Renan Martins dos Santos,renan.martins@dmslog.com,Ocean Freight Customer Care Analyst,,,,,,Order excluida erroneamente,,Ocean Operations,,,GA-1279,,Módulo Operations,,,,,,https://operational.dmslog.com/order/167678/,,,,,,260645125,,
 SI-7885,Incidente,Nícollas Resende,,P1 - Alta,Concluído,Itens concluídos,Fri Jul 17 2026 16:13:21 GMT-0300 (Brasilia Standard Time),Fri Jul 17 2026 16:34:19 GMT-0300 (Brasilia Standard Time),Fri Jul 17 2026 16:34:19 GMT-0300 (Brasilia Standard Time),Cadastro de City,Lenice Maria da Costa Barbosa,lenice.barbosa@dmslog.com,Air Freight Operations Analyst,,,,,,"Não tem a cidade ""Slemon Park"" cadastrada, do Canadá.",,Air Operations,,,,,Módulo Basic Registration,,,,,,,,,,,,,,
 SI-7884,Incidente,Ricardo Barbosa Machado,,P0 - Crítica,Concluído,Itens concluídos,Fri Jul 17 2026 16:00:17 GMT-0300 (Brasilia Standard Time),Fri Jul 17 2026 16:25:33 GMT-0300 (Brasilia Standard Time),Fri Jul 17 2026 16:25:33 GMT-0300 (Brasilia Standard Time),CCT: Master com status pending,Marcela Cristine Pereira de Araujo,marcela.araujo@dmslog.com,Key Account Executive,,,,,,Recinto incorreto,,Automotive Industry,,,,,Módulo Operations,,,,,,https://operational.dmslog.com/order/168983,,,,,,260746162,,
