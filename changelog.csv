@@ -59841,6 +59841,10 @@ SI-7617,2026-07-11T00:57:46.216-0300,Sistema,Causa raiz potencial,,Em atendiment
 SI-7617,2026-07-11T00:57:46.216-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7617,2026-07-11T00:57:46.216-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7617,2026-07-17T13:11:42.067-0300,Nícollas Resende,assignee,,Nícollas Resende
+SI-7617,2026-07-17T19:01:38.174-0300,Sistema,Resolução do chamado,Em atendimento,Instalou o Ring Central
+SI-7617,2026-07-17T19:01:38.174-0300,Sistema,Causa raiz potencial,Em atendimento,Instalou o Ring Central
+SI-7617,2026-07-17T19:01:38.174-0300,Sistema,Causa raiz final,Em atendimento,Instalou o Ring Central
+SI-7617,2026-07-17T19:01:38.174-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,Instalou o Ring Central
 SI-7616,2026-07-09T11:57:20.020-0300,Sistema,Link,,This work item is blocked by GA-1193
 SI-7616,2026-07-09T14:43:22.645-0300,Rafael Ferreira,assignee,,Helena Almeida
 SI-7616,2026-07-09T14:43:25.326-0300,Rafael Ferreira,resolution,,Done
@@ -62713,9 +62717,25 @@ SI-7859,2026-07-17T13:04:56.362-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7859,2026-07-17T13:04:56.362-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7859,2026-07-17T13:04:56.362-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7859,2026-07-17T13:04:56.362-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7865,2026-07-17T19:03:26.102-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-7865,2026-07-17T19:03:26.102-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7865,2026-07-17T19:03:26.102-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7865,2026-07-17T19:03:26.102-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-7865,2026-07-17T19:03:26.102-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7865,2026-07-17T19:03:26.102-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7865,2026-07-17T19:03:26.102-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7865,2026-07-17T19:03:26.102-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7864,2026-07-17T14:14:01.563-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7864,2026-07-17T14:14:04.209-0300,Bruno Silva,resolution,,Done
 SI-7864,2026-07-17T14:14:04.209-0300,Bruno Silva,status,Submissão,Done
+SI-7864,2026-07-17T19:03:25.430-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7864,2026-07-17T19:03:25.430-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7864,2026-07-17T19:03:25.430-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7864,2026-07-17T19:03:25.430-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-7864,2026-07-17T19:03:25.430-0300,Sistema,Resolução do chamado,,Bom dia! favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7864,2026-07-17T19:03:25.430-0300,Sistema,Causa raiz potencial,,Bom dia! favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7864,2026-07-17T19:03:25.430-0300,Sistema,Causa raiz final,,Bom dia! favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7864,2026-07-17T19:03:25.430-0300,Sistema,Justificativa Causa Raiz final,,Bom dia! favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)
 SI-7863,2026-07-17T10:32:23.558-0300,Sistema,Link,,This work item is blocked by GA-1272
 SI-7863,2026-07-17T10:45:15.012-0300,Bruno Silva,assignee,,Nícollas Resende
 SI-7863,2026-07-17T10:45:18.221-0300,Bruno Silva,resolution,,Done
@@ -62725,6 +62745,22 @@ SI-7863,2026-07-17T13:04:58.404-0300,Sistema,Resolução do chamado,,Foi realiza
 SI-7862,2026-07-17T10:46:33.773-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7862,2026-07-17T10:46:36.406-0300,Bruno Silva,resolution,,Done
 SI-7862,2026-07-17T10:46:36.406-0300,Bruno Silva,status,Submissão,Done
+SI-7862,2026-07-17T19:03:24.302-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7862,2026-07-17T19:03:24.302-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7862,2026-07-17T19:03:24.302-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7862,2026-07-17T19:03:24.302-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7862,2026-07-17T19:03:24.302-0300,Sistema,Resolução do chamado,,Drivers do dispositivos foram atualizados.
+SI-7862,2026-07-17T19:03:24.302-0300,Sistema,Causa raiz potencial,,Drivers do dispositivos foram atualizados.
+SI-7862,2026-07-17T19:03:24.302-0300,Sistema,Causa raiz final,,Drivers do dispositivos foram atualizados.
+SI-7862,2026-07-17T19:03:24.302-0300,Sistema,Justificativa Causa Raiz final,,Drivers do dispositivos foram atualizados.
+SI-7870,2026-07-17T19:03:28.589-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7870,2026-07-17T19:03:28.589-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-7870,2026-07-17T19:03:28.589-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7870,2026-07-17T19:03:28.589-0300,Sistema,Criticidade final,,P2 - Média
+SI-7870,2026-07-17T19:03:28.589-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7870,2026-07-17T19:03:28.589-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7870,2026-07-17T19:03:28.589-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7870,2026-07-17T19:03:28.589-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7869,2026-07-17T13:05:01.300-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
 SI-7869,2026-07-17T13:05:01.300-0300,Sistema,Reclassificação solicitação,,Incidente
 SI-7869,2026-07-17T13:05:01.300-0300,Sistema,Causa Raiz,,Impacto não mapeado
@@ -62775,39 +62811,109 @@ SI-7871,2026-07-17T12:02:36.514-0300,Sistema,Link,,This work item is blocked by 
 SI-7876,2026-07-17T14:42:44.300-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7876,2026-07-17T14:42:47.387-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7876,2026-07-17T14:42:47.387-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7876,2026-07-17T19:03:31.078-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7876,2026-07-17T19:03:31.078-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7876,2026-07-17T19:03:31.078-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7876,2026-07-17T19:03:31.078-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7876,2026-07-17T19:03:31.078-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7876,2026-07-17T19:03:31.078-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7876,2026-07-17T19:03:31.078-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7876,2026-07-17T19:03:31.078-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7875,2026-07-17T13:27:26.394-0300,Sistema,Link,,This work item is blocked by GA-1275
 SI-7875,2026-07-17T13:27:43.393-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7875,2026-07-17T13:27:45.710-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7875,2026-07-17T13:27:45.710-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7875,2026-07-17T19:03:30.480-0300,Sistema,Resolução do chamado,,Colaboradora foi removida do grupo solicitado.
 SI-7874,2026-07-17T13:22:24.341-0300,Sistema,Link,,This work item is blocked by GA-1274
 SI-7873,2026-07-17T17:28:48.842-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7873,2026-07-17T17:28:51.441-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7873,2026-07-17T17:28:51.441-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7873,2026-07-17T19:03:29.893-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7873,2026-07-17T19:03:29.893-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-7873,2026-07-17T19:03:29.893-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7873,2026-07-17T19:03:29.893-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-7873,2026-07-17T19:03:29.893-0300,Sistema,Resolução do chamado,,"Realizado o reenvio da documentação utilizando um novo código identificador exclusivo. Após essa atualização, o sistema realizou o processamento completo do arquivo, permitindo que a leitura dos dados fosse concluída com sucesso pela inteligência artificial."
+SI-7873,2026-07-17T19:03:29.893-0300,Sistema,Causa raiz potencial,,Bloqueio na fila de processamento devido à duplicidade de hash ou arquivo retido em cache por falha na tentativa de ingestão inicial.
+SI-7873,2026-07-17T19:03:29.893-0300,Sistema,Causa raiz final,,"Identificou-se que os documentos originais sofreram uma interrupção pontual de comunicação no momento exato em que eram recebidos pelo sistema pela primeira vez. Para garantir a segurança e evitar que o mesmo arquivo seja lido duas vezes, a plataforma gera um código de identificação exclusivo para cada documento."
+SI-7873,2026-07-17T19:03:29.893-0300,Sistema,Justificativa Causa Raiz final,,O nexo causal está atrelado à falta de um mecanismo de timeout ou de limpeza automática para travas de concorrência na tabela de hashes de arquivos recebidos.
 SI-7877,2026-07-17T14:42:24.243-0300,Sistema,Link,,This work item is blocked by GA-1276
 SI-7877,2026-07-17T16:36:16.137-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7877,2026-07-17T16:36:18.570-0300,Nícollas Resende,resolution,,Done
 SI-7877,2026-07-17T16:36:18.570-0300,Nícollas Resende,status,Submissão,Done
+SI-7877,2026-07-17T19:03:31.684-0300,Sistema,Criticidade final,,P2 - Média
+SI-7877,2026-07-17T19:03:31.684-0300,Sistema,Resolução do chamado,,Foi realizada a ativação da webcam no notebook da colaboradora.
 SI-7882,2026-07-17T15:49:50.768-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7882,2026-07-17T15:49:53.491-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7882,2026-07-17T15:49:53.491-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7882,2026-07-17T19:03:34.153-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7882,2026-07-17T19:03:34.153-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7882,2026-07-17T19:03:34.153-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7882,2026-07-17T19:03:34.153-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7882,2026-07-17T19:03:34.153-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7882,2026-07-17T19:03:34.153-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7882,2026-07-17T19:03:34.153-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7882,2026-07-17T19:03:34.153-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7881,2026-07-17T15:28:14.529-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7881,2026-07-17T15:28:16.583-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7881,2026-07-17T15:28:16.583-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7881,2026-07-17T19:03:33.509-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7881,2026-07-17T19:03:33.509-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7881,2026-07-17T19:03:33.509-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7881,2026-07-17T19:03:33.509-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7881,2026-07-17T19:03:33.509-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7881,2026-07-17T19:03:33.509-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7881,2026-07-17T19:03:33.509-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7881,2026-07-17T19:03:33.509-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7880,2026-07-17T15:08:30.372-0300,Sistema,Link,,This work item is blocked by GA-1277
 SI-7880,2026-07-17T16:46:44.130-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7880,2026-07-17T16:46:47.796-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7880,2026-07-17T16:46:47.796-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7880,2026-07-17T19:03:32.822-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-7880,2026-07-17T19:03:32.822-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7880,2026-07-17T19:03:32.822-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7880,2026-07-17T19:03:32.822-0300,Sistema,Criticidade final,,P2 - Média
+SI-7880,2026-07-17T19:03:32.822-0300,Sistema,Resolução do chamado,,"Realizado o diagnóstico e a reconfiguração técnica das opções de gerenciamento de dispositivos de imagem integradas ao sistema operacional Windows. O funcionamento do componente de captura de vídeo foi restabelecido com sucesso, garantindo a normalização do uso do equipamento."
+SI-7880,2026-07-17T19:03:32.822-0300,Sistema,Causa raiz potencial,,Conflito de concorrência pelo uso exclusivo do hardware da webcam por processos em segundo plano
+SI-7880,2026-07-17T19:03:32.822-0300,Sistema,Causa raiz final,,Identificamos que a interrupção temporária no funcionamento da câmera do seu notebook ocorreu devido a uma inconsistência na comunicação interna entre o sistema operacional do computador e a webcam física.
+SI-7880,2026-07-17T19:03:32.822-0300,Sistema,Justificativa Causa Raiz final,,"O incidente originou-se de uma falha de concorrência ou da ausência da diretiva EnableFrameServerMode no registro do Windows Media Foundation, o que gera erros de runtime (como o código 0xA00F4244) e impede que o Frame Server forneça frames ao ecossistema de aplicativos."
+SI-7879,2026-07-17T19:03:32.249-0300,Sistema,Resolução do chamado,,Em atendimento
 SI-7886,2026-07-17T16:18:23.448-0300,Sistema,Link,,This work item is blocked by GA-1279
 SI-7886,2026-07-17T16:20:00.058-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7886,2026-07-17T16:20:02.651-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7886,2026-07-17T16:20:02.651-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7886,2026-07-17T16:24:02.241-0300,Eduardo Felipe de Lima Rebello,assignee,Ricardo Barbosa Machado,Eduardo Felipe de Lima Rebello
+SI-7886,2026-07-17T19:03:36.600-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7886,2026-07-17T19:03:36.600-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7886,2026-07-17T19:03:36.600-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7886,2026-07-17T19:03:36.600-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-7886,2026-07-17T19:03:36.600-0300,Sistema,Resolução do chamado,,"Identificada a exclusão acidental da ordem na plataforma por parte do usuário. Realizado o procedimento interno de recuperação e restauração integral do registro no sistema, restabelecendo o fluxo normal do processo para a continuidade das atividades operacionais."
+SI-7886,2026-07-17T19:03:36.600-0300,Sistema,Causa raiz potencial,,Execução inadvertida de comando de exclusão na interface do sistema pelo colaborador
+SI-7886,2026-07-17T19:03:36.600-0300,Sistema,Causa raiz final,,"O cenário ocorreu devido a uma desatenção involuntária durante o manuseio das ferramentas de controle na plataforma, o que resultou na exclusão acidental da ordem de trabalho."
+SI-7886,2026-07-17T19:03:36.600-0300,Sistema,Justificativa Causa Raiz final,,nexo causal reside no fato de que a ação de deleção disparada pela interface executa uma alteração de estado ou exclusão lógica do registro nas tabelas operacionais da base de dados.
 SI-7885,2026-07-17T16:34:16.179-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7885,2026-07-17T16:34:19.276-0300,Nícollas Resende,resolution,,Done
 SI-7885,2026-07-17T16:34:19.276-0300,Nícollas Resende,status,Submissão,Done
+SI-7885,2026-07-17T19:03:35.974-0300,Sistema,Criticidade final,,P2 - Média
+SI-7885,2026-07-17T19:03:35.974-0300,Sistema,Resolução do chamado,,Foi realizada a criação do cadastro da cidade Slemon Park
 SI-7884,2026-07-17T16:25:30.538-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7884,2026-07-17T16:25:33.146-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7884,2026-07-17T16:25:33.146-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7884,2026-07-17T19:03:35.286-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7884,2026-07-17T19:03:35.286-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7884,2026-07-17T19:03:35.286-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7884,2026-07-17T19:03:35.286-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7884,2026-07-17T19:03:35.286-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7884,2026-07-17T19:03:35.286-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7884,2026-07-17T19:03:35.286-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7884,2026-07-17T19:03:35.286-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7883,2026-07-17T16:07:57.081-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7883,2026-07-17T16:07:59.706-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7883,2026-07-17T16:07:59.706-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7883,2026-07-17T19:03:34.715-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7883,2026-07-17T19:03:34.715-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7883,2026-07-17T19:03:34.715-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7883,2026-07-17T19:03:34.715-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7883,2026-07-17T19:03:34.715-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7883,2026-07-17T19:03:34.715-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7883,2026-07-17T19:03:34.715-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7883,2026-07-17T19:03:34.715-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
