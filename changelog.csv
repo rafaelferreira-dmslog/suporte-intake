@@ -62939,6 +62939,61 @@ SI-7889,2026-07-20T11:18:23.078-0300,Ricardo Barbosa Machado,status,Submissão,D
 SI-7888,2026-07-20T11:00:41.068-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7888,2026-07-20T11:00:43.754-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7888,2026-07-20T11:00:43.754-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7888,2026-07-20T17:10:28.863-0300,Ricardo Barbosa Machado,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+1️⃣ *Identificação do Chamado*
+
+* *Módulo*: Operational
+* *Tipo/Classificação*: Incidente
+* *Ambiente*: Produção
+* *Título Sugerido*: ""Erro de processamento ao gerar linha de Demurrage BUY ao salvar o Container na Order 260333414""
+
+2️⃣ *Entendimento do Problema*
+
+* *Passo a Passo*:
+*# Acessar a Order 260333414 no módulo Operational.
+*# Acessar os links dos containers afetados (IDs 23791 e 23792).
+*# Preencher a data de ""BUYING DEMURRAGE START DATE"" com 31/05/2026 para abrir a linha de BUY.
+*# Salvar o container.
+* *Comportamento Esperado vs. Atual*:
+** *Esperado*: O sistema gera automaticamente os valores de Buying e Selling na aba Container da Order, a partir do Campo de Data de Devolução do Container preenchido. Deve constar o total de USD 730,00 por container (Free time de 21 dias, 1 diária de USD 340,00 e 1 diária de USD 390,00).
+** *Atual*: A linha não é gerada de forma nativa. Ao tentar inserir a linha via banco de dados e realizar o ""save"" no container, o sistema exclui a linha.
+* *Evidências*: Links dos containers fornecidos ([https://operational.dmslog.com/order/151439/container/23791/|https://operational.dmslog.com/order/151439/container/23791/] e 23792).
+
+3️⃣ *Análise Técnica Inicial*
+
+* *Histórico/Logs*: Tentativas de criação das linhas via banco de dados pelo time de DE foram revertidas automaticamente; ao realizar o save no container pela interface, as linhas desaparecem.
+* *Parametrização/Perfil*: [PENDENTE: SOLICITAR AO USUÁRIO]
+* *Reprodutibilidade*: Constante.
+
+4️⃣ *Avaliação de Impacto*
+
+* *Abrangência*: Order 260333414 (afetando 2 unidades de container).
+* *Criticidade*: Média
+* *Justificativa da criticidade*: Impede a geração do custo a ser pago ao armador referente à demurrage, travando o fluxo financeiro do processo específico.
+* *Workaround*: Não.
+
+5️⃣ *Tentativas de Resolução*
+
+* *Ações realizadas pelo Service Desk*: Acionamento do time de DE para inserção forçada das linhas via banco de dados (todas as formas tentadas resultaram em exclusão da linha após o save na aplicação).
+* *Hipóteses já descartadas*: Falha de front-end ou de preenchimento simples, visto que a persistência forçada no banco de dados é ativamente sobrescrita ou excluída pela rotina de salvamento do sistema.
+
+6️⃣ *Causa Raiz Potencial (hipótese N1)*
+
+* Comportamento inesperado da aplicação durante o evento de ""save"". Trata-se de uma hipótese potencial onde a rotina do sistema está sobrescrevendo ou deletando os dados de demurrage previamente inseridos (mesmo via banco) ao tentar atualizar a entidade do container.
+
+7️⃣ *Justificativa Técnica para Escalonamento*
+
+* *Por que o N1 não consegue resolver*: Limitação de escopo e ferramenta. A tentativa de resolução direta via banco de dados pelo time de DE falhou devido a um erro interno da rotina de salvamento, exigindo depuração (debug) no código da aplicação.
+* *O que se espera do próximo time*: Análise técnica da rotina/trigger de salvamento acionada na tela de container para identificar o motivo da exclusão da linha de BUY e correção para possibilitar a geração do custo.
+* *Nível sugerido*: N3 / Sustentação
+
+📝 *DESCRIÇÃO OTIMIZADA (PARA O CHAMADO)*
+
+*Contexto e Problema Observado:* Necessidade de geração de custo a ser pago ao armador referente à demurrage na Order 260333414. Ao preencher a data ""BUYING DEMURRAGE START DATE"" (31/05/2026) nos containers 23791 e 23792, o sistema não está gerando a linha de BUY. Em cenário normal, o sistema gera automaticamente os valores de Buying e Selling na aba Container da Order, a partir do Campo de Data de Devolução do Container preenchido. O custo correto esperado é de USD 730,00 por container (21 dias de free time, 1 diária de USD 340,00 e 1 de USD 390,00). *Ações Tomadas e Evidências:* Foram feitas tentativas junto ao time de DE para criar as linhas via banco de dados. No entanto, ao acionar o botão de ""save"" na interface do container, ocorre um comportamento inesperado da aplicação, e a linha recém-criada é excluída. As evidências de URL constam no relato original. *Impacto e Escalonamento:* A falha impede a continuidade financeira (pagamento ao armador). Como o workaround via banco também foi descartado pela rotina do sistema, o caso requer investigação do time de Sustentação na mecânica de salvamento da tela."
+SI-7888,2026-07-20T17:10:33.036-0300,Ricardo Barbosa Machado,Encaminhado para:,,Sustentação
+SI-7888,2026-07-20T17:10:47.248-0300,Ricardo Barbosa Machado,Encaminhado para:,Sustentação,
+SI-7888,2026-07-20T17:13:46.551-0300,Sistema,Link,,This work item is blocked by SUS-274
 SI-7887,2026-07-20T09:44:39.921-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7887,2026-07-20T09:44:42.245-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7887,2026-07-20T09:44:42.245-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
@@ -63042,3 +63097,9 @@ SI-7920,2026-07-20T15:13:30.446-0300,Sistema,Link,,This work item is blocked by 
 SI-7920,2026-07-20T15:51:26.879-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7920,2026-07-20T15:51:29.165-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7920,2026-07-20T15:51:29.165-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7922,2026-07-20T16:53:03.403-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7922,2026-07-20T16:53:05.592-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7922,2026-07-20T16:53:05.592-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7923,2026-07-20T17:12:44.145-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7923,2026-07-20T17:12:47.174-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7923,2026-07-20T17:12:47.174-0300,Ricardo Barbosa Machado,status,Submissão,Done
