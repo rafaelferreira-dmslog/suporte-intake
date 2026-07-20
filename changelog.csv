@@ -62725,6 +62725,8 @@ SI-7865,2026-07-17T19:03:26.102-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7865,2026-07-17T19:03:26.102-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7865,2026-07-17T19:03:26.102-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7865,2026-07-17T19:03:26.102-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7865,2026-07-20T09:03:40.260-0300,Bruno Silva,resolution,,Done
+SI-7865,2026-07-20T09:03:40.260-0300,Bruno Silva,status,Submissão,Done
 SI-7864,2026-07-17T14:14:01.563-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7864,2026-07-17T14:14:04.209-0300,Bruno Silva,resolution,,Done
 SI-7864,2026-07-17T14:14:04.209-0300,Bruno Silva,status,Submissão,Done
@@ -62761,6 +62763,8 @@ SI-7870,2026-07-17T19:03:28.589-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7870,2026-07-17T19:03:28.589-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7870,2026-07-17T19:03:28.589-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7870,2026-07-17T19:03:28.589-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7870,2026-07-20T09:03:34.825-0300,Bruno Silva,resolution,,Done
+SI-7870,2026-07-20T09:03:34.825-0300,Bruno Silva,status,Submissão,Done
 SI-7869,2026-07-17T13:05:01.300-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
 SI-7869,2026-07-17T13:05:01.300-0300,Sistema,Reclassificação solicitação,,Incidente
 SI-7869,2026-07-17T13:05:01.300-0300,Sistema,Causa Raiz,,Impacto não mapeado
@@ -62769,6 +62773,8 @@ SI-7869,2026-07-17T13:05:01.300-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7869,2026-07-17T13:05:01.300-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7869,2026-07-17T13:05:01.300-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7869,2026-07-17T13:05:01.300-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7869,2026-07-20T09:03:37.403-0300,Bruno Silva,resolution,,Done
+SI-7869,2026-07-20T09:03:37.403-0300,Bruno Silva,status,Submissão,Done
 SI-7868,2026-07-17T12:15:36.827-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7868,2026-07-17T12:15:38.934-0300,Nícollas Resende,resolution,,Done
 SI-7868,2026-07-17T12:15:38.934-0300,Nícollas Resende,status,Submissão,Done
@@ -62808,6 +62814,8 @@ SI-7872,2026-07-17T13:05:02.011-0300,Sistema,Causa raiz potencial,,Em atendiment
 SI-7872,2026-07-17T13:05:02.011-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7872,2026-07-17T13:05:02.011-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7871,2026-07-17T12:02:36.514-0300,Sistema,Link,,This work item is blocked by GA-1273
+SI-7871,2026-07-20T09:03:32.198-0300,Bruno Silva,resolution,,Done
+SI-7871,2026-07-20T09:03:32.198-0300,Bruno Silva,status,Submissão,Done
 SI-7876,2026-07-17T14:42:44.300-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7876,2026-07-17T14:42:47.387-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7876,2026-07-17T14:42:47.387-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -62825,6 +62833,9 @@ SI-7875,2026-07-17T13:27:45.710-0300,Eduardo Felipe de Lima Rebello,resolution,,
 SI-7875,2026-07-17T13:27:45.710-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7875,2026-07-17T19:03:30.480-0300,Sistema,Resolução do chamado,,Colaboradora foi removida do grupo solicitado.
 SI-7874,2026-07-17T13:22:24.341-0300,Sistema,Link,,This work item is blocked by GA-1274
+SI-7874,2026-07-20T09:03:24.588-0300,Bruno Silva,status,Submissão,Finalizado Definitivamente
+SI-7874,2026-07-20T09:03:29.197-0300,Bruno Silva,resolution,,Done
+SI-7874,2026-07-20T09:03:29.197-0300,Bruno Silva,status,Finalizado Definitivamente,Done
 SI-7873,2026-07-17T17:28:48.842-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7873,2026-07-17T17:28:51.441-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7873,2026-07-17T17:28:51.441-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
@@ -62877,6 +62888,10 @@ SI-7880,2026-07-17T19:03:32.822-0300,Sistema,Causa raiz potencial,,Conflito de c
 SI-7880,2026-07-17T19:03:32.822-0300,Sistema,Causa raiz final,,Identificamos que a interrupção temporária no funcionamento da câmera do seu notebook ocorreu devido a uma inconsistência na comunicação interna entre o sistema operacional do computador e a webcam física.
 SI-7880,2026-07-17T19:03:32.822-0300,Sistema,Justificativa Causa Raiz final,,"O incidente originou-se de uma falha de concorrência ou da ausência da diretiva EnableFrameServerMode no registro do Windows Media Foundation, o que gera erros de runtime (como o código 0xA00F4244) e impede que o Frame Server forneça frames ao ecossistema de aplicativos."
 SI-7879,2026-07-17T19:03:32.249-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7879,2026-07-20T09:03:18.939-0300,Bruno Silva,resolution,,Done
+SI-7879,2026-07-20T09:03:18.939-0300,Bruno Silva,status,Submissão,Done
+SI-7878,2026-07-20T09:03:21.778-0300,Bruno Silva,resolution,,Done
+SI-7878,2026-07-20T09:03:21.778-0300,Bruno Silva,status,Submissão,Done
 SI-7886,2026-07-17T16:18:23.448-0300,Sistema,Link,,This work item is blocked by GA-1279
 SI-7886,2026-07-17T16:20:00.058-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7886,2026-07-17T16:20:02.651-0300,Ricardo Barbosa Machado,resolution,,Done
@@ -62917,7 +62932,12 @@ SI-7883,2026-07-17T19:03:34.715-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7883,2026-07-17T19:03:34.715-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7883,2026-07-17T19:03:34.715-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7883,2026-07-17T19:03:34.715-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7887,2026-07-20T09:44:39.921-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7887,2026-07-20T09:44:42.245-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7887,2026-07-20T09:44:42.245-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7891,2026-07-17T21:57:21.702-0300,Sistema,Link,,This work item is blocked by GA-1280
 SI-7892,2026-07-19T09:40:21.325-0300,Sistema,Link,,This work item is blocked by GA-1281
 SI-7894,2026-07-20T06:15:25.050-0300,Sistema,Link,,This work item is blocked by GA-1283
 SI-7893,2026-07-20T06:15:24.308-0300,Sistema,Link,,This work item is blocked by GA-1282
+SI-7897,2026-07-20T09:27:24.372-0300,Sistema,Link,,This work item is blocked by GA-1285
+SI-7895,2026-07-20T08:54:28.401-0300,Sistema,Link,,This work item is blocked by GA-1284
