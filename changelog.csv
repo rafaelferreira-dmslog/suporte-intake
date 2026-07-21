@@ -63529,6 +63529,8 @@ SI-7935,2026-07-21T13:02:22.373-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7935,2026-07-21T13:02:22.373-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7935,2026-07-21T13:02:22.373-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7935,2026-07-21T13:02:22.373-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7934,2026-07-21T16:39:29.504-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7934,2026-07-21T16:39:29.504-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7940,2026-07-21T10:12:51.345-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7940,2026-07-21T10:12:53.841-0300,Bruno Silva,resolution,,Done
 SI-7940,2026-07-21T10:12:53.841-0300,Bruno Silva,status,Submissão,Done
@@ -63561,6 +63563,9 @@ SI-7938,2026-07-21T13:02:24.243-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7938,2026-07-21T13:02:24.243-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7938,2026-07-21T13:02:24.243-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7938,2026-07-21T13:02:24.243-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7938,2026-07-21T16:39:12.291-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7938,2026-07-21T16:39:12.291-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7938,2026-07-21T16:39:17.007-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7937,2026-07-21T09:23:34.758-0300,Sistema,Link,,This work item is blocked by GA-1302
 SI-7937,2026-07-21T10:54:30.865-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7937,2026-07-21T10:54:34.598-0300,Ricardo Barbosa Machado,resolution,,Done
@@ -63620,7 +63625,16 @@ SI-7950,2026-07-21T13:02:30.830-0300,Sistema,Resolução do chamado,,Bom dia! po
 SI-7950,2026-07-21T13:02:30.830-0300,Sistema,Causa raiz potencial,,Bom dia! por favor entrar na salinha para verificação dos documentos(https://meet.google.com/cws-xorv-fvw?authuser=0)
 SI-7950,2026-07-21T13:02:30.830-0300,Sistema,Causa raiz final,,Bom dia! por favor entrar na salinha para verificação dos documentos(https://meet.google.com/cws-xorv-fvw?authuser=0)
 SI-7950,2026-07-21T13:02:30.830-0300,Sistema,Justificativa Causa Raiz final,,Bom dia! por favor entrar na salinha para verificação dos documentos(https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7950,2026-07-21T16:38:43.474-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7950,2026-07-21T16:38:43.474-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7950,2026-07-21T16:39:07.162-0300,Ricardo Barbosa Machado,assignee,,Bruno Silva
 SI-7949,2026-07-21T10:19:21.847-0300,Sistema,Link,,This work item is blocked by GA-1303
+SI-7949,2026-07-21T16:19:14.869-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7949,2026-07-21T16:19:14.869-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7949,2026-07-21T16:19:16.109-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7948,2026-07-21T16:21:41.089-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7948,2026-07-21T16:21:41.089-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7948,2026-07-21T16:21:43.562-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7947,2026-07-21T12:12:27.901-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7947,2026-07-21T12:12:30.184-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7947,2026-07-21T12:12:30.184-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -63713,15 +63727,33 @@ SI-7963,2026-07-21T13:02:34.203-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7963,2026-07-21T13:02:34.203-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7963,2026-07-21T13:02:34.203-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7963,2026-07-21T13:02:34.203-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7962,2026-07-21T16:36:31.343-0300,Ricardo Barbosa Machado,assignee,,Bruno Silva
+SI-7962,2026-07-21T16:36:42.595-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7962,2026-07-21T16:36:42.595-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7961,2026-07-21T16:36:13.333-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7961,2026-07-21T16:36:17.274-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7961,2026-07-21T16:36:17.274-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7960,2026-07-21T12:46:01.087-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7960,2026-07-21T12:46:03.490-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7960,2026-07-21T12:46:03.490-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7959,2026-07-21T11:04:23.318-0300,Sistema,Link,,This work item is blocked by GA-1306
+SI-7959,2026-07-21T16:35:03.443-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7959,2026-07-21T16:35:03.443-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7959,2026-07-21T16:35:04.805-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7958,2026-07-21T11:02:34.249-0300,Sistema,Link,,This work item is blocked by GA-1305
+SI-7958,2026-07-21T16:32:11.698-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7958,2026-07-21T16:32:14.440-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7958,2026-07-21T16:32:14.440-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7957,2026-07-21T12:45:07.577-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7957,2026-07-21T12:45:09.984-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7957,2026-07-21T12:45:09.984-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7956,2026-07-21T11:01:26.159-0300,Sistema,Link,,This work item is blocked by GA-1304
+SI-7956,2026-07-21T16:29:24.926-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7956,2026-07-21T16:29:24.926-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7956,2026-07-21T16:29:27.265-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7955,2026-07-21T16:38:30.479-0300,Ricardo Barbosa Machado,status,Submissão,Finalizado Definitivamente
+SI-7955,2026-07-21T16:38:33.143-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7955,2026-07-21T16:38:33.143-0300,Ricardo Barbosa Machado,status,Finalizado Definitivamente,Done
 SI-7954,2026-07-21T11:45:10.520-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7954,2026-07-21T11:45:13.196-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7954,2026-07-21T11:45:13.196-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -63736,6 +63768,9 @@ SI-7954,2026-07-21T13:02:33.380-0300,Sistema,Justificativa Causa Raiz final,,Em 
 SI-7966,2026-07-21T15:34:07.238-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7966,2026-07-21T15:34:09.885-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7966,2026-07-21T15:34:09.885-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7965,2026-07-21T16:09:29.399-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7965,2026-07-21T16:09:31.854-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7965,2026-07-21T16:09:31.854-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7967,2026-07-21T13:31:37.440-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7967,2026-07-21T13:31:43.751-0300,Bruno Silva,resolution,,Done
 SI-7967,2026-07-21T13:31:43.751-0300,Bruno Silva,status,Submissão,Done
@@ -63751,9 +63786,21 @@ SI-7969,2026-07-21T15:09:28.346-0300,Ricardo Barbosa Machado,status,Submissão,D
 SI-7968,2026-07-21T15:10:30.816-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7968,2026-07-21T15:10:32.746-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7968,2026-07-21T15:10:32.746-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7974,2026-07-21T15:46:00.868-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7974,2026-07-21T15:46:03.478-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7974,2026-07-21T15:46:03.478-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7973,2026-07-21T15:40:45.170-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7973,2026-07-21T15:40:47.562-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7973,2026-07-21T15:40:47.562-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7972,2026-07-21T15:39:10.931-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7972,2026-07-21T15:39:12.969-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7972,2026-07-21T15:39:12.969-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7977,2026-07-21T16:38:16.980-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7977,2026-07-21T16:38:21.075-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7977,2026-07-21T16:38:21.075-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7976,2026-07-21T16:16:47.839-0300,Sistema,Link,,This work item is blocked by GA-1307
+SI-7976,2026-07-21T16:38:27.163-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7976,2026-07-21T16:38:27.163-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7975,2026-07-21T16:09:01.239-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7975,2026-07-21T16:09:01.239-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7975,2026-07-21T16:09:06.125-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
