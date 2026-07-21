@@ -63061,6 +63061,8 @@ SI-7892,2026-07-21T01:00:26.074-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7892,2026-07-21T01:00:26.074-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7892,2026-07-21T09:06:43.901-0300,Bruno Silva,resolution,,Done
 SI-7892,2026-07-21T09:06:43.901-0300,Bruno Silva,status,Submissão,Done
+SI-7892,2026-07-21T10:11:16.054-0300,Bruno Silva,assignee,,Ana Beatriz Rodriguez
+SI-7892,2026-07-21T10:11:20.291-0300,Bruno Silva,assignee,Ana Beatriz Rodriguez,Bruno Silva
 SI-7894,2026-07-20T06:15:25.050-0300,Sistema,Link,,This work item is blocked by GA-1283
 SI-7894,2026-07-20T10:20:11.542-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7894,2026-07-20T10:20:13.313-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
@@ -63397,15 +63399,22 @@ SI-7928,2026-07-20T18:22:22.640-0300,Sistema,Link,,This work item is blocked by 
 SI-7927,2026-07-21T09:06:17.086-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7927,2026-07-21T09:06:20.448-0300,Bruno Silva,resolution,,Done
 SI-7927,2026-07-21T09:06:20.448-0300,Bruno Silva,status,Submissão,Done
+SI-7927,2026-07-21T10:19:29.406-0300,Bruno Silva,assignee,Bruno Silva,Eduardo Felipe de Lima Rebello
 SI-7926,2026-07-21T09:06:09.347-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7926,2026-07-21T09:06:24.045-0300,Bruno Silva,resolution,,Done
 SI-7926,2026-07-21T09:06:24.045-0300,Bruno Silva,status,Submissão,Done
+SI-7926,2026-07-21T10:19:35.409-0300,Bruno Silva,assignee,Bruno Silva,Eduardo Felipe de Lima Rebello
 SI-7925,2026-07-21T09:05:55.679-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7925,2026-07-21T09:06:26.673-0300,Bruno Silva,resolution,,Done
 SI-7925,2026-07-21T09:06:26.673-0300,Bruno Silva,status,Submissão,Done
+SI-7925,2026-07-21T10:19:18.367-0300,Bruno Silva,assignee,Bruno Silva,Eduardo Felipe de Lima Rebello
 SI-7924,2026-07-21T09:05:42.732-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7924,2026-07-21T09:06:29.538-0300,Bruno Silva,resolution,,Done
 SI-7924,2026-07-21T09:06:29.538-0300,Bruno Silva,status,Submissão,Done
+SI-7924,2026-07-21T10:19:13.914-0300,Bruno Silva,assignee,Bruno Silva,Eduardo Felipe de Lima Rebello
+SI-7931,2026-07-21T10:16:47.080-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7931,2026-07-21T10:16:50.041-0300,Bruno Silva,resolution,,Done
+SI-7931,2026-07-21T10:16:50.041-0300,Bruno Silva,status,Submissão,Done
 SI-7930,2026-07-20T19:06:44.624-0300,Sistema,Link,,This work item is blocked by GA-1300
 SI-7930,2026-07-21T09:26:21.467-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7930,2026-07-21T09:26:23.753-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
@@ -63421,4 +63430,28 @@ SI-7932,2026-07-21T08:56:10.855-0300,Eduardo Felipe de Lima Rebello,assignee,,Ed
 SI-7933,2026-07-21T09:05:52.392-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7933,2026-07-21T09:05:54.585-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7933,2026-07-21T09:05:54.585-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7935,2026-07-21T10:38:03.023-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7935,2026-07-21T10:38:06.155-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7935,2026-07-21T10:38:06.155-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7940,2026-07-21T10:12:51.345-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7940,2026-07-21T10:12:53.841-0300,Bruno Silva,resolution,,Done
+SI-7940,2026-07-21T10:12:53.841-0300,Bruno Silva,status,Submissão,Done
+SI-7940,2026-07-21T10:19:56.207-0300,Bruno Silva,assignee,Bruno Silva,Eduardo Felipe de Lima Rebello
+SI-7939,2026-07-21T09:46:17.860-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7939,2026-07-21T09:46:20.920-0300,Bruno Silva,resolution,,Done
+SI-7939,2026-07-21T09:46:20.920-0300,Bruno Silva,status,Submissão,Done
+SI-7939,2026-07-21T10:19:53.706-0300,Bruno Silva,assignee,Bruno Silva,Eduardo Felipe de Lima Rebello
 SI-7937,2026-07-21T09:23:34.758-0300,Sistema,Link,,This work item is blocked by GA-1302
+SI-7953,2026-07-21T10:42:32.843-0300,Bruno Silva,assignee,,Eduardo Felipe de Lima Rebello
+SI-7953,2026-07-21T10:42:35.750-0300,Bruno Silva,resolution,,Done
+SI-7953,2026-07-21T10:42:35.750-0300,Bruno Silva,status,Submissão,Done
+SI-7952,2026-07-21T10:42:30.596-0300,Bruno Silva,assignee,,Eduardo Felipe de Lima Rebello
+SI-7952,2026-07-21T10:42:38.028-0300,Bruno Silva,resolution,,Done
+SI-7952,2026-07-21T10:42:38.028-0300,Bruno Silva,status,Submissão,Done
+SI-7951,2026-07-21T10:42:27.231-0300,Bruno Silva,assignee,,Eduardo Felipe de Lima Rebello
+SI-7951,2026-07-21T10:42:40.379-0300,Bruno Silva,resolution,,Done
+SI-7951,2026-07-21T10:42:40.379-0300,Bruno Silva,status,Submissão,Done
+SI-7950,2026-07-21T10:38:52.872-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7950,2026-07-21T10:42:16.307-0300,Bruno Silva,resolution,,Done
+SI-7950,2026-07-21T10:42:16.307-0300,Bruno Silva,status,Submissão,Done
+SI-7949,2026-07-21T10:19:21.847-0300,Sistema,Link,,This work item is blocked by GA-1303
