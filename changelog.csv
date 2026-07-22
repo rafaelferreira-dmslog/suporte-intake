@@ -63145,6 +63145,7 @@ SI-7902,2026-07-21T01:00:32.724-0300,Sistema,Causa raiz final,,"Para que os valo
 SI-7902,2026-07-21T01:00:32.724-0300,Sistema,Justificativa Causa Raiz final,,A arquitetura do sistema condiciona a migração de valores entre os módulos de Cotação (PM) e Operacional/Financeiro (OPR/FIN) ao estado do componente de travamento (lock).
 SI-7901,2026-07-20T13:38:54.039-0300,Bruno Silva,resolution,,Done
 SI-7901,2026-07-20T13:38:54.039-0300,Bruno Silva,status,Submissão,Done
+SI-7901,2026-07-22T09:48:32.218-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7900,2026-07-20T10:04:35.500-0300,Sistema,Link,,This work item is blocked by GA-1289
 SI-7900,2026-07-20T11:51:50.779-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7900,2026-07-20T11:51:53.539-0300,Bruno Silva,resolution,,Done
@@ -63401,6 +63402,9 @@ SI-7923,2026-07-21T01:00:47.082-0300,Sistema,Causa raiz potencial,,Em atendiment
 SI-7923,2026-07-21T01:00:47.082-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7923,2026-07-21T01:00:47.082-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7928,2026-07-20T18:22:22.640-0300,Sistema,Link,,This work item is blocked by GA-1298
+SI-7928,2026-07-22T09:58:14.736-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7928,2026-07-22T09:58:17.519-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7928,2026-07-22T09:58:17.519-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7927,2026-07-21T09:06:17.086-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7927,2026-07-21T09:06:20.448-0300,Bruno Silva,resolution,,Done
 SI-7927,2026-07-21T09:06:20.448-0300,Bruno Silva,status,Submissão,Done
@@ -63969,3 +63973,12 @@ SI-7975,2026-07-21T19:01:10.610-0300,Sistema,Justificativa Causa Raiz final,,Em 
 SI-7980,2026-07-21T17:20:32.993-0300,Sistema,Link,,This work item is blocked by GA-1309
 SI-7979,2026-07-21T16:47:26.646-0300,Sistema,Link,,This work item is blocked by GA-1308
 SI-7984,2026-07-21T19:18:23.436-0300,Sistema,Link,,This work item is blocked by GA-1310
+SI-7984,2026-07-22T10:44:32.724-0300,Nícollas Resende,assignee,,Nícollas Resende
+SI-7984,2026-07-22T10:44:34.987-0300,Nícollas Resende,resolution,,Done
+SI-7984,2026-07-22T10:44:34.987-0300,Nícollas Resende,status,Submissão,Done
+SI-8006,2026-07-22T10:29:28.450-0300,Sistema,Link,,This work item is blocked by GA-1313
+SI-8001,2026-07-22T10:09:27.588-0300,Sistema,Link,,This work item is blocked by GA-1312
+SI-7996,2026-07-22T10:32:27.833-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7996,2026-07-22T10:32:30.686-0300,Bruno Silva,resolution,,Done
+SI-7996,2026-07-22T10:32:30.686-0300,Bruno Silva,status,Submissão,Done
+SI-7992,2026-07-22T09:47:21.587-0300,Sistema,Link,,This work item is blocked by GA-1311
