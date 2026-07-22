@@ -63080,6 +63080,10 @@ SI-7894,2026-07-21T01:00:27.763-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7894,2026-07-21T01:00:27.763-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7894,2026-07-21T01:00:27.763-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7894,2026-07-21T01:00:27.763-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7894,2026-07-22T13:02:25.657-0300,Sistema,Resolução do chamado,Em atendimento,"Orientada a colaboradora sobre o procedimento adequado para a inicialização e estabilização da rede privada corporativa (VPN). Foi recomendado aguardar o período aproximado de 30 segundos após a ativação do aplicativo de conexão para que os caminhos de comunicação segura sejam totalmente estabelecidos antes de realizar o acesso ao sistema DMSYS, garantindo a perfeita validação das credenciais e da conectividade."
+SI-7894,2026-07-22T13:02:25.657-0300,Sistema,Causa raiz potencial,Em atendimento,"Tentativa de requisição ao sistema interno (DMSYS) efetuada antes da conclusão das fases de handshake, autenticação SSO e atribuição de IP virtual pelo cliente VPN."
+SI-7894,2026-07-22T13:02:25.657-0300,Sistema,Causa raiz final,Em atendimento,A dificuldade temporária registrada para acessar a plataforma DMSYS está associada ao tempo necessário para a completa estruturação e validação da conexão corporativa segura (VPN).
+SI-7894,2026-07-22T13:02:25.657-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A indisponibilidade de acesso ao DMSYS decorreu do envio de pacotes HTTP/HTTPS pela interface física de rede (WAN) em detrimento da interface virtual criada pelo cliente VPN (Pritunl), ocasionado pela tentativa de navegação prévia à conclusão das rotas de encaminhamento e resolução DNS corporativa. O tempo de negociação do túnel criptografado e atribuição de IP privado gera uma janela de latência na qual tentativas de conexão resultam em time-outs de rede."
 SI-7893,2026-07-20T06:15:24.308-0300,Sistema,Link,,This work item is blocked by GA-1282
 SI-7893,2026-07-21T01:00:26.966-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
 SI-7893,2026-07-21T01:00:26.966-0300,Sistema,Causa Raiz,,Falha Operacional
@@ -63146,6 +63150,14 @@ SI-7902,2026-07-21T01:00:32.724-0300,Sistema,Justificativa Causa Raiz final,,A a
 SI-7901,2026-07-20T13:38:54.039-0300,Bruno Silva,resolution,,Done
 SI-7901,2026-07-20T13:38:54.039-0300,Bruno Silva,status,Submissão,Done
 SI-7901,2026-07-22T09:48:32.218-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7901,2026-07-22T13:02:28.932-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7901,2026-07-22T13:02:28.932-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-7901,2026-07-22T13:02:28.932-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7901,2026-07-22T13:02:28.932-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7901,2026-07-22T13:02:28.932-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7901,2026-07-22T13:02:28.932-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7901,2026-07-22T13:02:28.932-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7901,2026-07-22T13:02:28.932-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7900,2026-07-20T10:04:35.500-0300,Sistema,Link,,This work item is blocked by GA-1289
 SI-7900,2026-07-20T11:51:50.779-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7900,2026-07-20T11:51:53.539-0300,Bruno Silva,resolution,,Done
@@ -63405,6 +63417,14 @@ SI-7928,2026-07-20T18:22:22.640-0300,Sistema,Link,,This work item is blocked by 
 SI-7928,2026-07-22T09:58:14.736-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7928,2026-07-22T09:58:17.519-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-7928,2026-07-22T09:58:17.519-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7928,2026-07-22T13:02:40.783-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7928,2026-07-22T13:02:40.783-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7928,2026-07-22T13:02:40.783-0300,Sistema,Causa Raiz,,Falha de Requisito
+SI-7928,2026-07-22T13:02:40.783-0300,Sistema,Criticidade final,,P2 - Média
+SI-7928,2026-07-22T13:02:40.783-0300,Sistema,Resolução do chamado,,Encaminhada a solicitação à equipe de desenvolvimento responsável pelo aplicativo de reservas e viagens para a inclusão e implementação do recurso solicitado.
+SI-7928,2026-07-22T13:02:40.783-0300,Sistema,Causa raiz potencial,,Ausência de campo ou fluxo específico na interface do aplicativo de reservas e viagens para o registro das informações necessárias
+SI-7928,2026-07-22T13:02:40.783-0300,Sistema,Causa raiz final,,A necessidade de intervenção no aplicativo de reservas e viagens decorre do fato de que a funcionalidade de adição solicitada não fazia parte do projeto original da ferramenta.
+SI-7928,2026-07-22T13:02:40.783-0300,Sistema,Justificativa Causa Raiz final,,"A falha origina-se do descasamento entre o escopo funcional legado da aplicação e as transformações operacionais contínuas. A indisponibilidade da opção de adição no aplicativo de reservas e viagens configura uma lacuna na fase de engenharia de requisitos, impedindo a execução nativa da tarefa na camada de usuário."
 SI-7927,2026-07-21T09:06:17.086-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7927,2026-07-21T09:06:20.448-0300,Bruno Silva,resolution,,Done
 SI-7927,2026-07-21T09:06:20.448-0300,Bruno Silva,status,Submissão,Done
@@ -63535,6 +63555,26 @@ SI-7935,2026-07-21T13:02:22.373-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7935,2026-07-21T13:02:22.373-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7934,2026-07-21T16:39:29.504-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7934,2026-07-21T16:39:29.504-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7934,2026-07-22T13:02:43.738-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7934,2026-07-22T13:02:43.738-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-7934,2026-07-22T13:02:43.738-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7934,2026-07-22T13:02:43.738-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7934,2026-07-22T13:02:43.738-0300,Sistema,Resolução do chamado,,"Olá,
+Analisamos o histórico do seu processo para entender o motivo pelo qual o alerta de HAWB Approved não foi enviado ao cliente. Identificamos que o comportamento está correto e seguiu a regra de otimização de fila de alertas do sistema.
+Abaixo, explicamos detalhadamente o que ocorreu:
+Linha do Tempo dos Acontecimentos (20/07/2026):
+10:58 — O estágio HAWB Approved foi confirmado no processo. Nesse momento, o sistema gerou o alerta e o colocou na fila de espera com um delay programado.
+11:02 — Apenas 4 minutos depois, o estágio ETD confirmed foi confirmado, gerando um novo alerta para o mesmo processo.
+Por que o alerta de HAWB Approved não disparou? (Regra dos 15 minutos)
+O sistema possui uma regra de segurança chamada Delay de 15 Minutos
+. Ela funciona da seguinte forma:
+Sempre que um estágio é iniciado ou confirmado, o seu alerta correspondente não sai imediatamente; ele entra em uma fila de espera que aguarda 15 minutos antes do envio
+Se qualquer outro alerta da mesma ordem for gerado dentro desse intervalo de 15 minutos, o sistema descarta automaticamente os alertas anteriores que estavam aguardando na fila e envia apenas o mais recente
+Essa regra serve para evitar que o cliente receba múltiplos e-mails repetitivos e segmentados em um curtíssimo espaço de tempo
+Como o intervalo entre a confirmação do HAWB Approved (10:58) e a do ETD Confirmed (11:02) foi de apenas 4 minutos, o alerta do ETD entrou na fila, ignorou e descartou o do HAWB Approved que ainda estava aguardando o tempo de delay"
+SI-7934,2026-07-22T13:02:43.738-0300,Sistema,Causa raiz potencial,,Descarte automático do alerta decorrente da regra de consolidação de eventos dentro da janela de tempo programada.
+SI-7934,2026-07-22T13:02:43.738-0300,Sistema,Causa raiz final,,"A ausência da notificação referente ao estágio HAWB Approved ocorreu em virtude da aplicação de uma regra do sistema criada para otimizar o envio de e-mails. Quando qualquer estágio de um processo é confirmado, a mensagem correspondente não é disparada imediatamente; ela é posicionada em uma fila de espera com duração de 15 minutos."
+SI-7934,2026-07-22T13:02:43.738-0300,Sistema,Justificativa Causa Raiz final,,"A análise técnica evidenciou que a ausência do envio do e-mail para o estágio HAWB Approved não resultou de falha na aplicação, bug de código ou indisponibilidade de infraestrutura, mas sim da execução correta da regra de negócio responsável pela gestão da fila de alertas (Delay de 15 Minutos)."
 SI-7940,2026-07-21T10:12:51.345-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7940,2026-07-21T10:12:53.841-0300,Bruno Silva,resolution,,Done
 SI-7940,2026-07-21T10:12:53.841-0300,Bruno Silva,status,Submissão,Done
@@ -63744,6 +63784,11 @@ SI-7964,2026-07-21T19:01:04.664-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7964,2026-07-21T19:01:04.664-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7964,2026-07-21T19:01:04.664-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7964,2026-07-21T19:01:04.664-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7964,2026-07-22T13:02:55.931-0300,Sistema,Causa Raiz,Impacto não mapeado,Falha Operacional
+SI-7964,2026-07-22T13:02:55.931-0300,Sistema,Resolução do chamado,Em atendimento,Identificamos que o campo broker destination estava divergente e realizamos apenas a orientação ao usuário sobre a necessidade de alinhamento dessa informação. Nenhum ajuste sistêmico ou alteração foi executado pela nossa equipe.
+SI-7964,2026-07-22T13:02:55.931-0300,Sistema,Causa raiz potencial,Em atendimento,"Divergência de cadastro nos dados da ordem, especificamente no campo broker destination, impossibilitando o cruzamento de informações necessário para a disponibilização da SOP."
+SI-7964,2026-07-22T13:02:55.931-0300,Sistema,Causa raiz final,Em atendimento,"O comportamento não esperado ocorreu devido a uma divergência identificada nos dados da ordem. Para que uma SOP específica fique disponível para seleção, as informações inseridas na ordem (como o broker destination) precisam corresponder de forma exata às regras previamente configuradas para aquele fluxo. Como o dado estava divergente, o sistema não reconheceu a compatibilidade, demandando o alinhamento da informação por parte da operação."
+SI-7964,2026-07-22T13:02:55.931-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A análise do relato evidencia que a impossibilidade de vincular a SOP ocorreu devido a uma divergência de cadastro no campo broker destination da ordem. O motor de workflows exige correspondência exata dos parâmetros para exibição; a ausência de match impede o atrelamento. A atuação do suporte limitou-se à orientação, confirmando que a causa reside em dados inconsistentes na entrada operacional."
 SI-7963,2026-07-21T11:59:14.746-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7963,2026-07-21T11:59:17.124-0300,Bruno Silva,resolution,,Done
 SI-7963,2026-07-21T11:59:17.124-0300,Bruno Silva,status,Submissão,Done
@@ -63854,6 +63899,10 @@ SI-7966,2026-07-21T19:01:05.250-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7966,2026-07-21T19:01:05.250-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7966,2026-07-21T19:01:05.250-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7966,2026-07-21T19:01:05.250-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7966,2026-07-22T13:02:56.587-0300,Sistema,Resolução do chamado,Em atendimento,Identificamos a necessidade de preenchimento da data de início de compra (BUY START DATE) referente a demurrage e per diem. Realizamos o ajuste da demurrage dos contêineres em conjunto com o time de DE.
+SI-7966,2026-07-22T13:02:56.587-0300,Sistema,Causa raiz potencial,Em atendimento,Divergência operacional ou configuração incorreta no registro inicial das datas que impediu o preenchimento automático das condições de demurrage.
+SI-7966,2026-07-22T13:02:56.587-0300,Sistema,Causa raiz final,Em atendimento,"Ocorreu uma divergência identificada no momento de registrar as datas de início (BUY START DATE) para o controle de demurrage e per diem. O comportamento não esperado impediu que o usuário preenchesse os dados no fluxo padrão, sendo necessário realizar o ajuste das informações dos contêineres internamente em parceria com o time de DE para refletir os prazos corretos."
+SI-7966,2026-07-22T13:02:56.587-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A necessidade de suporte para o preenchimento do campo aponta para uma divergência operacional ocorrida durante a entrada dos dados do processo. O fato de a correção da demurrage ter sido conduzida junto à equipe de DE reforça a indisponibilidade de ajuste via interface padrão, caracterizando a falha operacional no lançamento da informação."
 SI-7965,2026-07-21T16:09:29.399-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7965,2026-07-21T16:09:31.854-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7965,2026-07-21T16:09:31.854-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -63879,6 +63928,10 @@ SI-7971,2026-07-21T19:01:08.183-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7971,2026-07-21T19:01:08.183-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7971,2026-07-21T19:01:08.183-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7971,2026-07-21T19:01:08.183-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7971,2026-07-22T13:02:59.597-0300,Sistema,Resolução do chamado,Em atendimento,"Identificamos a dificuldade de avanço na página de login do módulo DWSYS relatada pelo usuário. Solicitamos que o colaborador recarregasse a página após alguns minutos de espera, o que resultou na normalização do acesso e no restabelecimento da navegação no sistema."
+SI-7971,2026-07-22T13:02:59.597-0300,Sistema,Causa raiz potencial,Em atendimento,"Exceção sistêmica temporária ou falha de sincronização de sessão na camada de autenticação, que impediu o redirecionamento correto da página inicial."
+SI-7971,2026-07-22T13:02:59.597-0300,Sistema,Causa raiz final,Em atendimento,"Ocorreu um comportamento não esperado no sistema no momento da autenticação, o que acabou retendo a navegação do usuário na tela inicial do módulo DWSYS. Essa divergência identificada teve caráter momentâneo e foi solucionada com a simples atualização da página pelo navegador, permitindo que a sessão fosse restabelecida e o acesso liberado corretamente."
+SI-7971,2026-07-22T13:02:59.597-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"O sintoma de travamento na página de login, seguido de resolução imediata após um simples refresh da tela, evidencia uma exceção sistêmica transitória (possível timeout ou falha de resposta temporária do servidor de autenticação). A normalização passiva sem intervenção de código ou banco de dados confirma que se tratou de um comportamento inesperado pontual da aplicação, não requerendo correções estruturais imediatas, apenas monitoramento."
 SI-7970,2026-07-21T15:05:51.348-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7970,2026-07-21T15:05:53.322-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7970,2026-07-21T15:05:53.322-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -63890,6 +63943,10 @@ SI-7970,2026-07-21T19:01:07.584-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7970,2026-07-21T19:01:07.584-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7970,2026-07-21T19:01:07.584-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7970,2026-07-21T19:01:07.584-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7970,2026-07-22T13:02:58.937-0300,Sistema,Resolução do chamado,Em atendimento,"Identificamos a dificuldade de avanço na página de login do módulo DWSYS relatada pelo usuário. Solicitamos que o colaborador recarregasse a página após alguns minutos de espera, o que resultou na normalização do acesso e no restabelecimento da navegação no sistema."
+SI-7970,2026-07-22T13:02:58.937-0300,Sistema,Causa raiz potencial,Em atendimento,"Exceção sistêmica temporária ou falha de sincronização de sessão na camada de autenticação, que impediu o redirecionamento correto da página inicial."
+SI-7970,2026-07-22T13:02:58.937-0300,Sistema,Causa raiz final,Em atendimento,"Ocorreu um comportamento não esperado no sistema no momento da autenticação, o que acabou retendo a navegação do usuário na tela inicial do módulo DWSYS. Essa divergência identificada teve caráter momentâneo e foi solucionada com a simples atualização da página pelo navegador, permitindo que a sessão fosse restabelecida e o acesso liberado corretamente."
+SI-7970,2026-07-22T13:02:58.937-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"O sintoma de travamento na página de login, seguido de resolução imediata após um simples refresh da tela, evidencia uma exceção sistêmica transitória (possível timeout ou falha de resposta temporária do servidor de autenticação). A normalização passiva sem intervenção de código ou banco de dados confirma que se tratou de um comportamento inesperado pontual da aplicação, não requerendo correções estruturais imediatas, apenas monitoramento."
 SI-7969,2026-07-21T15:09:26.232-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7969,2026-07-21T15:09:28.346-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7969,2026-07-21T15:09:28.346-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -63901,6 +63958,10 @@ SI-7969,2026-07-21T19:01:07.031-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7969,2026-07-21T19:01:07.031-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7969,2026-07-21T19:01:07.031-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7969,2026-07-21T19:01:07.031-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7969,2026-07-22T13:02:58.315-0300,Sistema,Resolução do chamado,Em atendimento,"Identificamos a dificuldade de avanço na página de login do módulo DWSYS relatada pelo usuário. Solicitamos que o colaborador recarregasse a página após alguns minutos de espera, o que resultou na normalização do acesso e no restabelecimento da navegação no sistema."
+SI-7969,2026-07-22T13:02:58.315-0300,Sistema,Causa raiz potencial,Em atendimento,"Exceção sistêmica temporária ou falha de sincronização de sessão na camada de autenticação, que impediu o redirecionamento correto da página inicial."
+SI-7969,2026-07-22T13:02:58.315-0300,Sistema,Causa raiz final,Em atendimento,"Ocorreu um comportamento não esperado no sistema no momento da autenticação, o que acabou retendo a navegação do usuário na tela inicial do módulo DWSYS. Essa divergência identificada teve caráter momentâneo e foi solucionada com a simples atualização da página pelo navegador, permitindo que a sessão fosse restabelecida e o acesso liberado corretamente."
+SI-7969,2026-07-22T13:02:58.315-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"O sintoma de travamento na página de login, seguido de resolução imediata após um simples refresh da tela, evidencia uma exceção sistêmica transitória (possível timeout ou falha de resposta temporária do servidor de autenticação). A normalização passiva sem intervenção de código ou banco de dados confirma que se tratou de um comportamento inesperado pontual da aplicação, não requerendo correções estruturais imediatas, apenas monitoramento."
 SI-7968,2026-07-21T15:10:30.816-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7968,2026-07-21T15:10:32.746-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7968,2026-07-21T15:10:32.746-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -63912,6 +63973,10 @@ SI-7968,2026-07-21T19:01:06.463-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7968,2026-07-21T19:01:06.463-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7968,2026-07-21T19:01:06.463-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7968,2026-07-21T19:01:06.463-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7968,2026-07-22T13:02:57.596-0300,Sistema,Resolução do chamado,Em atendimento,"Identificamos a impossibilidade de incluir o shipper na SOP relatada e realizamos um novo salvamento no cadastro do shipper. Com isso, o registro voltou a aparecer normalmente para seleção."
+SI-7968,2026-07-22T13:02:57.596-0300,Sistema,Causa raiz potencial,Em atendimento,Falha de sincronização entre o banco de dados do cadastro básico (SYS) e as opções de listagem disponíveis para seleção na tela de Workflow (SOP).
+SI-7968,2026-07-22T13:02:57.596-0300,Sistema,Causa raiz final,Em atendimento,"Ocorreu uma falha de sincronização ou comportamento não esperado da aplicação, fazendo com que o shipper já cadastrado não fosse refletido nas opções da SOP. Ao re-salvar o cadastro, o sistema forçou a atualização das informações na base de dados, corrigindo a divergência e restabelecendo a visibilidade do shipper para uso imediato."
+SI-7968,2026-07-22T13:02:57.596-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"O relato indica uma falha de sincronização de dados entre a base de cadastros (SYS) e o módulo que alimenta as opções da SOP. O fato de o problema ser resolvido com um simples recálculo de salvamento no cadastro base comprova que a informação existia, mas o índice do banco de dados não havia propagado o registro. O comando forçou a sincronização sistêmica e resolveu o incidente."
 SI-7974,2026-07-21T15:46:00.868-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7974,2026-07-21T15:46:03.478-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7974,2026-07-21T15:46:03.478-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -63934,6 +63999,10 @@ SI-7973,2026-07-21T19:01:09.368-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7973,2026-07-21T19:01:09.368-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7973,2026-07-21T19:01:09.368-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7973,2026-07-21T19:01:09.368-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7973,2026-07-22T13:03:00.896-0300,Sistema,Resolução do chamado,Em atendimento,Identificamos que a charge automática de desconsolidação não estava lançada e atuamos junto ao time de DE para o lançamento das taxas.
+SI-7973,2026-07-22T13:03:00.896-0300,Sistema,Causa raiz potencial,Em atendimento,Erro de processamento ou falha de integração na rotina responsável por disparar o gatilho das charges automáticas.
+SI-7973,2026-07-22T13:03:00.896-0300,Sistema,Causa raiz final,Em atendimento,"Ocorreu um comportamento não esperado no sistema que impediu a execução da rotina responsável por gerar a taxa de desconsolidação de forma automática. Para corrigir a divergência identificada, a equipe técnica forçou a reexecução do processo no banco de dados, o que garantiu a inclusão correta da cobrança no seu processo."
+SI-7973,2026-07-22T13:03:00.896-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A ausência da charge automática e a necessidade de acionar a equipe de DE para rodar um script corretivo evidenciam um erro interno da rotina ou falha de processamento no momento do gatilho original. O sucesso ao rodar o script novamente valida que os dados base estavam corretos, confirmando tratar-se de uma exceção sistêmica momentânea."
 SI-7972,2026-07-21T15:39:10.931-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7972,2026-07-21T15:39:12.969-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7972,2026-07-21T15:39:12.969-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -63945,6 +64014,13 @@ SI-7972,2026-07-21T19:01:08.785-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7972,2026-07-21T19:01:08.785-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7972,2026-07-21T19:01:08.785-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7972,2026-07-21T19:01:08.785-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7972,2026-07-22T13:03:00.294-0300,Sistema,Resolução do chamado,Em atendimento,Identificamos que a charge automática de desconsolidação não estava lançada e atuamos junto ao time de DE para o lançamento das taxas.
+SI-7972,2026-07-22T13:03:00.294-0300,Sistema,Causa raiz potencial,Em atendimento,Erro de processamento ou falha de integração na rotina responsável por disparar o gatilho das charges automáticas.
+SI-7972,2026-07-22T13:03:00.294-0300,Sistema,Causa raiz final,Em atendimento,"Ocorreu um comportamento não esperado no sistema que impediu a execução da rotina responsável por gerar a taxa de desconsolidação de forma automática. Para corrigir a divergência identificada, a equipe técnica forçou a reexecução do processo no banco de dados, o que garantiu a inclusão correta da cobrança no seu processo."
+SI-7972,2026-07-22T13:03:00.294-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A ausência da charge automática e a necessidade de acionar a equipe de DE para rodar um script corretivo evidenciam um erro interno da rotina ou falha de processamento no momento do gatilho original. O sucesso ao rodar o script novamente valida que os dados base estavam corretos, confirmando tratar-se de uma exceção sistêmica momentânea."
+SI-7978,2026-07-22T12:54:29.708-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-7978,2026-07-22T12:54:32.339-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7978,2026-07-22T12:54:32.339-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-7977,2026-07-21T16:38:16.980-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7977,2026-07-21T16:38:21.075-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7977,2026-07-21T16:38:21.075-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -64021,64 +64097,229 @@ Para que a operação não ficasse parada, o Service Desk atuou de forma paliati
 SI-7975,2026-07-22T11:16:24.923-0300,Ricardo Barbosa Machado,Encaminhado para:,,Sustentação
 SI-7975,2026-07-22T11:16:28.112-0300,Ricardo Barbosa Machado,Encaminhado para:,Sustentação,
 SI-7975,2026-07-22T11:16:29.190-0300,Sistema,Link,,This work item is blocked by SUS-275
+SI-7975,2026-07-22T13:03:01.904-0300,Sistema,Resolução do chamado,Em atendimento,"Identificamos a divergência no status do WR relatado, que constava indevidamente como saída no sistema, e atuamos junto à equipe de engenharia de dados (DE) para realizar a correção na base. O status do registro foi atualizado com sucesso para refletir a realidade física, permitindo a continuidade do fluxo operacional da carga."
+SI-7975,2026-07-22T13:03:01.904-0300,Sistema,Causa raiz potencial,Em atendimento,"Comportamento inesperado da aplicação no DWSYS, provável erro de processamento que disparou a alteração indevida do status do WR para saída antes da movimentação física real no armazém."
+SI-7975,2026-07-22T13:03:01.904-0300,Sistema,Causa raiz final,Em atendimento,"Ocorreu um comportamento não esperado no sistema DWSYS, no qual o registro do WR foi atualizado sistemicamente com o status de saída sem que a movimentação física tivesse ocorrido no armazém (DW). Essa divergência de dados gerou um bloqueio, impedindo o andamento natural do processo logístico. A situação foi regularizada por meio de um ajuste direto sistêmico para realinhar a informação digital com a localização física da carga."
+SI-7975,2026-07-22T13:03:01.904-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"O relato demonstrou uma clara divergência de cadastro, onde o status ""OFFH"" foi persistido no banco de dados do DWSYS enquanto o item permanecia fisicamente no armazém. A necessidade de intervenção da equipe de DE para correção na base confirma a hipótese de um erro de processamento ou exceção sistêmica, uma vez que a baixa sistêmica ocorreu sem o gatilho operacional válido."
 SI-7980,2026-07-21T17:20:32.993-0300,Sistema,Link,,This work item is blocked by GA-1309
+SI-7980,2026-07-22T13:03:03.140-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7980,2026-07-22T13:03:03.140-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7980,2026-07-22T13:03:03.140-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-7980,2026-07-22T13:03:03.140-0300,Sistema,Reclassificação solicitação,,Requisição
+SI-7980,2026-07-22T13:03:03.140-0300,Sistema,Resolução do chamado,,Fone está separado com a Colaboradora Clara no escritorio do Rio de Janeiro
+SI-7980,2026-07-22T13:03:03.140-0300,Sistema,Causa raiz potencial,,Fone está separado com a Colaboradora Clara no escritorio do Rio de Janeiro
+SI-7980,2026-07-22T13:03:03.140-0300,Sistema,Causa raiz final,,Fone está separado com a Colaboradora Clara no escritorio do Rio de Janeiro
+SI-7980,2026-07-22T13:03:03.140-0300,Sistema,Justificativa Causa Raiz final,,Fone está separado com a Colaboradora Clara no escritorio do Rio de Janeiro
 SI-7979,2026-07-21T16:47:26.646-0300,Sistema,Link,,This work item is blocked by GA-1308
 SI-7983,2026-07-22T12:24:43.970-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7983,2026-07-22T12:24:46.318-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7983,2026-07-22T12:24:46.318-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7983,2026-07-22T13:03:05.267-0300,Sistema,Criticidade final,,P2 - Média
+SI-7983,2026-07-22T13:03:05.267-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7983,2026-07-22T13:03:05.267-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7983,2026-07-22T13:03:05.267-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7983,2026-07-22T13:03:05.267-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7983,2026-07-22T13:03:05.267-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7983,2026-07-22T13:03:05.267-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7983,2026-07-22T13:03:05.267-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7982,2026-07-22T12:11:50.011-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7982,2026-07-22T12:11:52.363-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7982,2026-07-22T12:11:52.363-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7982,2026-07-22T13:03:04.563-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7982,2026-07-22T13:03:04.563-0300,Sistema,Criticidade final,,P1 - Alta
+SI-7982,2026-07-22T13:03:04.563-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7982,2026-07-22T13:03:04.563-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7982,2026-07-22T13:03:04.563-0300,Sistema,Resolução do chamado,,Identificamos a necessidade de ajustar o tipo de frete de prepaid para collect e solicitamos ao time de DS a alteração no house do booking.
+SI-7982,2026-07-22T13:03:04.563-0300,Sistema,Causa raiz potencial,,"Divergência de cadastro operacional na classificação do tipo de frete, o que impediu a integração e o fluxo sistêmico esperado para o módulo financeiro."
+SI-7982,2026-07-22T13:03:04.563-0300,Sistema,Causa raiz final,,"A necessidade de ajuste ocorreu porque o frete estava classificado no sistema como 'Prepaid' (pago na origem), situação em que o sistema é programado para não enviar os valores para o faturamento da equipe local. Para que a cobrança pudesse ser gerada no destino, foi necessário alterar a classificação para 'Collect' no House do Booking, o que obriga o sistema a liberar os valores para o módulo financeiro e viabilizar a emissão da fatura."
+SI-7982,2026-07-22T13:03:04.563-0300,Sistema,Justificativa Causa Raiz final,,A evidência de que o ajuste manual para 'Collect' liberou o faturamento aponta diretamente para uma divergência de cadastro (falha operacional). A regra de negócio do sistema bloqueia a migração de valores para o financeiro da Ordem em processos com frete Prepaid para evitar pendências indevidas. O sucesso da resolução após a atuação do time de DS confirma que a raiz do comportamento sistêmico era apenas a parametrização inicial divergente.
 SI-7981,2026-07-22T12:08:05.724-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7981,2026-07-22T12:08:08.623-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7981,2026-07-22T12:08:08.623-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7981,2026-07-22T13:03:03.904-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7981,2026-07-22T13:03:03.904-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7981,2026-07-22T13:03:03.904-0300,Sistema,Criticidade final,,P2 - Média
+SI-7981,2026-07-22T13:03:03.904-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-7981,2026-07-22T13:03:03.904-0300,Sistema,Resolução do chamado,,"Identificado que o sistema não disponibiliza, na interface do usuário, uma funcionalidade para a exclusão autônoma de propostas ou Standard Documents (SD). Orientado que a remoção deve ser realizada via banco de dados pela equipe técnica, mediante a aprovação formal da liderança imediata do solicitante para garantir a integridade dos registros operacionais."
+SI-7981,2026-07-22T13:03:03.904-0300,Sistema,Causa raiz potencial,,Regra de Negócio
+SI-7981,2026-07-22T13:03:03.904-0300,Sistema,Causa raiz final,,Ausência de botão ou comando de exclusão no módulo de cotações (PM).
+SI-7981,2026-07-22T13:03:03.904-0300,Sistema,Justificativa Causa Raiz final,,"A impossibilidade de exclusão direta de uma proposta ou SD pelo colaborador ocorre devido a uma definição na regra de negócio e na arquitetura do sistema DMSYS. Para garantir que todas as interações comerciais e documentos gerados tenham total rastreabilidade e segurança, o sistema foi projetado para não permitir a deleção de registros de forma simplificada na interface. Essa mecânica atua como uma camada de proteção contra a perda de dados críticos."
 SI-7986,2026-07-22T12:30:43.481-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7986,2026-07-22T12:30:46.044-0300,Ricardo Barbosa Machado,status,Submissão,Finalizado Definitivamente
 SI-7986,2026-07-22T12:30:48.128-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7986,2026-07-22T12:30:48.128-0300,Ricardo Barbosa Machado,status,Finalizado Definitivamente,Done
+SI-7986,2026-07-22T13:03:07.147-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7986,2026-07-22T13:03:07.147-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7986,2026-07-22T13:03:07.147-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7986,2026-07-22T13:03:07.147-0300,Sistema,Criticidade final,,P2 - Média
+SI-7986,2026-07-22T13:03:07.147-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7986,2026-07-22T13:03:07.147-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7986,2026-07-22T13:03:07.147-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7986,2026-07-22T13:03:07.147-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7985,2026-07-22T12:29:37.480-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7985,2026-07-22T12:29:48.233-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7985,2026-07-22T12:29:48.233-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7985,2026-07-22T13:03:06.412-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7985,2026-07-22T13:03:06.412-0300,Sistema,Criticidade final,,P2 - Média
+SI-7985,2026-07-22T13:03:06.412-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7985,2026-07-22T13:03:06.412-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7985,2026-07-22T13:03:06.412-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7985,2026-07-22T13:03:06.412-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7985,2026-07-22T13:03:06.412-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7985,2026-07-22T13:03:06.412-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7984,2026-07-21T19:18:23.436-0300,Sistema,Link,,This work item is blocked by GA-1310
 SI-7984,2026-07-22T10:44:32.724-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7984,2026-07-22T10:44:34.987-0300,Nícollas Resende,resolution,,Done
 SI-7984,2026-07-22T10:44:34.987-0300,Nícollas Resende,status,Submissão,Done
+SI-7984,2026-07-22T13:03:05.793-0300,Sistema,Criticidade final,,P2 - Média
+SI-7984,2026-07-22T13:03:05.793-0300,Sistema,Resolução do chamado,,Foi realizada a atualização dos drivers de áudio do notebook do colaborador.
 SI-7987,2026-07-22T12:31:27.486-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7987,2026-07-22T12:31:29.652-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7987,2026-07-22T12:31:29.652-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7987,2026-07-22T13:03:07.928-0300,Sistema,Criticidade final,,P2 - Média
+SI-7987,2026-07-22T13:03:07.928-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7987,2026-07-22T13:03:07.928-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7987,2026-07-22T13:03:07.928-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7987,2026-07-22T13:03:07.928-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7987,2026-07-22T13:03:07.928-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7987,2026-07-22T13:03:07.928-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7987,2026-07-22T13:03:07.928-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7988,2026-07-22T11:47:25.592-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7988,2026-07-22T11:47:44.020-0300,Bruno Silva,resolution,,Done
 SI-7988,2026-07-22T11:47:44.020-0300,Bruno Silva,status,Submissão,Done
+SI-7988,2026-07-22T13:03:08.583-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-7988,2026-07-22T13:03:08.583-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7988,2026-07-22T13:03:08.583-0300,Sistema,Causa Raiz,,Falha de Requisito
+SI-7988,2026-07-22T13:03:08.583-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7988,2026-07-22T13:03:08.583-0300,Sistema,Resolução do chamado,,"Identificado que a Ordem não estava visível no sistema devido a uma exclusão inadvertida ou erro de processamento de status. Realizado o acionamento da equipe de Ciência de Dados (DS), que procedeu com a restauração do registro em banco de dados. Orientado que a ordem já se encontra disponível para consulta e movimentação regular. Informamos que uma melhoria sistêmica (INTAKE-247) já está em desenvolvimento para permitir que ordens excluídas sejam recuperadas diretamente pela interface, sem necessidade de intervenção técnica pontual."
+SI-7988,2026-07-22T13:03:08.583-0300,Sistema,Causa raiz potencial,,"Exclusão acidental por parte do usuário ou falha de sincronização de dados que resultou na alteração do status da ordem para ""deletado"" (soft delete) no banco de dados."
+SI-7988,2026-07-22T13:03:08.583-0300,Sistema,Causa raiz final,,"Ausência de funcionalidade nativa no sistema (front-end) para a restauração de ordens que sofreram soft delete, gerando dependência de intervenção técnica da equipe de dados."
+SI-7988,2026-07-22T13:03:08.583-0300,Sistema,Justificativa Causa Raiz final,,"A falha foi classificada como de requisito, pois o sistema permite a exclusão lógica do dado, mas não oferece autonomia para sua reversão. O nexo causal reside no fato de que, sem uma interface de recuperação, qualquer deleção torna o registro invisível e inacessível, impactando o fluxo operacional. A solução definitiva através do INTAKE-247 visa a melhoria contínua ao implementar o recurso de restauração, eliminando o tempo de espera do usuário e reduzindo o volume de chamados críticos para a equipe de tecnologia."
+SI-7989,2026-07-22T13:07:27.421-0300,Bruno Silva,assignee,,Bruno Silva
+SI-7989,2026-07-22T13:07:30.857-0300,Bruno Silva,resolution,,Done
+SI-7989,2026-07-22T13:07:30.857-0300,Bruno Silva,status,Submissão,Done
 SI-7991,2026-07-22T12:01:25.083-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7991,2026-07-22T12:01:28.112-0300,Bruno Silva,resolution,,Done
 SI-7991,2026-07-22T12:01:28.112-0300,Bruno Silva,status,Submissão,Done
+SI-7991,2026-07-22T13:03:09.813-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7991,2026-07-22T13:03:09.813-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7991,2026-07-22T13:03:09.813-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-7991,2026-07-22T13:03:09.813-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7991,2026-07-22T13:03:09.813-0300,Sistema,Resolução do chamado,,Bom dia! tudo bem? pode vim aqui na salinha por favor para verificação dos documentos? (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7991,2026-07-22T13:03:09.813-0300,Sistema,Causa raiz potencial,,Bom dia! tudo bem? pode vim aqui na salinha por favor para verificação dos documentos? (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7991,2026-07-22T13:03:09.813-0300,Sistema,Causa raiz final,,Bom dia! tudo bem? pode vim aqui na salinha por favor para verificação dos documentos? (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-7991,2026-07-22T13:03:09.813-0300,Sistema,Justificativa Causa Raiz final,,Bom dia! tudo bem? pode vim aqui na salinha por favor para verificação dos documentos? (https://meet.google.com/cws-xorv-fvw?authuser=0)
 SI-7990,2026-07-22T11:59:38.968-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7990,2026-07-22T11:59:43.054-0300,Bruno Silva,resolution,,Done
 SI-7990,2026-07-22T11:59:43.054-0300,Bruno Silva,status,Submissão,Done
+SI-7990,2026-07-22T13:03:09.229-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-7990,2026-07-22T13:03:09.229-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7990,2026-07-22T13:03:09.229-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7990,2026-07-22T13:03:09.229-0300,Sistema,Causa Raiz,,Falha de Requisito
+SI-7990,2026-07-22T13:03:09.229-0300,Sistema,Resolução do chamado,,"Identificado que a Ordem não estava visível no sistema devido a uma exclusão inadvertida ou erro de processamento de status. Realizado o acionamento da equipe de Ciência de Dados (DS), que procedeu com a restauração do registro em banco de dados. Orientado que a ordem já se encontra disponível para consulta e movimentação regular. Informamos que uma melhoria sistêmica (INTAKE-247) já está em desenvolvimento para permitir que ordens excluídas sejam recuperadas diretamente pela interface, sem necessidade de intervenção técnica pontual."
+SI-7990,2026-07-22T13:03:09.229-0300,Sistema,Causa raiz potencial,,"Exclusão acidental por parte do usuário ou falha de sincronização de dados que resultou na alteração do status da ordem para ""deletado"" (soft delete) no banco de dados."
+SI-7990,2026-07-22T13:03:09.229-0300,Sistema,Causa raiz final,,"Ausência de funcionalidade nativa no sistema (front-end) para a restauração de ordens que sofreram soft delete, gerando dependência de intervenção técnica da equipe de dados."
+SI-7990,2026-07-22T13:03:09.229-0300,Sistema,Justificativa Causa Raiz final,,"A falha foi classificada como de requisito, pois o sistema permite a exclusão lógica do dado, mas não oferece autonomia para sua reversão. O nexo causal reside no fato de que, sem uma interface de recuperação, qualquer deleção torna o registro invisível e inacessível, impactando o fluxo operacional. A solução definitiva através do INTAKE-247 visa a melhoria contínua ao implementar o recurso de restauração, eliminando o tempo de espera do usuário e reduzindo o volume de chamados críticos para a equipe de tecnologia."
+SI-8008,2026-07-22T13:13:43.252-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8008,2026-07-22T13:13:45.813-0300,Bruno Silva,resolution,,Done
+SI-8008,2026-07-22T13:13:45.813-0300,Bruno Silva,status,Submissão,Done
 SI-8007,2026-07-22T12:36:51.707-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8007,2026-07-22T12:36:54.801-0300,Bruno Silva,resolution,,Done
 SI-8007,2026-07-22T12:36:54.801-0300,Bruno Silva,status,Submissão,Done
+SI-8007,2026-07-22T13:03:13.447-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8007,2026-07-22T13:03:13.447-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8007,2026-07-22T13:03:13.447-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8007,2026-07-22T13:03:13.447-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8007,2026-07-22T13:03:13.447-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8007,2026-07-22T13:03:13.447-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8007,2026-07-22T13:03:13.447-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8007,2026-07-22T13:03:13.447-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8006,2026-07-22T10:29:28.450-0300,Sistema,Link,,This work item is blocked by GA-1313
 SI-8006,2026-07-22T11:29:12.567-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8006,2026-07-22T11:29:15.253-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8006,2026-07-22T11:29:15.253-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8006,2026-07-22T12:36:01.688-0300,Bruno Silva,status,Done,Done
+SI-8006,2026-07-22T13:03:12.718-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8006,2026-07-22T13:03:12.718-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8006,2026-07-22T13:03:12.718-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8006,2026-07-22T13:03:12.718-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8006,2026-07-22T13:03:12.718-0300,Sistema,Resolução do chamado,,Acessos enviados para o colaborador.
+SI-8006,2026-07-22T13:03:12.718-0300,Sistema,Causa raiz potencial,,Chamado finalizado.
+SI-8006,2026-07-22T13:03:12.718-0300,Sistema,Causa raiz final,,Chamado finalizado.
+SI-8006,2026-07-22T13:03:12.718-0300,Sistema,Justificativa Causa Raiz final,,Chamado finalizado.
+SI-8005,2026-07-22T13:04:34.862-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8005,2026-07-22T13:04:37.624-0300,Bruno Silva,resolution,,Done
+SI-8005,2026-07-22T13:04:37.624-0300,Bruno Silva,status,Submissão,Done
 SI-8004,2026-07-22T10:55:33.422-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8004,2026-07-22T10:55:36.591-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8004,2026-07-22T10:55:36.591-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8004,2026-07-22T13:03:11.950-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8004,2026-07-22T13:03:11.950-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8004,2026-07-22T13:03:11.950-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8004,2026-07-22T13:03:11.950-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8004,2026-07-22T13:03:11.950-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8004,2026-07-22T13:03:11.950-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8004,2026-07-22T13:03:11.950-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8004,2026-07-22T13:03:11.950-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8003,2026-07-22T12:57:26.507-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8003,2026-07-22T12:57:29.483-0300,Bruno Silva,resolution,,Done
+SI-8003,2026-07-22T12:57:29.483-0300,Bruno Silva,status,Submissão,Done
 SI-8001,2026-07-22T10:09:27.588-0300,Sistema,Link,,This work item is blocked by GA-1312
+SI-8001,2026-07-22T13:23:41.031-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8001,2026-07-22T13:23:43.330-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8001,2026-07-22T13:23:43.330-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8000,2026-07-22T13:21:33.316-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8000,2026-07-22T13:21:37.037-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8000,2026-07-22T13:21:37.037-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7999,2026-07-22T13:14:46.431-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7999,2026-07-22T13:14:48.320-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7999,2026-07-22T13:14:48.320-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7998,2026-07-22T12:15:27.504-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7998,2026-07-22T12:15:31.071-0300,Bruno Silva,resolution,,Done
 SI-7998,2026-07-22T12:15:31.071-0300,Bruno Silva,status,Submissão,Done
+SI-7998,2026-07-22T13:03:11.263-0300,Sistema,Criticidade final,,P2 - Média
+SI-7998,2026-07-22T13:03:11.263-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7998,2026-07-22T13:03:11.263-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7998,2026-07-22T13:03:11.263-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7998,2026-07-22T13:03:11.263-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-7998,2026-07-22T13:03:11.263-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-7998,2026-07-22T13:03:11.263-0300,Sistema,Causa raiz final,,Em atendimento
+SI-7998,2026-07-22T13:03:11.263-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7997,2026-07-22T13:11:58.911-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7997,2026-07-22T13:12:01.256-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7997,2026-07-22T13:12:01.256-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7996,2026-07-22T10:32:27.833-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7996,2026-07-22T10:32:30.686-0300,Bruno Silva,resolution,,Done
 SI-7996,2026-07-22T10:32:30.686-0300,Bruno Silva,status,Submissão,Done
+SI-7996,2026-07-22T13:03:10.507-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-7996,2026-07-22T13:03:10.507-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-7996,2026-07-22T13:03:10.507-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-7996,2026-07-22T13:03:10.507-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-7996,2026-07-22T13:03:10.507-0300,Sistema,Resolução do chamado,,"Identificado um ponto de atenção no fluxo de liberação da carga, sendo realizada a verificação da situação no processo. Solicitada a atuação do time responsável para a devida atualização e ajuste dos status."
+SI-7996,2026-07-22T13:03:10.507-0300,Sistema,Causa raiz potencial,,Divergência técnica no registro do status do processo no sistema ou falha na sincronização de dados de liberação do armazém.
+SI-7996,2026-07-22T13:03:10.507-0300,Sistema,Causa raiz final,,"Identificou-se que a liberação realizada no sistema não sincronizou o status correto exigido para a retenção da carga no armazém. A situação foi corrigida após o alinhamento com a equipe responsável, que aplicou a atualização necessária do status no processo para permitir a sequência do fluxo de entrega."
+SI-7996,2026-07-22T13:03:10.507-0300,Sistema,Justificativa Causa Raiz final,,Divergência entre o registro da liberação no DWSYS e a atualização da flag de status (OHOH) no fluxo do processo. A intervenção técnica direta para atualização dos status corrigiu a inconsistência de dados e liberou a carga para o armazém.
+SI-7995,2026-07-22T13:11:15.163-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7995,2026-07-22T13:11:18.157-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7995,2026-07-22T13:11:18.157-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7994,2026-07-22T13:08:27.099-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7994,2026-07-22T13:08:29.098-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7994,2026-07-22T13:08:29.098-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-7993,2026-07-22T12:55:50.610-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-7993,2026-07-22T12:55:52.983-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-7993,2026-07-22T12:55:52.983-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7992,2026-07-22T09:47:21.587-0300,Sistema,Link,,This work item is blocked by GA-1311
+SI-7992,2026-07-22T13:01:08.470-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-7992,2026-07-22T13:01:08.470-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-7992,2026-07-22T13:01:09.510-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-8013,2026-07-22T12:37:34.886-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8013,2026-07-22T12:37:37.573-0300,Bruno Silva,resolution,,Done
 SI-8013,2026-07-22T12:37:37.573-0300,Bruno Silva,status,Submissão,Done
 SI-8012,2026-07-22T12:37:47.321-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8012,2026-07-22T12:37:49.699-0300,Bruno Silva,resolution,,Done
 SI-8012,2026-07-22T12:37:49.699-0300,Bruno Silva,status,Submissão,Done
+SI-8010,2026-07-22T13:30:24.237-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8010,2026-07-22T13:30:26.821-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8010,2026-07-22T13:30:26.821-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8009,2026-07-22T10:47:30.674-0300,Sistema,Link,,This work item is blocked by GA-1314
 SI-8015,2026-07-22T12:31:23.236-0300,Sistema,Link,,This work item is blocked by GA-1315
