@@ -63970,6 +63970,57 @@ SI-7975,2026-07-21T19:01:10.610-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7975,2026-07-21T19:01:10.610-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7975,2026-07-21T19:01:10.610-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7975,2026-07-21T19:01:10.610-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7975,2026-07-22T11:16:15.487-0300,Ricardo Barbosa Machado,description,,"*📘 CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+*1️⃣ Identificação do Chamado*
+
+* *Módulo:* DWSYS
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção
+* *Título Sugerido:* ""Incidente de dados inconsistentes: WR constando com status de saída (OFFH) sem saída física no DWSYS""
+
+*2️⃣ Entendimento do Problema*
+
+* *Passo a Passo:* Identificação do travamento do fluxo logístico devido ao status incorreto apresentado na tela do módulo DWSYS.
+* *Comportamento Esperado vs. Atual:* O comportamento esperado era que o Warehouse Receipt (WR) refletisse sistemicamente que o item ainda se encontra fisicamente no armazém (DW). O comportamento atual é que o sistema registrou o status de saída (""OFFH"") indevidamente, atrapalhando o fluxo logístico e mantendo o status incorreto. O sistema mapeia o status 2 como ""OFFH"".
+* *Evidências:* Evidências e numeração do WR anexadas ao chamado original.
+
+*3️⃣ Análise Técnica Inicial*
+
+* *Histórico/Logs:* Identificada a divergência sistêmica do status do WR afetado. Atuação emergencial executada com a equipe de Data Engineering (DE) para ajustar o status na base de dados.
+* *Parametrização/Perfil:* Confirmado que não se trata de inconsistência de permissões ou acesso do usuário.
+* *Reprodutibilidade:* Ocorrência reportada para um WR em específico até o momento.
+
+*4️⃣ Avaliação de Impacto*
+
+* *Abrangência:* A princípio, restrito ao WR reportado.
+* *Criticidade:* Média
+* *Justificativa da criticidade:* O incidente gera impacto ao fluxo operacional por apresentar dados inconsistentes e impedir o andamento natural da carga, porém existe workaround sistêmico aplicado pela equipe.
+* *Workaround:* Sim. Troca de status manual executada em conjunto com o time de DE.
+
+*5️⃣ Tentativas de Resolução*
+
+* *Ações realizadas pelo Service Desk:* Identificação do gargalo na etapa do WR e acionamento direto do time de DE para efetuar a correção forçada do status, destravando o fluxo temporariamente.
+* *Hipóteses já descartadas:* Falha operacional de baixa real (uma vez que foi confirmado que o item permanece fisicamente no armazém, evidenciando uma divergência apenas sistêmica).
+
+*6️⃣ Causa Raiz Potencial (hipótese N1)*
+
+* Comportamento inesperado da aplicação ou erro de processamento que desencadeou a baixa automática e gerou a divergência de dados, alterando o status do WR para ""OFFH"" sem o gatilho operacional adequado.
+
+*7️⃣ Justificativa Técnica para Escalonamento*
+
+* *Por que o N1 não consegue resolver:* O Service Desk proveu o contorno (workaround) junto ao DE para destravar a operação, mas não possui as ferramentas de depuração de código/banco necessárias para investigar o gatilho que alterou o status incorretamente.
+* *O que se espera do próximo time:* Análise aprofundada dos logs transacionais do DWSYS para rastrear a origem do erro de processamento que ocasionou a baixa indevida, buscando aplicar uma correção definitiva para evitar reincidência.
+* *Nível sugerido:* Sustentação (N2/N3)
+
+*📝 DESCRIÇÃO OTIMIZADA (PARA O CHAMADO)*
+
+Encaminhamos este incidente à equipe de Sustentação para análise de um comportamento inesperado da aplicação no módulo DWSYS. Foi reportado que um Warehouse Receipt (WR) teve seu status alterado para ""OFFH"" (indicando saída) de forma indevida, uma vez que o item atrelado permanece fisicamente dentro do armazém (DW). Essa divergência gerou dados inconsistentes, atrapalhando o fluxo da carga e mantendo um status sistêmico incorreto.
+
+Para que a operação não ficasse parada, o Service Desk atuou de forma paliativa acionando o time de DE, que efetuou a correção do status via base de dados (workaround aplicado). Solicitamos o apoio da Sustentação para investigar a trilha de eventos deste WR nos logs, a fim de identificar a causa do disparo indevido desse status de saída e prevenir novas ocorrências desse tipo."
+SI-7975,2026-07-22T11:16:24.923-0300,Ricardo Barbosa Machado,Encaminhado para:,,Sustentação
+SI-7975,2026-07-22T11:16:28.112-0300,Ricardo Barbosa Machado,Encaminhado para:,Sustentação,
+SI-7975,2026-07-22T11:16:29.190-0300,Sistema,Link,,This work item is blocked by SUS-275
 SI-7980,2026-07-21T17:20:32.993-0300,Sistema,Link,,This work item is blocked by GA-1309
 SI-7979,2026-07-21T16:47:26.646-0300,Sistema,Link,,This work item is blocked by GA-1308
 SI-7984,2026-07-21T19:18:23.436-0300,Sistema,Link,,This work item is blocked by GA-1310
@@ -63977,8 +64028,15 @@ SI-7984,2026-07-22T10:44:32.724-0300,Nícollas Resende,assignee,,Nícollas Resen
 SI-7984,2026-07-22T10:44:34.987-0300,Nícollas Resende,resolution,,Done
 SI-7984,2026-07-22T10:44:34.987-0300,Nícollas Resende,status,Submissão,Done
 SI-8006,2026-07-22T10:29:28.450-0300,Sistema,Link,,This work item is blocked by GA-1313
+SI-8006,2026-07-22T11:29:12.567-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8006,2026-07-22T11:29:15.253-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8006,2026-07-22T11:29:15.253-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8004,2026-07-22T10:55:33.422-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8004,2026-07-22T10:55:36.591-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8004,2026-07-22T10:55:36.591-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8001,2026-07-22T10:09:27.588-0300,Sistema,Link,,This work item is blocked by GA-1312
 SI-7996,2026-07-22T10:32:27.833-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7996,2026-07-22T10:32:30.686-0300,Bruno Silva,resolution,,Done
 SI-7996,2026-07-22T10:32:30.686-0300,Bruno Silva,status,Submissão,Done
 SI-7992,2026-07-22T09:47:21.587-0300,Sistema,Link,,This work item is blocked by GA-1311
+SI-8009,2026-07-22T10:47:30.674-0300,Sistema,Link,,This work item is blocked by GA-1314
