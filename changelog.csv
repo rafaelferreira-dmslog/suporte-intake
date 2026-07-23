@@ -62229,6 +62229,60 @@ SI-7820,2026-07-17T00:59:06.018-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7820,2026-07-17T00:59:06.018-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7820,2026-07-17T00:59:06.018-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7820,2026-07-17T00:59:06.018-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7820,2026-07-23T11:22:04.585-0300,Ricardo Barbosa Machado,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+1️⃣ *Identificação do Chamado*
+
+* *Módulo:* Cockpit (Cockpit 2.0 / Novo Cockpit)
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Não informado (provável Produção)
+* *Título Sugerido:* ""Incidente Sistêmico: Falha de sincronização na busca para colunas 'To Do' e 'Follow Up' e lentidão no Cockpit""
+
+2️⃣ *Entendimento do Problema*
+
+* *Passo a Passo:*
+*# Acessar o novo módulo Cockpit 2.0.
+*# Utilizar o campo de busca (pesquisa rápida) para localizar uma Order.
+*# Aguardar a atualização e filtragem dos cards nas colunas correspondentes.
+* *Comportamento Esperado vs. Atual:* O campo de pesquisa deveria filtrar os resultados instantaneamente em todas as colunas conforme a digitação. Atualmente, o sistema atualiza apenas a coluna ""E-mails"". As colunas ""To do"" e ""Follow up"" não atualizam a referência e continuam exibindo os cards da pesquisa anterior. Adicionalmente, foi relatado um delay severo para o carregamento de algumas colunas (a colaboradora menciona ""upload"", sendo provavelmente a coluna ""Update"").
+* *Evidências:* Vídeo anexado pelo usuário demonstrando o travamento das colunas. 
+
+3️⃣ *Análise Técnica Inicial*
+
+* *Histórico/Logs:* Não informado.
+* *Parametrização/Perfil:* Não informado o usuário específico para verificação de profile importado ou customizado.
+* *Reprodutibilidade:* Constante durante as tentativas da colaboradora.
+
+4️⃣ *Avaliação de Impacto*
+
+* *Abrangência:* Afeta no mínimo uma colaboradora, podendo impactar outros usuários que utilizam o novo cockpit para acompanhamento operacional.
+* *Criticidade:* Média.
+* *Justificativa da criticidade:* O incidente gera degradação de performance e falha de interface que incapacita o fluxo de pesquisa rápida (um dos objetivos do novo cockpit), mas não representa inoperância total do sistema financeiro ou emissão de documentos.
+* *Workaround:* Sim. Acessar e pesquisar as referências diretamente através da listagem do módulo Operacional ou do My Control, em vez de utilizar o filtro do Cockpit.
+
+5️⃣ *Tentativas de Resolução*
+
+* *Ações realizadas pelo Service Desk:* O usuário realizou a limpeza de cache e cookies do navegador; sem sucesso.
+* *Hipóteses já descartadas:* Descartada hipótese de cache corrompido no navegador local como causa primária.
+
+6️⃣ *Causa Raiz Potencial (hipótese N1)*
+
+* *Sistêmico:* _Hipótese_ - Comportamento inesperado da aplicação no Front-end ou lentidão severa de processamento na query de busca do Back-end. É provável que o evento de filtro no campo de busca não esteja propagando a re-renderização do estado (state) para os componentes das colunas ""To Do"" e ""Follow-up"", ou as chamadas assíncronas para carregar esses dados (e os da coluna Update) estejam sofrendo _timeout_.
+
+7️⃣ *Justificativa Técnica para Escalonamento*
+
+* *Por que o N1 não resolve:* Limitação de escopo e ferramenta. A resolução exige análise de performance da query de busca e verificação do código do novo Cockpit (Front-end/Back-end) para garantir a consistência das filtragens simultâneas.
+* *O que se espera do próximo time:* Análise estrutural do delay relatado e correção do bug de sincronização que impede a atualização das colunas ""To Do"" e ""Follow-up"" durante a pesquisa.
+* *Nível sugerido:* N2 / N3 (Sustentação/Desenvolvimento).
+
+📝 *DESCRIÇÃO OTIMIZADA (PARA O CHAMADO)*
+
+O presente chamado relata um incidente sistêmico no módulo do novo Cockpit 2.0. Ao realizar uma pesquisa rápida de uma Order, o sistema apresenta comportamento inconsistente na atualização da interface: apenas a coluna de ""E-mails"" é atualizada com a nova referência, enquanto as colunas de ""To do"" e ""Follow up"" permanecem congeladas exibindo os cards da pesquisa anterior.
+
+Adicionalmente, relata-se que a interface está apresentando um alto tempo de resposta (delay) no carregamento das demais colunas (como a coluna Update), impedindo a agilidade que a colaboradora possuía na versão anterior da ferramenta. Como tentativa de resolução prévia, a usuária já realizou a limpeza de cache e cookies do navegador, porém o sintoma persiste. O vídeo evidenciando a falha de atualização visual dos cards encontra-se em anexo. Encaminhamos para avaliação de desempenho e correção do mecanismo de filtro da página."
+SI-7820,2026-07-23T11:22:57.781-0300,Ricardo Barbosa Machado,Encaminhado para:,,Sustentação
+SI-7820,2026-07-23T11:23:02.586-0300,Sistema,Link,,This work item is blocked by SUS-276
+SI-7820,2026-07-23T11:23:05.033-0300,Ricardo Barbosa Machado,Encaminhado para:,Sustentação,
 SI-7826,2026-07-16T08:34:24.049-0300,Sistema,Link,,This work item is blocked by GA-1257
 SI-7826,2026-07-16T13:05:09.915-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7826,2026-07-16T13:05:13.413-0300,Ricardo Barbosa Machado,status,Submissão,Finalizado Definitivamente
@@ -64567,6 +64621,7 @@ SI-8027,2026-07-22T19:04:13.791-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8027,2026-07-22T19:04:13.791-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8026,2026-07-22T17:08:37.884-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8026,2026-07-22T17:08:37.884-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8026,2026-07-23T11:26:21.939-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8025,2026-07-22T17:08:40.293-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8025,2026-07-22T17:08:40.293-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8030,2026-07-22T17:30:31.274-0300,Sistema,Link,,This work item is blocked by GA-1320
@@ -64599,6 +64654,13 @@ SI-8036,2026-07-23T09:18:57.767-0300,Bruno Silva,status,Submissão,Done
 SI-8035,2026-07-23T09:16:38.501-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8035,2026-07-23T09:16:41.678-0300,Bruno Silva,resolution,,Done
 SI-8035,2026-07-23T09:16:41.678-0300,Bruno Silva,status,Submissão,Done
+SI-8044,2026-07-23T11:23:10.642-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8044,2026-07-23T11:23:13.560-0300,Bruno Silva,resolution,,Done
+SI-8044,2026-07-23T11:23:13.560-0300,Bruno Silva,status,Submissão,Done
+SI-8042,2026-07-23T11:20:10.439-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8042,2026-07-23T11:20:13.714-0300,Bruno Silva,resolution,,Done
+SI-8042,2026-07-23T11:20:13.714-0300,Bruno Silva,status,Submissão,Done
 SI-8041,2026-07-23T10:12:57.455-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-8041,2026-07-23T10:12:57.455-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-8041,2026-07-23T10:12:58.547-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8049,2026-07-23T11:24:22.051-0300,Sistema,Link,,This work item is blocked by GA-1324
