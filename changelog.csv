@@ -64608,6 +64608,7 @@ SI-8021,2026-07-22T19:04:11.173-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8021,2026-07-22T19:04:11.173-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8020,2026-07-22T17:08:49.926-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8020,2026-07-22T17:08:49.926-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8020,2026-07-23T11:50:31.367-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8027,2026-07-22T17:03:29.768-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8027,2026-07-22T17:03:32.270-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8027,2026-07-22T17:03:32.270-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -64624,6 +64625,7 @@ SI-8026,2026-07-22T17:08:37.884-0300,Ricardo Barbosa Machado,status,Submissão,D
 SI-8026,2026-07-23T11:26:21.939-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8025,2026-07-22T17:08:40.293-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8025,2026-07-22T17:08:40.293-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8025,2026-07-23T11:53:33.429-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8030,2026-07-22T17:30:31.274-0300,Sistema,Link,,This work item is blocked by GA-1320
 SI-8028,2026-07-22T17:07:01.483-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8028,2026-07-22T17:07:04.199-0300,Ricardo Barbosa Machado,resolution,,Done
@@ -64663,4 +64665,16 @@ SI-8042,2026-07-23T11:20:13.714-0300,Bruno Silva,status,Submissão,Done
 SI-8041,2026-07-23T10:12:57.455-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-8041,2026-07-23T10:12:57.455-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-8041,2026-07-23T10:12:58.547-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8050,2026-07-23T12:28:07.981-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8050,2026-07-23T12:28:10.910-0300,Bruno Silva,resolution,,Done
+SI-8050,2026-07-23T12:28:10.910-0300,Bruno Silva,status,Submissão,Done
 SI-8049,2026-07-23T11:24:22.051-0300,Sistema,Link,,This work item is blocked by GA-1324
+SI-8049,2026-07-23T12:28:25.830-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8049,2026-07-23T12:28:28.475-0300,Bruno Silva,resolution,,Done
+SI-8049,2026-07-23T12:28:28.475-0300,Bruno Silva,status,Submissão,Done
+SI-8047,2026-07-23T12:05:24.806-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8047,2026-07-23T12:05:27.528-0300,Bruno Silva,resolution,,Done
+SI-8047,2026-07-23T12:05:27.528-0300,Bruno Silva,status,Submissão,Done
+SI-8046,2026-07-23T11:58:48.100-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8046,2026-07-23T11:58:51.088-0300,Bruno Silva,resolution,,Done
+SI-8046,2026-07-23T11:58:51.088-0300,Bruno Silva,status,Submissão,Done
