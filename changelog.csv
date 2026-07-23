@@ -64627,6 +64627,9 @@ SI-8025,2026-07-22T17:08:40.293-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8025,2026-07-22T17:08:40.293-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8025,2026-07-23T11:53:33.429-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8030,2026-07-22T17:30:31.274-0300,Sistema,Link,,This work item is blocked by GA-1320
+SI-8030,2026-07-23T15:38:30.654-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8030,2026-07-23T15:38:32.886-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8030,2026-07-23T15:38:32.886-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8028,2026-07-22T17:07:01.483-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8028,2026-07-22T17:07:04.199-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8028,2026-07-22T17:07:04.199-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -64642,7 +64645,13 @@ SI-8033,2026-07-23T09:20:27.772-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8033,2026-07-23T09:20:30.842-0300,Bruno Silva,resolution,,Done
 SI-8033,2026-07-23T09:20:30.842-0300,Bruno Silva,status,Submissão,Done
 SI-8031,2026-07-23T05:59:18.762-0300,Sistema,Link,,This work item is blocked by GA-1321
+SI-8031,2026-07-23T15:21:01.566-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8031,2026-07-23T15:21:03.931-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-8031,2026-07-23T15:21:03.931-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-8039,2026-07-23T08:43:22.543-0300,Sistema,Link,,This work item is blocked by GA-1323
+SI-8039,2026-07-23T15:37:30.737-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-8039,2026-07-23T15:37:30.737-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-8039,2026-07-23T15:37:31.638-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-8038,2026-07-23T09:15:23.150-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8038,2026-07-23T09:15:25.583-0300,Bruno Silva,resolution,,Done
 SI-8038,2026-07-23T09:15:25.583-0300,Bruno Silva,status,Submissão,Done
@@ -64688,3 +64697,4 @@ SI-8046,2026-07-23T11:58:48.100-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8046,2026-07-23T11:58:51.088-0300,Bruno Silva,resolution,,Done
 SI-8046,2026-07-23T11:58:51.088-0300,Bruno Silva,status,Submissão,Done
 SI-8054,2026-07-23T14:41:25.079-0300,Sistema,Link,,This work item is blocked by GA-1326
+SI-8055,2026-07-23T14:54:23.923-0300,Sistema,Link,,This work item is blocked by GA-1327
