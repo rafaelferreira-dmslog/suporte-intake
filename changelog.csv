@@ -62293,6 +62293,11 @@ Adicionalmente, relata-se que a interface está apresentando um alto tempo de re
 SI-7820,2026-07-23T11:22:57.781-0300,Ricardo Barbosa Machado,Encaminhado para:,,Sustentação
 SI-7820,2026-07-23T11:23:02.586-0300,Sistema,Link,,This work item is blocked by SUS-276
 SI-7820,2026-07-23T11:23:05.033-0300,Ricardo Barbosa Machado,Encaminhado para:,Sustentação,
+SI-7820,2026-07-24T19:01:13.674-0300,Sistema,Causa Raiz,Impacto não mapeado,Regra de Negócio
+SI-7820,2026-07-24T19:01:13.674-0300,Sistema,Resolução do chamado,Em atendimento,"Identificamos que a divergência na atualização dos cards decorre do tempo de processamento atual da ferramenta, visto que a busca ocorre simultaneamente em múltiplas informações da ordem. Ao tentar realizar uma nova pesquisa enquanto a anterior ainda está em carregamento, o sistema retém os dados antigos nas colunas de acompanhamento. Para a correção definitiva deste comportamento, foi registrado o INTAKE - 1695."
+SI-7820,2026-07-24T19:01:13.674-0300,Sistema,Causa raiz potencial,Em atendimento,"Lentidão no carregamento e renderização dos componentes visuais do cockpit (To Do / Follow-up) no front-end, ou falha de sincronização na requisição assíncrona ao pesquisar uma nova ordem antes da conclusão da busca anterior."
+SI-7820,2026-07-24T19:01:13.674-0300,Sistema,Causa raiz final,Em atendimento,"O comportamento observado tem origem na forma como a pesquisa do Cockpit foi estruturada. Atualmente, o sistema foi desenhado para buscar o termo digitado em praticamente todos os campos de uma ordem de forma simultânea, o que exige um tempo de processamento maior. Quando uma nova pesquisa é iniciada antes que a anterior tenha sido totalmente carregada, as colunas não conseguem acompanhar a troca imediata de contexto e acabam exibindo os cartões da busca antiga. O sistema processa as requisições de forma concorrente e, sem a devida interrupção da busca anterior, gera a exibição divergente na tela."
+SI-7820,2026-07-24T19:01:13.674-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A análise técnica confirmou que a regra de negócio atual realiza uma busca ampla (broad search) na base de dados, gerando latência na resposta. Como o front-end não possui um mecanismo de cancelamento de requisições anteriores (abort controller ou debounce adequado), requisições concorrentes causam a inconsistência visual relatada no desfecho. A limitação foi validada e a necessidade de refatoração do motor de busca e controle de requisições em tela foi mapeada no INTAKE-1695."
 SI-7826,2026-07-16T08:34:24.049-0300,Sistema,Link,,This work item is blocked by GA-1257
 SI-7826,2026-07-16T13:05:09.915-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7826,2026-07-16T13:05:13.413-0300,Ricardo Barbosa Machado,status,Submissão,Finalizado Definitivamente
@@ -62898,6 +62903,10 @@ SI-7876,2026-07-17T19:03:31.078-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7876,2026-07-17T19:03:31.078-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7876,2026-07-17T19:03:31.078-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7876,2026-07-17T19:03:31.078-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7876,2026-07-24T19:01:37.365-0300,Sistema,Resolução do chamado,Em atendimento,"Identificamos, ao analisar a Ordem 260541932, que os valores de faturamento (Selling) já estavam devidamente configurados e sendo apresentados na moeda Dólar (USD) no sistema. Dessa forma, nenhuma conversão adicional ou intervenção técnica por parte do suporte foi necessária, visto que a apuração já se encontrava na condição desejada."
+SI-7876,2026-07-24T19:01:37.365-0300,Sistema,Causa raiz potencial,Em atendimento,"Desatualização momentânea na tela de visualização do colaborador (cache do navegador) no instante da consulta, ou erro de validação visual antes da abertura do chamado, fazendo com que a tela não refletisse o estado real e atualizado da base de dados."
+SI-7876,2026-07-24T19:01:37.365-0300,Sistema,Causa raiz final,Em atendimento,"A divergência apontada ocorreu provavelmente devido a uma desatualização da página no navegador do colaborador no momento da consulta. Como o sistema já havia processado e consolidado as informações financeiras em USD, a plataforma já continha o dado correto na sua base. Nesses casos, o comportamento não tem origem em uma limitação da ferramenta, mas sim em um reflexo de informações cacheadas localmente na máquina do usuário, que podem ser resolvidas com uma simples atualização da página."
+SI-7876,2026-07-24T19:01:37.365-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A inferência de falha operacional baseia-se na constatação imediata do desfecho: ao acessar a URL reportada, a equipe técnica verificou que o Selling já constava em USD sem a necessidade de execução de scripts de correção ou ajustes manuais no banco de dados. Isso confirma que a integridade transacional estava preservada e o gap era restrito à visualização/interpretação do solicitante."
 SI-7875,2026-07-17T13:27:26.394-0300,Sistema,Link,,This work item is blocked by GA-1275
 SI-7875,2026-07-17T13:27:43.393-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7875,2026-07-17T13:27:45.710-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
@@ -62935,6 +62944,10 @@ SI-7882,2026-07-17T19:03:34.153-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7882,2026-07-17T19:03:34.153-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7882,2026-07-17T19:03:34.153-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7882,2026-07-17T19:03:34.153-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7882,2026-07-24T19:01:39.444-0300,Sistema,Resolução do chamado,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7882,2026-07-24T19:01:39.444-0300,Sistema,Causa raiz potencial,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7882,2026-07-24T19:01:39.444-0300,Sistema,Causa raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7882,2026-07-24T19:01:39.444-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-7881,2026-07-17T15:28:14.529-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7881,2026-07-17T15:28:16.583-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7881,2026-07-17T15:28:16.583-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -62946,6 +62959,11 @@ SI-7881,2026-07-17T19:03:33.509-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7881,2026-07-17T19:03:33.509-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7881,2026-07-17T19:03:33.509-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7881,2026-07-17T19:03:33.509-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7881,2026-07-24T19:01:38.921-0300,Sistema,Causa Raiz,Impacto não mapeado,Falha Desenvolvimento
+SI-7881,2026-07-24T19:01:38.921-0300,Sistema,Resolução do chamado,Em atendimento,"Identificamos que a impossibilidade de adicionar a ordem 260746810 ao processo decorria da existência de registros residuais retidos no sistema. Ao analisar o agenciamento, constatou-se que as linhas referentes a house e pré-alertas de ordens previamente removidas não foram devidamente limpas, gerando o travamento do booking."
+SI-7881,2026-07-24T19:01:38.921-0300,Sistema,Causa raiz potencial,Em atendimento,"Inconsistência na rotina de desvinculação de ordens, gerando perda de integridade referencial ao manter registros dependentes (house/pré-alerta) ""órfãos"", o que conflita com as regras de edição e trava o booking."
+SI-7881,2026-07-24T19:01:38.921-0300,Sistema,Causa raiz final,Em atendimento,"O comportamento não esperado ocorreu devido a uma descontinuidade na comunicação interna do sistema no momento em que ordens anteriores foram retiradas do processo. Quando uma ordem é desvinculada de um agenciamento, o sistema deve limpar simultaneamente todos os dados atrelados a ela. Neste caso, a rotina retirou a ordem, mas não executou a limpeza dos documentos dependentes, deixando informações residuais de house e pré-alerta presas ao booking. Com esse conflito de informações, o sistema acionou uma trava de segurança para proteger a integridade do processo, impedindo a inserção de novas ordens."
+SI-7881,2026-07-24T19:01:38.921-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A análise técnica evidencia uma falha na transação de desvínculo, que carece de atomicidade (propriedades ACID). A remoção da ordem principal não acionou a exclusão em cascata (cascade delete) ou a inativação dos metadados de seus documentos dependentes, resultando em dados órfãos. O Booking interpreta esses resquícios lógicos como ativos e bloqueia edições por medida de integridade, confirmando a necessidade de refatoração na query de exclusão para garantir que componentes dependentes sejam limpos em uma única transação."
 SI-7880,2026-07-17T15:08:30.372-0300,Sistema,Link,,This work item is blocked by GA-1277
 SI-7880,2026-07-17T16:46:44.130-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7880,2026-07-17T16:46:47.796-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
@@ -63003,6 +63021,10 @@ SI-7883,2026-07-17T19:03:34.715-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7883,2026-07-17T19:03:34.715-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7883,2026-07-17T19:03:34.715-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7883,2026-07-17T19:03:34.715-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7883,2026-07-24T19:01:39.985-0300,Sistema,Resolução do chamado,Em atendimento,Caso ajustado junto com time de DE.
+SI-7883,2026-07-24T19:01:39.985-0300,Sistema,Causa raiz potencial,Em atendimento,Caso ajustado junto com time de DE.
+SI-7883,2026-07-24T19:01:39.985-0300,Sistema,Causa raiz final,Em atendimento,Caso ajustado junto com time de DE.
+SI-7883,2026-07-24T19:01:39.985-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,Caso ajustado junto com time de DE.
 SI-7889,2026-07-20T11:18:21.021-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7889,2026-07-20T11:18:23.078-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7889,2026-07-20T11:18:23.078-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -65035,6 +65057,14 @@ SI-8044,2026-07-23T19:01:48.318-0300,Sistema,Justificativa Causa Raiz final,,Em 
 SI-8043,2026-07-24T16:16:38.450-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8043,2026-07-24T16:16:38.450-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8043,2026-07-24T17:04:15.177-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8043,2026-07-24T19:02:44.870-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8043,2026-07-24T19:02:44.870-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8043,2026-07-24T19:02:44.870-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8043,2026-07-24T19:02:44.870-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8043,2026-07-24T19:02:44.870-0300,Sistema,Resolução do chamado,,"Identificado que o alerta ""Pre alert to Customer"" não foi disparado automaticamente devido a uma instabilidade momentânea no serviço de mensageria, ocasionada por um alto volume de requisições simultâneas. Realizado o reenvio manual do alerta através da função ""Resend Alert"", confirmando o recebimento bem-sucedido pelo destinatário. Orientado que a equipe técnica já está trabalhando na implementação de um novo protocolo de envio (SMTP RelayINTAKE-186) para garantir a escalabilidade e a estabilidade deste processo, evitando novas intercorrências em períodos de alta demanda."
+SI-8043,2026-07-24T19:02:44.870-0300,Sistema,Causa raiz potencial,,"Sobrecarga no servidor de e-mail, instabilidade na integração com o provedor de e-mail ou limite de envios por minuto atingido pelo usuário de automação."
+SI-8043,2026-07-24T19:02:44.870-0300,Sistema,Causa raiz final,,"Limitação técnica do método de disparo de e-mails atual frente ao volume de processamento da automação operacional, gerando gargalo no servidor de saída."
+SI-8043,2026-07-24T19:02:44.870-0300,Sistema,Justificativa Causa Raiz final,,"A falha ocorreu devido ao conflito entre a alta performance da automação de processos e a capacidade limitada de entrega do protocolo de e-mail vigente. O nexo causal estabelece que, ao atingir o teto de envios simultâneos, o provedor bloqueia temporariamente a conta por segurança, resultando no ícone vermelho na timeline. A solução definitiva (migração para SMTP Relay via INTAKE-186) resolve o problema na raiz ao permitir um fluxo de saída profissional e escalável, eliminando a dependência de limites de contas individuais e garantindo que a Melhoria Contínua previna a reincidência de bloqueios por volume."
 SI-8042,2026-07-23T11:20:10.439-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8042,2026-07-23T11:20:13.714-0300,Bruno Silva,resolution,,Done
 SI-8042,2026-07-23T11:20:13.714-0300,Bruno Silva,status,Submissão,Done
@@ -65193,6 +65223,11 @@ SI-8056,2026-07-23T19:01:53.376-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8056,2026-07-23T19:01:53.376-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8056,2026-07-23T19:01:53.376-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8056,2026-07-23T19:01:53.376-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8056,2026-07-24T19:02:49.925-0300,Sistema,Causa Raiz,Impacto não mapeado,Regra de Negócio
+SI-8056,2026-07-24T19:02:49.925-0300,Sistema,Resolução do chamado,Em atendimento,"Identificamos que o módulo de cotações não disponibiliza uma opção em tela para a exclusão autônoma de propostas pelo usuário. Dessa forma, atuamos em conjunto com a equipe técnica para realizar a remoção dos quatro registros, conforme solicitado."
+SI-8056,2026-07-24T19:02:49.925-0300,Sistema,Causa raiz potencial,Em atendimento,Ausência de funcionalidade ou comando na interface de usuário que permita a exclusão direta de propostas no módulo correspondente.
+SI-8056,2026-07-24T19:02:49.925-0300,Sistema,Causa raiz final,Em atendimento,"A impossibilidade de exclusão direta de uma proposta pelo colaborador ocorre devido a uma definição na regra de negócio e na arquitetura do sistema DMSYS. Para garantir que todas as interações comerciais e documentos gerados tenham total rastreabilidade e segurança, o sistema foi projetado para não permitir a deleção de registros de forma simplificada na interface. Essa mecânica atua como uma camada de proteção contra a perda de dados críticos."
+SI-8056,2026-07-24T19:02:49.925-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"O relato descreve a indisponibilidade de um botão de exclusão, o que não configura um erro sistêmico, mas sim um comportamento nativo da aplicação. A restrição na camada visual (front-end) foi estabelecida como regra de negócio para assegurar o histórico comercial. Por este motivo, o desfecho exigiu a intervenção técnica da equipe de DE, que procedeu com a deleção de forma controlada via banco de dados."
 SI-8055,2026-07-23T14:54:23.923-0300,Sistema,Link,,This work item is blocked by GA-1327
 SI-8055,2026-07-23T16:02:07.429-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-8055,2026-07-23T16:02:10.322-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
@@ -65218,6 +65253,10 @@ SI-8058,2026-07-23T19:01:54.565-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8058,2026-07-23T19:01:54.565-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8058,2026-07-23T19:01:54.565-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8058,2026-07-23T19:01:54.565-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8058,2026-07-24T19:02:51.112-0300,Sistema,Resolução do chamado,Em atendimento,"Identificamos, ao analisar o envio ao CCT, que o país de origem constava divergente, apresentando a sigla dos Estados Unidos em vez da Dinamarca, e a tentativa de retificação não surtiu efeito. Com o auxílio do time de DE, ajustamos a sigla do país internamente para que o sistema puxasse a informação correta novamente. O caso foi encaminhado para a análise da equipe de sustentação visando a averiguação definitiva desse comportamento."
+SI-8058,2026-07-24T19:02:51.112-0300,Sistema,Causa raiz potencial,Em atendimento,Divergência sistêmica no mapeamento de dados (configuração incorreta) entre o cadastro de exportador e a geração do arquivo para o CCT. A falha na retificação sugere um travamento na rotina de atualização do payload na interface.
+SI-8058,2026-07-24T19:02:51.112-0300,Sistema,Causa raiz final,Em atendimento,"O comportamento não esperado ocorreu devido a uma divergência sistêmica durante a extração do país de origem. Embora o cadastro do exportador estivesse correto (Dinamarca), a rotina puxou indevidamente a sigla ""US"". O próprio sistema do CCT tem seus próprios padrões e limitações para o preenchimento das informações enviadas no arquivo XML. Além disso, a retificação do conhecimento de carga pode ser realizada por serviço, através do envio dos arquivos XML com a operação “update”. Porém, a rotina padrão de atualização não funcionou pela interface, exigindo que o time de DE interviesse para ajustar a sigla do país, forçando o sistema a repuxar a informação correta."
+SI-8058,2026-07-24T19:02:51.112-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A classificação como Falha de Desenvolvimento justifica-se pois a análise confirmou que o sistema extraiu o dado incorretamente e não permitiu a correção via tela. A necessidade de intervenção do time de DE para ajustar a sigla e o posterior encaminhamento à sustentação comprovam que a anomalia reside na lógica da rotina de integração e retificação do sistema, exigindo correção em nível de código/banco de dados."
 SI-8057,2026-07-23T16:43:11.243-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8057,2026-07-23T16:43:14.087-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8057,2026-07-23T16:43:14.087-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -65229,6 +65268,10 @@ SI-8057,2026-07-23T19:01:53.997-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8057,2026-07-23T19:01:53.997-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8057,2026-07-23T19:01:53.997-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8057,2026-07-23T19:01:53.997-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8057,2026-07-24T19:02:50.521-0300,Sistema,Resolução do chamado,Em atendimento,"Identificamos uma duplicidade de registros no Cargo Manifest. Realizamos a remoção da linha excedente junto ao time de DE, regularizando a informação e permitindo a continuidade do processo."
+SI-8057,2026-07-24T19:02:50.521-0300,Sistema,Causa raiz potencial,Em atendimento,"Falha na lógica de atualização (upsert) da aplicação, que executa uma nova inserção em vez de substituir o registro existente de Cargo Manifest durante a gravação do Master."
+SI-8057,2026-07-24T19:02:50.521-0300,Sistema,Causa raiz final,Em atendimento,"O comportamento ocorreu devido a uma inconsistência na rotina de gravação do sistema no momento de atualizar o documento Master. Durante a tentativa de salvamento, a aplicação gerou uma duplicação indevida nas linhas do Cargo Manifest. Como o sistema identifica registros redundantes para o mesmo agenciamento, a gravação foi bloqueada por medida de integridade de dados. Com a remoção da linha excedente, a coerência das informações foi reestabelecida, liberando o processo para a sequência do trabalho."
+SI-8057,2026-07-24T19:02:50.521-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A análise técnica apontou uma deficiência na instrução de alteração e persistência de dados no banco relacional para a tabela de Cargo Manifest. O relato confirma que a liberação da interface ocorreu imediatamente após a exclusão manual do registro duplicado efetuada pela equipe de DE. O desfecho comprova a falha de desenvolvimento na regra de salvamento, sugerindo a implementação de restrições de integridade no backend para impedir inserções sobrepostas."
 SI-8061,2026-07-23T17:05:48.657-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8061,2026-07-23T17:05:50.862-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8061,2026-07-23T17:05:50.862-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -65240,12 +65283,32 @@ SI-8061,2026-07-23T19:01:55.101-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8061,2026-07-23T19:01:55.101-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8061,2026-07-23T19:01:55.101-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8061,2026-07-23T19:01:55.101-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8061,2026-07-24T19:02:52.550-0300,Sistema,Resolução do chamado,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-8061,2026-07-24T19:02:52.550-0300,Sistema,Causa raiz potencial,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-8061,2026-07-24T19:02:52.550-0300,Sistema,Causa raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-8061,2026-07-24T19:02:52.550-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-8060,2026-07-24T16:16:28.297-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8060,2026-07-24T16:16:28.297-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8060,2026-07-24T16:35:48.305-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8060,2026-07-24T19:02:51.808-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8060,2026-07-24T19:02:51.808-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8060,2026-07-24T19:02:51.808-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8060,2026-07-24T19:02:51.808-0300,Sistema,Criticidade final,,P2 - Média
+SI-8060,2026-07-24T19:02:51.808-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8060,2026-07-24T19:02:51.808-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8060,2026-07-24T19:02:51.808-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8060,2026-07-24T19:02:51.808-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8062,2026-07-24T16:00:08.447-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8062,2026-07-24T16:00:10.927-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8062,2026-07-24T16:00:10.927-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8062,2026-07-24T19:02:53.172-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8062,2026-07-24T19:02:53.172-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8062,2026-07-24T19:02:53.172-0300,Sistema,Criticidade final,,P2 - Média
+SI-8062,2026-07-24T19:02:53.172-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8062,2026-07-24T19:02:53.172-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8062,2026-07-24T19:02:53.172-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8062,2026-07-24T19:02:53.172-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8062,2026-07-24T19:02:53.172-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8063,2026-07-24T11:00:20.038-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-8063,2026-07-24T11:00:20.038-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-8063,2026-07-24T11:00:20.791-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
@@ -65348,9 +65411,25 @@ SI-8068,2026-07-24T13:00:22.627-0300,Sistema,Justificativa Causa Raiz final,,o r
 SI-8074,2026-07-24T12:55:04.758-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8074,2026-07-24T12:55:06.774-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8074,2026-07-24T12:55:06.774-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8074,2026-07-24T19:02:57.896-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8074,2026-07-24T19:02:57.896-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8074,2026-07-24T19:02:57.896-0300,Sistema,Criticidade final,,P2 - Média
+SI-8074,2026-07-24T19:02:57.896-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8074,2026-07-24T19:02:57.896-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8074,2026-07-24T19:02:57.896-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8074,2026-07-24T19:02:57.896-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8074,2026-07-24T19:02:57.896-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8073,2026-07-24T15:40:47.752-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8073,2026-07-24T15:40:49.991-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8073,2026-07-24T15:40:49.991-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8073,2026-07-24T19:02:57.303-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8073,2026-07-24T19:02:57.303-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8073,2026-07-24T19:02:57.303-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8073,2026-07-24T19:02:57.303-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8073,2026-07-24T19:02:57.303-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8073,2026-07-24T19:02:57.303-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8073,2026-07-24T19:02:57.303-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8073,2026-07-24T19:02:57.303-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8072,2026-07-24T11:10:39.188-0300,Eduardo Felipe de Lima Rebello,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
 
 *1️⃣ Identificação do Chamado*
@@ -65514,6 +65593,14 @@ SI-8079,2026-07-24T13:00:26.126-0300,Sistema,Justificativa Causa Raiz final,,Em 
 SI-8078,2026-07-24T15:34:38.415-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8078,2026-07-24T15:34:43.305-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8078,2026-07-24T15:34:43.305-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8078,2026-07-24T19:02:59.709-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8078,2026-07-24T19:02:59.709-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8078,2026-07-24T19:02:59.709-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8078,2026-07-24T19:02:59.709-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8078,2026-07-24T19:02:59.709-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8078,2026-07-24T19:02:59.709-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8078,2026-07-24T19:02:59.709-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8078,2026-07-24T19:02:59.709-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8077,2026-07-24T12:06:44.704-0300,Ricardo Barbosa Machado,assignee,,Eduardo Felipe de Lima Rebello
 SI-8077,2026-07-24T12:06:50.134-0300,Ricardo Barbosa Machado,assignee,Eduardo Felipe de Lima Rebello,Ricardo Barbosa Machado
 SI-8077,2026-07-24T12:06:52.385-0300,Ricardo Barbosa Machado,resolution,,Done
@@ -65540,46 +65627,143 @@ SI-8076,2026-07-24T13:00:24.922-0300,Sistema,Justificativa Causa Raiz final,,"A 
 SI-8075,2026-07-24T16:16:23.295-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8075,2026-07-24T16:16:23.295-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8075,2026-07-24T16:59:22.520-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8075,2026-07-24T19:02:58.433-0300,Sistema,Criticidade final,,P2 - Média
+SI-8075,2026-07-24T19:02:58.433-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8075,2026-07-24T19:02:58.433-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8075,2026-07-24T19:02:58.433-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8075,2026-07-24T19:02:58.433-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8075,2026-07-24T19:02:58.433-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8075,2026-07-24T19:02:58.433-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8075,2026-07-24T19:02:58.433-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8082,2026-07-24T15:26:43.525-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8082,2026-07-24T15:26:45.932-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8082,2026-07-24T15:26:45.932-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8082,2026-07-24T19:03:03.756-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8082,2026-07-24T19:03:03.756-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8082,2026-07-24T19:03:03.756-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8082,2026-07-24T19:03:03.756-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8082,2026-07-24T19:03:03.756-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8082,2026-07-24T19:03:03.756-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8082,2026-07-24T19:03:03.756-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8082,2026-07-24T19:03:03.756-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8081,2026-07-24T13:20:22.711-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8081,2026-07-24T13:20:25.331-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8081,2026-07-24T13:20:25.331-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8081,2026-07-24T19:03:03.167-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8081,2026-07-24T19:03:03.167-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8081,2026-07-24T19:03:03.167-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8081,2026-07-24T19:03:03.167-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8081,2026-07-24T19:03:03.167-0300,Sistema,Resolução do chamado,,"Identificada a indisponibilidade sistêmica ao tentar deletar ou desvincular ordens, ocasionada por uma inconsistência nos registros internos de controle de datas. Como a correção estrutural dessa validação requer uma alteração sistêmica para evitar que a operação seja interrompida, o cenário foi devidamente mapeado e vinculado ao INTAKE-1557. Este intake já se encontra sob a responsabilidade da equipe de desenvolvimento para que seja criada e implementada a solução definitiva na plataforma, garantindo a normalização do fluxo operacional."
+SI-8081,2026-07-24T19:03:03.167-0300,Sistema,Causa raiz potencial,,Ausência de inicialização automática de tabelas de controle de datas de processos antigos ou falta de validação estrutural do sistema ao tentar atualizar informações ligadas a relacionamentos inexistentes no banco de dados.
+SI-8081,2026-07-24T19:03:03.167-0300,Sistema,Causa raiz final,,"O impedimento ao tentar concluir as ações de desatrelar ou deletar as ordens ocorria devido a uma falha de comunicação entre as validações sistêmicas atuais e o histórico de cadastros da plataforma. Especificamente, após a desativação da aba anterior de controle de datas, algumas ordens ficaram sem esse registro de acompanhamento gerado na base. Sempre que um operador tentava realizar uma movimentação crítica na ordem, a plataforma tentava atualizar obrigatoriamente um status de ""aprovação de cliente"" que ficava dentro desse antigo controle de datas. Por não encontrar essa informação, o sistema não sabia como prosseguir, interrompendo a ação abruptamente e travando a tela. Como não foi realizada nenhuma tratativa paliativa ou definitiva até o momento para contornar essa exigência de sistema, a situação foi atrelada ao INTAKE-1557. A equipe de tecnologia trabalhará neste intake para reprogramar o sistema, ensinando a plataforma a verificar se a informação de data existe antes de tentar atualizá-la, ignorando a validação ou criando o dado sob demanda para que o trabalho do operador não seja mais interrompido."
+SI-8081,2026-07-24T19:03:03.167-0300,Sistema,Justificativa Causa Raiz final,,"A análise técnica do card SUS-215 atestou a ocorrência do erro relacional RelatedObjectDoesNotExist: Assembly has no datecontrol no arquivo src/booking/models/base.py (linha 489). A falha é engatilhada porque o backend, através da função update_customer_approval, tenta acessar de forma direta o atributo datecontrol.customer_approval_valid sem aplicar um tratamento defensivo para validar a existência do relacionamento OneToOne na tabela order_datecontrol. Considerando que nenhuma correção definitiva ou saneamento foi executado em ambiente produtivo, os processos que possuem essa lacuna de dados continuam apresentando o Erro 500. A resolução focada na melhoria contínua e eliminação da reincidência foi direcionada para o INTAKE-1557, que atuará na implementação de validações defensivas no código (para verificar a existência do objeto antes da manipulação) e na criação de rotinas para lidar com registros órfãos, mitigando o impacto na eficiência operacional apontado no discovery."
 SI-8080,2026-07-24T13:12:17.669-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8080,2026-07-24T13:12:20.087-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8080,2026-07-24T13:12:20.087-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8080,2026-07-24T19:03:02.501-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8080,2026-07-24T19:03:02.501-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8080,2026-07-24T19:03:02.501-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8080,2026-07-24T19:03:02.501-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8080,2026-07-24T19:03:02.501-0300,Sistema,Resolução do chamado,,"Identificada a indisponibilidade sistêmica ao tentar deletar ou desvincular ordens, ocasionada por uma inconsistência nos registros internos de controle de datas. Como a correção estrutural dessa validação requer uma alteração sistêmica para evitar que a operação seja interrompida, o cenário foi devidamente mapeado e vinculado ao INTAKE-1557. Este intake já se encontra sob a responsabilidade da equipe de desenvolvimento para que seja criada e implementada a solução definitiva na plataforma, garantindo a normalização do fluxo operacional."
+SI-8080,2026-07-24T19:03:02.501-0300,Sistema,Causa raiz potencial,,Ausência de inicialização automática de tabelas de controle de datas de processos antigos ou falta de validação estrutural do sistema ao tentar atualizar informações ligadas a relacionamentos inexistentes no banco de dados.
+SI-8080,2026-07-24T19:03:02.501-0300,Sistema,Causa raiz final,,"O impedimento ao tentar concluir as ações de desatrelar ou deletar as ordens ocorria devido a uma falha de comunicação entre as validações sistêmicas atuais e o histórico de cadastros da plataforma. Especificamente, após a desativação da aba anterior de controle de datas, algumas ordens ficaram sem esse registro de acompanhamento gerado na base. Sempre que um operador tentava realizar uma movimentação crítica na ordem, a plataforma tentava atualizar obrigatoriamente um status de ""aprovação de cliente"" que ficava dentro desse antigo controle de datas. Por não encontrar essa informação, o sistema não sabia como prosseguir, interrompendo a ação abruptamente e travando a tela. Como não foi realizada nenhuma tratativa paliativa ou definitiva até o momento para contornar essa exigência de sistema, a situação foi atrelada ao INTAKE-1557. A equipe de tecnologia trabalhará neste intake para reprogramar o sistema, ensinando a plataforma a verificar se a informação de data existe antes de tentar atualizá-la, ignorando a validação ou criando o dado sob demanda para que o trabalho do operador não seja mais interrompido."
+SI-8080,2026-07-24T19:03:02.501-0300,Sistema,Justificativa Causa Raiz final,,"A análise técnica do card SUS-215 atestou a ocorrência do erro relacional RelatedObjectDoesNotExist: Assembly has no datecontrol no arquivo src/booking/models/base.py (linha 489). A falha é engatilhada porque o backend, através da função update_customer_approval, tenta acessar de forma direta o atributo datecontrol.customer_approval_valid sem aplicar um tratamento defensivo para validar a existência do relacionamento OneToOne na tabela order_datecontrol. Considerando que nenhuma correção definitiva ou saneamento foi executado em ambiente produtivo, os processos que possuem essa lacuna de dados continuam apresentando o Erro 500. A resolução focada na melhoria contínua e eliminação da reincidência foi direcionada para o INTAKE-1557, que atuará na implementação de validações defensivas no código (para verificar a existência do objeto antes da manipulação) e na criação de rotinas para lidar com registros órfãos, mitigando o impacto na eficiência operacional apontado no discovery."
 SI-8085,2026-07-24T14:22:43.342-0300,Sistema,Link,,This work item is blocked by GA-1328
 SI-8085,2026-07-24T14:27:56.725-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8085,2026-07-24T14:27:59.890-0300,Bruno Silva,resolution,,Done
 SI-8085,2026-07-24T14:27:59.890-0300,Bruno Silva,status,Submissão,Done
+SI-8085,2026-07-24T19:03:05.504-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8085,2026-07-24T19:03:05.504-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8085,2026-07-24T19:03:05.504-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8085,2026-07-24T19:03:05.504-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8085,2026-07-24T19:03:05.504-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8085,2026-07-24T19:03:05.504-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8085,2026-07-24T19:03:05.504-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8085,2026-07-24T19:03:05.504-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8084,2026-07-24T14:27:37.449-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8084,2026-07-24T14:27:41.248-0300,Bruno Silva,resolution,,Done
 SI-8084,2026-07-24T14:27:41.248-0300,Bruno Silva,status,Submissão,Done
+SI-8084,2026-07-24T19:03:04.970-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8084,2026-07-24T19:03:04.970-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8084,2026-07-24T19:03:04.970-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8084,2026-07-24T19:03:04.970-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8084,2026-07-24T19:03:04.970-0300,Sistema,Resolução do chamado,,Bom dia! favor entrar na salinha para verificação dos documentos
+SI-8084,2026-07-24T19:03:04.970-0300,Sistema,Causa raiz potencial,,Bom dia! favor entrar na salinha para verificação dos documentos
+SI-8084,2026-07-24T19:03:04.970-0300,Sistema,Causa raiz final,,Bom dia! favor entrar na salinha para verificação dos documentos
+SI-8084,2026-07-24T19:03:04.970-0300,Sistema,Justificativa Causa Raiz final,,Bom dia! favor entrar na salinha para verificação dos documentos
 SI-8083,2026-07-24T15:21:24.052-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8083,2026-07-24T15:21:26.327-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8083,2026-07-24T15:21:26.327-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8083,2026-07-24T19:03:04.417-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8083,2026-07-24T19:03:04.417-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8083,2026-07-24T19:03:04.417-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8083,2026-07-24T19:03:04.417-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8083,2026-07-24T19:03:04.417-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8083,2026-07-24T19:03:04.417-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8083,2026-07-24T19:03:04.417-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8083,2026-07-24T19:03:04.417-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8089,2026-07-24T16:09:02.013-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8089,2026-07-24T16:09:05.230-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8089,2026-07-24T16:09:05.230-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8089,2026-07-24T19:03:07.918-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8089,2026-07-24T19:03:07.918-0300,Sistema,Criticidade final,,P2 - Média
+SI-8089,2026-07-24T19:03:07.918-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8089,2026-07-24T19:03:07.918-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8089,2026-07-24T19:03:07.918-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8089,2026-07-24T19:03:07.918-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8089,2026-07-24T19:03:07.918-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8089,2026-07-24T19:03:07.918-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8088,2026-07-24T15:28:27.293-0300,Sistema,Link,,This work item is blocked by GA-1329
 SI-8088,2026-07-24T16:16:13.471-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8088,2026-07-24T16:16:13.471-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8088,2026-07-24T16:17:18.905-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8088,2026-07-24T19:03:07.349-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8088,2026-07-24T19:03:07.349-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8088,2026-07-24T19:03:07.349-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8088,2026-07-24T19:03:07.349-0300,Sistema,Criticidade final,,P2 - Média
+SI-8088,2026-07-24T19:03:07.349-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8088,2026-07-24T19:03:07.349-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8088,2026-07-24T19:03:07.349-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8088,2026-07-24T19:03:07.349-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8087,2026-07-24T15:17:05.298-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8087,2026-07-24T15:17:08.642-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8087,2026-07-24T15:17:08.642-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8087,2026-07-24T19:03:06.722-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8087,2026-07-24T19:03:06.722-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8087,2026-07-24T19:03:06.722-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8087,2026-07-24T19:03:06.722-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8087,2026-07-24T19:03:06.722-0300,Sistema,Resolução do chamado,,"Identificada a indisponibilidade sistêmica ao tentar deletar ou desvincular ordens, ocasionada por uma inconsistência nos registros internos de controle de datas. Como a correção estrutural dessa validação requer uma alteração sistêmica para evitar que a operação seja interrompida, o cenário foi devidamente mapeado e vinculado ao INTAKE-1557. Este intake já se encontra sob a responsabilidade da equipe de desenvolvimento para que seja criada e implementada a solução definitiva na plataforma, garantindo a normalização do fluxo operacional."
+SI-8087,2026-07-24T19:03:06.722-0300,Sistema,Causa raiz potencial,,Ausência de inicialização automática de tabelas de controle de datas de processos antigos ou falta de validação estrutural do sistema ao tentar atualizar informações ligadas a relacionamentos inexistentes no banco de dados.
+SI-8087,2026-07-24T19:03:06.722-0300,Sistema,Causa raiz final,,"O impedimento ao tentar concluir as ações de desatrelar ou deletar as ordens ocorria devido a uma falha de comunicação entre as validações sistêmicas atuais e o histórico de cadastros da plataforma. Especificamente, após a desativação da aba anterior de controle de datas, algumas ordens ficaram sem esse registro de acompanhamento gerado na base. Sempre que um operador tentava realizar uma movimentação crítica na ordem, a plataforma tentava atualizar obrigatoriamente um status de ""aprovação de cliente"" que ficava dentro desse antigo controle de datas. Por não encontrar essa informação, o sistema não sabia como prosseguir, interrompendo a ação abruptamente e travando a tela. Como não foi realizada nenhuma tratativa paliativa ou definitiva até o momento para contornar essa exigência de sistema, a situação foi atrelada ao INTAKE-1557. A equipe de tecnologia trabalhará neste intake para reprogramar o sistema, ensinando a plataforma a verificar se a informação de data existe antes de tentar atualizá-la, ignorando a validação ou criando o dado sob demanda para que o trabalho do operador não seja mais interrompido."
+SI-8087,2026-07-24T19:03:06.722-0300,Sistema,Justificativa Causa Raiz final,,"A análise técnica do card SUS-215 atestou a ocorrência do erro relacional RelatedObjectDoesNotExist: Assembly has no datecontrol no arquivo src/booking/models/base.py (linha 489). A falha é engatilhada porque o backend, através da função update_customer_approval, tenta acessar de forma direta o atributo datecontrol.customer_approval_valid sem aplicar um tratamento defensivo para validar a existência do relacionamento OneToOne na tabela order_datecontrol. Considerando que nenhuma correção definitiva ou saneamento foi executado em ambiente produtivo, os processos que possuem essa lacuna de dados continuam apresentando o Erro 500. A resolução focada na melhoria contínua e eliminação da reincidência foi direcionada para o INTAKE-1557, que atuará na implementação de validações defensivas no código (para verificar a existência do objeto antes da manipulação) e na criação de rotinas para lidar com registros órfãos, mitigando o impacto na eficiência operacional apontado no discovery."
 SI-8086,2026-07-24T14:58:52.239-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-8086,2026-07-24T14:58:52.239-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-8086,2026-07-24T14:58:53.144-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8086,2026-07-24T19:03:06.106-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8086,2026-07-24T19:03:06.106-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8086,2026-07-24T19:03:06.106-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8086,2026-07-24T19:03:06.106-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8086,2026-07-24T19:03:06.106-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8086,2026-07-24T19:03:06.106-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8086,2026-07-24T19:03:06.106-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8086,2026-07-24T19:03:06.106-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8093,2026-07-24T16:56:00.098-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8093,2026-07-24T16:56:00.098-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8092,2026-07-24T16:56:07.187-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8092,2026-07-24T16:56:07.187-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8092,2026-07-24T16:56:57.390-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8092,2026-07-24T19:03:09.177-0300,Sistema,Resolução do chamado,,Em atendimento
 SI-8091,2026-07-24T16:16:05.581-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8091,2026-07-24T16:16:09.022-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8091,2026-07-24T16:16:09.022-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8090,2026-07-24T16:06:26.549-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8090,2026-07-24T16:06:32.982-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8090,2026-07-24T16:06:32.982-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8090,2026-07-24T19:03:08.681-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-8090,2026-07-24T19:03:08.681-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8090,2026-07-24T19:03:08.681-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8090,2026-07-24T19:03:08.681-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8090,2026-07-24T19:03:08.681-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8090,2026-07-24T19:03:08.681-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8090,2026-07-24T19:03:08.681-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8090,2026-07-24T19:03:08.681-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
