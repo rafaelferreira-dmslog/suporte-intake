@@ -55688,6 +55688,7 @@ SI-7334,2026-07-01T19:00:50.459-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7334,2026-07-01T19:00:50.459-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7334,2026-07-01T19:00:50.459-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7334,2026-07-01T19:00:50.459-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7334,2026-07-24T09:30:29.504-0300,Bruno Silva,assignee,Ricardo Barbosa Machado,Bruno Silva
 SI-7333,2026-07-01T15:41:17.287-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7333,2026-07-01T15:41:19.636-0300,Rafael Ferreira,resolution,,Done
 SI-7333,2026-07-01T15:41:19.636-0300,Rafael Ferreira,status,Submissão,Done
@@ -64202,6 +64203,7 @@ SI-7980,2026-07-22T14:02:17.220-0300,Bruno Silva,status,Submissão,Done
 SI-7979,2026-07-21T16:47:26.646-0300,Sistema,Link,,This work item is blocked by GA-1308
 SI-7979,2026-07-22T14:02:19.724-0300,Bruno Silva,resolution,,Done
 SI-7979,2026-07-22T14:02:19.724-0300,Bruno Silva,status,Submissão,Done
+SI-7979,2026-07-24T09:33:13.131-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7983,2026-07-22T12:24:43.970-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7983,2026-07-22T12:24:46.318-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7983,2026-07-22T12:24:46.318-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -64804,6 +64806,160 @@ SI-8035,2026-07-23T19:01:43.450-0300,Sistema,Resolução do chamado,,Identificad
 SI-8035,2026-07-23T19:01:43.450-0300,Sistema,Causa raiz potencial,,Execução de query SQL com sintaxe incorreta no script do PHP ao tentar inserir o ID do usuário na tabela de logs.
 SI-8035,2026-07-23T19:01:43.450-0300,Sistema,Causa raiz final,,"O problema na visualização das imagens ocorreu devido a uma falha na estrutura do comando interno enviado ao banco de dados durante a gravação do registro de acesso do usuário. Como faltava a identificação do usuário no comando (gerando um erro de vírgula/sintaxe no banco), o sistema interrompia o carregamento e impedia a abertura da tela. A correção do script garante o envio correto das informações e restabelece a abertura normal dos registros."
 SI-8035,2026-07-23T19:01:43.450-0300,Sistema,Justificativa Causa Raiz final,,"Erro de sintaxe no arquivo /var/www/html/modules/home.php (linha 641) durante a execução do INSERT INTO log, originado por falta de parâmetro na variável id_usuario (VALUES (, 'S3_PRESI...). A correção do código PHP tratou a passagem da variável, prevenindo novas falhas de sintaxe SQL e restaurando a execução normal do módulo."
+SI-8035,2026-07-24T09:03:18.674-0300,Bruno Silva,Attachment,,imagem_2026-07-24_090313582.png
+SI-8035,2026-07-24T09:29:05.091-0300,Bruno Silva,description,,"1️⃣ Identificação do Chamado
+
+
+* *Módulo:* DWSYS
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção ({{dmsws.dmslog.com}})
+* *Título Sugerido:* Erro SQL de Sintaxe ao Acessar Lista de Volumes no Módulo WR (home.php)
+
+2️⃣ Entendimento do Problema
+
+
+* *Passo a Passo:*
+
+** O usuário navega no sistema até o módulo {{wr}}.
+** Executa o método {{volumeslist}} com os parâmetros {{v=87139}} e token associado.
+** A aplicação tenta registrar a ação de acesso na tabela de logs do banco de dados.
+** O sistema interrompe a execução e exibe um erro de sintaxe SQL do PostgreSQL na tela.
+* *Comportamento Esperado vs. Atual:*
+
+** *Esperado:* A listagem de volumes/imagens deve ser carregada normalmente e o log de acesso gravado no banco de dados.
+** *Atual:* Falha no carregamento e exibição de erro fatal na tela: {{Error: PostgreSQL query failed: ERROR: syntax error at or near "",""...}}
+* *Evidências:* Anexado print do navegador exibindo o erro e a URL de acesso ({{[dmsws.dmslog.com/index.php?module=wr&method=volumeslist](https://dmsws.dmslog.com/index.php?module=wr&method=volumeslist)...}}).
+
+3️⃣ Análise Técnica Inicial
+
+
+* *Histórico/Logs:*
+
+** *Erro capturado:* {{PostgreSQL query failed: ERROR: syntax error at or near "","" LINE 1: INSERT INTO log (id_usuario, acao, data) VALUES (, 'S3_PRESI... ^ Occurred in /var/www/html/modules/home.php on line 641.}}
+** *Análise:* A instrução SQL {{INSERT}} esperava o valor de {{id_usuario}}, mas a variável correspondente no PHP estava vazia/nula, gerando uma vírgula solta ({{VALUES (, 'S3...}}) e quebrando a sintaxe do PostgreSQL.
+
+4️⃣ Avaliação de Impacto
+
+
+* *Abrangência:* [PENDENTE: SOLICITAR AO USUÁRIO] _(Aparenta afetar usuários cujas sessões não passam o parâmetro_ {{id_usuario}} _para o script)_.
+* *Criticidade:* *Alta*
+* *Justificativa:* Impede a visualização/abertura de imagens e registros essenciais no módulo {{wr}}, bloqueando o fluxo operacional.
+* *Workaround:* Não identificado.
+
+5️⃣ Tentativas de Resolução
+
+
+* *Ações Realizadas:* Identificação da origem do erro via interface/logs de aplicação. Verificado que a falha ocorre no backend durante a tentativa de auditoria/log.
+
+6️⃣ Justificativa Técnica para Escalonamento
+
+
+* O problema reside diretamente no código fonte do script PHP ({{/var/www/html/modules/home.php}}, linha 641), que monta a query SQL sem a devida sanitização ou tratamento para a ausência da variável {{$id_usuario}}. Trata-se de uma correção de desenvolvimento (Nível 3 / Sustentação) para tratar a variável antes da montagem da query ou parametrizar o chamado no banco.
+
+🔍 *CAUSA RAIZ POTENCIAL*
+Execução de query SQL com sintaxe incorreta no script PHP ({{/var/www/html/modules/home.php}}) ao tentar inserir o ID do usuário na tabela de logs, causada por passagem de variável vazia/ausente no parâmetro {{id_usuario}}."
+SI-8035,2026-07-24T09:29:37.126-0300,Bruno Silva,description,"1️⃣ Identificação do Chamado
+
+
+* *Módulo:* DWSYS
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção ({{dmsws.dmslog.com}})
+* *Título Sugerido:* Erro SQL de Sintaxe ao Acessar Lista de Volumes no Módulo WR (home.php)
+
+2️⃣ Entendimento do Problema
+
+
+* *Passo a Passo:*
+
+** O usuário navega no sistema até o módulo {{wr}}.
+** Executa o método {{volumeslist}} com os parâmetros {{v=87139}} e token associado.
+** A aplicação tenta registrar a ação de acesso na tabela de logs do banco de dados.
+** O sistema interrompe a execução e exibe um erro de sintaxe SQL do PostgreSQL na tela.
+* *Comportamento Esperado vs. Atual:*
+
+** *Esperado:* A listagem de volumes/imagens deve ser carregada normalmente e o log de acesso gravado no banco de dados.
+** *Atual:* Falha no carregamento e exibição de erro fatal na tela: {{Error: PostgreSQL query failed: ERROR: syntax error at or near "",""...}}
+* *Evidências:* Anexado print do navegador exibindo o erro e a URL de acesso ({{[dmsws.dmslog.com/index.php?module=wr&method=volumeslist](https://dmsws.dmslog.com/index.php?module=wr&method=volumeslist)...}}).
+
+3️⃣ Análise Técnica Inicial
+
+
+* *Histórico/Logs:*
+
+** *Erro capturado:* {{PostgreSQL query failed: ERROR: syntax error at or near "","" LINE 1: INSERT INTO log (id_usuario, acao, data) VALUES (, 'S3_PRESI... ^ Occurred in /var/www/html/modules/home.php on line 641.}}
+** *Análise:* A instrução SQL {{INSERT}} esperava o valor de {{id_usuario}}, mas a variável correspondente no PHP estava vazia/nula, gerando uma vírgula solta ({{VALUES (, 'S3...}}) e quebrando a sintaxe do PostgreSQL.
+
+4️⃣ Avaliação de Impacto
+
+
+* *Abrangência:* [PENDENTE: SOLICITAR AO USUÁRIO] _(Aparenta afetar usuários cujas sessões não passam o parâmetro_ {{id_usuario}} _para o script)_.
+* *Criticidade:* *Alta*
+* *Justificativa:* Impede a visualização/abertura de imagens e registros essenciais no módulo {{wr}}, bloqueando o fluxo operacional.
+* *Workaround:* Não identificado.
+
+5️⃣ Tentativas de Resolução
+
+
+* *Ações Realizadas:* Identificação da origem do erro via interface/logs de aplicação. Verificado que a falha ocorre no backend durante a tentativa de auditoria/log.
+
+6️⃣ Justificativa Técnica para Escalonamento
+
+
+* O problema reside diretamente no código fonte do script PHP ({{/var/www/html/modules/home.php}}, linha 641), que monta a query SQL sem a devida sanitização ou tratamento para a ausência da variável {{$id_usuario}}. Trata-se de uma correção de desenvolvimento (Nível 3 / Sustentação) para tratar a variável antes da montagem da query ou parametrizar o chamado no banco.
+
+🔍 *CAUSA RAIZ POTENCIAL*
+Execução de query SQL com sintaxe incorreta no script PHP ({{/var/www/html/modules/home.php}}) ao tentar inserir o ID do usuário na tabela de logs, causada por passagem de variável vazia/ausente no parâmetro {{id_usuario}}.","1️⃣ Identificação do Chamado
+
+
+* *Módulo:* DWSYS
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção ({{dmsws.dmslog.com}})
+* *Título Sugerido:* Erro SQL de Sintaxe ao Acessar Lista de Volumes no Módulo WR (home.php)
+
+2️⃣ Entendimento do Problema
+
+
+* *Passo a Passo:*
+
+** O usuário navega no sistema até o módulo {{wr}}.
+** Executa o método {{volumeslist}} com os parâmetros {{v=87139}} e token associado.
+** A aplicação tenta registrar a ação de acesso na tabela de logs do banco de dados.
+** O sistema interrompe a execução e exibe um erro de sintaxe SQL do PostgreSQL na tela.
+* *Comportamento Esperado vs. Atual:*
+
+** *Esperado:* A listagem de volumes/imagens deve ser carregada normalmente e o log de acesso gravado no banco de dados.
+** *Atual:* Falha no carregamento e exibição de erro fatal na tela: {{Error: PostgreSQL query failed: ERROR: syntax error at or near "",""...}}
+* *Evidências:* Anexado print do navegador exibindo o erro e a URL de acesso ({{[dmsws.dmslog.com/index.php?module=wr&method=volumeslist](https://dmsws.dmslog.com/index.php?module=wr&method=volumeslist)...}}).
+
+3️⃣ Análise Técnica Inicial
+
+
+* *Histórico/Logs:*
+
+** *Erro capturado:* {{PostgreSQL query failed: ERROR: syntax error at or near "","" LINE 1: INSERT INTO log (id_usuario, acao, data) VALUES (, 'S3_PRESI... ^ Occurred in /var/www/html/modules/home.php on line 641.}}
+** *Análise:* A instrução SQL {{INSERT}} esperava o valor de {{id_usuario}}, mas a variável correspondente no PHP estava vazia/nula, gerando uma vírgula solta ({{VALUES (, 'S3...}}) e quebrando a sintaxe do PostgreSQL.
+
+4️⃣ Avaliação de Impacto
+
+
+* *Criticidade:* *Alta*
+* *Justificativa:* Impede a visualização/abertura de imagens e registros essenciais no módulo {{wr}}, bloqueando o fluxo operacional.
+* *Workaround:* Não identificado.
+
+5️⃣ Tentativas de Resolução
+
+
+* *Ações Realizadas:* Identificação da origem do erro via interface/logs de aplicação. Verificado que a falha ocorre no backend durante a tentativa de auditoria/log.
+
+6️⃣ Justificativa Técnica para Escalonamento
+
+
+* O problema reside diretamente no código fonte do script PHP ({{/var/www/html/modules/home.php}}, linha 641), que monta a query SQL sem a devida sanitização ou tratamento para a ausência da variável {{$id_usuario}}. Trata-se de uma correção de desenvolvimento (Nível 3 / Sustentação) para tratar a variável antes da montagem da query ou parametrizar o chamado no banco.
+
+🔍 *CAUSA RAIZ POTENCIAL*
+Execução de query SQL com sintaxe incorreta no script PHP ({{/var/www/html/modules/home.php}}) ao tentar inserir o ID do usuário na tabela de logs, causada por passagem de variável vazia/ausente no parâmetro {{id_usuario}}."
+SI-8035,2026-07-24T09:29:44.333-0300,Bruno Silva,Encaminhado para:,,Sustentação
+SI-8035,2026-07-24T09:29:49.000-0300,Sistema,Link,,This work item is blocked by SUS-277
 SI-8034,2026-07-23T13:25:54.269-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8034,2026-07-23T13:25:56.223-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8034,2026-07-23T13:25:56.223-0300,Ricardo Barbosa Machado,status,Submissão,Done
