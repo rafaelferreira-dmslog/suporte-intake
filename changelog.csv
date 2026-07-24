@@ -65034,6 +65034,7 @@ SI-8044,2026-07-23T19:01:48.318-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8044,2026-07-23T19:01:48.318-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8043,2026-07-24T16:16:38.450-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8043,2026-07-24T16:16:38.450-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8043,2026-07-24T17:04:15.177-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-8042,2026-07-23T11:20:10.439-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8042,2026-07-23T11:20:13.714-0300,Bruno Silva,resolution,,Done
 SI-8042,2026-07-23T11:20:13.714-0300,Bruno Silva,status,Submissão,Done
@@ -65538,6 +65539,7 @@ SI-8076,2026-07-24T13:00:24.922-0300,Sistema,Causa raiz final,,"O impedimento ao
 SI-8076,2026-07-24T13:00:24.922-0300,Sistema,Justificativa Causa Raiz final,,"A análise técnica do card SUS-215 atestou a ocorrência do erro relacional RelatedObjectDoesNotExist: Assembly has no datecontrol no arquivo src/booking/models/base.py (linha 489). A falha é engatilhada porque o backend, através da função update_customer_approval, tenta acessar de forma direta o atributo datecontrol.customer_approval_valid sem aplicar um tratamento defensivo para validar a existência do relacionamento OneToOne na tabela order_datecontrol. Considerando que nenhuma correção definitiva ou saneamento foi executado em ambiente produtivo, os processos que possuem essa lacuna de dados continuam apresentando o Erro 500. A resolução focada na melhoria contínua e eliminação da reincidência foi direcionada para o INTAKE-1557, que atuará na implementação de validações defensivas no código (para verificar a existência do objeto antes da manipulação) e na criação de rotinas para lidar com registros órfãos, mitigando o impacto na eficiência operacional apontado no discovery."
 SI-8075,2026-07-24T16:16:23.295-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8075,2026-07-24T16:16:23.295-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8075,2026-07-24T16:59:22.520-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8082,2026-07-24T15:26:43.525-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8082,2026-07-24T15:26:45.932-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8082,2026-07-24T15:26:45.932-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -65570,6 +65572,11 @@ SI-8087,2026-07-24T15:17:08.642-0300,Ricardo Barbosa Machado,status,Submissão,D
 SI-8086,2026-07-24T14:58:52.239-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-8086,2026-07-24T14:58:52.239-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-8086,2026-07-24T14:58:53.144-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8093,2026-07-24T16:56:00.098-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8093,2026-07-24T16:56:00.098-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8092,2026-07-24T16:56:07.187-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8092,2026-07-24T16:56:07.187-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8092,2026-07-24T16:56:57.390-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8091,2026-07-24T16:16:05.581-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8091,2026-07-24T16:16:09.022-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8091,2026-07-24T16:16:09.022-0300,Ricardo Barbosa Machado,status,Submissão,Done
