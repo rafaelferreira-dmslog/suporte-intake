@@ -65093,6 +65093,9 @@ SI-8054,2026-07-23T14:41:25.079-0300,Sistema,Link,,This work item is blocked by 
 SI-8054,2026-07-24T11:19:11.286-0300,Ricardo Barbosa Machado,assignee,,Eduardo Felipe de Lima Rebello
 SI-8054,2026-07-24T11:19:13.838-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8054,2026-07-24T11:19:13.838-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8053,2026-07-24T12:27:32.063-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8053,2026-07-24T12:27:34.386-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-8053,2026-07-24T12:27:34.386-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-8052,2026-07-23T16:11:40.295-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8052,2026-07-23T16:11:40.295-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8052,2026-07-23T16:11:48.154-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
@@ -65336,3 +65339,13 @@ Com base nas regras de negócio e fluxos do módulo de Alertas da DMS, as causas
 SI-8072,2026-07-24T11:11:31.501-0300,Eduardo Felipe de Lima Rebello,Attachment,,image-20260724-141123.png
 SI-8072,2026-07-24T11:19:33.858-0300,Eduardo Felipe de Lima Rebello,Encaminhado para:,,Sustentação
 SI-8072,2026-07-24T11:19:38.299-0300,Sistema,Link,,This work item is blocked by SUS-278
+SI-8079,2026-07-24T12:30:09.173-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8079,2026-07-24T12:30:11.830-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8079,2026-07-24T12:30:11.830-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8077,2026-07-24T12:06:44.704-0300,Ricardo Barbosa Machado,assignee,,Eduardo Felipe de Lima Rebello
+SI-8077,2026-07-24T12:06:50.134-0300,Ricardo Barbosa Machado,assignee,Eduardo Felipe de Lima Rebello,Ricardo Barbosa Machado
+SI-8077,2026-07-24T12:06:52.385-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8077,2026-07-24T12:06:52.385-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8076,2026-07-24T11:55:32.347-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8076,2026-07-24T11:55:34.809-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8076,2026-07-24T11:55:34.809-0300,Ricardo Barbosa Machado,status,Submissão,Done
