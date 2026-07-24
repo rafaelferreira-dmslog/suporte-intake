@@ -65086,7 +65086,13 @@ SI-8045,2026-07-23T19:01:48.862-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8045,2026-07-23T19:01:48.862-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8045,2026-07-23T19:01:48.862-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8045,2026-07-23T19:01:48.862-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8051,2026-07-24T10:47:15.522-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8051,2026-07-24T10:47:21.038-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8051,2026-07-24T10:47:21.038-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8054,2026-07-23T14:41:25.079-0300,Sistema,Link,,This work item is blocked by GA-1326
+SI-8054,2026-07-24T11:19:11.286-0300,Ricardo Barbosa Machado,assignee,,Eduardo Felipe de Lima Rebello
+SI-8054,2026-07-24T11:19:13.838-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8054,2026-07-24T11:19:13.838-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8052,2026-07-23T16:11:40.295-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8052,2026-07-23T16:11:40.295-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8052,2026-07-23T16:11:48.154-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
@@ -65154,6 +65160,179 @@ SI-8061,2026-07-23T19:01:55.101-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8061,2026-07-23T19:01:55.101-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8061,2026-07-23T19:01:55.101-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8061,2026-07-23T19:01:55.101-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8063,2026-07-24T11:00:20.038-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-8063,2026-07-24T11:00:20.038-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-8063,2026-07-24T11:00:20.791-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8065,2026-07-24T11:13:16.416-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8065,2026-07-24T11:13:18.566-0300,Bruno Silva,resolution,,Done
+SI-8065,2026-07-24T11:13:18.566-0300,Bruno Silva,status,Submissão,Done
+SI-8064,2026-07-24T11:13:02.406-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8064,2026-07-24T11:13:05.327-0300,Bruno Silva,resolution,,Done
+SI-8064,2026-07-24T11:13:05.327-0300,Bruno Silva,status,Submissão,Done
 SI-8067,2026-07-24T10:16:17.780-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8067,2026-07-24T10:16:20.564-0300,Bruno Silva,resolution,,Done
 SI-8067,2026-07-24T10:16:20.564-0300,Bruno Silva,status,Submissão,Done
+SI-8066,2026-07-24T10:50:55.097-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8066,2026-07-24T10:50:58.063-0300,Bruno Silva,resolution,,Done
+SI-8066,2026-07-24T10:50:58.063-0300,Bruno Silva,status,Submissão,Done
+SI-8071,2026-07-24T11:34:07.099-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8071,2026-07-24T11:34:09.671-0300,Bruno Silva,resolution,,Done
+SI-8071,2026-07-24T11:34:09.671-0300,Bruno Silva,status,Submissão,Done
+SI-8070,2026-07-24T11:26:12.317-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8070,2026-07-24T11:26:15.598-0300,Bruno Silva,resolution,,Done
+SI-8070,2026-07-24T11:26:15.598-0300,Bruno Silva,status,Submissão,Done
+SI-8069,2026-07-24T10:58:31.437-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8069,2026-07-24T10:58:33.970-0300,Bruno Silva,resolution,,Done
+SI-8069,2026-07-24T10:58:33.970-0300,Bruno Silva,status,Submissão,Done
+SI-8068,2026-07-24T11:09:56.360-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8068,2026-07-24T11:09:59.655-0300,Bruno Silva,resolution,,Done
+SI-8068,2026-07-24T11:09:59.655-0300,Bruno Silva,status,Submissão,Done
+SI-8072,2026-07-24T11:10:39.188-0300,Eduardo Felipe de Lima Rebello,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+*1️⃣ Identificação do Chamado*
+
+* *Módulo*: Operacional / Workflow (DMSYS)
+* *Tipo/Classificação*: Incidente
+* *Ambiente*: Produção
+* *Título Sugerido*: _Incidente: Falha no disparo automático do Pré-Alerta no Módulo Operacional_
+
+*2️⃣ Entendimento do Problema*
+
+* *Passo a Passo*:
+*# Acessar o módulo Operacional no DMSYS e abrir a Ordem/Booking afetada.
+*# Atualizar ou avançar as etapas da timeline do processo aguardando o envio do Pré-Alerta.
+*# Observar que o e-mail/notificação de Pré-Alerta não foi disparado pelo sistema.
+* *Comportamento Esperado vs. Atual*:
+** _Esperado_: O Pré-Alerta ser disparado e enviado automaticamente por e-mail/timeline assim que os pré-requisitos e estágios forem cumpridos.
+** _Atual_: O Pré-Alerta não é acionado, permanecendo sem disparo mesmo após verificação direta no banco.
+* *Evidências*: Análise inicial via banco de dados realizada pelo Service Desk {{[PENDENTE: SOLICITAR AO USUÁRIO - ID da Ordem/Booking e Print da Timeline]}}.
+
+*3️⃣ Análise Técnica Inicial*
+
+* *Histórico/Logs*: Realizada consulta preliminar no banco de dados (DMSYS), porém não foram identificados erros explícitos que justificassem a ausência de execução da regra de disparo.
+* *Parametrização/Perfil*: {{[PENDENTE: SOLICITAR AO USUÁRIO - Validação de e-mails cadastrados (Customer Care, Origin Coordinator) e vinculo do Workflow]}}.
+
+*4️⃣ Avaliação de Impacto*
+
+* *Abrangência*: {{[PENDENTE: SOLICITAR AO USUÁRIO - Identificar se afeta uma ordem pontual ou se ocorre de forma geral]}}
+* *Criticidade*: Média / Alta
+* *Justificativa*: O não disparo do Pré-Alerta compromete a visibilidade do cliente/agente quanto ao status do embarque e pode violar os SLAs de comunicação acordados.
+* *Workaround*: Realização da comunicação e envio manual de dados do Pré-Alerta ao cliente via e-mail.
+
+*5️⃣ Tentativas de Resolução*
+
+* *Ações Realizadas*: Análise técnica via banco de dados no sistema DMSYS executada pelo N1 no intuito de localizar a causa do não acionamento, sem sucesso no diagnóstico pontual.
+
+*6️⃣ Justificativa Técnica para Escalonamento*
+
+* O N1 executou a verificação na base de dados e não constatou falhas evidentes na estrutura da Ordem. Como o motor de envio de Alertas e Pré-Alertas envolve regras de negócio específicas (validação do status de Booking, controle de filas de disparo com delay e sincronização de eventos com a API de Workflow), faz-se necessário o escalonamento para a Sustentação realizar uma análise profunda nos logs do servidor/CloudWatch e nos serviços assíncronos.
+
+🔍 *POTENCIAIS CAUSAS RAIZES (PARA ANÁLISE DA SUSTENTAÇÃO)*
+
+Com base nas regras de negócio e fluxos do módulo de Alertas da DMS, as causas mais prováveis para o não disparo são:
+
+# *Status do Booking Não Confirmado*: Pelas diretrizes do sistema, o *PRÉ ALERTA só pode ser disparado se o BOOKING estiver expressamente com o status CONFIRMADO*. Se o booking estava pendente ou sem confirmação no momento da regra, o disparo é bloqueado automaticamente.
+# *Status de Incompatibilidade do Alerta (Botão Amarelo/Vermelho)*: Se o alerta atrelado sofreu edições recentes ou foi desconfigurado na ordem, seu status muda para amarelo (incompatível) ou vermelho (invalidado), impedindo o envio.
+# *Ausência de E-mail de Coordenador (Regra de Triangulação)*: Faltas no preenchimento do _Customer Care_ ou _Origin Coordinator_ associado ao processo sem e-mail válido cadastrado no fallback."
+SI-8072,2026-07-24T11:10:46.902-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8072,2026-07-24T11:10:56.104-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-8072,2026-07-24T11:10:56.104-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-8072,2026-07-24T11:11:31.100-0300,Eduardo Felipe de Lima Rebello,description,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+*1️⃣ Identificação do Chamado*
+
+* *Módulo*: Operacional / Workflow (DMSYS)
+* *Tipo/Classificação*: Incidente
+* *Ambiente*: Produção
+* *Título Sugerido*: _Incidente: Falha no disparo automático do Pré-Alerta no Módulo Operacional_
+
+*2️⃣ Entendimento do Problema*
+
+* *Passo a Passo*:
+*# Acessar o módulo Operacional no DMSYS e abrir a Ordem/Booking afetada.
+*# Atualizar ou avançar as etapas da timeline do processo aguardando o envio do Pré-Alerta.
+*# Observar que o e-mail/notificação de Pré-Alerta não foi disparado pelo sistema.
+* *Comportamento Esperado vs. Atual*:
+** _Esperado_: O Pré-Alerta ser disparado e enviado automaticamente por e-mail/timeline assim que os pré-requisitos e estágios forem cumpridos.
+** _Atual_: O Pré-Alerta não é acionado, permanecendo sem disparo mesmo após verificação direta no banco.
+* *Evidências*: Análise inicial via banco de dados realizada pelo Service Desk {{[PENDENTE: SOLICITAR AO USUÁRIO - ID da Ordem/Booking e Print da Timeline]}}.
+
+*3️⃣ Análise Técnica Inicial*
+
+* *Histórico/Logs*: Realizada consulta preliminar no banco de dados (DMSYS), porém não foram identificados erros explícitos que justificassem a ausência de execução da regra de disparo.
+* *Parametrização/Perfil*: {{[PENDENTE: SOLICITAR AO USUÁRIO - Validação de e-mails cadastrados (Customer Care, Origin Coordinator) e vinculo do Workflow]}}.
+
+*4️⃣ Avaliação de Impacto*
+
+* *Abrangência*: {{[PENDENTE: SOLICITAR AO USUÁRIO - Identificar se afeta uma ordem pontual ou se ocorre de forma geral]}}
+* *Criticidade*: Média / Alta
+* *Justificativa*: O não disparo do Pré-Alerta compromete a visibilidade do cliente/agente quanto ao status do embarque e pode violar os SLAs de comunicação acordados.
+* *Workaround*: Realização da comunicação e envio manual de dados do Pré-Alerta ao cliente via e-mail.
+
+*5️⃣ Tentativas de Resolução*
+
+* *Ações Realizadas*: Análise técnica via banco de dados no sistema DMSYS executada pelo N1 no intuito de localizar a causa do não acionamento, sem sucesso no diagnóstico pontual.
+
+*6️⃣ Justificativa Técnica para Escalonamento*
+
+* O N1 executou a verificação na base de dados e não constatou falhas evidentes na estrutura da Ordem. Como o motor de envio de Alertas e Pré-Alertas envolve regras de negócio específicas (validação do status de Booking, controle de filas de disparo com delay e sincronização de eventos com a API de Workflow), faz-se necessário o escalonamento para a Sustentação realizar uma análise profunda nos logs do servidor/CloudWatch e nos serviços assíncronos.
+
+🔍 *POTENCIAIS CAUSAS RAIZES (PARA ANÁLISE DA SUSTENTAÇÃO)*
+
+Com base nas regras de negócio e fluxos do módulo de Alertas da DMS, as causas mais prováveis para o não disparo são:
+
+# *Status do Booking Não Confirmado*: Pelas diretrizes do sistema, o *PRÉ ALERTA só pode ser disparado se o BOOKING estiver expressamente com o status CONFIRMADO*. Se o booking estava pendente ou sem confirmação no momento da regra, o disparo é bloqueado automaticamente.
+# *Status de Incompatibilidade do Alerta (Botão Amarelo/Vermelho)*: Se o alerta atrelado sofreu edições recentes ou foi desconfigurado na ordem, seu status muda para amarelo (incompatível) ou vermelho (invalidado), impedindo o envio.
+# *Ausência de E-mail de Coordenador (Regra de Triangulação)*: Faltas no preenchimento do _Customer Care_ ou _Origin Coordinator_ associado ao processo sem e-mail válido cadastrado no fallback.","📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+*1️⃣ Identificação do Chamado*
+
+* *Módulo*: Operacional / Workflow (DMSYS)
+* *Tipo/Classificação*: Incidente
+* *Ambiente*: Produção
+* *Título Sugerido*: _Incidente: Falha no disparo automático do Pré-Alerta no Módulo Operacional_
+
+*2️⃣ Entendimento do Problema*
+
+* *Passo a Passo*:
+*# Acessar o módulo Operacional no DMSYS e abrir a Ordem/Booking afetada.
+*# Atualizar ou avançar as etapas da timeline do processo aguardando o envio do Pré-Alerta.
+*# Observar que o e-mail/notificação de Pré-Alerta não foi disparado pelo sistema.
+* *Comportamento Esperado vs. Atual*:
+** _Esperado_: O Pré-Alerta ser disparado e enviado automaticamente por e-mail/timeline assim que os pré-requisitos e estágios forem cumpridos.
+** _Atual_: O Pré-Alerta não é acionado, permanecendo sem disparo mesmo após verificação direta no banco.
+* *Evidências*: Análise inicial via banco de dados realizada pelo Service Desk {{[PENDENTE: SOLICITAR AO USUÁRIO - ID da Ordem/Booking e Print da Timeline]}}.
+
+*3️⃣ Análise Técnica Inicial*
+
+* *Histórico/Logs*: Realizada consulta preliminar no banco de dados (DMSYS), porém não foram identificados erros explícitos que justificassem a ausência de execução da regra de disparo.
+* *Parametrização/Perfil*: {{[PENDENTE: SOLICITAR AO USUÁRIO - Validação de e-mails cadastrados (Customer Care, Origin Coordinator) e vinculo do Workflow]}}.
+
+*4️⃣ Avaliação de Impacto*
+
+* *Abrangência*: {{[PENDENTE: SOLICITAR AO USUÁRIO - Identificar se afeta uma ordem pontual ou se ocorre de forma geral]}}
+* *Criticidade*: Média / Alta
+* *Justificativa*: O não disparo do Pré-Alerta compromete a visibilidade do cliente/agente quanto ao status do embarque e pode violar os SLAs de comunicação acordados.
+* *Workaround*: Realização da comunicação e envio manual de dados do Pré-Alerta ao cliente via e-mail.
+
+*5️⃣ Tentativas de Resolução*
+
+* *Ações Realizadas*: Análise técnica via banco de dados no sistema DMSYS executada pelo N1 no intuito de localizar a causa do não acionamento, sem sucesso no diagnóstico pontual.
+
+*6️⃣ Justificativa Técnica para Escalonamento*
+
+* O N1 executou a verificação na base de dados e não constatou falhas evidentes na estrutura da Ordem. Como o motor de envio de Alertas e Pré-Alertas envolve regras de negócio específicas (validação do status de Booking, controle de filas de disparo com delay e sincronização de eventos com a API de Workflow), faz-se necessário o escalonamento para a Sustentação realizar uma análise profunda nos logs do servidor/CloudWatch e nos serviços assíncronos.
+
+🔍 *POTENCIAIS CAUSAS RAIZES (PARA ANÁLISE DA SUSTENTAÇÃO)*
+
+Com base nas regras de negócio e fluxos do módulo de Alertas da DMS, as causas mais prováveis para o não disparo são:
+
+# *Status do Booking Não Confirmado*: Pelas diretrizes do sistema, o *PRÉ ALERTA só pode ser disparado se o BOOKING estiver expressamente com o status CONFIRMADO*. Se o booking estava pendente ou sem confirmação no momento da regra, o disparo é bloqueado automaticamente.
+# *Status de Incompatibilidade do Alerta (Botão Amarelo/Vermelho)*: Se o alerta atrelado sofreu edições recentes ou foi desconfigurado na ordem, seu status muda para amarelo (incompatível) ou vermelho (invalidado), impedindo o envio.
+# *Ausência de E-mail de Coordenador (Regra de Triangulação)*: Faltas no preenchimento do _Customer Care_ ou _Origin Coordinator_ associado ao processo sem e-mail válido cadastrado no fallback.
+
+
+!image-20260724-141123.png|width=1022,alt=""image-20260724-141123.png""!"
+SI-8072,2026-07-24T11:11:31.501-0300,Eduardo Felipe de Lima Rebello,Attachment,,image-20260724-141123.png
+SI-8072,2026-07-24T11:19:33.858-0300,Eduardo Felipe de Lima Rebello,Encaminhado para:,,Sustentação
+SI-8072,2026-07-24T11:19:38.299-0300,Sistema,Link,,This work item is blocked by SUS-278
