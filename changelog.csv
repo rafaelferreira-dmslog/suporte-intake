@@ -64785,6 +64785,8 @@ SI-8032,2026-07-24T13:00:07.813-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8032,2026-07-24T13:00:07.813-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8032,2026-07-24T13:00:07.813-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8032,2026-07-24T13:00:07.813-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8032,2026-07-24T16:16:42.451-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8032,2026-07-24T16:16:42.451-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8031,2026-07-23T05:59:18.762-0300,Sistema,Link,,This work item is blocked by GA-1321
 SI-8031,2026-07-23T15:21:01.566-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-8031,2026-07-23T15:21:03.931-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
@@ -65030,6 +65032,8 @@ SI-8044,2026-07-23T19:01:48.318-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8044,2026-07-23T19:01:48.318-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8044,2026-07-23T19:01:48.318-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8044,2026-07-23T19:01:48.318-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8043,2026-07-24T16:16:38.450-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8043,2026-07-24T16:16:38.450-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8042,2026-07-23T11:20:10.439-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8042,2026-07-23T11:20:13.714-0300,Bruno Silva,resolution,,Done
 SI-8042,2026-07-23T11:20:13.714-0300,Bruno Silva,status,Submissão,Done
@@ -65200,6 +65204,8 @@ SI-8055,2026-07-23T19:01:52.845-0300,Sistema,Resolução do chamado,,Acessos for
 SI-8055,2026-07-23T19:01:52.845-0300,Sistema,Causa raiz potencial,,Acessos foram criados e enviados no privado da colaboradora.
 SI-8055,2026-07-23T19:01:52.845-0300,Sistema,Causa raiz final,,Acessos foram criados e enviados no privado da colaboradora.
 SI-8055,2026-07-23T19:01:52.845-0300,Sistema,Justificativa Causa Raiz final,,Acessos foram criados e enviados no privado da colaboradora.
+SI-8059,2026-07-24T16:16:30.883-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8059,2026-07-24T16:16:30.883-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8058,2026-07-23T16:18:20.008-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8058,2026-07-23T16:18:22.677-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8058,2026-07-23T16:18:22.677-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -65233,6 +65239,12 @@ SI-8061,2026-07-23T19:01:55.101-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8061,2026-07-23T19:01:55.101-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8061,2026-07-23T19:01:55.101-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8061,2026-07-23T19:01:55.101-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8060,2026-07-24T16:16:28.297-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8060,2026-07-24T16:16:28.297-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8060,2026-07-24T16:35:48.305-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8062,2026-07-24T16:00:08.447-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8062,2026-07-24T16:00:10.927-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8062,2026-07-24T16:00:10.927-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8063,2026-07-24T11:00:20.038-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-8063,2026-07-24T11:00:20.038-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-8063,2026-07-24T11:00:20.791-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
@@ -65524,6 +65536,8 @@ SI-8076,2026-07-24T13:00:24.922-0300,Sistema,Resolução do chamado,,"Identifica
 SI-8076,2026-07-24T13:00:24.922-0300,Sistema,Causa raiz potencial,,Ausência de inicialização automática de tabelas de controle de datas de processos antigos ou falta de validação estrutural do sistema ao tentar atualizar informações ligadas a relacionamentos inexistentes no banco de dados.
 SI-8076,2026-07-24T13:00:24.922-0300,Sistema,Causa raiz final,,"O impedimento ao tentar concluir as ações de desatrelar ou deletar as ordens ocorria devido a uma falha de comunicação entre as validações sistêmicas atuais e o histórico de cadastros da plataforma. Especificamente, após a desativação da aba anterior de controle de datas, algumas ordens ficaram sem esse registro de acompanhamento gerado na base. Sempre que um operador tentava realizar uma movimentação crítica na ordem, a plataforma tentava atualizar obrigatoriamente um status de ""aprovação de cliente"" que ficava dentro desse antigo controle de datas. Por não encontrar essa informação, o sistema não sabia como prosseguir, interrompendo a ação abruptamente e travando a tela. Como não foi realizada nenhuma tratativa paliativa ou definitiva até o momento para contornar essa exigência de sistema, a situação foi atrelada ao INTAKE-1557. A equipe de tecnologia trabalhará neste intake para reprogramar o sistema, ensinando a plataforma a verificar se a informação de data existe antes de tentar atualizá-la, ignorando a validação ou criando o dado sob demanda para que o trabalho do operador não seja mais interrompido."
 SI-8076,2026-07-24T13:00:24.922-0300,Sistema,Justificativa Causa Raiz final,,"A análise técnica do card SUS-215 atestou a ocorrência do erro relacional RelatedObjectDoesNotExist: Assembly has no datecontrol no arquivo src/booking/models/base.py (linha 489). A falha é engatilhada porque o backend, através da função update_customer_approval, tenta acessar de forma direta o atributo datecontrol.customer_approval_valid sem aplicar um tratamento defensivo para validar a existência do relacionamento OneToOne na tabela order_datecontrol. Considerando que nenhuma correção definitiva ou saneamento foi executado em ambiente produtivo, os processos que possuem essa lacuna de dados continuam apresentando o Erro 500. A resolução focada na melhoria contínua e eliminação da reincidência foi direcionada para o INTAKE-1557, que atuará na implementação de validações defensivas no código (para verificar a existência do objeto antes da manipulação) e na criação de rotinas para lidar com registros órfãos, mitigando o impacto na eficiência operacional apontado no discovery."
+SI-8075,2026-07-24T16:16:23.295-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8075,2026-07-24T16:16:23.295-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8082,2026-07-24T15:26:43.525-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8082,2026-07-24T15:26:45.932-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8082,2026-07-24T15:26:45.932-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -65543,10 +65557,22 @@ SI-8084,2026-07-24T14:27:41.248-0300,Bruno Silva,status,Submissão,Done
 SI-8083,2026-07-24T15:21:24.052-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8083,2026-07-24T15:21:26.327-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8083,2026-07-24T15:21:26.327-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8089,2026-07-24T16:09:02.013-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8089,2026-07-24T16:09:05.230-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8089,2026-07-24T16:09:05.230-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8088,2026-07-24T15:28:27.293-0300,Sistema,Link,,This work item is blocked by GA-1329
+SI-8088,2026-07-24T16:16:13.471-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8088,2026-07-24T16:16:13.471-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8088,2026-07-24T16:17:18.905-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-8087,2026-07-24T15:17:05.298-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8087,2026-07-24T15:17:08.642-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8087,2026-07-24T15:17:08.642-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8086,2026-07-24T14:58:52.239-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-8086,2026-07-24T14:58:52.239-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-8086,2026-07-24T14:58:53.144-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8091,2026-07-24T16:16:05.581-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8091,2026-07-24T16:16:09.022-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8091,2026-07-24T16:16:09.022-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8090,2026-07-24T16:06:26.549-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8090,2026-07-24T16:06:32.982-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8090,2026-07-24T16:06:32.982-0300,Ricardo Barbosa Machado,status,Submissão,Done
