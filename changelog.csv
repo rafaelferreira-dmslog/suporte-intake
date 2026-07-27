@@ -65243,6 +65243,7 @@ SI-8055,2026-07-23T19:01:52.845-0300,Sistema,Causa raiz final,,Acessos foram cri
 SI-8055,2026-07-23T19:01:52.845-0300,Sistema,Justificativa Causa Raiz final,,Acessos foram criados e enviados no privado da colaboradora.
 SI-8059,2026-07-24T16:16:30.883-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8059,2026-07-24T16:16:30.883-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8059,2026-07-27T10:01:50.066-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-8058,2026-07-23T16:18:20.008-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8058,2026-07-23T16:18:22.677-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8058,2026-07-23T16:18:22.677-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -65750,6 +65751,7 @@ SI-8086,2026-07-24T19:03:06.106-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8086,2026-07-24T19:03:06.106-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8093,2026-07-24T16:56:00.098-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8093,2026-07-24T16:56:00.098-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8093,2026-07-27T10:13:46.372-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-8092,2026-07-24T16:56:07.187-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8092,2026-07-24T16:56:07.187-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8092,2026-07-24T16:56:57.390-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
@@ -65769,3 +65771,15 @@ SI-8090,2026-07-24T19:03:08.681-0300,Sistema,Causa raiz potencial,,Em atendiment
 SI-8090,2026-07-24T19:03:08.681-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8090,2026-07-24T19:03:08.681-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8096,2026-07-27T09:22:25.041-0300,Sistema,Link,,This work item is blocked by GA-1330
+SI-8096,2026-07-27T10:15:15.677-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8096,2026-07-27T10:15:17.738-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-8096,2026-07-27T10:15:17.738-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-8095,2026-07-27T09:56:46.457-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8095,2026-07-27T09:56:48.992-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-8095,2026-07-27T09:56:48.992-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-8102,2026-07-27T10:18:30.399-0300,Sistema,Link,,This work item is blocked by GA-1333
+SI-8101,2026-07-27T10:14:21.593-0300,Sistema,Link,,This work item is blocked by GA-1332
+SI-8100,2026-07-27T10:11:28.890-0300,Sistema,Link,,This work item is blocked by GA-1331
+SI-8100,2026-07-27T10:32:01.554-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8100,2026-07-27T10:32:03.830-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-8100,2026-07-27T10:32:03.830-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
