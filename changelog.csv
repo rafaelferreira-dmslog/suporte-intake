@@ -3674,6 +3674,48 @@ SI-7099,2026-06-23T18:56:22.502-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7099,2026-06-23T18:56:22.502-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7099,2026-06-23T18:56:22.502-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7099,2026-06-23T18:56:22.502-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7099,2026-07-28T09:20:40.596-0300,Eduardo Felipe de Lima Rebello,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+*1️⃣ Identificação do Chamado*
+
+* *Módulo:* Timeline / Cockpit / Disparo de Alertas (Operacional)
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção
+* *Título Sugerido:* INCIDENTE: Quebra no agrupamento de Threads de Alerta após Refatoração da Timeline
+
+*2️⃣ Entendimento do Problema*
+
+* *Passo a Passo:*
+*# Configurar um alerta com a funcionalidade de agrupamento em thread (mesmo assunto) ativada.
+*# O sistema realizar disparos subsequentes para o cliente referentes à mesma ordem/alerta.
+*# Analisar a forma como os e-mails são recebidos na caixa de entrada do cliente.
+* *Comportamento Esperado vs. Atual:*
+** _Esperado:_ Conforme a regra de negócio para a Criação da Thread de Alerta, o assunto da thread deve ser automaticamente igual ao assunto do e-mail selecionado, e todos os alertas subsequentes devem herdar esse mesmo assunto e serem agrupados na mesma thread de e-mail.
+** _Atual:_ Os alertas estão sendo disparados separadamente, quebrando a thread e gerando um alto volume de e-mails individuais (""flood"") na caixa de entrada do cliente, o que tem gerado reclamações.
+* *Evidências:* .[^thread_emails.docx] 
+
+*3️⃣ Análise Técnica Inicial*
+
+* *Histórico/Logs:* [PENDENTE: SOLICITAR AO USUÁRIO]
+* *Parametrização/Perfil:* O N1 já validou que as configurações de thread estão devidamente aplicadas no sistema. A falha começou a ocorrer especificamente após a subida da ""Refatoração Workflow, Timeline & Cockpit"".
+
+*4️⃣ Avaliação de Impacto*
+
+* *Abrangência:* Afeta os clientes específicos que utilizam a funcionalidade de threads de e-mail nos alertas.
+* *Criticidade:* Média.
+* *Justificativa:* O problema não impede o fluxo operacional de aprovação ou andamento das ordens, mas gera ruído na comunicação, spam na caixa dos clientes e degrada a experiência do usuário, resultando em reclamações diretas.
+* *Workaround:* Não mapeado no momento.
+
+*5️⃣ Tentativas de Resolução*
+
+* *Ações Realizadas:* Foi validada a parametrização do sistema, confirmando que a configuração de agrupamento de thread está devidamente habilitada para a operação relatada.
+
+*6️⃣ Justificativa Técnica para Escalonamento*
+
+* A falha requer investigação em nível de código (Backend/Mensageria), pois o Service Desk confirmou que as configurações de tela (front-end) estão corretas, mas o sistema ignora a regra de negócio na hora do disparo. O problema surgiu pós-deploy da Refatoração da Timeline, apontando para uma regressão. É necessário que o N2/N3 verifique a montagem dos cabeçalhos do e-mail no backend (como {{Message-ID}}, {{In-Reply-To}} ou {{References}}) ou possíveis alterações indevidas nas strings de Assunto ({{Subject}}) que impedem o agrupamento correto nos provedores de e-mail"
+SI-7099,2026-07-28T09:20:40.934-0300,Eduardo Felipe de Lima Rebello,Attachment,,thread_emails.docx
+SI-7099,2026-07-28T09:20:50.134-0300,Eduardo Felipe de Lima Rebello,Encaminhado para:,,Sustentação
+SI-7099,2026-07-28T09:20:54.407-0300,Sistema,Link,,This work item is blocked by SUS-280
 SI-7098,2026-06-23T17:11:05.912-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7098,2026-06-23T17:11:08.159-0300,Rafael Ferreira,resolution,,Done
 SI-7098,2026-06-23T17:11:08.159-0300,Rafael Ferreira,status,Submissão,Done
@@ -66125,6 +66167,7 @@ SI-8115,2026-07-28T01:05:19.751-0300,Sistema,Justificativa Causa Raiz final,,Em 
 SI-8125,2026-07-27T16:29:25.556-0300,Sistema,Link,,This work item is blocked by GA-1341
 SI-8125,2026-07-27T17:35:20.099-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8125,2026-07-27T17:35:20.099-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8125,2026-07-28T09:27:45.745-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-8124,2026-07-27T16:22:44.422-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8124,2026-07-27T16:22:47.573-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8124,2026-07-27T16:22:47.573-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -66140,6 +66183,9 @@ SI-8123,2026-07-27T17:35:17.900-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8123,2026-07-27T17:35:17.900-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8131,2026-07-27T17:27:25.729-0300,Sistema,Link,,This work item is blocked by GA-1344
 SI-8130,2026-07-27T17:26:26.281-0300,Sistema,Link,,This work item is blocked by GA-1343
+SI-8130,2026-07-28T08:57:13.738-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8130,2026-07-28T08:57:16.545-0300,Bruno Silva,resolution,,Done
+SI-8130,2026-07-28T08:57:16.545-0300,Bruno Silva,status,Submissão,Done
 SI-8129,2026-07-27T17:08:25.476-0300,Sistema,Link,,This work item is blocked by GA-1342
 SI-8129,2026-07-28T08:35:11.400-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8129,2026-07-28T08:35:15.328-0300,Bruno Silva,resolution,,Done
@@ -66147,4 +66193,10 @@ SI-8129,2026-07-28T08:35:15.328-0300,Bruno Silva,status,Submissão,Done
 SI-8128,2026-07-28T08:31:44.021-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8128,2026-07-28T08:31:46.921-0300,Bruno Silva,resolution,,Done
 SI-8128,2026-07-28T08:31:46.921-0300,Bruno Silva,status,Submissão,Done
+SI-8133,2026-07-28T09:17:18.165-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8133,2026-07-28T09:17:20.916-0300,Bruno Silva,resolution,,Done
+SI-8133,2026-07-28T09:17:20.916-0300,Bruno Silva,status,Submissão,Done
 SI-8135,2026-07-28T08:27:26.480-0300,Sistema,Link,,This work item is blocked by GA-1345
+SI-8142,2026-07-28T09:31:26.493-0300,Sistema,Link,,This work item is blocked by GA-1348
+SI-8140,2026-07-28T09:23:27.176-0300,Sistema,Link,,This work item is blocked by GA-1347
+SI-8138,2026-07-28T09:06:30.559-0300,Sistema,Link,,This work item is blocked by GA-1346
