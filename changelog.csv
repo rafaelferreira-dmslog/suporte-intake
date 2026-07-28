@@ -66167,6 +66167,9 @@ SI-8115,2026-07-28T01:05:19.751-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8115,2026-07-28T01:05:19.751-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8115,2026-07-28T01:05:19.751-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8115,2026-07-28T01:05:19.751-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8126,2026-07-28T17:36:34.101-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8126,2026-07-28T17:36:34.101-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8126,2026-07-28T17:36:39.705-0300,Ricardo Barbosa Machado,assignee,,Eduardo Felipe de Lima Rebello
 SI-8125,2026-07-27T16:29:25.556-0300,Sistema,Link,,This work item is blocked by GA-1341
 SI-8125,2026-07-27T17:35:20.099-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8125,2026-07-27T17:35:20.099-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -66249,6 +66252,16 @@ SI-8146,2026-07-28T14:03:44.751-0300,Bruno Silva,status,Submissão,Done
 SI-8147,2026-07-28T16:31:16.071-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8147,2026-07-28T16:31:18.711-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8147,2026-07-28T16:31:18.711-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8151,2026-07-28T16:47:30.723-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8151,2026-07-28T16:47:33.297-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8151,2026-07-28T16:47:33.297-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8150,2026-07-28T17:11:26.770-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8150,2026-07-28T17:11:29.582-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8150,2026-07-28T17:11:29.582-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8149,2026-07-28T16:34:08.965-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8149,2026-07-28T16:34:11.337-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8149,2026-07-28T16:34:11.337-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8148,2026-07-28T16:51:04.957-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8148,2026-07-28T16:51:07.190-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
+SI-8148,2026-07-28T16:51:12.715-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8148,2026-07-28T16:51:12.715-0300,Ricardo Barbosa Machado,status,Em Atendimento,Done
