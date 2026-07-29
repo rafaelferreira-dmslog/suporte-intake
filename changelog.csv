@@ -66394,6 +66394,8 @@ SI-8135,2026-07-28T19:01:11.593-0300,Sistema,Causa raiz potencial,,Chamado resol
 SI-8135,2026-07-28T19:01:11.593-0300,Sistema,Causa raiz final,,Chamado resolvido via salinha
 SI-8135,2026-07-28T19:01:11.593-0300,Sistema,Justificativa Causa Raiz final,,Chamado resolvido via salinha
 SI-8142,2026-07-28T09:31:26.493-0300,Sistema,Link,,This work item is blocked by GA-1348
+SI-8142,2026-07-29T09:51:45.266-0300,Bruno Silva,resolution,,Done
+SI-8142,2026-07-29T09:51:45.266-0300,Bruno Silva,status,Submissão,Done
 SI-8141,2026-07-28T10:36:48.244-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8141,2026-07-28T10:36:51.724-0300,Bruno Silva,resolution,,Done
 SI-8141,2026-07-28T10:36:51.724-0300,Bruno Silva,status,Submissão,Done
@@ -66451,6 +66453,8 @@ SI-8137,2026-07-28T19:01:12.783-0300,Sistema,Resolução do chamado,,"Realizada 
 SI-8137,2026-07-28T19:01:12.783-0300,Sistema,Causa raiz potencial,,Inexistência de visualização compartilhada por equipe das pendências do sistema para cargos de gestão.
 SI-8137,2026-07-28T19:01:12.783-0300,Sistema,Causa raiz final,,"O chamado foi motivado pelo afastamento temporário de uma colaboradora devido a uma licença médica. Como os processos e verificações de rotina sob sua responsabilidade não poderiam ser paralisados, fez-se necessária a intervenção da liderança direta para assumir a execução dessas demandas."
 SI-8137,2026-07-28T19:01:12.783-0300,Sistema,Justificativa Causa Raiz final,,A necessidade de redefinir manualmente as credenciais individuais de um colaborador em caso de afastamento por saúde expõe uma vulnerabilidade na gestão de identidades e acessos (IAM) sob a ótica de contorno operacional.
+SI-8143,2026-07-29T09:51:41.874-0300,Bruno Silva,resolution,,Done
+SI-8143,2026-07-29T09:51:41.874-0300,Bruno Silva,status,Submissão,Done
 SI-8144,2026-07-28T11:17:45.658-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8144,2026-07-28T11:17:48.396-0300,Bruno Silva,resolution,,Done
 SI-8144,2026-07-28T11:17:48.396-0300,Bruno Silva,status,Submissão,Done
@@ -66541,4 +66545,12 @@ SI-8148,2026-07-28T19:01:18.111-0300,Sistema,Causa raiz potencial,,Em atendiment
 SI-8148,2026-07-28T19:01:18.111-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8148,2026-07-28T19:01:18.111-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8152,2026-07-29T09:20:45.931-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8152,2026-07-29T09:51:38.621-0300,Bruno Silva,resolution,,Done
+SI-8152,2026-07-29T09:51:38.621-0300,Bruno Silva,status,Submissão,Done
+SI-8155,2026-07-29T09:53:52.117-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8155,2026-07-29T09:53:55.074-0300,Bruno Silva,resolution,,Done
+SI-8155,2026-07-29T09:53:55.074-0300,Bruno Silva,status,Submissão,Done
 SI-8154,2026-07-28T17:49:24.845-0300,Sistema,Link,,This work item is blocked by GA-1349
+SI-8153,2026-07-29T09:51:33.273-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8153,2026-07-29T09:51:35.838-0300,Bruno Silva,resolution,,Done
+SI-8153,2026-07-29T09:51:35.838-0300,Bruno Silva,status,Submissão,Done
