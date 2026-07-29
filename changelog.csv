@@ -66587,6 +66587,60 @@ SI-8165,2026-07-29T11:53:22.434-0300,Sistema,Link,,This work item is blocked by 
 SI-8170,2026-07-29T13:43:38.545-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8170,2026-07-29T13:43:40.709-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8170,2026-07-29T13:43:40.709-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8170,2026-07-29T16:06:46.700-0300,Ricardo Barbosa Machado,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+1️⃣ *Identificação do Chamado*
+
+* *Módulo:* PM (Proposals)
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção (inferido pelo relato)
+* *Título Sugerido:* ""Erro ortográfico ('Validaty') no template HTML gerado pelo módulo PM""
+
+2️⃣ *Entendimento do Problema*
+
+* *Passo a Passo:* [PENDENTE: SOLICITAR AO USUÁRIO]
+* *Comportamento Esperado vs. Atual:* Espera-se que o rótulo do campo de validade em inglês seja grafado corretamente como ""Validity"". Atualmente, o sistema está gerando o HTML com a grafia incorreta ""Validaty"" (com 'a').
+* *Evidências:* Print anexado (""image_48430a.png"") exibindo o campo ""Validaty: 06/08/2026"" acima do botão ""Aceitar essa proposta"".
+
+3️⃣ *Análise Técnica Inicial*
+
+* *Histórico/Logs:* Não aplicável; trata-se de uma inconsistência visual/textual no front-end.
+* *Parametrização/Perfil:* Não informado (inconsistência provavelmente global no template do documento).
+* *Reprodutibilidade:* Constante (hipótese: o texto está fixo no código do template do HTML).
+
+4️⃣ *Avaliação de Impacto*
+
+* *Abrangência:* Todos os usuários que geram este HTML e os clientes finais que recebem a proposta.
+* *Criticidade:* Baixa.
+* *Justificativa da criticidade:* O erro é exclusivamente estético/ortográfico. Não há interrupção de serviço, o fluxo operacional não está bloqueado e não há impacto financeiro ou travamento sistêmico. O impacto restringe-se à apresentação visual do documento ao cliente.
+* *Workaround:* Sim. Se o HTML for editável no cliente de e-mail ou editor de texto antes do envio, o colaborador pode corrigir a letra manualmente. Caso contrário, o processo pode seguir normalmente com a grafia divergente, pois não há bloqueio.
+
+5️⃣ *Tentativas de Resolução*
+
+* *Ações realizadas pelo Service Desk:* Análise da evidência enviada, confirmando que a palavra correta na língua inglesa é ""Validity"" (e não ""Validaty"", validando o apontamento da colaboradora).
+* *Hipóteses já descartadas:* Descartada a hipótese de problema Operacional (erro de preenchimento por parte do usuário), visto que a palavra atua como um rótulo (label) estrutural do sistema e não um dado inserido no formulário.
+
+6️⃣ *Causa Raiz Potencial (hipótese N1)*
+
+* *Sistêmico:* Erro de digitação inserido de forma fixa (hardcoded) no template do arquivo HTML correspondente à proposta comercial durante o desenvolvimento da interface.
+
+7️⃣ *Justificativa Técnica para Escalonamento*
+
+* *Por que o N1 não resolve:* Limitação de acesso sistêmico. O Service Desk não possui permissão ou ferramenta para alterar o código-fonte, componentes de interface ou templates HTML internos do SYS.
+* *O que se espera do próximo time:* Localizar o template HTML da proposta no módulo PM e alterar a string de texto de ""Validaty"" para ""Validity"".
+* *Nível sugerido:* N2 / Sustentação (Desenvolvimento Front-end).
+
+📝 *DESCRIÇÃO OTIMIZADA (PARA O CHAMADO)*
+
+Foi reportado um incidente visual no módulo PM durante a extração de propostas do sistema. Ao gerar o HTML do documento, o rótulo que indica a data de validade da proposta está grafado com erro ortográfico em inglês, exibindo ""Validaty"" em vez do termo correto ""Validity"".
+
+Trata-se de um problema sistêmico, pois o texto faz parte da estrutura fixa (label) do template da proposta, não sendo um campo editável pelo usuário, o que descarta erro operacional. O impacto da ocorrência é classificado como Baixo, pois não gera bloqueios sistêmicos ou financeiros, limitando-se a uma questão estética na apresentação comercial ao cliente final. O chamado é escalonado para correção da string de texto no código do documento.
+
+!image-20260729-190641.png|width=252,alt=""image-20260729-190641.png""!"
+SI-8170,2026-07-29T16:06:47.047-0300,Ricardo Barbosa Machado,Attachment,,image-20260729-190641.png
+SI-8170,2026-07-29T16:06:59.014-0300,Ricardo Barbosa Machado,Encaminhado para:,,Sustentação
+SI-8170,2026-07-29T16:07:02.715-0300,Sistema,Link,,This work item is blocked by SUS-283
+SI-8170,2026-07-29T16:07:06.117-0300,Ricardo Barbosa Machado,Encaminhado para:,Sustentação,
 SI-8169,2026-07-29T13:04:26.604-0300,Sistema,Link,,This work item is blocked by GA-1356
 SI-8169,2026-07-29T13:07:28.284-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8169,2026-07-29T13:07:30.320-0300,Ricardo Barbosa Machado,resolution,,Done
@@ -66598,6 +66652,9 @@ SI-8168,2026-07-29T14:22:11.202-0300,Bruno Silva,status,Submissão,Done
 SI-8175,2026-07-29T14:26:35.469-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8175,2026-07-29T14:26:38.319-0300,Bruno Silva,resolution,,Done
 SI-8175,2026-07-29T14:26:38.319-0300,Bruno Silva,status,Submissão,Done
+SI-8174,2026-07-29T16:30:11.251-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8174,2026-07-29T16:30:13.408-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8174,2026-07-29T16:30:13.408-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8173,2026-07-29T15:11:57.664-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8173,2026-07-29T15:11:59.964-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8173,2026-07-29T15:11:59.964-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -66605,6 +66662,9 @@ SI-8171,2026-07-29T14:22:01.615-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8171,2026-07-29T14:22:04.715-0300,Bruno Silva,resolution,,Done
 SI-8171,2026-07-29T14:22:04.715-0300,Bruno Silva,status,Submissão,Done
 SI-8180,2026-07-29T15:44:28.877-0300,Sistema,Link,,This work item is blocked by GA-1360
+SI-8179,2026-07-29T16:16:16.722-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8179,2026-07-29T16:16:19.486-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8179,2026-07-29T16:16:19.486-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8178,2026-07-29T15:13:27.863-0300,Sistema,Link,,This work item is blocked by GA-1357
 SI-8176,2026-07-29T15:05:37.260-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8176,2026-07-29T15:05:39.862-0300,Ricardo Barbosa Machado,resolution,,Done
