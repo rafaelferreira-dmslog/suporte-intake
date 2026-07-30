@@ -66463,6 +66463,49 @@ SI-8143,2026-07-29T19:03:06.477-0300,Sistema,Resolução do chamado,,"Verificamo
 SI-8143,2026-07-29T19:03:06.477-0300,Sistema,Causa raiz potencial,,"Verificamos que existe um fluxo que está ocorrendo que precisa ser investigado, e com isso foi passado para equipe responsável."
 SI-8143,2026-07-29T19:03:06.477-0300,Sistema,Causa raiz final,,"Verificamos que existe um fluxo que está ocorrendo que precisa ser investigado, e com isso foi passado para equipe responsável."
 SI-8143,2026-07-29T19:03:06.477-0300,Sistema,Justificativa Causa Raiz final,,"Verificamos que existe um fluxo que está ocorrendo que precisa ser investigado, e com isso foi passado para equipe responsável.o"
+SI-8143,2026-07-30T08:28:51.077-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8143,2026-07-30T08:29:40.438-0300,Eduardo Felipe de Lima Rebello,description,,"CHECKLIST PADRÃO DE TRIAGEM (DMS)
+
+1️⃣ Identificação do Chamado
+
+* Módulo: Operacional x Financial (Mapeamento e Migração de Charges)
+* Tipo/Classificação: Incidente (Regra de Negócio / Falha de Sincronização)
+* Ambiente: Produção
+* Título Sugerido: Inconsistência na regra de migração: Abertura de cadeado no Booking sobrescreve e zera o campo Freight (Buying) no Financial mesmo com cadeado fechado
+
+2️⃣ Entendimento do Problema
+
+* Passo a Passo:
+*# Acessar um processo (Order/Booking) que possua valores preenchidos no campo de {{Freight}} em {{Buying}} na aba {{Financial}}.
+*# Acessar a aba de {{Booking}} e abrir o cadeado da aba/seção de {{Charge}}.
+*# Retornar à aba {{Financial}} da Order e verificar o campo {{Freight}} na seção {{Buying}}.
+* Comportamento Esperado vs. Atual:
+** Esperado: Quando o cadeado de {{Buying}} no {{Financial}} estiver fechado, nenhuma regra automática do Booking deve sobrescrever ou apagar os valores gravados no Financeiro, respeitando a trava de segurança.
+** Atual: Ao abrir o cadeado de {{Charge}} no Booking, o sistema dispara um acionamento automático de sincronização que migra o valor zerado desta charge e limpa/sobrescreve o campo {{Freight}} do {{Buying}} no {{Financial}}, ignorando a trava do cadeado fechado no Financeiro.
+* Evidências: 260747171 + 260747255 + 260747256 + 260747257 + 260747258 + 260747259 + 260747260 + 260747261 + 260747262
+[https://operational.dmslog.com/order/170655/|https://operational.dmslog.com/order/170655/] + [https://operational.dmslog.com/booking/air/50551/|https://operational.dmslog.com/booking/air/50551/]
+
+3️⃣ Análise Técnica Inicial
+
+* Histórico/Logs: Identificado que o evento de abertura do cadeado no Booking executa uma rotina/trigger de propagação imediata de dados para a Order, sem validar o parâmetro de bloqueio ({{locked = true}}) da aba {{Financial}} da Order.
+* Parametrização/Perfil: Comportamento genérico afetando múltiplos perfis operacionais ao interagirem com a aba de Booking.
+
+4️⃣ Avaliação de Impacto
+
+* Abrangência: Todos os usuários das equipes Operacional e Financeiro que trabalham com ordens atreladas a Bookings.
+* Criticidade: Alta
+* Justificativa: Gera apagamento indevido de dados de custos de frete ({{Buying}}), comprometendo a acurácia do Contas a Pagar e podendo causar divergências no faturamento e margem de lucro.
+* Workaround: Evitar abrir o cadeado da aba de {{Charge}} no Booking após o lançamento e fechamento das informações financeiras na Order.
+
+5️⃣ Tentativas de Resolução
+
+* Ações Realizadas: Validação do fluxo de alteração de estado dos cadeados. Foi confirmado que o travamento prévio da aba {{Financial}} / {{Buying}} não está contendo a sobrescrita promovida pela rotina do Booking.
+
+6️⃣ Justificativa Técnica para Escalonamento
+
+* A resolução exige intervenção da equipe de Desenvolvimento/Sustentação (Sistemas/DS) para correção da lógica da regra de negócio e ajustes na proc/trigger no backend, aplicando a verificação obrigatória de trava da tabela de destino antes de executar qualquer rotina de sincronização de valores de charges."
+SI-8143,2026-07-30T08:30:14.456-0300,Eduardo Felipe de Lima Rebello,Encaminhado para:,,Sustentação
+SI-8143,2026-07-30T08:30:18.626-0300,Sistema,Link,,This work item is blocked by SUS-284
 SI-8144,2026-07-28T11:17:45.658-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8144,2026-07-28T11:17:48.396-0300,Bruno Silva,resolution,,Done
 SI-8144,2026-07-28T11:17:48.396-0300,Bruno Silva,status,Submissão,Done
@@ -66876,5 +66919,14 @@ SI-8176,2026-07-29T19:03:24.956-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8176,2026-07-29T19:03:24.956-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8176,2026-07-29T19:03:24.956-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8176,2026-07-29T19:03:24.956-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8181,2026-07-30T08:41:59.199-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8181,2026-07-30T08:42:02.708-0300,Bruno Silva,resolution,,Done
+SI-8181,2026-07-30T08:42:02.708-0300,Bruno Silva,status,Submissão,Done
 SI-8183,2026-07-29T17:29:21.467-0300,Sistema,Link,,This work item is blocked by GA-1362
+SI-8183,2026-07-30T08:42:27.316-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8183,2026-07-30T08:42:33.004-0300,Bruno Silva,resolution,,Done
+SI-8183,2026-07-30T08:42:33.004-0300,Bruno Silva,status,Submissão,Done
 SI-8182,2026-07-29T17:28:25.537-0300,Sistema,Link,,This work item is blocked by GA-1361
+SI-8182,2026-07-30T08:42:21.531-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8182,2026-07-30T08:42:35.467-0300,Bruno Silva,resolution,,Done
+SI-8182,2026-07-30T08:42:35.467-0300,Bruno Silva,status,Submissão,Done
