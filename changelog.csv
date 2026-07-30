@@ -66949,6 +66949,69 @@ SI-8186,2026-07-30T09:04:16.855-0300,Bruno Silva,status,Submissão,Done
 SI-8188,2026-07-30T11:53:23.380-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8188,2026-07-30T11:53:27.423-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8188,2026-07-30T11:53:27.423-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8188,2026-07-30T15:09:42.303-0300,Ricardo Barbosa Machado,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+h3. 1️⃣ Identificação do Chamado
+
+* *Módulo:* PM (Cotação/Proposal)
+* *Tipo/Classificação:* Incidente (Sistêmico)
+* *Ambiente:* Produção
+* *Título Sugerido:* Erro Sistêmico (HTTP 405) Intermitente ao Clonar e Salvar Cotação no Módulo PM
+
+h3. 2️⃣ Entendimento do Problema
+
+* *Passo a Passo:*
+*# Acessar o Módulo PM.
+*# Tentar clonar uma cotação existente OU preencher os dados de uma proposal (incluindo o campo mandatório _Zipcode_) e tentar salvar.
+*# O sistema falha e retorna o Erro HTTP 405, apagando os dados recém-inseridos na tela.
+*# Repetir a ação até obter sucesso (geralmente funciona na 3ª tentativa).
+* *Comportamento Esperado vs. Atual:*
+** _Esperado:_ A cotação ser clonada ou salva na primeira tentativa, mantendo a integridade dos dados inseridos.
+** _Atual:_ Ocorre falha na requisição (Erro 405), os dados não são salvos (somem da interface) e o processo exige múltiplas tentativas manuais para ser concluído.
+* *Evidências:* 3 vídeos (Loom) anexados demonstrando os cenários: falha ao clonar, falha ao salvar (apagando o Zipcode) e reincidência em outra cotação. [PENDENTE: SOLICITAR AO USUÁRIO - IDs exatos das cotações]
+
+h3. 3️⃣ Análise Técnica Inicial
+
+* *Histórico/Logs:* A análise prévia dos vídeos confirmou o Erro 405 ao disparar a ação de criação/clone de proposals. Foi realizado contato prévio com a equipe responsável, que sinalizou necessidade de correção em código.
+* *Parametrização/Perfil:* Não informado.
+* *Reprodutibilidade:* Intermitente (a ação é processada com sucesso apenas após várias tentativas).
+
+h3. 4️⃣ Avaliação de Impacto
+
+|*Critério*|*Avaliação*|
+|*Abrangência*|Usuários da operação que emitem ou clonam cotações no Módulo PM.|
+|*Criticidade*|Média|
+|*Justificativa*|O erro causa retrabalho significativo (necessidade de preencher dados repetidas vezes) e frustração, mas não configura um bloqueio total da operação, visto que o paliativo funciona.|
+|*Workaround*|Sim. Tentar realizar o salvamento ou clone repetidas vezes (em média 3 tentativas) até que a requisição seja aceita.|
+
+h3. 5️⃣ Tentativas de Resolução
+
+* *Ações realizadas pelo Service Desk:* Análise e validação das evidências em vídeo. Contato e alinhamento inicial com o time de desenvolvimento, que confirmou tratar-se de um bug de código.
+* *Hipóteses já descartadas:* Falha operacional por ausência de dados obrigatórios, visto que o campo _Zipcode_ foi devidamente preenchido pelo usuário antes do erro.
+
+h3. 6️⃣ Causa Raiz Potencial (hipótese N1)
+
+*[Sistêmico]* Falha na comunicação com o backend durante a chamada da API de _Proposal_ (retornando HTTP 405 - Method Not Allowed). A intermitência sugere uma possível falha de roteamento interno, instabilidade no endpoint ou inconsistência no _payload_ da requisição gerada pelo frontend, que acaba sendo rejeitada e causa o recarregamento da tela sem os dados recém-inseridos. _(Nota: Hipótese técnica; a causa final deverá ser atestada pelo time de engenharia)._
+
+h3. 7️⃣ Justificativa Técnica para Escalonamento
+
+* *Por que o N1 não resolve:* Trata-se de um comportamento sistêmico e exceção de API (Erro 405) que já foi previamente validado como necessidade de correção em código, fugindo do escopo e acessos do N1.
+* *O que se espera do próximo time:* Análise profunda dos logs de requisição para os endpoints de clonagem e salvamento de cotações, identificação do gatilho do Erro 405 intermitente e aplicação de _bugfix_ no código.
+* *Nível sugerido:* N3 (Desenvolvimento / Sustentação).
+
+{quote}📝 DESCRIÇÃO OTIMIZADA (PARA O CHAMADO)
+
+*Contexto e Problema Observado:* O usuário relata um erro sistêmico intermitente (HTTP 405) no Módulo PM durante duas ações distintas: ao tentar clonar uma cotação existente e ao tentar salvar uma nova proposal. Ao ocorrer o erro de salvamento, as informações inseridas na tela (incluindo campos mandatórios como o _Zipcode_) desaparecem, forçando o usuário a preencher os dados novamente.
+
+*Impacto e Workaround:* A criticidade é Média. Não há bloqueio total, pois a operação é concluída com sucesso após repetidas tentativas (geralmente na terceira vez). Contudo, gera forte impacto na produtividade devido ao retrabalho.
+
+*Evidências e Triagem:* Foram anexados 3 vídeos documentando o comportamento anômalo em mais de uma cotação. O Service Desk N1 avaliou as evidências e descartou erros operacionais de preenchimento. Em contato preliminar, a equipe de desenvolvimento já indicou que o cenário exigirá correção em código. O chamado segue para investigação de logs e aplicação de _bugfix_ para normalizar o envio das requisições.{quote}"
+SI-8188,2026-07-30T15:09:53.752-0300,Ricardo Barbosa Machado,Encaminhado para:,,Sustentação
+SI-8188,2026-07-30T15:09:57.159-0300,Sistema,Link,,This work item is blocked by SUS-285
+SI-8188,2026-07-30T15:09:58.608-0300,Ricardo Barbosa Machado,Encaminhado para:,Sustentação,
+SI-8187,2026-07-30T15:08:48.158-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8187,2026-07-30T15:08:48.158-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8187,2026-07-30T15:08:52.124-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8189,2026-07-30T09:06:14.185-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8189,2026-07-30T09:06:17.252-0300,Bruno Silva,resolution,,Done
 SI-8189,2026-07-30T09:06:17.252-0300,Bruno Silva,status,Submissão,Done
@@ -67007,7 +67070,20 @@ SI-8211,2026-07-30T12:13:24.791-0300,Sistema,Link,,This work item is blocked by 
 SI-8210,2026-07-30T12:41:55.913-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8210,2026-07-30T12:41:58.895-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8210,2026-07-30T12:41:58.895-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8209,2026-07-30T15:14:36.308-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8209,2026-07-30T15:14:38.476-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8209,2026-07-30T15:14:38.476-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8208,2026-07-30T12:20:58.420-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8208,2026-07-30T12:21:01.310-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8208,2026-07-30T12:21:01.310-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8216,2026-07-30T15:36:01.376-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8216,2026-07-30T15:36:03.320-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8216,2026-07-30T15:36:03.320-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8215,2026-07-30T15:18:23.255-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8215,2026-07-30T15:18:25.977-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8215,2026-07-30T15:18:25.977-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8214,2026-07-30T13:09:32.296-0300,Sistema,Link,,This work item is blocked by GA-1370
+SI-8217,2026-07-30T15:34:01.288-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8217,2026-07-30T15:34:03.703-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8217,2026-07-30T15:34:03.703-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8234,2026-07-30T15:03:27.947-0300,Sistema,Link,,This work item is blocked by GA-1371
