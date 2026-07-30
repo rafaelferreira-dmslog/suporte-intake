@@ -67099,6 +67099,9 @@ SI-8214,2026-07-30T13:09:32.296-0300,Sistema,Link,,This work item is blocked by 
 SI-8214,2026-07-30T16:10:10.134-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-8214,2026-07-30T16:10:13.252-0300,Nícollas Resende,resolution,,Done
 SI-8214,2026-07-30T16:10:13.252-0300,Nícollas Resende,status,Submissão,Done
+SI-8230,2026-07-30T16:47:36.528-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8230,2026-07-30T16:47:38.984-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8230,2026-07-30T16:47:38.984-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8229,2026-07-30T16:43:26.867-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8229,2026-07-30T16:43:28.908-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8229,2026-07-30T16:43:28.908-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -67120,14 +67123,76 @@ SI-8223,2026-07-30T16:04:09.219-0300,Ricardo Barbosa Machado,status,Submissão,D
 SI-8222,2026-07-30T16:19:40.068-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8222,2026-07-30T16:19:42.425-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8222,2026-07-30T16:19:42.425-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8221,2026-07-30T17:05:35.060-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8221,2026-07-30T17:05:37.591-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8221,2026-07-30T17:05:37.591-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8220,2026-07-30T16:13:38.390-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8220,2026-07-30T16:13:40.696-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8220,2026-07-30T16:13:40.696-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8219,2026-07-30T17:10:54.754-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8219,2026-07-30T17:16:07.025-0300,Eduardo Felipe de Lima Rebello,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+1️⃣ *Identificação do Chamado*
+
+* *Módulo:* Operacional / Financeiro (Destination Charges - Selling)
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* {{[PENDENTE: SOLICITAR AO USUÁRIO]}}
+* *Título Sugerido:* Erro no cálculo de Collect Fee (%): Piso mínimo desconsiderado na aba Destination Charges (Selling)
+
+2️⃣ *Entendimento do Problema*
+
+* *Passo a Passo:*
+*# Acessar a Order no módulo Operacional.
+*# Ir para a aba de *Selling* > *Destination Charges*.
+*# Verificar a cobrança de _Collect Fee_ cadastrada/calculada utilizando a unidade percentual ({{percentage}}) com valor mínimo ({{minimum}}) definido.
+*# Comparar o valor apurado pelo sistema com o valor mínimo parametrizado para o processo.
+* *Comportamento Esperado vs. Atual:*
+** *Comportamento Esperado:* Conforme as regras da rotina de cálculo de _Collect Fee_ ({{calculate_collect}}), ao utilizar a unit percentual, o sistema deve converter e comparar o valor percentual ({{converted_value}}) com o piso mínimo ({{value_min_converted}}). Se o piso mínimo for superior ao valor calculado pelo percentual, o sistema deve obrigatoriamente aplicar o valor mínimo ({{value_min}}).
+** *Comportamento Atual:* O sistema está aplicando diretamente o resultado da porcentagem calculada sobre a base, ignorando a trava do piso mínimo.
+* *Evidências:* Vídeo demonstrativo anexado ao chamado. {{[PENDENTE: SOLICITAR AO USUÁRIO o número da Order/Processo]}}
+
+3️⃣ *Análise Técnica Inicial*
+
+* *Histórico/Logs:* No motor de cálculo do backend ({{BaseBillingService.calculate_collect()}}), a validação {{if value_min_converted > converted_value}} não está prevalecendo na aba Destination Charges, ou a variável {{minimum}} não está sendo repassada corretamente na estrutura da taxa via {{ChargesSellingService}}.
+* *Parametrização/Perfil:* Taxa de Collect Fee configurada na aba Destination Charges (Selling) com a unit {{percentage}} e campo {{minimum}} preenchido.
+
+4️⃣ *Avaliação de Impacto*
+
+* *Abrangência:* {{[PENDENTE: SOLICITAR AO USUÁRIO]}} (Afeta todos os processos operacionais com Collect Fee em % cujo percentual resulta em valor abaixo do mínimo)
+* *Criticidade:* Média
+* *Justificativa:* Risco de faturamento incorreto e perda de margem financeira ao efetuar cobranças abaixo do piso mínimo garantido em contrato.
+* *Workaround:* Testar no Financial a reabertura do cadeado principal e do cadeado de Destination, desmarcar e remarcar o campo ""Used"" na charge, e fechar os cadeados novamente para forçar o recálculo.
+
+5️⃣ *Tentativas de Resolução*
+
+* *Ações Realizadas:* Análise do fluxo operacional e validação da regra de negócio da cláusula de mínimo no motor de cálculo.
+
+6️⃣ *Justificativa Técnica para Escalonamento*
+
+* O problema ocorre na execução do motor de cálculo de billing backend ({{BaseBillingService}} / {{views.py}}) ou no consumo das propriedades da charge via API. Como o Nível 1 não possui acesso ao código-fonte ou autonomia para ajustar regras de backend, o ticket necessita de atuação dos times N2/N3.
+!SELLING - 260746094 - Google Chrome 2026-07-30 16-54-31.mp4|width=778,alt=""SELLING - 260746094 - Google Chrome 2026-07-30 16-54-31.mp4""!"
+SI-8219,2026-07-30T17:16:07.447-0300,Eduardo Felipe de Lima Rebello,Attachment,,SELLING - 260746094 - Google Chrome 2026-07-30 16-54-31.mp4
+SI-8219,2026-07-30T17:16:17.654-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Encaminhado sustentação
+SI-8219,2026-07-30T17:16:19.912-0300,Eduardo Felipe de Lima Rebello,Encaminhado para:,,Sustentação
+SI-8219,2026-07-30T17:16:23.561-0300,Sistema,Link,,This work item is blocked by SUS-286
 SI-8218,2026-07-30T16:06:05.926-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8218,2026-07-30T16:06:08.275-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8218,2026-07-30T16:06:08.275-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8217,2026-07-30T15:34:01.288-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8217,2026-07-30T15:34:03.703-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8217,2026-07-30T15:34:03.703-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8237,2026-07-30T17:09:37.583-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8237,2026-07-30T17:09:40.039-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8237,2026-07-30T17:09:40.039-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8235,2026-07-30T16:59:16.552-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8235,2026-07-30T16:59:19.463-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8235,2026-07-30T16:59:19.463-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8234,2026-07-30T15:03:27.947-0300,Sistema,Link,,This work item is blocked by GA-1371
+SI-8233,2026-07-30T16:55:52.959-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8233,2026-07-30T16:55:55.402-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8233,2026-07-30T16:55:55.402-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8231,2026-07-30T16:49:19.842-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8231,2026-07-30T16:49:23.176-0300,Ricardo Barbosa Machado,resolution,,Done
+SI-8231,2026-07-30T16:49:23.176-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8238,2026-07-30T16:03:28.451-0300,Sistema,Link,,This work item is blocked by GA-1372
+SI-8239,2026-07-30T16:47:26.809-0300,Sistema,Link,,This work item is blocked by GA-1374
