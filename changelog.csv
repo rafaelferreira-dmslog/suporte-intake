@@ -66014,6 +66014,11 @@ SI-8105,2026-07-28T01:05:13.333-0300,Sistema,Causa raiz potencial,,Em atendiment
 SI-8105,2026-07-28T01:05:13.333-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8105,2026-07-28T01:05:13.333-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8105,2026-07-30T14:00:49.976-0300,Bruno Silva,assignee,Eduardo Felipe de Lima Rebello,Bruno Silva
+SI-8105,2026-07-31T00:59:46.031-0300,Sistema,Causa Raiz,Falha Desenvolvimento,Impacto não mapeado
+SI-8105,2026-07-31T00:59:46.031-0300,Sistema,Resolução do chamado,Em atendimento,Chamado resolvido na salinha do suporte
+SI-8105,2026-07-31T00:59:46.031-0300,Sistema,Causa raiz potencial,Em atendimento,Chamado resolvido na salinha do suporte
+SI-8105,2026-07-31T00:59:46.031-0300,Sistema,Causa raiz final,Em atendimento,Chamado resolvido na salinha do suporte
+SI-8105,2026-07-31T00:59:46.031-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,Chamado resolvido na salinha do suporte
 SI-8104,2026-07-27T11:02:18.370-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8104,2026-07-27T11:02:20.650-0300,Bruno Silva,resolution,,Done
 SI-8104,2026-07-27T11:02:20.650-0300,Bruno Silva,status,Submissão,Done
@@ -66398,6 +66403,8 @@ SI-8142,2026-07-28T09:31:26.493-0300,Sistema,Link,,This work item is blocked by 
 SI-8142,2026-07-29T09:51:45.266-0300,Bruno Silva,resolution,,Done
 SI-8142,2026-07-29T09:51:45.266-0300,Bruno Silva,status,Submissão,Done
 SI-8142,2026-07-30T10:06:05.591-0300,Nícollas Resende,assignee,,Nícollas Resende
+SI-8142,2026-07-31T00:59:59.835-0300,Sistema,Criticidade final,,P2 - Média
+SI-8142,2026-07-31T00:59:59.835-0300,Sistema,Resolução do chamado,,Foi realizada a configuração de outro notebook e entregue a colaboradora no escritório do Rio.
 SI-8141,2026-07-28T10:36:48.244-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8141,2026-07-28T10:36:51.724-0300,Bruno Silva,resolution,,Done
 SI-8141,2026-07-28T10:36:51.724-0300,Bruno Silva,status,Submissão,Done
@@ -66742,6 +66749,14 @@ SI-8165,2026-07-30T11:52:13.645-0300,Bruno Silva,status,Submissão,Done
 SI-8164,2026-07-30T11:52:11.225-0300,Bruno Silva,resolution,,Done
 SI-8164,2026-07-30T11:52:11.225-0300,Bruno Silva,status,Submissão,Done
 SI-8164,2026-07-30T16:01:43.073-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8164,2026-07-31T01:00:09.203-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8164,2026-07-31T01:00:09.203-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8164,2026-07-31T01:00:09.203-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8164,2026-07-31T01:00:09.203-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8164,2026-07-31T01:00:09.203-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8164,2026-07-31T01:00:09.203-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8164,2026-07-31T01:00:09.203-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8164,2026-07-31T01:00:09.203-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8170,2026-07-29T13:43:38.545-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8170,2026-07-29T13:43:40.709-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8170,2026-07-29T13:43:40.709-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -66933,20 +66948,68 @@ SI-8176,2026-07-29T19:03:24.956-0300,Sistema,Justificativa Causa Raiz final,,Em 
 SI-8181,2026-07-30T08:41:59.199-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8181,2026-07-30T08:42:02.708-0300,Bruno Silva,resolution,,Done
 SI-8181,2026-07-30T08:42:02.708-0300,Bruno Silva,status,Submissão,Done
+SI-8181,2026-07-31T01:00:16.417-0300,Sistema,Criticidade final,,P2 - Média
+SI-8181,2026-07-31T01:00:16.417-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8181,2026-07-31T01:00:16.417-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8181,2026-07-31T01:00:16.417-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8181,2026-07-31T01:00:16.417-0300,Sistema,Resolução do chamado,,Bom dia! favor entrar na salinha para verificações dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0) caso não queira pode me chamar no google chat
+SI-8181,2026-07-31T01:00:16.417-0300,Sistema,Causa raiz potencial,,Bom dia! favor entrar na salinha para verificações dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0) caso não queira pode me chamar no google chat
+SI-8181,2026-07-31T01:00:16.417-0300,Sistema,Causa raiz final,,Bom dia! favor entrar na salinha para verificações dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0) caso não queira pode me chamar no google chat
+SI-8181,2026-07-31T01:00:16.417-0300,Sistema,Justificativa Causa Raiz final,,Bom dia! favor entrar na salinha para verificações dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0) caso não queira pode me chamar no google chat
 SI-8183,2026-07-29T17:29:21.467-0300,Sistema,Link,,This work item is blocked by GA-1362
 SI-8183,2026-07-30T08:42:27.316-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8183,2026-07-30T08:42:33.004-0300,Bruno Silva,resolution,,Done
 SI-8183,2026-07-30T08:42:33.004-0300,Bruno Silva,status,Submissão,Done
+SI-8183,2026-07-31T01:00:18.070-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8183,2026-07-31T01:00:18.070-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8183,2026-07-31T01:00:18.070-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8183,2026-07-31T01:00:18.070-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8183,2026-07-31T01:00:18.070-0300,Sistema,Resolução do chamado,,Colaboradora foi chamado no google chat para seguir com atualizações do driver do notebook.
+SI-8183,2026-07-31T01:00:18.070-0300,Sistema,Causa raiz potencial,,Colaboradora foi chamado no google chat para seguir com atualizações do driver do notebook.
+SI-8183,2026-07-31T01:00:18.070-0300,Sistema,Causa raiz final,,Colaboradora foi chamado no google chat para seguir com atualizações do driver do notebook.
+SI-8183,2026-07-31T01:00:18.070-0300,Sistema,Justificativa Causa Raiz final,,Colaboradora foi chamado no google chat para seguir com atualizações do driver do notebook.
 SI-8182,2026-07-29T17:28:25.537-0300,Sistema,Link,,This work item is blocked by GA-1361
 SI-8182,2026-07-30T08:42:21.531-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8182,2026-07-30T08:42:35.467-0300,Bruno Silva,resolution,,Done
 SI-8182,2026-07-30T08:42:35.467-0300,Bruno Silva,status,Submissão,Done
+SI-8182,2026-07-31T01:00:17.301-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8182,2026-07-31T01:00:17.301-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8182,2026-07-31T01:00:17.301-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8182,2026-07-31T01:00:17.301-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8182,2026-07-31T01:00:17.301-0300,Sistema,Resolução do chamado,,Colaboradora foi chamado no google chat para seguir com atualizações do driver do notebook.
+SI-8182,2026-07-31T01:00:17.301-0300,Sistema,Causa raiz potencial,,Colaboradora foi chamado no google chat para seguir com atualizações do driver do notebook.
+SI-8182,2026-07-31T01:00:17.301-0300,Sistema,Causa raiz final,,Colaboradora foi chamado no google chat para seguir com atualizações do driver do notebook.
+SI-8182,2026-07-31T01:00:17.301-0300,Sistema,Justificativa Causa Raiz final,,Colaboradora foi chamado no google chat para seguir com atualizações do driver do notebook.
 SI-8184,2026-07-30T10:47:23.891-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8184,2026-07-30T10:47:26.281-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8184,2026-07-30T10:47:26.281-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8184,2026-07-31T01:00:19.162-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8184,2026-07-31T01:00:19.162-0300,Sistema,Criticidade final,,P2 - Média
+SI-8184,2026-07-31T01:00:19.162-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8184,2026-07-31T01:00:19.162-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8184,2026-07-31T01:00:19.162-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8184,2026-07-31T01:00:19.162-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8184,2026-07-31T01:00:19.162-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8184,2026-07-31T01:00:19.162-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8186,2026-07-30T09:04:14.096-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8186,2026-07-30T09:04:16.855-0300,Bruno Silva,resolution,,Done
 SI-8186,2026-07-30T09:04:16.855-0300,Bruno Silva,status,Submissão,Done
+SI-8186,2026-07-31T01:00:20.773-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8186,2026-07-31T01:00:20.773-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8186,2026-07-31T01:00:20.773-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8186,2026-07-31T01:00:20.773-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8186,2026-07-31T01:00:20.773-0300,Sistema,Resolução do chamado,,Identificada indisponibilidade técnica ao tentar desvincular a ordem do processo de agrupamento. Realizado o salvamento e a sincronização das etapas de controle na aba de acompanhamento do pedido para restaurar os parâmetros e interromper a exceção. Verificada a correta desconexão do registro e o completo restabelecimento da rotina operante na interface.
+SI-8186,2026-07-31T01:00:20.773-0300,Sistema,Causa raiz potencial,,Ausência do registro de parâmetros de controle de datas (datecontrol) associado ao objeto Assembly da ordem no banco de dados.
+SI-8186,2026-07-31T01:00:20.773-0300,Sistema,Causa raiz final,,"Ao tentar desvincular a ordem do processo de agrupamento, o sistema apresentou um comportamento não esperado ao buscar as regras de controle do pedido. Isso ocorreu porque a estrutura interna referente às datas de controle não foi criada ou associada corretamente ao registro no banco de dados, resultando na interrupção da aplicação. A situação foi corrigida realizando a atualização e o salvamento das informações na aba de controle da ordem, o que forçou a criação da estrutura pendente no banco de dados e permitiu a conclusão do procedimento com sucesso."
+SI-8186,2026-07-31T01:00:20.773-0300,Sistema,Justificativa Causa Raiz final,,"A exceção RelatedObjectDoesNotExist: Assembly has no datecontrol caracteriza uma falha de desenvolvimento. A aplicação disparava um erro HTTP 500 ao tentar acessar o relacionamento nulo entre as tabelas order_assemblystagecontrol e order_datecontrol. O salvamento manual na aba Control gerou a instância necessária na tabela order_datecontrol (custom=False), tratando a inconsistência no banco de dados."
+SI-8185,2026-07-31T01:00:20.073-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8185,2026-07-31T01:00:20.073-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-8185,2026-07-31T01:00:20.073-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8185,2026-07-31T01:00:20.073-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8185,2026-07-31T01:00:20.073-0300,Sistema,Resolução do chamado,,O nome do shipeer que existe cadastrado é esse aqui (Brooks Instrument LLC) oque você estava colocando era (Brooks Instruments LLC) com S no final por isso nao aparecia para você.
+SI-8185,2026-07-31T01:00:20.073-0300,Sistema,Causa raiz potencial,,Inconsistência de digitação na consulta textual por razão social
+SI-8185,2026-07-31T01:00:20.073-0300,Sistema,Causa raiz final,,O inconveniente observado ao tentar localizar o cadastro do exportador no sistema ocorreu devido a uma pequena divergência na digitação informada durante a consulta.
+SI-8185,2026-07-31T01:00:20.073-0300,Sistema,Justificativa Causa Raiz final,,"A falha de localização do registro no front-end foi decorrente de erro operacional na entrada de dados no filtro de consulta, onde a inclusão do caractere ""s"" no nome do Shipper resultou em ausência de correspondência textual na query executada no banco de dados."
 SI-8188,2026-07-30T11:53:23.380-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8188,2026-07-30T11:53:27.423-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8188,2026-07-30T11:53:27.423-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -67010,125 +67073,451 @@ h3. 7️⃣ Justificativa Técnica para Escalonamento
 SI-8188,2026-07-30T15:09:53.752-0300,Ricardo Barbosa Machado,Encaminhado para:,,Sustentação
 SI-8188,2026-07-30T15:09:57.159-0300,Sistema,Link,,This work item is blocked by SUS-285
 SI-8188,2026-07-30T15:09:58.608-0300,Ricardo Barbosa Machado,Encaminhado para:,Sustentação,
+SI-8188,2026-07-31T01:00:21.454-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8188,2026-07-31T01:00:21.454-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8188,2026-07-31T01:00:21.454-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8188,2026-07-31T01:00:21.454-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8188,2026-07-31T01:00:21.454-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8188,2026-07-31T01:00:21.454-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8188,2026-07-31T01:00:21.454-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8188,2026-07-31T01:00:21.454-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8187,2026-07-30T15:08:48.158-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8187,2026-07-30T15:08:48.158-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8187,2026-07-30T15:08:52.124-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8189,2026-07-30T09:06:14.185-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8189,2026-07-30T09:06:17.252-0300,Bruno Silva,resolution,,Done
 SI-8189,2026-07-30T09:06:17.252-0300,Bruno Silva,status,Submissão,Done
+SI-8189,2026-07-31T01:00:22.145-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8189,2026-07-31T01:00:22.145-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8189,2026-07-31T01:00:22.145-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8189,2026-07-31T01:00:22.145-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8189,2026-07-31T01:00:22.145-0300,Sistema,Resolução do chamado,,Bom dia! favor entrar na salinha para verificações dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0) caso não queira pode me chamar no google chat
+SI-8189,2026-07-31T01:00:22.145-0300,Sistema,Causa raiz potencial,,Bom dia! favor entrar na salinha para verificações dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0) caso não queira pode me chamar no google chat
+SI-8189,2026-07-31T01:00:22.145-0300,Sistema,Causa raiz final,,Bom dia! favor entrar na salinha para verificações dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0) caso não queira pode me chamar no google chat
+SI-8189,2026-07-31T01:00:22.145-0300,Sistema,Justificativa Causa Raiz final,,Bom dia! favor entrar na salinha para verificações dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0) caso não queira pode me chamar no google chat
 SI-8193,2026-07-30T10:54:52.657-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8193,2026-07-30T10:54:54.897-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8193,2026-07-30T10:54:54.897-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8193,2026-07-31T01:00:24.800-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8193,2026-07-31T01:00:24.800-0300,Sistema,Criticidade final,,P2 - Média
+SI-8193,2026-07-31T01:00:24.800-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8193,2026-07-31T01:00:24.800-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8193,2026-07-31T01:00:24.800-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8193,2026-07-31T01:00:24.800-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8193,2026-07-31T01:00:24.800-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8193,2026-07-31T01:00:24.800-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8192,2026-07-30T09:47:51.527-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-8192,2026-07-30T09:47:54.412-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-8192,2026-07-30T09:47:54.412-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-8192,2026-07-31T01:00:24.147-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8192,2026-07-31T01:00:24.147-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8192,2026-07-31T01:00:24.147-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8192,2026-07-31T01:00:24.147-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-8192,2026-07-31T01:00:24.147-0300,Sistema,Resolução do chamado,,"Bom dia Luciana, Assuntos referentes ao Factorial precisam ser tratadas diretamente com o time de TMT."
+SI-8192,2026-07-31T01:00:24.147-0300,Sistema,Causa raiz potencial,,Desconhecimento do fluxo oficial de atendimento e da matriz de responsabilidades entre as equipes de Tecnologia e RH;
+SI-8192,2026-07-31T01:00:24.147-0300,Sistema,Causa raiz final,,A divergência no direcionamento da solicitação ocorreu devido ao modelo de governança e divisão de responsabilidades definido para os sistemas corporativos da organização.
+SI-8192,2026-07-31T01:00:24.147-0300,Sistema,Justificativa Causa Raiz final,,"A classificação sob a categoria de Regra de Negócio fundamenta-se na matriz de governança de sistemas (RACI) da empresa, que atribui o domínio da plataforma Factorial e a custódia de seus dados à equipe de TMT."
 SI-8191,2026-07-30T09:49:27.234-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8191,2026-07-30T09:49:29.954-0300,Bruno Silva,resolution,,Done
 SI-8191,2026-07-30T09:49:29.954-0300,Bruno Silva,status,Submissão,Done
+SI-8191,2026-07-31T01:00:23.346-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8191,2026-07-31T01:00:23.346-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8191,2026-07-31T01:00:23.346-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8191,2026-07-31T01:00:23.346-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8191,2026-07-31T01:00:23.346-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8191,2026-07-31T01:00:23.346-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8191,2026-07-31T01:00:23.346-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8191,2026-07-31T01:00:23.346-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8190,2026-07-31T01:00:22.763-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8190,2026-07-31T01:00:22.763-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8190,2026-07-31T01:00:22.763-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8190,2026-07-31T01:00:22.763-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8190,2026-07-31T01:00:22.763-0300,Sistema,Resolução do chamado,,"Identificada e analisada a tentativa de ataque cibernético via phishing, a qual prometia a liberação de valores por meio da plataforma iFood. Realizada a orientação do colaborador para o bloqueio e denúncia do e-mail suspeito, reforçando a importância da verificação contínua de indicadores de fraude, tais como o domínio remetente e mensagens com apelo financeiro."
+SI-8190,2026-07-31T01:00:22.763-0300,Sistema,Causa raiz potencial,,"Disparo massivo de e-mails maliciosos por agentes externos utilizando técnicas de engenharia social.
+Falha na interceptação prévia da mensagem pelos filtros de segurança de e-mail.
+Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
+SI-8190,2026-07-31T01:00:22.763-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
+SI-8190,2026-07-31T01:00:22.763-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
 SI-8198,2026-07-30T09:46:17.010-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8198,2026-07-30T09:46:19.947-0300,Bruno Silva,resolution,,Done
 SI-8198,2026-07-30T09:46:19.947-0300,Bruno Silva,status,Submissão,Done
+SI-8198,2026-07-31T01:00:28.235-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8198,2026-07-31T01:00:28.235-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8198,2026-07-31T01:00:28.235-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8198,2026-07-31T01:00:28.235-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8198,2026-07-31T01:00:28.235-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8198,2026-07-31T01:00:28.235-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8198,2026-07-31T01:00:28.235-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8198,2026-07-31T01:00:28.235-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8197,2026-07-30T09:19:25.779-0300,Sistema,Link,,This work item is blocked by GA-1363
 SI-8197,2026-07-30T09:23:37.785-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8197,2026-07-30T09:23:40.672-0300,Bruno Silva,resolution,,Done
 SI-8197,2026-07-30T09:23:40.672-0300,Bruno Silva,status,Submissão,Done
+SI-8197,2026-07-31T01:00:27.427-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8197,2026-07-31T01:00:27.427-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8197,2026-07-31T01:00:27.427-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8197,2026-07-31T01:00:27.427-0300,Sistema,Criticidade final,,P2 - Média
+SI-8197,2026-07-31T01:00:27.427-0300,Sistema,Resolução do chamado,,Colaboradora foi chamada via google chat para realizar a instalação e configuração do app solicitado
+SI-8197,2026-07-31T01:00:27.427-0300,Sistema,Causa raiz potencial,,Colaboradora foi chamada via google chat para realizar a instalação e configuração do app solicitado
+SI-8197,2026-07-31T01:00:27.427-0300,Sistema,Causa raiz final,,Colaboradora foi chamada via google chat para realizar a instalação e configuração do app solicitado
+SI-8197,2026-07-31T01:00:27.427-0300,Sistema,Justificativa Causa Raiz final,,Colaboradora foi chamada via google chat para realizar a instalação e configuração do app solicitado
 SI-8196,2026-07-30T15:52:57.814-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8196,2026-07-30T15:52:57.814-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8196,2026-07-30T15:53:00.485-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8196,2026-07-31T01:00:26.697-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8196,2026-07-31T01:00:26.697-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8196,2026-07-31T01:00:26.697-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8196,2026-07-31T01:00:26.697-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8196,2026-07-31T01:00:26.697-0300,Sistema,Resolução do chamado,,"Identificada e analisada a tentativa de ataque cibernético via phishing, a qual prometia a liberação de valores por meio da plataforma iFood. Realizada a orientação do colaborador para o bloqueio e denúncia do e-mail suspeito, reforçando a importância da verificação contínua de indicadores de fraude, tais como o domínio remetente e mensagens com apelo financeiro."
+SI-8196,2026-07-31T01:00:26.697-0300,Sistema,Causa raiz potencial,,"Disparo massivo de e-mails maliciosos por agentes externos utilizando técnicas de engenharia social.
+Falha na interceptação prévia da mensagem pelos filtros de segurança de e-mail.
+Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários"
+SI-8196,2026-07-31T01:00:26.697-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
+SI-8196,2026-07-31T01:00:26.697-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
 SI-8195,2026-07-30T09:22:10.208-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8195,2026-07-30T09:22:13.005-0300,Bruno Silva,resolution,,Done
 SI-8195,2026-07-30T09:22:13.005-0300,Bruno Silva,status,Submissão,Done
+SI-8195,2026-07-31T01:00:26.060-0300,Sistema,Criticidade final,,P2 - Média
+SI-8195,2026-07-31T01:00:26.060-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8195,2026-07-31T01:00:26.060-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8195,2026-07-31T01:00:26.060-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8195,2026-07-31T01:00:26.060-0300,Sistema,Resolução do chamado,,Bom dia! favor entrar na salinha para verificações dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0) caso não queira pode me chamar no google chat
+SI-8195,2026-07-31T01:00:26.060-0300,Sistema,Causa raiz potencial,,Bom dia! favor entrar na salinha para verificações dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0) caso não queira pode me chamar no google chat
+SI-8195,2026-07-31T01:00:26.060-0300,Sistema,Causa raiz final,,Bom dia! favor entrar na salinha para verificações dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0) caso não queira pode me chamar no google chat
+SI-8195,2026-07-31T01:00:26.060-0300,Sistema,Justificativa Causa Raiz final,,Bom dia! favor entrar na salinha para verificações dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0) caso não queira pode me chamar no google chat
 SI-8194,2026-07-30T11:12:38.459-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8194,2026-07-30T11:12:40.458-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8194,2026-07-30T11:12:40.458-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8194,2026-07-31T01:00:25.457-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8194,2026-07-31T01:00:25.457-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-8194,2026-07-31T01:00:25.457-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-8194,2026-07-31T01:00:25.457-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8194,2026-07-31T01:00:25.457-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8194,2026-07-31T01:00:25.457-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8194,2026-07-31T01:00:25.457-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8194,2026-07-31T01:00:25.457-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8202,2026-07-30T10:54:04.058-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8202,2026-07-30T10:54:07.474-0300,Bruno Silva,resolution,,Done
 SI-8202,2026-07-30T10:54:07.474-0300,Bruno Silva,status,Submissão,Done
+SI-8202,2026-07-31T01:00:31.142-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8202,2026-07-31T01:00:31.142-0300,Sistema,Criticidade final,,P2 - Média
+SI-8202,2026-07-31T01:00:31.142-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8202,2026-07-31T01:00:31.142-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8202,2026-07-31T01:00:31.142-0300,Sistema,Resolução do chamado,,Colaboradora foi chamado no google chat para seguir com atualizações do driver do notebook.
+SI-8202,2026-07-31T01:00:31.142-0300,Sistema,Causa raiz potencial,,Colaboradora foi chamado no google chat para seguir com atualizações do driver do notebook.
+SI-8202,2026-07-31T01:00:31.142-0300,Sistema,Causa raiz final,,Colaboradora foi chamado no google chat para seguir com atualizações do driver do notebook.
+SI-8202,2026-07-31T01:00:31.142-0300,Sistema,Justificativa Causa Raiz final,,Colaboradora foi chamado no google chat para seguir com atualizações do driver do notebook.
 SI-8201,2026-07-30T11:10:32.775-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8201,2026-07-30T11:10:35.906-0300,Bruno Silva,resolution,,Done
 SI-8201,2026-07-30T11:10:35.906-0300,Bruno Silva,status,Submissão,Done
+SI-8201,2026-07-31T01:00:30.392-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8201,2026-07-31T01:00:30.392-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8201,2026-07-31T01:00:30.392-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8201,2026-07-31T01:00:30.392-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-8201,2026-07-31T01:00:30.392-0300,Sistema,Resolução do chamado,,Identificada a necessidade de atualização das taxas no processo
+SI-8201,2026-07-31T01:00:30.392-0300,Sistema,Causa raiz potencial,,Tentativa de exclusão/inclusão de cotação em processo com data de partida confirmada ou impedimento do sistema devido ao estágio do embarque.
+SI-8201,2026-07-31T01:00:30.392-0300,Sistema,Causa raiz final,,"Identificado um ponto de atenção no procedimento operacional de atualização de valores. Quando um embarque possui a data de saída ou chegada confirmada, o sistema aplica uma trava de segurança para impedir o desatrelamento de cotações. Para refletir os novos valores ajustados na cotação para o processo, deve-se utilizar a ação de atualização direta (Update Quote) sem a necessidade de excluir o vínculo."
+SI-8201,2026-07-31T01:00:30.392-0300,Sistema,Justificativa Causa Raiz final,,Trava sistêmica de integridade impede a remoção/exclusão de quotes em orders com ETD/ETA confirmados para evitar inconsistências nos dados operacionais e financeiros. O acionamento da função Update Quote executa o recálculo necessário na order mantendo o vínculo e a rastreabilidade válidos.
 SI-8200,2026-07-30T10:01:38.021-0300,Sistema,Link,,This work item is blocked by GA-1365
 SI-8200,2026-07-30T15:56:28.349-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8200,2026-07-30T15:56:28.349-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8200,2026-07-30T15:56:31.572-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8200,2026-07-31T01:00:29.656-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8200,2026-07-31T01:00:29.656-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8200,2026-07-31T01:00:29.656-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8200,2026-07-31T01:00:29.656-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8200,2026-07-31T01:00:29.656-0300,Sistema,Resolução do chamado,,"Identificada e analisada a tentativa de ataque cibernético via phishing, a qual prometia a liberação de valores por meio da plataforma iFood. Realizada a orientação do colaborador para o bloqueio e denúncia do e-mail suspeito, reforçando a importância da verificação contínua de indicadores de fraude, tais como o domínio remetente e mensagens com apelo financeiro."
+SI-8200,2026-07-31T01:00:29.656-0300,Sistema,Causa raiz potencial,,"Disparo massivo de e-mails maliciosos por agentes externos utilizando técnicas de engenharia social.
+Falha na interceptação prévia da mensagem pelos filtros de segurança de e-mail.
+Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
+SI-8200,2026-07-31T01:00:29.656-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
+SI-8200,2026-07-31T01:00:29.656-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
 SI-8199,2026-07-30T09:51:22.664-0300,Sistema,Link,,This work item is blocked by GA-1364
 SI-8199,2026-07-30T13:00:38.391-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-8199,2026-07-30T13:00:43.336-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-8199,2026-07-30T13:00:43.336-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-8199,2026-07-31T01:00:28.994-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8199,2026-07-31T01:00:28.994-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8199,2026-07-31T01:00:28.994-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8199,2026-07-31T01:00:28.994-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-8199,2026-07-31T01:00:28.994-0300,Sistema,Resolução do chamado,,"Realizada a atualização e correção dos nomes nos cadastros indicados no sistema, conforme a solicitação apresentada. Os registros das entidades foram ajustados para refletir exatamente as nomenclaturas oficiais requeridas para a continuidade das operações."
+SI-8199,2026-07-31T01:00:28.994-0300,Sistema,Causa raiz potencial,,Divergência na grafia dos registros cadastrais em relação aos documentos oficiais do parceiro; necessidade de atualização cadastral pontual por alteração de razão social ou correção de digitação inicial.
+SI-8199,2026-07-31T01:00:28.994-0300,Sistema,Causa raiz final,,A necessidade de alteração nos cadastros ocorreu devido à presença de registros informacionais que não correspondiam com precisão à grafia atualizada ou oficial exigida na rotina operacional.
+SI-8199,2026-07-31T01:00:28.994-0300,Sistema,Justificativa Causa Raiz final,,A intervenção consistiu na atualização dos campos de razão social e nome fantasia nas tabelas de entidade/cadastro do sistema (como order_remoteentity ou cadastro central de parceiros).
 SI-8207,2026-07-30T11:31:41.562-0300,Sistema,Link,,This work item is blocked by GA-1367
 SI-8207,2026-07-30T11:53:11.276-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-8207,2026-07-30T11:53:13.349-0300,Nícollas Resende,resolution,,Done
 SI-8207,2026-07-30T11:53:13.349-0300,Nícollas Resende,status,Submissão,Done
+SI-8207,2026-07-31T01:00:33.694-0300,Sistema,Criticidade final,,P2 - Média
+SI-8207,2026-07-31T01:00:33.694-0300,Sistema,Resolução do chamado,,Foi realizada a ativação da webcam no notebook da colaboradora.
 SI-8206,2026-07-30T12:02:22.555-0300,Bruno Silva,assignee,,Eduardo Felipe de Lima Rebello
 SI-8206,2026-07-30T12:02:25.917-0300,Bruno Silva,resolution,,Done
 SI-8206,2026-07-30T12:02:25.917-0300,Bruno Silva,status,Submissão,Done
+SI-8206,2026-07-31T01:00:33.123-0300,Sistema,Criticidade final,,P2 - Média
+SI-8206,2026-07-31T01:00:33.123-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8206,2026-07-31T01:00:33.123-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8206,2026-07-31T01:00:33.123-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8206,2026-07-31T01:00:33.123-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8206,2026-07-31T01:00:33.123-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8206,2026-07-31T01:00:33.123-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8206,2026-07-31T01:00:33.123-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8205,2026-07-30T12:03:18.790-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8205,2026-07-30T12:03:22.289-0300,Bruno Silva,resolution,,Done
 SI-8205,2026-07-30T12:03:22.289-0300,Bruno Silva,status,Submissão,Done
+SI-8205,2026-07-31T01:00:32.466-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8205,2026-07-31T01:00:32.466-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8205,2026-07-31T01:00:32.466-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8205,2026-07-31T01:00:32.466-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8205,2026-07-31T01:00:32.466-0300,Sistema,Resolução do chamado,,Identificada a necessidade de invalidar os itens adicionados incorretamente no processo.
+SI-8205,2026-07-31T01:00:32.466-0300,Sistema,Causa raiz potencial,,Geração indevida ou duplicação automática de linhas de itens durante o processamento de leitura de documentos.
+SI-8205,2026-07-31T01:00:32.466-0300,Sistema,Causa raiz final,,"Identificado um ponto de atenção na leitura dos documentos, em que o sistema gerou linhas extras de itens (das linhas 2 a 47) durante o processamento de dados. Para regularizar as informações no processo, é necessário sinalizar os itens incorretos marcando a opção ""Invalid"" e efetuando o salvamento. Essa ação desativa os registros excedentes, garantindo a exatidão das informações consolidadas."
+SI-8205,2026-07-31T01:00:32.466-0300,Sistema,Justificativa Causa Raiz final,,"Ocorreu falha no algoritmo de extração da IA, gerando múltiplos registros nulos/duplicados na tabela de itens."
 SI-8204,2026-07-30T10:57:21.425-0300,Sistema,Link,,This work item is blocked by GA-1366
 SI-8203,2026-07-30T11:38:24.515-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8203,2026-07-30T11:38:26.649-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8203,2026-07-30T11:38:26.649-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8203,2026-07-31T01:00:31.753-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8203,2026-07-31T01:00:31.753-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8203,2026-07-31T01:00:31.753-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8203,2026-07-31T01:00:31.753-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8203,2026-07-31T01:00:31.753-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8203,2026-07-31T01:00:31.753-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8203,2026-07-31T01:00:31.753-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8203,2026-07-31T01:00:31.753-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8213,2026-07-30T13:04:15.432-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8213,2026-07-30T13:04:19.144-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8213,2026-07-30T13:04:19.144-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8213,2026-07-31T01:00:37.882-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8213,2026-07-31T01:00:37.882-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8213,2026-07-31T01:00:37.882-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8213,2026-07-31T01:00:37.882-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8213,2026-07-31T01:00:37.882-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8213,2026-07-31T01:00:37.882-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8213,2026-07-31T01:00:37.882-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8213,2026-07-31T01:00:37.882-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8212,2026-07-30T12:22:26.273-0300,Sistema,Link,,This work item is blocked by GA-1369
 SI-8212,2026-07-30T16:13:39.751-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-8212,2026-07-30T16:13:42.256-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-8212,2026-07-30T16:13:42.256-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-8212,2026-07-31T01:00:37.153-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8212,2026-07-31T01:00:37.153-0300,Sistema,Reclassificação solicitação,,Solicitação de cadastro
+SI-8212,2026-07-31T01:00:37.153-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-8212,2026-07-31T01:00:37.153-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-8212,2026-07-31T01:00:37.153-0300,Sistema,Resolução do chamado,,Cadastro realizado conforme solicitado
+SI-8212,2026-07-31T01:00:37.153-0300,Sistema,Causa raiz potencial,,Cadastro realizado conforme solicitado
+SI-8212,2026-07-31T01:00:37.153-0300,Sistema,Causa raiz final,,Cadastro realizado conforme solicitado
+SI-8212,2026-07-31T01:00:37.153-0300,Sistema,Justificativa Causa Raiz final,,Cadastro realizado conforme solicitado
 SI-8211,2026-07-30T12:13:24.791-0300,Sistema,Link,,This work item is blocked by GA-1368
 SI-8211,2026-07-30T15:49:38.101-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8211,2026-07-30T15:49:38.101-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8211,2026-07-30T15:49:42.330-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8211,2026-07-31T01:00:36.499-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8211,2026-07-31T01:00:36.499-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8211,2026-07-31T01:00:36.499-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8211,2026-07-31T01:00:36.499-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8211,2026-07-31T01:00:36.499-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8211,2026-07-31T01:00:36.499-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8211,2026-07-31T01:00:36.499-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8211,2026-07-31T01:00:36.499-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8210,2026-07-30T12:41:55.913-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8210,2026-07-30T12:41:58.895-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8210,2026-07-30T12:41:58.895-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8210,2026-07-31T01:00:35.909-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8210,2026-07-31T01:00:35.909-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8210,2026-07-31T01:00:35.909-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8210,2026-07-31T01:00:35.909-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8210,2026-07-31T01:00:35.909-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8210,2026-07-31T01:00:35.909-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8210,2026-07-31T01:00:35.909-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8210,2026-07-31T01:00:35.909-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8209,2026-07-30T15:14:36.308-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8209,2026-07-30T15:14:38.476-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8209,2026-07-30T15:14:38.476-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8209,2026-07-31T01:00:35.250-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8209,2026-07-31T01:00:35.250-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8209,2026-07-31T01:00:35.250-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8209,2026-07-31T01:00:35.250-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8209,2026-07-31T01:00:35.250-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8209,2026-07-31T01:00:35.250-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8209,2026-07-31T01:00:35.250-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8209,2026-07-31T01:00:35.250-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8208,2026-07-30T12:20:58.420-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8208,2026-07-30T12:21:01.310-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8208,2026-07-30T12:21:01.310-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8208,2026-07-31T01:00:34.476-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8208,2026-07-31T01:00:34.476-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8208,2026-07-31T01:00:34.476-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8208,2026-07-31T01:00:34.476-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8208,2026-07-31T01:00:34.476-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8208,2026-07-31T01:00:34.476-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8208,2026-07-31T01:00:34.476-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8208,2026-07-31T01:00:34.476-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8216,2026-07-30T15:36:01.376-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8216,2026-07-30T15:36:03.320-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8216,2026-07-30T15:36:03.320-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8216,2026-07-31T01:00:39.969-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8216,2026-07-31T01:00:39.969-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8216,2026-07-31T01:00:39.969-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8216,2026-07-31T01:00:39.969-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8216,2026-07-31T01:00:39.969-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8216,2026-07-31T01:00:39.969-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8216,2026-07-31T01:00:39.969-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8216,2026-07-31T01:00:39.969-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8215,2026-07-30T15:18:23.255-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8215,2026-07-30T15:18:25.977-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8215,2026-07-30T15:18:25.977-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8215,2026-07-31T01:00:39.277-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8215,2026-07-31T01:00:39.277-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8215,2026-07-31T01:00:39.277-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8215,2026-07-31T01:00:39.277-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8215,2026-07-31T01:00:39.277-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8215,2026-07-31T01:00:39.277-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8215,2026-07-31T01:00:39.277-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8215,2026-07-31T01:00:39.277-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8214,2026-07-30T13:09:32.296-0300,Sistema,Link,,This work item is blocked by GA-1370
 SI-8214,2026-07-30T16:10:10.134-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-8214,2026-07-30T16:10:13.252-0300,Nícollas Resende,resolution,,Done
 SI-8214,2026-07-30T16:10:13.252-0300,Nícollas Resende,status,Submissão,Done
+SI-8214,2026-07-31T01:00:38.485-0300,Sistema,Criticidade final,,P2 - Média
+SI-8214,2026-07-31T01:00:38.485-0300,Sistema,Resolução do chamado,,Foi realizada uma limpeza preventiva no notebook da colaboradora.
 SI-8230,2026-07-30T16:47:36.528-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8230,2026-07-30T16:47:38.984-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8230,2026-07-30T16:47:38.984-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8230,2026-07-31T01:00:50.121-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8230,2026-07-31T01:00:50.121-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8230,2026-07-31T01:00:50.121-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8230,2026-07-31T01:00:50.121-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8230,2026-07-31T01:00:50.121-0300,Sistema,Resolução do chamado,,"Identificada e analisada a tentativa de ataque cibernético via phishing, a qual prometia a liberação de valores por meio da plataforma iFood. Realizada a orientação do colaborador para o bloqueio e denúncia do e-mail suspeito, reforçando a importância da verificação contínua de indicadores de fraude, tais como o domínio remetente e mensagens com apelo financeiro."
+SI-8230,2026-07-31T01:00:50.121-0300,Sistema,Causa raiz potencial,,"Disparo massivo de e-mails maliciosos por agentes externos utilizando técnicas de engenharia social.
+Falha na interceptação prévia da mensagem pelos filtros de segurança de e-mail.
+Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
+SI-8230,2026-07-31T01:00:50.121-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
+SI-8230,2026-07-31T01:00:50.121-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
 SI-8229,2026-07-30T16:43:26.867-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8229,2026-07-30T16:43:28.908-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8229,2026-07-30T16:43:28.908-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8229,2026-07-31T01:00:49.334-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8229,2026-07-31T01:00:49.334-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8229,2026-07-31T01:00:49.334-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8229,2026-07-31T01:00:49.334-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8229,2026-07-31T01:00:49.334-0300,Sistema,Resolução do chamado,,"Identificada e analisada a tentativa de ataque cibernético via phishing, a qual prometia a liberação de valores por meio da plataforma iFood. Realizada a orientação do colaborador para o bloqueio e denúncia do e-mail suspeito, reforçando a importância da verificação contínua de indicadores de fraude, tais como o domínio remetente e mensagens com apelo financeiro."
+SI-8229,2026-07-31T01:00:49.334-0300,Sistema,Causa raiz potencial,,"Disparo massivo de e-mails maliciosos por agentes externos utilizando técnicas de engenharia social.
+Falha na interceptação prévia da mensagem pelos filtros de segurança de e-mail.
+Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
+SI-8229,2026-07-31T01:00:49.334-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
+SI-8229,2026-07-31T01:00:49.334-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
 SI-8228,2026-07-30T16:36:29.323-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8228,2026-07-30T16:36:31.640-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8228,2026-07-30T16:36:31.640-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8228,2026-07-31T01:00:48.482-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8228,2026-07-31T01:00:48.482-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8228,2026-07-31T01:00:48.482-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8228,2026-07-31T01:00:48.482-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8228,2026-07-31T01:00:48.482-0300,Sistema,Resolução do chamado,,"Identificada e analisada a tentativa de ataque cibernético via phishing, a qual prometia a liberação de valores por meio da plataforma iFood. Realizada a orientação do colaborador para o bloqueio e denúncia do e-mail suspeito, reforçando a importância da verificação contínua de indicadores de fraude, tais como o domínio remetente e mensagens com apelo financeiro."
+SI-8228,2026-07-31T01:00:48.482-0300,Sistema,Causa raiz potencial,,"Disparo massivo de e-mails maliciosos por agentes externos utilizando técnicas de engenharia social.
+Falha na interceptação prévia da mensagem pelos filtros de segurança de e-mail.
+Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
+SI-8228,2026-07-31T01:00:48.482-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
+SI-8228,2026-07-31T01:00:48.482-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
 SI-8227,2026-07-30T16:32:47.380-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8227,2026-07-30T16:32:49.516-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8227,2026-07-30T16:32:49.516-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8227,2026-07-31T01:00:47.731-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8227,2026-07-31T01:00:47.731-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8227,2026-07-31T01:00:47.731-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8227,2026-07-31T01:00:47.731-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8227,2026-07-31T01:00:47.731-0300,Sistema,Resolução do chamado,,"Identificada e analisada a tentativa de ataque cibernético via phishing, a qual prometia a liberação de valores por meio da plataforma iFood. Realizada a orientação do colaborador para o bloqueio e denúncia do e-mail suspeito, reforçando a importância da verificação contínua de indicadores de fraude, tais como o domínio remetente e mensagens com apelo financeiro."
+SI-8227,2026-07-31T01:00:47.731-0300,Sistema,Causa raiz potencial,,"Disparo massivo de e-mails maliciosos por agentes externos utilizando técnicas de engenharia social.
+Falha na interceptação prévia da mensagem pelos filtros de segurança de e-mail.
+Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
+SI-8227,2026-07-31T01:00:47.731-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
+SI-8227,2026-07-31T01:00:47.731-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
 SI-8226,2026-07-30T16:31:20.894-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8226,2026-07-30T16:31:23.194-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8226,2026-07-30T16:31:23.194-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8226,2026-07-31T01:00:47.051-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8226,2026-07-31T01:00:47.051-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8226,2026-07-31T01:00:47.051-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8226,2026-07-31T01:00:47.051-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8226,2026-07-31T01:00:47.051-0300,Sistema,Resolução do chamado,,"Identificada e analisada a tentativa de ataque cibernético via phishing, a qual prometia a liberação de valores por meio da plataforma iFood. Realizada a orientação do colaborador para o bloqueio e denúncia do e-mail suspeito, reforçando a importância da verificação contínua de indicadores de fraude, tais como o domínio remetente e mensagens com apelo financeiro."
+SI-8226,2026-07-31T01:00:47.051-0300,Sistema,Causa raiz potencial,,"Disparo massivo de e-mails maliciosos por agentes externos utilizando técnicas de engenharia social.
+Falha na interceptação prévia da mensagem pelos filtros de segurança de e-mail.
+Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
+SI-8226,2026-07-31T01:00:47.051-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
+SI-8226,2026-07-31T01:00:47.051-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
+SI-8225,2026-07-31T01:00:46.292-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8225,2026-07-31T01:00:46.292-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8225,2026-07-31T01:00:46.292-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8225,2026-07-31T01:00:46.292-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8225,2026-07-31T01:00:46.292-0300,Sistema,Resolução do chamado,,"Identificada e analisada a tentativa de ataque cibernético via phishing, a qual prometia a liberação de valores por meio da plataforma iFood. Realizada a orientação do colaborador para o bloqueio e denúncia do e-mail suspeito, reforçando a importância da verificação contínua de indicadores de fraude, tais como o domínio remetente e mensagens com apelo financeiro."
+SI-8225,2026-07-31T01:00:46.292-0300,Sistema,Causa raiz potencial,,"Disparo massivo de e-mails maliciosos por agentes externos utilizando técnicas de engenharia social.
+Falha na interceptação prévia da mensagem pelos filtros de segurança de e-mail.
+Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
+SI-8225,2026-07-31T01:00:46.292-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
+SI-8225,2026-07-31T01:00:46.292-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
 SI-8224,2026-07-30T16:28:17.331-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8224,2026-07-30T16:28:19.549-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8224,2026-07-30T16:28:19.549-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8224,2026-07-31T01:00:45.552-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8224,2026-07-31T01:00:45.552-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8224,2026-07-31T01:00:45.552-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8224,2026-07-31T01:00:45.552-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8224,2026-07-31T01:00:45.552-0300,Sistema,Resolução do chamado,,"Identificada e analisada a tentativa de ataque cibernético via phishing, a qual prometia a liberação de valores por meio da plataforma iFood. Realizada a orientação do colaborador para o bloqueio e denúncia do e-mail suspeito, reforçando a importância da verificação contínua de indicadores de fraude, tais como o domínio remetente e mensagens com apelo financeiro."
+SI-8224,2026-07-31T01:00:45.552-0300,Sistema,Causa raiz potencial,,"Disparo massivo de e-mails maliciosos por agentes externos utilizando técnicas de engenharia social.
+Falha na interceptação prévia da mensagem pelos filtros de segurança de e-mail.
+Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
+SI-8224,2026-07-31T01:00:45.552-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
+SI-8224,2026-07-31T01:00:45.552-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
 SI-8223,2026-07-30T16:04:07.052-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8223,2026-07-30T16:04:09.219-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8223,2026-07-30T16:04:09.219-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8223,2026-07-31T01:00:41.305-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8223,2026-07-31T01:00:41.305-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8223,2026-07-31T01:00:41.305-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8223,2026-07-31T01:00:41.305-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8223,2026-07-31T01:00:41.305-0300,Sistema,Resolução do chamado,,"Identificada e analisada a tentativa de ataque cibernético via phishing, a qual prometia a liberação de valores por meio da plataforma iFood. Realizada a orientação do colaborador para o bloqueio e denúncia do e-mail suspeito, reforçando a importância da verificação contínua de indicadores de fraude, tais como o domínio remetente e mensagens com apelo financeiro."
+SI-8223,2026-07-31T01:00:41.305-0300,Sistema,Causa raiz potencial,,"Disparo massivo de e-mails maliciosos por agentes externos utilizando técnicas de engenharia social.
+Falha na interceptação prévia da mensagem pelos filtros de segurança de e-mail.
+Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
+SI-8223,2026-07-31T01:00:41.305-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
+SI-8223,2026-07-31T01:00:41.305-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
 SI-8222,2026-07-30T16:19:40.068-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8222,2026-07-30T16:19:42.425-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8222,2026-07-30T16:19:42.425-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8222,2026-07-31T01:00:44.829-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8222,2026-07-31T01:00:44.829-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8222,2026-07-31T01:00:44.829-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8222,2026-07-31T01:00:44.829-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8222,2026-07-31T01:00:44.829-0300,Sistema,Resolução do chamado,,"Identificada e analisada a tentativa de ataque cibernético via phishing, a qual prometia a liberação de valores por meio da plataforma iFood. Realizada a orientação do colaborador para o bloqueio e denúncia do e-mail suspeito, reforçando a importância da verificação contínua de indicadores de fraude, tais como o domínio remetente e mensagens com apelo financeiro."
+SI-8222,2026-07-31T01:00:44.829-0300,Sistema,Causa raiz potencial,,"Disparo massivo de e-mails maliciosos por agentes externos utilizando técnicas de engenharia social.
+Falha na interceptação prévia da mensagem pelos filtros de segurança de e-mail.
+Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
+SI-8222,2026-07-31T01:00:44.829-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
+SI-8222,2026-07-31T01:00:44.829-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
 SI-8221,2026-07-30T17:05:35.060-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8221,2026-07-30T17:05:37.591-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8221,2026-07-30T17:05:37.591-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8221,2026-07-31T01:00:43.991-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8221,2026-07-31T01:00:43.991-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8221,2026-07-31T01:00:43.991-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8221,2026-07-31T01:00:43.991-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8221,2026-07-31T01:00:43.991-0300,Sistema,Resolução do chamado,,"Identificada e analisada a tentativa de ataque cibernético via phishing, a qual prometia a liberação de valores por meio da plataforma iFood. Realizada a orientação do colaborador para o bloqueio e denúncia do e-mail suspeito, reforçando a importância da verificação contínua de indicadores de fraude, tais como o domínio remetente e mensagens com apelo financeiro."
+SI-8221,2026-07-31T01:00:43.991-0300,Sistema,Causa raiz potencial,,"Disparo massivo de e-mails maliciosos por agentes externos utilizando técnicas de engenharia social.
+Falha na interceptação prévia da mensagem pelos filtros de segurança de e-mail.
+Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
+SI-8221,2026-07-31T01:00:43.991-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
+SI-8221,2026-07-31T01:00:43.991-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
 SI-8220,2026-07-30T16:13:38.390-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8220,2026-07-30T16:13:40.696-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8220,2026-07-30T16:13:40.696-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8220,2026-07-31T01:00:43.304-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8220,2026-07-31T01:00:43.304-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8220,2026-07-31T01:00:43.304-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8220,2026-07-31T01:00:43.304-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8220,2026-07-31T01:00:43.304-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8220,2026-07-31T01:00:43.304-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8220,2026-07-31T01:00:43.304-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8220,2026-07-31T01:00:43.304-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8219,2026-07-30T17:10:54.754-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-8219,2026-07-30T17:16:07.025-0300,Eduardo Felipe de Lima Rebello,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
 
@@ -67175,27 +67564,88 @@ SI-8219,2026-07-30T17:16:07.447-0300,Eduardo Felipe de Lima Rebello,Attachment,,
 SI-8219,2026-07-30T17:16:17.654-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Encaminhado sustentação
 SI-8219,2026-07-30T17:16:19.912-0300,Eduardo Felipe de Lima Rebello,Encaminhado para:,,Sustentação
 SI-8219,2026-07-30T17:16:23.561-0300,Sistema,Link,,This work item is blocked by SUS-286
+SI-8219,2026-07-31T01:00:42.561-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8219,2026-07-31T01:00:42.561-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8219,2026-07-31T01:00:42.561-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8219,2026-07-31T01:00:42.561-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8219,2026-07-31T01:00:42.561-0300,Sistema,Resolução do chamado,,Foi encaminhado para equipe avançada realizar a verificação das informações.
+SI-8219,2026-07-31T01:00:42.561-0300,Sistema,Causa raiz potencial,,Foi encaminhado para equipe avançada realizar a verificação das informações.
+SI-8219,2026-07-31T01:00:42.561-0300,Sistema,Causa raiz final,,Foi encaminhado para equipe avançada realizar a verificação das informações.
+SI-8219,2026-07-31T01:00:42.561-0300,Sistema,Justificativa Causa Raiz final,,Foi encaminhado para equipe avançada realizar a verificação das informações.
+SI-8219,2026-07-31T01:00:47.119-0300,Sistema,Link,,This work item is blocked by SUS-287
 SI-8218,2026-07-30T16:06:05.926-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8218,2026-07-30T16:06:08.275-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8218,2026-07-30T16:06:08.275-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8218,2026-07-31T01:00:41.929-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8218,2026-07-31T01:00:41.929-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8218,2026-07-31T01:00:41.929-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8218,2026-07-31T01:00:41.929-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8218,2026-07-31T01:00:41.929-0300,Sistema,Resolução do chamado,,"Identificada e analisada a tentativa de ataque cibernético via phishing, a qual prometia a liberação de valores por meio da plataforma iFood. Realizada a orientação do colaborador para o bloqueio e denúncia do e-mail suspeito, reforçando a importância da verificação contínua de indicadores de fraude, tais como o domínio remetente e mensagens com apelo financeiro."
+SI-8218,2026-07-31T01:00:41.929-0300,Sistema,Causa raiz potencial,,"Disparo massivo de e-mails maliciosos por agentes externos utilizando técnicas de engenharia social.
+Falha na interceptação prévia da mensagem pelos filtros de segurança de e-mail.
+Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
+SI-8218,2026-07-31T01:00:41.929-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
+SI-8218,2026-07-31T01:00:41.929-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
 SI-8217,2026-07-30T15:34:01.288-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8217,2026-07-30T15:34:03.703-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8217,2026-07-30T15:34:03.703-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8217,2026-07-31T01:00:40.697-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8217,2026-07-31T01:00:40.697-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8217,2026-07-31T01:00:40.697-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8217,2026-07-31T01:00:40.697-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8217,2026-07-31T01:00:40.697-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8217,2026-07-31T01:00:40.697-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8217,2026-07-31T01:00:40.697-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8217,2026-07-31T01:00:40.697-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8237,2026-07-30T17:09:37.583-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8237,2026-07-30T17:09:40.039-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8237,2026-07-30T17:09:40.039-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8237,2026-07-31T01:00:52.983-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8237,2026-07-31T01:00:52.983-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8237,2026-07-31T01:00:52.983-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8237,2026-07-31T01:00:52.983-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8237,2026-07-31T01:00:52.983-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8237,2026-07-31T01:00:52.983-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8237,2026-07-31T01:00:52.983-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8237,2026-07-31T01:00:52.983-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8236,2026-07-30T17:49:11.195-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8236,2026-07-30T17:49:11.195-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8235,2026-07-30T16:59:16.552-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8235,2026-07-30T16:59:19.463-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8235,2026-07-30T16:59:19.463-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8235,2026-07-31T01:00:52.249-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8235,2026-07-31T01:00:52.249-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8235,2026-07-31T01:00:52.249-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8235,2026-07-31T01:00:52.249-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8235,2026-07-31T01:00:52.249-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8235,2026-07-31T01:00:52.249-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8235,2026-07-31T01:00:52.249-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8235,2026-07-31T01:00:52.249-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8234,2026-07-30T15:03:27.947-0300,Sistema,Link,,This work item is blocked by GA-1371
 SI-8233,2026-07-30T16:55:52.959-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8233,2026-07-30T16:55:55.402-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8233,2026-07-30T16:55:55.402-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8233,2026-07-31T01:00:51.612-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8233,2026-07-31T01:00:51.612-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8233,2026-07-31T01:00:51.612-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8233,2026-07-31T01:00:51.612-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8233,2026-07-31T01:00:51.612-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8233,2026-07-31T01:00:51.612-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8233,2026-07-31T01:00:51.612-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8233,2026-07-31T01:00:51.612-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8231,2026-07-30T16:49:19.842-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8231,2026-07-30T16:49:23.176-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8231,2026-07-30T16:49:23.176-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8231,2026-07-31T01:00:50.855-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8231,2026-07-31T01:00:50.855-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8231,2026-07-31T01:00:50.855-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8231,2026-07-31T01:00:50.855-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8231,2026-07-31T01:00:50.855-0300,Sistema,Resolução do chamado,,"Identificada e analisada a tentativa de ataque cibernético via phishing, a qual prometia a liberação de valores por meio da plataforma iFood. Realizada a orientação do colaborador para o bloqueio e denúncia do e-mail suspeito, reforçando a importância da verificação contínua de indicadores de fraude, tais como o domínio remetente e mensagens com apelo financeiro."
+SI-8231,2026-07-31T01:00:50.855-0300,Sistema,Causa raiz potencial,,"Disparo massivo de e-mails maliciosos por agentes externos utilizando técnicas de engenharia social.
+Falha na interceptação prévia da mensagem pelos filtros de segurança de e-mail.
+Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
+SI-8231,2026-07-31T01:00:50.855-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
+SI-8231,2026-07-31T01:00:50.855-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
 SI-8238,2026-07-30T16:03:28.451-0300,Sistema,Link,,This work item is blocked by GA-1372
 SI-8238,2026-07-30T17:49:14.088-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8238,2026-07-30T17:49:14.088-0300,Ricardo Barbosa Machado,status,Submissão,Done
