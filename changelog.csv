@@ -66886,6 +66886,8 @@ SI-8172,2026-07-29T19:03:22.154-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8172,2026-07-29T19:03:22.154-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8172,2026-07-29T19:03:22.154-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8172,2026-07-29T19:03:22.154-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8172,2026-07-31T09:31:39.439-0300,Bruno Silva,resolution,,Done
+SI-8172,2026-07-31T09:31:39.439-0300,Bruno Silva,status,Submissão,Done
 SI-8171,2026-07-29T14:22:01.615-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8171,2026-07-29T14:22:04.715-0300,Bruno Silva,resolution,,Done
 SI-8171,2026-07-29T14:22:04.715-0300,Bruno Silva,status,Submissão,Done
@@ -66906,6 +66908,8 @@ SI-8180,2026-07-29T19:03:27.727-0300,Sistema,Resolução do chamado,,Cliente lib
 SI-8180,2026-07-29T19:03:27.727-0300,Sistema,Causa raiz potencial,,Cliente liberado conforme solicitado
 SI-8180,2026-07-29T19:03:27.727-0300,Sistema,Causa raiz final,,Cliente liberado conforme solicitado
 SI-8180,2026-07-29T19:03:27.727-0300,Sistema,Justificativa Causa Raiz final,,Cliente liberado conforme solicitado
+SI-8180,2026-07-31T09:31:30.985-0300,Bruno Silva,resolution,,Done
+SI-8180,2026-07-31T09:31:30.985-0300,Bruno Silva,status,Submissão,Done
 SI-8179,2026-07-29T16:16:16.722-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8179,2026-07-29T16:16:19.486-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8179,2026-07-29T16:16:19.486-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -66926,6 +66930,8 @@ SI-8178,2026-07-29T19:03:26.149-0300,Sistema,Resolução do chamado,,Colaborador
 SI-8178,2026-07-29T19:03:26.149-0300,Sistema,Causa raiz potencial,,Colaboradoras foram adicionadas ao Grupo solicitado
 SI-8178,2026-07-29T19:03:26.149-0300,Sistema,Causa raiz final,,Colaboradoras foram adicionadas ao Grupo solicitado
 SI-8178,2026-07-29T19:03:26.149-0300,Sistema,Justificativa Causa Raiz final,,Colaboradoras foram adicionadas ao Grupo solicitado
+SI-8178,2026-07-31T09:31:33.085-0300,Bruno Silva,resolution,,Done
+SI-8178,2026-07-31T09:31:33.085-0300,Bruno Silva,status,Submissão,Done
 SI-8177,2026-07-29T19:03:25.585-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
 SI-8177,2026-07-29T19:03:25.585-0300,Sistema,Reclassificação solicitação,,Solicitação de cadastro
 SI-8177,2026-07-29T19:03:25.585-0300,Sistema,Causa Raiz,,Regra de Negócio
@@ -66934,6 +66940,8 @@ SI-8177,2026-07-29T19:03:25.585-0300,Sistema,Resolução do chamado,,Cadastro re
 SI-8177,2026-07-29T19:03:25.585-0300,Sistema,Causa raiz potencial,,Cadastro realizado conforme solicitado
 SI-8177,2026-07-29T19:03:25.585-0300,Sistema,Causa raiz final,,Cadastro realizado conforme solicitado
 SI-8177,2026-07-29T19:03:25.585-0300,Sistema,Justificativa Causa Raiz final,,Cadastro realizado conforme solicitado
+SI-8177,2026-07-31T09:31:35.803-0300,Bruno Silva,resolution,,Done
+SI-8177,2026-07-31T09:31:35.803-0300,Bruno Silva,status,Submissão,Done
 SI-8176,2026-07-29T15:05:37.260-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8176,2026-07-29T15:05:39.862-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8176,2026-07-29T15:05:39.862-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -67010,6 +67018,8 @@ SI-8185,2026-07-31T01:00:20.073-0300,Sistema,Resolução do chamado,,O nome do s
 SI-8185,2026-07-31T01:00:20.073-0300,Sistema,Causa raiz potencial,,Inconsistência de digitação na consulta textual por razão social
 SI-8185,2026-07-31T01:00:20.073-0300,Sistema,Causa raiz final,,O inconveniente observado ao tentar localizar o cadastro do exportador no sistema ocorreu devido a uma pequena divergência na digitação informada durante a consulta.
 SI-8185,2026-07-31T01:00:20.073-0300,Sistema,Justificativa Causa Raiz final,,"A falha de localização do registro no front-end foi decorrente de erro operacional na entrada de dados no filtro de consulta, onde a inclusão do caractere ""s"" no nome do Shipper resultou em ausência de correspondência textual na query executada no banco de dados."
+SI-8185,2026-07-31T09:31:28.391-0300,Bruno Silva,resolution,,Done
+SI-8185,2026-07-31T09:31:28.391-0300,Bruno Silva,status,Submissão,Done
 SI-8188,2026-07-30T11:53:23.380-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8188,2026-07-30T11:53:27.423-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8188,2026-07-30T11:53:27.423-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -67138,6 +67148,8 @@ Falha na interceptação prévia da mensagem pelos filtros de segurança de e-ma
 Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
 SI-8190,2026-07-31T01:00:22.763-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
 SI-8190,2026-07-31T01:00:22.763-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
+SI-8190,2026-07-31T09:31:25.077-0300,Bruno Silva,resolution,,Done
+SI-8190,2026-07-31T09:31:25.077-0300,Bruno Silva,status,Submissão,Done
 SI-8198,2026-07-30T09:46:17.010-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8198,2026-07-30T09:46:19.947-0300,Bruno Silva,resolution,,Done
 SI-8198,2026-07-30T09:46:19.947-0300,Bruno Silva,status,Submissão,Done
@@ -67273,6 +67285,8 @@ SI-8205,2026-07-31T01:00:32.466-0300,Sistema,Causa raiz potencial,,Geração ind
 SI-8205,2026-07-31T01:00:32.466-0300,Sistema,Causa raiz final,,"Identificado um ponto de atenção na leitura dos documentos, em que o sistema gerou linhas extras de itens (das linhas 2 a 47) durante o processamento de dados. Para regularizar as informações no processo, é necessário sinalizar os itens incorretos marcando a opção ""Invalid"" e efetuando o salvamento. Essa ação desativa os registros excedentes, garantindo a exatidão das informações consolidadas."
 SI-8205,2026-07-31T01:00:32.466-0300,Sistema,Justificativa Causa Raiz final,,"Ocorreu falha no algoritmo de extração da IA, gerando múltiplos registros nulos/duplicados na tabela de itens."
 SI-8204,2026-07-30T10:57:21.425-0300,Sistema,Link,,This work item is blocked by GA-1366
+SI-8204,2026-07-31T09:31:22.677-0300,Bruno Silva,resolution,,Done
+SI-8204,2026-07-31T09:31:22.677-0300,Bruno Silva,status,Submissão,Done
 SI-8203,2026-07-30T11:38:24.515-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8203,2026-07-30T11:38:26.649-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8203,2026-07-30T11:38:26.649-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -67455,6 +67469,8 @@ Falha na interceptação prévia da mensagem pelos filtros de segurança de e-ma
 Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
 SI-8225,2026-07-31T01:00:46.292-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
 SI-8225,2026-07-31T01:00:46.292-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
+SI-8225,2026-07-31T09:31:14.821-0300,Bruno Silva,resolution,,Done
+SI-8225,2026-07-31T09:31:14.821-0300,Bruno Silva,status,Submissão,Done
 SI-8224,2026-07-30T16:28:17.331-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8224,2026-07-30T16:28:19.549-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8224,2026-07-30T16:28:19.549-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -67622,6 +67638,8 @@ SI-8235,2026-07-31T01:00:52.249-0300,Sistema,Causa raiz potencial,,Em atendiment
 SI-8235,2026-07-31T01:00:52.249-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8235,2026-07-31T01:00:52.249-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8234,2026-07-30T15:03:27.947-0300,Sistema,Link,,This work item is blocked by GA-1371
+SI-8234,2026-07-31T09:31:05.949-0300,Bruno Silva,resolution,,Done
+SI-8234,2026-07-31T09:31:05.949-0300,Bruno Silva,status,Submissão,Done
 SI-8233,2026-07-30T16:55:52.959-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8233,2026-07-30T16:55:55.402-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8233,2026-07-30T16:55:55.402-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -67633,6 +67651,9 @@ SI-8233,2026-07-31T01:00:51.612-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8233,2026-07-31T01:00:51.612-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8233,2026-07-31T01:00:51.612-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8233,2026-07-31T01:00:51.612-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8232,2026-07-31T09:31:08.379-0300,Bruno Silva,status,Submissão,Finalizado Definitivamente
+SI-8232,2026-07-31T09:31:10.727-0300,Bruno Silva,resolution,,Done
+SI-8232,2026-07-31T09:31:10.727-0300,Bruno Silva,status,Finalizado Definitivamente,Done
 SI-8231,2026-07-30T16:49:19.842-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8231,2026-07-30T16:49:23.176-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8231,2026-07-30T16:49:23.176-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -67649,7 +67670,41 @@ SI-8231,2026-07-31T01:00:50.855-0300,Sistema,Justificativa Causa Raiz final,,"A 
 SI-8238,2026-07-30T16:03:28.451-0300,Sistema,Link,,This work item is blocked by GA-1372
 SI-8238,2026-07-30T17:49:14.088-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8238,2026-07-30T17:49:14.088-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8248,2026-07-31T09:30:37.150-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8248,2026-07-31T09:30:40.408-0300,Bruno Silva,resolution,,Done
+SI-8248,2026-07-31T09:30:40.408-0300,Bruno Silva,status,Submissão,Done
+SI-8247,2026-07-31T09:30:34.725-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8247,2026-07-31T09:30:42.734-0300,Bruno Silva,resolution,,Done
+SI-8247,2026-07-31T09:30:42.734-0300,Bruno Silva,status,Submissão,Done
+SI-8246,2026-07-31T09:30:32.491-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8246,2026-07-31T09:30:45.238-0300,Bruno Silva,resolution,,Done
+SI-8246,2026-07-31T09:30:45.238-0300,Bruno Silva,status,Submissão,Done
+SI-8245,2026-07-31T09:30:30.067-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8245,2026-07-31T09:30:47.776-0300,Bruno Silva,resolution,,Done
+SI-8245,2026-07-31T09:30:47.776-0300,Bruno Silva,status,Submissão,Done
+SI-8244,2026-07-31T09:30:27.557-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8244,2026-07-31T09:30:50.030-0300,Bruno Silva,resolution,,Done
+SI-8244,2026-07-31T09:30:50.030-0300,Bruno Silva,status,Submissão,Done
+SI-8243,2026-07-31T09:30:24.913-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8243,2026-07-31T09:30:52.305-0300,Bruno Silva,status,Submissão,Finalizado Definitivamente
+SI-8243,2026-07-31T09:30:55.255-0300,Bruno Silva,resolution,,Done
+SI-8243,2026-07-31T09:30:55.255-0300,Bruno Silva,status,Finalizado Definitivamente,Done
+SI-8242,2026-07-31T09:30:22.762-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8242,2026-07-31T09:30:58.220-0300,Bruno Silva,resolution,,Done
+SI-8242,2026-07-31T09:30:58.220-0300,Bruno Silva,status,Submissão,Done
+SI-8241,2026-07-31T09:30:20.364-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8241,2026-07-31T09:31:00.933-0300,Bruno Silva,resolution,,Done
+SI-8241,2026-07-31T09:31:00.933-0300,Bruno Silva,status,Submissão,Done
+SI-8240,2026-07-31T09:30:14.052-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8240,2026-07-31T09:31:03.148-0300,Bruno Silva,resolution,,Done
+SI-8240,2026-07-31T09:31:03.148-0300,Bruno Silva,status,Submissão,Done
 SI-8239,2026-07-30T16:47:26.809-0300,Sistema,Link,,This work item is blocked by GA-1374
 SI-8239,2026-07-30T17:49:16.807-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8239,2026-07-30T17:49:16.807-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8249,2026-07-31T09:32:31.078-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8249,2026-07-31T09:32:34.078-0300,Bruno Silva,resolution,,Done
+SI-8249,2026-07-31T09:32:34.078-0300,Bruno Silva,status,Submissão,Done
 SI-8250,2026-07-30T19:57:24.307-0300,Sistema,Link,,This work item is blocked by GA-1375
+SI-8252,2026-07-31T09:34:04.064-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8252,2026-07-31T09:34:07.396-0300,Bruno Silva,resolution,,Done
+SI-8252,2026-07-31T09:34:07.396-0300,Bruno Silva,status,Submissão,Done
