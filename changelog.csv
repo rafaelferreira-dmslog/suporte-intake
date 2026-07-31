@@ -18322,6 +18322,10 @@ SI-5950,2026-05-29T12:46:50.887-0300,Sistema,Causa raiz final,,Em atendimento
 SI-5950,2026-05-29T12:46:50.887-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-5950,2026-06-01T07:42:09.342-0300,Sistema,resolution,,Done
 SI-5950,2026-06-01T07:42:09.342-0300,Sistema,status,Submissão,Done
+SI-5950,2026-07-31T13:05:09.289-0300,Sistema,Resolução do chamado,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-5950,2026-07-31T13:05:09.289-0300,Sistema,Causa raiz potencial,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-5950,2026-07-31T13:05:09.289-0300,Sistema,Causa raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-5950,2026-07-31T13:05:09.289-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-5949,2026-05-28T08:47:53.201-0300,Sistema,Attachment,,c06586de.anexo.114729.xlsx - Packing List.pdf
 SI-5949,2026-05-28T10:06:22.224-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
 SI-5949,2026-05-28T10:06:22.224-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
@@ -30392,6 +30396,10 @@ SI-5243,2026-05-11T11:36:53.163-0300,Sistema,Justificativa Causa Raiz final,,Em 
 SI-5243,2026-05-20T16:04:47.333-0300,Rafael Ferreira,Link,,This work item relates to INTAKE-47
 SI-5243,2026-05-25T10:13:08.579-0300,Sistema,resolution,,Done
 SI-5243,2026-05-25T10:13:08.579-0300,Sistema,status,Aguardando Informação,Done
+SI-5243,2026-07-31T12:52:38.360-0300,Sistema,Resolução do chamado,Em analise,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-5243,2026-07-31T12:52:38.360-0300,Sistema,Causa raiz potencial,Em analise,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-5243,2026-07-31T12:52:38.360-0300,Sistema,Causa raiz final,Em analise,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-5243,2026-07-31T12:52:38.360-0300,Sistema,Justificativa Causa Raiz final,Em analise,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-5242,2026-05-19T10:24:58.759-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Em Triagem
 SI-5242,2026-05-19T10:24:59.811-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-5242,2026-05-19T11:03:20.103-0300,Sistema,Causa Raiz,,Falha Operacional
@@ -30421,6 +30429,10 @@ SI-5241,2026-05-11T11:36:52.128-0300,Sistema,Causa raiz final,,Em analise
 SI-5241,2026-05-11T11:36:52.128-0300,Sistema,Justificativa Causa Raiz final,,Em analise
 SI-5241,2026-05-25T10:13:03.657-0300,Sistema,resolution,,Done
 SI-5241,2026-05-25T10:13:03.657-0300,Sistema,status,Aguardando Informação,Done
+SI-5241,2026-07-31T12:52:35.653-0300,Sistema,Resolução do chamado,Em analise,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-5241,2026-07-31T12:52:35.653-0300,Sistema,Causa raiz potencial,Em analise,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-5241,2026-07-31T12:52:35.653-0300,Sistema,Causa raiz final,Em analise,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-5241,2026-07-31T12:52:35.653-0300,Sistema,Justificativa Causa Raiz final,Em analise,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-5240,2026-05-19T10:20:33.411-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-5240,2026-05-19T10:20:33.411-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-5240,2026-05-19T10:20:34.713-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
@@ -30485,6 +30497,10 @@ SI-5236,2026-05-11T12:04:02.010-0300,Sistema,Causa raiz final,,Em analise
 SI-5236,2026-05-11T12:04:02.010-0300,Sistema,Justificativa Causa Raiz final,,Em analise
 SI-5236,2026-05-25T10:12:55.622-0300,Sistema,resolution,,Done
 SI-5236,2026-05-25T10:12:55.622-0300,Sistema,status,Aguardando Informação,Done
+SI-5236,2026-07-31T12:52:28.904-0300,Sistema,Resolução do chamado,Em analise,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-5236,2026-07-31T12:52:28.904-0300,Sistema,Causa raiz potencial,Em analise,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-5236,2026-07-31T12:52:28.904-0300,Sistema,Causa raiz final,Em analise,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-5236,2026-07-31T12:52:28.904-0300,Sistema,Justificativa Causa Raiz final,Em analise,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-5235,2026-05-11T10:34:38.226-0300,Sistema,Resolução do chamado,,Em Atendimento
 SI-5235,2026-05-25T10:12:53.237-0300,Sistema,resolution,,Done
 SI-5235,2026-05-25T10:12:53.237-0300,Sistema,status,Submissão,Done
@@ -32059,6 +32075,10 @@ SI-5165,2026-05-07T17:01:56.690-0300,Sistema,Causa raiz final,,Em analise
 SI-5165,2026-05-07T17:01:56.690-0300,Sistema,Justificativa Causa Raiz final,,Em analise
 SI-5165,2026-05-25T10:10:16.185-0300,Sistema,resolution,,Done
 SI-5165,2026-05-25T10:10:16.185-0300,Sistema,status,Aguardando Informação,Done
+SI-5165,2026-07-31T12:50:52.914-0300,Sistema,Resolução do chamado,Em analise,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-5165,2026-07-31T12:50:52.914-0300,Sistema,Causa raiz potencial,Em analise,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-5165,2026-07-31T12:50:52.914-0300,Sistema,Causa raiz final,Em analise,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-5165,2026-07-31T12:50:52.914-0300,Sistema,Justificativa Causa Raiz final,Em analise,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-5164,2026-05-07T16:27:55.666-0300,Sistema,Link,,This work item is blocked by GA-655
 SI-5164,2026-05-14T10:34:28.073-0300,Sistema,Criticidade final,,P3 - Baixa
 SI-5164,2026-05-14T10:34:28.073-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
@@ -32140,6 +32160,10 @@ SI-5159,2026-05-07T16:32:46.189-0300,Sistema,Causa raiz final,,Em analise
 SI-5159,2026-05-07T16:32:46.189-0300,Sistema,Justificativa Causa Raiz final,,Em analise
 SI-5159,2026-05-25T10:10:02.488-0300,Sistema,resolution,,Done
 SI-5159,2026-05-25T10:10:02.488-0300,Sistema,status,Aguardando Informação,Done
+SI-5159,2026-07-31T12:50:44.465-0300,Sistema,Resolução do chamado,Em analise,"Informamos que, após o reenvio do documento, não identificamos novas interações ou confirmações de recebimento. Diante da ausência de retorno em tempo hábil, este ticket está sendo finalizado por inatividade. Caso ainda precise de auxílio ou o documento apresente qualquer inconsistência, por favor, abra uma nova solicitação."
+SI-5159,2026-07-31T12:50:44.465-0300,Sistema,Causa raiz potencial,Em analise,"Informamos que, após o reenvio do documento, não identificamos novas interações ou confirmações de recebimento. Diante da ausência de retorno em tempo hábil, este ticket está sendo finalizado por inatividade. Caso ainda precise de auxílio ou o documento apresente qualquer inconsistência, por favor, abra uma nova solicitação."
+SI-5159,2026-07-31T12:50:44.465-0300,Sistema,Causa raiz final,Em analise,"Informamos que, após o reenvio do documento, não identificamos novas interações ou confirmações de recebimento. Diante da ausência de retorno em tempo hábil, este ticket está sendo finalizado por inatividade. Caso ainda precise de auxílio ou o documento apresente qualquer inconsistência, por favor, abra uma nova solicitação."
+SI-5159,2026-07-31T12:50:44.465-0300,Sistema,Justificativa Causa Raiz final,Em analise,"Informamos que, após o reenvio do documento, não identificamos novas interações ou confirmações de recebimento. Diante da ausência de retorno em tempo hábil, este ticket está sendo finalizado por inatividade. Caso ainda precise de auxílio ou o documento apresente qualquer inconsistência, por favor, abra uma nova solicitação."
 SI-5158,2026-05-07T15:59:58.984-0300,Ricardo Barbosa Machado,status,Submissão,Aguardando Informação
 SI-5158,2026-05-07T16:00:00.327-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-5158,2026-05-07T16:32:45.163-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
@@ -32154,6 +32178,10 @@ SI-5158,2026-05-25T10:09:59.846-0300,Sistema,resolution,,Done
 SI-5158,2026-05-25T10:09:59.846-0300,Sistema,status,Aguardando Informação,Done
 SI-5158,2026-05-25T16:38:39.306-0300,Sistema,Quais campos não foram mapeados corretamente pela IA?,,"Lithium battery safety document,Invoice/packing list,Package certification,Other documents,Other,MSDS,Currency,Number,Value,Weight,Items_descriptions,Volume,Notify_cnpjs,Origin,SLI,Destination,Safety data sheet,Packing list,Special_Handling_ccts,Origin_forwarder,House_number,Shippers,House_date,House_value,Master_date,House_type,Currencies,Master_number,Type,Width,Qty_items,Temperatura,Consignee,DGD,Customer_ref,Dangerous goods declaration,Certificate of analysis,Bill of lading,Invoice,Length,Gross_weight,Height,Exception"
 SI-5158,2026-05-25T16:38:39.306-0300,Sistema,O que a IA mapeou e o que foi migrado/gerado?,,"Certificate of analysis,Safety data sheet,Length,Bill of lading,Packing list,Master_date,Package certification,Other documents,Shippers,Type,Invoice/packing list,Width,Exception,Qty_items,DGD,Temperatura,Dangerous goods declaration,SLI,Notify_cnpjs,Origin_forwarder,Other,Consignee,MSDS,Items_descriptions,Lithium battery safety document,Special_Handling_ccts,Destination,Height,Invoice,Currency,House_date,Number,House_number,Origin,Volume,Customer_ref,Currencies,Gross_weight,House_type,Value,House_value,Weight,Master_number"
+SI-5158,2026-07-31T12:50:43.205-0300,Sistema,Resolução do chamado,Em analise,"Informamos que, após o reenvio do documento, não identificamos novas interações ou confirmações de recebimento. Diante da ausência de retorno em tempo hábil, este ticket está sendo finalizado por inatividade. Caso ainda precise de auxílio ou o documento apresente qualquer inconsistência, por favor, abra uma nova solicitação."
+SI-5158,2026-07-31T12:50:43.205-0300,Sistema,Causa raiz potencial,Em analise,"Informamos que, após o reenvio do documento, não identificamos novas interações ou confirmações de recebimento. Diante da ausência de retorno em tempo hábil, este ticket está sendo finalizado por inatividade. Caso ainda precise de auxílio ou o documento apresente qualquer inconsistência, por favor, abra uma nova solicitação."
+SI-5158,2026-07-31T12:50:43.205-0300,Sistema,Causa raiz final,Em analise,"Informamos que, após o reenvio do documento, não identificamos novas interações ou confirmações de recebimento. Diante da ausência de retorno em tempo hábil, este ticket está sendo finalizado por inatividade. Caso ainda precise de auxílio ou o documento apresente qualquer inconsistência, por favor, abra uma nova solicitação."
+SI-5158,2026-07-31T12:50:43.205-0300,Sistema,Justificativa Causa Raiz final,Em analise,"Informamos que, após o reenvio do documento, não identificamos novas interações ou confirmações de recebimento. Diante da ausência de retorno em tempo hábil, este ticket está sendo finalizado por inatividade. Caso ainda precise de auxílio ou o documento apresente qualquer inconsistência, por favor, abra uma nova solicitação."
 SI-5157,2026-05-13T12:23:04.751-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-5157,2026-05-13T12:23:08.037-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-5157,2026-05-13T13:08:13.884-0300,Sistema,Causa Raiz,,Impacto não mapeado
