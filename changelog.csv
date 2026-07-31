@@ -144,6 +144,10 @@ SI-7301,2026-07-01T19:00:28.362-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7301,2026-07-01T19:00:28.362-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7301,2026-07-01T19:00:28.362-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7301,2026-07-01T19:00:28.362-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7301,2026-07-31T19:05:29.859-0300,Sistema,Resolução do chamado,Em atendimento,"Identificamos que o comportamento não esperado e o consequente travamento da cotação estavam relacionados à marcação indevida da taxa na etapa da operação. Com a desmarcação da opção de uso da taxa (remoção da flag), a divergência foi solucionada e o fluxo normalizado."
+SI-7301,2026-07-31T19:05:29.859-0300,Sistema,Causa raiz potencial,Em atendimento,"Divergência de preenchimento ao manter a taxa vinculada como utilizada na tela da operação, gerando bloqueio comercial."
+SI-7301,2026-07-31T19:05:29.859-0300,Sistema,Causa raiz final,Em atendimento,"A divergência identificada ocorreu devido a um ponto de atenção no fluxo de preenchimento do processo. A taxa em questão permaneceu marcada como utilizada na interface operacional, o que gerou um conflito com a política comercial da cotação e resultou no travamento do documento. O sistema atuou de forma a garantir a paridade entre o que estava lançado na operação e o que estava previsto na cotação, bloqueando as edições por se tratar de um processo já finalizado com carga no destino."
+SI-7301,2026-07-31T19:05:29.859-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A análise do relato indica que não houve comportamento sistêmico atípico ou falha técnica, visto que o incidente foi solucionado unicamente pela intervenção manual de desmarcar a flag ""used"" da taxa operacional. A própria constatação de que o ajuste se baseou em uma correção de fluxo operacional valida o cenário como um procedimento executado de forma inconsistente na ponta."
 SI-7300,2026-06-30T19:00:07.463-0300,Rafael Ferreira,status,Submissão,Em Triagem
 SI-7300,2026-06-30T19:00:09.175-0300,Rafael Ferreira,status,Em Triagem,Em Atendimento
 SI-7300,2026-06-30T19:00:11.678-0300,Rafael Ferreira,status,Em Atendimento,Aguardando Informação
@@ -216,6 +220,10 @@ SI-7296,2026-07-02T19:04:43.682-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7296,2026-07-02T19:04:43.682-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7296,2026-07-02T19:04:43.682-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7296,2026-07-02T19:04:43.682-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7296,2026-07-31T19:05:27.500-0300,Sistema,Resolução do chamado,Em atendimento,"Identificamos, ao analisar o histórico da fatura, que o novo comando de baixa resultou em uma sobreposição, gerando o saldo negativo apresentado. Com isso, a divergência de valor foi ajustada e devidamente regularizada em conjunto com a equipe responsável pelo financeiro."
+SI-7296,2026-07-31T19:05:27.500-0300,Sistema,Causa raiz potencial,Em atendimento,"Divergência operacional ao forçar o reprocessamento da baixa, gerando dados inconsistentes (duplicidade sistêmica) sem o estorno da transação anterior."
+SI-7296,2026-07-31T19:05:27.500-0300,Sistema,Causa raiz final,Em atendimento,"O comportamento não esperado ocorreu devido à sobreposição de ações no momento de processar o pagamento do documento. Ao solicitar que a baixa da fatura fosse refeita, o abatimento foi contabilizado em duplicidade, ocasionando a exibição do saldo negativo. A situação foi alinhada e corrigida em parceria com o time financeiro, que realizou o ajuste no lançamento para restaurar o valor correto da fatura."
+SI-7296,2026-07-31T19:05:27.500-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Infere-se que o problema tem origem procedimental, configurando um procedimento executado incorretamente, visto que a nova solicitação de baixa gerou o saldo negativo imediato (sintoma de duplicidade). A tratativa do desfecho comprova a necessidade de intervenção nos registros financeiros para anular a sobreposição. Isso reforça a importância de validar o fluxo operacional de estornos antes de aplicar novas baixas."
 SI-7295,2026-06-30T12:43:30.694-0300,Sistema,Link,,This work item is blocked by GA-1092
 SI-7295,2026-06-30T13:44:47.157-0300,Helena Almeida,resolution,,Done
 SI-7295,2026-06-30T13:44:47.157-0300,Helena Almeida,status,Submissão,Done
@@ -249,6 +257,10 @@ SI-7293,2026-07-02T19:04:41.168-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7293,2026-07-02T19:04:41.168-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7293,2026-07-02T19:04:41.168-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7293,2026-07-02T19:04:41.168-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7293,2026-07-31T19:05:25.925-0300,Sistema,Resolução do chamado,Em atendimento,"Identificamos que a Nota de Débito não migrou para o sistema Omie, o que impossibilitou momentaneamente o processo de baixa. Ao analisar o cenário, constatou-se que o comportamento não esperado decorria de uma retenção na fila de comunicação sistêmica, sendo o caso direcionado à equipe responsável. O fluxo foi normalizado pelo time."
+SI-7293,2026-07-31T19:05:25.925-0300,Sistema,Causa raiz potencial,Em atendimento,"Falha de integração assíncrona entre o sistema e a API do Omie devido a um travamento, concorrência ou timeout no processamento da mensageria (fila) de Notas de Débito."
+SI-7293,2026-07-31T19:05:25.925-0300,Sistema,Causa raiz final,Em atendimento,"(Inferência baseada no relato) A divergência ocorreu devido a uma interrupção temporária na esteira de comunicação que envia as informações financeiras do nosso sistema para o Omie. Quando a Nota de Débito tentou passar por esse caminho, ela ficou retida em uma ""fila de espera"" que havia parado de avançar. Foi necessário que a equipe técnica responsável interviesse para destravar e processar essa fila retida, permitindo que a informação finalmente chegasse ao destino e o processo de baixa fosse liberado para o usuário."
+SI-7293,2026-07-31T19:05:25.925-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"O relato aponta explicitamente um problema na fila de processamento, indicando interrupção no consumo de mensageria responsável pela integração assíncrona com a API da Omie. O travamento dos workers impediu a entrega do payload, gerando a necessidade de acionamento do time responsável para reprocessar a fila, o que caracteriza uma Falha de Desenvolvimento na resiliência ou na capacidade de processamento da arquitetura de integração."
 SI-7292,2026-06-30T13:54:18.659-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7292,2026-06-30T13:54:26.586-0300,Rafael Ferreira,resolution,,Done
 SI-7292,2026-06-30T13:54:26.586-0300,Rafael Ferreira,status,Submissão,Done
@@ -773,6 +785,10 @@ SI-7266,2026-06-30T19:05:09.093-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7266,2026-06-30T19:05:09.093-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7266,2026-06-30T19:05:09.093-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7266,2026-06-30T19:05:09.093-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7266,2026-07-31T19:05:12.934-0300,Sistema,Resolução do chamado,Em atendimento,"Identificamos que o Cockpit não refletiu a atualização do deadline realizada na aba Booking, mantendo o card desatualizado com o status de atraso. Em conjunto com a equipe de Engenharia de Dados (DE), realizamos a sincronização e o ajuste manual das datas, garantindo a normalização do card para que a baixa do embarque pudesse ser executada."
+SI-7266,2026-07-31T19:05:12.934-0300,Sistema,Causa raiz potencial,Em atendimento,"Inconsistência sistêmica na comunicação entre a aba Booking e o motor de atualização do Cockpit, impedindo que a alteração do deadline servisse como gatilho para a atualização visual do card."
+SI-7266,2026-07-31T19:05:12.934-0300,Sistema,Causa raiz final,Em atendimento,"O comportamento não esperado ocorreu devido a uma inconsistência de sincronização interna do sistema. Quando o prazo (deadline) foi atualizado na aba Booking, o módulo Cockpit não recebeu a instrução automática para recalcular a data limite do card. Com isso, o sistema manteve a exibição da data antiga, retendo o processo em status de atraso e impossibilitando a continuidade do fluxo dentro do prazo exigido. A atuação técnica foi necessária para forçar o espelhamento correto dessas informações e atualizar a interface."
+SI-7266,2026-07-31T19:05:12.934-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A evidência de que a data foi alterada no Booking mas o Cockpit permaneceu em ""delay"" confirma uma falha de integração ou exceção sistêmica no gatilho de update. A necessidade de correção manual via time de DE valida que não havia contorno operacional, sustentando a falha de desenvolvimento. É necessário investigar o listener de atualização do Cockpit para garantir que alterações de datas na origem reescrevam o status atual do card, prevenindo reincidência."
 SI-7265,2026-06-29T13:36:10.787-0300,Rafael Ferreira,resolution,,Done
 SI-7265,2026-06-29T13:36:10.787-0300,Rafael Ferreira,status,Submissão,Done
 SI-7265,2026-06-29T13:36:11.236-0300,Rafael Ferreira,Rank,,Ranked lower
@@ -5448,6 +5464,10 @@ SI-7023,2026-06-23T01:04:51.833-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7023,2026-06-23T01:04:51.833-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7023,2026-06-23T01:04:51.833-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7023,2026-06-23T01:04:51.833-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7023,2026-07-31T19:03:22.033-0300,Sistema,Resolução do chamado,Em atendimento,O documento foi reenviado com uma nova hash e após isso o mesmo foi lido corretamente pela IA
+SI-7023,2026-07-31T19:03:22.033-0300,Sistema,Causa raiz potencial,Em atendimento,O documento foi reenviado com uma nova hash e após isso o mesmo foi lido corretamente pela IA
+SI-7023,2026-07-31T19:03:22.033-0300,Sistema,Causa raiz final,Em atendimento,O documento foi reenviado com uma nova hash e após isso o mesmo foi lido corretamente pela IA
+SI-7023,2026-07-31T19:03:22.033-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O documento foi reenviado com uma nova hash e após isso o mesmo foi lido corretamente pela IA
 SI-7022,2026-06-22T13:05:50.085-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7022,2026-06-22T13:05:50.085-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-7022,2026-06-22T13:05:58.456-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
@@ -6229,6 +6249,10 @@ SI-6974,2026-06-19T18:57:49.275-0300,Sistema,Resolução do chamado,,Em atendime
 SI-6974,2026-06-19T18:57:49.275-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-6974,2026-06-19T18:57:49.275-0300,Sistema,Causa raiz final,,Em atendimento
 SI-6974,2026-06-19T18:57:49.275-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-6974,2026-07-31T19:02:59.031-0300,Sistema,Resolução do chamado,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-6974,2026-07-31T19:02:59.031-0300,Sistema,Causa raiz potencial,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-6974,2026-07-31T19:02:59.031-0300,Sistema,Causa raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-6974,2026-07-31T19:02:59.031-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-6973,2026-06-19T12:27:25.266-0300,Sistema,Link,,This work item is blocked by GA-1020
 SI-6973,2026-06-19T12:53:03.989-0300,Sistema,Resolução do chamado,,Identificado o encerramento temporário ou desligamento do vínculo operacional e realizado o redirecionamento seguro e a revogação de acessos sistêmicos em múltiplas camadas.
 SI-6973,2026-06-19T17:26:27.098-0300,Helena Almeida,assignee,,Helena Almeida
@@ -10434,6 +10458,10 @@ SI-6490,2026-06-12T13:16:51.233-0300,Sistema,Resolução do chamado,,"Em atendim
 SI-6490,2026-06-12T13:16:51.233-0300,Sistema,Causa raiz potencial,,"Em atendimento, caso ja está sendo analisado pela equipe."
 SI-6490,2026-06-12T13:16:51.233-0300,Sistema,Causa raiz final,,"Em atendimento, caso ja está sendo analisado pela equipe."
 SI-6490,2026-06-12T13:16:51.233-0300,Sistema,Justificativa Causa Raiz final,,"Em atendimento, caso ja está sendo analisado pela equipe."
+SI-6490,2026-07-31T19:00:48.690-0300,Sistema,Resolução do chamado,"Em atendimento, caso ja está sendo analisado pela equipe.","Identificamos, em análise conjunta com o time responsável pelo módulo financeiro, uma divergência na fila de migração das informações da ordem. Foi realizado um ajuste técnico pontual para regularizar a integração dos dados. Após essa intervenção, a migração para a tela de faturamento voltou a ocorrer normalmente."
+SI-6490,2026-07-31T19:00:48.690-0300,Sistema,Causa raiz potencial,"Em atendimento, caso ja está sendo analisado pela equipe.","Inconsistência, travamento ou congestionamento na fila de mensageria responsável por processar e integrar as informações do módulo operacional para o módulo financeiro."
+SI-6490,2026-07-31T19:00:48.690-0300,Sistema,Causa raiz final,"Em atendimento, caso ja está sendo analisado pela equipe.","O comportamento não esperado ocorreu devido a uma anomalia na fila de processamento que transporta as informações da ordem para o módulo financeiro. Essa fila atua como uma esteira de dados e, ao apresentar instabilidade, as ordens deixaram de ser integradas, impedindo a migração mesmo ao utilizar o envio manual. O ajuste técnico destravou a comunicação, permitindo que a esteira voltasse a processar e entregar os dados corretamente para o faturamento."
+SI-6490,2026-07-31T19:00:48.690-0300,Sistema,Justificativa Causa Raiz final,"Em atendimento, caso ja está sendo analisado pela equipe.",O relato evidencia um problema Sistêmico em que os dados de integração da ordem ficaram retidos ou falharam na fila do módulo financeiro. O fato de o time responsável ter precisado atuar com um ajuste pontual para destravar o fluxo confirma a falha na rotina de mensageria e processamento assíncrono. O sucesso da ação e o retorno da normalidade validam que a barreira era técnica e de desenvolvimento da integração.
 SI-6489,2026-06-12T12:26:56.942-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-6489,2026-06-12T12:27:00.773-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-6489,2026-06-12T12:30:01.595-0300,Ricardo Barbosa Machado,Link,,This work item is blocked by SUS-200
@@ -10447,6 +10475,10 @@ SI-6489,2026-06-12T13:16:50.452-0300,Sistema,Resolução do chamado,,"Em atendim
 SI-6489,2026-06-12T13:16:50.452-0300,Sistema,Causa raiz potencial,,"Em atendimento, caso ja está sendo analisado pela equipe."
 SI-6489,2026-06-12T13:16:50.452-0300,Sistema,Causa raiz final,,"Em atendimento, caso ja está sendo analisado pela equipe."
 SI-6489,2026-06-12T13:16:50.452-0300,Sistema,Justificativa Causa Raiz final,,"Em atendimento, caso ja está sendo analisado pela equipe."
+SI-6489,2026-07-31T19:00:48.042-0300,Sistema,Resolução do chamado,"Em atendimento, caso ja está sendo analisado pela equipe.","Identificamos, em análise conjunta com o time responsável pelo módulo financeiro, uma divergência na fila de migração das informações da ordem. Foi realizado um ajuste técnico pontual para regularizar a integração dos dados. Após essa intervenção, a migração para a tela de faturamento voltou a ocorrer normalmente."
+SI-6489,2026-07-31T19:00:48.042-0300,Sistema,Causa raiz potencial,"Em atendimento, caso ja está sendo analisado pela equipe.","Inconsistência, travamento ou congestionamento na fila de mensageria responsável por processar e integrar as informações do módulo operacional para o módulo financeiro."
+SI-6489,2026-07-31T19:00:48.042-0300,Sistema,Causa raiz final,"Em atendimento, caso ja está sendo analisado pela equipe.","O comportamento não esperado ocorreu devido a uma anomalia na fila de processamento que transporta as informações da ordem para o módulo financeiro. Essa fila atua como uma esteira de dados e, ao apresentar instabilidade, as ordens deixaram de ser integradas, impedindo a migração mesmo ao utilizar o envio manual. O ajuste técnico destravou a comunicação, permitindo que a esteira voltasse a processar e entregar os dados corretamente para o faturamento."
+SI-6489,2026-07-31T19:00:48.042-0300,Sistema,Justificativa Causa Raiz final,"Em atendimento, caso ja está sendo analisado pela equipe.",O relato evidencia um problema Sistêmico em que os dados de integração da ordem ficaram retidos ou falharam na fila do módulo financeiro. O fato de o time responsável ter precisado atuar com um ajuste pontual para destravar o fluxo confirma a falha na rotina de mensageria e processamento assíncrono. O sucesso da ação e o retorno da normalidade validam que a barreira era técnica e de desenvolvimento da integração.
 SI-6488,2026-06-12T12:26:47.170-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-6488,2026-06-12T12:26:49.935-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-6488,2026-06-12T12:29:51.130-0300,Ricardo Barbosa Machado,Link,,This work item is blocked by SUS-200
@@ -10460,6 +10492,10 @@ SI-6488,2026-06-12T13:16:49.656-0300,Sistema,Resolução do chamado,,"Em atendim
 SI-6488,2026-06-12T13:16:49.656-0300,Sistema,Causa raiz potencial,,"Em atendimento, caso ja está sendo analisado pela equipe."
 SI-6488,2026-06-12T13:16:49.656-0300,Sistema,Causa raiz final,,"Em atendimento, caso ja está sendo analisado pela equipe."
 SI-6488,2026-06-12T13:16:49.656-0300,Sistema,Justificativa Causa Raiz final,,"Em atendimento, caso ja está sendo analisado pela equipe."
+SI-6488,2026-07-31T19:00:47.249-0300,Sistema,Resolução do chamado,"Em atendimento, caso ja está sendo analisado pela equipe.","Identificamos, em análise conjunta com o time responsável pelo módulo financeiro, uma divergência na fila de migração das informações da ordem. Foi realizado um ajuste técnico pontual para regularizar a integração dos dados. Após essa intervenção, a migração para a tela de faturamento voltou a ocorrer normalmente."
+SI-6488,2026-07-31T19:00:47.249-0300,Sistema,Causa raiz potencial,"Em atendimento, caso ja está sendo analisado pela equipe.","Inconsistência, travamento ou congestionamento na fila de mensageria responsável por processar e integrar as informações do módulo operacional para o módulo financeiro."
+SI-6488,2026-07-31T19:00:47.249-0300,Sistema,Causa raiz final,"Em atendimento, caso ja está sendo analisado pela equipe.","O comportamento não esperado ocorreu devido a uma anomalia na fila de processamento que transporta as informações da ordem para o módulo financeiro. Essa fila atua como uma esteira de dados e, ao apresentar instabilidade, as ordens deixaram de ser integradas, impedindo a migração mesmo ao utilizar o envio manual. O ajuste técnico destravou a comunicação, permitindo que a esteira voltasse a processar e entregar os dados corretamente para o faturamento."
+SI-6488,2026-07-31T19:00:47.249-0300,Sistema,Justificativa Causa Raiz final,"Em atendimento, caso ja está sendo analisado pela equipe.",O relato evidencia um problema Sistêmico em que os dados de integração da ordem ficaram retidos ou falharam na fila do módulo financeiro. O fato de o time responsável ter precisado atuar com um ajuste pontual para destravar o fluxo confirma a falha na rotina de mensageria e processamento assíncrono. O sucesso da ação e o retorno da normalidade validam que a barreira era técnica e de desenvolvimento da integração.
 SI-6487,2026-06-12T12:26:36.418-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-6487,2026-06-12T12:26:39.946-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-6487,2026-06-12T12:28:59.179-0300,Ricardo Barbosa Machado,Link,,This work item is blocked by SUS-200
@@ -10473,6 +10509,10 @@ SI-6487,2026-06-12T13:16:48.911-0300,Sistema,Resolução do chamado,,"Em atendim
 SI-6487,2026-06-12T13:16:48.911-0300,Sistema,Causa raiz potencial,,"Em atendimento, caso ja está sendo analisado pela equipe."
 SI-6487,2026-06-12T13:16:48.911-0300,Sistema,Causa raiz final,,"Em atendimento, caso ja está sendo analisado pela equipe."
 SI-6487,2026-06-12T13:16:48.911-0300,Sistema,Justificativa Causa Raiz final,,"Em atendimento, caso ja está sendo analisado pela equipe."
+SI-6487,2026-07-31T19:00:46.470-0300,Sistema,Resolução do chamado,"Em atendimento, caso ja está sendo analisado pela equipe.","Identificamos, em análise conjunta com o time responsável pelo módulo financeiro, uma divergência na fila de migração das informações da ordem. Foi realizado um ajuste técnico pontual para regularizar a integração dos dados. Após essa intervenção, a migração para a tela de faturamento voltou a ocorrer normalmente."
+SI-6487,2026-07-31T19:00:46.470-0300,Sistema,Causa raiz potencial,"Em atendimento, caso ja está sendo analisado pela equipe.","Inconsistência, travamento ou congestionamento na fila de mensageria responsável por processar e integrar as informações do módulo operacional para o módulo financeiro."
+SI-6487,2026-07-31T19:00:46.470-0300,Sistema,Causa raiz final,"Em atendimento, caso ja está sendo analisado pela equipe.","O comportamento não esperado ocorreu devido a uma anomalia na fila de processamento que transporta as informações da ordem para o módulo financeiro. Essa fila atua como uma esteira de dados e, ao apresentar instabilidade, as ordens deixaram de ser integradas, impedindo a migração mesmo ao utilizar o envio manual. O ajuste técnico destravou a comunicação, permitindo que a esteira voltasse a processar e entregar os dados corretamente para o faturamento."
+SI-6487,2026-07-31T19:00:46.470-0300,Sistema,Justificativa Causa Raiz final,"Em atendimento, caso ja está sendo analisado pela equipe.",O relato evidencia um problema Sistêmico em que os dados de integração da ordem ficaram retidos ou falharam na fila do módulo financeiro. O fato de o time responsável ter precisado atuar com um ajuste pontual para destravar o fluxo confirma a falha na rotina de mensageria e processamento assíncrono. O sucesso da ação e o retorno da normalidade validam que a barreira era técnica e de desenvolvimento da integração.
 SI-6486,2026-06-12T12:26:27.477-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-6486,2026-06-12T12:26:29.548-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-6486,2026-06-12T12:28:29.781-0300,Ricardo Barbosa Machado,Link,,This work item is blocked by SUS-200
@@ -10486,6 +10526,10 @@ SI-6486,2026-06-12T13:16:48.157-0300,Sistema,Resolução do chamado,,"Em atendim
 SI-6486,2026-06-12T13:16:48.157-0300,Sistema,Causa raiz potencial,,"Em atendimento, caso ja está sendo analisado pela equipe."
 SI-6486,2026-06-12T13:16:48.157-0300,Sistema,Causa raiz final,,"Em atendimento, caso ja está sendo analisado pela equipe."
 SI-6486,2026-06-12T13:16:48.157-0300,Sistema,Justificativa Causa Raiz final,,"Em atendimento, caso ja está sendo analisado pela equipe."
+SI-6486,2026-07-31T19:00:45.555-0300,Sistema,Resolução do chamado,"Em atendimento, caso ja está sendo analisado pela equipe.","Identificamos, em análise conjunta com o time responsável pelo módulo financeiro, uma divergência na fila de migração das informações da ordem. Foi realizado um ajuste técnico pontual para regularizar a integração dos dados. Após essa intervenção, a migração para a tela de faturamento voltou a ocorrer normalmente."
+SI-6486,2026-07-31T19:00:45.555-0300,Sistema,Causa raiz potencial,"Em atendimento, caso ja está sendo analisado pela equipe.","Inconsistência, travamento ou congestionamento na fila de mensageria responsável por processar e integrar as informações do módulo operacional para o módulo financeiro."
+SI-6486,2026-07-31T19:00:45.555-0300,Sistema,Causa raiz final,"Em atendimento, caso ja está sendo analisado pela equipe.","O comportamento não esperado ocorreu devido a uma anomalia na fila de processamento que transporta as informações da ordem para o módulo financeiro. Essa fila atua como uma esteira de dados e, ao apresentar instabilidade, as ordens deixaram de ser integradas, impedindo a migração mesmo ao utilizar o envio manual. O ajuste técnico destravou a comunicação, permitindo que a esteira voltasse a processar e entregar os dados corretamente para o faturamento."
+SI-6486,2026-07-31T19:00:45.555-0300,Sistema,Justificativa Causa Raiz final,"Em atendimento, caso ja está sendo analisado pela equipe.",O relato evidencia um problema Sistêmico em que os dados de integração da ordem ficaram retidos ou falharam na fila do módulo financeiro. O fato de o time responsável ter precisado atuar com um ajuste pontual para destravar o fluxo confirma a falha na rotina de mensageria e processamento assíncrono. O sucesso da ação e o retorno da normalidade validam que a barreira era técnica e de desenvolvimento da integração.
 SI-6485,2026-06-12T12:26:12.203-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-6485,2026-06-12T12:26:16.130-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-6485,2026-06-12T12:28:02.233-0300,Ricardo Barbosa Machado,Link,,This work item is blocked by SUS-200
@@ -10499,6 +10543,10 @@ SI-6485,2026-06-12T13:16:47.426-0300,Sistema,Resolução do chamado,,"Em atendim
 SI-6485,2026-06-12T13:16:47.426-0300,Sistema,Causa raiz potencial,,"Em atendimento, caso ja está sendo analisado pela equipe."
 SI-6485,2026-06-12T13:16:47.426-0300,Sistema,Causa raiz final,,"Em atendimento, caso ja está sendo analisado pela equipe."
 SI-6485,2026-06-12T13:16:47.426-0300,Sistema,Justificativa Causa Raiz final,,"Em atendimento, caso ja está sendo analisado pela equipe."
+SI-6485,2026-07-31T19:00:44.803-0300,Sistema,Resolução do chamado,"Em atendimento, caso ja está sendo analisado pela equipe.","Identificamos, em análise conjunta com o time responsável pelo módulo financeiro, uma divergência na fila de migração das informações da ordem. Foi realizado um ajuste técnico pontual para regularizar a integração dos dados. Após essa intervenção, a migração para a tela de faturamento voltou a ocorrer normalmente."
+SI-6485,2026-07-31T19:00:44.803-0300,Sistema,Causa raiz potencial,"Em atendimento, caso ja está sendo analisado pela equipe.","Inconsistência, travamento ou congestionamento na fila de mensageria responsável por processar e integrar as informações do módulo operacional para o módulo financeiro."
+SI-6485,2026-07-31T19:00:44.803-0300,Sistema,Causa raiz final,"Em atendimento, caso ja está sendo analisado pela equipe.","O comportamento não esperado ocorreu devido a uma anomalia na fila de processamento que transporta as informações da ordem para o módulo financeiro. Essa fila atua como uma esteira de dados e, ao apresentar instabilidade, as ordens deixaram de ser integradas, impedindo a migração mesmo ao utilizar o envio manual. O ajuste técnico destravou a comunicação, permitindo que a esteira voltasse a processar e entregar os dados corretamente para o faturamento."
+SI-6485,2026-07-31T19:00:44.803-0300,Sistema,Justificativa Causa Raiz final,"Em atendimento, caso ja está sendo analisado pela equipe.",O relato evidencia um problema Sistêmico em que os dados de integração da ordem ficaram retidos ou falharam na fila do módulo financeiro. O fato de o time responsável ter precisado atuar com um ajuste pontual para destravar o fluxo confirma a falha na rotina de mensageria e processamento assíncrono. O sucesso da ação e o retorno da normalidade validam que a barreira era técnica e de desenvolvimento da integração.
 SI-6484,2026-06-12T10:46:52.958-0300,Sistema,Attachment,,b5a68d6b.anexo.134623.pdf
 SI-6484,2026-06-12T10:46:54.557-0300,Sistema,Link,,This work item is blocked by GA-938
 SI-6484,2026-06-12T13:16:46.513-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
@@ -10533,6 +10581,10 @@ SI-6482,2026-06-12T13:16:45.260-0300,Sistema,Justificativa Causa Raiz final,,"Em
 SI-6482,2026-06-12T16:54:26.306-0300,Rafael Ferreira,assignee,,Ricardo Barbosa Machado
 SI-6482,2026-06-12T16:54:29.875-0300,Rafael Ferreira,resolution,,Done
 SI-6482,2026-06-12T16:54:29.875-0300,Rafael Ferreira,status,Submissão,Done
+SI-6482,2026-07-31T19:00:42.785-0300,Sistema,Resolução do chamado,"Em atendimento, caso ja está sendo analisado pela equipe.","Identificamos, em análise conjunta com o time responsável pelo módulo financeiro, uma divergência na fila de migração das informações da ordem. Foi realizado um ajuste técnico pontual para regularizar a integração dos dados. Após essa intervenção, a migração para a tela de faturamento voltou a ocorrer normalmente."
+SI-6482,2026-07-31T19:00:42.785-0300,Sistema,Causa raiz potencial,"Em atendimento, caso ja está sendo analisado pela equipe.","Inconsistência, travamento ou congestionamento na fila de mensageria responsável por processar e integrar as informações do módulo operacional para o módulo financeiro."
+SI-6482,2026-07-31T19:00:42.785-0300,Sistema,Causa raiz final,"Em atendimento, caso ja está sendo analisado pela equipe.","O comportamento não esperado ocorreu devido a uma anomalia na fila de processamento que transporta as informações da ordem para o módulo financeiro. Essa fila atua como uma esteira de dados e, ao apresentar instabilidade, as ordens deixaram de ser integradas, impedindo a migração mesmo ao utilizar o envio manual. O ajuste técnico destravou a comunicação, permitindo que a esteira voltasse a processar e entregar os dados corretamente para o faturamento."
+SI-6482,2026-07-31T19:00:42.785-0300,Sistema,Justificativa Causa Raiz final,"Em atendimento, caso ja está sendo analisado pela equipe.",O relato evidencia um problema Sistêmico em que os dados de integração da ordem ficaram retidos ou falharam na fila do módulo financeiro. O fato de o time responsável ter precisado atuar com um ajuste pontual para destravar o fluxo confirma a falha na rotina de mensageria e processamento assíncrono. O sucesso da ação e o retorno da normalidade validam que a barreira era técnica e de desenvolvimento da integração.
 SI-6481,2026-06-12T11:45:19.593-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-6481,2026-06-12T11:45:28.945-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-6481,2026-06-12T11:45:32.488-0300,Rafael Ferreira,status,Submissão,Em Atendimento
@@ -55545,6 +55597,10 @@ SI-7313,2026-07-01T19:00:35.896-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7313,2026-07-01T19:00:35.896-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7313,2026-07-01T19:00:35.896-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7313,2026-07-01T19:00:35.896-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7313,2026-07-31T19:05:35.361-0300,Sistema,Resolução do chamado,Em atendimento,Os valores da invoice foram ajustados de acordo com o documento.
+SI-7313,2026-07-31T19:05:35.361-0300,Sistema,Causa raiz potencial,Em atendimento,Os valores da invoice foram ajustados de acordo com o documento.
+SI-7313,2026-07-31T19:05:35.361-0300,Sistema,Causa raiz final,Em atendimento,Os valores da invoice foram ajustados de acordo com o documento.
+SI-7313,2026-07-31T19:05:35.361-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,Os valores da invoice foram ajustados de acordo com o documento.
 SI-7312,2026-07-01T12:58:01.340-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7312,2026-07-01T12:58:04.931-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7312,2026-07-01T12:58:04.931-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -55556,6 +55612,10 @@ SI-7312,2026-07-01T19:00:35.045-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7312,2026-07-01T19:00:35.045-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7312,2026-07-01T19:00:35.045-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7312,2026-07-01T19:00:35.045-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7312,2026-07-31T19:05:34.448-0300,Sistema,Resolução do chamado,Em atendimento,Realizada a exclusão das linhas de itens sobressalentes e duplicados que foram gerados incorretamente no sistema. As especificações de itens da operação foram devidamente corrigidas e ajustadas de acordo com as informações reais do documento para assegurar a conformidade dos dados operacionais.
+SI-7312,2026-07-31T19:05:34.448-0300,Sistema,Causa raiz potencial,Em atendimento,"Processamento redundante ou leitura múltipla do mesmo arquivo de carga por diferentes usuários na plataforma, fazendo com que o componente de inteligência artificial interprete os dados de forma repetida e execute um somatório indevido de itens idênticos."
+SI-7312,2026-07-31T19:05:34.448-0300,Sistema,Causa raiz final,Em atendimento,"Identificou-se que a ferramenta de processamento de documentos por inteligência artificial apresenta um comportamento inesperado quando o mesmo arquivo (como a Packing List) é compartilhado ou enviado para mais de um destinatário simultaneamente. Nessas situações específicas, o sistema realiza a leitura do documento de forma repetida para cada destinatário associado. Como consequência direta desse processamento redundante, o sistema executa um somatório cumulativo dos dados. Desse modo, mesmo que o documento original contenha apenas um item listado, a plataforma consolida e exibe duas ou mais linhas de itens somados na tela de trabalho. Esse acúmulo incorreto gera itens sobressalentes duplicados na plataforma, impedindo o fluxo regular das atividades e demandando a limpeza manual dos registros excedentes para que as informações reflitam estritamente a realidade física do embarque."
+SI-7312,2026-07-31T19:05:34.448-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O nexo causal do incidente está associado à falta de validação de duplicidade ou controle de idempotência no pipeline de ingestão do DOCS IA quando o mesmo arquivo é lido consecutivamente.
 SI-7315,2026-07-01T12:11:37.611-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-7315,2026-07-01T12:11:38.429-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7315,2026-07-01T12:11:41.391-0300,Rafael Ferreira,resolution,,Done
@@ -55584,6 +55644,10 @@ SI-7314,2026-07-01T19:00:36.757-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7314,2026-07-01T19:00:36.757-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7314,2026-07-01T19:00:36.757-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7314,2026-07-01T19:00:36.757-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7314,2026-07-31T19:05:36.039-0300,Sistema,Resolução do chamado,Em atendimento,"Documento reenviado para a colaboradora com uma nova hash, após isso o mesmo foi lido corretamente pela IA."
+SI-7314,2026-07-31T19:05:36.039-0300,Sistema,Causa raiz potencial,Em atendimento,"Documento reenviado para a colaboradora com uma nova hash, após isso o mesmo foi lido corretamente pela IA."
+SI-7314,2026-07-31T19:05:36.039-0300,Sistema,Causa raiz final,Em atendimento,"Documento reenviado para a colaboradora com uma nova hash, após isso o mesmo foi lido corretamente pela IA."
+SI-7314,2026-07-31T19:05:36.039-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Documento reenviado para a colaboradora com uma nova hash, após isso o mesmo foi lido corretamente pela IA."
 SI-7320,2026-07-01T11:21:20.016-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7320,2026-07-01T11:21:22.737-0300,Bruno Silva,resolution,,Done
 SI-7320,2026-07-01T11:21:22.737-0300,Bruno Silva,status,Submissão,Done
@@ -55745,6 +55809,10 @@ SI-7329,2026-07-02T19:05:00.726-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7329,2026-07-02T19:05:00.726-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7329,2026-07-02T19:05:00.726-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7329,2026-07-02T19:05:00.726-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7329,2026-07-31T19:05:42.725-0300,Sistema,Resolução do chamado,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7329,2026-07-31T19:05:42.725-0300,Sistema,Causa raiz potencial,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7329,2026-07-31T19:05:42.725-0300,Sistema,Causa raiz final,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7329,2026-07-31T19:05:42.725-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O caso foi ajustado junto com o time de DE.
 SI-7328,2026-07-01T14:19:52.972-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7328,2026-07-01T14:19:54.454-0300,Rafael Ferreira,resolution,,Done
 SI-7328,2026-07-01T14:19:54.454-0300,Rafael Ferreira,status,Submissão,Done
@@ -55845,6 +55913,10 @@ SI-7339,2026-07-01T19:00:55.911-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7339,2026-07-01T19:00:55.911-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7339,2026-07-01T19:00:55.911-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7339,2026-07-01T19:00:55.911-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7339,2026-07-31T19:05:47.541-0300,Sistema,Resolução do chamado,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7339,2026-07-31T19:05:47.541-0300,Sistema,Causa raiz potencial,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7339,2026-07-31T19:05:47.541-0300,Sistema,Causa raiz final,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7339,2026-07-31T19:05:47.541-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O caso foi ajustado junto com o time de DE.
 SI-7338,2026-07-01T15:35:19.964-0300,Rafael Ferreira,assignee,,Eduardo Felipe de Lima Rebello
 SI-7338,2026-07-01T15:35:31.475-0300,Rafael Ferreira,resolution,,Done
 SI-7338,2026-07-01T15:35:31.475-0300,Rafael Ferreira,status,Submissão,Done
@@ -55920,6 +55992,10 @@ SI-7350,2026-07-01T19:01:04.399-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7350,2026-07-01T19:01:04.399-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7350,2026-07-01T19:01:04.399-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7350,2026-07-01T19:01:04.399-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7350,2026-07-31T19:05:52.654-0300,Sistema,Resolução do chamado,Em atendimento,O documento foi reenviado para colaboradora com uma nova HASH após isso o mesmo foi lido corretamente pela IA.
+SI-7350,2026-07-31T19:05:52.654-0300,Sistema,Causa raiz potencial,Em atendimento,O documento foi reenviado para colaboradora com uma nova HASH após isso o mesmo foi lido corretamente pela IA.
+SI-7350,2026-07-31T19:05:52.654-0300,Sistema,Causa raiz final,Em atendimento,O documento foi reenviado para colaboradora com uma nova HASH após isso o mesmo foi lido corretamente pela IA.
+SI-7350,2026-07-31T19:05:52.654-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O documento foi reenviado para colaboradora com uma nova HASH após isso o mesmo foi lido corretamente pela IA.
 SI-7349,2026-07-01T16:03:44.132-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7349,2026-07-01T16:03:47.439-0300,Ricardo Barbosa Machado,status,Submissão,Encaminhado DS
 SI-7349,2026-07-01T16:03:50.337-0300,Ricardo Barbosa Machado,resolution,,Done
@@ -55932,6 +56008,10 @@ SI-7349,2026-07-01T19:01:03.596-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7349,2026-07-01T19:01:03.596-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7349,2026-07-01T19:01:03.596-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7349,2026-07-01T19:01:03.596-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7349,2026-07-31T19:05:51.908-0300,Sistema,Resolução do chamado,Em atendimento,"Identificado que os documentos do processo (como House  e Draft Approval) permaneceram indevidamente vinculados ao agenciamento (Booking) após a remoção da Ordem, o que ocasionou o bloqueio para novas edições. Realizada a exclusão manual dos registros residuais pela equipe técnica para regularizar o processo. Orientado ao usuário que o fluxo do agenciamento foi restabelecido com sucesso e a Ordem encontra-se liberada para novos vínculos ou ajustes. A solução definitiva para impedir que este cenário volte a ocorrer já está em andamento e será implementada através do INTAKE-559"
+SI-7349,2026-07-31T19:05:51.908-0300,Sistema,Causa raiz potencial,Em atendimento,"Interrupção na comunicação entre os módulos de Booking e Order durante o processamento da remoção de uma Ordem, resultando em dados residuais (registros órfãos) na tabela de documentos."
+SI-7349,2026-07-31T19:05:51.908-0300,Sistema,Causa raiz final,Em atendimento,"O problema ocorreu devido a uma descontinuidade na comunicação interna do sistema no exato momento em que a Ordem foi removida do processo. Quando uma Ordem é desvinculada de um agenciamento (Booking), o sistema tem a instrução de executar duas ações conjuntas: remover a Ordem e limpar todos os documentos atrelados a ela, como o House Air Waybill (HAWB). No cenário relatado, o sistema conseguiu remover a Ordem com sucesso, mas sofreu uma falha de comunicação e parou antes de limpar os documentos. Como resultado, o agenciamento passou a identificar a existência de arquivos que pertenciam a uma Ordem inexistente no momento, criando um conflito de informações. Para proteger a integridade do processo e evitar problemas financeiros, o sistema ativou a trava de segurança, impedindo novas edições. Para garantir a melhoria contínua e evitar que os documentos fiquem ""presos"" durante futuras desvinculações, uma correção estrutural que torna esse processo de limpeza simultâneo já foi mapeada e será implementada através do INTAKE-559"
+SI-7349,2026-07-31T19:05:51.908-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A falha decorre de uma deficiência de arquitetura na rotina de exclusão lógica de Ordens nos Bookings, que carece de propriedades ACID (especificamente atomicidade) em suas transações de banco de dados. Durante o processo de remoção, o ""desvínculo"" da Order é executado primeiro. Se houver alguma instabilidade ou latência logo em seguida, a atualização de status para inativar os metadados dos documentos atrelados (como os arquivos XFZB) falha. Isso gera um cenário de perda de integridade referencial: o Booking valida regras de edição checando documentos cujas conexões lógicas já não são reconhecidas pelo sistema, resultando no bloqueio da interface. O mapeamento via INTAKE-559 é fundamental como plano de ação corretiva, pois consistirá na refatoração dessa query, garantindo que o ""update/delete"" da Ordem e de todos os seus documentos ocorram em um único commit."
 SI-7348,2026-07-01T16:31:23.691-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7348,2026-07-01T16:31:25.874-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7348,2026-07-01T16:31:25.874-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -55943,6 +56023,10 @@ SI-7348,2026-07-01T19:01:02.797-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7348,2026-07-01T19:01:02.797-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7348,2026-07-01T19:01:02.797-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7348,2026-07-01T19:01:02.797-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7348,2026-07-31T19:05:51.110-0300,Sistema,Resolução do chamado,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7348,2026-07-31T19:05:51.110-0300,Sistema,Causa raiz potencial,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7348,2026-07-31T19:05:51.110-0300,Sistema,Causa raiz final,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7348,2026-07-31T19:05:51.110-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O caso foi ajustado junto com o time de DE.
 SI-7347,2026-07-01T16:51:47.730-0300,Rafael Ferreira,assignee,,Helena Almeida
 SI-7347,2026-07-01T16:51:50.486-0300,Rafael Ferreira,resolution,,Done
 SI-7347,2026-07-01T16:51:50.486-0300,Rafael Ferreira,status,Submissão,Done
@@ -56009,6 +56093,10 @@ SI-7353,2026-07-02T13:04:04.796-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7353,2026-07-02T13:04:04.796-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7353,2026-07-02T13:04:04.796-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7353,2026-07-02T13:04:04.796-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7353,2026-07-31T19:05:54.611-0300,Sistema,Resolução do chamado,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7353,2026-07-31T19:05:54.611-0300,Sistema,Causa raiz potencial,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7353,2026-07-31T19:05:54.611-0300,Sistema,Causa raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7353,2026-07-31T19:05:54.611-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-7352,2026-07-01T17:48:21.591-0300,Rafael Ferreira,assignee,,Ricardo Barbosa Machado
 SI-7352,2026-07-01T17:51:22.678-0300,Rafael Ferreira,resolution,,Done
 SI-7352,2026-07-01T17:51:22.678-0300,Rafael Ferreira,status,Submissão,Done
@@ -56021,6 +56109,10 @@ SI-7352,2026-07-02T13:04:03.983-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7352,2026-07-02T13:04:03.983-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7352,2026-07-02T13:04:03.983-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7352,2026-07-02T13:04:03.983-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7352,2026-07-31T19:05:53.907-0300,Sistema,Resolução do chamado,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7352,2026-07-31T19:05:53.907-0300,Sistema,Causa raiz potencial,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7352,2026-07-31T19:05:53.907-0300,Sistema,Causa raiz final,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7352,2026-07-31T19:05:53.907-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O caso foi ajustado junto com o time de DE.
 SI-7355,2026-07-02T17:05:16.437-0300,Rafael Ferreira,resolution,,Done
 SI-7355,2026-07-02T17:05:16.437-0300,Rafael Ferreira,status,Submissão,Done
 SI-7355,2026-07-02T17:05:16.921-0300,Rafael Ferreira,Rank,,Ranked lower
@@ -56173,6 +56265,10 @@ SI-7366,2026-07-02T13:04:13.609-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7366,2026-07-02T13:04:13.609-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7366,2026-07-02T13:04:13.609-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7366,2026-07-02T13:04:13.609-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7366,2026-07-31T19:06:00.940-0300,Sistema,Resolução do chamado,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7366,2026-07-31T19:06:00.940-0300,Sistema,Causa raiz potencial,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7366,2026-07-31T19:06:00.940-0300,Sistema,Causa raiz final,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7366,2026-07-31T19:06:00.940-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O caso foi ajustado junto com o time de DE.
 SI-7365,2026-07-02T11:25:57.261-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7365,2026-07-02T11:26:00.462-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7365,2026-07-02T11:26:08.136-0300,Ricardo Barbosa Machado,resolution,,Done
@@ -56185,6 +56281,10 @@ SI-7365,2026-07-02T13:04:12.900-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7365,2026-07-02T13:04:12.900-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7365,2026-07-02T13:04:12.900-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7365,2026-07-02T13:04:12.900-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7365,2026-07-31T19:06:00.324-0300,Sistema,Resolução do chamado,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7365,2026-07-31T19:06:00.324-0300,Sistema,Causa raiz potencial,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7365,2026-07-31T19:06:00.324-0300,Sistema,Causa raiz final,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7365,2026-07-31T19:06:00.324-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O caso foi ajustado junto com o time de DE.
 SI-7364,2026-07-02T11:11:13.577-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7364,2026-07-02T11:11:16.606-0300,Bruno Silva,resolution,,Done
 SI-7364,2026-07-02T11:11:16.606-0300,Bruno Silva,status,Submissão,Done
@@ -56209,6 +56309,10 @@ SI-7369,2026-07-02T13:04:15.967-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7369,2026-07-02T13:04:15.967-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7369,2026-07-02T13:04:15.967-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7369,2026-07-02T13:04:15.967-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7369,2026-07-31T19:06:02.951-0300,Sistema,Resolução do chamado,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7369,2026-07-31T19:06:02.951-0300,Sistema,Causa raiz potencial,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7369,2026-07-31T19:06:02.951-0300,Sistema,Causa raiz final,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7369,2026-07-31T19:06:02.951-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
 SI-7368,2026-07-02T11:26:21.220-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7368,2026-07-02T11:26:22.823-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-7368,2026-07-02T11:26:27.121-0300,Rafael Ferreira,resolution,,Done
@@ -56234,6 +56338,10 @@ SI-7367,2026-07-02T13:04:14.465-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7367,2026-07-02T13:04:14.465-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7367,2026-07-02T13:04:14.465-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7367,2026-07-02T13:04:14.465-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7367,2026-07-31T19:06:01.676-0300,Sistema,Resolução do chamado,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7367,2026-07-31T19:06:01.676-0300,Sistema,Causa raiz potencial,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7367,2026-07-31T19:06:01.676-0300,Sistema,Causa raiz final,Em atendimento,O caso foi ajustado junto com o time de DE.
+SI-7367,2026-07-31T19:06:01.676-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O caso foi ajustado junto com o time de DE.
 SI-7372,2026-07-02T12:41:30.731-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7372,2026-07-02T12:41:32.607-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7372,2026-07-02T12:41:34.741-0300,Ricardo Barbosa Machado,status,Em Atendimento,Encaminhado DS
@@ -56247,6 +56355,10 @@ SI-7372,2026-07-02T19:05:20.011-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7372,2026-07-02T19:05:20.011-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7372,2026-07-02T19:05:20.011-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7372,2026-07-02T19:05:20.011-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7372,2026-07-31T19:06:05.591-0300,Sistema,Resolução do chamado,Em atendimento,"Identificada a indisponibilidade sistêmica ao tentar deletar ou desvincular ordens, ocasionada por uma inconsistência nos registros internos de controle de datas. Como a correção estrutural dessa validação requer uma alteração sistêmica para evitar que a operação seja interrompida, o cenário foi devidamente mapeado e vinculado ao INTAKE-1557. Este intake já se encontra sob a responsabilidade da equipe de desenvolvimento para que seja criada e implementada a solução definitiva na plataforma, garantindo a normalização do fluxo operacional."
+SI-7372,2026-07-31T19:06:05.591-0300,Sistema,Causa raiz potencial,Em atendimento,Ausência de inicialização automática de tabelas de controle de datas de processos antigos ou falta de validação estrutural do sistema ao tentar atualizar informações ligadas a relacionamentos inexistentes no banco de dados.
+SI-7372,2026-07-31T19:06:05.591-0300,Sistema,Causa raiz final,Em atendimento,"O impedimento ao tentar concluir as ações de desatrelar ou deletar as ordens ocorria devido a uma falha de comunicação entre as validações sistêmicas atuais e o histórico de cadastros da plataforma. Especificamente, após a desativação da aba anterior de controle de datas, algumas ordens ficaram sem esse registro de acompanhamento gerado na base. Sempre que um operador tentava realizar uma movimentação crítica na ordem, a plataforma tentava atualizar obrigatoriamente um status de ""aprovação de cliente"" que ficava dentro desse antigo controle de datas. Por não encontrar essa informação, o sistema não sabia como prosseguir, interrompendo a ação abruptamente e travando a tela. Como não foi realizada nenhuma tratativa paliativa ou definitiva até o momento para contornar essa exigência de sistema, a situação foi atrelada ao INTAKE-1557. A equipe de tecnologia trabalhará neste intake para reprogramar o sistema, ensinando a plataforma a verificar se a informação de data existe antes de tentar atualizá-la, ignorando a validação ou criando o dado sob demanda para que o trabalho do operador não seja mais interrompido."
+SI-7372,2026-07-31T19:06:05.591-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A análise técnica do card SUS-215 atestou a ocorrência do erro relacional RelatedObjectDoesNotExist: Assembly has no datecontrol no arquivo src/booking/models/base.py (linha 489). A falha é engatilhada porque o backend, através da função update_customer_approval, tenta acessar de forma direta o atributo datecontrol.customer_approval_valid sem aplicar um tratamento defensivo para validar a existência do relacionamento OneToOne na tabela order_datecontrol. Considerando que nenhuma correção definitiva ou saneamento foi executado em ambiente produtivo, os processos que possuem essa lacuna de dados continuam apresentando o Erro 500. A resolução focada na melhoria contínua e eliminação da reincidência foi direcionada para o INTAKE-1557, que atuará na implementação de validações defensivas no código (para verificar a existência do objeto antes da manipulação) e na criação de rotinas para lidar com registros órfãos, mitigando o impacto na eficiência operacional apontado no discovery."
 SI-7371,2026-07-02T12:10:01.003-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7371,2026-07-02T12:10:03.323-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7371,2026-07-02T12:10:05.831-0300,Ricardo Barbosa Machado,status,Em Atendimento,Aguardando correção
@@ -56261,6 +56373,10 @@ SI-7371,2026-07-02T13:04:17.756-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7371,2026-07-02T13:04:17.756-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7371,2026-07-02T13:04:17.756-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7371,2026-07-02T13:04:17.756-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7371,2026-07-31T19:06:04.512-0300,Sistema,Resolução do chamado,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7371,2026-07-31T19:06:04.512-0300,Sistema,Causa raiz potencial,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7371,2026-07-31T19:06:04.512-0300,Sistema,Causa raiz final,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7371,2026-07-31T19:06:04.512-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
 SI-7370,2026-07-02T12:10:31.340-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7370,2026-07-02T12:10:34.318-0300,Bruno Silva,resolution,,Done
 SI-7370,2026-07-02T12:10:34.318-0300,Bruno Silva,status,Submissão,Done
@@ -56315,6 +56431,10 @@ SI-7373,2026-07-02T19:05:20.708-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7373,2026-07-02T19:05:20.708-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7373,2026-07-02T19:05:20.708-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7373,2026-07-02T19:05:20.708-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7373,2026-07-31T19:06:06.417-0300,Sistema,Resolução do chamado,Em atendimento,"Identificada a indisponibilidade sistêmica ao tentar deletar ou desvincular ordens, ocasionada por uma inconsistência nos registros internos de controle de datas. Como a correção estrutural dessa validação requer uma alteração sistêmica para evitar que a operação seja interrompida, o cenário foi devidamente mapeado e vinculado ao INTAKE-1557. Este intake já se encontra sob a responsabilidade da equipe de desenvolvimento para que seja criada e implementada a solução definitiva na plataforma, garantindo a normalização do fluxo operacional."
+SI-7373,2026-07-31T19:06:06.417-0300,Sistema,Causa raiz potencial,Em atendimento,Ausência de inicialização automática de tabelas de controle de datas de processos antigos ou falta de validação estrutural do sistema ao tentar atualizar informações ligadas a relacionamentos inexistentes no banco de dados.
+SI-7373,2026-07-31T19:06:06.417-0300,Sistema,Causa raiz final,Em atendimento,"O impedimento ao tentar concluir as ações de desatrelar ou deletar as ordens ocorria devido a uma falha de comunicação entre as validações sistêmicas atuais e o histórico de cadastros da plataforma. Especificamente, após a desativação da aba anterior de controle de datas, algumas ordens ficaram sem esse registro de acompanhamento gerado na base. Sempre que um operador tentava realizar uma movimentação crítica na ordem, a plataforma tentava atualizar obrigatoriamente um status de ""aprovação de cliente"" que ficava dentro desse antigo controle de datas. Por não encontrar essa informação, o sistema não sabia como prosseguir, interrompendo a ação abruptamente e travando a tela. Como não foi realizada nenhuma tratativa paliativa ou definitiva até o momento para contornar essa exigência de sistema, a situação foi atrelada ao INTAKE-1557. A equipe de tecnologia trabalhará neste intake para reprogramar o sistema, ensinando a plataforma a verificar se a informação de data existe antes de tentar atualizá-la, ignorando a validação ou criando o dado sob demanda para que o trabalho do operador não seja mais interrompido."
+SI-7373,2026-07-31T19:06:06.417-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"O impedimento ao tentar concluir as ações de desatrelar ou deletar as ordens ocorria devido a uma falha de comunicação entre as validações sistêmicas atuais e o histórico de cadastros da plataforma. Especificamente, após a desativação da aba anterior de controle de datas, algumas ordens ficaram sem esse registro de acompanhamento gerado na base. Sempre que um operador tentava realizar uma movimentação crítica na ordem, a plataforma tentava atualizar obrigatoriamente um status de ""aprovação de cliente"" que ficava dentro desse antigo controle de datas. Por não encontrar essa informação, o sistema não sabia como prosseguir, interrompendo a ação abruptamente e travando a tela. Como não foi realizada nenhuma tratativa paliativa ou definitiva até o momento para contornar essa exigência de sistema, a situação foi atrelada ao INTAKE-1557. A equipe de tecnologia trabalhará neste intake para reprogramar o sistema, ensinando a plataforma a verificar se a informação de data existe antes de tentar atualizá-la, ignorando a validação ou criando o dado sob demanda para que o trabalho do operador não seja mais interrompido."
 SI-7379,2026-07-02T15:12:29.255-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7379,2026-07-02T15:12:31.784-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7379,2026-07-02T15:12:33.679-0300,Ricardo Barbosa Machado,status,Em Atendimento,Finalizado Definitivamente
@@ -56698,6 +56818,10 @@ SI-7405,2026-07-06T19:02:07.416-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7405,2026-07-06T19:02:07.416-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7405,2026-07-06T19:02:07.416-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7405,2026-07-06T19:02:07.416-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7405,2026-07-31T19:06:21.514-0300,Sistema,Resolução do chamado,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7405,2026-07-31T19:06:21.514-0300,Sistema,Causa raiz potencial,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7405,2026-07-31T19:06:21.514-0300,Sistema,Causa raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7405,2026-07-31T19:06:21.514-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-7404,2026-07-03T08:37:21.293-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7404,2026-07-03T08:37:41.267-0300,Rafael Ferreira,assignee,Rafael Ferreira,
 SI-7404,2026-07-03T11:11:02.263-0300,Bruno Silva,assignee,,Bruno Silva
@@ -57492,6 +57616,10 @@ SI-7439,2026-07-03T18:56:39.729-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7439,2026-07-03T18:56:39.729-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7439,2026-07-03T18:56:39.729-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7439,2026-07-03T18:56:39.729-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7439,2026-07-31T19:06:36.841-0300,Sistema,Resolução do chamado,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7439,2026-07-31T19:06:36.841-0300,Sistema,Causa raiz potencial,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7439,2026-07-31T19:06:36.841-0300,Sistema,Causa raiz final,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7439,2026-07-31T19:06:36.841-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
 SI-7438,2026-07-03T17:36:10.705-0300,Rafael Ferreira,resolution,,Done
 SI-7438,2026-07-03T17:36:10.705-0300,Rafael Ferreira,status,Submissão,Done
 SI-7438,2026-07-03T17:36:11.090-0300,Rafael Ferreira,Rank,,Ranked lower
@@ -57533,6 +57661,10 @@ SI-7436,2026-07-06T19:02:21.172-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7436,2026-07-06T19:02:21.172-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7436,2026-07-06T19:02:21.172-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7436,2026-07-06T19:02:21.172-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7436,2026-07-31T19:06:34.575-0300,Sistema,Resolução do chamado,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7436,2026-07-31T19:06:34.575-0300,Sistema,Causa raiz potencial,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7436,2026-07-31T19:06:34.575-0300,Sistema,Causa raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7436,2026-07-31T19:06:34.575-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-7435,2026-07-03T17:36:07.567-0300,Rafael Ferreira,resolution,,Done
 SI-7435,2026-07-03T17:36:07.567-0300,Rafael Ferreira,status,Submissão,Done
 SI-7435,2026-07-03T17:36:08.026-0300,Rafael Ferreira,Rank,,Ranked lower
@@ -57579,6 +57711,10 @@ SI-7444,2026-07-06T19:02:24.100-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7444,2026-07-06T19:02:24.100-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7444,2026-07-06T19:02:24.100-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7444,2026-07-06T19:02:24.100-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7444,2026-07-31T19:06:39.356-0300,Sistema,Resolução do chamado,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7444,2026-07-31T19:06:39.356-0300,Sistema,Causa raiz potencial,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7444,2026-07-31T19:06:39.356-0300,Sistema,Causa raiz final,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7444,2026-07-31T19:06:39.356-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
 SI-7443,2026-07-03T17:36:14.977-0300,Rafael Ferreira,resolution,,Done
 SI-7443,2026-07-03T17:36:14.977-0300,Rafael Ferreira,status,Submissão,Done
 SI-7443,2026-07-03T17:36:15.388-0300,Rafael Ferreira,Rank,,Ranked higher
@@ -57602,6 +57738,10 @@ SI-7449,2026-07-06T19:02:26.334-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7449,2026-07-06T19:02:26.334-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7449,2026-07-06T19:02:26.334-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7449,2026-07-06T19:02:26.334-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7449,2026-07-31T19:06:41.894-0300,Sistema,Resolução do chamado,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7449,2026-07-31T19:06:41.894-0300,Sistema,Causa raiz potencial,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7449,2026-07-31T19:06:41.894-0300,Sistema,Causa raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7449,2026-07-31T19:06:41.894-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-7448,2026-07-03T17:36:24.613-0300,Rafael Ferreira,resolution,,Done
 SI-7448,2026-07-03T17:36:24.613-0300,Rafael Ferreira,status,Submissão,Done
 SI-7448,2026-07-03T17:36:25.083-0300,Rafael Ferreira,Rank,,Ranked higher
@@ -57630,6 +57770,9 @@ SI-7447,2026-07-06T19:02:25.586-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7447,2026-07-06T19:02:25.586-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7447,2026-07-06T19:02:25.586-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7447,2026-07-06T19:02:25.586-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7447,2026-07-31T19:06:40.943-0300,Sistema,Resolução do chamado,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7447,2026-07-31T19:06:40.943-0300,Sistema,Causa raiz potencial,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7447,2026-07-31T19:06:40.943-0300,Sistema,Causa raiz final,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
 SI-7452,2026-07-06T09:37:48.951-0300,Bruno Silva,resolution,,Done
 SI-7452,2026-07-06T09:37:48.951-0300,Bruno Silva,status,Submissão,Done
 SI-7452,2026-07-06T12:18:44.399-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
@@ -57641,6 +57784,10 @@ SI-7452,2026-07-06T19:02:27.792-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7452,2026-07-06T19:02:27.792-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7452,2026-07-06T19:02:27.792-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7452,2026-07-06T19:02:27.792-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7452,2026-07-31T19:06:43.353-0300,Sistema,Resolução do chamado,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7452,2026-07-31T19:06:43.353-0300,Sistema,Causa raiz potencial,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7452,2026-07-31T19:06:43.353-0300,Sistema,Causa raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7452,2026-07-31T19:06:43.353-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-7451,2026-07-06T08:23:03.012-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7451,2026-07-06T08:23:04.886-0300,Rafael Ferreira,resolution,,Done
 SI-7451,2026-07-06T08:23:04.886-0300,Rafael Ferreira,status,Submissão,Done
@@ -57765,6 +57912,10 @@ Com base nos resultados, descartamos a hipótese de falha operacional, pois (a) 
 SI-7457,2026-07-14T17:19:58.696-0300,Ricardo Barbosa Machado,Encaminhado para:,,Sustentação
 SI-7457,2026-07-14T17:20:02.591-0300,Sistema,Link,,This work item is blocked by SUS-269
 SI-7457,2026-07-14T17:20:05.667-0300,Ricardo Barbosa Machado,Encaminhado para:,Sustentação,
+SI-7457,2026-07-31T19:06:45.542-0300,Sistema,Resolução do chamado,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7457,2026-07-31T19:06:45.542-0300,Sistema,Causa raiz potencial,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7457,2026-07-31T19:06:45.542-0300,Sistema,Causa raiz final,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7457,2026-07-31T19:06:45.542-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
 SI-7456,2026-07-06T09:37:37.078-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7456,2026-07-06T09:37:40.939-0300,Bruno Silva,resolution,,Done
 SI-7456,2026-07-06T09:37:40.939-0300,Bruno Silva,status,Submissão,Done
@@ -60481,6 +60632,7 @@ SI-7654,2026-07-10T19:04:04.628-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7654,2026-07-10T19:04:04.628-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7654,2026-07-10T19:04:04.628-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7654,2026-07-10T19:04:04.628-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7654,2026-07-31T19:05:15.654-0300,Sistema,Resolução do chamado,Em atendimento,O documento foi reenviado com uma nova hash e após isso o mesmo foi lido corretamente pela IA
 SI-7653,2026-07-10T11:26:26.202-0300,Sistema,Link,,This work item is blocked by GA-1208
 SI-7653,2026-07-10T18:00:39.980-0300,Helena Almeida,resolution,,Done
 SI-7653,2026-07-10T18:00:39.980-0300,Helena Almeida,status,Submissão,Done
