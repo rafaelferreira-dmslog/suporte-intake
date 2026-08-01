@@ -59000,6 +59000,10 @@ SI-7528,2026-07-10T13:04:24.471-0300,Sistema,Resolução do chamado,Ticket concl
 SI-7528,2026-07-10T13:04:24.471-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7528,2026-07-10T13:04:24.471-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7528,2026-07-10T13:04:24.471-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7528,2026-08-01T07:06:01.959-0300,Sistema,Resolução do chamado,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7528,2026-08-01T07:06:01.959-0300,Sistema,Causa raiz potencial,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7528,2026-08-01T07:06:01.959-0300,Sistema,Causa raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7528,2026-08-01T07:06:01.959-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-7551,2026-07-07T15:33:22.305-0300,Sistema,Link,,This work item is blocked by GA-1170
 SI-7551,2026-07-07T16:35:28.306-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7551,2026-07-07T16:35:30.223-0300,Rafael Ferreira,resolution,,Done
@@ -59217,6 +59221,10 @@ SI-7556,2026-07-10T13:04:44.310-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7556,2026-07-10T13:04:44.310-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7556,2026-07-10T13:04:44.310-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7556,2026-07-10T13:04:44.310-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7556,2026-08-01T07:06:12.923-0300,Sistema,Resolução do chamado,Em atendimento,"Identificamos que o comportamento do sistema apresentava uma divergência no cálculo do valor final do Collect Fee durante o faturamento. O caso foi direcionado ao time responsável, que aplicou um ajuste definitivo no sistema para assegurar que a cobrança siga a lógica esperada e não ocorra novamente em novos casos."
+SI-7556,2026-08-01T07:06:12.923-0300,Sistema,Causa raiz potencial,Em atendimento,"Inconsistência sistêmica na mecânica de cálculo financeiro, provavelmente relacionada à aplicação indevida do spread cambial antes do acúmulo da cascata de impostos sobre o piso mínimo."
+SI-7556,2026-08-01T07:06:12.923-0300,Sistema,Causa raiz final,Em atendimento,"O comportamento não esperado originou-se na ordem matemática com que o sistema estruturava a cobrança. Quando o valor atingia o piso mínimo configurado (BRL 65,00), a ferramenta aplicava primeiramente uma taxa de acréscimo (spread) e, somente sobre esse valor já acrescido, calculava a porcentagem dos impostos, resultando nos BRL 75,01 finais. Com a correção aplicada pelo time responsável, a rotina foi ajustada para alinhar a fórmula de cálculo à expectativa comercial, garantindo a exatidão financeira nas próximas operações."
+SI-7556,2026-08-01T07:06:12.923-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A análise técnica fundamenta-se no fluxo do motor BaseBillingService.calculate_collect(), onde o converted_value recebia a incidência de 1% de spread sobre o mínimo de 65,00, gerando 65,65 BRL antes da aplicação dos 14,25% de impostos. O resultado matemático dessa regra de negócio (65,65 * 1,1425 = 75,01 BRL) explica a divergência relatada. A necessidade de intervenção do time especialista para corrigir a aplicação atesta uma falha na concepção da regra sistêmica original, justificando a categorização."
 SI-7555,2026-07-07T16:28:37.118-0300,Sistema,Link,,This work item is blocked by GA-1173
 SI-7555,2026-07-08T10:59:43.275-0300,Rafael Ferreira,resolution,,Done
 SI-7555,2026-07-08T10:59:43.275-0300,Rafael Ferreira,status,Submissão,Done
@@ -59367,6 +59375,10 @@ SI-7560,2026-07-10T13:04:49.888-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7560,2026-07-10T13:04:49.888-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7560,2026-07-10T13:04:49.888-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7560,2026-07-10T13:04:49.888-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7560,2026-08-01T07:06:14.650-0300,Sistema,Resolução do chamado,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7560,2026-08-01T07:06:14.650-0300,Sistema,Causa raiz potencial,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7560,2026-08-01T07:06:14.650-0300,Sistema,Causa raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7560,2026-08-01T07:06:14.650-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-7565,2026-07-08T09:58:25.839-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7565,2026-07-08T09:58:27.974-0300,Rafael Ferreira,resolution,,Done
 SI-7565,2026-07-08T09:58:27.974-0300,Rafael Ferreira,status,Submissão,Done
@@ -59397,6 +59409,10 @@ SI-7570,2026-07-10T13:04:58.508-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7570,2026-07-10T13:04:58.508-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7570,2026-07-10T13:04:58.508-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7570,2026-07-10T13:04:58.508-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7570,2026-08-01T07:06:17.904-0300,Sistema,Resolução do chamado,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7570,2026-08-01T07:06:17.904-0300,Sistema,Causa raiz potencial,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7570,2026-08-01T07:06:17.904-0300,Sistema,Causa raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7570,2026-08-01T07:06:17.904-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-7569,2026-07-08T09:39:23.637-0300,Sistema,Link,,This work item is blocked by GA-1180
 SI-7569,2026-07-08T15:35:17.757-0300,Helena Almeida,assignee,,Helena Almeida
 SI-7569,2026-07-08T15:35:19.875-0300,Helena Almeida,resolution,,Done
@@ -59873,6 +59889,10 @@ SI-7594,2026-07-10T13:05:18.103-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7594,2026-07-10T13:05:18.103-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7594,2026-07-10T13:05:18.103-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7594,2026-07-10T13:05:18.103-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7594,2026-08-01T07:06:26.525-0300,Sistema,Resolução do chamado,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7594,2026-08-01T07:06:26.525-0300,Sistema,Causa raiz potencial,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7594,2026-08-01T07:06:26.525-0300,Sistema,Causa raiz final,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7594,2026-08-01T07:06:26.525-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
 SI-7599,2026-07-08T17:59:25.307-0300,Sistema,Link,,This work item is blocked by GA-1189
 SI-7599,2026-07-09T08:09:33.286-0300,Rafael Ferreira,resolution,,Done
 SI-7599,2026-07-09T08:09:33.286-0300,Rafael Ferreira,status,Submissão,Done
@@ -60397,6 +60417,10 @@ SI-7634,2026-07-10T13:05:58.998-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7634,2026-07-10T13:05:58.998-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7634,2026-07-10T13:05:58.998-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7634,2026-07-10T13:05:58.998-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7634,2026-08-01T07:06:41.679-0300,Sistema,Resolução do chamado,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7634,2026-08-01T07:06:41.679-0300,Sistema,Causa raiz potencial,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7634,2026-08-01T07:06:41.679-0300,Sistema,Causa raiz final,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7634,2026-08-01T07:06:41.679-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
 SI-7635,2026-07-10T07:18:24.007-0300,Sistema,Link,,This work item is blocked by GA-1204
 SI-7635,2026-07-10T12:36:38.032-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-7635,2026-07-10T12:36:40.629-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
@@ -60478,6 +60502,9 @@ SI-7642,2026-07-10T13:06:04.153-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7642,2026-07-10T13:06:04.153-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7642,2026-07-10T13:06:04.153-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7642,2026-07-10T13:06:04.153-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7642,2026-08-01T07:06:44.704-0300,Sistema,Resolução do chamado,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7642,2026-08-01T07:06:44.704-0300,Sistema,Causa raiz potencial,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
+SI-7642,2026-08-01T07:06:44.704-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,O incidente foi solucionado em conjunto com a equipe de DE.
 SI-7641,2026-07-10T15:28:13.626-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-7641,2026-07-10T16:13:39.754-0300,Rafael Ferreira,resolution,,Done
 SI-7641,2026-07-10T16:13:39.754-0300,Rafael Ferreira,status,Submissão,Done
