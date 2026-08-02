@@ -68287,15 +68287,47 @@ SI-8249,2026-08-01T19:06:46.616-0300,Sistema,Causa raiz potencial,,Tentativa de 
 SI-8249,2026-08-01T19:06:46.616-0300,Sistema,Causa raiz final,,"Esclarecido que o fluxo do processo possui diretrizes para assegurar a conformidade dos dados acordados. Assim que as etapas de partida ou chegada são confirmadas, as informações contratuais do processo principal são consolidadas para evitar inconsistências. Por essa razão, quando surge a necessidade de ajustar valores ou realizar novas cobranças ao cliente, a orientação adequada é a abertura de uma ordem complementar, permitindo a geração do novo estágio operacional e a devida continuidade do atendimento."
 SI-8249,2026-08-01T19:06:46.616-0300,Sistema,Justificativa Causa Raiz final,,A alteração de quote/SD é bloqueada por regra de negócio em processos com ETD ou ETA confirmados para garantir a consistência dos dados operacionais e financeiros. A orientação para abertura de ordem complementar
 SI-8250,2026-07-30T19:57:24.307-0300,Sistema,Link,,This work item is blocked by GA-1375
+SI-8250,2026-08-02T12:59:09.339-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8250,2026-08-02T12:59:09.339-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-8250,2026-08-02T12:59:09.339-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8250,2026-08-02T12:59:09.339-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8250,2026-08-02T12:59:09.339-0300,Sistema,Resolução do chamado,,Finalizado o atendimento referente à solicitação de cadastro. A colaboradora realizou o procedimento de forma autônoma e confirmou a conclusão bem-sucedida do registro na plataforma.
+SI-8250,2026-08-02T12:59:09.339-0300,Sistema,Causa raiz potencial,,Dificuldade temporária no entendimento do fluxo de validação de dados da tela.
+SI-8250,2026-08-02T12:59:09.339-0300,Sistema,Causa raiz final,,A solicitação inicial decorreu de uma dúvida operacional momentânea durante o processo de registro de dados na plataforma. O fluxo de formulários do sistema exige o preenchimento correto e sequencial de informações obrigatórias para que a validação seja efetuada.
+SI-8250,2026-08-02T12:59:09.339-0300,Sistema,Justificativa Causa Raiz final,,"A investigação técnica confirmou a ausência de exceções em logs de aplicação, erros de integração de API ou inconsistências na camada de banco de dados no momento do evento."
 SI-8251,2026-07-31T10:42:42.138-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8251,2026-07-31T10:42:45.045-0300,Bruno Silva,resolution,,Done
 SI-8251,2026-07-31T10:42:45.045-0300,Bruno Silva,status,Submissão,Done
+SI-8251,2026-08-02T12:59:10.208-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8251,2026-08-02T12:59:10.208-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8251,2026-08-02T12:59:10.208-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8251,2026-08-02T12:59:10.208-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8251,2026-08-02T12:59:10.208-0300,Sistema,Resolução do chamado,,Bom dia! pode vim na salinha do suporte para verificarmos por favor? (https://meet.google.com/byo-fwyt-uou?authuser=0&pli=1)
+SI-8251,2026-08-02T12:59:10.208-0300,Sistema,Causa raiz potencial,,Bom dia! pode vim na salinha do suporte para verificarmos por favor? (https://meet.google.com/byo-fwyt-uou?authuser=0&pli=1)
+SI-8251,2026-08-02T12:59:10.208-0300,Sistema,Causa raiz final,,Bom dia! pode vim na salinha do suporte para verificarmos por favor? (https://meet.google.com/byo-fwyt-uou?authuser=0&pli=1)
+SI-8251,2026-08-02T12:59:10.208-0300,Sistema,Justificativa Causa Raiz final,,Bom dia! pode vim na salinha do suporte para verificarmos por favor? (https://meet.google.com/byo-fwyt-uou?authuser=0&pli=1)
 SI-8252,2026-07-31T09:34:04.064-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8252,2026-07-31T09:34:07.396-0300,Bruno Silva,resolution,,Done
 SI-8252,2026-07-31T09:34:07.396-0300,Bruno Silva,status,Submissão,Done
+SI-8252,2026-08-02T12:59:10.823-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8252,2026-08-02T12:59:10.823-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-8252,2026-08-02T12:59:10.823-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8252,2026-08-02T12:59:10.823-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8252,2026-08-02T12:59:10.823-0300,Sistema,Resolução do chamado,,"Chamado foi resolvido via salinha após colaborador informar que o documento de HAWB estava pending no booking, foi realizada a retificação na order."
+SI-8252,2026-08-02T12:59:10.823-0300,Sistema,Causa raiz potencial,,"Chamado foi resolvido via salinha após colaborador informar que o documento de HAWB estava pending no booking, foi realizada a retificação na order."
+SI-8252,2026-08-02T12:59:10.823-0300,Sistema,Causa raiz final,,"Chamado foi resolvido via salinha após colaborador informar que o documento de HAWB estava pending no booking, foi realizada a retificação na order."
+SI-8252,2026-08-02T12:59:10.823-0300,Sistema,Justificativa Causa Raiz final,,"Chamado foi resolvido via salinha após colaborador informar que o documento de HAWB estava pending no booking, foi realizada a retificação na order."
 SI-8253,2026-07-31T10:48:15.867-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8253,2026-07-31T10:48:19.365-0300,Bruno Silva,resolution,,Done
 SI-8253,2026-07-31T10:48:19.365-0300,Bruno Silva,status,Submissão,Done
+SI-8253,2026-08-02T12:59:11.433-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8253,2026-08-02T12:59:11.433-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8253,2026-08-02T12:59:11.433-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8253,2026-08-02T12:59:11.433-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8253,2026-08-02T12:59:11.433-0300,Sistema,Resolução do chamado,,"Orientado quanto à impossibilidade de avanço do card ""HAWB DRAFT REVIEW"" no cockpit, por se tratar de um estágio que não registrou ação direta. Identificada a permanência indevida do registro no painel mesmo após a etapa ter sido invalidada. Registrada a solicitação junto ao time responsável para atuação e devida correção no painel."
+SI-8253,2026-08-02T12:59:11.433-0300,Sistema,Causa raiz potencial,,Desincronização de dados entre as tabelas da timeline e do cockpit após a invalidação de um estágio do processo.
+SI-8253,2026-08-02T12:59:11.433-0300,Sistema,Causa raiz final,,"Esclarecido que, em situações normais, a invalidação de uma etapa na linha do tempo do processo deve remover automaticamente a pendência do painel de acompanhamento do colaborador. Neste caso, devido a um comportamento não esperado no fluxo de atualização entre os painéis do sistema, a etapa ""HAWB DRAFT REVIEW"" permaneceu visível de forma indevida nas ordens, mesmo sem ações pendentes. A necessidade de ajuste já foi direcionada ao time competente para regularizar a visualização das etapas."
+SI-8253,2026-08-02T12:59:11.433-0300,Sistema,Justificativa Causa Raiz final,,"Bug no fluxo de sincronização entre a tabela order_soptracker da timeline e as tabelas de exibição do cockpit operacional. O comando de invalidação do step não expurgou a entrada ativa do painel do colaborador para as ordens afetadas, exigindo a intervenção da equipe de Data Solutions para a remoção manual do registro diretamente no banco de dados."
 SI-8256,2026-07-31T10:18:24.689-0300,Sistema,Link,,This work item is blocked by GA-1376
 SI-8256,2026-07-31T11:01:13.679-0300,Bruno Silva,assignee,,Nícollas Resende
 SI-8256,2026-07-31T11:01:16.380-0300,Bruno Silva,resolution,,Done
@@ -68305,38 +68337,152 @@ SI-8255,2026-07-31T10:55:43.174-0300,Bruno Silva,resolution,,Done
 SI-8255,2026-07-31T10:55:43.174-0300,Bruno Silva,status,Submissão,Done
 SI-8255,2026-07-31T11:01:10.421-0300,Bruno Silva,assignee,Nícollas Resende,
 SI-8255,2026-07-31T15:32:26.548-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8255,2026-08-02T12:59:12.564-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8255,2026-08-02T12:59:12.564-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8255,2026-08-02T12:59:12.564-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8255,2026-08-02T12:59:12.564-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8255,2026-08-02T12:59:12.564-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8255,2026-08-02T12:59:12.564-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8255,2026-08-02T12:59:12.564-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8255,2026-08-02T12:59:12.564-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8254,2026-07-31T09:53:37.832-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8254,2026-07-31T09:53:42.524-0300,Bruno Silva,resolution,,Done
 SI-8254,2026-07-31T09:53:42.524-0300,Bruno Silva,status,Submissão,Done
+SI-8254,2026-08-02T12:59:11.985-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8254,2026-08-02T12:59:11.985-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8254,2026-08-02T12:59:11.985-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8254,2026-08-02T12:59:11.985-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8254,2026-08-02T12:59:11.985-0300,Sistema,Resolução do chamado,,"Identificada e analisada a tentativa de ataque cibernético via phishing, a qual prometia a liberação de valores por meio da plataforma iFood. Realizada a orientação do colaborador para o bloqueio e denúncia do e-mail suspeito, reforçando a importância da verificação contínua de indicadores de fraude, tais como o domínio remetente e mensagens com apelo financeiro."
+SI-8254,2026-08-02T12:59:11.985-0300,Sistema,Causa raiz potencial,,"Disparo massivo de e-mails maliciosos por agentes externos utilizando técnicas de engenharia social.
+Falha na interceptação prévia da mensagem pelos filtros de segurança de e-mail.
+Necessidade de reforço na identificação de vetores de ataque e engenharia social por parte dos usuários."
+SI-8254,2026-08-02T12:59:11.985-0300,Sistema,Causa raiz final,,"O evento ocorreu devido ao recebimento de uma mensagem eletrônica fraudulenta, técnica conhecida como phishing, elaborada por terceiros mal-intencionados com o objetivo de enganar os destinatários oferecendo um falso benefício financeiro atrelado ao iFood. As campanhas de phishing utilizam gatilhos de interesse e urgência para induzir as pessoas a clicarem em links ou fornecerem informações confidenciais. Quando mensagens com esse perfil ultrapassam as barreiras de proteção do correio eletrônico, a identificação visual de divergências — como endereços de e-mail estranhos ou domínios que não pertencem às instituições oficiais — torna-se indispensável para conter eventuais riscos à segurança das informações."
+SI-8254,2026-08-02T12:59:11.985-0300,Sistema,Justificativa Causa Raiz final,,"A classificação como Falha Operacional justifica-se pelo risco associado ao fator humano e ao cumprimento dos protocolos operacionais preventivos de segurança da informação frente a táticas de engenharia social. A tratativa envolveu o reporte do indicador de comprometimento e a reorientação do usuário para a identificação de domínios suspeitos, garantindo a redução do risco operacional e fortalecendo a cultura de segurança contínua para evitar a reincidência de incidentes dessa natureza."
 SI-8257,2026-07-31T10:47:28.504-0300,Sistema,Link,,This work item is blocked by GA-1377
+SI-8257,2026-08-02T12:59:13.158-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8257,2026-08-02T12:59:13.158-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8257,2026-08-02T12:59:13.158-0300,Sistema,Reclassificação solicitação,,Solicitação de cadastro
+SI-8257,2026-08-02T12:59:13.158-0300,Sistema,Criticidade final,,P2 - Média
+SI-8257,2026-08-02T12:59:13.158-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8257,2026-08-02T12:59:13.158-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8257,2026-08-02T12:59:13.158-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8257,2026-08-02T12:59:13.158-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8259,2026-07-31T15:35:55.455-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8259,2026-07-31T15:35:58.215-0300,Ricardo Barbosa Machado,status,Submissão,Finalizado Definitivamente
 SI-8259,2026-07-31T15:36:00.924-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8259,2026-07-31T15:36:00.924-0300,Ricardo Barbosa Machado,status,Finalizado Definitivamente,Done
+SI-8259,2026-08-02T12:59:14.457-0300,Sistema,Criticidade final,,P2 - Média
+SI-8259,2026-08-02T12:59:14.457-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8259,2026-08-02T12:59:14.457-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8259,2026-08-02T12:59:14.457-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8259,2026-08-02T12:59:14.457-0300,Sistema,Resolução do chamado,,Chamado concluido na salinha do suporte.
+SI-8259,2026-08-02T12:59:14.457-0300,Sistema,Causa raiz potencial,,Chamado concluido na salinha do suporte.
+SI-8259,2026-08-02T12:59:14.457-0300,Sistema,Causa raiz final,,Chamado concluido na salinha do suporte.
+SI-8259,2026-08-02T12:59:14.457-0300,Sistema,Justificativa Causa Raiz final,,Chamado concluido na salinha do suporte.
 SI-8258,2026-07-31T13:59:41.816-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8258,2026-07-31T13:59:44.899-0300,Bruno Silva,resolution,,Done
 SI-8258,2026-07-31T13:59:44.899-0300,Bruno Silva,status,Submissão,Done
+SI-8258,2026-08-02T12:59:13.809-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8258,2026-08-02T12:59:13.809-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8258,2026-08-02T12:59:13.809-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8258,2026-08-02T12:59:13.809-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8258,2026-08-02T12:59:13.809-0300,Sistema,Resolução do chamado,,"Documento foi enviado, se caso não ler por favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8258,2026-08-02T12:59:13.809-0300,Sistema,Causa raiz potencial,,"Documento foi enviado, se caso não ler por favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8258,2026-08-02T12:59:13.809-0300,Sistema,Causa raiz final,,"Documento foi enviado, se caso não ler por favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8258,2026-08-02T12:59:13.809-0300,Sistema,Justificativa Causa Raiz final,,"Documento foi enviado, se caso não ler por favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)"
 SI-8266,2026-07-31T14:35:20.081-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8266,2026-07-31T14:35:23.711-0300,Bruno Silva,resolution,,Done
 SI-8266,2026-07-31T14:35:23.711-0300,Bruno Silva,status,Submissão,Done
+SI-8266,2026-08-02T12:59:18.365-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8266,2026-08-02T12:59:18.365-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8266,2026-08-02T12:59:18.365-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8266,2026-08-02T12:59:18.365-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8266,2026-08-02T12:59:18.365-0300,Sistema,Resolução do chamado,,"Documento foi enviado, se caso não ler por favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8266,2026-08-02T12:59:18.365-0300,Sistema,Causa raiz potencial,,"Documento foi enviado, se caso não ler por favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8266,2026-08-02T12:59:18.365-0300,Sistema,Causa raiz final,,"Documento foi enviado, se caso não ler por favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8266,2026-08-02T12:59:18.365-0300,Sistema,Justificativa Causa Raiz final,,"Documento foi enviado, se caso não ler por favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)"
 SI-8265,2026-07-31T15:56:10.104-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8265,2026-07-31T15:56:12.479-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8265,2026-07-31T15:56:12.479-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8265,2026-08-02T12:59:17.861-0300,Sistema,Criticidade final,,P2 - Média
+SI-8265,2026-08-02T12:59:17.861-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8265,2026-08-02T12:59:17.861-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8265,2026-08-02T12:59:17.861-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8265,2026-08-02T12:59:17.861-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8265,2026-08-02T12:59:17.861-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8265,2026-08-02T12:59:17.861-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8265,2026-08-02T12:59:17.861-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8264,2026-08-02T12:59:17.285-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8264,2026-08-02T12:59:17.285-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8264,2026-08-02T12:59:17.285-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8264,2026-08-02T12:59:17.285-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8264,2026-08-02T12:59:17.285-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8264,2026-08-02T12:59:17.285-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8264,2026-08-02T12:59:17.285-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8264,2026-08-02T12:59:17.285-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8263,2026-07-31T14:37:18.353-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8263,2026-07-31T14:37:21.411-0300,Bruno Silva,resolution,,Done
 SI-8263,2026-07-31T14:37:21.411-0300,Bruno Silva,status,Submissão,Done
+SI-8263,2026-08-02T12:59:16.730-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8263,2026-08-02T12:59:16.730-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8263,2026-08-02T12:59:16.730-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8263,2026-08-02T12:59:16.730-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8263,2026-08-02T12:59:16.730-0300,Sistema,Resolução do chamado,,"Documento foi enviado, se caso não ler por favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8263,2026-08-02T12:59:16.730-0300,Sistema,Causa raiz potencial,,"Documento foi enviado, se caso não ler por favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8263,2026-08-02T12:59:16.730-0300,Sistema,Causa raiz final,,"Documento foi enviado, se caso não ler por favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8263,2026-08-02T12:59:16.730-0300,Sistema,Justificativa Causa Raiz final,,"Documento foi enviado, se caso não ler por favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)"
 SI-8262,2026-07-31T15:52:32.387-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8262,2026-07-31T15:52:35.247-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8262,2026-07-31T15:52:35.247-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8262,2026-08-02T12:59:16.125-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8262,2026-08-02T12:59:16.125-0300,Sistema,Criticidade final,,P2 - Média
+SI-8262,2026-08-02T12:59:16.125-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8262,2026-08-02T12:59:16.125-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8262,2026-08-02T12:59:16.125-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8262,2026-08-02T12:59:16.125-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8262,2026-08-02T12:59:16.125-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8262,2026-08-02T12:59:16.125-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8261,2026-07-31T14:32:52.026-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8261,2026-07-31T14:32:55.226-0300,Bruno Silva,resolution,,Done
 SI-8261,2026-07-31T14:32:55.226-0300,Bruno Silva,status,Submissão,Done
+SI-8261,2026-08-02T12:59:15.538-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8261,2026-08-02T12:59:15.538-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8261,2026-08-02T12:59:15.538-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-8261,2026-08-02T12:59:15.538-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8261,2026-08-02T12:59:15.538-0300,Sistema,Resolução do chamado,,"Orientado quanto à impossibilidade de alterar o documento de cotação atrelado ao processo devido às diretrizes vigentes após a confirmação dos marcos de transporte. Esclarecido que, para aplicação de eventuais cobranças ao cliente, a alternativa indicada consiste na criação de uma ordem complementar com a geração do estágio de recebimento da carga"
+SI-8261,2026-08-02T12:59:15.538-0300,Sistema,Causa raiz potencial,,Tentativa de alteração ou substituição da cotação vinculada ao processo após a confirmação de etapas logísticas consolidadas.
+SI-8261,2026-08-02T12:59:15.538-0300,Sistema,Causa raiz final,,"Esclarecido que o fluxo do processo possui diretrizes para assegurar a conformidade dos dados acordados. Assim que as etapas de partida ou chegada são confirmadas, as informações contratuais do processo principal são consolidadas para evitar inconsistências. Por essa razão, quando surge a necessidade de ajustar valores ou realizar novas cobranças ao cliente, a orientação adequada é a abertura de uma ordem complementar, permitindo a geração do novo estágio operacional e a devida continuidade do atendimento."
+SI-8261,2026-08-02T12:59:15.538-0300,Sistema,Justificativa Causa Raiz final,,"Esclarecido que o fluxo do processo possui diretrizes para assegurar a conformidade dos dados acordados. Assim que as etapas de partida ou chegada são confirmadas, as informações contratuais do processo principal são consolidadas para evitar inconsistências. Por essa razão, quando surge a necessidade de ajustar valores ou realizar novas cobranças ao cliente, a orientação adequada é a abertura de uma ordem complementar, permitindo a geração do novo estágio operacional e a devida continuidade do atendimento."
+SI-8260,2026-08-02T12:59:15.022-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8260,2026-08-02T12:59:15.022-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8260,2026-08-02T12:59:15.022-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8260,2026-08-02T12:59:15.022-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8260,2026-08-02T12:59:15.022-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8260,2026-08-02T12:59:15.022-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8260,2026-08-02T12:59:15.022-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8260,2026-08-02T12:59:15.022-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8268,2026-07-31T14:39:11.722-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8268,2026-07-31T14:39:15.327-0300,Bruno Silva,resolution,,Done
 SI-8268,2026-07-31T14:39:15.327-0300,Bruno Silva,status,Submissão,Done
+SI-8268,2026-08-02T12:59:19.492-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8268,2026-08-02T12:59:19.492-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8268,2026-08-02T12:59:19.492-0300,Sistema,Criticidade final,,P2 - Média
+SI-8268,2026-08-02T12:59:19.492-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8268,2026-08-02T12:59:19.492-0300,Sistema,Resolução do chamado,,"Documento foi enviado, se caso não ler por favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8268,2026-08-02T12:59:19.492-0300,Sistema,Causa raiz potencial,,"Documento foi enviado, se caso não ler por favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8268,2026-08-02T12:59:19.492-0300,Sistema,Causa raiz final,,"Documento foi enviado, se caso não ler por favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8268,2026-08-02T12:59:19.492-0300,Sistema,Justificativa Causa Raiz final,,"Documento foi enviado, se caso não ler por favor entrar na salinha para verificação dos documentos (https://meet.google.com/cws-xorv-fvw?authuser=0)"
 SI-8267,2026-07-31T14:34:16.530-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8267,2026-07-31T14:34:19.964-0300,Bruno Silva,resolution,,Done
 SI-8267,2026-07-31T14:34:19.964-0300,Bruno Silva,status,Submissão,Done
+SI-8267,2026-08-02T12:59:18.938-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8267,2026-08-02T12:59:18.938-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8267,2026-08-02T12:59:18.938-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8267,2026-08-02T12:59:18.938-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8267,2026-08-02T12:59:18.938-0300,Sistema,Resolução do chamado,,Chamado foi resolvido via salinha por ser uma carga AOG com a ajuda do time de DS.
+SI-8267,2026-08-02T12:59:18.938-0300,Sistema,Causa raiz potencial,,Chamado foi resolvido via salinha por ser uma carga AOG com a ajuda do time de DS.
+SI-8267,2026-08-02T12:59:18.938-0300,Sistema,Causa raiz final,,Chamado foi resolvido via salinha por ser uma carga AOG com a ajuda do time de DS.
+SI-8267,2026-08-02T12:59:18.938-0300,Sistema,Justificativa Causa Raiz final,,Chamado foi resolvido via salinha por ser uma carga AOG com a ajuda do time de DS.
 SI-8284,2026-07-31T16:12:53.802-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8284,2026-07-31T16:12:53.802-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8283,2026-07-31T16:12:51.765-0300,Ricardo Barbosa Machado,resolution,,Done
@@ -68356,6 +68502,14 @@ SI-8277,2026-07-31T16:12:37.410-0300,Ricardo Barbosa Machado,status,Submissão,D
 SI-8276,2026-07-31T15:13:28.678-0300,Sistema,Link,,This work item is blocked by GA-1383
 SI-8276,2026-07-31T16:14:02.693-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8276,2026-07-31T16:14:02.693-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8276,2026-08-02T12:59:21.774-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8276,2026-08-02T12:59:21.774-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8276,2026-08-02T12:59:21.774-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8276,2026-08-02T12:59:21.774-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8276,2026-08-02T12:59:21.774-0300,Sistema,Resolução do chamado,,Concluido.
+SI-8276,2026-08-02T12:59:21.774-0300,Sistema,Causa raiz potencial,,Concluido.
+SI-8276,2026-08-02T12:59:21.774-0300,Sistema,Causa raiz final,,Concluido.
+SI-8276,2026-08-02T12:59:21.774-0300,Sistema,Justificativa Causa Raiz final,,Concluido.
 SI-8275,2026-07-31T15:11:32.771-0300,Sistema,Link,,This work item is blocked by GA-1382
 SI-8275,2026-07-31T16:13:59.521-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8275,2026-07-31T16:13:59.521-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -68366,19 +68520,44 @@ SI-8273,2026-07-31T16:12:29.605-0300,Ricardo Barbosa Machado,status,Submissão,D
 SI-8272,2026-07-31T16:12:03.063-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8272,2026-07-31T16:12:03.063-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8272,2026-07-31T16:12:23.861-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8272,2026-08-02T12:59:21.196-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8272,2026-08-02T12:59:21.196-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8272,2026-08-02T12:59:21.196-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8272,2026-08-02T12:59:21.196-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8272,2026-08-02T12:59:21.196-0300,Sistema,Resolução do chamado,,"Identificada a indisponibilidade sistêmica ao tentar deletar ou desvincular ordens, ocasionada por uma inconsistência nos registros internos de controle de datas. Como a correção estrutural dessa validação requer uma alteração sistêmica para evitar que a operação seja interrompida, o cenário foi devidamente mapeado e vinculado ao INTAKE-1557. Este intake já se encontra sob a responsabilidade da equipe de desenvolvimento para que seja criada e implementada a solução definitiva na plataforma, garantindo a normalização do fluxo operacional."
+SI-8272,2026-08-02T12:59:21.196-0300,Sistema,Causa raiz potencial,,Ausência de inicialização automática de tabelas de controle de datas de processos antigos ou falta de validação estrutural do sistema ao tentar atualizar informações ligadas a relacionamentos inexistentes no banco de dados.
+SI-8272,2026-08-02T12:59:21.196-0300,Sistema,Causa raiz final,,"O impedimento ao tentar concluir as ações de desatrelar ou deletar as ordens ocorria devido a uma falha de comunicação entre as validações sistêmicas atuais e o histórico de cadastros da plataforma. Especificamente, após a desativação da aba anterior de controle de datas, algumas ordens ficaram sem esse registro de acompanhamento gerado na base. Sempre que um operador tentava realizar uma movimentação crítica na ordem, a plataforma tentava atualizar obrigatoriamente um status de ""aprovação de cliente"" que ficava dentro desse antigo controle de datas. Por não encontrar essa informação, o sistema não sabia como prosseguir, interrompendo a ação abruptamente e travando a tela. Como não foi realizada nenhuma tratativa paliativa ou definitiva até o momento para contornar essa exigência de sistema, a situação foi atrelada ao INTAKE-1557. A equipe de tecnologia trabalhará neste intake para reprogramar o sistema, ensinando a plataforma a verificar se a informação de data existe antes de tentar atualizá-la, ignorando a validação ou criando o dado sob demanda para que o trabalho do operador não seja mais interrompido."
+SI-8272,2026-08-02T12:59:21.196-0300,Sistema,Justificativa Causa Raiz final,,"A análise técnica do card SUS-215 atestou a ocorrência do erro relacional RelatedObjectDoesNotExist: Assembly has no datecontrol no arquivo src/booking/models/base.py (linha 489). A falha é engatilhada porque o backend, através da função update_customer_approval, tenta acessar de forma direta o atributo datecontrol.customer_approval_valid sem aplicar um tratamento defensivo para validar a existência do relacionamento OneToOne na tabela order_datecontrol. Considerando que nenhuma correção definitiva ou saneamento foi executado em ambiente produtivo, os processos que possuem essa lacuna de dados continuam apresentando o Erro 500. A resolução focada na melhoria contínua e eliminação da reincidência foi direcionada para o INTAKE-1557, que atuará na implementação de validações defensivas no código (para verificar a existência do objeto antes da manipulação) e na criação de rotinas para lidar com registros órfãos, mitigando o impacto na eficiência operacional apontado no discovery."
 SI-8271,2026-07-31T16:11:04.955-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8271,2026-07-31T16:11:04.955-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8271,2026-07-31T16:11:17.554-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8271,2026-08-02T12:59:20.635-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8271,2026-08-02T12:59:20.635-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8271,2026-08-02T12:59:20.635-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8271,2026-08-02T12:59:20.635-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8271,2026-08-02T12:59:20.635-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8271,2026-08-02T12:59:20.635-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8271,2026-08-02T12:59:20.635-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8271,2026-08-02T12:59:20.635-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8270,2026-07-31T14:49:22.490-0300,Sistema,Link,,This work item is blocked by GA-1381
 SI-8270,2026-07-31T16:02:26.745-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8270,2026-07-31T16:02:29.077-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8270,2026-07-31T16:02:29.077-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8270,2026-08-02T12:59:20.122-0300,Sistema,Criticidade final,,P2 - Média
+SI-8270,2026-08-02T12:59:20.122-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8270,2026-08-02T12:59:20.122-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8270,2026-08-02T12:59:20.122-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8270,2026-08-02T12:59:20.122-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8270,2026-08-02T12:59:20.122-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8270,2026-08-02T12:59:20.122-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8270,2026-08-02T12:59:20.122-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8269,2026-07-31T14:48:22.704-0300,Sistema,Link,,This work item is blocked by GA-1380
 SI-8269,2026-07-31T16:10:54.219-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8269,2026-07-31T16:10:54.219-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8269,2026-07-31T16:11:02.068-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8287,2026-07-31T16:29:25.134-0300,Sistema,Link,,This work item is blocked by GA-1386
 SI-8286,2026-07-31T16:16:34.170-0300,Sistema,Link,,This work item is blocked by GA-1385
+SI-8286,2026-08-02T12:59:22.330-0300,Sistema,Resolução do chamado,,Em atendimento
 SI-8285,2026-07-31T16:12:25.084-0300,Sistema,Link,,This work item is blocked by GA-1384
 SI-8285,2026-07-31T16:12:56.151-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8285,2026-07-31T16:12:56.151-0300,Ricardo Barbosa Machado,status,Submissão,Done
