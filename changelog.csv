@@ -61768,6 +61768,8 @@ SI-7739,2026-08-01T19:01:46.623-0300,Sistema,Resolução do chamado,Em atendimen
 SI-7739,2026-08-01T19:01:46.623-0300,Sistema,Causa raiz potencial,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-7739,2026-08-01T19:01:46.623-0300,Sistema,Causa raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-7739,2026-08-01T19:01:46.623-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7739,2026-08-03T08:09:14.697-0300,Rafael Ferreira,resolution,,Done
+SI-7739,2026-08-03T08:09:14.697-0300,Rafael Ferreira,status,Em Atendimento,Done
 SI-7745,2026-07-14T12:17:19.157-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7745,2026-07-14T12:17:24.707-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7745,2026-07-14T12:17:27.212-0300,Ricardo Barbosa Machado,resolution,,Done
@@ -68558,9 +68560,16 @@ SI-8269,2026-07-31T16:11:02.068-0300,Ricardo Barbosa Machado,assignee,,Ricardo B
 SI-8287,2026-07-31T16:29:25.134-0300,Sistema,Link,,This work item is blocked by GA-1386
 SI-8286,2026-07-31T16:16:34.170-0300,Sistema,Link,,This work item is blocked by GA-1385
 SI-8286,2026-08-02T12:59:22.330-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8286,2026-08-03T08:10:27.308-0300,Bruno Silva,assignee,,luiz.henrique
+SI-8286,2026-08-03T08:10:33.708-0300,Bruno Silva,resolution,,Done
+SI-8286,2026-08-03T08:10:33.708-0300,Bruno Silva,status,Submissão,Done
+SI-8286,2026-08-03T08:10:39.358-0300,Bruno Silva,assignee,luiz.henrique,Ricardo Barbosa Machado
 SI-8285,2026-07-31T16:12:25.084-0300,Sistema,Link,,This work item is blocked by GA-1384
 SI-8285,2026-07-31T16:12:56.151-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8285,2026-07-31T16:12:56.151-0300,Ricardo Barbosa Machado,status,Submissão,Done
 SI-8285,2026-07-31T16:14:39.738-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
+SI-8285,2026-08-03T08:11:12.676-0300,Bruno Silva,assignee,Ricardo Barbosa Machado,
+SI-8285,2026-08-03T08:11:16.174-0300,Bruno Silva,resolution,Done,
+SI-8285,2026-08-03T08:11:16.174-0300,Bruno Silva,status,Done,Submissão
 SI-8289,2026-08-01T11:45:23.686-0300,Sistema,Link,,This work item is blocked by GA-1388
 SI-8288,2026-08-01T11:05:32.931-0300,Sistema,Link,,This work item is blocked by GA-1387
