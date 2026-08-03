@@ -60980,6 +60980,7 @@ SI-7669,2026-08-03T15:49:47.267-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7669,2026-08-03T15:49:49.250-0300,Rafael Ferreira,Classificação,,Ranked lower
 SI-7669,2026-08-03T15:49:49.448-0300,Rafael Ferreira,resolution,,Done
 SI-7669,2026-08-03T15:49:49.448-0300,Rafael Ferreira,status,Submissão,Done
+SI-7669,2026-08-03T19:01:49.630-0300,Sistema,Criticidade final,P0 - Crítica,P3 - Baixa
 SI-7668,2026-07-13T11:15:17.421-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7668,2026-07-13T11:15:20.360-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7668,2026-07-13T11:15:23.878-0300,Ricardo Barbosa Machado,status,Em Atendimento,Encaminhado DS
@@ -68156,6 +68157,14 @@ SI-8236,2026-08-03T13:03:54.475-0300,Sistema,Resolução do chamado,,Aguardando 
 SI-8236,2026-08-03T13:03:54.475-0300,Sistema,Causa raiz potencial,,Aguardando informação
 SI-8236,2026-08-03T13:03:54.475-0300,Sistema,Causa raiz final,,Aguardando informação
 SI-8236,2026-08-03T13:03:54.475-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
+SI-8236,2026-08-03T19:05:52.639-0300,Sistema,Resolução do chamado,Aguardando informação,"Verificado o processo no sistema e constatado que os cards correspondentes estão sendo exibidos corretamente no painel de acompanhamento, sem a presença de duplicidades, não sendo necessária nenhuma ação corretiva."
+SI-8236,2026-08-03T19:05:52.639-0300,Sistema,Causa raiz potencial,Aguardando informação,"Latência temporária na sincronização de dados entre o fluxo do processo e a visualização na interface.
+
+Acúmulo transitório de cache no navegador durante a atualização do painel.
+
+Oscilação momentânea no carregamento das etapas do processo no cockpit."
+SI-8236,2026-08-03T19:05:52.639-0300,Sistema,Causa raiz final,Aguardando informação,"a verificação detalhada da ordem 260747457, realizou-se a análise completa da interface do painel de acompanhamento e das etapas associadas ao processo. Constatou-se que todos os cards de acompanhamento estão sendo apresentados adequadamente e não há qualquer registro duplicado na exibição da ordem. O sintoma informado inicialmente decorreu de uma inconsistência temporária de carregamento ou sincronização visual da página, que se normalizou automaticamente sem gerar impactos no andamento do fluxo. Com a visualização restabelecida e funcionando conforme esperado, a ordem segue disponível para consulta e atualização sem prejuízos à operação."
+SI-8236,2026-08-03T19:05:52.639-0300,Sistema,Justificativa Causa Raiz final,Aguardando informação,"A verificação realizada no ambiente operacional para a ordem 260747457 confirmou a integridade e a correta exibição dos dados na interface do cockpit. Não foram identificadas falhas permanentes no fluxo de dados ou duplicidade de registros referentes à ordem analisada. Por se tratar de uma indisponibilidade transitória na atualização da interface, resolvida autonomamente após novo acesso, não se fez necessária alteração estrutural no módulo. O encerramento ocorre sem ações corretivas de código, recomendando-se o monitoramento contínuo da estabilidade visual do módulo para assegurar a prevenção de reincidências."
 SI-8235,2026-07-30T16:59:16.552-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8235,2026-07-30T16:59:19.463-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8235,2026-07-30T16:59:19.463-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -68734,6 +68743,14 @@ SI-8289,2026-08-01T11:45:23.686-0300,Sistema,Link,,This work item is blocked by 
 SI-8289,2026-08-03T10:58:58.446-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-8289,2026-08-03T10:58:58.644-0300,Rafael Ferreira,resolution,,Done
 SI-8289,2026-08-03T10:58:58.644-0300,Rafael Ferreira,status,Submissão,Done
+SI-8289,2026-08-03T19:06:11.866-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8289,2026-08-03T19:06:11.866-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8289,2026-08-03T19:06:11.866-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8289,2026-08-03T19:06:11.866-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8289,2026-08-03T19:06:11.866-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8289,2026-08-03T19:06:11.866-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8289,2026-08-03T19:06:11.866-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8289,2026-08-03T19:06:11.866-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8288,2026-08-01T11:05:32.931-0300,Sistema,Link,,This work item is blocked by GA-1387
 SI-8288,2026-08-03T10:00:20.929-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-8288,2026-08-03T10:00:23.256-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
@@ -68770,6 +68787,14 @@ SI-8292,2026-08-03T10:59:00.614-0300,Rafael Ferreira,Classificação,,Ranked hig
 SI-8292,2026-08-03T10:59:00.895-0300,Rafael Ferreira,resolution,,Done
 SI-8292,2026-08-03T10:59:00.895-0300,Rafael Ferreira,status,Submissão,Done
 SI-8292,2026-08-03T16:06:39.695-0300,Rafael Ferreira,assignee,,Helena Almeida
+SI-8292,2026-08-03T19:06:13.230-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8292,2026-08-03T19:06:13.230-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8292,2026-08-03T19:06:13.230-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-8292,2026-08-03T19:06:13.230-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8292,2026-08-03T19:06:13.230-0300,Sistema,Resolução do chamado,,Realizado os ajustes necessários
+SI-8292,2026-08-03T19:06:13.230-0300,Sistema,Causa raiz potencial,,Realizado os ajustes necessários
+SI-8292,2026-08-03T19:06:13.230-0300,Sistema,Causa raiz final,,Realizado os ajustes necessários
+SI-8292,2026-08-03T19:06:13.230-0300,Sistema,Justificativa Causa Raiz final,,Realizado os ajustes necessários
 SI-8291,2026-08-03T09:13:04.279-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8291,2026-08-03T09:13:31.879-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-8291,2026-08-03T09:13:35.419-0300,Rafael Ferreira,resolution,,Done
@@ -69116,6 +69141,14 @@ Rota que a gente utiliza(quebrada):
 
 Rota que parece estar funcionando:
 [https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaPeriodo(moeda=@moeda,dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@moeda=%27USD%27&@dataInicial=%2707-30-2026%27&@dataFinalCotacao=%2707-30-2026%27&$format=json|https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaPeriodo%28moeda=@moeda,dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao%29?@moeda=%27USD%27&@dataInicial=%2707-30-2026%27&@dataFinalCotacao=%2707-30-2026%27&$format=json]"
+SI-8300,2026-08-03T19:06:16.154-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8300,2026-08-03T19:06:16.154-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8300,2026-08-03T19:06:16.154-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8300,2026-08-03T19:06:16.154-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8300,2026-08-03T19:06:16.154-0300,Sistema,Resolução do chamado,,Identificada a falha na atualização e seleção automática da taxa PTAX na tela de faturamento do Módulo Financial para datas a partir de 30/07. Orientado o contorno operacional temporário por meio da inclusão manual dos valores diretamente na tela de faturamento para garantir a continuidade dos processos. Validada rota alternativa de integração e aberto o projeto sob a identificação INTAKE-1774 para que a equipe de desenvolvimento realize o ajuste definitivo no sistema.
+SI-8300,2026-08-03T19:06:16.154-0300,Sistema,Causa raiz potencial,,Incompatibilidade na leitura dos dados retornados pela API do Banco Central decorrente de alterações na estrutura do payload de resposta enviado pelo serviço externo.
+SI-8300,2026-08-03T19:06:16.154-0300,Sistema,Causa raiz final,,"A impossibilidade de selecionar datas posteriores a 29/07 para a taxa PTAX na tela de faturamento ocorreu devido a uma alteração efetuada pelo Banco Central na estrutura de envio das suas cotações financeiras. O sistema da DMS Logistics realiza a busca diária dessas taxas por meio de uma integração direta com a instituição federal. Embora os dados estivessem sendo recebidos e gravados na base de dados interna normalmente, a alteração no formato de resposta do órgão externo fez com que o Módulo Financial não conseguisse interpretar os registros para disponibilizá-los na interface. Enquanto a correção definitiva é desenvolvida, a equipe operacional foi orientada a realizar a inserção manual das taxas na tela de faturamento. Paralelamente, o time técnico identificou uma rota alternativa de consulta funcional disponibilizada pelo Banco Central e abriu o INTAKE-1774 para reestruturar a leitura das informações e reestabelecer a busca automática do sistema."
+SI-8300,2026-08-03T19:06:16.154-0300,Sistema,Justificativa Causa Raiz final,,"A análise técnica confirmou que a alteração na estrutura de resposta da API do Banco Central inviabilizou a leitura dos dados via rota CotacaoDolarDia no Módulo Financial do sistema DMSYS, embora os registros estivessem presentes no banco de dados operacional. A validação técnica confirmou o funcionamento da rota alternativa CotacaoMoedaPeriodo. Para reestabelecer o consumo correto e evitar reincidências geradas por mudanças em integrações de terceiros, foi aberto o INTAKE-1774 para Product Discovery, visando adequar o parser/integração do sistema e garantir a exibição automatizada dos dados na interface do faturamento."
 SI-8299,2026-08-03T10:49:39.154-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8299,2026-08-03T10:49:42.021-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-8299,2026-08-03T10:49:42.317-0300,Rafael Ferreira,resolution,,Done
@@ -69147,31 +69180,87 @@ SI-8304,2026-08-03T13:39:25.504-0300,Sistema,Link,,This work item is blocked by 
 SI-8304,2026-08-03T14:23:36.214-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8304,2026-08-03T14:23:39.539-0300,Bruno Silva,resolution,,Done
 SI-8304,2026-08-03T14:23:39.539-0300,Bruno Silva,status,Submissão,Done
+SI-8304,2026-08-03T19:06:18.342-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8304,2026-08-03T19:06:18.342-0300,Sistema,Criticidade final,,P2 - Média
+SI-8304,2026-08-03T19:06:18.342-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8304,2026-08-03T19:06:18.342-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8304,2026-08-03T19:06:18.342-0300,Sistema,Resolução do chamado,,Colaborador foi chamado no google chat para realizar as configurações da câmera.
+SI-8304,2026-08-03T19:06:18.342-0300,Sistema,Causa raiz potencial,,Colaborador foi chamado no google chat para realizar as configurações da câmera.
+SI-8304,2026-08-03T19:06:18.342-0300,Sistema,Causa raiz final,,Colaborador foi chamado no google chat para realizar as configurações da câmera.
+SI-8304,2026-08-03T19:06:18.342-0300,Sistema,Justificativa Causa Raiz final,,Colaborador foi chamado no google chat para realizar as configurações da câmera.
 SI-8303,2026-08-03T13:37:27.312-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8303,2026-08-03T13:37:30.966-0300,Bruno Silva,resolution,,Done
 SI-8303,2026-08-03T13:37:30.966-0300,Bruno Silva,status,Submissão,Done
+SI-8303,2026-08-03T19:06:17.628-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8303,2026-08-03T19:06:17.628-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8303,2026-08-03T19:06:17.628-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8303,2026-08-03T19:06:17.628-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8303,2026-08-03T19:06:17.628-0300,Sistema,Resolução do chamado,,Encaminhado ao time responsável para análise e ajuste.
+SI-8303,2026-08-03T19:06:17.628-0300,Sistema,Causa raiz potencial,,Processo de merge entre a timeline do booking e a order não executado ou falha na migração dos steps de ETD/ETA para a order sem vínculo
+SI-8303,2026-08-03T19:06:17.628-0300,Sistema,Causa raiz final,,"Identificado um ponto de atenção no painel de acompanhamento, onde as datas estimadas de saída e chegada permaneceram fixas no monitoramento da instrução de embarque. Esse comportamento ocorre porque esses marcos temporais dependem da vinculação direta a uma reserva de frete confirmada para atualizar suas informações de transporte."
+SI-8303,2026-08-03T19:06:17.628-0300,Sistema,Justificativa Causa Raiz final,,"A ausência de vínculo com um booking impede a execução da regra de negócio de substituição e sincronização dos steps de ETD/ETA na timeline da order, resultando em dados obsoletos/travados na interface"
 SI-8308,2026-08-03T14:51:46.402-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8308,2026-08-03T14:51:48.822-0300,Rafael Ferreira,resolution,,Done
 SI-8308,2026-08-03T14:51:48.822-0300,Rafael Ferreira,status,Submissão,Done
+SI-8308,2026-08-03T19:06:21.230-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8308,2026-08-03T19:06:21.230-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8308,2026-08-03T19:06:21.230-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8308,2026-08-03T19:06:21.230-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8308,2026-08-03T19:06:21.230-0300,Sistema,Resolução do chamado,,Explicado a colaboradora o fluxo correto ao anexar o DOCS IA e como corrigir o erro em que dava no booking rejeitando os documentos.
+SI-8308,2026-08-03T19:06:21.230-0300,Sistema,Causa raiz potencial,,Documentos duplicados no booking
+SI-8308,2026-08-03T19:06:21.230-0300,Sistema,Causa raiz final,,Documentos duplicados no booking
+SI-8308,2026-08-03T19:06:21.230-0300,Sistema,Justificativa Causa Raiz final,,Documentos duplicados no booking
 SI-8307,2026-08-03T14:15:30.072-0300,Sistema,Link,,This work item is blocked by GA-1395
 SI-8307,2026-08-03T16:58:38.689-0300,Rafael Ferreira,assignee,,Helena Almeida
 SI-8307,2026-08-03T16:58:40.767-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-8307,2026-08-03T16:58:41.056-0300,Rafael Ferreira,resolution,,Done
 SI-8307,2026-08-03T16:58:41.056-0300,Rafael Ferreira,status,Submissão,Done
 SI-8307,2026-08-03T17:29:43.685-0300,Eduardo Felipe de Lima Rebello,assignee,Helena Almeida,Eduardo Felipe de Lima Rebello
+SI-8307,2026-08-03T19:06:20.550-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8307,2026-08-03T19:06:20.550-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-8307,2026-08-03T19:06:20.550-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8307,2026-08-03T19:06:20.550-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8307,2026-08-03T19:06:20.550-0300,Sistema,Resolução do chamado,,Colaborador foi adicionado ao grupo de email solicitado.
+SI-8307,2026-08-03T19:06:20.550-0300,Sistema,Causa raiz potencial,,Colaborador foi adicionado ao grupo de email solicitado.
+SI-8307,2026-08-03T19:06:20.550-0300,Sistema,Causa raiz final,,Colaborador foi adicionado ao grupo de email solicitado.
+SI-8307,2026-08-03T19:06:20.550-0300,Sistema,Justificativa Causa Raiz final,,Colaborador foi adicionado ao grupo de email solicitado.
 SI-8306,2026-08-03T14:15:27.417-0300,Sistema,Link,,This work item is blocked by GA-1394
 SI-8306,2026-08-03T15:30:44.297-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8306,2026-08-03T15:30:50.920-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-8306,2026-08-03T15:30:51.139-0300,Rafael Ferreira,resolution,,Done
 SI-8306,2026-08-03T15:30:51.139-0300,Rafael Ferreira,status,Submissão,Done
+SI-8306,2026-08-03T19:06:19.773-0300,Sistema,Causa Raiz,,Falha de Requisito
+SI-8306,2026-08-03T19:06:19.773-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8306,2026-08-03T19:06:19.773-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-8306,2026-08-03T19:06:19.773-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8306,2026-08-03T19:06:19.773-0300,Sistema,Resolução do chamado,,"Após autorização, foi atualizado as permissões de usuario da colaboradora"
+SI-8306,2026-08-03T19:06:19.773-0300,Sistema,Causa raiz potencial,,"Após autorização, foi atualizado as permissões de usuario da colaboradora"
+SI-8306,2026-08-03T19:06:19.773-0300,Sistema,Causa raiz final,,"Após autorização, foi atualizado as permissões de usuario da colaboradora"
+SI-8306,2026-08-03T19:06:19.773-0300,Sistema,Justificativa Causa Raiz final,,"Após autorização, foi atualizado as permissões de usuario da colaboradora"
 SI-8305,2026-08-03T14:17:22.914-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8305,2026-08-03T14:17:26.346-0300,Bruno Silva,resolution,,Done
 SI-8305,2026-08-03T14:17:26.346-0300,Bruno Silva,status,Submissão,Done
+SI-8305,2026-08-03T19:06:19.036-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8305,2026-08-03T19:06:19.036-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8305,2026-08-03T19:06:19.036-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8305,2026-08-03T19:06:19.036-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8305,2026-08-03T19:06:19.036-0300,Sistema,Resolução do chamado,,Boa tarde! por favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-8305,2026-08-03T19:06:19.036-0300,Sistema,Causa raiz potencial,,Boa tarde! por favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-8305,2026-08-03T19:06:19.036-0300,Sistema,Causa raiz final,,Boa tarde! por favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)
+SI-8305,2026-08-03T19:06:19.036-0300,Sistema,Justificativa Causa Raiz final,,Boa tarde! por favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)
 SI-8311,2026-08-03T15:35:31.460-0300,Sistema,Link,,This work item is blocked by GA-1399
 SI-8311,2026-08-03T15:41:14.715-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8311,2026-08-03T15:41:17.105-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-8311,2026-08-03T15:41:17.325-0300,Rafael Ferreira,resolution,,Done
 SI-8311,2026-08-03T15:41:17.325-0300,Rafael Ferreira,status,Submissão,Done
+SI-8311,2026-08-03T19:06:22.623-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8311,2026-08-03T19:06:22.623-0300,Sistema,Causa Raiz,,Falha de Requisito
+SI-8311,2026-08-03T19:06:22.623-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-8311,2026-08-03T19:06:22.623-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8311,2026-08-03T19:06:22.623-0300,Sistema,Resolução do chamado,,Realizada a atualização do acesso da colaboradora após permissão. Com isso deve ser realizado o logout e login.
+SI-8311,2026-08-03T19:06:22.623-0300,Sistema,Causa raiz potencial,,Realizada a atualização do acesso da colaboradora após permissão. Com isso deve ser realizado o logout e login.
+SI-8311,2026-08-03T19:06:22.623-0300,Sistema,Causa raiz final,,Realizada a atualização do acesso da colaboradora após permissão. Com isso deve ser realizado o logout e login.
+SI-8311,2026-08-03T19:06:22.623-0300,Sistema,Justificativa Causa Raiz final,,Realizada a atualização do acesso da colaboradora após permissão. Com isso deve ser realizado o logout e login.
 SI-8310,2026-08-03T15:08:26.946-0300,Sistema,Link,,This work item is blocked by GA-1397
 SI-8309,2026-08-03T14:53:33.016-0300,Sistema,Link,,This work item is blocked by GA-1396
 SI-8309,2026-08-03T15:53:31.936-0300,Rafael Ferreira,assignee,,Rafael Ferreira
@@ -69179,8 +69268,24 @@ SI-8309,2026-08-03T15:53:33.878-0300,Rafael Ferreira,status,Submissão,Aguardand
 SI-8309,2026-08-03T16:59:38.454-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-8309,2026-08-03T16:59:38.662-0300,Rafael Ferreira,resolution,,Done
 SI-8309,2026-08-03T16:59:38.662-0300,Rafael Ferreira,status,Aguardando Informação,Done
+SI-8309,2026-08-03T19:06:21.842-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-8309,2026-08-03T19:06:21.842-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8309,2026-08-03T19:06:21.842-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8309,2026-08-03T19:06:21.842-0300,Sistema,Reclassificação solicitação,,Solicitação de acesso
+SI-8309,2026-08-03T19:06:21.842-0300,Sistema,Resolução do chamado,,Acesso criado e enviado no privado a colaboradora.
+SI-8309,2026-08-03T19:06:21.842-0300,Sistema,Causa raiz potencial,,Acesso criado e enviado no privado a colaboradora.
+SI-8309,2026-08-03T19:06:21.842-0300,Sistema,Causa raiz final,,Acesso criado e enviado no privado a colaboradora.
+SI-8309,2026-08-03T19:06:21.842-0300,Sistema,Justificativa Causa Raiz final,,Acesso criado e enviado no privado a colaboradora.
 SI-8313,2026-08-03T16:46:50.068-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8313,2026-08-03T16:46:53.910-0300,Rafael Ferreira,resolution,,Done
 SI-8313,2026-08-03T16:46:53.910-0300,Rafael Ferreira,status,Submissão,Done
 SI-8313,2026-08-03T16:47:01.533-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-8313,2026-08-03T19:06:23.296-0300,Sistema,Criticidade final,,P2 - Média
+SI-8313,2026-08-03T19:06:23.296-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8313,2026-08-03T19:06:23.296-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8313,2026-08-03T19:06:23.296-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8313,2026-08-03T19:06:23.296-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8313,2026-08-03T19:06:23.296-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8313,2026-08-03T19:06:23.296-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8313,2026-08-03T19:06:23.296-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8312,2026-08-03T15:50:26.429-0300,Sistema,Link,,This work item is blocked by GA-1400
