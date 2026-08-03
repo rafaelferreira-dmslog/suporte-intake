@@ -68108,6 +68108,7 @@ SI-8237,2026-07-31T01:00:52.983-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8237,2026-07-31T01:00:52.983-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8236,2026-07-30T17:49:11.195-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8236,2026-07-30T17:49:11.195-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8236,2026-08-03T11:22:54.690-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8235,2026-07-30T16:59:16.552-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8235,2026-07-30T16:59:19.463-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8235,2026-07-30T16:59:19.463-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -68298,6 +68299,9 @@ SI-8250,2026-08-02T12:59:09.339-0300,Sistema,Resolução do chamado,,Finalizado 
 SI-8250,2026-08-02T12:59:09.339-0300,Sistema,Causa raiz potencial,,Dificuldade temporária no entendimento do fluxo de validação de dados da tela.
 SI-8250,2026-08-02T12:59:09.339-0300,Sistema,Causa raiz final,,A solicitação inicial decorreu de uma dúvida operacional momentânea durante o processo de registro de dados na plataforma. O fluxo de formulários do sistema exige o preenchimento correto e sequencial de informações obrigatórias para que a validação seja efetuada.
 SI-8250,2026-08-02T12:59:09.339-0300,Sistema,Justificativa Causa Raiz final,,"A investigação técnica confirmou a ausência de exceções em logs de aplicação, erros de integração de API ou inconsistências na camada de banco de dados no momento do evento."
+SI-8250,2026-08-03T10:58:50.798-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-8250,2026-08-03T10:58:51.104-0300,Rafael Ferreira,resolution,,Done
+SI-8250,2026-08-03T10:58:51.104-0300,Rafael Ferreira,status,Submissão,Done
 SI-8251,2026-07-31T10:42:42.138-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8251,2026-07-31T10:42:45.045-0300,Bruno Silva,resolution,,Done
 SI-8251,2026-07-31T10:42:45.045-0300,Bruno Silva,status,Submissão,Done
@@ -68370,6 +68374,9 @@ SI-8257,2026-08-02T12:59:13.158-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8257,2026-08-02T12:59:13.158-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8257,2026-08-02T12:59:13.158-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8257,2026-08-02T12:59:13.158-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8257,2026-08-03T10:58:52.850-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-8257,2026-08-03T10:58:53.057-0300,Rafael Ferreira,resolution,,Done
+SI-8257,2026-08-03T10:58:53.057-0300,Rafael Ferreira,status,Submissão,Done
 SI-8259,2026-07-31T15:35:55.455-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8259,2026-07-31T15:35:58.215-0300,Ricardo Barbosa Machado,status,Submissão,Finalizado Definitivamente
 SI-8259,2026-07-31T15:36:00.924-0300,Ricardo Barbosa Machado,resolution,,Done
@@ -68583,17 +68590,30 @@ SI-8285,2026-07-31T16:14:39.738-0300,Ricardo Barbosa Machado,assignee,,Ricardo B
 SI-8285,2026-08-03T08:11:12.676-0300,Bruno Silva,assignee,Ricardo Barbosa Machado,
 SI-8285,2026-08-03T08:11:16.174-0300,Bruno Silva,resolution,Done,
 SI-8285,2026-08-03T08:11:16.174-0300,Bruno Silva,status,Done,Submissão
+SI-8285,2026-08-03T10:58:55.549-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-8285,2026-08-03T10:58:55.852-0300,Rafael Ferreira,resolution,,Done
+SI-8285,2026-08-03T10:58:55.852-0300,Rafael Ferreira,status,Submissão,Done
 SI-8289,2026-08-01T11:45:23.686-0300,Sistema,Link,,This work item is blocked by GA-1388
+SI-8289,2026-08-03T10:58:58.446-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-8289,2026-08-03T10:58:58.644-0300,Rafael Ferreira,resolution,,Done
+SI-8289,2026-08-03T10:58:58.644-0300,Rafael Ferreira,status,Submissão,Done
 SI-8288,2026-08-01T11:05:32.931-0300,Sistema,Link,,This work item is blocked by GA-1387
 SI-8288,2026-08-03T10:00:20.929-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-8288,2026-08-03T10:00:23.256-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-8288,2026-08-03T10:00:23.256-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-8295,2026-08-03T11:27:51.389-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-8295,2026-08-03T11:27:58.255-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-8295,2026-08-03T11:27:58.486-0300,Rafael Ferreira,resolution,,Done
+SI-8295,2026-08-03T11:27:58.486-0300,Rafael Ferreira,status,Submissão,Done
 SI-8294,2026-08-03T09:13:28.058-0300,Sistema,Link,,This work item is blocked by GA-1391
 SI-8294,2026-08-03T09:54:05.747-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-8294,2026-08-03T09:54:08.742-0300,Nícollas Resende,resolution,,Done
 SI-8294,2026-08-03T09:54:08.742-0300,Nícollas Resende,status,Submissão,Done
 SI-8293,2026-08-03T09:02:32.761-0300,Sistema,Link,,This work item is blocked by GA-1390
 SI-8292,2026-08-03T08:57:33.404-0300,Sistema,Link,,This work item is blocked by GA-1389
+SI-8292,2026-08-03T10:59:00.614-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-8292,2026-08-03T10:59:00.895-0300,Rafael Ferreira,resolution,,Done
+SI-8292,2026-08-03T10:59:00.895-0300,Rafael Ferreira,status,Submissão,Done
 SI-8291,2026-08-03T09:13:04.279-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8291,2026-08-03T09:13:31.879-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-8291,2026-08-03T09:13:35.419-0300,Rafael Ferreira,resolution,,Done
@@ -68601,3 +68621,19 @@ SI-8291,2026-08-03T09:13:35.419-0300,Rafael Ferreira,status,Submissão,Done
 SI-8290,2026-08-03T09:19:21.623-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8290,2026-08-03T09:19:25.440-0300,Bruno Silva,resolution,,Done
 SI-8290,2026-08-03T09:19:25.440-0300,Bruno Silva,status,Submissão,Done
+SI-8297,2026-08-03T10:46:25.145-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-8297,2026-08-03T10:46:33.279-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-8297,2026-08-03T10:46:35.421-0300,Rafael Ferreira,resolution,,Done
+SI-8297,2026-08-03T10:46:35.421-0300,Rafael Ferreira,status,Submissão,Done
+SI-8296,2026-08-03T11:31:34.757-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-8296,2026-08-03T11:31:37.418-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
+SI-8301,2026-08-03T11:41:45.207-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8301,2026-08-03T11:41:48.221-0300,Bruno Silva,resolution,,Done
+SI-8301,2026-08-03T11:41:48.221-0300,Bruno Silva,status,Submissão,Done
+SI-8299,2026-08-03T10:49:39.154-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-8299,2026-08-03T10:49:42.021-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-8299,2026-08-03T10:49:42.317-0300,Rafael Ferreira,resolution,,Done
+SI-8299,2026-08-03T10:49:42.317-0300,Rafael Ferreira,status,Submissão,Done
+SI-8298,2026-08-03T11:36:42.731-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8298,2026-08-03T11:36:46.720-0300,Bruno Silva,resolution,,Done
+SI-8298,2026-08-03T11:36:46.720-0300,Bruno Silva,status,Submissão,Done
