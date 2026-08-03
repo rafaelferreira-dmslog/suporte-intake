@@ -60380,6 +60380,10 @@ SI-7629,2026-07-10T13:05:54.220-0300,Sistema,Resolução do chamado,,"Identifica
 SI-7629,2026-07-10T13:05:54.220-0300,Sistema,Causa raiz potencial,,"O trigger de salvamento automático (save) dispara uma validação de conciliação financeira redundante em processos concluídos, bloqueando a persistência no banco de dados e mantendo a flag de trava (lock) em estado inconsistente."
 SI-7629,2026-07-10T13:05:54.220-0300,Sistema,Causa raiz final,,"Identificado que o problema ocorre devido a uma regra de validação que roda de forma automática sempre que um colaborador tenta interagir com a tela para fechar o cadeado. Como os valores de compra e de venda já estão devidamente finalizados e trancados no sistema, o mecanismo de salvamento automático entende incorretamente que não deve permitir novas alterações ou atualizações nessa página."
 SI-7629,2026-07-10T13:05:54.220-0300,Sistema,Justificativa Causa Raiz final,,A rotina de persistência da aba operacional executa uma validação impeditiva de integridade financeira ao detectar que os registros correspondentes nas tabelas de buying e selling já possuem status fechado.
+SI-7629,2026-08-03T15:48:44.351-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7629,2026-08-03T15:48:44.656-0300,Rafael Ferreira,resolution,,Done
+SI-7629,2026-08-03T15:48:44.656-0300,Rafael Ferreira,status,Submissão,Done
+SI-7629,2026-08-03T15:48:47.238-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7631,2026-07-09T18:29:39.161-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7631,2026-07-09T18:29:41.032-0300,Rafael Ferreira,resolution,,Done
 SI-7631,2026-07-09T18:29:41.032-0300,Rafael Ferreira,status,Submissão,Done
@@ -60673,6 +60677,10 @@ SI-7654,2026-07-10T19:04:04.628-0300,Sistema,Causa raiz potencial,,Em atendiment
 SI-7654,2026-07-10T19:04:04.628-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7654,2026-07-10T19:04:04.628-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-7654,2026-07-31T19:05:15.654-0300,Sistema,Resolução do chamado,Em atendimento,O documento foi reenviado com uma nova hash e após isso o mesmo foi lido corretamente pela IA
+SI-7654,2026-08-03T15:49:25.903-0300,Rafael Ferreira,assignee,,Ricardo Barbosa Machado
+SI-7654,2026-08-03T15:49:28.651-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7654,2026-08-03T15:49:28.953-0300,Rafael Ferreira,resolution,,Done
+SI-7654,2026-08-03T15:49:28.953-0300,Rafael Ferreira,status,Submissão,Done
 SI-7653,2026-07-10T11:26:26.202-0300,Sistema,Link,,This work item is blocked by GA-1208
 SI-7653,2026-07-10T18:00:39.980-0300,Helena Almeida,resolution,,Done
 SI-7653,2026-07-10T18:00:39.980-0300,Helena Almeida,status,Submissão,Done
@@ -60968,6 +60976,10 @@ SI-7669,2026-07-11T00:58:08.369-0300,Sistema,Resolução do chamado,,"Identifica
 SI-7669,2026-07-11T00:58:08.369-0300,Sistema,Causa raiz potencial,,"Falha de processamento na rotina transacional de vinculação da Ordem ao agenciamento, gerando a retenção do documento em estado de bloqueio antes da conclusão do registro da Ordem."
 SI-7669,2026-07-11T00:58:08.369-0300,Sistema,Causa raiz final,,"problema ocorreu devido a uma interrupção no fluxo de comunicação interna do sistema durante o procedimento de inserção da Ordem no agenciamento (Booking). Para que esse vínculo aconteça de maneira correta, o sistema precisa realizar duas etapas essenciais: registrar a Ordem e associar os documentos operacionais a ela. Ao iniciar o processo, o sistema ativa uma trava de segurança temporária no documento para garantir que nenhuma outra modificação simultânea cause conflitos ou duplicidade de dados. No entanto, o sistema sofreu uma interrupção antes de concluir o registro da Ordem. Como a Ordem não foi inserida de fato, o documento acabou permanecendo retido sob essa trava de segurança preventiva, impossibilitando novas edições por parte do usuário. A correção estrutural para otimizar esse fluxo e impedir novos travamentos durante a inserção está sendo realizada através do INTAKE-559."
 SI-7669,2026-07-11T00:58:08.369-0300,Sistema,Justificativa Causa Raiz final,,"A inconsistência reside na falta de tratamento de exceção adequado na rotina de persistência que vincula a Ordem ao Booking. O sistema executa o lock do status do documento correlato previamente à conclusão da transação da Ordem. Ocorrendo uma falha ou interrupção no processamento do registro da Ordem, a operação é abortada, mas o sistema não realiza o rollback do status de bloqueio do documento. Consequentemente, o documento permanece travado no banco de dados sem uma Ordem válida associada. O plano de ação estruturado no INTAKE-559 irá refatorar essa regra de negócio para unificar as operações em um bloco transacional atômico, garantindo a liberação automática do documento em caso de insucesso na inserção da Ordem."
+SI-7669,2026-08-03T15:49:47.267-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-7669,2026-08-03T15:49:49.250-0300,Rafael Ferreira,Classificação,,Ranked lower
+SI-7669,2026-08-03T15:49:49.448-0300,Rafael Ferreira,resolution,,Done
+SI-7669,2026-08-03T15:49:49.448-0300,Rafael Ferreira,status,Submissão,Done
 SI-7668,2026-07-13T11:15:17.421-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7668,2026-07-13T11:15:20.360-0300,Ricardo Barbosa Machado,status,Submissão,Em Atendimento
 SI-7668,2026-07-13T11:15:23.878-0300,Ricardo Barbosa Machado,status,Em Atendimento,Encaminhado DS
@@ -68465,6 +68477,10 @@ SI-8264,2026-08-02T12:59:17.285-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8264,2026-08-02T12:59:17.285-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8264,2026-08-02T12:59:17.285-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8264,2026-08-02T12:59:17.285-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8264,2026-08-03T15:51:16.026-0300,Rafael Ferreira,assignee,,Ricardo Barbosa Machado
+SI-8264,2026-08-03T15:51:18.595-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-8264,2026-08-03T15:51:18.826-0300,Rafael Ferreira,resolution,,Done
+SI-8264,2026-08-03T15:51:18.826-0300,Rafael Ferreira,status,Submissão,Done
 SI-8263,2026-07-31T14:37:18.353-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8263,2026-07-31T14:37:21.411-0300,Bruno Silva,resolution,,Done
 SI-8263,2026-07-31T14:37:21.411-0300,Bruno Silva,status,Submissão,Done
@@ -68517,6 +68533,10 @@ SI-8260,2026-08-02T12:59:15.022-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8260,2026-08-02T12:59:15.022-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8260,2026-08-02T12:59:15.022-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8260,2026-08-02T12:59:15.022-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8260,2026-08-03T15:50:32.629-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-8260,2026-08-03T15:50:32.860-0300,Rafael Ferreira,resolution,,Done
+SI-8260,2026-08-03T15:50:32.860-0300,Rafael Ferreira,status,Submissão,Done
+SI-8260,2026-08-03T15:50:37.785-0300,Rafael Ferreira,assignee,,Ricardo Barbosa Machado
 SI-8268,2026-07-31T14:39:11.722-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8268,2026-07-31T14:39:15.327-0300,Bruno Silva,resolution,,Done
 SI-8268,2026-07-31T14:39:15.327-0300,Bruno Silva,status,Submissão,Done
@@ -68749,6 +68769,7 @@ SI-8292,2026-08-03T08:57:33.404-0300,Sistema,Link,,This work item is blocked by 
 SI-8292,2026-08-03T10:59:00.614-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-8292,2026-08-03T10:59:00.895-0300,Rafael Ferreira,resolution,,Done
 SI-8292,2026-08-03T10:59:00.895-0300,Rafael Ferreira,status,Submissão,Done
+SI-8292,2026-08-03T16:06:39.695-0300,Rafael Ferreira,assignee,,Helena Almeida
 SI-8291,2026-08-03T09:13:04.279-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8291,2026-08-03T09:13:31.879-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-8291,2026-08-03T09:13:35.419-0300,Rafael Ferreira,resolution,,Done
@@ -69148,3 +69169,6 @@ SI-8311,2026-08-03T15:41:17.325-0300,Rafael Ferreira,resolution,,Done
 SI-8311,2026-08-03T15:41:17.325-0300,Rafael Ferreira,status,Submissão,Done
 SI-8310,2026-08-03T15:08:26.946-0300,Sistema,Link,,This work item is blocked by GA-1397
 SI-8309,2026-08-03T14:53:33.016-0300,Sistema,Link,,This work item is blocked by GA-1396
+SI-8309,2026-08-03T15:53:31.936-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-8309,2026-08-03T15:53:33.878-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
+SI-8312,2026-08-03T15:50:26.429-0300,Sistema,Link,,This work item is blocked by GA-1400
