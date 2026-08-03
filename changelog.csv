@@ -68794,6 +68794,7 @@ SI-8296,2026-08-03T13:04:19.377-0300,Sistema,Resolução do chamado,,Aguardando 
 SI-8296,2026-08-03T13:04:19.377-0300,Sistema,Causa raiz potencial,,Aguardando informação
 SI-8296,2026-08-03T13:04:19.377-0300,Sistema,Causa raiz final,,Aguardando informação
 SI-8296,2026-08-03T13:04:19.377-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
+SI-8296,2026-08-03T15:41:28.747-0300,Rafael Ferreira,status,Aguardando Informação,Em Atendimento
 SI-8302,2026-08-03T12:10:15.246-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8302,2026-08-03T12:10:18.841-0300,Rafael Ferreira,resolution,,Done
 SI-8302,2026-08-03T12:10:18.841-0300,Rafael Ferreira,status,Submissão,Done
@@ -68835,6 +68836,265 @@ SI-8301,2026-08-03T13:04:22.192-0300,Sistema,Causa raiz final,,"Bom dia! documen
 SI-8301,2026-08-03T13:04:22.192-0300,Sistema,Justificativa Causa Raiz final,,"Bom dia! documento enviado, caso não leia por favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)"
 SI-8300,2026-08-03T13:40:40.787-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-8300,2026-08-03T13:40:43.748-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-8300,2026-08-03T15:11:32.379-0300,Rafael Ferreira,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+1️⃣ *Identificação do Chamado*
+
+* *Módulo:* Módulo Financial
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção
+* *Título Sugerido:* Erro na seleção da Rate PTAX na tela de faturamento devido à alteração no layout da API do Banco Central
+
+2️⃣ *Entendimento do Problema*
+
+* *Passo a Passo:*
+*# Acessar o *Módulo Financial*.
+*# Navegar até a tela de faturamento.
+*# Tentar selecionar/atualizar a Rate PTAX para uma data posterior a 29/07.
+*# Observar que o sistema impede a seleção de datas recentes (ex: 30/07), obrigando o faturamento com atualização manual.
+* *Comportamento Esperado vs. Atual:*
+** *Esperado:* O sistema deve consumir/exibir a taxa PTAX do Banco Central para datas posteriores a 29/07 diretamente na tela de faturamento.
+** *Atual:* O sistema limita a seleção até o dia 29/07. Embora o dado do dia 30/07 exista no banco de dados, ele não é disponibilizado para seleção na interface.
+
+3️⃣ *Análise Técnica Inicial*
+
+* *Histórico/Logs:* Verificação em banco de dados confirmou a gravação da PTAX do dia 30/07. A análise junto ao desenvolvedor responsável identificou que a API interna roda normalmente, contudo, o serviço externo do Banco Central alterou a estrutura do formato de envio das informações (payload), afetando a leitura e exposição do dado no Módulo Financial.
+* *Parametrização/Perfil:* Permissão de acesso do usuário validada com sucesso (Usuário possui permissão ativa).
+
+4️⃣ *Avaliação de Impacto*
+
+* *Abrangência:* Geral (afeta todos os usuários e processos de faturamento da base de clientes).
+* *Criticidade:* P1 - Alta
+* *Justificativa:* O faturamento diário está comprometido de forma automatizada, gerando gargalo operacional e risco de erro nos valores calculados manualmente.
+* *Workaround:* Sim. Os operadores estão realizando a inserção e atualização manual da taxa PTAX diretamente no faturamento.
+
+5️⃣ *Tentativas de Resolução*
+
+* *Ações Realizadas:*
+** Validação das permissões do usuário (OK).
+** Confirmação do alcance do erro (Geral/Todos os clientes).
+** Consulta ao banco de dados operacional (confirmada existência da taxa de 30/07 no banco).
+** Diagnóstico preliminar com equipe de desenvolvimento sobre a integração com a API do Banco Central.
+
+6️⃣ *Justificativa Técnica para Escalonamento*
+
+* A resolução requer intervenção técnica na camada de integração/backend para adequar o tratamento/parsing da resposta da API do Banco Central ao novo formato enviado pelo órgão, restabelecendo o fluxo automático até a tela de faturamento.
+
+7️⃣ *Causa Raiz Potencial*
+
+* Alteração no contrato/layout da resposta (payload) retornado pela API do Banco Central. Isso faz com que, apesar da ingestão bruta no banco de dados, o processamento interno ou a regra de filtragem da tela não consiga reconhecer e relacionar os novos registros de PTAX para exibição ao usuário final.
+
+📝 *DESCRIÇÃO OTIMIZADA (PARA O CHAMADO)*
+
+{quote}*Incidente:* Inconsistência na atualização/seleção automática da Rate PTAX na tela de faturamento
+
+*Descrição do Problema:* Identificada falha na atualização automática da Rate PTAX no Módulo Financial na tela de faturamento. O sistema parou de disponibilizar datas posteriores a 29/07 para seleção em tela, forçando a equipe operacional a realizar a atualização manual dos valores para dar prosseguimento ao faturamento.
+
+*Análise Técnica:*
+
+* *Abrangência & Perfil:* Confirmado impacto geral (todos os usuários e clientes). As permissões dos usuários estão regulares.
+* *Análise de Banco & Integração:* Em consulta ao banco de dados, confirmou-se que a PTAX do dia 30/07 está presente na base. Contudo, a análise do time de desenvolvimento apontou que a API do Banco Central alterou a estrutura/formato do envio das informações, gerando incompatibilidade no consumo do dado para exibição no Módulo Financial.
+
+*Impacto:* P1 - Alta (Gargalo na estei
+
+ra de faturamento e necessidade diária de contorno manual). *Contorno Atual:* Inserção e atualização manual da taxa PTAX na tela de faturamento. *Ação Solicitada ao N2/Dev:* Ajustar o parser/integração do sistema para suportar o novo formato retornado pela API do Banco Central, permitindo que as taxas ingeridas sejam vinculadas e exibidas corretamente na interface.{quote}
+
+⚠️ *ALERTAS DE TRIAGEM / PENDÊNCIAS:*
+
+* *Evidências:* {{[PENDENTE: SOLICITAR AO USUÁRIO]}} — Favor solicitar ao usuário prints da tela de faturamento evidenciando a limitação da data e do campo da PTAX.
+
+
+VIDEO FLUXO:
+
+[^FluxoFaturamento.webm]
+
+Logs do dia 29/07:
+
+
+!image-20260803-180932.png|width=669,alt=""image-20260803-180932.png""!
+
+Logs do dia 30:
+
+
+!image-20260803-181031.png|width=669,alt=""image-20260803-181031.png""!"
+SI-8300,2026-08-03T15:11:33.238-0300,Rafael Ferreira,Attachment,,image-20260803-181031.png
+SI-8300,2026-08-03T15:11:33.238-0300,Rafael Ferreira,Attachment,,FluxoFaturamento.webm
+SI-8300,2026-08-03T15:11:33.238-0300,Rafael Ferreira,Attachment,,image-20260803-180932.png
+SI-8300,2026-08-03T15:11:47.197-0300,Rafael Ferreira,Encaminhado para:,,Sustentação
+SI-8300,2026-08-03T15:11:50.698-0300,Sistema,Link,,This work item is blocked by SUS-288
+SI-8300,2026-08-03T15:11:52.017-0300,Rafael Ferreira,resolution,,Done
+SI-8300,2026-08-03T15:11:52.017-0300,Rafael Ferreira,status,Aguardando Informação,Done
+SI-8300,2026-08-03T15:17:29.149-0300,Rafael Ferreira,Encaminhado para:,Sustentação,
+SI-8300,2026-08-03T15:18:41.230-0300,Rafael Ferreira,description,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+1️⃣ *Identificação do Chamado*
+
+* *Módulo:* Módulo Financial
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção
+* *Título Sugerido:* Erro na seleção da Rate PTAX na tela de faturamento devido à alteração no layout da API do Banco Central
+
+2️⃣ *Entendimento do Problema*
+
+* *Passo a Passo:*
+*# Acessar o *Módulo Financial*.
+*# Navegar até a tela de faturamento.
+*# Tentar selecionar/atualizar a Rate PTAX para uma data posterior a 29/07.
+*# Observar que o sistema impede a seleção de datas recentes (ex: 30/07), obrigando o faturamento com atualização manual.
+* *Comportamento Esperado vs. Atual:*
+** *Esperado:* O sistema deve consumir/exibir a taxa PTAX do Banco Central para datas posteriores a 29/07 diretamente na tela de faturamento.
+** *Atual:* O sistema limita a seleção até o dia 29/07. Embora o dado do dia 30/07 exista no banco de dados, ele não é disponibilizado para seleção na interface.
+
+3️⃣ *Análise Técnica Inicial*
+
+* *Histórico/Logs:* Verificação em banco de dados confirmou a gravação da PTAX do dia 30/07. A análise junto ao desenvolvedor responsável identificou que a API interna roda normalmente, contudo, o serviço externo do Banco Central alterou a estrutura do formato de envio das informações (payload), afetando a leitura e exposição do dado no Módulo Financial.
+* *Parametrização/Perfil:* Permissão de acesso do usuário validada com sucesso (Usuário possui permissão ativa).
+
+4️⃣ *Avaliação de Impacto*
+
+* *Abrangência:* Geral (afeta todos os usuários e processos de faturamento da base de clientes).
+* *Criticidade:* P1 - Alta
+* *Justificativa:* O faturamento diário está comprometido de forma automatizada, gerando gargalo operacional e risco de erro nos valores calculados manualmente.
+* *Workaround:* Sim. Os operadores estão realizando a inserção e atualização manual da taxa PTAX diretamente no faturamento.
+
+5️⃣ *Tentativas de Resolução*
+
+* *Ações Realizadas:*
+** Validação das permissões do usuário (OK).
+** Confirmação do alcance do erro (Geral/Todos os clientes).
+** Consulta ao banco de dados operacional (confirmada existência da taxa de 30/07 no banco).
+** Diagnóstico preliminar com equipe de desenvolvimento sobre a integração com a API do Banco Central.
+
+6️⃣ *Justificativa Técnica para Escalonamento*
+
+* A resolução requer intervenção técnica na camada de integração/backend para adequar o tratamento/parsing da resposta da API do Banco Central ao novo formato enviado pelo órgão, restabelecendo o fluxo automático até a tela de faturamento.
+
+7️⃣ *Causa Raiz Potencial*
+
+* Alteração no contrato/layout da resposta (payload) retornado pela API do Banco Central. Isso faz com que, apesar da ingestão bruta no banco de dados, o processamento interno ou a regra de filtragem da tela não consiga reconhecer e relacionar os novos registros de PTAX para exibição ao usuário final.
+
+📝 *DESCRIÇÃO OTIMIZADA (PARA O CHAMADO)*
+
+{quote}*Incidente:* Inconsistência na atualização/seleção automática da Rate PTAX na tela de faturamento
+
+*Descrição do Problema:* Identificada falha na atualização automática da Rate PTAX no Módulo Financial na tela de faturamento. O sistema parou de disponibilizar datas posteriores a 29/07 para seleção em tela, forçando a equipe operacional a realizar a atualização manual dos valores para dar prosseguimento ao faturamento.
+
+*Análise Técnica:*
+
+* *Abrangência & Perfil:* Confirmado impacto geral (todos os usuários e clientes). As permissões dos usuários estão regulares.
+* *Análise de Banco & Integração:* Em consulta ao banco de dados, confirmou-se que a PTAX do dia 30/07 está presente na base. Contudo, a análise do time de desenvolvimento apontou que a API do Banco Central alterou a estrutura/formato do envio das informações, gerando incompatibilidade no consumo do dado para exibição no Módulo Financial.
+
+*Impacto:* P1 - Alta (Gargalo na estei
+
+ra de faturamento e necessidade diária de contorno manual). *Contorno Atual:* Inserção e atualização manual da taxa PTAX na tela de faturamento. *Ação Solicitada ao N2/Dev:* Ajustar o parser/integração do sistema para suportar o novo formato retornado pela API do Banco Central, permitindo que as taxas ingeridas sejam vinculadas e exibidas corretamente na interface.{quote}
+
+⚠️ *ALERTAS DE TRIAGEM / PENDÊNCIAS:*
+
+* *Evidências:* {{[PENDENTE: SOLICITAR AO USUÁRIO]}} — Favor solicitar ao usuário prints da tela de faturamento evidenciando a limitação da data e do campo da PTAX.
+
+
+VIDEO FLUXO:
+
+[^FluxoFaturamento.webm]
+
+Logs do dia 29/07:
+
+
+!image-20260803-180932.png|width=669,alt=""image-20260803-180932.png""!
+
+Logs do dia 30:
+
+
+!image-20260803-181031.png|width=669,alt=""image-20260803-181031.png""!","📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+1️⃣ *Identificação do Chamado*
+
+* *Módulo:* Módulo Financial
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção
+* *Título Sugerido:* Erro na seleção da Rate PTAX na tela de faturamento devido à alteração no layout da API do Banco Central
+
+2️⃣ *Entendimento do Problema*
+
+* *Passo a Passo:*
+*# Acessar o *Módulo Financial*.
+*# Navegar até a tela de faturamento.
+*# Tentar selecionar/atualizar a Rate PTAX para uma data posterior a 29/07.
+*# Observar que o sistema impede a seleção de datas recentes (ex: 30/07), obrigando o faturamento com atualização manual.
+* *Comportamento Esperado vs. Atual:*
+** *Esperado:* O sistema deve consumir/exibir a taxa PTAX do Banco Central para datas posteriores a 29/07 diretamente na tela de faturamento.
+** *Atual:* O sistema limita a seleção até o dia 29/07. Embora o dado do dia 30/07 exista no banco de dados, ele não é disponibilizado para seleção na interface.
+
+3️⃣ *Análise Técnica Inicial*
+
+* *Histórico/Logs:* Verificação em banco de dados confirmou a gravação da PTAX do dia 30/07. A análise junto ao desenvolvedor responsável identificou que a API interna roda normalmente, contudo, o serviço externo do Banco Central alterou a estrutura do formato de envio das informações (payload), afetando a leitura e exposição do dado no Módulo Financial.
+* *Parametrização/Perfil:* Permissão de acesso do usuário validada com sucesso (Usuário possui permissão ativa).
+
+4️⃣ *Avaliação de Impacto*
+
+* *Abrangência:* Geral (afeta todos os usuários e processos de faturamento da base de clientes).
+* *Criticidade:* P1 - Alta
+* *Justificativa:* O faturamento diário está comprometido de forma automatizada, gerando gargalo operacional e risco de erro nos valores calculados manualmente.
+* *Workaround:* Sim. Os operadores estão realizando a inserção e atualização manual da taxa PTAX diretamente no faturamento.
+
+5️⃣ *Tentativas de Resolução*
+
+* *Ações Realizadas:*
+** Validação das permissões do usuário (OK).
+** Confirmação do alcance do erro (Geral/Todos os clientes).
+** Consulta ao banco de dados operacional (confirmada existência da taxa de 30/07 no banco).
+** Diagnóstico preliminar com equipe de desenvolvimento sobre a integração com a API do Banco Central.
+
+6️⃣ *Justificativa Técnica para Escalonamento*
+
+* A resolução requer intervenção técnica na camada de integração/backend para adequar o tratamento/parsing da resposta da API do Banco Central ao novo formato enviado pelo órgão, restabelecendo o fluxo automático até a tela de faturamento.
+
+7️⃣ *Causa Raiz Potencial*
+
+* Alteração no contrato/layout da resposta (payload) retornado pela API do Banco Central. Isso faz com que, apesar da ingestão bruta no banco de dados, o processamento interno ou a regra de filtragem da tela não consiga reconhecer e relacionar os novos registros de PTAX para exibição ao usuário final.
+
+📝 *DESCRIÇÃO OTIMIZADA (PARA O CHAMADO)*
+
+{quote}*Incidente:* Inconsistência na atualização/seleção automática da Rate PTAX na tela de faturamento
+
+*Descrição do Problema:* Identificada falha na atualização automática da Rate PTAX no Módulo Financial na tela de faturamento. O sistema parou de disponibilizar datas posteriores a 29/07 para seleção em tela, forçando a equipe operacional a realizar a atualização manual dos valores para dar prosseguimento ao faturamento.
+
+*Análise Técnica:*
+
+* *Abrangência & Perfil:* Confirmado impacto geral (todos os usuários e clientes). As permissões dos usuários estão regulares.
+* *Análise de Banco & Integração:* Em consulta ao banco de dados, confirmou-se que a PTAX do dia 30/07 está presente na base. Contudo, a análise do time de desenvolvimento apontou que a API do Banco Central alterou a estrutura/formato do envio das informações, gerando incompatibilidade no consumo do dado para exibição no Módulo Financial.
+
+*Impacto:* P1 - Alta (Gargalo na estei
+
+ra de faturamento e necessidade diária de contorno manual). *Contorno Atual:* Inserção e atualização manual da taxa PTAX na tela de faturamento. *Ação Solicitada ao N2/Dev:* Ajustar o parser/integração do sistema para suportar o novo formato retornado pela API do Banco Central, permitindo que as taxas ingeridas sejam vinculadas e exibidas corretamente na interface.{quote}
+
+⚠️ *ALERTAS DE TRIAGEM / PENDÊNCIAS:*
+
+* *Evidências:* {{[PENDENTE: SOLICITAR AO USUÁRIO]}} — Favor solicitar ao usuário prints da tela de faturamento evidenciando a limitação da data e do campo da PTAX.
+
+
+VIDEO FLUXO:
+
+[^FluxoFaturamento.webm]
+
+Logs do dia 29/07:
+
+
+!image-20260803-180932.png|width=669,alt=""image-20260803-180932.png""!
+
+Logs do dia 30:
+
+
+!image-20260803-181031.png|width=669,alt=""image-20260803-181031.png""!
+
+
+
+De acordo com o desenvolvedor:
+Rota que a gente utiliza(quebrada):
+[https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?%40dataCotacao=%2730-07-2026%27&%24top=100&%24format=json|https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia%28dataCotacao=@dataCotacao%29?%40dataCotacao=%2730-07-2026%27&%24top=100&%24format=json]
+
+Rota que parece estar funcionando:
+[https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaPeriodo(moeda=@moeda,dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao)?@moeda=%27USD%27&@dataInicial=%2707-30-2026%27&@dataFinalCotacao=%2707-30-2026%27&$format=json|https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaPeriodo%28moeda=@moeda,dataInicial=@dataInicial,dataFinalCotacao=@dataFinalCotacao%29?@moeda=%27USD%27&@dataInicial=%2707-30-2026%27&@dataFinalCotacao=%2707-30-2026%27&$format=json]"
 SI-8299,2026-08-03T10:49:39.154-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8299,2026-08-03T10:49:42.021-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-8299,2026-08-03T10:49:42.317-0300,Rafael Ferreira,resolution,,Done
@@ -68869,8 +69129,22 @@ SI-8304,2026-08-03T14:23:39.539-0300,Bruno Silva,status,Submissão,Done
 SI-8303,2026-08-03T13:37:27.312-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8303,2026-08-03T13:37:30.966-0300,Bruno Silva,resolution,,Done
 SI-8303,2026-08-03T13:37:30.966-0300,Bruno Silva,status,Submissão,Done
+SI-8308,2026-08-03T14:51:46.402-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-8308,2026-08-03T14:51:48.822-0300,Rafael Ferreira,resolution,,Done
+SI-8308,2026-08-03T14:51:48.822-0300,Rafael Ferreira,status,Submissão,Done
 SI-8307,2026-08-03T14:15:30.072-0300,Sistema,Link,,This work item is blocked by GA-1395
 SI-8306,2026-08-03T14:15:27.417-0300,Sistema,Link,,This work item is blocked by GA-1394
+SI-8306,2026-08-03T15:30:44.297-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-8306,2026-08-03T15:30:50.920-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-8306,2026-08-03T15:30:51.139-0300,Rafael Ferreira,resolution,,Done
+SI-8306,2026-08-03T15:30:51.139-0300,Rafael Ferreira,status,Submissão,Done
 SI-8305,2026-08-03T14:17:22.914-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8305,2026-08-03T14:17:26.346-0300,Bruno Silva,resolution,,Done
 SI-8305,2026-08-03T14:17:26.346-0300,Bruno Silva,status,Submissão,Done
+SI-8311,2026-08-03T15:35:31.460-0300,Sistema,Link,,This work item is blocked by GA-1399
+SI-8311,2026-08-03T15:41:14.715-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-8311,2026-08-03T15:41:17.105-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-8311,2026-08-03T15:41:17.325-0300,Rafael Ferreira,resolution,,Done
+SI-8311,2026-08-03T15:41:17.325-0300,Rafael Ferreira,status,Submissão,Done
+SI-8310,2026-08-03T15:08:26.946-0300,Sistema,Link,,This work item is blocked by GA-1397
+SI-8309,2026-08-03T14:53:33.016-0300,Sistema,Link,,This work item is blocked by GA-1396
