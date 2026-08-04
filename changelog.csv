@@ -68845,6 +68845,9 @@ SI-8296,2026-08-03T13:04:19.377-0300,Sistema,Causa raiz potencial,,Aguardando in
 SI-8296,2026-08-03T13:04:19.377-0300,Sistema,Causa raiz final,,Aguardando informação
 SI-8296,2026-08-03T13:04:19.377-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
 SI-8296,2026-08-03T15:41:28.747-0300,Rafael Ferreira,status,Aguardando Informação,Em Atendimento
+SI-8296,2026-08-04T09:36:43.006-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-8296,2026-08-04T09:36:43.263-0300,Rafael Ferreira,resolution,,Done
+SI-8296,2026-08-04T09:36:43.263-0300,Rafael Ferreira,status,Em Atendimento,Done
 SI-8302,2026-08-03T12:10:15.246-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8302,2026-08-03T12:10:18.841-0300,Rafael Ferreira,resolution,,Done
 SI-8302,2026-08-03T12:10:18.841-0300,Rafael Ferreira,status,Submissão,Done
@@ -69293,3 +69296,10 @@ SI-8313,2026-08-03T19:06:23.296-0300,Sistema,Causa raiz potencial,,Em atendiment
 SI-8313,2026-08-03T19:06:23.296-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8313,2026-08-03T19:06:23.296-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8312,2026-08-03T15:50:26.429-0300,Sistema,Link,,This work item is blocked by GA-1400
+SI-8318,2026-08-04T09:13:52.361-0300,Bruno Silva,assignee,,Bruno Silva
+SI-8318,2026-08-04T09:13:55.806-0300,Bruno Silva,resolution,,Done
+SI-8318,2026-08-04T09:13:55.806-0300,Bruno Silva,status,Submissão,Done
+SI-8316,2026-08-04T09:01:26.526-0300,Rafael Ferreira,status,Submissão,Em Atendimento
+SI-8316,2026-08-04T09:01:29.777-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-8316,2026-08-04T09:18:36.506-0300,Rafael Ferreira,status,Em Atendimento,Aguardando correção
+SI-8316,2026-08-04T09:18:46.006-0300,Rafael Ferreira,Encaminhado para:,,DS
