@@ -67256,6 +67256,14 @@ SI-8165,2026-07-29T11:53:22.434-0300,Sistema,Link,,This work item is blocked by 
 SI-8165,2026-07-30T11:52:13.645-0300,Bruno Silva,resolution,,Done
 SI-8165,2026-07-30T11:52:13.645-0300,Bruno Silva,status,Submissão,Done
 SI-8165,2026-08-04T10:25:56.394-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8165,2026-08-04T13:01:06.031-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-8165,2026-08-04T13:01:06.031-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8165,2026-08-04T13:01:06.031-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8165,2026-08-04T13:01:06.031-0300,Sistema,Reclassificação solicitação,,Requisição
+SI-8165,2026-08-04T13:01:06.031-0300,Sistema,Resolução do chamado,,Chamado aguardando retorno
+SI-8165,2026-08-04T13:01:06.031-0300,Sistema,Causa raiz potencial,,Chamado aguardando retorno
+SI-8165,2026-08-04T13:01:06.031-0300,Sistema,Causa raiz final,,Chamado aguardando retorno
+SI-8165,2026-08-04T13:01:06.031-0300,Sistema,Justificativa Causa Raiz final,,Chamado aguardando retorno
 SI-8164,2026-07-30T11:52:11.225-0300,Bruno Silva,resolution,,Done
 SI-8164,2026-07-30T11:52:11.225-0300,Bruno Silva,status,Submissão,Done
 SI-8164,2026-07-30T16:01:43.073-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
@@ -68438,6 +68446,10 @@ SI-8257,2026-08-02T12:59:13.158-0300,Sistema,Justificativa Causa Raiz final,,Em 
 SI-8257,2026-08-03T10:58:52.850-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-8257,2026-08-03T10:58:53.057-0300,Rafael Ferreira,resolution,,Done
 SI-8257,2026-08-03T10:58:53.057-0300,Rafael Ferreira,status,Submissão,Done
+SI-8257,2026-08-04T13:01:42.601-0300,Sistema,Resolução do chamado,Em atendimento,Cadastro Realizado conforme solicitado
+SI-8257,2026-08-04T13:01:42.601-0300,Sistema,Causa raiz potencial,Em atendimento,Cadastro Realizado conforme solicitado
+SI-8257,2026-08-04T13:01:42.601-0300,Sistema,Causa raiz final,Em atendimento,Cadastro Realizado conforme solicitado
+SI-8257,2026-08-04T13:01:42.601-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,Cadastro Realizado conforme solicitado
 SI-8259,2026-07-31T15:35:55.455-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8259,2026-07-31T15:35:58.215-0300,Ricardo Barbosa Machado,status,Submissão,Finalizado Definitivamente
 SI-8259,2026-07-31T15:36:00.924-0300,Ricardo Barbosa Machado,resolution,,Done
@@ -69393,6 +69405,16 @@ SI-8314,2026-08-04T11:01:46.975-0300,Rafael Ferreira,Encaminhado para:,Sustenta�
 SI-8314,2026-08-04T11:09:48.178-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-8314,2026-08-04T11:16:45.784-0300,Rafael Ferreira,resolution,,Done
 SI-8314,2026-08-04T11:16:45.784-0300,Rafael Ferreira,status,Em Atendimento,Done
+SI-8314,2026-08-04T13:02:02.411-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8314,2026-08-04T13:02:02.411-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8314,2026-08-04T13:02:02.411-0300,Sistema,Criticidade final,,P2 - Média
+SI-8314,2026-08-04T13:02:02.411-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8314,2026-08-04T13:02:02.411-0300,Sistema,Resolução do chamado,,"Identificado o lançamento em duplicidade da taxa APT TRANSFER na Ordem 260541646 e realizada a remoção da cobrança excedente de USD 106,09 referente ao agendamento anterior. O demonstrativo da ordem foi regularizado, mantendo-se estritamente o valor correto de USD 65,66 associado ao novo agendamento."
+SI-8314,2026-08-04T13:02:02.411-0300,Sistema,Causa raiz potencial,,"Ausência de limpeza automática de lançamentos financeiros vinculados a agendamentos anteriores no momento da desvinculação da ordem.
+
+Falha de integração na rotina de atualização de taxas ao substituir o registro de agendamento de transporte na ordem."
+SI-8314,2026-08-04T13:02:02.411-0300,Sistema,Causa raiz final,,"Durante o acompanhamento da Ordem 260541646, foi realizada a troca do agendamento de transporte associado ao processo. Durante esse procedimento, o sistema deveria ter cancelado ou removido automaticamente as taxas associadas ao agendamento antigo antes de registrar as novas informações. Contudo, devido a uma falha na rotina de atualização do sistema, a taxa de transferência referente ao agendamento anterior (no valor de USD 106,09) permaneceu ativa na ordem. Quando o novo agendamento foi vinculado, a nova taxa correspondente (no valor de USD 65,66) foi inserida normalmente, resultando na exibição de dois lançamentos simultâneos para o mesmo serviço. A situação foi corrigida com a remoção do lançamento antigo, garantindo a exatidão dos valores financeiros do processo."
+SI-8314,2026-08-04T13:02:02.411-0300,Sistema,Justificativa Causa Raiz final,,"A duplicidade foi causada pela permanência de registro órfão na tabela order_origincharge após a alteração de vínculo da Ordem 163250 do Booking 48734 para o Booking 47941. No desatrelamento ocorrido em 28/05/2026, a taxa com charge_booking_id 1138279 (USD 106,09) permaneceu com o atributo used = true e sem marcação de expurgo (deleted_at). Ao associar o novo Booking, a nova taxa com charge_booking_id 1141208 (USD 65,66) foi persistida na mesma order_buying (object_id 156810). Como ação corretiva e foco em melhoria contínua, o registro órfão deve ser inativado via Data Solutions no banco de dados, e a equipe de desenvolvimento deve ajustar a lógica do pipeline de desvinculação de ordens para que taxas atreladas ao charge_booking_id anterior sejam limpas automaticamente, impedindo a reincidência do problema."
 SI-8315,2026-08-04T12:14:28.385-0300,Bruno Silva,resolution,,Done
 SI-8315,2026-08-04T12:14:28.385-0300,Bruno Silva,status,Submissão,Done
 SI-8320,2026-08-04T11:43:10.100-0300,Rafael Ferreira,status,Submissão,Em Atendimento
@@ -69400,20 +69422,64 @@ SI-8320,2026-08-04T11:43:13.209-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8320,2026-08-04T11:43:30.532-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-8320,2026-08-04T11:43:32.689-0300,Rafael Ferreira,resolution,,Done
 SI-8320,2026-08-04T11:43:32.689-0300,Rafael Ferreira,status,Em Atendimento,Done
+SI-8320,2026-08-04T13:02:05.308-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8320,2026-08-04T13:02:05.308-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-8320,2026-08-04T13:02:05.308-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8320,2026-08-04T13:02:05.308-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8320,2026-08-04T13:02:05.308-0300,Sistema,Resolução do chamado,,Aguardando correção
+SI-8320,2026-08-04T13:02:05.308-0300,Sistema,Causa raiz potencial,,Aguardando correção
+SI-8320,2026-08-04T13:02:05.308-0300,Sistema,Causa raiz final,,Aguardando correção
+SI-8320,2026-08-04T13:02:05.308-0300,Sistema,Justificativa Causa Raiz final,,Aguardando correção
 SI-8318,2026-08-04T09:13:52.361-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8318,2026-08-04T09:13:55.806-0300,Bruno Silva,resolution,,Done
 SI-8318,2026-08-04T09:13:55.806-0300,Bruno Silva,status,Submissão,Done
+SI-8318,2026-08-04T13:02:04.580-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8318,2026-08-04T13:02:04.580-0300,Sistema,Criticidade final,,P2 - Média
+SI-8318,2026-08-04T13:02:04.580-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-8318,2026-08-04T13:02:04.580-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8318,2026-08-04T13:02:04.580-0300,Sistema,Resolução do chamado,,"Bom dia! documento enviado, caso não leia por favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8318,2026-08-04T13:02:04.580-0300,Sistema,Causa raiz potencial,,"Bom dia! documento enviado, caso não leia por favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8318,2026-08-04T13:02:04.580-0300,Sistema,Causa raiz final,,"Bom dia! documento enviado, caso não leia por favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8318,2026-08-04T13:02:04.580-0300,Sistema,Justificativa Causa Raiz final,,"Bom dia! documento enviado, caso não leia por favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)"
 SI-8317,2026-08-04T11:58:00.387-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-8317,2026-08-04T11:58:03.444-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-8317,2026-08-04T13:02:03.919-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8317,2026-08-04T13:02:03.919-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8317,2026-08-04T13:02:03.919-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-8317,2026-08-04T13:02:03.919-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8317,2026-08-04T13:02:03.919-0300,Sistema,Resolução do chamado,,Aguardando informação
+SI-8317,2026-08-04T13:02:03.919-0300,Sistema,Causa raiz potencial,,Aguardando informação
+SI-8317,2026-08-04T13:02:03.919-0300,Sistema,Causa raiz final,,Aguardando informação
+SI-8317,2026-08-04T13:02:03.919-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
 SI-8316,2026-08-04T09:01:26.526-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-8316,2026-08-04T09:01:29.777-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8316,2026-08-04T09:18:36.506-0300,Rafael Ferreira,status,Em Atendimento,Aguardando correção
 SI-8316,2026-08-04T09:18:46.006-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-8316,2026-08-04T09:50:11.878-0300,Rafael Ferreira,resolution,,Done
 SI-8316,2026-08-04T09:50:11.878-0300,Rafael Ferreira,status,Aguardando correção,Done
+SI-8316,2026-08-04T13:02:03.225-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8316,2026-08-04T13:02:03.225-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8316,2026-08-04T13:02:03.225-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8316,2026-08-04T13:02:03.225-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8316,2026-08-04T13:02:03.225-0300,Sistema,Resolução do chamado,,Realizada a correção e a sincronização das informações nos passos de associação do fluxo de trabalho da ordem. A vinculação e a visualização da instrução de processo foram devidamente restabelecidas para o prosseguimento das etapas operacionais.
+SI-8316,2026-08-04T13:02:03.225-0300,Sistema,Causa raiz potencial,,"Desconformidade no preenchimento ou atualização das informações nas etapas de associação do fluxo de trabalho.
+
+Falha na sincronização lógica das etapas do procedimento no momento da vinculação à ordem.
+
+Divergência no mapeamento dos parâmetros responsáveis por conectar o processo ao fluxo correspondente."
+SI-8316,2026-08-04T13:02:03.225-0300,Sistema,Causa raiz final,,"A impossibilidade de vincular e visualizar a instrução de trabalho na ordem ocorreu devido a uma inconsistência no registro e no alinhamento das etapas de associação dentro do fluxo operacional. Para que o procedimento seja exibido e atrelado corretamente a uma ordem, é necessário que todas as etapas intermediárias de integração estejam perfeitamente alinhadas e com as informações padronizadas. Como houve uma divergência pontual nesses dados de associação, o fluxo não pôde ser concluído. A situação foi tratada diretamente com a equipe técnica especializada para a regularização dos dados, garantindo o funcionamento do fluxo e a continuidade do acompanhamento das operações."
+SI-8316,2026-08-04T13:02:03.225-0300,Sistema,Justificativa Causa Raiz final,,"A falha no vínculo do workflow à ordem decorreu de uma inconsistência estrutural nos dados das etapas de associação (association steps), o que impediu o avanço da lógica do processo. A equipe de Data Science realizou a tratativa pontual dos dados para restabelecer a integração e liberar a visualização do fluxo. Com foco em melhoria contínua e na prevenção de reincidências, a equipe técnica está mapeando as rotinas de validação de etapas para garantir que a sincronização ocorra sem divergências em casos futuros."
 SI-8322,2026-08-04T12:09:52.618-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8322,2026-08-04T12:09:56.792-0300,Bruno Silva,resolution,,Done
 SI-8322,2026-08-04T12:09:56.792-0300,Bruno Silva,status,Submissão,Done
+SI-8322,2026-08-04T13:02:06.759-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8322,2026-08-04T13:02:06.759-0300,Sistema,Criticidade final,,P2 - Média
+SI-8322,2026-08-04T13:02:06.759-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8322,2026-08-04T13:02:06.759-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8322,2026-08-04T13:02:06.759-0300,Sistema,Resolução do chamado,,"Bom dia! Pode me passar o valor para ajuste por favor, favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8322,2026-08-04T13:02:06.759-0300,Sistema,Causa raiz potencial,,"Bom dia! Pode me passar o valor para ajuste por favor, favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8322,2026-08-04T13:02:06.759-0300,Sistema,Causa raiz final,,"Bom dia! Pode me passar o valor para ajuste por favor, favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8322,2026-08-04T13:02:06.759-0300,Sistema,Justificativa Causa Raiz final,,"Bom dia! Pode me passar o valor para ajuste por favor, favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)"
 SI-8321,2026-08-04T11:16:28.974-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-8321,2026-08-04T11:16:31.734-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8321,2026-08-04T11:37:46.976-0300,Rafael Ferreira,description,,"h3. Identificação do Chamado
@@ -69700,15 +69766,55 @@ SI-8321,2026-08-04T11:39:17.350-0300,Sistema,Link,,This work item is blocked by 
 SI-8321,2026-08-04T11:39:39.382-0300,Rafael Ferreira,Encaminhado para:,Sustentação,DS
 SI-8321,2026-08-04T11:39:42.323-0300,Rafael Ferreira,resolution,,Done
 SI-8321,2026-08-04T11:39:42.323-0300,Rafael Ferreira,status,Em Atendimento,Done
+SI-8321,2026-08-04T13:02:06.045-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8321,2026-08-04T13:02:06.045-0300,Sistema,Criticidade final,,P2 - Média
+SI-8321,2026-08-04T13:02:06.045-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8321,2026-08-04T13:02:06.045-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8321,2026-08-04T13:02:06.045-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8321,2026-08-04T13:02:06.045-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8321,2026-08-04T13:02:06.045-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8321,2026-08-04T13:02:06.045-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8325,2026-08-04T12:14:16.350-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8325,2026-08-04T12:14:19.780-0300,Bruno Silva,resolution,,Done
 SI-8325,2026-08-04T12:14:19.780-0300,Bruno Silva,status,Submissão,Done
+SI-8325,2026-08-04T13:02:08.667-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8325,2026-08-04T13:02:08.667-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8325,2026-08-04T13:02:08.667-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-8325,2026-08-04T13:02:08.667-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8325,2026-08-04T13:02:08.667-0300,Sistema,Resolução do chamado,,"Identificada a necessidade de alteração do modal do pedido 260130093 para aéreo. Verificado que os valores de compra e venda estão abertos e que não há reserva de espaço, cotação vinculada nem agrupamento no pedido."
+SI-8325,2026-08-04T13:02:08.667-0300,Sistema,Causa raiz potencial,,Solicitação operacional de alteração da via de transporte (modal) em pedido de frete sem a presença de pendências de travamento ou vínculos documentais atrelados.
+SI-8325,2026-08-04T13:02:08.667-0300,Sistema,Causa raiz final,,"O colaborador solicitou a alteração do meio de transporte de um pedido para a modalidade aérea. Para permitir essa mudança, as diretrizes do processo exigem a validação de que as tabelas de compra e venda estejam destravadas e que a ordem não possua reservas, cotações atreladas ou agrupamentos ativos."
+SI-8325,2026-08-04T13:02:08.667-0300,Sistema,Justificativa Causa Raiz final,,"A alteração de modal é parametrizada como uma regra de negócio que condiciona a modificação do campo de transporte à inexistência de registros dependentes (Booking, Quote e Assembly) e à abertura das travas de compra e venda (order_buyinglock e order_sellinglock)."
 SI-8324,2026-08-04T12:12:07.714-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8324,2026-08-04T12:12:11.352-0300,Bruno Silva,resolution,,Done
 SI-8324,2026-08-04T12:12:11.352-0300,Bruno Silva,status,Submissão,Done
+SI-8324,2026-08-04T13:02:08.062-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8324,2026-08-04T13:02:08.062-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8324,2026-08-04T13:02:08.062-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8324,2026-08-04T13:02:08.062-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8324,2026-08-04T13:02:08.062-0300,Sistema,Resolução do chamado,,"Bom dia! documento enviado, caso não leia por favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8324,2026-08-04T13:02:08.062-0300,Sistema,Causa raiz potencial,,"Bom dia! documento enviado, caso não leia por favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8324,2026-08-04T13:02:08.062-0300,Sistema,Causa raiz final,,"Bom dia! documento enviado, caso não leia por favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-8324,2026-08-04T13:02:08.062-0300,Sistema,Justificativa Causa Raiz final,,"Bom dia! documento enviado, caso não leia por favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)"
 SI-8323,2026-08-04T11:38:30.068-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-8323,2026-08-04T11:38:32.283-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8323,2026-08-04T11:43:22.544-0300,Rafael Ferreira,status,Em Atendimento,Aguardando Informação
 SI-8323,2026-08-04T12:27:48.557-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-8323,2026-08-04T12:27:53.950-0300,Rafael Ferreira,resolution,,Done
 SI-8323,2026-08-04T12:27:53.950-0300,Rafael Ferreira,status,Aguardando Informação,Done
+SI-8323,2026-08-04T13:02:07.465-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8323,2026-08-04T13:02:07.465-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-8323,2026-08-04T13:02:07.465-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8323,2026-08-04T13:02:07.465-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8323,2026-08-04T13:02:07.465-0300,Sistema,Resolução do chamado,,Aguardando informação
+SI-8323,2026-08-04T13:02:07.465-0300,Sistema,Causa raiz potencial,,Aguardando informação
+SI-8323,2026-08-04T13:02:07.465-0300,Sistema,Causa raiz final,,Aguardando informação
+SI-8323,2026-08-04T13:02:07.465-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
+SI-8327,2026-08-04T13:34:01.621-0300,Rafael Ferreira,assignee,,Nícollas Resende
+SI-8327,2026-08-04T13:34:03.437-0300,Rafael Ferreira,assignee,Nícollas Resende,Rafael Ferreira
+SI-8327,2026-08-04T13:34:06.979-0300,Rafael Ferreira,resolution,,Done
+SI-8327,2026-08-04T13:34:06.979-0300,Rafael Ferreira,status,Submissão,Done
+SI-8326,2026-08-04T13:33:49.387-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-8326,2026-08-04T13:33:54.647-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-8326,2026-08-04T13:33:54.891-0300,Rafael Ferreira,resolution,,Done
+SI-8326,2026-08-04T13:33:54.891-0300,Rafael Ferreira,status,Submissão,Done
