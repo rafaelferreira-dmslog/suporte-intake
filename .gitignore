@@ -1,8 +1,21 @@
+# Agent & IDE Framework
 .agents/
 skills-lock.json
-*.pyc
-__pycache__/
+.vscode/
+.idea/
+
+# OS & System Junk
 .DS_Store
-scratch_js.js
-*.tmp
+Thumbs.db
+desktop.ini
+
+# Python & Node Caches
+__pycache__/
+*.pyc
 node_modules/
+
+# Logs & Temporary Scratch Files
+*.log
+*.tmp
+*.bak
+scratch_js.js

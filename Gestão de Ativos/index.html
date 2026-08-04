@@ -1,58 +1,2560 @@
 <!DOCTYPE html>
-<html class="dark" lang="pt-BR">
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Gestão de Ativos - Em Desenvolvimento</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Ativos - DMS Logistics</title>
+    
+    <!-- Fonts & Icons: Montserrat, Nunito & FontAwesome 6 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
     <style>
-        body {
-            background-color: #0b1326;
-            background-image: radial-gradient(circle at top right, rgba(255, 185, 95, 0.06) 0%, transparent 45%),
-                              radial-gradient(circle at bottom left, rgba(99, 102, 241, 0.04) 0%, transparent 45%);
+        :root {
+            --azul-claro: #00AEEE;
+            --azul-medio: #005290;
+            --azul-escuro: #00386C;
+            --roxo: #643585;
+            --verde: #B0C934;
+            --cinza: #656464;
+            --cinza-light: #f0f4f8;
+            --border: #d1dbe8;
+
+            --bg-primary: #080e1e;
+            --bg-secondary: #0f172a;
+            --bg-tertiary: #1e293b;
+            --accent-primary: #00AEEE; 
+            --accent-secondary: #005290;
+            --accent-purple: #643585;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --card-bg: #0f172a;
+            --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+            --row-hover-bg: rgba(255, 255, 255, 0.04);
+            --font-title: 'Montserrat', sans-serif;
+            --font-body: 'Nunito', sans-serif;
         }
-        .glass-card::before {
+
+        body.light-theme {
+            --bg-primary: #f0f4f8;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #e2e8f0;
+            --accent-primary: #005290;
+            --accent-secondary: #00386C;
+            --accent-purple: #643585;
+            --text-main: #1a2940;
+            --text-muted: #6b7a92;
+            --border-color: #d1dbe8;
+            --card-bg: #ffffff;
+            --card-shadow: 0 4px 24px rgba(0, 56, 108, .08);
+            --row-hover-bg: #f8fafc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            overflow-x: hidden;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-title);
+        }
+
+        /* App Layout Structure */
+        .app {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            background: var(--azul-escuro);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 100;
+            transition: transform 0.2s ease;
+            box-shadow: 2px 0 16px rgba(0, 56, 108, 0.25);
+        }
+
+        .sidebar-logo {
+            padding: 22px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .brand-box {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-title);
+            font-size: 17px;
+            font-weight: 800;
+            color: white;
+        }
+
+        .brand-icon {
+            width: 34px;
+            height: 34px;
+            background: var(--roxo);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 2px 8px rgba(100, 53, 133, 0.4);
+            font-size: 15px;
+        }
+
+        .nav-section {
+            font-size: 0.68rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.08em;
+            padding: 20px 22px 8px;
+            text-transform: uppercase;
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            padding: 0 12px;
+            flex: 1;
+        }
+
+        .nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            padding: 11px 16px;
+            border-radius: 10px;
+            background: none;
+            border: none;
+            color: rgba(255, 255, 255, 0.75);
+            font-family: var(--font-title);
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            text-align: left;
+            text-decoration: none;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+        }
+
+        .nav-btn.active {
+            background: var(--azul-claro);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 174, 238, 0.4);
+        }
+
+        .nav-btn .nav-icon {
+            font-size: 1.1rem;
+            width: 22px;
+            text-align: center;
+        }
+
+        .nav-badge-count {
+            margin-left: auto;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 10px;
+            font-weight: 800;
+        }
+
+        .sidebar-footer {
+            padding: 16px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Main Workspace */
+        .main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-left: 250px;
+            min-height: 100vh;
+            width: calc(100% - 250px);
+            transition: all 0.2s ease;
+        }
+
+        /* Sidebar Off State */
+        body.sb-off .sidebar {
+            transform: translateX(-250px);
+        }
+
+        body.sb-off .main {
+            margin-left: 0;
+            width: 100%;
+        }
+
+        /* Topbar Header */
+        .topbar {
+            height: 64px;
+            padding: 0 24px;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 90;
+        }
+
+        .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        #sb-toggle {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        #sb-toggle:hover {
+            border-color: var(--azul-claro);
+            color: var(--azul-claro);
+        }
+
+        .topbar-title {
+            font-family: var(--font-title);
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .topbar-badge {
+            background: linear-gradient(135deg, var(--roxo), var(--azul-medio));
+            color: white;
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            letter-spacing: 0.05em;
+        }
+
+        .topbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-top {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 7px 14px;
+            border-radius: 8px;
+            font-family: var(--font-title);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+
+        .btn-top:hover {
+            background: var(--row-hover-bg);
+            border-color: var(--azul-claro);
+        }
+
+        .btn-top-suporte {
+            background: linear-gradient(135deg, var(--azul-claro), var(--azul-medio));
+            color: #ffffff;
+            border: none;
+            font-weight: 700;
+            box-shadow: 0 2px 10px rgba(0, 174, 238, 0.3);
+        }
+
+        .btn-top-suporte:hover {
+            box-shadow: 0 4px 14px rgba(0, 174, 238, 0.45);
+            transform: translateY(-1px);
+        }
+
+        .btn-top-add {
+            background: linear-gradient(135deg, var(--verde), #8ba31e);
+            color: #1a2940;
+            border: none;
+            font-weight: 800;
+            box-shadow: 0 2px 10px rgba(176, 201, 52, 0.3);
+        }
+
+        .btn-top-add:hover {
+            box-shadow: 0 4px 14px rgba(176, 201, 52, 0.45);
+            transform: translateY(-1px);
+        }
+
+        /* Security Lock Screen Overlay */
+        .lock-overlay {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-primary);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .lock-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-top: 5px solid var(--roxo);
+            border-radius: 16px;
+            max-width: 420px;
+            width: 100%;
+            padding: 40px 32px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        .lock-icon-box {
+            width: 60px;
+            height: 60px;
+            background: rgba(100, 53, 133, 0.15);
+            border: 1px solid rgba(100, 53, 133, 0.3);
+            color: var(--roxo);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin: 0 auto 20px;
+        }
+
+        .lock-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 8px;
+        }
+
+        .lock-subtitle {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+            line-height: 1.4;
+        }
+
+        .lock-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .lock-input {
+            width: 100%;
+            background: var(--bg-primary);
+            border: 1.5px solid var(--border-color);
+            color: var(--text-main);
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            outline: none;
+            text-align: center;
+            letter-spacing: 2px;
+            transition: all 0.2s ease;
+        }
+
+        .lock-input:focus {
+            border-color: var(--azul-claro);
+            box-shadow: 0 0 0 3px rgba(0, 174, 238, 0.15);
+        }
+
+        .btn-unlock {
+            width: 100%;
+            background: linear-gradient(135deg, var(--azul-claro), var(--azul-medio));
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 10px;
+            font-family: var(--font-title);
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 14px rgba(0, 174, 238, 0.3);
+        }
+
+        .btn-unlock:hover {
+            box-shadow: 0 6px 20px rgba(0, 174, 238, 0.45);
+            transform: translateY(-1px);
+        }
+
+        .lock-error-msg {
+            color: #ef4444;
+            font-size: 12px;
+            font-weight: 700;
+            display: none;
+            margin-top: 8px;
+        }
+
+        /* Content Area */
+        .content {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* App Footer */
+        .app-footer {
+            padding: 20px 24px;
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            margin-top: auto;
+            font-family: var(--font-title);
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        /* Sync Status Banner */
+        .sync-status-bar {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: var(--card-shadow);
+            font-size: 13px;
+        }
+
+        .sync-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 8px #10b981;
+        }
+
+        .status-dot.dot-warning {
+            background: #f59e0b;
+            box-shadow: 0 0 8px #f59e0b;
+        }
+
+        /* KPI Cards Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+        }
+
+        .kpi-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 20px 22px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .kpi-card::before {
             content: '';
             position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.01) 100%);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--azul-claro);
+        }
+
+        .kpi-card.kpi-purple::before { background: var(--roxo); }
+        .kpi-card.kpi-warning::before { background: #f59e0b; }
+        .kpi-card.kpi-green::before { background: #10b981; }
+
+        .kpi-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .kpi-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .kpi-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            background: rgba(0, 174, 238, 0.1);
+            color: var(--azul-claro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+        }
+
+        body.light-theme .kpi-icon {
+            background: rgba(0, 56, 108, 0.08);
+            color: var(--azul-escuro);
+        }
+
+        .kpi-card.kpi-purple .kpi-icon {
+            background: rgba(100, 53, 133, 0.12);
+            color: var(--roxo);
+        }
+
+        .kpi-card.kpi-warning .kpi-icon {
+            background: rgba(245, 158, 11, 0.12);
+            color: #d97706;
+        }
+
+        .kpi-card.kpi-green .kpi-icon {
+            background: rgba(16, 185, 129, 0.12);
+            color: #10b981;
+        }
+
+        .kpi-value {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-main);
+            line-height: 1.1;
+            margin-bottom: 4px;
+        }
+
+        .kpi-subtext {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* Filter Controls Bar */
+        .filter-controls-bar {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            box-shadow: var(--card-shadow);
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 260px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 9px 12px 9px 36px;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .search-box input:focus {
+            border-color: var(--azul-claro);
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 13px;
+        }
+
+        .filter-select {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 9px 14px;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 13px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        /* Form Inputs inside Modal */
+        .form-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        .form-control {
+            width: 100%;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 9px 12px;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 13px;
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: var(--azul-claro);
+        }
+
+        /* Sub-panel for payment splits & multi-cards */
+        .payment-subpanel {
+            grid-column: 1 / -1;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-top: 4px;
+        }
+
+        /* Table Card Container */
+        .table-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+        }
+
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .custom-table th {
+            background: var(--bg-tertiary);
+            color: var(--text-muted);
+            font-family: var(--font-title);
+            font-weight: 700;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-color);
+            white-space: nowrap;
+        }
+
+        .custom-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-main);
+            vertical-align: middle;
+        }
+
+        .custom-table tbody tr {
+            transition: background-color 0.15s ease;
+        }
+
+        .custom-table tbody tr:hover {
+            background-color: var(--row-hover-bg);
+        }
+
+        /* Pagination Controls Styling */
+        .pagination-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 20px;
+            background: var(--bg-tertiary);
+            border-top: 1px solid var(--border-color);
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 13px;
+        }
+
+        .pagination-info {
+            color: var(--text-muted);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .pagination-controls {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .page-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-family: var(--font-title);
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.18s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            height: 32px;
+        }
+
+        .page-btn:hover:not(:disabled) {
+            background: var(--azul-claro);
+            border-color: var(--azul-claro);
+            color: white;
+        }
+
+        .page-btn.active {
+            background: var(--azul-medio);
+            border-color: var(--azul-medio);
+            color: white;
+            box-shadow: 0 2px 8px rgba(0, 56, 108, 0.3);
+        }
+
+        .page-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        .page-size-selector {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .page-size-selector select {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 4px 8px;
+            border-radius: 6px;
+            font-size: 12px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        /* Badges */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .badge-active {
+            background: rgba(16, 185, 129, 0.12);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: #10b981;
+        }
+
+        body.light-theme .badge-active {
+            color: #15803d;
+        }
+
+        .badge-canceled {
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+        }
+
+        .badge-type {
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 3px 8px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .btn-detail {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-family: var(--font-title);
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .btn-detail:hover {
+            background: var(--azul-claro);
+            border-color: var(--azul-claro);
+            color: white;
+        }
+
+        .btn-edit-action:hover {
+            background: var(--roxo);
+            border-color: var(--roxo);
+            color: white;
+        }
+
+        /* Toast Notification */
+        .toast-notify {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #10b981;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-family: var(--font-title);
+            font-size: 13px;
+            font-weight: 700;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            z-index: 99999;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
             pointer-events: none;
+        }
+
+        .toast-notify.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Modal Overlay */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            max-width: 680px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 28px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transform: translateY(12px);
+            transition: transform 0.25s ease;
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: translateY(0);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 16px;
+        }
+
+        .modal-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .modal-close-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 22px;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .modal-close-btn:hover {
+            color: var(--text-main);
+        }
+
+        .modal-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .modal-grid { grid-template-columns: 1fr; }
+        }
+
+        .modal-field {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .modal-field-full {
+            grid-column: 1 / -1;
+        }
+
+        .modal-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .modal-val {
+            font-size: 13px;
+            color: var(--text-main);
+            background: var(--bg-tertiary);
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            word-break: break-word;
+        }
+
+        /* Overlay for mobile sidebar */
+        .main-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 95;
+            display: none;
+            backdrop-filter: blur(4px);
+        }
+
+        @media (max-width: 1024px) {
+            .sidebar { transform: translateX(-250px); }
+            .main { margin-left: 0; width: 100%; }
+            body.sb-on .sidebar { transform: translateX(0); }
+            body.sb-on .main-overlay { display: block; }
         }
     </style>
 </head>
-<body class="bg-[#0b1326] text-[#dae2fd] min-h-screen flex flex-col items-center justify-center font-sans overflow-hidden p-6">
-    <div class="glass-card relative max-w-lg w-full bg-white/[0.02] backdrop-blur-xl border border-white/5 rounded-2xl p-10 text-center shadow-2xl">
-        <div class="w-20 h-20 bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 rounded-full flex items-center justify-center mx-auto mb-8 animate-pulse">
-            <span class="material-symbols-outlined text-5xl">construction</span>
-        </div>
-        
-        <h1 class="text-3xl font-bold text-white mb-4 tracking-tight">Gestão de Ativos</h1>
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20 text-yellow-500 text-sm font-semibold mb-6">
-            <span class="w-1.5 h-1.5 rounded-full bg-yellow-500 animate-ping"></span>
-            Em Desenvolvimento
-        </div>
-        
-        <p class="text-gray-400 mb-8 leading-relaxed">
-            Estamos estruturando o novo painel para controle de inventário de hardware/software, ciclo de vida de equipamentos e termos de responsabilidade. Em breve estará disponível!
-        </p>
-        
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button onclick="window.location.href='../index.html'" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-white/5 border border-white/10 text-white rounded-lg hover:bg-white/10 hover:border-white/20 active:scale-95 transition-all duration-300 gap-2">
-                <span class="material-symbols-outlined text-[18px]">arrow_back</span>
-                Voltar ao Portal
-            </button>
-            <button onclick="window.location.href='../Suporte-Intake/index.html'" class="inline-flex items-center justify-center w-full sm:w-auto px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-500 hover:scale-105 active:scale-95 transition-all duration-300 gap-2">
-                <span class="material-symbols-outlined text-[18px]">dashboard</span>
-                Ir para Suporte Intake
-            </button>
+<body class="sb-on light-theme">
+
+    <!-- Toast Notification -->
+    <div class="toast-notify" id="toast-notify">
+        <i class="fa-solid fa-circle-check"></i> <span id="toast-msg">Operação realizada com sucesso!</span>
+    </div>
+
+    <!-- Security Lock Screen Protection Overlay -->
+    <div class="lock-overlay" id="lock-screen-overlay">
+        <div class="lock-card">
+            <div class="lock-icon-box">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <h2 class="lock-title">Acesso Restrito</h2>
+            <p class="lock-subtitle">Insira a senha de segurança corporativa para acessar o painel de Gestão de Ativos.</p>
+            
+            <form id="lock-form" onsubmit="handleUnlock(event)">
+                <div class="lock-input-group">
+                    <input type="password" id="lock-pass-input" class="lock-input" placeholder="Digite a senha..." required autocomplete="current-password">
+                    <button type="submit" class="btn-unlock">
+                        <i class="fa-solid fa-key" style="margin-right: 6px;"></i> Desbloquear Painel
+                    </button>
+                </div>
+                <div class="lock-error-msg" id="lock-error-msg">⚠️ Senha incorreta. Tente novamente.</div>
+            </form>
+
+            <div style="margin-top: 24px; border-top: 1px solid var(--border-color); padding-top: 16px;">
+                <a href="../index.html" style="color: var(--text-muted); font-size: 12px; text-decoration: none; font-weight: 600;">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar ao Portal
+                </a>
+            </div>
         </div>
     </div>
+
+    <div class="main-overlay" onclick="toggleSidebar()"></div>
+
+    <div class="app">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <div class="brand-box">
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                    </div>
+                    <span>Gestão de Ativos</span>
+                </div>
+                <p style="font-size: 0.72rem; color: rgba(255, 255, 255, 0.6); font-weight: 600; margin-top: 6px;">DMS Logistics · Inventário</p>
+            </div>
+            
+            <div class="nav-section">PAINÉIS DE ATIVOS</div>
+            <nav class="nav">
+                <button class="nav-btn active" id="btn-side-licencas" onclick="switchMainTab('licencas')">
+                    <i class="fa-solid fa-globe nav-icon"></i>
+                    <span>Licenças & Domínios</span>
+                    <span class="nav-badge-count" id="side-badge-licencas">0</span>
+                </button>
+                <button class="nav-btn" id="btn-side-certificados" onclick="switchMainTab('certificados')">
+                    <i class="fa-solid fa-shield-cat nav-icon"></i>
+                    <span>Certificados Digitais</span>
+                    <span class="nav-badge-count" id="side-badge-certificados">0</span>
+                </button>
+                <button class="nav-btn" id="btn-side-cartoes" onclick="switchMainTab('cartoes')">
+                    <i class="fa-solid fa-credit-card nav-icon"></i>
+                    <span>Cartões Corporativos</span>
+                    <span class="nav-badge-count" id="side-badge-cartoes">0</span>
+                </button>
+            </nav>
+
+            <div class="nav-section">SISTEMAS DMS</div>
+            <nav class="nav">
+                <a class="nav-btn" href="../Suporte-Intake/index.html" style="color: #00AEEE !important;">
+                    <i class="fa-solid fa-headset nav-icon"></i>
+                    <span>Suporte Intake (SLA)</span>
+                </a>
+                <a class="nav-btn" href="../index.html">
+                    <i class="fa-solid fa-house nav-icon"></i>
+                    <span>Portal Principal</span>
+                </a>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button onclick="lockSession()" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 6px 12px; border-radius: 6px; font-size: 11px; cursor: pointer; width: 100%; margin-bottom: 12px; display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <i class="fa-solid fa-lock"></i> Bloquear Painel
+                </button>
+                <p style="color: rgba(255, 255, 255, 0.6); font-size: 11px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">suporte@dmslog.com</p>
+                <p style="color: rgba(255, 255, 255, 0.35); font-size: 10px; margin-top: 2px;">👤 Gestão de TI</p>
+                <p style="color: rgba(255, 255, 255, 0.2); font-size: 8px; margin-top: 6px; letter-spacing: 1.5px;">DMS LOGISTICS © 2026</p>
+            </div>
+        </aside>
+
+        <!-- Main Workspace -->
+        <div class="main">
+            
+            <!-- Topbar Header -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button id="sb-toggle" onclick="toggleSidebar()" title="Recolher / Expandir Menu">
+                        <i class="fa-solid fa-bars" style="font-size: 14px;"></i>
+                    </button>
+                    <div class="topbar-title" id="topbar-title">Licenças & Domínios</div>
+                    <span class="topbar-badge">Gestão de Ativos</span>
+                </div>
+
+                <div class="topbar-actions">
+                    <a class="btn-top" href="../index.html" title="Voltar ao Portal Principal">
+                        <i class="fa-solid fa-house"></i> Voltar ao Portal
+                    </a>
+                    <a class="btn-top btn-top-suporte" href="../Suporte-Intake/index.html" title="Abrir Dashboard do Suporte Intake">
+                        <i class="fa-solid fa-headset"></i> Suporte Intake
+                    </a>
+                    <button class="btn-top" id="btn-sync-now" title="Sincronizar dados">
+                        <i class="fa-solid fa-rotate"></i> Sincronizar
+                    </button>
+                    <button class="btn-top" id="btn-theme-toggle">
+                        🌙 Modo Escuro
+                    </button>
+                    <button class="btn-top" onclick="lockSession()" title="Bloquear Sessão">
+                        <i class="fa-solid fa-lock"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Main Content Area -->
+            <div class="content">
+                
+                <!-- Status Banner -->
+                <div class="sync-status-bar">
+                    <div class="sync-info">
+                        <div class="status-dot" id="sync-dot"></div>
+                        <div>
+                            <strong id="sync-status-text">Conectando ao sistema...</strong>
+                            <span style="color: var(--text-muted); margin-left: 8px;" id="sync-time-text"></span>
+                        </div>
+                    </div>
+                    <div style="font-size: 12px; color: var(--text-muted);">
+                        <i class="fa-solid fa-shield-halved" style="color: var(--azul-claro);"></i> Conexão Segura Apps Script API (Leitura, Adição & Edição)
+                    </div>
+                </div>
+
+                <!-- Executive KPI Cards -->
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-header">
+                            <span class="kpi-title">Licenças & Domínios</span>
+                            <div class="kpi-icon"><i class="fa-solid fa-globe"></i></div>
+                        </div>
+                        <div class="kpi-value" id="kpi-total-licencas">--</div>
+                        <div class="kpi-subtext" id="kpi-sub-licencas">Carregando dados...</div>
+                    </div>
+
+                    <div class="kpi-card kpi-warning">
+                        <div class="kpi-header">
+                            <span class="kpi-title">Alertas de Renovação</span>
+                            <div class="kpi-icon"><i class="fa-solid fa-clock"></i></div>
+                        </div>
+                        <div class="kpi-value" id="kpi-renovacoes-alerta">--</div>
+                        <div class="kpi-subtext">Renovações nos próximos 60 dias</div>
+                    </div>
+
+                    <div class="kpi-card kpi-purple">
+                        <div class="kpi-header">
+                            <span class="kpi-title">Certificados Digitais</span>
+                            <div class="kpi-icon"><i class="fa-solid fa-key"></i></div>
+                        </div>
+                        <div class="kpi-value" id="kpi-total-certificados">--</div>
+                        <div class="kpi-subtext" id="kpi-sub-certificados">e-CPF e e-CNPJ monitorados</div>
+                    </div>
+
+                    <div class="kpi-card kpi-green">
+                        <div class="kpi-header">
+                            <span class="kpi-title">Cartões Cadastrados</span>
+                            <div class="kpi-icon"><i class="fa-solid fa-credit-card"></i></div>
+                        </div>
+                        <div class="kpi-value" id="kpi-total-cartoes">--</div>
+                        <div class="kpi-subtext">Cartões corporativos ativos</div>
+                    </div>
+                </div>
+
+                <!-- TAB 1: LICENÇAS E DOMÍNIOS -->
+                <div id="tab-licencas" class="tab-view">
+                    <div class="filter-controls-bar">
+                        <div class="search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="search-licencas" placeholder="Buscar por domínio, serviço ou certificadora...">
+                        </div>
+                        <select class="filter-select" id="filter-licencas-status">
+                            <option value="all">Todos os Status</option>
+                            <option value="ATIVO">Ativos</option>
+                            <option value="CANCELADO">Cancelados</option>
+                        </select>
+                        <select class="filter-select" id="filter-licencas-tipo">
+                            <option value="all">Todos os Tipos</option>
+                            <option value="Domínio">Domínio</option>
+                            <option value="Licença">Licença</option>
+                        </select>
+                        <select class="filter-select" id="filter-licencas-pagamento">
+                            <option value="all">Formas de Pagamento</option>
+                            <option value="Boleto">Boleto</option>
+                            <option value="Cartão">Cartão de Crédito</option>
+                            <option value="Pix">Pix</option>
+                            <option value="Parcelado">Parcelado</option>
+                            <option value="Pagamento Misto">Pagamento Misto</option>
+                        </select>
+                        <button class="btn-top btn-top-add" onclick="openAddLicencaModal()" style="margin-left: auto;">
+                            <i class="fa-solid fa-plus"></i> Nova Licença / Domínio
+                        </button>
+                    </div>
+
+                    <div class="table-card" style="margin-top: 16px;">
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Status</th>
+                                        <th>Tipo</th>
+                                        <th>Nome do Serviço / Domínio</th>
+                                        <th>Provedor</th>
+                                        <th>Impacto Operacional</th>
+                                        <th>Plano / Ciclo</th>
+                                        <th>Valor</th>
+                                        <th>Data Renovação</th>
+                                        <th>Forma Pgto</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-licencas">
+                                    <tr><td colspan="10" style="text-align: center; padding: 32px; color: var(--text-muted);">Carregando licenças...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="pagination-bar" id="pagination-licencas"></div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: CERTIFICADOS DIGITAIS -->
+                <div id="tab-certificados" class="tab-view" style="display: none;">
+                    <div class="filter-controls-bar">
+                        <div class="search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="search-certificados" placeholder="Buscar por número do pedido, CPF/CNPJ ou proprietário...">
+                        </div>
+                        <select class="filter-select" id="filter-certificados-modelo">
+                            <option value="all">Todos os Modelos</option>
+                            <option value="e-CPF">e-CPF</option>
+                            <option value="e-CNPJ">e-CNPJ</option>
+                        </select>
+                        <select class="filter-select" id="filter-certificados-midia">
+                            <option value="all">Todas as Mídias</option>
+                            <option value="Nuvem">Na Nuvem</option>
+                            <option value="Computador">No Computador</option>
+                        </select>
+                        <button class="btn-top btn-top-add" onclick="openAddCertificadoModal()" style="margin-left: auto;">
+                            <i class="fa-solid fa-plus"></i> Novo Certificado
+                        </button>
+                    </div>
+
+                    <div class="table-card" style="margin-top: 16px;">
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Nº Pedido</th>
+                                        <th>Modelo</th>
+                                        <th>Mídia</th>
+                                        <th>Proprietário / Titular</th>
+                                        <th>CPF / CNPJ</th>
+                                        <th>Data Compra</th>
+                                        <th>Duração</th>
+                                        <th>Ações</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-certificados">
+                                    <tr><td colspan="8" style="text-align: center; padding: 32px; color: var(--text-muted);">Carregando certificados...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="pagination-bar" id="pagination-certificados"></div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: CARTÕES CORPORATIVOS -->
+                <div id="tab-cartoes" class="tab-view" style="display: none;">
+                    <div class="filter-controls-bar">
+                        <div class="search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="search-cartoes" placeholder="Buscar por número do cartão ou nome do titular...">
+                        </div>
+                        <button class="btn-top btn-top-add" onclick="openAddCartaoModal()" style="margin-left: auto;">
+                            <i class="fa-solid fa-credit-card"></i> + Novo Cartão Corporativo
+                        </button>
+                    </div>
+
+                    <div class="table-card" style="margin-top: 16px;">
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Bandeira / Número do Cartão</th>
+                                        <th>Titular / Responsável</th>
+                                        <th>Vencimento do Cartão</th>
+                                        <th>Serviços / Licenças Vinculadas</th>
+                                        <th>Status do Cartão</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-cartoes">
+                                    <tr><td colspan="5" style="text-align: center; padding: 32px; color: var(--text-muted);">Carregando cartões corporativos...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="pagination-bar" id="pagination-cartoes"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer inside .main for clean layout alignment -->
+            <footer class="app-footer">
+                DMS LOGISTICS © 2026 · Todos os direitos reservados.
+            </footer>
+        </div>
+    </div>
+
+    <!-- Modal Item Details -->
+    <div class="modal-overlay" id="modal-details-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div>
+                    <span class="status-badge badge-active" id="modal-status-badge">ATIVO</span>
+                    <h3 class="modal-title" id="modal-title" style="margin-top: 6px;">Detalhes do Ativo</h3>
+                </div>
+                <button class="modal-close-btn" onclick="closeModal('modal-details-overlay')">&times;</button>
+            </div>
+            <div class="modal-grid" id="modal-grid-body">
+                <!-- Conteúdo via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Add/Edit Licença -->
+    <div class="modal-overlay" id="modal-add-licenca-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div>
+                    <span class="status-badge badge-active" id="modal-licenca-badge">NOVO REGISTRO</span>
+                    <h3 class="modal-title" id="modal-licenca-title" style="margin-top: 6px;">Adicionar Nova Licença / Domínio</h3>
+                </div>
+                <button class="modal-close-btn" onclick="closeModal('modal-add-licenca-overlay')">&times;</button>
+            </div>
+            <form id="form-add-licenca" onsubmit="saveLicenca(event)">
+                <div class="modal-grid">
+                    <div class="modal-field">
+                        <label class="form-label">Status</label>
+                        <select class="form-control" id="add-lic-status" required>
+                            <option value="ATIVO">ATIVO</option>
+                            <option value="CANCELADO">CANCELADO</option>
+                        </select>
+                    </div>
+                    <div class="modal-field">
+                        <label class="form-label">Tipo de Ativo</label>
+                        <select class="form-control" id="add-lic-tipo" required>
+                            <option value="Domínio">Domínio</option>
+                            <option value="Licença">Licença de Software</option>
+                            <option value="Hospedagem">Hospedagem / Nuvem</option>
+                        </select>
+                    </div>
+                    <div class="modal-field modal-field-full">
+                        <label class="form-label">Nome do Serviço / Domínio *</label>
+                        <input type="text" class="form-control" id="add-lic-nome" placeholder="ex: dmslog.com ou Office 365" required>
+                    </div>
+                    <div class="modal-field">
+                        <label class="form-label">Provedor / Certificadora</label>
+                        <input type="text" class="form-control" id="add-lic-certificadora" placeholder="ex: Registro.br, AWS, Google">
+                    </div>
+                    <div class="modal-field">
+                        <label class="form-label">Plano / Ciclo</label>
+                        <input type="text" class="form-control" id="add-lic-plano" placeholder="ex: Anual, Mensal">
+                    </div>
+                    <div class="modal-field">
+                        <label class="form-label">Valor Total (R$ ou USD)</label>
+                        <input type="text" class="form-control" id="add-lic-valor" placeholder="ex: R$ 150,00 ou $50.00">
+                    </div>
+                    <div class="modal-field">
+                        <label class="form-label">Data de Renovação</label>
+                        <input type="text" class="form-control" id="add-lic-renovacao" placeholder="ex: 15/10/2026">
+                    </div>
+
+                    <!-- Qualidade de Vida: Pagamento Avançado & Parcelamento sem pulos (1 a 128x) -->
+                    <div class="modal-field">
+                        <label class="form-label">Forma de Pagamento</label>
+                        <select class="form-control" id="add-lic-pgto" onchange="handlePgtoChange(this.value)">
+                            <option value="Boleto">Boleto Bancário</option>
+                            <option value="Cartão de Crédito">Cartão de Crédito (Cartão Único)</option>
+                            <option value="Pix">Pix</option>
+                            <option value="Parcelado">Parcelado / Recorrente (Até 128x em Lista)</option>
+                            <option value="Pagamento Misto">Pagamento Misto (Dividido em 2 Formas / Cartões)</option>
+                        </select>
+                    </div>
+
+                    <!-- Cartão Principal Registrado (Lista Suspensa Dinâmica) -->
+                    <div class="modal-field" id="field-cartao-principal">
+                        <label class="form-label">Cartão Principal</label>
+                        <select class="form-control add-lic-cartao-select" id="add-lic-cartao-select" onchange="handleCartaoSelectChange(this.value)">
+                            <!-- Opções preenchidas via JS -->
+                        </select>
+                    </div>
+
+                    <!-- Painel Sub-opções de Parcelamento / Pagamento Misto & Múltiplos Cartões -->
+                    <div class="payment-subpanel" id="panel-pgto-extra" style="display: none;">
+                        <!-- Injetado dinamicamente via JS -->
+                    </div>
+
+                    <div class="modal-field modal-field-full">
+                        <label class="form-label">Impacto Operacional</label>
+                        <select class="form-control" id="add-lic-impacto">
+                            <option value="MÁXIMA">MÁXIMA (Paralisa a empresa)</option>
+                            <option value="MÉDIA">MÉDIA (Impacto moderado)</option>
+                            <option value="BAIXA">BAIXA (Baixo impacto)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px; display: flex; justify-content: flex-end; gap: 10px;">
+                    <button type="button" class="btn-top" onclick="closeModal('modal-add-licenca-overlay')">Cancelar</button>
+                    <button type="submit" class="btn-top btn-top-add"><i class="fa-solid fa-save"></i> Salvar Registro</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Cadastrar Novo Cartão Corporativo -->
+    <div class="modal-overlay" id="modal-add-cartao-overlay">
+        <div class="modal-card" style="max-width: 480px;">
+            <div class="modal-header">
+                <div>
+                    <span class="status-badge badge-active">NOVO CARTÃO</span>
+                    <h3 class="modal-title" style="margin-top: 6px;">Cadastrar Cartão Corporativo</h3>
+                </div>
+                <button class="modal-close-btn" onclick="closeModal('modal-add-cartao-overlay')">&times;</button>
+            </div>
+            <form id="form-add-cartao" onsubmit="saveNewCard(event)">
+                <div class="modal-grid">
+                    <div class="modal-field modal-field-full">
+                        <label class="form-label">Bandeira / Número do Cartão *</label>
+                        <input type="text" class="form-control" id="add-card-num" placeholder="ex: MasterCard •••• 9842 ou •••• 9842" required>
+                    </div>
+                    <div class="modal-field modal-field-full">
+                        <label class="form-label">Nome do Titular / Responsável *</label>
+                        <input type="text" class="form-control" id="add-card-titular" placeholder="ex: Rafael Ferreira" required>
+                    </div>
+                    <div class="modal-field modal-field-full">
+                        <label class="form-label">Vencimento do Cartão</label>
+                        <input type="text" class="form-control" id="add-card-venc" placeholder="ex: 08/2030">
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px; display: flex; justify-content: flex-end; gap: 10px;">
+                    <button type="button" class="btn-top" onclick="closeModal('modal-add-cartao-overlay')">Cancelar</button>
+                    <button type="submit" class="btn-top btn-top-add"><i class="fa-solid fa-credit-card"></i> Salvar Cartão</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Add/Edit Certificado -->
+    <div class="modal-overlay" id="modal-add-certificado-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <div>
+                    <span class="status-badge badge-active" id="modal-cert-badge">NOVO CERTIFICADO</span>
+                    <h3 class="modal-title" id="modal-cert-title" style="margin-top: 6px;">Adicionar Novo Certificado Digital</h3>
+                </div>
+                <button class="modal-close-btn" onclick="closeModal('modal-add-certificado-overlay')">&times;</button>
+            </div>
+            <form id="form-add-certificado" onsubmit="saveCertificado(event)">
+                <div class="modal-grid">
+                    <div class="modal-field">
+                        <label class="form-label">Número do Pedido *</label>
+                        <input type="text" class="form-control" id="add-cert-pedido" placeholder="ex: 102938" required>
+                    </div>
+                    <div class="modal-field">
+                        <label class="form-label">Modelo</label>
+                        <select class="form-control" id="add-cert-modelo" required>
+                            <option value="e-CPF">e-CPF</option>
+                            <option value="e-CNPJ">e-CNPJ</option>
+                        </select>
+                    </div>
+                    <div class="modal-field">
+                        <label class="form-label">Mídia</label>
+                        <select class="form-control" id="add-cert-midia" required>
+                            <option value="Nuvem">Na Nuvem</option>
+                            <option value="Computador">No Computador</option>
+                            <option value="Token A3">Token / Cartão A3</option>
+                        </select>
+                    </div>
+                    <div class="modal-field">
+                        <label class="form-label">Proprietário / Titular *</label>
+                        <input type="text" class="form-control" id="add-cert-prop" placeholder="Nome completo ou Razão Social" required>
+                    </div>
+                    <div class="modal-field">
+                        <label class="form-label">CPF ou CNPJ</label>
+                        <input type="text" class="form-control" id="add-cert-doc" placeholder="000.000.000-00">
+                    </div>
+                    <div class="modal-field">
+                        <label class="form-label">Data da Compra</label>
+                        <input type="text" class="form-control" id="add-cert-compra" placeholder="ex: 10/05/2025">
+                    </div>
+                    <div class="modal-field">
+                        <label class="form-label">Validade / Duração</label>
+                        <select class="form-control" id="add-cert-validade">
+                            <option value="12 meses">12 meses</option>
+                            <option value="36 meses">36 meses</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="margin-top: 24px; display: flex; justify-content: flex-end; gap: 10px;">
+                    <button type="button" class="btn-top" onclick="closeModal('modal-add-certificado-overlay')">Cancelar</button>
+                    <button type="submit" class="btn-top btn-top-add"><i class="fa-solid fa-save"></i> Salvar Registro</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * SEGURANÇA E AUTENTICAÇÃO DE ACESSO (HASH CRIPTOGRÁFICO SHA-256)
+         * A senha em texto puro NUNCA fica exposta no código-fonte nem no GitHub.
+         */
+        const SECRET_HASH = "afa3a4ec8921f11177fc2b60b8c6c069170fcb92227cf05c0bf1814990afa7b7";
+
+        async function sha256(message) {
+            const msgBuffer = new TextEncoder().encode(message);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        function checkAuth() {
+            const isAuth = sessionStorage.getItem('dms_assets_authenticated') === 'true';
+            const lockOverlay = document.getElementById('lock-screen-overlay');
+            if (isAuth) {
+                lockOverlay.style.display = 'none';
+            } else {
+                lockOverlay.style.display = 'flex';
+                document.getElementById('lock-pass-input')?.focus();
+            }
+        }
+
+        async function handleUnlock(e) {
+            e.preventDefault();
+            const input = document.getElementById('lock-pass-input');
+            const errorMsg = document.getElementById('lock-error-msg');
+            
+            const typedHash = await sha256(input.value.trim());
+            if (typedHash === SECRET_HASH) {
+                sessionStorage.setItem('dms_assets_authenticated', 'true');
+                errorMsg.style.display = 'none';
+                document.getElementById('lock-screen-overlay').style.display = 'none';
+                loadAllData();
+            } else {
+                errorMsg.style.display = 'block';
+                input.value = '';
+                input.focus();
+            }
+        }
+
+        function lockSession() {
+            sessionStorage.removeItem('dms_assets_authenticated');
+            checkAuth();
+        }
+
+        /**
+         * CONFIGURAÇÃO DE APPS SCRIPT
+         */
+        const APPS_SCRIPT_URL_LICENCAS = "";
+        const APPS_SCRIPT_URL_CERTIFICADOS = "https://script.google.com/a/macros/dmslog.com/s/AKfycbyHjLjBUbzL57t4QSCZGdE1_q_YVwDpzCFM-OGnRm6Ic25-XX-OPRkRd97oWvSq5tiz/exec";
+
+        // Global State, Pagination & Edit State
+        let rawLicencas = [];
+        let rawCertificados = [];
+        let customCardsList = []; // Cartões adicionados manualmente pelo usuário
+        let activeTab = "licencas";
+
+        let editingLicencaIndex = null;
+        let editingCertificadoIndex = null;
+
+        let pageLicencas = 1;
+        let pageSizeLicencas = 10;
+
+        let pageCertificados = 1;
+        let pageSizeCertificados = 10;
+
+        let pageCartoes = 1;
+        let pageSizeCartoes = 10;
+
+        // DOM Elements
+        const btnThemeToggle = document.getElementById('btn-theme-toggle');
+        const btnSyncNow = document.getElementById('btn-sync-now');
+        const syncDot = document.getElementById('sync-dot');
+        const syncStatusText = document.getElementById('sync-status-text');
+        const syncTimeText = document.getElementById('sync-time-text');
+        const topbarTitle = document.getElementById('topbar-title');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            checkAuth();
+            initTheme();
+            initFilterEvents();
+            if (sessionStorage.getItem('dms_assets_authenticated') === 'true') {
+                loadAllData();
+            }
+        });
+
+        // Sidebar Toggle
+        function toggleSidebar() {
+            document.body.classList.toggle('sb-off');
+            document.body.classList.toggle('sb-on');
+        }
+
+        // Theme Setup
+        function initTheme() {
+            const savedTheme = localStorage.getItem('dms_portal_theme') || localStorage.getItem('dms_intake_theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.remove('light-theme');
+            } else {
+                document.body.classList.add('light-theme');
+            }
+            updateThemeBtn();
+
+            btnThemeToggle?.addEventListener('click', () => {
+                document.body.classList.toggle('light-theme');
+                const isLight = document.body.classList.contains('light-theme');
+                localStorage.setItem('dms_portal_theme', isLight ? 'light' : 'dark');
+                updateThemeBtn();
+            });
+        }
+
+        function updateThemeBtn() {
+            if (!btnThemeToggle) return;
+            btnThemeToggle.innerHTML = document.body.classList.contains('light-theme') ? '🌙 Modo Escuro' : '☀️ Modo Claro';
+        }
+
+        // Main Tab Switcher
+        function switchMainTab(tabKey) {
+            activeTab = tabKey;
+
+            // Nav buttons state
+            document.querySelectorAll('.sidebar .nav-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-side-${tabKey}`)?.classList.add('active');
+
+            // Tab Views state
+            document.querySelectorAll('.tab-view').forEach(view => view.style.display = 'none');
+            document.getElementById(`tab-${tabKey}`).style.display = 'block';
+
+            // Topbar title update
+            if (tabKey === 'licencas') topbarTitle.textContent = "Licenças & Domínios";
+            else if (tabKey === 'certificados') topbarTitle.textContent = "Certificados Digitais";
+            else if (tabKey === 'cartoes') topbarTitle.textContent = "Cartões Corporativos";
+        }
+
+        // Toast Notification
+        function showToast(msg) {
+            const toast = document.getElementById('toast-notify');
+            document.getElementById('toast-msg').textContent = msg;
+            toast.classList.add('active');
+            setTimeout(() => toast.classList.remove('active'), 3500);
+        }
+
+        // Gera as opções de parcelas em formato Lista (1x até 128x continuo)
+        function generateParcelasOptionsHTML(selectedVal = "12x") {
+            let html = '';
+            for (let i = 1; i <= 128; i++) {
+                const label = i === 1 ? '1x (À Vista)' : `${i}x`;
+                const isSelected = selectedVal === `${i}x` || selectedVal === `${i}`;
+                html += `<option value="${i}x" ${isSelected ? 'selected' : ''}>${label}</option>`;
+            }
+            return html;
+        }
+
+        // Populate Cards Dropdown in License Form
+        function populateCartoesDropdown(targetSelectId = 'add-lic-cartao-select', selectedValue = "") {
+            const select = document.getElementById(targetSelectId);
+            if (!select) return;
+
+            const cartoesMap = getCartoesMap();
+            const cartoesList = Object.values(cartoesMap);
+
+            let optionsHtml = `<option value="">Nenhum / Sem Cartão</option>`;
+            
+            cartoesList.forEach(c => {
+                const isSelected = selectedValue && (c.numero.includes(selectedValue) || selectedValue.includes(c.numero));
+                optionsHtml += `<option value="${c.numero}" ${isSelected ? 'selected' : ''}>💳 ${c.numero} (${c.titular})</option>`;
+            });
+
+            optionsHtml += `<option value="__NEW_CARD__" style="font-weight: 700; color: var(--verde);">➕ Cadastrar Novo Cartão Corporativo...</option>`;
+            select.innerHTML = optionsHtml;
+        }
+
+        function handleCartaoSelectChange(val) {
+            if (val === '__NEW_CARD__') {
+                openAddCartaoModal();
+                if (document.getElementById('add-lic-cartao-select')) document.getElementById('add-lic-cartao-select').value = "";
+                if (document.getElementById('add-lic-cartao-sec-select')) document.getElementById('add-lic-cartao-sec-select').value = "";
+            }
+        }
+
+        function openAddCartaoModal() {
+            document.getElementById('form-add-cartao').reset();
+            document.getElementById('modal-add-cartao-overlay').classList.add('active');
+        }
+
+        function saveNewCard(e) {
+            e.preventDefault();
+            const num = document.getElementById('add-card-num').value.trim();
+            const titular = document.getElementById('add-card-titular').value.trim();
+            const venc = document.getElementById('add-card-venc').value.trim();
+
+            customCardsList.unshift({
+                numero: num,
+                titular: titular,
+                vencimento: venc || '-',
+                servicos: ['Manual']
+            });
+
+            // Cria um registro sintético para refletir no mapa global
+            rawLicencas.push({
+                'Número Cartão': num,
+                'Nome no cartão': titular,
+                'Vencimento Cartão': venc || '-',
+                'Nomes': 'Sem serviço vinculado',
+                'STATUS ': 'ATIVO',
+                'Tipo': 'Cartão'
+            });
+
+            renderAll();
+            populateCartoesDropdown('add-lic-cartao-select', num);
+            if (document.getElementById('add-lic-cartao-sec-select')) {
+                populateCartoesDropdown('add-lic-cartao-sec-select');
+            }
+            closeModal('modal-add-cartao-overlay');
+            showToast("Novo cartão corporativo registrado!");
+        }
+
+        // Handling Payment Details Subpanel with continuous 1x-128x Dropdown & Multi-Card Parcelas/Valores
+        function handlePgtoChange(val) {
+            const panel = document.getElementById('panel-pgto-extra');
+            if (!panel) return;
+
+            const parcelasSelectHtml = generateParcelasOptionsHTML('12x');
+            const parcelasSelectHtml2 = generateParcelasOptionsHTML('24x');
+
+            if (val === 'Parcelado') {
+                panel.style.display = 'flex';
+                panel.innerHTML = `
+                    <div style="font-weight: 800; font-size: 12px; color: var(--azul-claro); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">
+                        💳 Configuração de Parcelamento / Recorrência (Até 128x)
+                    </div>
+                    <div class="modal-grid">
+                        <div class="modal-field">
+                            <label class="form-label">Parcelas (Cartão 1)</label>
+                            <select class="form-control" id="add-lic-parcelas-qtd-1">
+                                ${parcelasSelectHtml}
+                            </select>
+                        </div>
+                        <div class="modal-field">
+                            <label class="form-label">Valor / Parcela (Cartão 1)</label>
+                            <input type="text" class="form-control" id="add-lic-parcelas-valor-1" placeholder="ex: R$ 125,00">
+                        </div>
+                    </div>
+
+                    <div style="border-top: 1px dashed var(--border-color); padding-top: 12px; margin-top: 4px;">
+                        <div class="modal-field" style="margin-bottom: 8px;">
+                            <label class="form-label">Cartão Secundário / Adicional (Opcional - Divisão de Pagamento)</label>
+                            <select class="form-control" id="add-lic-cartao-sec-select" onchange="handleCartaoSelectChange(this.value)">
+                                <!-- Preenchido via JS -->
+                            </select>
+                        </div>
+                        <div class="modal-grid">
+                            <div class="modal-field">
+                                <label class="form-label">Parcelas (Cartão 2)</label>
+                                <select class="form-control" id="add-lic-parcelas-qtd-2">
+                                    ${parcelasSelectHtml2}
+                                </select>
+                            </div>
+                            <div class="modal-field">
+                                <label class="form-label">Valor / Parcela (Cartão 2)</label>
+                                <input type="text" class="form-control" id="add-lic-parcelas-valor-2" placeholder="ex: R$ 50,00">
+                            </div>
+                        </div>
+                    </div>
+                `;
+                populateCartoesDropdown('add-lic-cartao-sec-select');
+            } else if (val === 'Pagamento Misto') {
+                panel.style.display = 'flex';
+                panel.innerHTML = `
+                    <div style="font-weight: 800; font-size: 12px; color: var(--azul-claro); text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid var(--border-color); padding-bottom: 6px;">
+                        🔀 Divisão de Pagamento (Forma 1 + Forma 2)
+                    </div>
+                    <div class="modal-grid">
+                        <div class="modal-field">
+                            <label class="form-label">Modalidade 1 (ex: Pix / Entrada)</label>
+                            <input type="text" class="form-control" id="add-lic-misto-f1" placeholder="ex: Pix Entrada - R$ 500,00">
+                        </div>
+                        <div class="modal-field">
+                            <label class="form-label">Parcelas / Valor Modalidade 1</label>
+                            <input type="text" class="form-control" id="add-lic-misto-val1" placeholder="ex: À Vista R$ 500,00">
+                        </div>
+                    </div>
+
+                    <div style="border-top: 1px dashed var(--border-color); padding-top: 12px; margin-top: 4px;">
+                        <div class="modal-field" style="margin-bottom: 8px;">
+                            <label class="form-label">Cartão 2 / Modalidade Secundária</label>
+                            <select class="form-control" id="add-lic-cartao-sec-select" onchange="handleCartaoSelectChange(this.value)">
+                                <!-- Preenchido via JS -->
+                            </select>
+                        </div>
+                        <div class="modal-grid">
+                            <div class="modal-field">
+                                <label class="form-label">Parcelas (Cartão 2)</label>
+                                <select class="form-control" id="add-lic-parcelas-qtd-2">
+                                    ${parcelasSelectHtml2}
+                                </select>
+                            </div>
+                            <div class="modal-field">
+                                <label class="form-label">Valor por Parcela (Cartão 2)</label>
+                                <input type="text" class="form-control" id="add-lic-parcelas-valor-2" placeholder="ex: 12x de R$ 100,00">
+                            </div>
+                        </div>
+                    </div>
+                `;
+                populateCartoesDropdown('add-lic-cartao-sec-select');
+            } else {
+                panel.style.display = 'none';
+                panel.innerHTML = '';
+            }
+        }
+
+        // Add Item Modal triggers
+        function openAddModal() {
+            if (activeTab === 'certificados') openAddCertificadoModal();
+            else openAddLicencaModal();
+        }
+
+        function openAddLicencaModal() {
+            editingLicencaIndex = null;
+            document.getElementById('modal-licenca-badge').textContent = "NOVO REGISTRO";
+            document.getElementById('modal-licenca-title').textContent = "Adicionar Nova Licença / Domínio";
+            document.getElementById('form-add-licenca').reset();
+            handlePgtoChange('Boleto');
+            populateCartoesDropdown('add-lic-cartao-select');
+            document.getElementById('modal-add-licenca-overlay').classList.add('active');
+        }
+
+        function openEditLicencaModal(idx) {
+            editingLicencaIndex = idx;
+            const item = rawLicencas[idx];
+            if (!item) return;
+
+            document.getElementById('modal-licenca-badge').textContent = "EDITAR REGISTRO";
+            document.getElementById('modal-licenca-title').textContent = `Editar: ${item['Nomes'] || 'Licença'}`;
+            
+            document.getElementById('add-lic-status').value = item['STATUS '] || item['STATUS'] || 'ATIVO';
+            document.getElementById('add-lic-tipo').value = item['Tipo'] || 'Licença';
+            document.getElementById('add-lic-nome').value = item['Nomes'] || '';
+            document.getElementById('add-lic-certificadora').value = item['Certificadora'] || '';
+            document.getElementById('add-lic-plano').value = item['Plano '] || item['Plano'] || '';
+            document.getElementById('add-lic-valor').value = item['Valor '] || item['Valor'] || '';
+            document.getElementById('add-lic-renovacao').value = item['Data de Renovação'] || '';
+            
+            const pgtoVal = item['Forma de Pagamento'] || 'Boleto';
+            document.getElementById('add-lic-pgto').value = pgtoVal.includes('Parcelado') ? 'Parcelado' : (pgtoVal.includes('Misto') ? 'Pagamento Misto' : pgtoVal);
+            handlePgtoChange(document.getElementById('add-lic-pgto').value);
+
+            populateCartoesDropdown('add-lic-cartao-select', item['Número Cartão'] || item['Nome no cartão']);
+            document.getElementById('add-lic-impacto').value = item['IMPACTO'] || 'BAIXA';
+
+            document.getElementById('modal-add-licenca-overlay').classList.add('active');
+        }
+
+        function openAddCertificadoModal() {
+            editingCertificadoIndex = null;
+            document.getElementById('modal-cert-badge').textContent = "NOVO CERTIFICADO";
+            document.getElementById('modal-cert-title').textContent = "Adicionar Novo Certificado Digital";
+            document.getElementById('form-add-certificado').reset();
+            document.getElementById('modal-add-certificado-overlay').classList.add('active');
+        }
+
+        function openEditCertificadoModal(idx) {
+            editingCertificadoIndex = idx;
+            const item = rawCertificados[idx];
+            if (!item) return;
+
+            document.getElementById('modal-cert-badge').textContent = "EDITAR CERTIFICADO";
+            document.getElementById('modal-cert-title').textContent = `Editar Pedido: ${item['Número do Pedido'] || ''}`;
+
+            document.getElementById('add-cert-pedido').value = item['Número do Pedido'] || '';
+            document.getElementById('add-cert-modelo').value = item['Modelo'] || 'e-CPF';
+            document.getElementById('add-cert-midia').value = item['Mídia'] || 'Nuvem';
+            document.getElementById('add-cert-prop').value = item['Proprietário'] || '';
+            document.getElementById('add-cert-doc').value = item['CPF'] || item['CNPJ'] || '';
+            document.getElementById('add-cert-compra').value = item['Data da compra'] || '';
+            document.getElementById('add-cert-validade').value = item['Validade'] || '12 meses';
+
+            document.getElementById('modal-add-certificado-overlay').classList.add('active');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id)?.classList.remove('active');
+        }
+
+        // Save (Add or Edit) Licença
+        async function saveLicenca(e) {
+            e.preventDefault();
+            let pgtoFinal = document.getElementById('add-lic-pgto').value;
+            const cartaoVal = document.getElementById('add-lic-cartao-select').value;
+            const cartaoSecVal = document.getElementById('add-lic-cartao-sec-select')?.value || '';
+
+            if (pgtoFinal === 'Parcelado') {
+                const q1 = document.getElementById('add-lic-parcelas-qtd-1')?.value || '12x';
+                const v1 = document.getElementById('add-lic-parcelas-valor-1')?.value || '';
+                const q2 = document.getElementById('add-lic-parcelas-qtd-2')?.value || '';
+                const v2 = document.getElementById('add-lic-parcelas-valor-2')?.value || '';
+
+                let part1 = `Cartão 1 (${cartaoVal || 'Principal'}): ${q1} de ${v1}`;
+                let part2 = cartaoSecVal ? ` | Cartão 2 (${cartaoSecVal}): ${q2} de ${v2}` : '';
+                pgtoFinal = `Parcelado: [${part1}${part2}]`;
+            } else if (pgtoFinal === 'Pagamento Misto') {
+                const f1 = document.getElementById('add-lic-misto-f1')?.value || '';
+                const val1 = document.getElementById('add-lic-misto-val1')?.value || '';
+                const q2 = document.getElementById('add-lic-parcelas-qtd-2')?.value || '';
+                const v2 = document.getElementById('add-lic-parcelas-valor-2')?.value || '';
+
+                let part1 = `Forma 1: ${f1} (${val1})`;
+                let part2 = cartaoSecVal ? ` | Cartão 2 (${cartaoSecVal}): ${q2} de ${v2}` : '';
+                pgtoFinal = `Misto: [${part1}${part2}]`;
+            }
+
+            let cartaoFinalCombo = cartaoVal !== '__NEW_CARD__' ? cartaoVal : '';
+            if (cartaoSecVal && cartaoSecVal !== '__NEW_CARD__') {
+                cartaoFinalCombo += cartaoFinalCombo ? ` / ${cartaoSecVal}` : cartaoSecVal;
+            }
+
+            const newObj = {
+                "STATUS ": document.getElementById('add-lic-status').value,
+                "Tipo": document.getElementById('add-lic-tipo').value,
+                "Nomes": document.getElementById('add-lic-nome').value,
+                "Certificadora": document.getElementById('add-lic-certificadora').value,
+                "Plano ": document.getElementById('add-lic-plano').value,
+                "Valor ": document.getElementById('add-lic-valor').value,
+                "Data de Renovação": document.getElementById('add-lic-renovacao').value,
+                "Forma de Pagamento": pgtoFinal,
+                "Número Cartão": cartaoFinalCombo,
+                "IMPACTO": document.getElementById('add-lic-impacto').value
+            };
+
+            const isEdit = editingLicencaIndex !== null;
+
+            if (isEdit) {
+                rawLicencas[editingLicencaIndex] = newObj;
+                showToast("Licença atualizada com sucesso!");
+            } else {
+                rawLicencas.unshift(newObj);
+                showToast("Nova licença cadastrada com sucesso!");
+            }
+
+            renderAll();
+            closeModal('modal-add-licenca-overlay');
+            document.getElementById('form-add-licenca').reset();
+
+            if (APPS_SCRIPT_URL_LICENCAS) {
+                try {
+                    await fetch(APPS_SCRIPT_URL_LICENCAS, {
+                        method: 'POST',
+                        body: JSON.stringify({ 
+                            action: isEdit ? 'edit' : 'add',
+                            rowIndex: isEdit ? editingLicencaIndex + 2 : undefined,
+                            item: newObj 
+                        })
+                    });
+                } catch(err) { console.warn('POST Apps Script falhou:', err); }
+            }
+        }
+
+        // Save (Add or Edit) Certificado
+        async function saveCertificado(e) {
+            e.preventDefault();
+            const docVal = document.getElementById('add-cert-doc').value;
+            const isCNPJ = docVal.length > 14;
+
+            const newObj = {
+                "Número do Pedido": document.getElementById('add-cert-pedido').value,
+                "Modelo": document.getElementById('add-cert-modelo').value,
+                "Mídia": document.getElementById('add-cert-midia').value,
+                "Proprietário": document.getElementById('add-cert-prop').value,
+                "CPF": isCNPJ ? "" : docVal,
+                "CNPJ": isCNPJ ? docVal : "",
+                "Data da compra": document.getElementById('add-cert-compra').value,
+                "Validade": document.getElementById('add-cert-validade').value,
+                "Status": "EMITIDO"
+            };
+
+            const isEdit = editingCertificadoIndex !== null;
+
+            if (isEdit) {
+                rawCertificados[editingCertificadoIndex] = newObj;
+                showToast("Certificado atualizado com sucesso!");
+            } else {
+                rawCertificados.unshift(newObj);
+                showToast("Novo certificado cadastrado com sucesso!");
+            }
+
+            renderAll();
+            closeModal('modal-add-certificado-overlay');
+            document.getElementById('form-add-certificado').reset();
+
+            if (APPS_SCRIPT_URL_CERTIFICADOS) {
+                try {
+                    await fetch(APPS_SCRIPT_URL_CERTIFICADOS, {
+                        method: 'POST',
+                        body: JSON.stringify({ 
+                            action: isEdit ? 'edit' : 'add',
+                            rowIndex: isEdit ? editingCertificadoIndex + 2 : undefined,
+                            item: newObj 
+                        })
+                    });
+                } catch(err) { console.warn('POST Apps Script falhou:', err); }
+            }
+        }
+
+        // Load Data
+        async function loadAllData() {
+            setSyncStatus('syncing', 'Carregando dados...');
+            let licencasOnline = false;
+            let certificadosOnline = false;
+
+            if (APPS_SCRIPT_URL_LICENCAS && APPS_SCRIPT_URL_LICENCAS.trim() !== '') {
+                try {
+                    const res = await fetch(APPS_SCRIPT_URL_LICENCAS);
+                    const data = await res.json();
+                    if (data.status === 'success') {
+                        rawLicencas = data.licencas || data.data || [];
+                        licencasOnline = true;
+                    }
+                } catch (e) { console.warn('Erro ao buscar licenças', e); }
+            }
+
+            if (APPS_SCRIPT_URL_CERTIFICADOS && APPS_SCRIPT_URL_CERTIFICADOS.trim() !== '') {
+                try {
+                    const res = await fetch(APPS_SCRIPT_URL_CERTIFICADOS);
+                    const data = await res.json();
+                    if (data.status === 'success' || Array.isArray(data)) {
+                        rawCertificados = Array.isArray(data) ? data : (data.certificados || data.data || []);
+                        certificadosOnline = true;
+                    }
+                } catch (e) { console.warn('Erro ao buscar certificados', e); }
+            }
+
+            if (!licencasOnline) {
+                try {
+                    const f1 = await fetch('./data/Servi%C3%A7os-de-TI-DMS_4L.xlsx%20-%20Licen%C3%A7as%20e%20Dom%C3%ADnios%20Atualizada.csv');
+                    const txt1 = await f1.text();
+                    rawLicencas = parseCSV(txt1);
+                } catch (e) { console.error('Erro no fallback de licenças', e); }
+            }
+
+            if (!certificadosOnline) {
+                try {
+                    const f2 = await fetch('./data/Levantamento%20de%20Certificados%20Digitais%20-%20P%C3%A1gina1.csv');
+                    const txt2 = await f2.text();
+                    rawCertificados = parseCSV(txt2);
+                } catch (e) { console.error('Erro no fallback de certificados', e); }
+            }
+
+            if (licencasOnline && certificadosOnline) {
+                setSyncStatus('online', '🟢 Sincronizado via Google Apps Script API (Leitura, Adição & Edição Online)');
+            } else if (licencasOnline || certificadosOnline) {
+                setSyncStatus('online', '🟢 Sincronização Parcial (Certificados Digitais via Apps Script API)');
+            } else {
+                setSyncStatus('offline', '🟡 Usando Dados Locais de Contingência');
+            }
+
+            renderAll();
+        }
+
+        function setSyncStatus(type, msg) {
+            const now = new Date();
+            const timeStr = `às ${now.getHours().toString().padStart(2,'0')}:${now.getMinutes().toString().padStart(2,'0')}`;
+            syncStatusText.textContent = msg;
+            syncTimeText.textContent = timeStr;
+            syncDot.className = type === 'online' ? 'status-dot' : 'status-dot dot-warning';
+        }
+
+        btnSyncNow?.addEventListener('click', loadAllData);
+
+        function parseCSV(text) {
+            const lines = text.split('\n').filter(l => l.trim() !== '');
+            if (lines.length <= 1) return [];
+            const headers = parseCSVLine(lines[0]);
+            const results = [];
+            for (let i = 1; i < lines.length; i++) {
+                const vals = parseCSVLine(lines[i]);
+                if (vals.length === 0 || !vals.some(v => v.trim() !== '')) continue;
+                const obj = {};
+                headers.forEach((h, idx) => {
+                    const cleanHeader = h.trim();
+                    if (cleanHeader) obj[cleanHeader] = vals[idx] ? vals[idx].trim() : '';
+                });
+                results.push(obj);
+            }
+            return results;
+        }
+
+        function parseCSVLine(line) {
+            const result = [];
+            let start = 0;
+            let inQuotes = false;
+            for (let i = 0; i < line.length; i++) {
+                if (line[i] === '"') inQuotes = !inQuotes;
+                else if (line[i] === ',' && !inQuotes) {
+                    result.push(line.substring(start, i).replace(/^"|"$/g, '').trim());
+                    start = i + 1;
+                }
+            }
+            result.push(line.substring(start).replace(/^"|"$/g, '').trim());
+            return result;
+        }
+
+        function renderAll() {
+            updateKPIs();
+            renderLicencasTable();
+            renderCertificadosTable();
+            renderCartoesTable();
+        }
+
+        function updateKPIs() {
+            document.getElementById('kpi-total-licencas').textContent = rawLicencas.length;
+            document.getElementById('side-badge-licencas').textContent = rawLicencas.length;
+            document.getElementById('kpi-sub-licencas').textContent = `${rawLicencas.filter(l => (l['STATUS '] || l['STATUS']) === 'ATIVO').length} ativos monitorados`;
+
+            document.getElementById('kpi-total-certificados').textContent = rawCertificados.length;
+            document.getElementById('side-badge-certificados').textContent = rawCertificados.length;
+
+            const cartoesMap = getCartoesMap();
+            document.getElementById('kpi-total-cartoes').textContent = Object.keys(cartoesMap).length;
+            document.getElementById('side-badge-cartoes').textContent = Object.keys(cartoesMap).length;
+
+            document.getElementById('kpi-renovacoes-alerta').textContent = `${rawLicencas.filter(l => l['Data de Renovação'] && l['Data de Renovação'].includes('2026')).length}`;
+        }
+
+        function getCartoesMap() {
+            const cartoesMap = {};
+            
+            // Puxa cartões cadastrados manualmente
+            customCardsList.forEach(c => {
+                cartoesMap[c.numero] = { ...c };
+            });
+
+            // Puxa cartões dinamicamente da planilha rawLicencas
+            rawLicencas.forEach(l => {
+                const rawNumStr = l['Número Cartão'] ? l['Número Cartão'].trim() : '';
+                if (!rawNumStr) return;
+
+                // Suporte a múltiplos cartões separados por barra
+                const nums = rawNumStr.split('/').map(s => s.trim()).filter(Boolean);
+
+                nums.forEach(num => {
+                    if (!cartoesMap[num]) {
+                        cartoesMap[num] = {
+                            numero: num,
+                            titular: l['Nome no cartão'] || 'Não especificado',
+                            vencimento: l['Vencimento Cartão'] || '-',
+                            servicos: []
+                        };
+                    }
+                    const nomeServico = l['Nomes'] || 'Serviço';
+                    if (!cartoesMap[num].servicos.includes(nomeServico)) {
+                        cartoesMap[num].servicos.push(nomeServico);
+                    }
+                });
+            });
+
+            return cartoesMap;
+        }
+
+        // Pagination Component Helper
+        function renderPagination(containerId, currentPage, totalItems, pageSize, onPageChange, onSizeChange) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            if (totalItems === 0) {
+                container.innerHTML = '';
+                return;
+            }
+
+            const totalPages = Math.ceil(totalItems / pageSize);
+            const startItem = (currentPage - 1) * pageSize + 1;
+            const endItem = Math.min(currentPage * pageSize, totalItems);
+
+            let pageBtnsHtml = `
+                <button class="page-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="${onPageChange}(1)" title="Primeira Página"><i class="fa-solid fa-angles-left"></i></button>
+                <button class="page-btn" ${currentPage === 1 ? 'disabled' : ''} onclick="${onPageChange}(${currentPage - 1})" title="Página Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+            `;
+
+            let startPage = Math.max(1, currentPage - 2);
+            let endPage = Math.min(totalPages, startPage + 4);
+            if (endPage - startPage < 4) {
+                startPage = Math.max(1, endPage - 4);
+            }
+
+            for (let p = startPage; p <= endPage; p++) {
+                pageBtnsHtml += `<button class="page-btn ${p === currentPage ? 'active' : ''}" onclick="${onPageChange}(${p})">${p}</button>`;
+            }
+
+            pageBtnsHtml += `
+                <button class="page-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="${onPageChange}(${currentPage + 1})" title="Próxima Página"><i class="fa-solid fa-chevron-right"></i></button>
+                <button class="page-btn" ${currentPage === totalPages ? 'disabled' : ''} onclick="${onPageChange}(${totalPages})" title="Última Página"><i class="fa-solid fa-angles-right"></i></button>
+            `;
+
+            container.innerHTML = `
+                <div class="pagination-info">
+                    Exibindo <strong>${startItem}–${endItem}</strong> de <strong>${totalItems}</strong> itens
+                </div>
+                
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <div class="page-size-selector">
+                        <span>Exibir:</span>
+                        <select onchange="${onSizeChange}(this.value)">
+                            <option value="10" ${pageSize === 10 ? 'selected' : ''}>10</option>
+                            <option value="25" ${pageSize === 25 ? 'selected' : ''}>25</option>
+                            <option value="50" ${pageSize === 50 ? 'selected' : ''}>50</option>
+                            <option value="100" ${pageSize === 100 ? 'selected' : ''}>100</option>
+                        </select>
+                    </div>
+
+                    <div class="pagination-controls">
+                        ${pageBtnsHtml}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render Table Licenças with Pagination & Dedicated Impact Column & Edit button
+        function renderLicencasTable() {
+            const tbody = document.getElementById('tbody-licencas');
+            const search = document.getElementById('search-licencas').value.toLowerCase();
+            const filterStatus = document.getElementById('filter-licencas-status').value;
+            const filterTipo = document.getElementById('filter-licencas-tipo').value;
+            const filterPgto = document.getElementById('filter-licencas-pagamento').value;
+
+            const filtered = rawLicencas.filter(item => {
+                const status = item['STATUS '] || item['STATUS'] || '';
+                const tipo = item['Tipo'] || '';
+                const nome = item['Nomes'] || '';
+                const prov = item['Certificadora'] || '';
+                const pgto = item['Forma de Pagamento'] || '';
+
+                if (filterStatus !== 'all' && status !== filterStatus) return false;
+                if (filterTipo !== 'all' && !tipo.includes(filterTipo)) return false;
+                if (filterPgto !== 'all' && !pgto.includes(filterPgto)) return false;
+                if (search && !`${nome} ${prov} ${tipo}`.toLowerCase().includes(search)) return false;
+
+                return true;
+            });
+
+            const totalItems = filtered.length;
+            const totalPages = Math.ceil(totalItems / pageSizeLicencas) || 1;
+            if (pageLicencas > totalPages) pageLicencas = totalPages;
+
+            const startIndex = (pageLicencas - 1) * pageSizeLicencas;
+            const paginatedItems = filtered.slice(startIndex, startIndex + pageSizeLicencas);
+
+            if (paginatedItems.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="10" style="text-align:center; padding: 24px; color: var(--text-muted);">Nenhuma licença encontrada.</td></tr>`;
+                renderPagination('pagination-licencas', 1, 0, pageSizeLicencas, 'setPageLicencas', 'setPageSizeLicencas');
+                return;
+            }
+
+            tbody.innerHTML = paginatedItems.map((item, idx) => {
+                const realIdx = startIndex + idx;
+                const status = item['STATUS '] || item['STATUS'] || 'N/A';
+                const isAtivo = status === 'ATIVO';
+                const badgeClass = isAtivo ? 'badge-active' : 'badge-canceled';
+
+                const impacto = item['IMPACTO'] || '';
+                let impactoCellHtml = `<span style="color: var(--text-muted); font-size: 12px;">-</span>`;
+                if (impacto.includes('MÁXIMA')) {
+                    impactoCellHtml = `<span class="status-badge" style="background: rgba(239, 68, 68, 0.15); border: 1px solid rgba(239, 68, 68, 0.3); color: #ef4444;" title="${impacto}">MÁXIMA</span>`;
+                } else if (impacto.includes('MÉDIA')) {
+                    impactoCellHtml = `<span class="status-badge" style="background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); color: #f59e0b;" title="${impacto}">MÉDIA</span>`;
+                } else if (impacto.includes('BAIXA')) {
+                    impactoCellHtml = `<span class="status-badge" style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); color: #10b981;" title="${impacto}">BAIXA</span>`;
+                }
+
+                return `
+                    <tr>
+                        <td><span class="status-badge ${badgeClass}">${status}</span></td>
+                        <td><span class="badge-type">${item['Tipo'] || '-'}</span></td>
+                        <td><strong>${item['Nomes'] || '-'}</strong></td>
+                        <td>${item['Certificadora'] || '-'}</td>
+                        <td>${impactoCellHtml}</td>
+                        <td>${item['Plano '] || item['Plano'] || '-'}</td>
+                        <td style="font-weight: 700;">${item['Valor '] || item['Valor'] || '-'}</td>
+                        <td><i class="fa-regular fa-calendar" style="margin-right: 4px; color: var(--text-muted);"></i> ${item['Data de Renovação'] || '-'}</td>
+                        <td>${item['Forma de Pagamento'] || '-'}</td>
+                        <td>
+                            <div style="display: flex; gap: 4px;">
+                                <button class="btn-detail" onclick="openLicencaDetail(${realIdx})">Detalhes</button>
+                                <button class="btn-detail btn-edit-action" onclick="openEditLicencaModal(${realIdx})" title="Editar este cadastro"><i class="fa-solid fa-pen-to-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            renderPagination('pagination-licencas', pageLicencas, totalItems, pageSizeLicencas, 'setPageLicencas', 'setPageSizeLicencas');
+        }
+
+        function setPageLicencas(p) {
+            pageLicencas = p;
+            renderLicencasTable();
+        }
+
+        function setPageSizeLicencas(s) {
+            pageSizeLicencas = parseInt(s);
+            pageLicencas = 1;
+            renderLicencasTable();
+        }
+
+        // Render Table Certificados with Pagination & Edit button
+        function renderCertificadosTable() {
+            const tbody = document.getElementById('tbody-certificados');
+            const search = document.getElementById('search-certificados').value.toLowerCase();
+            const filterModelo = document.getElementById('filter-certificados-modelo').value;
+            const filterMidia = document.getElementById('filter-certificados-midia').value;
+
+            const filtered = rawCertificados.filter(item => {
+                const pedido = item['Número do Pedido'] || '';
+                const modelo = item['Modelo'] || '';
+                const midia = item['Mídia'] || '';
+                const prop = item['Proprietário'] || '';
+                const cpf = item['CPF'] || '';
+                const cnpj = item['CNPJ'] || '';
+
+                if (filterModelo !== 'all' && !modelo.includes(filterModelo)) return false;
+                if (filterMidia !== 'all' && !midia.includes(filterMidia)) return false;
+                if (search && !`${pedido} ${modelo} ${prop} ${cpf} ${cnpj}`.toLowerCase().includes(search)) return false;
+
+                return true;
+            });
+
+            const totalItems = filtered.length;
+            const totalPages = Math.ceil(totalItems / pageSizeCertificados) || 1;
+            if (pageCertificados > totalPages) pageCertificados = totalPages;
+
+            const startIndex = (pageCertificados - 1) * pageSizeCertificados;
+            const paginatedItems = filtered.slice(startIndex, startIndex + pageSizeCertificados);
+
+            if (paginatedItems.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; padding: 24px; color: var(--text-muted);">Nenhum certificado encontrado.</td></tr>`;
+                renderPagination('pagination-certificados', 1, 0, pageSizeCertificados, 'setPageCertificados', 'setPageSizeCertificados');
+                return;
+            }
+
+            tbody.innerHTML = paginatedItems.map((item, idx) => {
+                const realIdx = startIndex + idx;
+                const doc = item['CPF'] || item['CNPJ'] || '-';
+                return `
+                    <tr>
+                        <td><strong>${item['Número do Pedido'] || '-'}</strong></td>
+                        <td><span class="badge-type">${item['Modelo'] || '-'}</span></td>
+                        <td>${item['Mídia'] || '-'}</td>
+                        <td>${item['Proprietário'] || '-'}</td>
+                        <td><code>${doc}</code></td>
+                        <td>${item['Data da compra'] || '-'}</td>
+                        <td>${item['Validade'] || '-'}</td>
+                        <td>
+                            <div style="display: flex; gap: 4px;">
+                                <button class="btn-detail" onclick="openCertificadoDetail(${realIdx})">Detalhes</button>
+                                <button class="btn-detail btn-edit-action" onclick="openEditCertificadoModal(${realIdx})" title="Editar este cadastro"><i class="fa-solid fa-pen-to-square"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            renderPagination('pagination-certificados', pageCertificados, totalItems, pageSizeCertificados, 'setPageCertificados', 'setPageSizeCertificados');
+        }
+
+        function setPageCertificados(p) {
+            pageCertificados = p;
+            renderCertificadosTable();
+        }
+
+        function setPageSizeCertificados(s) {
+            pageSizeCertificados = parseInt(s);
+            pageCertificados = 1;
+            renderCertificadosTable();
+        }
+
+        // Render Table Cartões with Pagination
+        function renderCartoesTable() {
+            const tbody = document.getElementById('tbody-cartoes');
+            const search = document.getElementById('search-cartoes').value.toLowerCase();
+            const cartoesMap = getCartoesMap();
+            const cartoesList = Object.values(cartoesMap);
+
+            const filtered = cartoesList.filter(c => {
+                if (search && !`${c.numero} ${c.titular}`.toLowerCase().includes(search)) return false;
+                return true;
+            });
+
+            const totalItems = filtered.length;
+            const totalPages = Math.ceil(totalItems / pageSizeCartoes) || 1;
+            if (pageCartoes > totalPages) pageCartoes = totalPages;
+
+            const startIndex = (pageCartoes - 1) * pageSizeCartoes;
+            const paginatedItems = filtered.slice(startIndex, startIndex + pageSizeCartoes);
+
+            if (paginatedItems.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; padding: 24px; color: var(--text-muted);">Nenhum cartão cadastrado.</td></tr>`;
+                renderPagination('pagination-cartoes', 1, 0, pageSizeCartoes, 'setPageCartoes', 'setPageSizeCartoes');
+                return;
+            }
+
+            tbody.innerHTML = paginatedItems.map(c => {
+                const servicosBadges = c.servicos.map(s => `<span class="badge-type" style="margin-right: 4px; margin-bottom: 4px; display: inline-block;">${s}</span>`).join('');
+                return `
+                    <tr>
+                        <td><strong><i class="fa-solid fa-credit-card" style="margin-right: 6px; color: var(--azul-claro);"></i> ${c.numero}</strong></td>
+                        <td>${c.titular}</td>
+                        <td><i class="fa-regular fa-calendar" style="margin-right: 4px; color: var(--text-muted);"></i> ${c.vencimento}</td>
+                        <td>${servicosBadges}</td>
+                        <td><span class="status-badge badge-active">ATIVO</span></td>
+                    </tr>
+                `;
+            }).join('');
+
+            renderPagination('pagination-cartoes', pageCartoes, totalItems, pageSizeCartoes, 'setPageCartoes', 'setPageSizeCartoes');
+        }
+
+        function setPageCartoes(p) {
+            pageCartoes = p;
+            renderCartoesTable();
+        }
+
+        function setPageSizeCartoes(s) {
+            pageSizeCartoes = parseInt(s);
+            pageCartoes = 1;
+            renderCartoesTable();
+        }
+
+        function initFilterEvents() {
+            ['search-licencas', 'filter-licencas-status', 'filter-licencas-tipo', 'filter-licencas-pagamento'].forEach(id => {
+                document.getElementById(id)?.addEventListener('input', () => { pageLicencas = 1; renderLicencasTable(); });
+                document.getElementById(id)?.addEventListener('change', () => { pageLicencas = 1; renderLicencasTable(); });
+            });
+
+            ['search-certificados', 'filter-certificados-modelo', 'filter-certificados-midia'].forEach(id => {
+                document.getElementById(id)?.addEventListener('input', () => { pageCertificados = 1; renderCertificadosTable(); });
+                document.getElementById(id)?.addEventListener('change', () => { pageCertificados = 1; renderCertificadosTable(); });
+            });
+
+            document.getElementById('search-cartoes')?.addEventListener('input', () => { pageCartoes = 1; renderCartoesTable(); });
+
+            document.getElementById('modal-details-overlay')?.addEventListener('click', (e) => {
+                if (e.target.id === 'modal-details-overlay') closeModal('modal-details-overlay');
+            });
+            document.getElementById('modal-add-licenca-overlay')?.addEventListener('click', (e) => {
+                if (e.target.id === 'modal-add-licenca-overlay') closeModal('modal-add-licenca-overlay');
+            });
+            document.getElementById('modal-add-certificado-overlay')?.addEventListener('click', (e) => {
+                if (e.target.id === 'modal-add-certificado-overlay') closeModal('modal-add-certificado-overlay');
+            });
+            document.getElementById('modal-add-cartao-overlay')?.addEventListener('click', (e) => {
+                if (e.target.id === 'modal-add-cartao-overlay') closeModal('modal-add-cartao-overlay');
+            });
+        }
+
+        function openLicencaDetail(idx) {
+            const item = rawLicencas[idx];
+            if (!item) return;
+
+            document.getElementById('modal-title').textContent = item['Nomes'] || 'Detalhes da Licença';
+            document.getElementById('modal-status-badge').textContent = item['STATUS '] || item['STATUS'] || 'ATIVO';
+
+            const grid = document.getElementById('modal-grid-body');
+            grid.innerHTML = `
+                <div class="modal-field"><span class="modal-label">Tipo</span><span class="modal-val">${item['Tipo'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Provedor / Certificadora</span><span class="modal-val">${item['Certificadora'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Impacto Operacional</span><span class="modal-val">${item['IMPACTO'] || 'BAIXA'}</span></div>
+                <div class="modal-field"><span class="modal-label">Plano</span><span class="modal-val">${item['Plano '] || item['Plano'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Valor Total</span><span class="modal-val">${item['Valor '] || item['Valor'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Data de Contratação</span><span class="modal-val">${item['Data de contratação'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Data de Renovação</span><span class="modal-val">${item['Data de Renovação'] || '-'}</span></div>
+                <div class="modal-field modal-field-full"><span class="modal-label">Forma de Pagamento</span><span class="modal-val">${item['Forma de Pagamento'] || '-'}</span></div>
+                <div class="modal-field modal-field-full"><span class="modal-label">Cartão(ões) Registrado(s)</span><span class="modal-val">${item['Nome no cartão'] || ''} (${item['Número Cartão'] || 'Sem cartão'}) - Venc: ${item['Vencimento Cartão'] || '-'}</span></div>
+                <div class="modal-field modal-field-full"><span class="modal-label">Cobertura dos Serviços</span><span class="modal-val">${item['Cobertura'] || '-'}</span></div>
+                <div class="modal-field modal-field-full"><span class="modal-label">Observações</span><span class="modal-val">${item['OBSERVAÇÕES'] || '-'}</span></div>
+            `;
+
+            document.getElementById('modal-details-overlay').classList.add('active');
+        }
+
+        function openCertificadoDetail(idx) {
+            const item = rawCertificados[idx];
+            if (!item) return;
+
+            document.getElementById('modal-title').textContent = `Certificado: ${item['Número do Pedido'] || 'Detalhes'}`;
+            document.getElementById('modal-status-badge').textContent = item['Status'] || 'EMITIDO';
+
+            const grid = document.getElementById('modal-grid-body');
+            grid.innerHTML = `
+                <div class="modal-field"><span class="modal-label">Modelo</span><span class="modal-val">${item['Modelo'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Mídia</span><span class="modal-val">${item['Mídia'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">CPF</span><span class="modal-val">${item['CPF'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">CNPJ</span><span class="modal-val">${item['CNPJ'] || '-'}</span></div>
+                <div class="modal-field modal-field-full"><span class="modal-label">Proprietário / Titular</span><span class="modal-val">${item['Proprietário'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Data da Compra</span><span class="modal-val">${item['Data da compra'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Validade / Duração</span><span class="modal-val">${item['Validade'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Total do Pedido</span><span class="modal-val">${item['Total Pedido'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Finalidade</span><span class="modal-val">${item['Finalidade'] || '-'}</span></div>
+                <div class="modal-field modal-field-full"><span class="modal-label">Observações</span><span class="modal-val">${item['Observação'] || '-'}</span></div>
+            `;
+
+            document.getElementById('modal-details-overlay').classList.add('active');
+        }
+    </script>
 </body>
 </html>

@@ -1,235 +1,482 @@
 <!DOCTYPE html>
-<html class="dark" lang="pt-BR">
+<html lang="pt-BR">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>Portal de Aplicativos de Suporte</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "tertiary-fixed": "#ffddb8",
-                      "secondary-fixed-dim": "#4edea3",
-                      "on-secondary": "#003824",
-                      "primary": "#c0c1ff",
-                      "inverse-surface": "#dae2fd",
-                      "on-primary-fixed-variant": "#2f2ebe",
-                      "on-tertiary-fixed": "#2a1700",
-                      "secondary-container": "#00a572",
-                      "error": "#ffb4ab",
-                      "on-error": "#690005",
-                      "surface-container-low": "#131b2e",
-                      "on-tertiary-fixed-variant": "#653e00",
-                      "primary-container": "#8083ff",
-                      "secondary-fixed": "#6ffbbe",
-                      "on-error-container": "#ffdad6",
-                      "inverse-on-surface": "#283044",
-                      "on-secondary-container": "#00311f",
-                      "outline": "#908fa0",
-                      "primary-fixed": "#e1e0ff",
-                      "surface-container-lowest": "#060e20",
-                      "on-primary-container": "#0d0096",
-                      "on-secondary-fixed": "#002113",
-                      "on-secondary-fixed-variant": "#005236",
-                      "surface-container": "#171f33",
-                      "secondary": "#4edea3",
-                      "tertiary": "#ffb95f",
-                      "on-background": "#dae2fd",
-                      "on-surface": "#dae2fd",
-                      "on-primary-fixed": "#07006c",
-                      "on-primary": "#1000a9",
-                      "surface-dim": "#0b1326",
-                      "surface-container-highest": "#2d3449",
-                      "on-tertiary": "#472a00",
-                      "surface-container-high": "#222a3d",
-                      "outline-variant": "#464554",
-                      "surface-tint": "#c0c1ff",
-                      "tertiary-container": "#ca8100",
-                      "error-container": "#93000a",
-                      "primary-fixed-dim": "#c0c1ff",
-                      "surface-bright": "#31394d",
-                      "surface-variant": "#2d3449",
-                      "inverse-primary": "#494bd6",
-                      "on-surface-variant": "#c7c4d7",
-                      "background": "#0b1326",
-                      "surface": "#0b1326",
-                      "on-tertiary-container": "#3e2400",
-                      "tertiary-fixed-dim": "#ffb95f"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "container-max": "1440px",
-                      "stack-md": "16px",
-                      "margin-mobile": "16px",
-                      "margin-desktop": "48px",
-                      "unit": "4px",
-                      "stack-lg": "32px",
-                      "gutter": "24px",
-                      "stack-sm": "8px"
-              },
-              "fontFamily": {
-                      "display-lg": ["Inter", "sans-serif"],
-                      "label-sm": ["Inter", "sans-serif"],
-                      "body-lg": ["Inter", "sans-serif"],
-                      "headline-md": ["Inter", "sans-serif"],
-                      "body-md": ["Inter", "sans-serif"],
-                      "display-lg-mobile": ["Inter", "sans-serif"]
-              },
-              "fontSize": {
-                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                      "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
-              }
-            }
-          }
-        }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Aplicativos de Suporte - DMS Logistics</title>
+    
+    <!-- Fonts & Icons: Montserrat, Nunito, Inter & FontAwesome 6 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800;900&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
     <style>
-        body {
-            background-image: radial-gradient(circle at top right, rgba(192, 193, 255, 0.08) 0%, transparent 45%),
-                              radial-gradient(circle at bottom left, rgba(78, 222, 163, 0.04) 0%, transparent 45%);
-        }
-        
-        /* Edge highlight for portal cards */
-        .portal-card::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.01) 100%);
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask-composite: exclude;
-            pointer-events: none;
+        :root {
+            --azul-claro: #00AEEE;
+            --azul-medio: #005290;
+            --azul-escuro: #00386C;
+            --roxo: #643585;
+            --verde: #B0C934;
+            --cinza: #656464;
+            --cinza-light: #f0f4f8;
+            --border: #d1dbe8;
+
+            --bg-primary: #080e1e;
+            --bg-secondary: #0f172a;
+            --bg-tertiary: #1e293b;
+            --accent-primary: #00AEEE; 
+            --accent-secondary: #005290;
+            --accent-neon: #B0C934;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --card-bg: #0f172a;
+            --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+            --font-title: 'Montserrat', sans-serif;
+            --font-body: 'Nunito', sans-serif;
         }
 
-        /* Subtle button inner glow */
-        .btn-primary {
-            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        body.light-theme {
+            --bg-primary: #f0f4f8;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #e2e8f0;
+            --accent-primary: #005290;
+            --accent-secondary: #643585;
+            --accent-neon: #15803d;
+            --text-main: #1a2940;
+            --text-muted: #6b7a92;
+            --border-color: #d1dbe8;
+            --card-bg: #ffffff;
+            --card-shadow: 0 4px 24px rgba(0, 56, 108, .08);
         }
-        
-        .glow-hover:hover {
-            box-shadow: 0 0 40px rgba(192, 193, 255, 0.08);
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: var(--bg-primary);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: background-color 0.25s ease, color 0.25s ease;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-title);
+        }
+
+        /* Topbar Header */
+        .portal-header {
+            height: 64px;
+            background: var(--azul-escuro);
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 12px rgba(0, 56, 108, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .brand-icon-box {
+            width: 34px;
+            height: 34px;
+            background: var(--azul-claro);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            box-shadow: 0 2px 8px rgba(0, 174, 238, 0.4);
+        }
+
+        .brand-title {
+            font-family: var(--font-title);
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+        }
+
+        .brand-subtitle {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 600;
+        }
+
+        .btn-theme-toggle {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+            padding: 7px 14px;
+            border-radius: 8px;
+            font-family: var(--font-title);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Main Portal Content */
+        .portal-main {
+            flex: 1;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 48px 24px 64px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Hero Banner */
+        .hero-section {
+            text-align: center;
+            margin-bottom: 48px;
+            max-width: 680px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: rgba(0, 174, 238, 0.1);
+            border: 1px solid rgba(0, 174, 238, 0.25);
+            border-radius: 20px;
+            color: var(--azul-claro);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
+
+        body.light-theme .hero-badge {
+            background: rgba(0, 82, 144, 0.08);
+            border-color: rgba(0, 82, 144, 0.2);
+            color: var(--azul-medio);
+        }
+
+        .hero-title {
+            font-size: 2.25rem;
+            font-weight: 900;
+            color: var(--text-main);
+            line-height: 1.25;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        /* Grid of Portal Cards */
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 28px;
+            width: 100%;
+        }
+
+        .portal-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            position: relative;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .portal-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 36px rgba(0, 56, 108, 0.15);
+            border-color: var(--azul-claro);
+        }
+
+        /* Colored Accent Strip on Card Top */
+        .portal-card.card-intake {
+            border-top: 5px solid var(--azul-claro);
+        }
+
+        .portal-card.card-ativos {
+            border-top: 5px solid var(--roxo);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .card-icon-box {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+        }
+
+        .card-intake .card-icon-box {
+            background: rgba(0, 174, 238, 0.12);
+            color: var(--azul-claro);
+        }
+
+        body.light-theme .card-intake .card-icon-box {
+            background: rgba(0, 82, 144, 0.08);
+            color: var(--azul-medio);
+        }
+
+        .card-ativos .card-icon-box {
+            background: rgba(100, 53, 133, 0.12);
+            color: var(--roxo);
+        }
+
+        .card-status-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .status-production {
+            background: rgba(176, 201, 52, 0.15);
+            border: 1px solid rgba(176, 201, 52, 0.4);
+            color: var(--verde);
+        }
+
+        body.light-theme .status-production {
+            background: rgba(21, 128, 61, 0.1);
+            border-color: rgba(21, 128, 61, 0.3);
+            color: #15803d;
+        }
+
+        .status-dev {
+            background: rgba(100, 53, 133, 0.15);
+            border: 1px solid rgba(100, 53, 133, 0.3);
+            color: var(--roxo);
+        }
+
+        .card-title {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            transition: color 0.2s ease;
+        }
+
+        .portal-card:hover .card-title {
+            color: var(--azul-claro);
+        }
+
+        body.light-theme .portal-card:hover .card-title {
+            color: var(--azul-medio);
+        }
+
+        .card-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+            margin-bottom: 28px;
+            flex: 1;
+        }
+
+        /* Buttons */
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-family: var(--font-title);
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            width: 100%;
+        }
+
+        .btn-action-primary {
+            background: linear-gradient(135deg, var(--azul-claro), var(--azul-medio));
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(0, 174, 238, 0.3);
+            border: none;
+        }
+
+        .btn-action-primary:hover {
+            box-shadow: 0 6px 20px rgba(0, 174, 238, 0.45);
+            transform: translateY(-1px);
+        }
+
+        .btn-action-secondary {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-action-secondary:hover {
+            background: rgba(100, 53, 133, 0.08);
+            border-color: var(--roxo);
+            color: var(--roxo);
+        }
+
+        /* Footer */
+        .portal-footer {
+            padding: 24px 32px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 600;
+            letter-spacing: 0.04em;
         }
     </style>
 </head>
-<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-x-hidden selection:bg-primary/30">
-    <!-- TopNavBar -->
-    <header class="bg-surface/30 backdrop-blur-xl docked full-width top-0 border-b border-white/10 shadow-none z-50 sticky">
-        <div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-stack-md max-w-container-max mx-auto">
-            <div class="font-display-lg text-display-lg-mobile md:text-[20px] text-primary tracking-tight font-bold">
-                Portal de Aplicativos de Suporte
+<body class="light-theme">
+
+    <!-- Topbar Header -->
+    <header class="portal-header">
+        <a class="header-brand" href="./index.html">
+            <div class="brand-icon-box">
+                <i class="fa-solid fa-headset" style="font-size: 16px;"></i>
             </div>
-        </div>
+            <div>
+                <div class="brand-title">DMS Logistics</div>
+                <div class="brand-subtitle">Portal de Aplicativos de Suporte</div>
+            </div>
+        </a>
+        <button class="btn-theme-toggle" id="btn-theme-toggle">
+            🌙 Modo Escuro
+        </button>
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow flex flex-col items-center justify-center px-margin-mobile md:px-margin-desktop py-12 md:py-20">
+    <main class="portal-main">
         <!-- Hero Section -->
-        <div class="text-center max-w-3xl mx-auto mb-16 relative">
-            <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/10 rounded-full blur-[100px] pointer-events-none"></div>
-            <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-stack-sm tracking-tight relative z-10">Portal de Aplicativos de Suporte</h1>
-            <p class="font-body-lg text-body-lg text-on-surface-variant/80 relative z-10">Central de ferramentas e dashboards operacionais</p>
+        <div class="hero-section">
+            <div class="hero-badge">
+                <i class="fa-solid fa-layer-group" style="font-size: 10px;"></i>
+                Plataforma Unificada
+            </div>
+            <h1 class="hero-title">Portal de Aplicativos de Suporte</h1>
+            <p class="hero-desc">Central corporativa de ferramentas operacionais, acompanhamento de SLA e gestão de ativos da DMS Logistics.</p>
         </div>
-        
+
         <!-- Grid Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter max-w-container-max mx-auto w-full relative z-10 px-4">
-            <!-- Card 1 -->
-            <div class="portal-card relative group bg-white/[0.03] backdrop-blur-xl rounded-xl p-8 border border-white/10 transition-all duration-500 hover:scale-[1.02] hover:bg-white/[0.05] flex flex-col h-full glow-hover cursor-pointer" onclick="window.location.href='./Suporte-Intake/index.html'">
-                <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl pointer-events-none"></div>
-                <div class="flex justify-between items-start mb-6 relative z-10">
-                    <div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-white/5">
-                        <span class="material-symbols-outlined text-primary text-3xl" data-icon="dashboard">dashboard</span>
-                    </div>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 text-secondary font-label-sm text-label-sm">
-                        <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                        Online - Produção
-                    </span>
-                </div>
-                <h2 class="font-headline-md text-headline-md text-on-surface mb-stack-sm relative z-10 group-hover:text-primary transition-colors">Dashboard SLA - Suporte Intake</h2>
-                <p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-stack-lg relative z-10">KPIs operacionais, compliance de SLA, relatórios executivos e histórico de chamados.</p>
-                <a class="btn-primary relative z-10 inline-flex items-center justify-center w-full md:w-auto px-6 py-3 bg-primary text-on-primary font-label-sm text-label-sm rounded-lg hover:bg-primary-fixed hover:scale-105 active:scale-95 transition-all duration-300" href="./Suporte-Intake/index.html">
-                    Acessar Dashboard
-                    <span class="material-symbols-outlined ml-2 text-[18px]" data-icon="arrow_forward">arrow_forward</span>
-                </a>
-            </div>
+        <div class="portal-grid">
             
-            <!-- Card 2 -->
-            <div class="portal-card relative group bg-white/[0.03] backdrop-blur-xl rounded-xl p-8 border border-white/10 transition-all duration-500 hover:scale-[1.02] hover:bg-white/[0.05] flex flex-col h-full glow-hover cursor-pointer" onclick="window.location.href='./Gestão de Ativos/index.html'">
-                <div class="absolute inset-0 bg-gradient-to-br from-tertiary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl pointer-events-none"></div>
-                <div class="flex justify-between items-start mb-6 relative z-10">
-                    <div class="w-12 h-12 rounded-lg bg-surface-container flex items-center justify-center border border-white/5">
-                        <span class="material-symbols-outlined text-tertiary text-3xl" data-icon="inventory_2">inventory_2</span>
+            <!-- Card 1: Intake -->
+            <a class="portal-card card-intake" href="./Suporte-Intake/index.html">
+                <div class="card-top">
+                    <div class="card-icon-box">
+                        <i class="fa-solid fa-chart-column"></i>
                     </div>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary/10 border border-tertiary/20 text-tertiary font-label-sm text-label-sm">
-                        <span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
-                        Em Desenvolvimento
+                    <span class="card-status-tag status-production">
+                        <i class="fa-solid fa-circle" style="font-size: 6px;"></i> Online · Produção
                     </span>
                 </div>
-                <h2 class="font-headline-md text-headline-md text-on-surface mb-stack-sm relative z-10 group-hover:text-primary transition-colors">Gestão de Ativos</h2>
-                <p class="font-body-md text-body-md text-on-surface-variant flex-grow mb-stack-lg relative z-10">Controle de inventário de hardware e software, ciclo de vida de equipamentos e termos de responsabilidade.</p>
-                <a class="relative z-10 inline-flex items-center justify-center w-full md:w-auto px-6 py-3 bg-transparent border border-white/10 text-on-surface font-label-sm text-label-sm rounded-lg hover:bg-white/5 hover:border-white/20 hover:scale-105 active:scale-95 transition-all duration-300" href="./Gestão de Ativos/index.html">
+                <h2 class="card-title">Dashboard SLA - Suporte Intake</h2>
+                <p class="card-desc">Indicadores de atendimento em tempo real, compliance de SLA, produtividade do time, mapa de causas raiz e relatórios executivos.</p>
+                <div class="btn-action btn-action-primary">
+                    Acessar Dashboard
+                    <i class="fa-solid fa-arrow-right" style="font-size: 12px;"></i>
+                </div>
+            </a>
+
+            <!-- Card 2: Ativos -->
+            <a class="portal-card card-ativos" href="./Gestão de Ativos/index.html">
+                <div class="card-top">
+                    <div class="card-icon-box">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                    </div>
+                    <span class="card-status-tag status-production">
+                        <i class="fa-solid fa-circle" style="font-size: 6px;"></i> Online · Produção
+                    </span>
+                </div>
+                <h2 class="card-title">Gestão de Ativos</h2>
+                <p class="card-desc">Controle unificado de inventário de licenças, domínios, certificados digitais e cartões corporativos da DMS Logistics.</p>
+                <div class="btn-action btn-action-primary">
                     Acessar Gestão
-                    <span class="material-symbols-outlined ml-2 text-[18px]" data-icon="arrow_forward">arrow_forward</span>
-                </a>
-            </div>
+                    <i class="fa-solid fa-arrow-right" style="font-size: 12px;"></i>
+                </div>
+            </a>
+
         </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-transparent full-width bottom-0 border-t border-white/5 flat">
-        <div class="flex flex-col md:flex-row justify-center items-center w-full px-margin-mobile md:px-margin-desktop py-stack-md mt-auto max-w-container-max mx-auto gap-4">
-            <div class="font-label-sm text-label-sm uppercase tracking-widest text-outline text-center">
-                © 2026 Portal de Suporte. Todos os direitos reservados.
-            </div>
-        </div>
+    <footer class="portal-footer">
+        DMS LOGISTICS © 2026 · Todos os direitos reservados.
     </footer>
 
     <script>
-        // Simple subtle mouse tracking effect for cards
-        document.querySelectorAll('.portal-card').forEach(card => {
-            card.addEventListener('mousemove', e => {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                card.style.setProperty('--mouse-x', `${x}px`);
-                card.style.setProperty('--mouse-y', `${y}px`);
-                
-                const spotlight = card.querySelector('.spotlight') || document.createElement('div');
-                if(!card.querySelector('.spotlight')) {
-                    spotlight.className = 'spotlight absolute pointer-events-none rounded-full blur-[40px] opacity-20 transition-opacity';
-                    spotlight.style.width = '150px';
-                    spotlight.style.height = '150px';
-                    spotlight.style.background = 'white';
-                    spotlight.style.mixBlendMode = 'overlay';
-                    card.appendChild(spotlight);
-                }
-                
-                spotlight.style.left = `${x - 75}px`;
-                spotlight.style.top = `${y - 75}px`;
-                spotlight.style.opacity = '0.08';
+        // Theme Controller - Light Mode is DEFAULT
+        const btnThemeToggle = document.getElementById('btn-theme-toggle');
+        
+        function updateThemeUI() {
+            if (!btnThemeToggle) return;
+            if (document.body.classList.contains('light-theme')) {
+                btnThemeToggle.innerHTML = '🌙 Modo Escuro';
+            } else {
+                btnThemeToggle.innerHTML = '☀️ Modo Claro';
+            }
+        }
+
+        if (btnThemeToggle) {
+            btnThemeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('light-theme');
+                const isLight = document.body.classList.contains('light-theme');
+                localStorage.setItem('dms_portal_theme', isLight ? 'light' : 'dark');
+                updateThemeUI();
             });
-            
-            card.addEventListener('mouseleave', () => {
-                const spotlight = card.querySelector('.spotlight');
-                if(spotlight) spotlight.style.opacity = '0';
-            });
-        });
+        }
+
+        // Initialize Theme from localStorage or Default to light
+        const savedTheme = localStorage.getItem('dms_portal_theme') || localStorage.getItem('dms_intake_theme');
+        if (savedTheme === 'dark') {
+            document.body.classList.remove('light-theme');
+        } else {
+            document.body.classList.add('light-theme');
+        }
+        updateThemeUI();
     </script>
 </body>
 </html>
