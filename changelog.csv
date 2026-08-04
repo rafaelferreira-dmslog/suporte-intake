@@ -69297,6 +69297,103 @@ SI-8313,2026-08-03T19:06:23.296-0300,Sistema,Causa raiz potencial,,Em atendiment
 SI-8313,2026-08-03T19:06:23.296-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8313,2026-08-03T19:06:23.296-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8312,2026-08-03T15:50:26.429-0300,Sistema,Link,,This work item is blocked by GA-1400
+SI-8314,2026-08-04T10:48:51.572-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-8314,2026-08-04T10:48:53.392-0300,Rafael Ferreira,status,Submissão,Em Atendimento
+SI-8314,2026-08-04T11:00:53.500-0300,Rafael Ferreira,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+h3. 1️⃣ Identificação do Chamado
+
+* *Módulo:* Operacional / Financeiro (Add Buying - Origin Charges)
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção
+* *Título Sugerido:* Erro de Taxa em Duplicidade (APT Transfer) na Order 260541646 por falha no desatrelamento de Booking
+
+h3. 2️⃣ Entendimento do Problema
+
+* *Passo a Passo:*
+*# Acessar a Ordem 260541646 (ID: {{163250}}) no módulo Operacional.
+*# Ir até a seção de taxas de compra (*Add Buying* > *Origin Charges*).
+*# Verificar que a taxa *APT TRANSFER* consta lançada duas vezes (Valores: USD 106,09 e USD 65,66).
+*# Conferir o Booking atual atrelado à ordem (47941), confirmando que nele existe apenas *um* lançamento da taxa.
+* *Comportamento Esperado vs. Atual:*
+** *Esperado:* Exibição de apenas uma taxa *APT TRANSFER* na Ordem (no valor correto de USD 65,66), correspondente ao Booking atual.
+** *Atual:* A Ordem apresenta duas taxas *APT TRANSFER*, retendo a cobrança do Booking antigo (USD 106,09) junto com a cobrança do novo Booking.
+* *Evidências:* Identificado via consultas de banco de dados no PostgreSQL (tabelas {{order_order}}, {{booking_housedocument}}, {{order_buying}} e {{order_origincharge}}).
+
+h3. 3️⃣ Análise Técnica Inicial
+
+* *Histórico/Logs:*
+** *Desatrelamento do Booking Anterior (48734):* {{2026-05-28 17:47:26.193739+00}}
+** *Atrelamento ao Novo Booking (47941):* {{2026-05-28 20:18:23.909256+00}}
+** *Mapeamento de Banco de Dados:*
+*** Consulta na {{order_buying}} ({{order_id = 163250}}): retornou {{object_id = 156810}}.
+*** Consulta na {{order_origincharge}} ({{object_id = 156810}}, {{charge = 'APT Transfer'}}, {{used = 'true'}}):
+**** *Taxa incorreta (USD 106,09):* {{charge_booking_id = 1138279}} (proveniente do Booking 48734).
+**** *Taxa correta (USD 65,66):* {{charge_booking_id = 1141208}} (proveniente do Booking 47941).
+* *Parametrização/Perfil:* N/A (Falha de persistência/limpeza de dados no desvinculamento de entidades).
+
+h3. 4️⃣ Avaliação de Impacto
+
+* *Abrangência:* Pontual na Ordem 260541646, com potencial de divergência financeira no Contas a Pagar/Buying.
+* *Criticidade:* P2 - Média.
+* *Justificativa:* Causa inconsistência nos valores da ordem e afeta a análise do resultado financeiro do processo, exigindo intervenção para evitar pagamentos incorretos.
+* *Workaround:* Sim. Solicitação de remoção via Banco de Dados ao time de Data Solutions (DS) para a exclusão do registro órfão.
+
+h3. 5️⃣ Tentativas de Resolução
+
+* *Ações Realizadas:* O Service Desk realizou o rastreamento via queries SQL, identificando a divergência dos IDs na coluna {{charge_booking_id}} e isolando o exato registro que precisa ser removido.
+
+h3. 6️⃣ Justificativa Técnica para Escalonamento
+
+O Service Desk (N1) não possui permissão de escrita direta no banco de dados para deleção de registros órfãos na tabela {{order_origincharge}}. Além disso, o chamado requer o apoio do time técnico/desenvolvimento para analisar o comportamento da trigger/rotina de desatrelamento de ordens e bookings, evitando que a falha se repita.
+
+h3. 💡 Causa Raiz Potencial
+
+Falha na rotina de desvinculação de ordens ({{order_order}}) de um Booking ({{assembly}}). Ao desatrelar a Ordem 163250 do Booking 48734, as taxas vinculadas em {{order_origincharge}} relativas ao {{charge_booking_id}} antigo não foram purgadas ou marcadas com {{deleted_at}}. Ao associar a ordem ao novo Booking 47941, novas taxas foram calculadas e adicionadas sem a limpeza prévia das anteriores.
+
+📝 *DESCRIÇÃO OTIMIZADA (PARA O CHAMADO)*
+
+Identificada duplicidade no lançamento da taxa *APT TRANSFER* no módulo de compras (Add Buying / Origin Charges) da Ordem *260541646* (ID: {{163250}}).
+
+*Detalhamento do Incidente:* A Ordem foi desvinculada do Booking antigo (48734) em {{2026-05-28 17:47:26}} e associada ao novo Booking (47941) em {{2026-05-28 20:18:23}}. Durante o processo de remoção do booking anterior, a taxa de APT TRANSFER (USD 106,09) permaneceu órfã na ordem, gerando duplicidade quando o novo booking inseriu a taxa atualizada (USD 65,66).
+
+*Mapeamento Técnico em Banco de Dados:*
+
+* *Link da Ordem:* [https://operational.dmslog.com/order/163250/|https://operational.dmslog.com/order/163250/]
+* *Tabela* {{order_buying}}*:* {{id}} / {{object_id}} = {{156810}}
+* *Tabela* {{order_origincharge}} ({{object_id = 156810}} AND {{used = 'true'}} AND {{charge = 'APT Transfer'}}):
+** *Registro Incorreto (A remover):* Valor USD 106,09 | {{charge_booking_id}} = *1138279*
+** *Registro Correto (A manter):* Valor USD 65,66 | {{charge_booking_id}} = *1141208*
+
+*Ações Solicitadas:*
+
+# *Paliativo (Data Solutions):* Excluir/inativar o registro referente a {{charge_booking_id = 1138279}} na tabela {{order_origincharge}}.
+# *Investigação (Dev/N3):* Avaliar a rotina de desvinculação de Booking/Assembly para garantir o expurgo automático de taxas associadas ao {{charge_booking_id}} anterior ao alterar a ordem de booking.
+
+
+
+Print charge_booking_id divergentes:
+
+
+!image-20260804-134933.png|width=249,alt=""image-20260804-134933.png""!
+
+valores duplicados no buying:
+
+
+!image-20260804-135514.png|width=669,alt=""image-20260804-135514.png""!"
+SI-8314,2026-08-04T11:00:54.251-0300,Rafael Ferreira,Attachment,,image-20260804-134933.png
+SI-8314,2026-08-04T11:00:54.251-0300,Rafael Ferreira,Attachment,,image-20260804-135514.png
+SI-8314,2026-08-04T11:00:57.850-0300,Rafael Ferreira,Encaminhado para:,,Sustentação
+SI-8314,2026-08-04T11:01:07.968-0300,Sistema,Link,,This work item is blocked by SUS-290
+SI-8314,2026-08-04T11:01:46.975-0300,Rafael Ferreira,Encaminhado para:,Sustentação,
+SI-8314,2026-08-04T11:09:48.178-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-8314,2026-08-04T11:16:45.784-0300,Rafael Ferreira,resolution,,Done
+SI-8314,2026-08-04T11:16:45.784-0300,Rafael Ferreira,status,Em Atendimento,Done
+SI-8320,2026-08-04T11:43:10.100-0300,Rafael Ferreira,status,Submissão,Em Atendimento
+SI-8320,2026-08-04T11:43:13.209-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-8320,2026-08-04T11:43:30.532-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-8320,2026-08-04T11:43:32.689-0300,Rafael Ferreira,resolution,,Done
+SI-8320,2026-08-04T11:43:32.689-0300,Rafael Ferreira,status,Em Atendimento,Done
 SI-8318,2026-08-04T09:13:52.361-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8318,2026-08-04T09:13:55.806-0300,Bruno Silva,resolution,,Done
 SI-8318,2026-08-04T09:13:55.806-0300,Bruno Silva,status,Submissão,Done
@@ -69306,3 +69403,292 @@ SI-8316,2026-08-04T09:18:36.506-0300,Rafael Ferreira,status,Em Atendimento,Aguar
 SI-8316,2026-08-04T09:18:46.006-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-8316,2026-08-04T09:50:11.878-0300,Rafael Ferreira,resolution,,Done
 SI-8316,2026-08-04T09:50:11.878-0300,Rafael Ferreira,status,Aguardando correção,Done
+SI-8321,2026-08-04T11:16:28.974-0300,Rafael Ferreira,status,Submissão,Em Atendimento
+SI-8321,2026-08-04T11:16:31.734-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-8321,2026-08-04T11:37:46.976-0300,Rafael Ferreira,description,,"h3. Identificação do Chamado
+
+* *Módulo:* Operations
+* *Tipo/Classificação:* Incidente (Erro de Validação / Dessincronização de Banco)
+* *Ambiente:* Produção ({{operational.dmslog.com}})
+* *Título Sugerido:* Erro ""All items should be closed"" ao tentar abrir cadeado na aba Item por divergência de estado no banco (Order 260747668)
+
+h3. 2️⃣ Entendimento do Problema
+
+* *Passo a Passo:*
+*# Acessar a Order 260747668 (ID da instância: 171245).
+*# Navegar até a aba *Item*.
+*# Tentar abrir o cadeado do item para efetuar o ajuste do peso bruto e peso taxado.
+*# Observar o retorno da mensagem de erro _""All items should be closed""_.
+* *Comportamento Esperado vs. Atual:*
+** _Comportamento Esperado:_ O sistema deve permitir a abertura do cadeado do item individual caso o cadeado geral esteja fechado, mantendo a consistência dos estados.
+** _Comportamento Atual:_ O sistema bloqueia a ação e exibe mensagem de erro devido a uma inconsistência de dados entre a tabela pai e a tabela filha.
+* *Evidências:* Mensagem de erro _""All items should be closed""_ exibida em tela na tentativa de manipulação do cadeado.
+
+h3. 3️⃣ Análise Técnica Inicial
+
+* *Histórico/Logs:*
+** Ao consultar o banco de dados, identificou-se dessincronização entre as tabelas:
+*** Tabela {{order_orderlock}} (cadeado maior): coluna {{items_lock}} está registrada como {{true}} (fechado).
+*** Tabela {{order_itemlock}} (cadeado menor do item): registro consta como {{false}} (aberto).
+** Esta divergência de estados gera um loop de validação na aplicação, pois o sistema exige que os itens menores estejam fechados quando o maior está fechado, mas impede a ação na interface devido ao estado inconsistente.
+* *Parametrização/Perfil:* Perfil de acesso validado. Não há restrições de faturamento, assembly consolidado, trocas de modal recentes ou bloqueios nas abas de _Add Buying_, _Add Selling_ ou _Destination Charges_.
+
+h3. 4️⃣ Avaliação de Impacto
+
+* *Abrangência:* Pontual na Order 260747668, porém com risco de reincidência estrutural em outras ordens do sistema.
+* *Criticidade:* Média.
+* *Justificativa:* O bloqueio do cadeado impede a edição de peso bruto e peso taxado, travando o andamento das etapas operacionais subsequentes do processo.
+* *Workaround:* Sim. Correção manual via banco de dados realizada pelo time técnico/DS, forçando o alinhamento das tabelas ({{order_itemlock}} para {{true}} ou {{items_lock}} na {{order_orderlock}} para {{false}}).
+
+h3. 5️⃣ Tentativas de Resolução
+
+* *Ações Realizadas:*
+** Verificação das condições da ordem (ausência de faturamento, sem assembly, sem cadeados de cobrança fechados).
+** Simulação do fluxo de abertura do cadeado na aba Item com reprodução do erro.
+** Análise no banco de dados confirmando a divergência entre {{order_orderlock.items_lock}} e {{order_itemlock}}.
+
+h3. 6️⃣ Justificativa Técnica para Escalonamento
+
+O atendimento de Nível 1 não possui privilégios para alteração direta em tabelas do banco de dados de produção nem acesso ao código-fonte do sistema. O incidente exige atuação técnica para correção pontual na base (destravamento da ordem) e escalonamento para investigação do motivo pelo qual a aplicação permitiu a dessincronização de estados entre as tabelas, visando uma solução definitiva no backend.
+
+🔍 *CAUSA RAIZ POTENCIAL*
+
+{quote}*Dessincronização / Inconsistência de Transação na Aplicação:* Falha na lógica ou na atomicidade do encadeamento de eventos do backend durante o salvamento/fechamento dos cadeados de itens. A aplicação permitiu que o registro geral ({{order_orderlock.items_lock}}) assumisse o estado {{true}} sem garantir que os registros individuais ({{order_itemlock}}) tivessem atualizado seu status para {{true}} simultaneamente, quebrando a integridade referencial de estados exigida pelas regras de negócio.{quote}
+
+
+
+Prezados,
+
+Identificamos um comportamento anômalo e bloqueante na *Order 260747668* (ID: {{171245}}), link: {{[https://operational.dmslog.com/order/171245/](https://operational.dmslog.com/order/171245/)}}.
+
+*Descrição do Problema:* O usuário necessita ajustar o peso bruto e peso taxado na aba *Item*, porém não consegue abrir o cadeado do item. Ao tentar realizar a ação, o sistema retorna a mensagem de erro _""All items should be closed""_.
+
+*Análise Técnica Realizada:* Foram verificadas as validações de contorno (não há faturamento gerado, a ordem não faz parte de assembly e os cadeados de Buying/Selling/Destination estão abertos). Ao analisar a base de dados, constatou-se uma divergência de estados entre tabelas:
+
+* {{order_orderlock.items_lock}}: consta como {{true}} (cadeado maior fechado).
+* {{order_itemlock}}: consta como {{false}} (cadeado menor aberto).
+
+Essa dessincronização gera um looping na regra de validação da interface/API, impedindo qualquer manipulação dos cadeados pelo usuário final.
+
+*Solicitação:*
+
+# *Contorno / Padrão:* Ajuste manual no banco de dados para alinhar as tabelas {{order_itemlock}} e {{order_orderlock}} na Order 260747668, permitindo o destravamento e ajuste de peso pelo usuário.
+# *Investigação Definitiva:* Análise do fluxo do backend para garantir a integridade e atomicidade da atualização de status entre {{order_orderlock}} e {{order_itemlock}}, evitando novas ocorrências desse descompasso.
+
+
+
+Print order_itemlock com cadeado false:
+
+
+!image-20260804-142551.png|width=669,alt=""image-20260804-142551.png""!
+
+
+
+Print order_orderlock com cadeado do items true:
+
+
+
+!image-20260804-142526.png|width=669,alt=""image-20260804-142526.png""!
+
+
+Video reprodução do fluxo:
+
+
+[^google_screen_recording_2026-08-04T14-23-31.873Z.webm]"
+SI-8321,2026-08-04T11:37:48.000-0300,Rafael Ferreira,Attachment,,image-20260804-142526.png
+SI-8321,2026-08-04T11:37:48.000-0300,Rafael Ferreira,Attachment,,image-20260804-142551.png
+SI-8321,2026-08-04T11:37:48.000-0300,Rafael Ferreira,Attachment,,google_screen_recording_2026-08-04T14-23-31.873Z.webm
+SI-8321,2026-08-04T11:38:58.778-0300,Rafael Ferreira,description,"h3. Identificação do Chamado
+
+* *Módulo:* Operations
+* *Tipo/Classificação:* Incidente (Erro de Validação / Dessincronização de Banco)
+* *Ambiente:* Produção ({{operational.dmslog.com}})
+* *Título Sugerido:* Erro ""All items should be closed"" ao tentar abrir cadeado na aba Item por divergência de estado no banco (Order 260747668)
+
+h3. 2️⃣ Entendimento do Problema
+
+* *Passo a Passo:*
+*# Acessar a Order 260747668 (ID da instância: 171245).
+*# Navegar até a aba *Item*.
+*# Tentar abrir o cadeado do item para efetuar o ajuste do peso bruto e peso taxado.
+*# Observar o retorno da mensagem de erro _""All items should be closed""_.
+* *Comportamento Esperado vs. Atual:*
+** _Comportamento Esperado:_ O sistema deve permitir a abertura do cadeado do item individual caso o cadeado geral esteja fechado, mantendo a consistência dos estados.
+** _Comportamento Atual:_ O sistema bloqueia a ação e exibe mensagem de erro devido a uma inconsistência de dados entre a tabela pai e a tabela filha.
+* *Evidências:* Mensagem de erro _""All items should be closed""_ exibida em tela na tentativa de manipulação do cadeado.
+
+h3. 3️⃣ Análise Técnica Inicial
+
+* *Histórico/Logs:*
+** Ao consultar o banco de dados, identificou-se dessincronização entre as tabelas:
+*** Tabela {{order_orderlock}} (cadeado maior): coluna {{items_lock}} está registrada como {{true}} (fechado).
+*** Tabela {{order_itemlock}} (cadeado menor do item): registro consta como {{false}} (aberto).
+** Esta divergência de estados gera um loop de validação na aplicação, pois o sistema exige que os itens menores estejam fechados quando o maior está fechado, mas impede a ação na interface devido ao estado inconsistente.
+* *Parametrização/Perfil:* Perfil de acesso validado. Não há restrições de faturamento, assembly consolidado, trocas de modal recentes ou bloqueios nas abas de _Add Buying_, _Add Selling_ ou _Destination Charges_.
+
+h3. 4️⃣ Avaliação de Impacto
+
+* *Abrangência:* Pontual na Order 260747668, porém com risco de reincidência estrutural em outras ordens do sistema.
+* *Criticidade:* Média.
+* *Justificativa:* O bloqueio do cadeado impede a edição de peso bruto e peso taxado, travando o andamento das etapas operacionais subsequentes do processo.
+* *Workaround:* Sim. Correção manual via banco de dados realizada pelo time técnico/DS, forçando o alinhamento das tabelas ({{order_itemlock}} para {{true}} ou {{items_lock}} na {{order_orderlock}} para {{false}}).
+
+h3. 5️⃣ Tentativas de Resolução
+
+* *Ações Realizadas:*
+** Verificação das condições da ordem (ausência de faturamento, sem assembly, sem cadeados de cobrança fechados).
+** Simulação do fluxo de abertura do cadeado na aba Item com reprodução do erro.
+** Análise no banco de dados confirmando a divergência entre {{order_orderlock.items_lock}} e {{order_itemlock}}.
+
+h3. 6️⃣ Justificativa Técnica para Escalonamento
+
+O atendimento de Nível 1 não possui privilégios para alteração direta em tabelas do banco de dados de produção nem acesso ao código-fonte do sistema. O incidente exige atuação técnica para correção pontual na base (destravamento da ordem) e escalonamento para investigação do motivo pelo qual a aplicação permitiu a dessincronização de estados entre as tabelas, visando uma solução definitiva no backend.
+
+🔍 *CAUSA RAIZ POTENCIAL*
+
+{quote}*Dessincronização / Inconsistência de Transação na Aplicação:* Falha na lógica ou na atomicidade do encadeamento de eventos do backend durante o salvamento/fechamento dos cadeados de itens. A aplicação permitiu que o registro geral ({{order_orderlock.items_lock}}) assumisse o estado {{true}} sem garantir que os registros individuais ({{order_itemlock}}) tivessem atualizado seu status para {{true}} simultaneamente, quebrando a integridade referencial de estados exigida pelas regras de negócio.{quote}
+
+
+
+Prezados,
+
+Identificamos um comportamento anômalo e bloqueante na *Order 260747668* (ID: {{171245}}), link: {{[https://operational.dmslog.com/order/171245/](https://operational.dmslog.com/order/171245/)}}.
+
+*Descrição do Problema:* O usuário necessita ajustar o peso bruto e peso taxado na aba *Item*, porém não consegue abrir o cadeado do item. Ao tentar realizar a ação, o sistema retorna a mensagem de erro _""All items should be closed""_.
+
+*Análise Técnica Realizada:* Foram verificadas as validações de contorno (não há faturamento gerado, a ordem não faz parte de assembly e os cadeados de Buying/Selling/Destination estão abertos). Ao analisar a base de dados, constatou-se uma divergência de estados entre tabelas:
+
+* {{order_orderlock.items_lock}}: consta como {{true}} (cadeado maior fechado).
+* {{order_itemlock}}: consta como {{false}} (cadeado menor aberto).
+
+Essa dessincronização gera um looping na regra de validação da interface/API, impedindo qualquer manipulação dos cadeados pelo usuário final.
+
+*Solicitação:*
+
+# *Contorno / Padrão:* Ajuste manual no banco de dados para alinhar as tabelas {{order_itemlock}} e {{order_orderlock}} na Order 260747668, permitindo o destravamento e ajuste de peso pelo usuário.
+# *Investigação Definitiva:* Análise do fluxo do backend para garantir a integridade e atomicidade da atualização de status entre {{order_orderlock}} e {{order_itemlock}}, evitando novas ocorrências desse descompasso.
+
+
+
+Print order_itemlock com cadeado false:
+
+
+!image-20260804-142551.png|width=669,alt=""image-20260804-142551.png""!
+
+
+
+Print order_orderlock com cadeado do items true:
+
+
+
+!image-20260804-142526.png|width=669,alt=""image-20260804-142526.png""!
+
+
+Video reprodução do fluxo:
+
+
+[^google_screen_recording_2026-08-04T14-23-31.873Z.webm]","h3. Identificação do Chamado
+
+* *Módulo:* Operations
+* *Tipo/Classificação:* Incidente (Erro de Validação / Dessincronização de Banco)
+* *Ambiente:* Produção ({{operational.dmslog.com}})
+* *Título Sugerido:* Erro ""All items should be closed"" ao tentar abrir cadeado na aba Item por divergência de estado no banco (Order 260747668)
+
+h3. 2️⃣ Entendimento do Problema
+
+* *Passo a Passo:*
+*# Acessar a Order 260747668 (ID da instância: 171245).
+*# Navegar até a aba *Item*.
+*# Tentar abrir o cadeado do item para efetuar o ajuste do peso bruto e peso taxado.
+*# Observar o retorno da mensagem de erro _""All items should be closed""_.
+* *Comportamento Esperado vs. Atual:*
+** _Comportamento Esperado:_ O sistema deve permitir a abertura do cadeado do item individual caso o cadeado geral esteja fechado, mantendo a consistência dos estados.
+** _Comportamento Atual:_ O sistema bloqueia a ação e exibe mensagem de erro devido a uma inconsistência de dados entre a tabela pai e a tabela filha.
+* *Evidências:* Mensagem de erro _""All items should be closed""_ exibida em tela na tentativa de manipulação do cadeado.
+
+h3. 3️⃣ Análise Técnica Inicial
+
+* *Histórico/Logs:*
+** Ao consultar o banco de dados, identificou-se dessincronização entre as tabelas:
+*** Tabela {{order_orderlock}} (cadeado maior): coluna {{items_lock}} está registrada como {{true}} (fechado).
+*** Tabela {{order_itemlock}} (cadeado menor do item): registro consta como {{false}} (aberto).
+** Esta divergência de estados gera um loop de validação na aplicação, pois o sistema exige que os itens menores estejam fechados quando o maior está fechado, mas impede a ação na interface devido ao estado inconsistente.
+* *Parametrização/Perfil:* Perfil de acesso validado. Não há restrições de faturamento, assembly consolidado, trocas de modal recentes ou bloqueios nas abas de _Add Buying_, _Add Selling_ ou _Destination Charges_.
+
+h3. 4️⃣ Avaliação de Impacto
+
+* *Abrangência:* Pontual na Order 260747668, porém com risco de reincidência estrutural em outras ordens do sistema.
+* *Criticidade:* Média.
+* *Justificativa:* O bloqueio do cadeado impede a edição de peso bruto e peso taxado, travando o andamento das etapas operacionais subsequentes do processo.
+* *Workaround:* Sim. Correção manual via banco de dados realizada pelo time técnico/DS, forçando o alinhamento das tabelas ({{order_itemlock}} para {{true}} ou {{items_lock}} na {{order_orderlock}} para {{false}}).
+
+h3. 5️⃣ Tentativas de Resolução
+
+* *Ações Realizadas:*
+** Verificação das condições da ordem (ausência de faturamento, sem assembly, sem cadeados de cobrança fechados).
+** Simulação do fluxo de abertura do cadeado na aba Item com reprodução do erro.
+** Análise no banco de dados confirmando a divergência entre {{order_orderlock.items_lock}} e {{order_itemlock}}.
+
+h3. 6️⃣ Justificativa Técnica para Escalonamento
+
+O atendimento de Nível 1 não possui privilégios para alteração direta em tabelas do banco de dados de produção nem acesso ao código-fonte do sistema. O incidente exige atuação técnica para correção pontual na base (destravamento da ordem) e escalonamento para investigação do motivo pelo qual a aplicação permitiu a dessincronização de estados entre as tabelas, visando uma solução definitiva no backend.
+
+🔍 *CAUSA RAIZ POTENCIAL*
+
+{quote}*Dessincronização / Inconsistência de Transação na Aplicação:* Falha na lógica ou na atomicidade do encadeamento de eventos do backend durante o salvamento/fechamento dos cadeados de itens. A aplicação permitiu que o registro geral ({{order_orderlock.items_lock}}) assumisse o estado {{true}} sem garantir que os registros individuais ({{order_itemlock}}) tivessem atualizado seu status para {{true}} simultaneamente, quebrando a integridade referencial de estados exigida pelas regras de negócio.{quote}
+
+
+
+Prezados,
+
+Identificamos um comportamento anômalo e bloqueante na *Order 260747668* (ID: {{171245}}), link: {{[https://operational.dmslog.com/order/171245/](https://operational.dmslog.com/order/171245/)}}.
+
+*Descrição do Problema:* O usuário necessita ajustar o peso bruto e peso taxado na aba *Item*, porém não consegue abrir o cadeado do item. Ao tentar realizar a ação, o sistema retorna a mensagem de erro _""All items should be closed""_.
+
+*Análise Técnica Realizada:* Foram verificadas as validações de contorno (não há faturamento gerado, a ordem não faz parte de assembly e os cadeados de Buying/Selling/Destination estão abertos). Ao analisar a base de dados, constatou-se uma divergência de estados entre tabelas:
+
+* {{order_orderlock.items_lock}}: consta como {{true}} (cadeado maior fechado).
+* {{order_itemlock}}: consta como {{false}} (cadeado menor aberto).
+
+Essa dessincronização gera um looping na regra de validação da interface/API, impedindo qualquer manipulação dos cadeados pelo usuário final.
+
+*Solicitação:*
+
+# *Contorno / Padrão:* Ajuste manual no banco de dados para alinhar as tabelas {{order_itemlock}} e {{order_orderlock}} na Order 260747668, permitindo o destravamento e ajuste de peso pelo usuário.
+# *Investigação Definitiva:* Análise do fluxo do backend para garantir a integridade e atomicidade da atualização de status entre {{order_orderlock}} e {{order_itemlock}}, evitando novas ocorrências desse descompasso.
+
+
+
+Print order_itemlock com cadeado false:
+
+
+!image-20260804-142551.png|width=669,alt=""image-20260804-142551.png""!
+
+
+
+Print order_orderlock com cadeado do items true:
+
+
+
+!image-20260804-142526.png|width=669,alt=""image-20260804-142526.png""!
+
+
+Video reprodução do fluxo:
+
+
+[^google_screen_recording_2026-08-04T14-23-31.873Z.webm]
+
+
+
+querys utilizadas:
+select * from order_orderlock where instance_id=171245
+select * from order_itemlock where instance_id=193195"
+SI-8321,2026-08-04T11:39:08.708-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-8321,2026-08-04T11:39:13.954-0300,Rafael Ferreira,Encaminhado para:,DS,Sustentação
+SI-8321,2026-08-04T11:39:17.350-0300,Sistema,Link,,This work item is blocked by SUS-291
+SI-8321,2026-08-04T11:39:39.382-0300,Rafael Ferreira,Encaminhado para:,Sustentação,DS
+SI-8321,2026-08-04T11:39:42.323-0300,Rafael Ferreira,resolution,,Done
+SI-8321,2026-08-04T11:39:42.323-0300,Rafael Ferreira,status,Em Atendimento,Done
+SI-8323,2026-08-04T11:38:30.068-0300,Rafael Ferreira,status,Submissão,Em Atendimento
+SI-8323,2026-08-04T11:38:32.283-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-8323,2026-08-04T11:43:22.544-0300,Rafael Ferreira,status,Em Atendimento,Aguardando Informação
