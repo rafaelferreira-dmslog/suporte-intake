@@ -69949,6 +69949,14 @@ SI-10070,2026-08-04T19:03:12.624-0300,Sistema,Resolução do chamado,,Em atendim
 SI-10070,2026-08-04T19:03:12.624-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-10070,2026-08-04T19:03:12.624-0300,Sistema,Causa raiz final,,Em atendimento
 SI-10070,2026-08-04T19:03:12.624-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-10261,2026-08-05T10:42:09.675-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10261,2026-08-05T10:42:16.033-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10261,2026-08-05T10:42:16.297-0300,Rafael Ferreira,resolution,,Done
+SI-10261,2026-08-05T10:42:16.297-0300,Rafael Ferreira,status,Submissão,Done
+SI-10260,2026-08-05T10:42:06.944-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10260,2026-08-05T10:42:12.374-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10260,2026-08-05T10:42:12.740-0300,Rafael Ferreira,resolution,,Done
+SI-10260,2026-08-05T10:42:12.740-0300,Rafael Ferreira,status,Submissão,Done
 SI-9539,2026-08-04T15:30:59.026-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-9539,2026-08-04T15:30:59.026-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-9539,2026-08-04T15:31:01.027-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
@@ -69972,12 +69980,34 @@ SI-8970,2026-08-04T19:03:11.328-0300,Sistema,Causa raiz potencial,,"Acúmulo de 
 SI-8970,2026-08-04T19:03:11.328-0300,Sistema,Causa raiz final,,"Durante o uso cotidiano das plataformas operacionais via web, o navegador de internet armazena automaticamente uma série de arquivos, imagens e rotinas técnicas no computador do usuário. O objetivo dessa funcionalidade é tornar o carregamento do sistema mais rápido em acessos futuros. No entanto, quando novas atualizações da plataforma são lançadas ou quando há uma movimentação intensa de dados na funcionalidade de booking, os arquivos antigos gravados localmente podem entrar em divergência com as novas orientações do sistema. Esse desalinhamento entre o que está salvo na memória temporária do computador e a versão atual da aplicação causa falhas visuais, bloqueios nas ações e alertas repetidos de erro. A limpeza do cache remove permanentemente os dados legados, forçando o navegador a baixar a versão mais recente e estável das telas, normalizando o funcionamento da plataforma de forma imediata."
 SI-8970,2026-08-04T19:03:11.328-0300,Sistema,Justificativa Causa Raiz final,,"O incidente originou-se no acúmulo de artefatos de sessão mantidos no cache local da estação de trabalho. Essa retenção de rotinas antigas impediu a comunicação adequada da interface do módulo de booking com as regras vigentes do sistema, ocasionando os travamentos relatados. Ao realizar a purga da memória temporária do navegador, eliminou-se o conflito e permitiu-se o recarregamento integral dos scripts atualizados. Como medida de melhoria contínua, recomenda-se a padronização deste procedimento operacional como primeiro nível de verificação preventiva junto às equipes operacionais, bem como a avaliação de estratégias de renovação automática de versão no frontend para mitigar a ocorrência de divergências locais."
 SI-10265,2026-08-04T20:52:25.254-0300,Sistema,Link,,This work item is blocked by GA-1411
+SI-10265,2026-08-05T09:55:03.114-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10265,2026-08-05T09:55:03.400-0300,Rafael Ferreira,resolution,,Done
+SI-10265,2026-08-05T09:55:03.400-0300,Rafael Ferreira,status,Submissão,Done
 SI-10266,2026-08-05T08:27:22.039-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10266,2026-08-05T08:27:24.196-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10266,2026-08-05T08:27:24.407-0300,Rafael Ferreira,resolution,,Done
 SI-10266,2026-08-05T08:27:24.407-0300,Rafael Ferreira,status,Submissão,Done
 SI-10267,2026-08-05T07:35:37.970-0300,Sistema,Link,,This work item is blocked by GA-1412
+SI-10267,2026-08-05T09:55:16.178-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10267,2026-08-05T09:55:16.421-0300,Rafael Ferreira,resolution,,Done
+SI-10267,2026-08-05T09:55:16.421-0300,Rafael Ferreira,status,Submissão,Done
 SI-10269,2026-08-05T08:44:26.016-0300,Sistema,Link,,This work item is blocked by GA-1413
 SI-10269,2026-08-05T09:16:25.205-0300,Rafael Ferreira,resolution,,Done
 SI-10269,2026-08-05T09:16:25.205-0300,Rafael Ferreira,status,Submissão,Done
 SI-10269,2026-08-05T09:16:26.027-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10268,2026-08-05T09:55:18.570-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10268,2026-08-05T09:55:18.783-0300,Rafael Ferreira,resolution,,Done
+SI-10268,2026-08-05T09:55:18.783-0300,Rafael Ferreira,status,Submissão,Done
+SI-10270,2026-08-05T10:15:07.815-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10270,2026-08-05T10:27:54.073-0300,Bruno Silva,resolution,,Done
+SI-10270,2026-08-05T10:27:54.073-0300,Bruno Silva,status,Submissão,Done
+SI-10275,2026-08-05T10:25:28.230-0300,Sistema,Link,,This work item is blocked by GA-1414
+SI-10274,2026-08-05T10:27:41.364-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10274,2026-08-05T10:27:44.605-0300,Bruno Silva,resolution,,Done
+SI-10274,2026-08-05T10:27:44.605-0300,Bruno Silva,status,Submissão,Done
+SI-10273,2026-08-05T10:15:25.045-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10273,2026-08-05T10:27:48.192-0300,Bruno Silva,resolution,,Done
+SI-10273,2026-08-05T10:27:48.192-0300,Bruno Silva,status,Submissão,Done
+SI-10271,2026-08-05T10:15:18.036-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10271,2026-08-05T10:27:51.596-0300,Bruno Silva,resolution,,Done
+SI-10271,2026-08-05T10:27:51.596-0300,Bruno Silva,status,Submissão,Done
