@@ -69836,6 +69836,8 @@ SI-8326,2026-08-04T13:33:49.387-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8326,2026-08-04T13:33:54.647-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-8326,2026-08-04T13:33:54.891-0300,Rafael Ferreira,resolution,,Done
 SI-8326,2026-08-04T13:33:54.891-0300,Rafael Ferreira,status,Submissão,Done
+SI-8329,2026-08-05T14:23:58.471-0300,Bruno Silva,resolution,,Done
+SI-8329,2026-08-05T14:23:58.471-0300,Bruno Silva,status,Submissão,Done
 SI-8328,2026-08-04T18:28:36.100-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8328,2026-08-04T18:28:38.973-0300,Rafael Ferreira,resolution,,Done
 SI-8328,2026-08-04T18:28:38.973-0300,Rafael Ferreira,status,Submissão,Done
@@ -69992,6 +69994,8 @@ SI-8970,2026-08-04T19:03:11.328-0300,Sistema,Resolução do chamado,,"Orientado 
 SI-8970,2026-08-04T19:03:11.328-0300,Sistema,Causa raiz potencial,,"Acúmulo de arquivos temporários e componentes desatualizados na memória cache do navegador do usuário, gerando conflito de execução com os arquivos mais recentes da interface do sistema."
 SI-8970,2026-08-04T19:03:11.328-0300,Sistema,Causa raiz final,,"Durante o uso cotidiano das plataformas operacionais via web, o navegador de internet armazena automaticamente uma série de arquivos, imagens e rotinas técnicas no computador do usuário. O objetivo dessa funcionalidade é tornar o carregamento do sistema mais rápido em acessos futuros. No entanto, quando novas atualizações da plataforma são lançadas ou quando há uma movimentação intensa de dados na funcionalidade de booking, os arquivos antigos gravados localmente podem entrar em divergência com as novas orientações do sistema. Esse desalinhamento entre o que está salvo na memória temporária do computador e a versão atual da aplicação causa falhas visuais, bloqueios nas ações e alertas repetidos de erro. A limpeza do cache remove permanentemente os dados legados, forçando o navegador a baixar a versão mais recente e estável das telas, normalizando o funcionamento da plataforma de forma imediata."
 SI-8970,2026-08-04T19:03:11.328-0300,Sistema,Justificativa Causa Raiz final,,"O incidente originou-se no acúmulo de artefatos de sessão mantidos no cache local da estação de trabalho. Essa retenção de rotinas antigas impediu a comunicação adequada da interface do módulo de booking com as regras vigentes do sistema, ocasionando os travamentos relatados. Ao realizar a purga da memória temporária do navegador, eliminou-se o conflito e permitiu-se o recarregamento integral dos scripts atualizados. Como medida de melhoria contínua, recomenda-se a padronização deste procedimento operacional como primeiro nível de verificação preventiva junto às equipes operacionais, bem como a avaliação de estratégias de renovação automática de versão no frontend para mitigar a ocorrência de divergências locais."
+SI-8599,2026-08-05T14:24:01.199-0300,Bruno Silva,resolution,,Done
+SI-8599,2026-08-05T14:24:01.199-0300,Bruno Silva,status,Submissão,Done
 SI-10265,2026-08-04T20:52:25.254-0300,Sistema,Link,,This work item is blocked by GA-1411
 SI-10265,2026-08-05T09:55:03.114-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10265,2026-08-05T09:55:03.400-0300,Rafael Ferreira,resolution,,Done
@@ -70019,6 +70023,11 @@ SI-10276,2026-08-05T11:14:02.182-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10276,2026-08-05T11:14:06.360-0300,Bruno Silva,resolution,,Done
 SI-10276,2026-08-05T11:14:06.360-0300,Bruno Silva,status,Submissão,Done
 SI-10275,2026-08-05T10:25:28.230-0300,Sistema,Link,,This work item is blocked by GA-1414
+SI-10275,2026-08-05T13:55:46.576-0300,Helena Almeida,resolution,,Done
+SI-10275,2026-08-05T13:55:46.576-0300,Helena Almeida,status,Submissão,Done
+SI-10275,2026-08-05T13:55:48.805-0300,Helena Almeida,assignee,,Helena Almeida
+SI-10275,2026-08-05T13:56:07.793-0300,Helena Almeida,Criticidade final,,P1 - Alta
+SI-10275,2026-08-05T13:56:13.792-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. Cadastro realizado. 
 SI-10274,2026-08-05T10:27:41.364-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10274,2026-08-05T10:27:44.605-0300,Bruno Silva,resolution,,Done
 SI-10274,2026-08-05T10:27:44.605-0300,Bruno Silva,status,Submissão,Done
@@ -70038,3 +70047,16 @@ SI-10279,2026-08-05T12:39:05.315-0300,Helena Almeida,resolution,,Done
 SI-10279,2026-08-05T12:39:05.315-0300,Helena Almeida,status,Submissão,Done
 SI-10279,2026-08-05T12:39:38.631-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. Compra efetuada e instalação agendada. 
 SI-10279,2026-08-05T12:39:42.397-0300,Helena Almeida,Criticidade final,,P2 - Média
+SI-10278,2026-08-05T13:51:13.513-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10278,2026-08-05T13:51:16.194-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10278,2026-08-05T13:51:16.406-0300,Rafael Ferreira,resolution,,Done
+SI-10278,2026-08-05T13:51:16.406-0300,Rafael Ferreira,status,Submissão,Done
+SI-10282,2026-08-05T14:40:15.959-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
+SI-10282,2026-08-05T14:40:18.326-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10281,2026-08-05T14:19:17.332-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10281,2026-08-05T14:19:20.545-0300,Bruno Silva,resolution,,Done
+SI-10281,2026-08-05T14:19:20.545-0300,Bruno Silva,status,Submissão,Done
+SI-10280,2026-08-05T13:55:24.302-0300,Sistema,Link,,This work item is blocked by GA-1420
+SI-10280,2026-08-05T14:13:47.985-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10280,2026-08-05T14:13:51.839-0300,Bruno Silva,resolution,,Done
+SI-10280,2026-08-05T14:13:51.839-0300,Bruno Silva,status,Submissão,Done
