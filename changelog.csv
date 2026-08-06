@@ -70337,3 +70337,7 @@ SI-10290,2026-08-05T19:04:05.366-0300,Sistema,Resolução do chamado,,"Identific
 SI-10290,2026-08-05T19:04:05.366-0300,Sistema,Causa raiz potencial,,"Exclusão acidental por parte do usuário ou falha de sincronização de dados que resultou na alteração do status do assembly para ""cancelado"" (canceled_at preenchido) no banco de dados."
 SI-10290,2026-08-05T19:04:05.366-0300,Sistema,Causa raiz final,,"Ausência de funcionalidade nativa no sistema (front-end) para a restauração de ordens que sofreram soft delete, gerando dependência de intervenção técnica da equipe de dados."
 SI-10290,2026-08-05T19:04:05.366-0300,Sistema,Justificativa Causa Raiz final,,"A falha foi classificada como de requisito, pois o sistema permite a exclusão lógica do dado, mas não oferece autonomia para sua reversão. O nexo causal reside no fato de que, sem uma interface de recuperação, qualquer deleção torna o registro invisível e inacessível, impactando o fluxo operacional. A solução definitiva através do INTAKE-247 visa a melhoria contínua ao implementar o recurso de restauração, eliminando o tempo de espera do usuário e reduzindo o volume de chamados críticos para a equipe de tecnologia."
+SI-10294,2026-08-06T08:10:17.122-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10294,2026-08-06T08:10:19.331-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10294,2026-08-06T08:10:19.538-0300,Rafael Ferreira,resolution,,Done
+SI-10294,2026-08-06T08:10:19.538-0300,Rafael Ferreira,status,Submissão,Done
