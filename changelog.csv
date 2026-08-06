@@ -70196,6 +70196,11 @@ SI-10273,2026-08-05T19:03:57.854-0300,Sistema,Resolução do chamado,,"Bom dia! 
 SI-10273,2026-08-05T19:03:57.854-0300,Sistema,Causa raiz potencial,,"Bom dia! documento enviado, caso não leia por favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)"
 SI-10273,2026-08-05T19:03:57.854-0300,Sistema,Causa raiz final,,"Bom dia! documento enviado, caso não leia por favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)"
 SI-10273,2026-08-05T19:03:57.854-0300,Sistema,Justificativa Causa Raiz final,,"Bom dia! documento enviado, caso não leia por favor comparecer a sala de docsia (https://meet.google.com/cws-xorv-fvw?authuser=0)"
+SI-10272,2026-08-06T09:20:35.622-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10272,2026-08-06T09:20:37.294-0300,Rafael Ferreira,status,Submissão,Encaminhado sustentação
+SI-10272,2026-08-06T09:20:40.324-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10272,2026-08-06T09:20:40.519-0300,Rafael Ferreira,resolution,,Done
+SI-10272,2026-08-06T09:20:40.519-0300,Rafael Ferreira,status,Encaminhado sustentação,Done
 SI-10271,2026-08-05T10:15:18.036-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10271,2026-08-05T10:27:51.596-0300,Bruno Silva,resolution,,Done
 SI-10271,2026-08-05T10:27:51.596-0300,Bruno Silva,status,Submissão,Done
@@ -70293,6 +70298,17 @@ SI-10280,2026-08-05T19:04:02.161-0300,Sistema,Resolução do chamado,,Colaborado
 SI-10280,2026-08-05T19:04:02.161-0300,Sistema,Causa raiz potencial,,Colaboradora foi chamado no chat para configuração
 SI-10280,2026-08-05T19:04:02.161-0300,Sistema,Causa raiz final,,Colaboradora foi chamado no chat para configuração
 SI-10280,2026-08-05T19:04:02.161-0300,Sistema,Justificativa Causa Raiz final,,Colaboradora foi chamado no chat para configuração
+SI-10287,2026-08-06T09:14:11.645-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10287,2026-08-06T09:14:21.345-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10287,2026-08-06T09:14:21.540-0300,Rafael Ferreira,resolution,,Done
+SI-10287,2026-08-06T09:14:21.540-0300,Rafael Ferreira,status,Submissão,Done
+SI-10286,2026-08-06T09:14:13.755-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10286,2026-08-06T09:14:23.356-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10286,2026-08-06T09:14:23.560-0300,Rafael Ferreira,resolution,,Done
+SI-10286,2026-08-06T09:14:23.560-0300,Rafael Ferreira,status,Submissão,Done
+SI-10285,2026-08-06T08:58:24.590-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-10285,2026-08-06T08:58:26.316-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-10285,2026-08-06T08:58:26.316-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-10284,2026-08-05T16:53:09.048-0300,Rafael Ferreira,resolution,,Done
 SI-10284,2026-08-05T16:53:09.048-0300,Rafael Ferreira,status,Submissão,Done
 SI-10284,2026-08-05T16:53:15.804-0300,Rafael Ferreira,assignee,,Rafael Ferreira
@@ -70337,6 +70353,14 @@ SI-10290,2026-08-05T19:04:05.366-0300,Sistema,Resolução do chamado,,"Identific
 SI-10290,2026-08-05T19:04:05.366-0300,Sistema,Causa raiz potencial,,"Exclusão acidental por parte do usuário ou falha de sincronização de dados que resultou na alteração do status do assembly para ""cancelado"" (canceled_at preenchido) no banco de dados."
 SI-10290,2026-08-05T19:04:05.366-0300,Sistema,Causa raiz final,,"Ausência de funcionalidade nativa no sistema (front-end) para a restauração de ordens que sofreram soft delete, gerando dependência de intervenção técnica da equipe de dados."
 SI-10290,2026-08-05T19:04:05.366-0300,Sistema,Justificativa Causa Raiz final,,"A falha foi classificada como de requisito, pois o sistema permite a exclusão lógica do dado, mas não oferece autonomia para sua reversão. O nexo causal reside no fato de que, sem uma interface de recuperação, qualquer deleção torna o registro invisível e inacessível, impactando o fluxo operacional. A solução definitiva através do INTAKE-247 visa a melhoria contínua ao implementar o recurso de restauração, eliminando o tempo de espera do usuário e reduzindo o volume de chamados críticos para a equipe de tecnologia."
+SI-10289,2026-08-06T09:14:06.417-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10289,2026-08-06T09:14:17.442-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10289,2026-08-06T09:14:17.646-0300,Rafael Ferreira,resolution,,Done
+SI-10289,2026-08-06T09:14:17.646-0300,Rafael Ferreira,status,Submissão,Done
+SI-10288,2026-08-06T09:14:09.276-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10288,2026-08-06T09:14:19.499-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10288,2026-08-06T09:14:19.696-0300,Rafael Ferreira,resolution,,Done
+SI-10288,2026-08-06T09:14:19.696-0300,Rafael Ferreira,status,Submissão,Done
 SI-10294,2026-08-06T08:10:17.122-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10294,2026-08-06T08:10:19.331-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10294,2026-08-06T08:10:19.538-0300,Rafael Ferreira,resolution,,Done
