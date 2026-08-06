@@ -1612,7 +1612,7 @@
         /**
          * CONFIGURAÇÃO DE APPS SCRIPT
          */
-        const APPS_SCRIPT_URL_LICENCAS = "";
+        const APPS_SCRIPT_URL_LICENCAS = "https://script.google.com/a/macros/dmslog.com/s/AKfycbz_4f2Z8gd5NRvvMJFe6nHgK9JzyuxsgAWQmfs_WtbqHauMv3q-aHO34f3KbVZVIb15/exec";
         const APPS_SCRIPT_URL_CERTIFICADOS = "https://script.google.com/a/macros/dmslog.com/s/AKfycbyHjLjBUbzL57t4QSCZGdE1_q_YVwDpzCFM-OGnRm6Ic25-XX-OPRkRd97oWvSq5tiz/exec";
 
         // Global State, Pagination & Edit State
@@ -2111,11 +2111,13 @@
             }
 
             if (licencasOnline && certificadosOnline) {
-                setSyncStatus('online', '🟢 Sincronizado via Google Apps Script API (Leitura, Adição & Edição Online)');
-            } else if (licencasOnline || certificadosOnline) {
-                setSyncStatus('online', '🟢 Sincronização Parcial (Certificados Digitais via Apps Script API)');
+                setSyncStatus('online', '🟢 100% Sincronizado via Google Apps Script API (Online)');
+            } else if (licencasOnline) {
+                setSyncStatus('online', '🟢 Sincronizado (Serviços de TI / Licenças Online)');
+            } else if (certificadosOnline) {
+                setSyncStatus('online', '🟢 Sincronizado (Certificados Digitais Online)');
             } else {
-                setSyncStatus('offline', '🟡 Usando Dados Locais de Contingência');
+                setSyncStatus('offline', '🔴 Offline - Usando Dados Locais de Contingência');
             }
 
             renderAll();
