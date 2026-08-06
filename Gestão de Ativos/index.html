@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestão de Ativos - DMS Logistics</title>
     
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sistema de Gestão de Ativos de TI e Inventário de Equipamentos da DMS Logistics.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Gestão de Ativos - DMS Logistics">
+    <meta property="og:description" content="Controle e inventário completo de equipamentos e ativos de TI da DMS Logistics.">
+    <meta property="og:type" content="website">
+    
     <!-- Fonts & Icons: Montserrat, Nunito & FontAwesome 6 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +35,7 @@
             --bg-tertiary: #1e293b;
             --accent-primary: #00AEEE; 
             --accent-secondary: #005290;
-            --accent-purple: #643585;
+            --accent-cyan: #06b6d4;
             --text-main: #e2e8f0;
             --text-muted: #94a3b8;
             --border-color: rgba(255, 255, 255, 0.1);
@@ -44,7 +52,7 @@
             --bg-tertiary: #e2e8f0;
             --accent-primary: #005290;
             --accent-secondary: #00386C;
-            --accent-purple: #643585;
+            --accent-cyan: #06b6d4;
             --text-main: #1a2940;
             --text-muted: #6b7a92;
             --border-color: #d1dbe8;
@@ -114,7 +122,7 @@
         .brand-icon {
             width: 34px;
             height: 34px;
-            background: var(--roxo);
+            background: #06b6d4;
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -263,7 +271,7 @@
         }
 
         .topbar-badge {
-            background: linear-gradient(135deg, var(--roxo), var(--azul-medio));
+            background: linear-gradient(135deg, #06b6d4, var(--azul-medio));
             color: white;
             font-size: 0.68rem;
             font-weight: 700;
@@ -341,7 +349,7 @@
         .lock-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            border-top: 5px solid var(--roxo);
+            border-top: 5px solid #06b6d4;
             border-radius: 16px;
             max-width: 420px;
             width: 100%;
@@ -355,7 +363,7 @@
             height: 60px;
             background: rgba(100, 53, 133, 0.15);
             border: 1px solid rgba(100, 53, 133, 0.3);
-            color: var(--roxo);
+            color: #06b6d4;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -522,7 +530,7 @@
             background: var(--azul-claro);
         }
 
-        .kpi-card.kpi-purple::before { background: var(--roxo); }
+        .kpi-card.kpi-cyan::before { background: #06b6d4; }
         .kpi-card.kpi-warning::before { background: #f59e0b; }
         .kpi-card.kpi-green::before { background: #10b981; }
 
@@ -558,9 +566,9 @@
             color: var(--azul-escuro);
         }
 
-        .kpi-card.kpi-purple .kpi-icon {
+        .kpi-card.kpi-cyan .kpi-icon {
             background: rgba(100, 53, 133, 0.12);
-            color: var(--roxo);
+            color: #06b6d4;
         }
 
         .kpi-card.kpi-warning .kpi-icon {
@@ -874,8 +882,8 @@
         }
 
         .btn-edit-action:hover {
-            background: var(--roxo);
-            border-color: var(--roxo);
+            background: #06b6d4;
+            border-color: #06b6d4;
             color: white;
         }
 
@@ -1189,7 +1197,7 @@
                         <div class="kpi-subtext">Renovações nos próximos 60 dias</div>
                     </div>
 
-                    <div class="kpi-card kpi-purple">
+                    <div class="kpi-card kpi-cyan">
                         <div class="kpi-header">
                             <span class="kpi-title">Certificados Digitais</span>
                             <div class="kpi-icon"><i class="fa-solid fa-key"></i></div>
