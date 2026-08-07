@@ -1,4 +1,13 @@
 Chave,Resumo,Responsável,Criticidade final,Prioridade,Status,Resolução,Criado,Atualizado(a),Resolvido,Subproduto,Colaborador,email,Cargo,Causa Raiz,Causa raiz final,Causa raiz potencial,Justificativa Causa Raiz final,Resolução do chamado,Descrição do problema,Encaminhado para:,Departamento,Líder direto,Clusters DOC IA,Itens associados,Link da ordem,Módulo,Number,Qual a numeração do house?,Qual a numeração do master?,Qual a numeração da Order/Booking afetada ou do Master/House?,Qual numeração do master que o house deve estar associado?,Qual o link da ordem/booking?,Qual o link do alerta?,Qual o nome do alerta?,Qual o nome do programa?,Qual o nome e e-mail do grupo?,Qual o número da fatura/NF?,Qual o número da ordem/booking?,Qual o número da ND?,Qual o número da quote/proposal?
+SI-10372,Solicitação de cadastro,,,P0 - Crítica,Submissão,,Fri Aug 07 2026 17:47:22 GMT-0300 (Brasilia Standard Time),Fri Aug 07 2026 17:47:27 GMT-0300 (Brasilia Standard Time),,Cadastrar novo usuario,Natalia Polesi,319094258/77,Key Account Executive,,,,,,"Criar consignatario para grupo Strattner Holanda:                                                            Name: Santa Casa De Misericordia De Maceio 
+Company Name : Santa Casa De Misericordia De Maceio
+ Id ou CNPJ: 12307187000150
+Address line: Barao De Maceió, 346
+Zip/Postal Code: 57020360 
+Country: Brazil 
+State/Province: Alagoas
+City: Maceio
+Company Group: Strattner Holanda",,Operational Excellence,,,GA-1453,,Módulo Basic Registration,,,,,,,,,,,,,,
 SI-10371,Incidente,,,P0 - Crítica,Submissão,,Fri Aug 07 2026 17:23:23 GMT-0300 (Brasilia Standard Time),Fri Aug 07 2026 17:23:23 GMT-0300 (Brasilia Standard Time),,O e-mail não aparece no cockpit,Beatriz Nascimento Rodrigues,488920618/36,Ocean Freight Customer Care Analyst,,,,,,Os e-mail enviados por mim nao sobem pro meu cockpit,,Ocean Operations,,,,,,,,,,,,,,,,,,,
 SI-10370,Requisição,,,P1 - Alta,Submissão,,Fri Aug 07 2026 17:15:19 GMT-0300 (Brasilia Standard Time),Fri Aug 07 2026 17:15:23 GMT-0300 (Brasilia Standard Time),,Instalar Software/Programa,Bruna Nogueira Costa Pinho Silva,420618928/50,Ocean Freight Operations Analyst,,,,,,,,Ocean Operations,,,GA-1452,,,,,,,,,,,Certificado Digital - Certificado para Marcella Rodrigues,,,,,
 SI-10369,Requisição,,,P0 - Crítica,Submissão,,Fri Aug 07 2026 16:59:29 GMT-0300 (Brasilia Standard Time),Fri Aug 07 2026 16:59:33 GMT-0300 (Brasilia Standard Time),,Instalar Software/Programa,Bruna Nogueira Costa Pinho Silva,420618928/50,Ocean Freight Operations Analyst,,,,,,,,Ocean Operations,,,GA-1451,,,,,,,,,,,,,,,,
