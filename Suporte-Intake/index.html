@@ -844,7 +844,44 @@
             color: var(--text-muted);
             line-height: 1.5;
         }
-        
+
+        /* Visão Executiva 360 cards */
+        .exec360-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-color);
+            border-top: 3px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+        .exec360-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+        }
+        .exec360-card-icon {
+            font-size: 20px;
+            margin-bottom: 6px;
+            line-height: 1;
+        }
+        .exec360-card-label {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .exec360-card-value {
+            font-family: var(--font-title);
+            font-size: 28px;
+            font-weight: 800;
+            margin: 4px 0;
+            line-height: 1.1;
+        }
+        .exec360-card-desc {
+            font-size: 11px;
+            color: var(--text-muted);
+        }
+
         /* Rank list styling */
         .rank-list {
             display: flex;
@@ -3121,56 +3158,53 @@
 
                 
                 <!-- Painel Executivo de Suporte & Indicadores Alinhados ao Escopo -->
-                <div class="glass-panel" style="padding: 20px; margin-bottom: 24px; border-left: 4px solid var(--accent-primary);">
-                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 16px;">
+                <div class="glass-panel" style="padding: 24px; margin-bottom: 24px; border-left: 4px solid var(--accent-primary);">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
                         <div>
                             <h3 style="font-family: var(--font-title); font-size: 18px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 8px;">
                                 <span>🎯</span> Indicadores Chave de Suporte & Gestão 360
                             </h3>
-                            <p style="font-size: 12px; color: var(--text-muted);">Métricas consolidadas de Chamados, Incidentes Críticos, Pareto 80/20 e Contratos com Fornecedores.</p>
+                            <p style="font-size: 12px; color: var(--text-muted); margin-top: 2px;">Métricas consolidadas de Chamados, Incidentes Críticos e Pareto 80/20.</p>
                         </div>
-                        <span class="status-badge badge-active" style="background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3); color: #818cf8;">VISÃO EXECUTIVA 360</span>
+                        <span class="status-badge badge-active" style="background: rgba(99, 102, 241, 0.15); border: 1px solid rgba(99, 102, 241, 0.3); color: #818cf8; font-weight: 800; letter-spacing: 0.5px;">VISÃO EXECUTIVA 360</span>
                     </div>
 
                     <!-- Grid de Indicadores de Suporte -->
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 20px;">
-                        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px;">
-                            <div style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Chamados Abertos</div>
-                            <div style="font-size: 26px; font-weight: 800; color: var(--warning); margin: 4px 0;" id="ins-chamados-abertos">0</div>
-                            <div style="font-size: 11px; color: var(--text-muted);">Aguardando atendimento / em andamento</div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 24px;">
+                        <div class="exec360-card" style="border-top-color: var(--warning);">
+                            <div class="exec360-card-icon">⏳</div>
+                            <div class="exec360-card-label">Chamados Abertos</div>
+                            <div class="exec360-card-value" style="color: var(--warning);" id="ins-chamados-abertos">0</div>
+                            <div class="exec360-card-desc">Aguardando atendimento / em andamento</div>
                         </div>
 
-                        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px;">
-                            <div style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Incidentes Críticos (7d)</div>
-                            <div style="font-size: 26px; font-weight: 800; color: var(--danger); margin: 4px 0;" id="ins-incidentes-criticos">0</div>
-                            <div style="font-size: 11px; color: var(--danger);">Ocorrências de alta severidade</div>
+                        <div class="exec360-card" style="border-top-color: var(--danger);">
+                            <div class="exec360-card-icon">🚨</div>
+                            <div class="exec360-card-label">Incidentes Críticos (7d)</div>
+                            <div class="exec360-card-value" style="color: var(--danger);" id="ins-incidentes-criticos">0</div>
+                            <div class="exec360-card-desc" style="color: var(--danger);">Ocorrências de alta severidade</div>
                         </div>
 
-                        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px;">
-                            <div style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Tempo Médio Resolução (MTTR)</div>
-                            <div style="font-size: 26px; font-weight: 800; color: var(--accent-neon); margin: 4px 0;" id="ins-mttr">--h</div>
-                            <div style="font-size: 11px; color: var(--text-muted);">Média no período selecionado</div>
-                        </div>
-
-                        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px;">
-                            <div style="font-size: 11px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Contratos com Fornecedores</div>
-                            <div style="font-size: 26px; font-weight: 800; color: var(--accent-secondary); margin: 4px 0;" id="ins-contratos-vigor">14 em Vigor</div>
-                            <div style="font-size: 11px; color: var(--text-muted);" id="ins-contratos-sub">Próximos vencimentos monitorados</div>
+                        <div class="exec360-card" style="border-top-color: var(--accent-neon);">
+                            <div class="exec360-card-icon">⏱️</div>
+                            <div class="exec360-card-label">Tempo Médio Resolução (MTTR)</div>
+                            <div class="exec360-card-value" style="color: var(--accent-neon);" id="ins-mttr">--h</div>
+                            <div class="exec360-card-desc">Média no período selecionado</div>
                         </div>
                     </div>
 
                     <!-- Bloco de Pareto 80/20 & Clusters -->
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px;">
-                        <div style="background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px;">
-                            <h4 style="font-size: 13px; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; margin-bottom: 10px;">📊 Pareto 80/20 & Plano de Ação</h4>
+                        <div class="exec360-card" style="border-top-color: var(--accent-primary);">
+                            <h4 style="font-size: 13px; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;"><span>📊</span> Pareto 80/20 & Plano de Ação</h4>
                             <p style="font-size: 12px; color: var(--text-main); margin-bottom: 8px;">Top causas que concentram 80% do volume:</p>
                             <ul style="font-size: 12px; color: var(--text-muted); padding-left: 18px; line-height: 1.6;" id="ins-pareto-list">
                                 <li>Carregando análise de Pareto...</li>
                             </ul>
                         </div>
 
-                        <div style="background: rgba(0, 0, 0, 0.2); border: 1px solid var(--border-color); border-radius: 12px; padding: 16px;">
-                            <h4 style="font-size: 13px; font-weight: 700; color: var(--accent-secondary); text-transform: uppercase; margin-bottom: 10px;">🏷️ Cluster de Chamados (Time / Produto)</h4>
+                        <div class="exec360-card" style="border-top-color: var(--accent-secondary);">
+                            <h4 style="font-size: 13px; font-weight: 700; color: var(--accent-secondary); text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 6px;"><span>🏷️</span> Cluster de Chamados (Time / Produto)</h4>
                             <div id="ins-clusters-container" style="display: flex; flex-direction: column; gap: 8px; font-size: 12px;">
                                 <span>Carregando clusters...</span>
                             </div>
