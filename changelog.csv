@@ -70888,6 +70888,12 @@ A regra base aplica o valor de USD 0,13 por quilograma, com cobrança mínima fi
 
 Anteriormente, a data de recebimento da carga constava registrada como 23/06/2026. A extensão do período entre essa data e o Cut-off (02/07/2026) acumulou múltiplos períodos de armazenagem, gerando uma taxa de In/Out de USD 40,75 e um valor total de Selling de USD 337,45. Com a alteração da data de recebimento para 01/07/2026, o tempo de permanência passou a corresponder a apenas 1 período frente ao Cut-off. Com isso, a taxa foi reajustada para USD 10,20 e o Selling total para USD 306,90, refletindo a diferença exata de USD 30,55. O valor exibido na ferramenta corresponde com precisão às informações cadastradas."
 SI-10330,2026-08-07T01:05:45.963-0300,Sistema,Justificativa Causa Raiz final,,"A variação financeira observada no Selling (USD 337,45 para USD 306,90) decorre do nexo causal direto entre a modificação da data de recebimento da carga e a fórmula automatizada da unidade da taxa de In/Out. A regra do sistema calcula a cobrança por sublinha de WR através da fórmula de maior valor entre peso multiplicado pela taxa unitária ou taxa mínima, multiplicado pelo número de semanas/períodos acumulados entre o recebimento e o Cut-off. A atualização do dado de entrada de 23/06/2026 para 01/07/2026 reduziu a contagem para 1 período, recalculando a taxa de USD 40,75 para USD 10,20. O sistema funcionou em conformidade com as especificações de negócio configuradas. Como ação de melhoria contínua e prevenção de chamados reincidentes, recomenda-se reforçar junto às equipes operacionais o impacto direto da atualização de datas de processo sobre o recálculo dinâmico de taxas de armazenagem."
+SI-10334,2026-08-07T08:30:01.810-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10334,2026-08-07T08:30:13.030-0300,Bruno Silva,resolution,,Done
+SI-10334,2026-08-07T08:30:13.030-0300,Bruno Silva,status,Submissão,Done
+SI-10333,2026-08-07T08:30:25.096-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10333,2026-08-07T08:30:29.322-0300,Bruno Silva,resolution,,Done
+SI-10333,2026-08-07T08:30:29.322-0300,Bruno Silva,status,Submissão,Done
 SI-10332,2026-08-07T01:05:47.238-0300,Sistema,Reclassificação solicitação,,Solicitação de cadastro
 SI-10332,2026-08-07T01:05:47.238-0300,Sistema,Criticidade final,,P1 - Alta
 SI-10332,2026-08-07T01:05:47.238-0300,Sistema,Resolução do chamado,,Ticket concluído. Cadastro realizado.
@@ -70895,4 +70901,5 @@ SI-10331,2026-08-06T16:54:23.601-0300,Sistema,Link,,This work item is blocked by
 SI-10331,2026-08-07T01:05:46.625-0300,Sistema,Reclassificação solicitação,,Solicitação de cadastro
 SI-10331,2026-08-07T01:05:46.625-0300,Sistema,Criticidade final,,P3 - Baixa
 SI-10331,2026-08-07T01:05:46.625-0300,Sistema,Resolução do chamado,,Ticket concluído. Ajuste realizado no cadastro.
+SI-10331,2026-08-07T08:29:27.277-0300,Bruno Silva,assignee,,Helena Almeida
 SI-10337,2026-08-06T18:12:25.014-0300,Sistema,Link,,This work item is blocked by GA-1432
