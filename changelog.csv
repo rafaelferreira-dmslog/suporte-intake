@@ -70433,7 +70433,11 @@ SI-10292,2026-08-05T16:14:22.079-0300,Sistema,Link,,This work item is blocked by
 SI-10292,2026-08-05T19:04:06.036-0300,Sistema,Criticidade final,,P2 - Média
 SI-10292,2026-08-05T19:04:06.036-0300,Sistema,Reclassificação solicitação,,Solicitação de cadastro
 SI-10292,2026-08-05T19:04:06.036-0300,Sistema,Resolução do chamado,,Ticket concluído. Cadastro realizado.
+SI-10292,2026-08-07T09:10:19.729-0300,Bruno Silva,resolution,,Done
+SI-10292,2026-08-07T09:10:19.729-0300,Bruno Silva,status,Submissão,Done
 SI-10291,2026-08-05T15:57:22.749-0300,Sistema,Link,,This work item is blocked by GA-1421
+SI-10291,2026-08-07T09:10:21.919-0300,Bruno Silva,resolution,,Done
+SI-10291,2026-08-07T09:10:21.919-0300,Bruno Silva,status,Submissão,Done
 SI-10290,2026-08-05T16:57:59.978-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10290,2026-08-05T16:58:03.248-0300,Rafael Ferreira,resolution,,Done
 SI-10290,2026-08-05T16:58:03.248-0300,Rafael Ferreira,status,Submissão,Done
@@ -70520,6 +70524,8 @@ SI-10294,2026-08-07T01:05:27.783-0300,Sistema,Resolução do chamado,,Chamado ca
 SI-10294,2026-08-07T01:05:27.783-0300,Sistema,Causa raiz potencial,,Chamado cancelado
 SI-10294,2026-08-07T01:05:27.783-0300,Sistema,Causa raiz final,,Chamado cancelado
 SI-10294,2026-08-07T01:05:27.783-0300,Sistema,Justificativa Causa Raiz final,,Chamado cancelado
+SI-10293,2026-08-07T09:10:17.330-0300,Bruno Silva,resolution,,Done
+SI-10293,2026-08-07T09:10:17.330-0300,Bruno Silva,status,Submissão,Done
 SI-10296,2026-08-06T09:59:05.422-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10296,2026-08-06T09:59:08.677-0300,Bruno Silva,resolution,,Done
 SI-10296,2026-08-06T09:59:08.677-0300,Bruno Silva,status,Submissão,Done
@@ -70588,6 +70594,8 @@ SI-10298,2026-08-07T01:05:30.564-0300,Sistema,Causa raiz potencial,,"Divergênci
 Incompreensão da regra de parametrização da taxa de EBS associada à quantidade de TEUs convertidos."
 SI-10298,2026-08-07T01:05:30.564-0300,Sistema,Causa raiz final,,"O cálculo executado pelo sistema segue integralmente as regras operacionais e de negócio parametrizadas para a conversão de unidades em TEU (Twenty-foot Equivalent Unit). O sistema não realiza uma contagem simplificada do número físico de contêineres, mas sim um cálculo baseado na capacidade total do equipamento. No cenário verificado, as ordens possuem dois contêineres vinculados na aba de contêineres: um equipamento de 40 pés (40HC) e um equipamento de 20 pés (20STD). Pela regra de equivalência, um contêiner de 20 pés corresponde a 1 TEU, ao passo que um contêiner de 40 pés corresponde a 2 TEUs. Com isso, o total apurado pelo sistema é de 3 TEUs. Uma vez que a taxa de EBS é associada à unidade TEU, o sistema multiplica a tarifa unitária pela quantidade total de 3 TEUs resultantes da conversão, gerando adequadamente o valor total apresentado na aba de selling."
 SI-10298,2026-08-07T01:05:30.564-0300,Sistema,Justificativa Causa Raiz final,,"A apuração técnica confirmou que a plataforma executou o cálculo de acordo com as especificações da regra de negócio da unidade TEU (1 x 40HC = 2 TEUs; 1 x 20STD = 1 TEU; Total = 3 TEUs). Trata-se de um comportamento esperado da aplicação, descartando falhas de código ou de infraestrutura. A elucidação do funcionamento das regras de equivalência ao usuário assegura o alinhamento operacional e previne a reabertura desnecessária de chamados para esta mesma validação de cobrança."
+SI-10298,2026-08-07T09:10:24.244-0300,Bruno Silva,resolution,,Done
+SI-10298,2026-08-07T09:10:24.244-0300,Bruno Silva,status,Submissão,Done
 SI-10303,2026-08-06T10:34:53.679-0300,Rafael Ferreira,assignee,,luiz.henrique
 SI-10303,2026-08-06T10:34:53.877-0300,Rafael Ferreira,assignee,luiz.henrique,Rafael Ferreira
 SI-10303,2026-08-06T10:34:58.458-0300,Rafael Ferreira,Classificação,,Ranked higher
@@ -70736,6 +70744,8 @@ SI-10316,2026-08-07T01:05:42.208-0300,Sistema,Resolução do chamado,,Colaborado
 SI-10316,2026-08-07T01:05:42.208-0300,Sistema,Causa raiz potencial,,Colaboradora foi adicionada ao grupo solicitado.
 SI-10316,2026-08-07T01:05:42.208-0300,Sistema,Causa raiz final,,Colaboradora foi adicionada ao grupo solicitado.
 SI-10316,2026-08-07T01:05:42.208-0300,Sistema,Justificativa Causa Raiz final,,Colaboradora foi adicionada ao grupo solicitado.
+SI-10316,2026-08-07T09:10:02.683-0300,Bruno Silva,resolution,,Done
+SI-10316,2026-08-07T09:10:02.683-0300,Bruno Silva,status,Submissão,Done
 SI-10315,2026-08-06T14:27:01.129-0300,Bruno Silva,assignee,,Rafael Ferreira
 SI-10315,2026-08-06T14:27:03.910-0300,Bruno Silva,resolution,,Done
 SI-10315,2026-08-06T14:27:03.910-0300,Bruno Silva,status,Submissão,Done
@@ -70888,6 +70898,12 @@ A regra base aplica o valor de USD 0,13 por quilograma, com cobrança mínima fi
 
 Anteriormente, a data de recebimento da carga constava registrada como 23/06/2026. A extensão do período entre essa data e o Cut-off (02/07/2026) acumulou múltiplos períodos de armazenagem, gerando uma taxa de In/Out de USD 40,75 e um valor total de Selling de USD 337,45. Com a alteração da data de recebimento para 01/07/2026, o tempo de permanência passou a corresponder a apenas 1 período frente ao Cut-off. Com isso, a taxa foi reajustada para USD 10,20 e o Selling total para USD 306,90, refletindo a diferença exata de USD 30,55. O valor exibido na ferramenta corresponde com precisão às informações cadastradas."
 SI-10330,2026-08-07T01:05:45.963-0300,Sistema,Justificativa Causa Raiz final,,"A variação financeira observada no Selling (USD 337,45 para USD 306,90) decorre do nexo causal direto entre a modificação da data de recebimento da carga e a fórmula automatizada da unidade da taxa de In/Out. A regra do sistema calcula a cobrança por sublinha de WR através da fórmula de maior valor entre peso multiplicado pela taxa unitária ou taxa mínima, multiplicado pelo número de semanas/períodos acumulados entre o recebimento e o Cut-off. A atualização do dado de entrada de 23/06/2026 para 01/07/2026 reduziu a contagem para 1 período, recalculando a taxa de USD 40,75 para USD 10,20. O sistema funcionou em conformidade com as especificações de negócio configuradas. Como ação de melhoria contínua e prevenção de chamados reincidentes, recomenda-se reforçar junto às equipes operacionais o impacto direto da atualização de datas de processo sobre o recálculo dinâmico de taxas de armazenagem."
+SI-10336,2026-08-07T08:48:16.445-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10336,2026-08-07T08:48:19.704-0300,Bruno Silva,resolution,,Done
+SI-10336,2026-08-07T08:48:19.704-0300,Bruno Silva,status,Submissão,Done
+SI-10335,2026-08-07T08:48:08.058-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10335,2026-08-07T08:48:11.132-0300,Bruno Silva,resolution,,Done
+SI-10335,2026-08-07T08:48:11.132-0300,Bruno Silva,status,Submissão,Done
 SI-10334,2026-08-07T08:30:01.810-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10334,2026-08-07T08:30:13.030-0300,Bruno Silva,resolution,,Done
 SI-10334,2026-08-07T08:30:13.030-0300,Bruno Silva,status,Submissão,Done
