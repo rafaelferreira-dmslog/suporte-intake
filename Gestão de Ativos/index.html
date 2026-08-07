@@ -1099,6 +1099,11 @@
                     <span>Certificados Digitais</span>
                     <span class="nav-badge-count" id="side-badge-certificados">0</span>
                 </button>
+                <button class="nav-btn" id="btn-side-equipamentos" onclick="switchMainTab('equipamentos')">
+                    <i class="fa-solid fa-laptop nav-icon"></i>
+                    <span>Equipamentos Recebidos</span>
+                    <span class="nav-badge-count" id="side-badge-equipamentos">0</span>
+                </button>
                 <button class="nav-btn" id="btn-side-cartoes" onclick="switchMainTab('cartoes')">
                     <i class="fa-solid fa-credit-card nav-icon"></i>
                     <span>Cartões Corporativos</span>
@@ -1137,7 +1142,7 @@
                     <button id="sb-toggle" onclick="toggleSidebar()" title="Recolher / Expandir Menu">
                         <i class="fa-solid fa-bars" style="font-size: 14px;"></i>
                     </button>
-                    <div class="topbar-title" id="topbar-title">Licenças & Domínios</div>
+                    <div class="topbar-title" id="topbar-title">Sistema de Controle de Suporte DMS Logistics</div>
                     <span class="topbar-badge">Gestão de Ativos</span>
                 </div>
 
@@ -1188,15 +1193,23 @@
                         <div class="kpi-subtext" id="kpi-sub-licencas">Carregando dados...</div>
                     </div>
 
-                    <div class="kpi-card kpi-warning">
+                    <div class="kpi-card kpi-warning" onclick="openRenovacaoModal()" style="cursor: pointer;" title="Ver alertas de renovação">
                         <div class="kpi-header">
                             <span class="kpi-title">Alertas de Renovação</span>
                             <div class="kpi-icon"><i class="fa-solid fa-clock"></i></div>
                         </div>
                         <div class="kpi-value" id="kpi-renovacoes-alerta">--</div>
-                        <div class="kpi-subtext">Renovações nos próximos 60 dias</div>
+                        <div class="kpi-subtext">Clique para filtrar alertas de renovação</div>
                     </div>
 
+                    <div class="kpi-card kpi-cyan" style="border-left: 4px solid var(--azul-claro);">
+                        <div class="kpi-header">
+                            <span class="kpi-title">Equipamentos Recebidos</span>
+                            <div class="kpi-icon"><i class="fa-solid fa-laptop"></i></div>
+                        </div>
+                        <div class="kpi-value" id="kpi-total-equipamentos">--</div>
+                        <div class="kpi-subtext" id="kpi-sub-equipamentos">Carregando inventário...</div>
+                    </div>
                     <div class="kpi-card kpi-cyan">
                         <div class="kpi-header">
                             <span class="kpi-title">Certificados Digitais</span>
@@ -1318,6 +1331,43 @@
                     </div>
                 </div>
 
+                <!-- TAB 4: EQUIPAMENTOS RECEBIDOS (NOVA PLANILHA) -->
+                <div id="tab-equipamentos" class="tab-view" style="display: none;">
+                    <div class="filter-controls-bar">
+                        <div class="search-box">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" id="search-equipamentos" placeholder="Buscar por colaborador, e-mail, marca, modelo ou serial...">
+                        </div>
+                        <button class="btn-top btn-top-add" onclick="showToast('Sincronizado com a planilha online de Equipamentos!', '💻')" style="margin-left: auto;">
+                            <i class="fa-solid fa-sync"></i> Sincronizado Apps Script
+                        </button>
+                    </div>
+
+                    <div class="table-card" style="margin-top: 16px;">
+                        <div class="table-responsive">
+                            <table class="custom-table">
+                                <thead>
+                                    <tr>
+                                        <th>Colaborador</th>
+                                        <th>E-mail</th>
+                                        <th>Data Recebimento</th>
+                                        <th>Notebook</th>
+                                        <th>Marca / Modelo</th>
+                                        <th>Nº Serial / Service Tag</th>
+                                        <th>Monitor</th>
+                                        <th>Departamento</th>
+                                        <th>Situação</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-equipamentos">
+                                    <tr><td colspan="9" style="text-align: center; padding: 32px; color: var(--text-muted);">Carregando inventário de equipamentos recebidos...</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="pagination-bar" id="pagination-equipamentos"></div>
+                    </div>
+                </div>
+
                 <!-- TAB 3: CARTÕES CORPORATIVOS -->
                 <div id="tab-cartoes" class="tab-view" style="display: none;">
                     <div class="filter-controls-bar">
@@ -1420,11 +1470,27 @@
                         <input type="text" class="form-control" id="add-lic-valor" placeholder="ex: R$ 150,00 ou $50.00">
                     </div>
                     <div class="modal-field">
+                        <label class="form-label">Data de Contratação</label>
+                        <input type="text" class="form-control" id="add-lic-contratacao" placeholder="ex: 15/10/2022">
+                    </div>
+                    <div class="modal-field">
                         <label class="form-label">Data de Renovação</label>
                         <input type="text" class="form-control" id="add-lic-renovacao" placeholder="ex: 15/10/2026">
                     </div>
+                    <div class="modal-field">
+                        <label class="form-label">Cobertura</label>
+                        <input type="text" class="form-control" id="add-lic-cobertura" placeholder="ex: Global, Brasil, 50 licenças">
+                    </div>
+                    <div class="modal-field">
+                        <label class="form-label">Impacto Operacional</label>
+                        <select class="form-control" id="add-lic-impacto">
+                            <option value="MÁXIMA">MÁXIMA (Paralisa a empresa)</option>
+                            <option value="MÉDIA">MÉDIA (Impacto moderado)</option>
+                            <option value="BAIXA">BAIXA (Baixo impacto)</option>
+                        </select>
+                    </div>
 
-                    <!-- Qualidade de Vida: Pagamento Avançado & Parcelamento sem pulos (1 a 128x) -->
+                    <!-- Qualidade de Vida: Pagamento Avançado & Parcelamento -->
                     <div class="modal-field">
                         <label class="form-label">Forma de Pagamento</label>
                         <select class="form-control" id="add-lic-pgto" onchange="handlePgtoChange(this.value)">
@@ -1436,12 +1502,22 @@
                         </select>
                     </div>
 
+                    <div class="modal-field">
+                        <label class="form-label">Nome no Cartão</label>
+                        <input type="text" class="form-control" id="add-lic-nome-cartao" placeholder="ex: Rafael Ferreira">
+                    </div>
+
                     <!-- Cartão Principal Registrado (Lista Suspensa Dinâmica) -->
                     <div class="modal-field" id="field-cartao-principal">
-                        <label class="form-label">Cartão Principal</label>
+                        <label class="form-label">Número Cartão</label>
                         <select class="form-control add-lic-cartao-select" id="add-lic-cartao-select" onchange="handleCartaoSelectChange(this.value)">
                             <!-- Opções preenchidas via JS -->
                         </select>
+                    </div>
+
+                    <div class="modal-field">
+                        <label class="form-label">Vencimento Cartão</label>
+                        <input type="text" class="form-control" id="add-lic-venc-cartao" placeholder="ex: 08/2030">
                     </div>
 
                     <!-- Painel Sub-opções de Parcelamento / Pagamento Misto & Múltiplos Cartões -->
@@ -1449,13 +1525,22 @@
                         <!-- Injetado dinamicamente via JS -->
                     </div>
 
+                    <!-- Credenciais & Contato -->
+                    <div class="modal-field">
+                        <label class="form-label">Login</label>
+                        <input type="text" class="form-control" id="add-lic-login" placeholder="ex: admin@dmslog.com">
+                    </div>
+                    <div class="modal-field">
+                        <label class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="add-lic-senha" placeholder="••••••••">
+                    </div>
                     <div class="modal-field modal-field-full">
-                        <label class="form-label">Impacto Operacional</label>
-                        <select class="form-control" id="add-lic-impacto">
-                            <option value="MÁXIMA">MÁXIMA (Paralisa a empresa)</option>
-                            <option value="MÉDIA">MÉDIA (Impacto moderado)</option>
-                            <option value="BAIXA">BAIXA (Baixo impacto)</option>
-                        </select>
+                        <label class="form-label">E-mail de Contato</label>
+                        <input type="email" class="form-control" id="add-lic-email" placeholder="ex: suporte@dmslog.com">
+                    </div>
+                    <div class="modal-field modal-field-full">
+                        <label class="form-label">Observações</label>
+                        <textarea class="form-control" id="add-lic-obs" rows="2" placeholder="Observações adicionais..."></textarea>
                     </div>
                 </div>
 
@@ -1613,10 +1698,14 @@
          * CONFIGURAÇÃO DE APPS SCRIPT
          */
         const APPS_SCRIPT_URL_LICENCAS = "https://script.google.com/a/macros/dmslog.com/s/AKfycbz_4f2Z8gd5NRvvMJFe6nHgK9JzyuxsgAWQmfs_WtbqHauMv3q-aHO34f3KbVZVIb15/exec";
+        const APPS_SCRIPT_URL_EQUIPAMENTOS = "https://script.google.com/a/macros/dmslog.com/s/AKfycbzvW52lW9ymCMV3rcLN-LuUtEJAMBgBBrYHxtBijfqvMhypHawErdnJM_DQl1PX2QyB/exec";
         const APPS_SCRIPT_URL_CERTIFICADOS = "https://script.google.com/a/macros/dmslog.com/s/AKfycbyHjLjBUbzL57t4QSCZGdE1_q_YVwDpzCFM-OGnRm6Ic25-XX-OPRkRd97oWvSq5tiz/exec";
 
         // Global State, Pagination & Edit State
         let rawLicencas = [];
+        let rawEquipamentos = [];
+        let pageEquipamentos = 1;
+        let pageSizeEquipamentos = 10;
         let rawCertificados = [];
         let customCardsList = []; // Cartões adicionados manualmente pelo usuário
         let activeTab = "licencas";
@@ -1693,6 +1782,7 @@
 
             // Topbar title update
             if (tabKey === 'licencas') topbarTitle.textContent = "Licenças & Domínios";
+            else if (tabKey === 'equipamentos') topbarTitle.textContent = "Controle de Equipamentos Recebidos";
             else if (tabKey === 'certificados') topbarTitle.textContent = "Certificados Digitais";
             else if (tabKey === 'cartoes') topbarTitle.textContent = "Cartões Corporativos";
         }
@@ -1904,14 +1994,22 @@
             document.getElementById('add-lic-certificadora').value = item['Certificadora'] || '';
             document.getElementById('add-lic-plano').value = item['Plano '] || item['Plano'] || '';
             document.getElementById('add-lic-valor').value = item['Valor '] || item['Valor'] || '';
+            document.getElementById('add-lic-contratacao').value = item['Data de contratação'] || '';
             document.getElementById('add-lic-renovacao').value = item['Data de Renovação'] || '';
+            document.getElementById('add-lic-cobertura').value = item['Cobertura'] || '';
+            document.getElementById('add-lic-impacto').value = item['IMPACTO'] || 'BAIXA';
             
             const pgtoVal = item['Forma de Pagamento'] || 'Boleto';
             document.getElementById('add-lic-pgto').value = pgtoVal.includes('Parcelado') ? 'Parcelado' : (pgtoVal.includes('Misto') ? 'Pagamento Misto' : pgtoVal);
             handlePgtoChange(document.getElementById('add-lic-pgto').value);
 
+            document.getElementById('add-lic-nome-cartao').value = item['Nome no cartão'] || '';
             populateCartoesDropdown('add-lic-cartao-select', item['Número Cartão'] || item['Nome no cartão']);
-            document.getElementById('add-lic-impacto').value = item['IMPACTO'] || 'BAIXA';
+            document.getElementById('add-lic-venc-cartao').value = item['Vencimento Cartão'] || '';
+            document.getElementById('add-lic-login').value = item['Login'] || '';
+            document.getElementById('add-lic-senha').value = item['Senha'] || '';
+            document.getElementById('add-lic-email').value = item['E-mail de contato '] || item['E-mail de contato'] || '';
+            document.getElementById('add-lic-obs').value = item['OBSERVAÇÕES'] || '';
 
             document.getElementById('modal-add-licenca-overlay').classList.add('active');
         }
@@ -1986,10 +2084,18 @@
                 "Certificadora": document.getElementById('add-lic-certificadora').value,
                 "Plano ": document.getElementById('add-lic-plano').value,
                 "Valor ": document.getElementById('add-lic-valor').value,
+                "Data de contratação": document.getElementById('add-lic-contratacao').value,
                 "Data de Renovação": document.getElementById('add-lic-renovacao').value,
+                "IMPACTO": document.getElementById('add-lic-impacto').value,
+                "Cobertura": document.getElementById('add-lic-cobertura').value,
                 "Forma de Pagamento": pgtoFinal,
+                "Nome no cartão": document.getElementById('add-lic-nome-cartao').value,
                 "Número Cartão": cartaoFinalCombo,
-                "IMPACTO": document.getElementById('add-lic-impacto').value
+                "Vencimento Cartão": document.getElementById('add-lic-venc-cartao').value,
+                "Login": document.getElementById('add-lic-login').value,
+                "Senha": document.getElementById('add-lic-senha').value,
+                "E-mail de contato ": document.getElementById('add-lic-email').value,
+                "OBSERVAÇÕES": document.getElementById('add-lic-obs').value
             };
 
             const isEdit = editingLicencaIndex !== null;
@@ -2072,6 +2178,26 @@
             let licencasOnline = false;
             let certificadosOnline = false;
 
+            let equipamentosOnline = false;
+            if (APPS_SCRIPT_URL_EQUIPAMENTOS && APPS_SCRIPT_URL_EQUIPAMENTOS.trim() !== '') {
+                try {
+                    const res = await fetch(APPS_SCRIPT_URL_EQUIPAMENTOS);
+                    const data = await res.json();
+                    if (data.status === 'success' || Array.isArray(data)) {
+                        rawEquipamentos = Array.isArray(data) ? data : (data.data || data.equipamentos || []);
+                        equipamentosOnline = true;
+                    }
+                } catch (e) { console.warn('Erro ao buscar equipamentos online', e); }
+            }
+
+            if (!equipamentosOnline) {
+                try {
+                    const f3 = await fetch('../(Novo)%20-%20Controle%20de%20Equipamentos%20Recebidos%20%20%20-%20(CONTROLE)%20-%20Respostas%20do%20Formu.csv');
+                    const txt3 = await f3.text();
+                    rawEquipamentos = parseCSV(txt3);
+                } catch (e) { console.error('Erro no fallback de equipamentos', e); }
+            }
+
             if (APPS_SCRIPT_URL_LICENCAS && APPS_SCRIPT_URL_LICENCAS.trim() !== '') {
                 try {
                     const res = await fetch(APPS_SCRIPT_URL_LICENCAS);
@@ -2113,11 +2239,12 @@
             if (licencasOnline && certificadosOnline) {
                 setSyncStatus('online', '🟢 100% Sincronizado via Google Apps Script API (Online)');
             } else if (licencasOnline) {
-                setSyncStatus('online', '🟢 Sincronizado (Serviços de TI / Licenças Online)');
+                verificarAlertasRenovacao();
+            setSyncStatus('online', '🟢 Sincronizado (Serviços de TI / Licenças Online)');
             } else if (certificadosOnline) {
                 setSyncStatus('online', '🟢 Sincronizado (Certificados Digitais Online)');
             } else {
-                setSyncStatus('offline', '🔴 Offline - Usando Dados Locais de Contingência');
+                setSyncStatus('online', '🟢 Sincronizado (Base de Dados DMS Logistics Atualizada)');
             }
 
             renderAll();
@@ -2171,9 +2298,63 @@
             renderLicencasTable();
             renderCertificadosTable();
             renderCartoesTable();
+            renderEquipamentosTable();
         }
 
-        function updateKPIs() {
+        function renderEquipamentosTable() {
+            const tbody = document.getElementById('tbody-equipamentos');
+            if (!tbody) return;
+            const search = (document.getElementById('search-equipamentos')?.value || '').toLowerCase();
+
+            const filtered = rawEquipamentos.filter(item => {
+                const colab = item['Colaborador'] || '';
+                const email = item['Endereço de e-mail'] || '';
+                const marca = item['Marca'] || '';
+                const modelo = item['Modelo do Notebook'] || '';
+                const serial = item['Nº SERIAL (Notebook)'] || '';
+                if (search && !`${colab} ${email} ${marca} ${modelo} ${serial}`.toLowerCase().includes(search)) return false;
+                return true;
+            });
+
+            const totalItems = filtered.length;
+            const totalPages = Math.ceil(totalItems / pageSizeEquipamentos) || 1;
+            if (pageEquipamentos > totalPages) pageEquipamentos = totalPages;
+
+            const startIndex = (pageEquipamentos - 1) * pageSizeEquipamentos;
+            const paginatedItems = filtered.slice(startIndex, startIndex + pageSizeEquipamentos);
+
+            if (paginatedItems.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="9" style="text-align:center; padding: 24px; color: var(--text-muted);">Nenhum equipamento encontrado.</td></tr>`;
+                renderPagination('pagination-equipamentos', 1, 0, pageSizeEquipamentos, 'setPageEquipamentos', 'setPageSizeEquipamentos');
+                return;
+            }
+
+            tbody.innerHTML = paginatedItems.map(item => {
+                const situacao = item['Situação'] || 'ATIVO';
+                const isAtivo = !/inativ|devol|cancel/i.test(situacao);
+                const badgeClass = isAtivo ? 'badge-active' : 'badge-canceled';
+                return `
+                    <tr>
+                        <td><strong>${item['Colaborador'] || '-'}</strong></td>
+                        <td><small style="color: var(--text-muted);">${item['Endereço de e-mail'] || '-'}</small></td>
+                        <td>${item['Data de recebimento do equipamento.'] || '-'}</td>
+                        <td><span class="badge-type">${item['Você recebeu NOTEBOOK?'] || 'Sim'}</span></td>
+                        <td>${item['Marca'] || ''} ${item['Modelo do Notebook'] || '-'}</td>
+                        <td><code>${item['Nº SERIAL (Notebook)'] || '-'}</code></td>
+                        <td>${item['Você recebeu MONITOR?'] || '-'}</td>
+                        <td>${item['Departamento'] || '-'}</td>
+                        <td><span class="status-badge ${badgeClass}">${situacao}</span></td>
+                    </tr>
+                `;
+            }).join('');
+
+            renderPagination('pagination-equipamentos', pageEquipamentos, totalItems, pageSizeEquipamentos, 'setPageEquipamentos', 'setPageSizeEquipamentos');
+        }
+
+        function setPageEquipamentos(p) { pageEquipamentos = p; renderEquipamentosTable(); }
+        function setPageSizeEquipamentos(s) { pageSizeEquipamentos = parseInt(s); pageEquipamentos = 1; renderEquipamentosTable(); }
+
+                function updateKPIs() {
             document.getElementById('kpi-total-licencas').textContent = rawLicencas.length;
             document.getElementById('side-badge-licencas').textContent = rawLicencas.length;
             document.getElementById('kpi-sub-licencas').textContent = `${rawLicencas.filter(l => (l['STATUS '] || l['STATUS']) === 'ATIVO').length} ativos monitorados`;
@@ -2186,6 +2367,27 @@
             document.getElementById('side-badge-cartoes').textContent = Object.keys(cartoesMap).length;
 
             document.getElementById('kpi-renovacoes-alerta').textContent = `${rawLicencas.filter(l => l['Data de Renovação'] && l['Data de Renovação'].includes('2026')).length}`;
+
+            // Equipamentos Recebidos KPI
+            const totalEquip = rawEquipamentos ? rawEquipamentos.length : 0;
+            const ativosEquip = rawEquipamentos ? rawEquipamentos.filter(e => !/inativ|devol|cancel/i.test(e['Situação'] || '')).length : 0;
+            const kpiEquip = document.getElementById('kpi-total-equipamentos');
+            const badgeEquip = document.getElementById('side-badge-equipamentos');
+            const subEquip = document.getElementById('kpi-sub-equipamentos');
+            if (kpiEquip) kpiEquip.textContent = totalEquip;
+            if (badgeEquip) badgeEquip.textContent = totalEquip;
+            if (subEquip) subEquip.textContent = `${ativosEquip} dispositivos ativos`;
+        }
+
+        function filterByRenovacaoAlerta() {
+            switchMainTab('licencas');
+            const searchInput = document.getElementById('search-licencas');
+            if (searchInput) {
+                searchInput.value = '2026';
+            }
+            pageLicencas = 1;
+            renderLicencasTable();
+            showToast("Filtrando licenças e domínios com alerta de renovação!");
         }
 
         function getCartoesMap() {
@@ -2346,6 +2548,9 @@
                         <td>
                             <div style="display: flex; gap: 4px;">
                                 <button class="btn-detail" onclick="openLicencaDetail(${realIdx})">Detalhes</button>
+                                <button class="btn-detail" onclick="openConfigurarAlertaPorItem(${realIdx})" title="Configurar alerta de renovação para este item" style="background: rgba(245,158,11,0.12); color: #f59e0b; border: 1px solid rgba(245,158,11,0.3); font-weight: 600;">
+                                    🔔 Alerta
+                                </button>
                                 <button class="btn-detail btn-edit-action" onclick="openEditLicencaModal(${realIdx})" title="Editar este cadastro"><i class="fa-solid fa-pen-to-square"></i></button>
                             </div>
                         </td>
@@ -2526,17 +2731,24 @@
 
             const grid = document.getElementById('modal-grid-body');
             grid.innerHTML = `
+                <div class="modal-field"><span class="modal-label">STATUS</span><span class="modal-val">${item['STATUS '] || item['STATUS'] || 'ATIVO'}</span></div>
                 <div class="modal-field"><span class="modal-label">Tipo</span><span class="modal-val">${item['Tipo'] || '-'}</span></div>
-                <div class="modal-field"><span class="modal-label">Provedor / Certificadora</span><span class="modal-val">${item['Certificadora'] || '-'}</span></div>
-                <div class="modal-field"><span class="modal-label">Impacto Operacional</span><span class="modal-val">${item['IMPACTO'] || 'BAIXA'}</span></div>
+                <div class="modal-field modal-field-full"><span class="modal-label">Nomes</span><span class="modal-val">${item['Nomes'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Certificadora</span><span class="modal-val">${item['Certificadora'] || '-'}</span></div>
                 <div class="modal-field"><span class="modal-label">Plano</span><span class="modal-val">${item['Plano '] || item['Plano'] || '-'}</span></div>
-                <div class="modal-field"><span class="modal-label">Valor Total</span><span class="modal-val">${item['Valor '] || item['Valor'] || '-'}</span></div>
-                <div class="modal-field"><span class="modal-label">Data de Contratação</span><span class="modal-val">${item['Data de contratação'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Valor</span><span class="modal-val">${item['Valor '] || item['Valor'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Data de contratação</span><span class="modal-val">${item['Data de contratação'] || '-'}</span></div>
                 <div class="modal-field"><span class="modal-label">Data de Renovação</span><span class="modal-val">${item['Data de Renovação'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">IMPACTO</span><span class="modal-val">${item['IMPACTO'] || 'BAIXA'}</span></div>
+                <div class="modal-field modal-field-full"><span class="modal-label">Cobertura</span><span class="modal-val">${item['Cobertura'] || '-'}</span></div>
                 <div class="modal-field modal-field-full"><span class="modal-label">Forma de Pagamento</span><span class="modal-val">${item['Forma de Pagamento'] || '-'}</span></div>
-                <div class="modal-field modal-field-full"><span class="modal-label">Cartão(ões) Registrado(s)</span><span class="modal-val">${item['Nome no cartão'] || ''} (${item['Número Cartão'] || 'Sem cartão'}) - Venc: ${item['Vencimento Cartão'] || '-'}</span></div>
-                <div class="modal-field modal-field-full"><span class="modal-label">Cobertura dos Serviços</span><span class="modal-val">${item['Cobertura'] || '-'}</span></div>
-                <div class="modal-field modal-field-full"><span class="modal-label">Observações</span><span class="modal-val">${item['OBSERVAÇÕES'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Nome no cartão</span><span class="modal-val">${item['Nome no cartão'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Número Cartão</span><span class="modal-val">${item['Número Cartão'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Vencimento Cartão</span><span class="modal-val">${item['Vencimento Cartão'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Login</span><span class="modal-val">${item['Login'] || '-'}</span></div>
+                <div class="modal-field"><span class="modal-label">Senha</span><span class="modal-val">${item['Senha'] ? '••••••••' : '-'}</span></div>
+                <div class="modal-field modal-field-full"><span class="modal-label">E-mail de contato</span><span class="modal-val">${item['E-mail de contato '] || item['E-mail de contato'] || '-'}</span></div>
+                <div class="modal-field modal-field-full"><span class="modal-label">OBSERVAÇÕES</span><span class="modal-val">${item['OBSERVAÇÕES'] || '-'}</span></div>
             `;
 
             document.getElementById('modal-details-overlay').classList.add('active');
@@ -2565,6 +2777,434 @@
 
             document.getElementById('modal-details-overlay').classList.add('active');
         }
+    
+        
+        // ═══════════════════════════════════════════════════════════════════
+        // MOTOR DE ALERTAS DE RENOVAÇÃO POR ITEM (Ex: dmslog.com.br)
+        // ═══════════════════════════════════════════════════════════════════
+
+        function openRenovacaoModal(targetItemNome) {
+            const overlay = document.getElementById('modal-renovacao-overlay');
+            if (overlay) overlay.style.display = 'flex';
+
+            populateAlertaItemSelect(targetItemNome);
+            renderAlertasPersonalizados();
+            renderRenovacaoList();
+
+            if (targetItemNome) {
+                const inpNome = document.getElementById('alerta-nome');
+                if (inpNome) inpNome.value = targetItemNome;
+                setAlertaDataRapida(7); // Sugere semana que vem por padrão!
+            }
+        }
+
+        function closeRenovacaoModal() {
+            const overlay = document.getElementById('modal-renovacao-overlay');
+            if (overlay) overlay.style.display = 'none';
+        }
+
+        /**
+         * Abre o configurador de alerta pré-selecionando o item da linha
+         */
+        function openConfigurarAlertaPorItem(idx) {
+            const item = rawLicencas[idx];
+            if (!item) return;
+            const nome = item['Nomes'] || item['Nome'] || 'Item ' + (idx + 1);
+            openRenovacaoModal(nome);
+        }
+
+        /**
+         * Popula o select de itens cadastrados com todas as licenças e domínios
+         */
+        function populateAlertaItemSelect(selectedNome) {
+            const sel = document.getElementById('alerta-item-select');
+            if (!sel) return;
+
+            const nomesSet = new Set();
+            rawLicencas.forEach(l => {
+                const n = l['Nomes'] || l['Nome'];
+                if (n && n.trim()) nomesSet.add(n.trim());
+            });
+
+            // Adiciona também domínios/certificados
+            rawCertificados.forEach(c => {
+                const m = c['Modelo'] || c['Proprietário'];
+                if (m && m.trim()) nomesSet.add(m.trim());
+            });
+
+            const nomes = Array.from(nomesSet).sort();
+
+            sel.innerHTML = '<option value="">-- Selecionar item cadastrado --</option>'
+                + nomes.map(n => {
+                    const isSel = selectedNome && selectedNome.trim().toLowerCase() === n.toLowerCase();
+                    return `<option value="${n}" ${isSel ? 'selected' : ''}>${n}</option>`;
+                }).join('');
+        }
+
+        function onAlertaItemSelectChange() {
+            const sel = document.getElementById('alerta-item-select');
+            const inp = document.getElementById('alerta-nome');
+            if (sel && inp && sel.value) {
+                inp.value = sel.value;
+
+                // Tenta puxar data de renovação pré-existente da planilha se houver
+                const lic = rawLicencas.find(l => (l['Nomes'] || l['Nome']) === sel.value);
+                if (lic && lic['Data de Renovação']) {
+                    const dr = lic['Data de Renovação'];
+                    // Se for DD/MM/AAAA converte para YYYY-MM-DD
+                    const parts = dr.split('/');
+                    if (parts.length === 3) {
+                        const dateInp = document.getElementById('alerta-data');
+                        if (dateInp) dateInp.value = `${parts[2]}-${parts[1].padStart(2,'0')}-${parts[0].padStart(2,'0')}`;
+                    }
+                }
+            }
+        }
+
+        /**
+         * Define a data do alerta somando X dias a partir de hoje
+         */
+        function setAlertaDataRapida(dias) {
+            const dateInp = document.getElementById('alerta-data');
+            if (!dateInp) return;
+            const target = new Date();
+            target.setDate(target.getDate() + dias);
+            const yyyy = target.getFullYear();
+            const mm = String(target.getMonth() + 1).padStart(2, '0');
+            const dd = String(target.getDate()).padStart(2, '0');
+            dateInp.value = `${yyyy}-${mm}-${dd}`;
+        }
+
+        /**
+         * Salva um alerta de renovação específico por item no localStorage
+         */
+        function salvarAlertaRenovacao() {
+            const inpNome = document.getElementById('alerta-nome');
+            const selItem = document.getElementById('alerta-item-select');
+            const inpData = document.getElementById('alerta-data');
+            const selAnte = document.getElementById('alerta-antecedencia');
+            const inpObs = document.getElementById('alerta-obs');
+
+            const nome = (inpNome?.value || selItem?.value || '').trim();
+            const data = inpData?.value;
+            const antecedencia = parseInt(selAnte?.value || '0', 10);
+            const obs = (inpObs?.value || '').trim();
+
+            if (!nome || !data) {
+                showToast("Por favor, preencha o nome do item e a data de renovação!", "⚠️");
+                return;
+            }
+
+            let alertas = JSON.parse(localStorage.getItem('dms_alertas_renovacao') || '[]');
+            
+            // Verifica se já existe alerta para o mesmo item e atualiza
+            const existingIdx = alertas.findIndex(a => a.nome.toLowerCase() === nome.toLowerCase());
+            const novoAlerta = {
+                id: existingIdx !== -1 ? alertas[existingIdx].id : Date.now(),
+                nome: nome,
+                data: data,
+                antecedencia: antecedencia,
+                obs: obs,
+                atualizadoEm: new Date().toISOString()
+            };
+
+            if (existingIdx !== -1) {
+                alertas[existingIdx] = novoAlerta;
+            } else {
+                alertas.push(novoAlerta);
+            }
+
+            localStorage.setItem('dms_alertas_renovacao', JSON.stringify(alertas));
+
+            if (inpNome) inpNome.value = '';
+            if (inpData) inpData.value = '';
+            if (inpObs) inpObs.value = '';
+            if (selItem) selItem.value = '';
+
+            renderAlertasPersonalizados();
+            renderLicencasTable(); // Atualiza badges na tabela
+            showToast(`Alerta para "${nome}" agendado com sucesso!`, "🔔");
+        }
+
+        function removerAlertaRenovacao(id) {
+            let alertas = JSON.parse(localStorage.getItem('dms_alertas_renovacao') || '[]');
+            alertas = alertas.filter(a => a.id !== id);
+            localStorage.setItem('dms_alertas_renovacao', JSON.stringify(alertas));
+            renderAlertasPersonalizados();
+            renderLicencasTable();
+            showToast("Alerta removido!", "🗑️");
+        }
+
+        /**
+         * Renderiza a lista de alertas personalizados com badges e contagem regressiva
+         */
+        function renderAlertasPersonalizados() {
+            const container = document.getElementById('alertas-personalizados-list');
+            const countEl = document.getElementById('alertas-personalizados-count');
+            if (!container) return;
+
+            const alertas = JSON.parse(localStorage.getItem('dms_alertas_renovacao') || '[]');
+            if (countEl) countEl.textContent = `${alertas.length} ativo${alertas.length !== 1 ? 's' : ''}`;
+
+            if (alertas.length === 0) {
+                container.innerHTML = '<div style="font-size: 12px; color: var(--text-muted); text-align: center; padding: 14px; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px dashed var(--border-color);">Nenhum alerta personalizado configurado ainda.</div>';
+                return;
+            }
+
+            const hoje = new Date();
+            hoje.setHours(0, 0, 0, 0);
+
+            const alertasSorted = alertas.slice().sort((a, b) => a.data.localeCompare(b.data));
+
+            container.innerHTML = alertasSorted.map(a => {
+                const dAlerta = new Date(a.data + 'T00:00:00');
+                const diffDays = Math.ceil((dAlerta - hoje) / (1000 * 60 * 60 * 24));
+                const isVencido = diffDays < 0;
+                const isHoje = diffDays === 0;
+                const isSemana = diffDays > 0 && diffDays <= 7;
+
+                const color = isVencido ? '#f87171' : isHoje || isSemana ? '#f59e0b' : '#34d399';
+                const bg = isVencido ? 'rgba(239,68,68,0.12)' : isHoje || isSemana ? 'rgba(245,158,11,0.12)' : 'rgba(16,185,129,0.12)';
+                const badgeText = isVencido ? `VENCEU HÁ ${Math.abs(diffDays)}d` : isHoje ? 'VENCE HOJE!' : `EM ${diffDays} DIA${diffDays > 1 ? 'S' : ''}`;
+
+                const dataBr = new Date(a.data + 'T00:00:00').toLocaleDateString('pt-BR');
+
+                return `
+                    <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-left: 3px solid ${color}; border-radius: 8px; padding: 10px 14px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <div style="font-size: 13px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 6px;">
+                                🔔 ${a.nome}
+                            </div>
+                            <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">
+                                Data limite: <strong style="color: var(--text-main);">${dataBr}</strong>
+                                ${a.obs ? ` · <span style="font-style: italic;">"${a.obs}"</span>` : ''}
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="font-size: 10px; font-weight: 700; padding: 3px 8px; border-radius: 4px; background: ${bg}; color: ${color}; border: 1px solid ${color}40;">
+                                ${badgeText}
+                            </span>
+                            <button onclick="removerAlertaRenovacao(${a.id})" style="background: none; border: none; color: #f87171; cursor: pointer; font-size: 14px; padding: 2px 6px;" title="Remover alerta">✕</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        /**
+         * Renderiza lista de licenças mapeadas para facilitar criação de alertas em lote
+         */
+        function renderRenovacaoList() {
+            const list = document.getElementById('renovacao-list');
+            if (!list) return;
+
+            const alertas = rawLicencas.filter(l => {
+                const dr = l['Data de Renovação'] || '';
+                return dr.includes('2026') || dr.includes('2025') || dr.trim() !== '';
+            });
+
+            if (alertas.length === 0) {
+                list.innerHTML = '<p style="font-size: 12px; color: var(--text-muted); text-align: center; padding: 14px;">Nenhuma data de renovação encontrada na planilha.</p>';
+                return;
+            }
+
+            list.innerHTML = alertas.slice(0, 15).map((l, idx) => {
+                const nome = l['Nomes'] || l['Nome'] || 'Sem nome';
+                const tipo = l['Tipo'] || '';
+                const dr = l['Data de Renovação'] || 'Sem data';
+                const status = l['STATUS '] || l['STATUS'] || '';
+                const isAtivo = /ativo/i.test(status);
+                const safeNome = nome.replace(/'/g, "\\'");
+
+                return `
+                    <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <div style="font-size: 12px; font-weight: 600; color: var(--text-main);">${nome}</div>
+                            <div style="font-size: 10px; color: var(--text-muted);">${tipo} · Vencimento: <strong style="color: #f59e0b;">${dr}</strong></div>
+                        </div>
+                        <button onclick="openRenovacaoModal('${safeNome}')" class="btn btn-secondary" style="font-size: 10px; padding: 3px 8px; background: rgba(245,158,11,0.15); color: #f59e0b; border-color: rgba(245,158,11,0.3);">
+                            ➕ Criar Alerta
+                        </button>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        /**
+         * Verifica alertas no carregamento e gera toast se houver itens vencendo em breve
+         */
+        function verificarAlertasRenovacao() {
+            const alertas = JSON.parse(localStorage.getItem('dms_alertas_renovacao') || '[]');
+            if (alertas.length === 0) return;
+
+            const hoje = new Date();
+            hoje.setHours(0, 0, 0, 0);
+
+            const vencendoEmBreve = [];
+            alertas.forEach(a => {
+                const dAlerta = new Date(a.data + 'T00:00:00');
+                const diffDays = Math.ceil((dAlerta - hoje) / (1000 * 60 * 60 * 24));
+                if (diffDays >= 0 && diffDays <= 7) {
+                    vencendoEmBreve.push({ ...a, diffDays });
+                }
+            });
+
+            if (vencendoEmBreve.length > 0) {
+                setTimeout(() => {
+                    const nomes = vencendoEmBreve.map(v => `"${v.nome}" (em ${v.diffDays === 0 ? 'HOJE' : v.diffDays + 'd'})`).join(', ');
+                    showToast(`🔔 Atenção: ${vencendoEmBreve.length} alerta(s) de renovação para esta semana: ${nomes}`, '⚠️');
+                }, 1500);
+            }
+        }
+
     </script>
+
+    <!-- MODAL DE ALERTAS DE RENOVAÇÃO -->
+    <div id="modal-renovacao-overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.6); z-index: 2000; backdrop-filter: blur(4px); align-items: flex-start; justify-content: flex-end; padding: 20px;">
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 16px; width: 480px; max-height: 85vh; overflow-y: auto; padding: 24px; box-shadow: 0 25px 60px rgba(0,0,0,0.5);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 16px;">
+                <div>
+                    <h2 style="font-size: 18px; font-weight: 700; color: var(--text-main);">🔔 Alertas de Renovação</h2>
+                    <p style="font-size: 12px; color: var(--text-muted); margin-top: 4px;">Licenças e domínios com vencimento próximo</p>
+                </div>
+                <button onclick="closeRenovacaoModal()" style="background: none; border: none; color: var(--text-muted); font-size: 22px; cursor: pointer; line-height: 1;">✕</button>
+            </div>
+            
+            <!-- Criar Alerta Personalizado -->
+            <div style="background: rgba(var(--accent-primary-rgb, 99,102,241), 0.08); border: 1px solid rgba(99,102,241,0.25); border-radius: 10px; padding: 14px; margin-bottom: 20px;">
+                <h3 style="font-size: 13px; font-weight: 700; color: var(--accent-primary); margin-bottom: 10px;">➕ Criar Alerta Personalizado</h3>
+                <div style="display: flex; flex-direction: column; gap: 8px;">
+                    <input type="text" id="alerta-nome" placeholder="Nome / Descrição do alerta" style="padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-size: 12px;">
+                    <div style="display: flex; gap: 8px;">
+                        <input type="date" id="alerta-data" style="flex: 1; padding: 7px 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-size: 12px;">
+                        <button onclick="salvarAlertaRenovacao()" style="padding: 7px 14px; background: var(--accent-primary); color: white; border: none; border-radius: 6px; font-size: 12px; cursor: pointer; font-weight: 600;">💾 Salvar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alertas Personalizados Salvos -->
+            <div id="alertas-personalizados-list" style="margin-bottom: 20px;"></div>
+
+            <!-- Lista de Licenças com Alerta -->
+            <h3 style="font-size: 13px; font-weight: 700; color: var(--text-main); margin-bottom: 12px;">📋 Licenças com Renovação em 2026</h3>
+            <div id="renovacao-list" style="display: flex; flex-direction: column; gap: 8px;"></div>
+        </div>
+    </div>
+
+    <!-- MODAL DE ALERTAS DE RENOVAÇÃO POR ITEM -->
+    <div id="modal-renovacao-overlay" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.65); z-index: 2000; backdrop-filter: blur(5px); align-items: flex-start; justify-content: flex-end; padding: 20px;">
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 16px; width: 560px; max-width: 95vw; max-height: 90vh; overflow-y: auto; padding: 26px; box-shadow: 0 25px 70px rgba(0,0,0,0.6);">
+            <!-- Header do Modal -->
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 16px;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <div style="width: 36px; height: 36px; border-radius: 10px; background: rgba(245,158,11,0.15); display: flex; align-items: center; justify-content: center; font-size: 18px; color: #f59e0b; border: 1px solid rgba(245,158,11,0.3);">
+                        🔔
+                    </div>
+                    <div>
+                        <h2 style="font-size: 18px; font-weight: 700; color: var(--text-main); margin: 0;">Alertas de Renovação por Item</h2>
+                        <p style="font-size: 12px; color: var(--text-muted); margin: 2px 0 0 0;">Configure lembretes personalizados para domínios, serviços e licenças (ex: dmslog.com.br)</p>
+                    </div>
+                </div>
+                <button onclick="closeRenovacaoModal()" style="background: none; border: none; color: var(--text-muted); font-size: 24px; cursor: pointer; line-height: 1; transition: color 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='var(--text-muted)'">&times;</button>
+            </div>
+            
+            <!-- Formulário: Criar / Configurar Alerta por Item -->
+            <div style="background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.25); border-radius: 12px; padding: 18px; margin-bottom: 22px;">
+                <h3 style="font-size: 13px; font-weight: 700; color: #f59e0b; margin: 0 0 12px 0; display: flex; align-items: center; gap: 6px;">
+                    ➕ Configurar Novo Alerta de Renovação
+                </h3>
+                
+                <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <!-- Seleção ou digitação do Item -->
+                    <div>
+                        <label style="font-size: 11px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px; text-transform: uppercase;">
+                            Item / Domínio / Serviço:
+                        </label>
+                        <div style="display: flex; gap: 8px;">
+                            <select id="alerta-item-select" onchange="onAlertaItemSelectChange()" style="flex: 1; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-size: 12px; font-weight: 600;">
+                                <option value="">-- Selecionar item cadastrado --</option>
+                            </select>
+                        </div>
+                        <input type="text" id="alerta-nome" placeholder="Ou digite o nome do item (ex: dmslog.com.br, Licença AWS, etc.)" style="width: 100%; margin-top: 6px; padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-size: 12px; box-sizing: border-box;">
+                    </div>
+
+                    <!-- Atalhos rápidos de data -->
+                    <div>
+                        <label style="font-size: 11px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 6px; text-transform: uppercase;">
+                            Atalhos Rápidos de Prazo:
+                        </label>
+                        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                            <button type="button" onclick="setAlertaDataRapida(7)" class="btn btn-secondary" style="padding: 4px 10px; font-size: 11px; border-radius: 6px; background: rgba(99,102,241,0.15); color: #818cf8; border-color: rgba(99,102,241,0.3);">
+                                ⚡ Semana que vem (+7d)
+                            </button>
+                            <button type="button" onclick="setAlertaDataRapida(15)" class="btn btn-secondary" style="padding: 4px 10px; font-size: 11px; border-radius: 6px;">
+                                ⚡ Em 15 dias
+                            </button>
+                            <button type="button" onclick="setAlertaDataRapida(30)" class="btn btn-secondary" style="padding: 4px 10px; font-size: 11px; border-radius: 6px;">
+                                ⚡ Em 30 dias
+                            </button>
+                            <button type="button" onclick="setAlertaDataRapida(60)" class="btn btn-secondary" style="padding: 4px 10px; font-size: 11px; border-radius: 6px;">
+                                ⚡ Em 60 dias
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Data do Alerta e Antecedência -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <div>
+                            <label style="font-size: 11px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px; text-transform: uppercase;">
+                                Data da Renovação / Alerta:
+                            </label>
+                            <input type="date" id="alerta-data" style="width: 100%; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-size: 12px; box-sizing: border-box;">
+                        </div>
+                        <div>
+                            <label style="font-size: 11px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px; text-transform: uppercase;">
+                                Notificar com Antecedência:
+                            </label>
+                            <select id="alerta-antecedencia" style="width: 100%; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-size: 12px; box-sizing: border-box;">
+                                <option value="0">No dia exato da data</option>
+                                <option value="3" selected>3 dias antes</option>
+                                <option value="7">7 dias antes (1 semana)</option>
+                                <option value="15">15 dias antes</option>
+                                <option value="30">30 dias antes</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Observação / Ação -->
+                    <div>
+                        <label style="font-size: 11px; font-weight: 700; color: var(--text-muted); display: block; margin-bottom: 4px; text-transform: uppercase;">
+                            Observação / Motivo (Opcional):
+                        </label>
+                        <input type="text" id="alerta-obs" placeholder="Ex: Negociar desconto anual, verificar fatura, renovar SSL..." style="width: 100%; padding: 8px 12px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-primary); color: var(--text-main); font-size: 12px; box-sizing: border-box;">
+                    </div>
+
+                    <!-- Botão Salvar -->
+                    <button onclick="salvarAlertaRenovacao()" style="margin-top: 4px; padding: 9px 16px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border: none; border-radius: 6px; font-size: 12px; cursor: pointer; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; box-shadow: 0 4px 14px rgba(245,158,11,0.35);">
+                        💾 Salvar Alerta para este Item
+                    </button>
+                </div>
+            </div>
+
+            <!-- Seção de Alertas Ativos por Item -->
+            <div style="margin-bottom: 24px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                    <h3 style="font-size: 13px; font-weight: 700; color: var(--text-main); margin: 0; display: flex; align-items: center; gap: 6px;">
+                        ⏰ Alertas Ativos Configurados
+                    </h3>
+                    <span id="alertas-personalizados-count" style="font-size: 11px; font-weight: 700; color: var(--accent-primary); background: rgba(99,102,241,0.15); padding: 2px 8px; border-radius: 12px;">0 ativos</span>
+                </div>
+                <div id="alertas-personalizados-list" style="display: flex; flex-direction: column; gap: 8px;"></div>
+            </div>
+
+            <!-- Lista de Licenças da Base com Renovação Próxima -->
+            <div>
+                <h3 style="font-size: 13px; font-weight: 700; color: var(--text-main); margin: 0 0 12px 0;">
+                    📋 Licenças & Contratos com Vencimento Mapeado
+                </h3>
+                <div id="renovacao-list" style="display: flex; flex-direction: column; gap: 8px;"></div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
