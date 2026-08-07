@@ -69989,6 +69989,10 @@ SI-10262,2026-08-05T19:03:53.474-0300,Sistema,Resolução do chamado,,Aguardando
 SI-10262,2026-08-05T19:03:53.474-0300,Sistema,Causa raiz potencial,,Aguardando informação
 SI-10262,2026-08-05T19:03:53.474-0300,Sistema,Causa raiz final,,Aguardando informação
 SI-10262,2026-08-05T19:03:53.474-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
+SI-10262,2026-08-07T01:05:13.833-0300,Sistema,Resolução do chamado,Aguardando informação,Após a limpeza de cachê a colaboradora conseguiu seguir normalmente.
+SI-10262,2026-08-07T01:05:13.833-0300,Sistema,Causa raiz potencial,Aguardando informação,Após a limpeza de cachê a colaboradora conseguiu seguir normalmente.
+SI-10262,2026-08-07T01:05:13.833-0300,Sistema,Causa raiz final,Aguardando informação,Após a limpeza de cachê a colaboradora conseguiu seguir normalmente.
+SI-10262,2026-08-07T01:05:13.833-0300,Sistema,Justificativa Causa Raiz final,Aguardando informação,Após a limpeza de cachê a colaboradora conseguiu seguir normalmente.
 SI-10261,2026-08-05T10:42:09.675-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10261,2026-08-05T10:42:16.033-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10261,2026-08-05T10:42:16.297-0300,Rafael Ferreira,resolution,,Done
@@ -70076,6 +70080,14 @@ SI-10260,2026-08-05T19:03:52.203-0300,Sistema,Justificativa Causa Raiz final,,A 
 SI-10264,2026-08-06T16:38:04.975-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10264,2026-08-06T16:38:04.975-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-10264,2026-08-06T16:38:06.793-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-10264,2026-08-07T01:05:14.527-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10264,2026-08-07T01:05:14.527-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10264,2026-08-07T01:05:14.527-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10264,2026-08-07T01:05:14.527-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10264,2026-08-07T01:05:14.527-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-10264,2026-08-07T01:05:14.527-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-10264,2026-08-07T01:05:14.527-0300,Sistema,Causa raiz final,,Em atendimento
+SI-10264,2026-08-07T01:05:14.527-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-10263,2026-08-06T13:54:21.702-0300,Rafael Ferreira,resolution,,Done
 SI-10263,2026-08-06T13:54:21.702-0300,Rafael Ferreira,status,Submissão,Done
 SI-9539,2026-08-04T15:30:59.026-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
@@ -70103,6 +70115,14 @@ SI-8970,2026-08-04T19:03:11.328-0300,Sistema,Justificativa Causa Raiz final,,"O 
 SI-8599,2026-08-05T14:24:01.199-0300,Bruno Silva,resolution,,Done
 SI-8599,2026-08-05T14:24:01.199-0300,Bruno Silva,status,Submissão,Done
 SI-8599,2026-08-06T12:03:03.798-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-8599,2026-08-07T01:05:07.171-0300,Sistema,Criticidade final,,P1 - Alta
+SI-8599,2026-08-07T01:05:07.171-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-8599,2026-08-07T01:05:07.171-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-8599,2026-08-07T01:05:07.171-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-8599,2026-08-07T01:05:07.171-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-8599,2026-08-07T01:05:07.171-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-8599,2026-08-07T01:05:07.171-0300,Sistema,Causa raiz final,,Em atendimento
+SI-8599,2026-08-07T01:05:07.171-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-10265,2026-08-04T20:52:25.254-0300,Sistema,Link,,This work item is blocked by GA-1411
 SI-10265,2026-08-05T09:55:03.114-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10265,2026-08-05T09:55:03.400-0300,Rafael Ferreira,resolution,,Done
@@ -70207,6 +70227,14 @@ SI-10272,2026-08-06T09:20:37.294-0300,Rafael Ferreira,status,Submissão,Encaminh
 SI-10272,2026-08-06T09:20:40.324-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10272,2026-08-06T09:20:40.519-0300,Rafael Ferreira,resolution,,Done
 SI-10272,2026-08-06T09:20:40.519-0300,Rafael Ferreira,status,Encaminhado sustentação,Done
+SI-10272,2026-08-07T01:05:17.560-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10272,2026-08-07T01:05:17.560-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10272,2026-08-07T01:05:17.560-0300,Sistema,Reclassificação solicitação,,Requisição
+SI-10272,2026-08-07T01:05:17.560-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-10272,2026-08-07T01:05:17.560-0300,Sistema,Resolução do chamado,,Cidade cadastrada
+SI-10272,2026-08-07T01:05:17.560-0300,Sistema,Causa raiz potencial,,Cidade cadastrada
+SI-10272,2026-08-07T01:05:17.560-0300,Sistema,Causa raiz final,,Cidade cadastrada
+SI-10272,2026-08-07T01:05:17.560-0300,Sistema,Justificativa Causa Raiz final,,Cidade cadastrada
 SI-10271,2026-08-05T10:15:18.036-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10271,2026-08-05T10:27:51.596-0300,Bruno Silva,resolution,,Done
 SI-10271,2026-08-05T10:27:51.596-0300,Bruno Silva,status,Submissão,Done
@@ -70281,6 +70309,10 @@ SI-10282,2026-08-05T19:04:03.392-0300,Sistema,Resolução do chamado,,Aguardando
 SI-10282,2026-08-05T19:04:03.392-0300,Sistema,Causa raiz potencial,,Aguardando informação
 SI-10282,2026-08-05T19:04:03.392-0300,Sistema,Causa raiz final,,Aguardando informação
 SI-10282,2026-08-05T19:04:03.392-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
+SI-10282,2026-08-07T01:05:21.694-0300,Sistema,Resolução do chamado,Aguardando informação,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-10282,2026-08-07T01:05:21.694-0300,Sistema,Causa raiz potencial,Aguardando informação,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-10282,2026-08-07T01:05:21.694-0300,Sistema,Causa raiz final,Aguardando informação,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-10282,2026-08-07T01:05:21.694-0300,Sistema,Justificativa Causa Raiz final,Aguardando informação,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-10281,2026-08-05T14:19:17.332-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10281,2026-08-05T14:19:20.545-0300,Bruno Silva,resolution,,Done
 SI-10281,2026-08-05T14:19:20.545-0300,Bruno Silva,status,Submissão,Done
@@ -70308,13 +70340,67 @@ SI-10287,2026-08-06T09:14:11.645-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10287,2026-08-06T09:14:21.345-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10287,2026-08-06T09:14:21.540-0300,Rafael Ferreira,resolution,,Done
 SI-10287,2026-08-06T09:14:21.540-0300,Rafael Ferreira,status,Submissão,Done
+SI-10287,2026-08-07T01:05:24.398-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10287,2026-08-07T01:05:24.398-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10287,2026-08-07T01:05:24.398-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10287,2026-08-07T01:05:24.398-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10287,2026-08-07T01:05:24.398-0300,Sistema,Resolução do chamado,,"Bom dia, Talita, tudo bem?
+
+Não houve erro sistêmico nas configurações do seu processo.
+Acessando a tela de edição do seu alerta através do link alerta 4230, confirmamos que ele está parametrizado para monitorar e disparar e-mails utilizando o relacionamento de Association.
+ Esse modelo de configuração foi desenhado para vincular a timeline da Ordem à do Booking e disparar notificações focadas apenas nos trechos principais
+
+ETD - SINGAPORE (que representa a última saída internacional antes da vinda da carga ao país de destino).
+ETA - Santos (a chegada final da mercadoria no destino).
+
+Como essas etapas operacionais ainda não receberam atualizações de datas e nem foram confirmadas na timeline do sistema, os gatilhos automáticos de envio de e-mail ainda não foram acionados.
+ Assim que o time operacional realizar essas confirmações no painel, o sistema processará a fila e enviará os comunicados ao cliente perfeitamente."
+SI-10287,2026-08-07T01:05:24.398-0300,Sistema,Causa raiz potencial,,"Ausência de confirmação de datas dos marcos operacionais na linha do tempo do processo.
+
+Condições de gatilho do alerta não atingidas devido à falta de atualização da etapa vinculada.
+
+Indisponibilidade momentânea na fila de processamento de notificações por e-mail."
+SI-10287,2026-08-07T01:05:24.398-0300,Sistema,Causa raiz final,,"O não envio das comunicações de acompanhamento referentes aos marcos operacionais de saída e chegada ocorreu estritamente em conformidade com o comportamento previsto no sistema, descartando qualquer inconsistência técnica na aplicação. O alerta em questão está configurado sob a modalidade de Associação, estrutura desenvolvida para relacionar as informações da linha do tempo do processo às etapas operacionais do transporte. Sob essa regra de negócio, a emissão das notificações automáticas não acontece de maneira isolada ou apenas pelo cadastro prévio do alerta; ela depende fundamentalmente do registro e da confirmação efetiva das datas dos eventos correspondentes no painel de acompanhamento do processo. Como os marcos logísticos consultados ainda não haviam recebido a atualização de datas e a devida confirmação por parte da equipe responsável pelo gerenciamento da operação, os gatilhos automáticos mantiveram-se em estado de espera. Tão logo as etapas operacionais tenham suas confirmações registradas no painel, a fila de notificações processará os dados e realizará a entrega dos e-mails aos destinatários configurados."
+SI-10287,2026-08-07T01:05:24.398-0300,Sistema,Justificativa Causa Raiz final,,"A verificação técnica confirmou que a funcionalidade do alerta opera sob o modelo de Associação entre entidades. Conforme as especificações de negócio do módulo operacional, o disparo dos gatilhos de comunicação para etapas em Associação é diretamente dependente do status das etapas vinculadas na linha do tempo. Como as etapas operacionais associadas ao processo não possuíam confirmação de data, o sistema manteve o gatilho inativo, preservando a lógica condicional do fluxo sem registrar falhas na aplicação ou na fila de envios. Sob a perspectiva de Melhoria Contínua, a solução do cenário consiste em instruir as equipes operacionais sobre a necessidade de preenchimento e confirmação dos marcos logísticos na linha do tempo como pré-requisito indispensável para a automação dos alertas por e-mail, prevenindo a reincidência de chamados dessa natureza."
 SI-10286,2026-08-06T09:14:13.755-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10286,2026-08-06T09:14:23.356-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10286,2026-08-06T09:14:23.560-0300,Rafael Ferreira,resolution,,Done
 SI-10286,2026-08-06T09:14:23.560-0300,Rafael Ferreira,status,Submissão,Done
+SI-10286,2026-08-07T01:05:23.744-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10286,2026-08-07T01:05:23.744-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10286,2026-08-07T01:05:23.744-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10286,2026-08-07T01:05:23.744-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10286,2026-08-07T01:05:23.744-0300,Sistema,Resolução do chamado,,"Bom dia, Talita, tudo bem?
+
+Não houve erro sistêmico nas configurações do seu processo.
+Acessando a tela de edição do seu alerta através do link alerta 4230, confirmamos que ele está parametrizado para monitorar e disparar e-mails utilizando o relacionamento de Association.
+ Esse modelo de configuração foi desenhado para vincular a timeline da Ordem à do Booking e disparar notificações focadas apenas nos trechos principais
+
+ETD - SINGAPORE (que representa a última saída internacional antes da vinda da carga ao país de destino).
+ETA - Santos (a chegada final da mercadoria no destino).
+
+Como essas etapas operacionais ainda não receberam atualizações de datas e nem foram confirmadas na timeline do sistema, os gatilhos automáticos de envio de e-mail ainda não foram acionados.
+ Assim que o time operacional realizar essas confirmações no painel, o sistema processará a fila e enviará os comunicados ao cliente perfeitamente."
+SI-10286,2026-08-07T01:05:23.744-0300,Sistema,Causa raiz potencial,,"Ausência de confirmação de datas dos marcos operacionais na linha do tempo do processo.
+
+Condições de gatilho do alerta não atingidas devido à falta de atualização da etapa vinculada.
+
+Indisponibilidade momentânea na fila de processamento de notificações por e-mail."
+SI-10286,2026-08-07T01:05:23.744-0300,Sistema,Causa raiz final,,"O não envio das comunicações de acompanhamento referentes aos marcos operacionais de saída e chegada ocorreu estritamente em conformidade com o comportamento previsto no sistema, descartando qualquer inconsistência técnica na aplicação. O alerta em questão está configurado sob a modalidade de Associação, estrutura desenvolvida para relacionar as informações da linha do tempo do processo às etapas operacionais do transporte. Sob essa regra de negócio, a emissão das notificações automáticas não acontece de maneira isolada ou apenas pelo cadastro prévio do alerta; ela depende fundamentalmente do registro e da confirmação efetiva das datas dos eventos correspondentes no painel de acompanhamento do processo. Como os marcos logísticos consultados ainda não haviam recebido a atualização de datas e a devida confirmação por parte da equipe responsável pelo gerenciamento da operação, os gatilhos automáticos mantiveram-se em estado de espera. Tão logo as etapas operacionais tenham suas confirmações registradas no painel, a fila de notificações processará os dados e realizará a entrega dos e-mails aos destinatários configurados."
+SI-10286,2026-08-07T01:05:23.744-0300,Sistema,Justificativa Causa Raiz final,,"A verificação técnica confirmou que a funcionalidade do alerta opera sob o modelo de Associação entre entidades. Conforme as especificações de negócio do módulo operacional, o disparo dos gatilhos de comunicação para etapas em Associação é diretamente dependente do status das etapas vinculadas na linha do tempo. Como as etapas operacionais associadas ao processo não possuíam confirmação de data, o sistema manteve o gatilho inativo, preservando a lógica condicional do fluxo sem registrar falhas na aplicação ou na fila de envios. Sob a perspectiva de Melhoria Contínua, a solução do cenário consiste em instruir as equipes operacionais sobre a necessidade de preenchimento e confirmação dos marcos logísticos na linha do tempo como pré-requisito indispensável para a automação dos alertas por e-mail, prevenindo a reincidência de chamados dessa natureza."
 SI-10285,2026-08-06T08:58:24.590-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-10285,2026-08-06T08:58:26.316-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10285,2026-08-06T08:58:26.316-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-10285,2026-08-07T01:05:23.110-0300,Sistema,Reclassificação solicitação,,Dúvida
+SI-10285,2026-08-07T01:05:23.110-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10285,2026-08-07T01:05:23.110-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10285,2026-08-07T01:05:23.110-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10285,2026-08-07T01:05:23.110-0300,Sistema,Resolução do chamado,,"Configuração do alerta está apenas para disparar o ETD LAST conforme o print anexado no chamado, por isso o mesmo não foi disparado, pois não é o last.
+
+PRINT-->>https://prnt.sc/ArVVKectbCz1"
+SI-10285,2026-08-07T01:05:23.110-0300,Sistema,Causa raiz potencial,,Configuração feita no alerta.
+SI-10285,2026-08-07T01:05:23.110-0300,Sistema,Causa raiz final,,Configuração feita no alerta.
+SI-10285,2026-08-07T01:05:23.110-0300,Sistema,Justificativa Causa Raiz final,,Configuração feita no alerta.
 SI-10284,2026-08-05T16:53:09.048-0300,Rafael Ferreira,resolution,,Done
 SI-10284,2026-08-05T16:53:09.048-0300,Rafael Ferreira,status,Submissão,Done
 SI-10284,2026-08-05T16:53:15.804-0300,Rafael Ferreira,assignee,,Rafael Ferreira
@@ -70363,100 +70449,450 @@ SI-10289,2026-08-06T09:14:06.417-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10289,2026-08-06T09:14:17.442-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10289,2026-08-06T09:14:17.646-0300,Rafael Ferreira,resolution,,Done
 SI-10289,2026-08-06T09:14:17.646-0300,Rafael Ferreira,status,Submissão,Done
+SI-10289,2026-08-07T01:05:25.686-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10289,2026-08-07T01:05:25.686-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10289,2026-08-07T01:05:25.686-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10289,2026-08-07T01:05:25.686-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10289,2026-08-07T01:05:25.686-0300,Sistema,Resolução do chamado,,"Bom dia, Talita, tudo bem?
+
+Não houve erro sistêmico nas configurações do seu processo.
+Acessando a tela de edição do seu alerta através do link alerta 4230, confirmamos que ele está parametrizado para monitorar e disparar e-mails utilizando o relacionamento de Association.
+ Esse modelo de configuração foi desenhado para vincular a timeline da Ordem à do Booking e disparar notificações focadas apenas nos trechos principais
+
+ETD - SINGAPORE (que representa a última saída internacional antes da vinda da carga ao país de destino).
+ETA - Santos (a chegada final da mercadoria no destino).
+
+Como essas etapas operacionais ainda não receberam atualizações de datas e nem foram confirmadas na timeline do sistema, os gatilhos automáticos de envio de e-mail ainda não foram acionados.
+ Assim que o time operacional realizar essas confirmações no painel, o sistema processará a fila e enviará os comunicados ao cliente perfeitamente."
+SI-10289,2026-08-07T01:05:25.686-0300,Sistema,Causa raiz potencial,,"Ausência de confirmação de datas dos marcos operacionais na linha do tempo do processo.
+
+Condições de gatilho do alerta não atingidas devido à falta de atualização da etapa vinculada.
+
+Indisponibilidade momentânea na fila de processamento de notificações por e-mail."
+SI-10289,2026-08-07T01:05:25.686-0300,Sistema,Causa raiz final,,"O não envio das comunicações de acompanhamento referentes aos marcos operacionais de saída e chegada ocorreu estritamente em conformidade com o comportamento previsto no sistema, descartando qualquer inconsistência técnica na aplicação. O alerta em questão está configurado sob a modalidade de Associação, estrutura desenvolvida para relacionar as informações da linha do tempo do processo às etapas operacionais do transporte. Sob essa regra de negócio, a emissão das notificações automáticas não acontece de maneira isolada ou apenas pelo cadastro prévio do alerta; ela depende fundamentalmente do registro e da confirmação efetiva das datas dos eventos correspondentes no painel de acompanhamento do processo. Como os marcos logísticos consultados ainda não haviam recebido a atualização de datas e a devida confirmação por parte da equipe responsável pelo gerenciamento da operação, os gatilhos automáticos mantiveram-se em estado de espera. Tão logo as etapas operacionais tenham suas confirmações registradas no painel, a fila de notificações processará os dados e realizará a entrega dos e-mails aos destinatários configurados."
+SI-10289,2026-08-07T01:05:25.686-0300,Sistema,Justificativa Causa Raiz final,,"A verificação técnica confirmou que a funcionalidade do alerta opera sob o modelo de Associação entre entidades. Conforme as especificações de negócio do módulo operacional, o disparo dos gatilhos de comunicação para etapas em Associação é diretamente dependente do status das etapas vinculadas na linha do tempo. Como as etapas operacionais associadas ao processo não possuíam confirmação de data, o sistema manteve o gatilho inativo, preservando a lógica condicional do fluxo sem registrar falhas na aplicação ou na fila de envios. Sob a perspectiva de Melhoria Contínua, a solução do cenário consiste em instruir as equipes operacionais sobre a necessidade de preenchimento e confirmação dos marcos logísticos na linha do tempo como pré-requisito indispensável para a automação dos alertas por e-mail, prevenindo a reincidência de chamados dessa natureza."
 SI-10288,2026-08-06T09:14:09.276-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10288,2026-08-06T09:14:19.499-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10288,2026-08-06T09:14:19.696-0300,Rafael Ferreira,resolution,,Done
 SI-10288,2026-08-06T09:14:19.696-0300,Rafael Ferreira,status,Submissão,Done
+SI-10288,2026-08-07T01:05:25.057-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10288,2026-08-07T01:05:25.057-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10288,2026-08-07T01:05:25.057-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10288,2026-08-07T01:05:25.057-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10288,2026-08-07T01:05:25.057-0300,Sistema,Resolução do chamado,,"Bom dia, Talita, tudo bem?
+
+Não houve erro sistêmico nas configurações do seu processo.
+Acessando a tela de edição do seu alerta através do link alerta 4230, confirmamos que ele está parametrizado para monitorar e disparar e-mails utilizando o relacionamento de Association.
+ Esse modelo de configuração foi desenhado para vincular a timeline da Ordem à do Booking e disparar notificações focadas apenas nos trechos principais
+
+ETD - SINGAPORE (que representa a última saída internacional antes da vinda da carga ao país de destino).
+ETA - Santos (a chegada final da mercadoria no destino).
+
+Como essas etapas operacionais ainda não receberam atualizações de datas e nem foram confirmadas na timeline do sistema, os gatilhos automáticos de envio de e-mail ainda não foram acionados.
+ Assim que o time operacional realizar essas confirmações no painel, o sistema processará a fila e enviará os comunicados ao cliente perfeitamente."
+SI-10288,2026-08-07T01:05:25.057-0300,Sistema,Causa raiz potencial,,"Ausência de confirmação de datas dos marcos operacionais na linha do tempo do processo.
+
+Condições de gatilho do alerta não atingidas devido à falta de atualização da etapa vinculada.
+
+Indisponibilidade momentânea na fila de processamento de notificações por e-mail."
+SI-10288,2026-08-07T01:05:25.057-0300,Sistema,Causa raiz final,,"O não envio das comunicações de acompanhamento referentes aos marcos operacionais de saída e chegada ocorreu estritamente em conformidade com o comportamento previsto no sistema, descartando qualquer inconsistência técnica na aplicação. O alerta em questão está configurado sob a modalidade de Associação, estrutura desenvolvida para relacionar as informações da linha do tempo do processo às etapas operacionais do transporte. Sob essa regra de negócio, a emissão das notificações automáticas não acontece de maneira isolada ou apenas pelo cadastro prévio do alerta; ela depende fundamentalmente do registro e da confirmação efetiva das datas dos eventos correspondentes no painel de acompanhamento do processo. Como os marcos logísticos consultados ainda não haviam recebido a atualização de datas e a devida confirmação por parte da equipe responsável pelo gerenciamento da operação, os gatilhos automáticos mantiveram-se em estado de espera. Tão logo as etapas operacionais tenham suas confirmações registradas no painel, a fila de notificações processará os dados e realizará a entrega dos e-mails aos destinatários configurados."
+SI-10288,2026-08-07T01:05:25.057-0300,Sistema,Justificativa Causa Raiz final,,"A verificação técnica confirmou que a funcionalidade do alerta opera sob o modelo de Associação entre entidades. Conforme as especificações de negócio do módulo operacional, o disparo dos gatilhos de comunicação para etapas em Associação é diretamente dependente do status das etapas vinculadas na linha do tempo. Como as etapas operacionais associadas ao processo não possuíam confirmação de data, o sistema manteve o gatilho inativo, preservando a lógica condicional do fluxo sem registrar falhas na aplicação ou na fila de envios. Sob a perspectiva de Melhoria Contínua, a solução do cenário consiste em instruir as equipes operacionais sobre a necessidade de preenchimento e confirmação dos marcos logísticos na linha do tempo como pré-requisito indispensável para a automação dos alertas por e-mail, prevenindo a reincidência de chamados dessa natureza."
 SI-10295,2026-08-06T10:15:30.465-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10295,2026-08-06T10:15:33.265-0300,Bruno Silva,resolution,,Done
 SI-10295,2026-08-06T10:15:33.265-0300,Bruno Silva,status,Submissão,Done
+SI-10295,2026-08-07T01:05:28.457-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10295,2026-08-07T01:05:28.457-0300,Sistema,Criticidade final,,P2 - Média
+SI-10295,2026-08-07T01:05:28.457-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10295,2026-08-07T01:05:28.457-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10295,2026-08-07T01:05:28.457-0300,Sistema,Resolução do chamado,,Bom dia! documento enviado caso não leia por favor entrar na salinha (https://meet.google.com/wan-efbb-hhw?authuser=0)
+SI-10295,2026-08-07T01:05:28.457-0300,Sistema,Causa raiz potencial,,Bom dia! documento enviado caso não leia por favor entrar na salinha (https://meet.google.com/wan-efbb-hhw?authuser=0)
+SI-10295,2026-08-07T01:05:28.457-0300,Sistema,Causa raiz final,,Bom dia! documento enviado caso não leia por favor entrar na salinha (https://meet.google.com/wan-efbb-hhw?authuser=0)
+SI-10295,2026-08-07T01:05:28.457-0300,Sistema,Justificativa Causa Raiz final,,Bom dia! documento enviado caso não leia por favor entrar na salinha (https://meet.google.com/wan-efbb-hhw?authuser=0)
 SI-10294,2026-08-06T08:10:17.122-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10294,2026-08-06T08:10:19.331-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10294,2026-08-06T08:10:19.538-0300,Rafael Ferreira,resolution,,Done
 SI-10294,2026-08-06T08:10:19.538-0300,Rafael Ferreira,status,Submissão,Done
+SI-10294,2026-08-07T01:05:27.783-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10294,2026-08-07T01:05:27.783-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10294,2026-08-07T01:05:27.783-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10294,2026-08-07T01:05:27.783-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10294,2026-08-07T01:05:27.783-0300,Sistema,Resolução do chamado,,Chamado cancelado
+SI-10294,2026-08-07T01:05:27.783-0300,Sistema,Causa raiz potencial,,Chamado cancelado
+SI-10294,2026-08-07T01:05:27.783-0300,Sistema,Causa raiz final,,Chamado cancelado
+SI-10294,2026-08-07T01:05:27.783-0300,Sistema,Justificativa Causa Raiz final,,Chamado cancelado
 SI-10296,2026-08-06T09:59:05.422-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10296,2026-08-06T09:59:08.677-0300,Bruno Silva,resolution,,Done
 SI-10296,2026-08-06T09:59:08.677-0300,Bruno Silva,status,Submissão,Done
+SI-10296,2026-08-07T01:05:29.178-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10296,2026-08-07T01:05:29.178-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10296,2026-08-07T01:05:29.178-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10296,2026-08-07T01:05:29.178-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-10296,2026-08-07T01:05:29.178-0300,Sistema,Resolução do chamado,,colaboradora foi chamada no google chat para configuração do gmail.
+SI-10296,2026-08-07T01:05:29.178-0300,Sistema,Causa raiz potencial,,colaboradora foi chamada no google chat para configuração do gmail.
+SI-10296,2026-08-07T01:05:29.178-0300,Sistema,Causa raiz final,,colaboradora foi chamada no google chat para configuração do gmail.
+SI-10296,2026-08-07T01:05:29.178-0300,Sistema,Justificativa Causa Raiz final,,colaboradora foi chamada no google chat para configuração do gmail.
 SI-10297,2026-08-06T09:58:49.972-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10297,2026-08-06T09:58:53.613-0300,Bruno Silva,resolution,,Done
 SI-10297,2026-08-06T09:58:53.613-0300,Bruno Silva,status,Submissão,Done
+SI-10297,2026-08-07T01:05:29.919-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10297,2026-08-07T01:05:29.919-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10297,2026-08-07T01:05:29.919-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10297,2026-08-07T01:05:29.919-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10297,2026-08-07T01:05:29.919-0300,Sistema,Resolução do chamado,,Bom dia! pode por favor entrar na salinha para verificação dos documentos (https://meet.google.com/wan-efbb-hhw?authuser=0)
+SI-10297,2026-08-07T01:05:29.919-0300,Sistema,Causa raiz potencial,,Bom dia! pode por favor entrar na salinha para verificação dos documentos (https://meet.google.com/wan-efbb-hhw?authuser=0)
+SI-10297,2026-08-07T01:05:29.919-0300,Sistema,Causa raiz final,,Bom dia! pode por favor entrar na salinha para verificação dos documentos (https://meet.google.com/wan-efbb-hhw?authuser=0)
+SI-10297,2026-08-07T01:05:29.919-0300,Sistema,Justificativa Causa Raiz final,,Bom dia! pode por favor entrar na salinha para verificação dos documentos (https://meet.google.com/wan-efbb-hhw?authuser=0)
 SI-10300,2026-08-06T09:46:30.367-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10300,2026-08-06T09:46:33.521-0300,Bruno Silva,resolution,,Done
 SI-10300,2026-08-06T09:46:33.521-0300,Bruno Silva,status,Submissão,Done
 SI-10300,2026-08-06T09:49:08.180-0300,Rafael Ferreira,assignee,Bruno Silva,Rafael Ferreira
+SI-10300,2026-08-07T01:05:31.959-0300,Sistema,Incidente Pós-Deploy de Projeto?,,SIM
+SI-10300,2026-08-07T01:05:31.959-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10300,2026-08-07T01:05:31.959-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10300,2026-08-07T01:05:31.959-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10300,2026-08-07T01:05:31.959-0300,Sistema,Resolução do chamado,,"Identificada a indisponibilidade sistêmica ao tentar deletar ou desvincular ordens, ocasionada por uma inconsistência nos registros internos de controle de datas. Como a correção estrutural dessa validação requer uma alteração sistêmica para evitar que a operação seja interrompida, o cenário foi devidamente mapeado e vinculado ao INTAKE-1557. Este intake já se encontra sob a responsabilidade da equipe de desenvolvimento para que seja criada e implementada a solução definitiva na plataforma, garantindo a normalização do fluxo operacional."
+SI-10300,2026-08-07T01:05:31.959-0300,Sistema,Causa raiz potencial,,Ausência de inicialização automática de tabelas de controle de datas de processos antigos ou falta de validação estrutural do sistema ao tentar atualizar informações ligadas a relacionamentos inexistentes no banco de dados.
+SI-10300,2026-08-07T01:05:31.959-0300,Sistema,Causa raiz final,,"O impedimento ao tentar concluir as ações de desatrelar ou deletar as ordens ocorria devido a uma falha de comunicação entre as validações sistêmicas atuais e o histórico de cadastros da plataforma. Especificamente, após a desativação da aba anterior de controle de datas, algumas ordens ficaram sem esse registro de acompanhamento gerado na base. Sempre que um operador tentava realizar uma movimentação crítica na ordem, a plataforma tentava atualizar obrigatoriamente um status de ""aprovação de cliente"" que ficava dentro desse antigo controle de datas. Por não encontrar essa informação, o sistema não sabia como prosseguir, interrompendo a ação abruptamente e travando a tela. Como não foi realizada nenhuma tratativa paliativa ou definitiva até o momento para contornar essa exigência de sistema, a situação foi atrelada ao INTAKE-1557. A equipe de tecnologia trabalhará neste intake para reprogramar o sistema, ensinando a plataforma a verificar se a informação de data existe antes de tentar atualizá-la, ignorando a validação ou criando o dado sob demanda para que o trabalho do operador não seja mais interrompido."
+SI-10300,2026-08-07T01:05:31.959-0300,Sistema,Justificativa Causa Raiz final,,"A análise técnica do card SUS-215 atestou a ocorrência do erro relacional RelatedObjectDoesNotExist: Assembly has no datecontrol no arquivo src/booking/models/base.py (linha 489). A falha é engatilhada porque o backend, através da função update_customer_approval, tenta acessar de forma direta o atributo datecontrol.customer_approval_valid sem aplicar um tratamento defensivo para validar a existência do relacionamento OneToOne na tabela order_datecontrol. Considerando que nenhuma correção definitiva ou saneamento foi executado em ambiente produtivo, os processos que possuem essa lacuna de dados continuam apresentando o Erro 500. A resolução focada na melhoria contínua e eliminação da reincidência foi direcionada para o INTAKE-1557, que atuará na implementação de validações defensivas no código (para verificar a existência do objeto antes da manipulação) e na criação de rotinas para lidar com registros órfãos, mitigando o impacto na eficiência operacional apontado no discovery."
 SI-10299,2026-08-06T12:07:46.460-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10299,2026-08-06T12:07:50.026-0300,Bruno Silva,resolution,,Done
 SI-10299,2026-08-06T12:07:50.026-0300,Bruno Silva,status,Submissão,Done
+SI-10299,2026-08-07T01:05:31.312-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10299,2026-08-07T01:05:31.312-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10299,2026-08-07T01:05:31.312-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-10299,2026-08-07T01:05:31.312-0300,Sistema,Criticidade final,,P2 - Média
+SI-10299,2026-08-07T01:05:31.312-0300,Sistema,Resolução do chamado,,Verificada a necessidade de reabertura do processo para correção no direcionamento do responsável pelo registro.
+SI-10299,2026-08-07T01:05:31.312-0300,Sistema,Causa raiz potencial,,"Ocorrência de falha no parâmetro de validação ao alternar o responsável com o processo em estado confirmado, bloqueando requisições de salvamento e invalidação na interface."
+SI-10299,2026-08-07T01:05:31.312-0300,Sistema,Causa raiz final,,"Ocorreu um bloqueio no fluxo do registro devido ao preenchimento incorreto do responsável após ter sido confirmado anteriormente. Realizou-se a reabertura do estágio (reopen) na linha do tempo para retornar o status a estimado, possibilitando o salvamento adequado do ajuste e permitindo a subsequente invalidação do item para a criação de um novo registro conforme o fluxo esperado"
+SI-10299,2026-08-07T01:05:31.312-0300,Sistema,Justificativa Causa Raiz final,,"Falha na sequência de ações operacionais ao tentar redefinir o responsável direto por um card já marcado como confirmado, gerando inconsistência de regra na interface."
+SI-10298,2026-08-07T01:05:30.564-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10298,2026-08-07T01:05:30.564-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10298,2026-08-07T01:05:30.564-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10298,2026-08-07T01:05:30.564-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10298,2026-08-07T01:05:30.564-0300,Sistema,Resolução do chamado,,"Boa tarde, João! Tudo bem?
+O motivo de as ordens 260643052 e 260644822 estarem considerando a quantidade de 3 (gerando o valor de 600 no selling em vez dos 400 esperados) é que o sistema opera sob regras sistêmicas automatizadas para o cálculo da Unit TEU.
+Para confirmar os tipos de contêineres que estão cadastrados no seu processo, você deve conferir as informações inseridas na aba Container da ordem.
+ Lá, você verá que existem 2 contêineres vinculados (sendo 1 de 40hc e 1 de 20 std).
+Pelas regras sistêmicas de conversão para TEU, o sistema não faz uma contagem simples de unidades físicas, mas sim uma equivalência de tamanho:
+Contêiner de 20 pés (como o 20 std) = 1 TEU.
+Contêiner de 40 pés (como o 40hc) = 2 TEUs.
+Dessa forma, o cálculo realizado na ordem é:
+1 contêiner de 40hc = 2 TEUs
+1 contêiner de 20std = 1 TEU
+Total de TEUs = 3
+Como a taxa (de EBS) está associada à Unit TEU, o sistema multiplica a tarifa unitária (de 200) pelo total de 3 TEUs convertidos, resultando corretamente no valor de 600 na aba de selling.
+O comportamento do sistema está correto e segue estritamente as regras de negócio parametrizadas.
+Qualquer dúvida, estou à disposição!"
+SI-10298,2026-08-07T01:05:30.564-0300,Sistema,Causa raiz potencial,,"Divergência de interpretação entre a contagem física de unidades e a conversão técnica de capacidade por TEU.
+
+Incompreensão da regra de parametrização da taxa de EBS associada à quantidade de TEUs convertidos."
+SI-10298,2026-08-07T01:05:30.564-0300,Sistema,Causa raiz final,,"O cálculo executado pelo sistema segue integralmente as regras operacionais e de negócio parametrizadas para a conversão de unidades em TEU (Twenty-foot Equivalent Unit). O sistema não realiza uma contagem simplificada do número físico de contêineres, mas sim um cálculo baseado na capacidade total do equipamento. No cenário verificado, as ordens possuem dois contêineres vinculados na aba de contêineres: um equipamento de 40 pés (40HC) e um equipamento de 20 pés (20STD). Pela regra de equivalência, um contêiner de 20 pés corresponde a 1 TEU, ao passo que um contêiner de 40 pés corresponde a 2 TEUs. Com isso, o total apurado pelo sistema é de 3 TEUs. Uma vez que a taxa de EBS é associada à unidade TEU, o sistema multiplica a tarifa unitária pela quantidade total de 3 TEUs resultantes da conversão, gerando adequadamente o valor total apresentado na aba de selling."
+SI-10298,2026-08-07T01:05:30.564-0300,Sistema,Justificativa Causa Raiz final,,"A apuração técnica confirmou que a plataforma executou o cálculo de acordo com as especificações da regra de negócio da unidade TEU (1 x 40HC = 2 TEUs; 1 x 20STD = 1 TEU; Total = 3 TEUs). Trata-se de um comportamento esperado da aplicação, descartando falhas de código ou de infraestrutura. A elucidação do funcionamento das regras de equivalência ao usuário assegura o alinhamento operacional e previne a reabertura desnecessária de chamados para esta mesma validação de cobrança."
 SI-10303,2026-08-06T10:34:53.679-0300,Rafael Ferreira,assignee,,luiz.henrique
 SI-10303,2026-08-06T10:34:53.877-0300,Rafael Ferreira,assignee,luiz.henrique,Rafael Ferreira
 SI-10303,2026-08-06T10:34:58.458-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10303,2026-08-06T10:34:58.655-0300,Rafael Ferreira,resolution,,Done
 SI-10303,2026-08-06T10:34:58.655-0300,Rafael Ferreira,status,Submissão,Done
+SI-10303,2026-08-07T01:05:34.674-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10303,2026-08-07T01:05:34.674-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10303,2026-08-07T01:05:34.674-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10303,2026-08-07T01:05:34.674-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10303,2026-08-07T01:05:34.674-0300,Sistema,Resolução do chamado,,"Identificada a indisponibilidade sistêmica ao tentar deletar ou desvincular ordens, ocasionada por uma inconsistência nos registros internos de controle de datas. Como a correção estrutural dessa validação requer uma alteração sistêmica para evitar que a operação seja interrompida, o cenário foi devidamente mapeado e vinculado ao INTAKE-1557. Este intake já se encontra sob a responsabilidade da equipe de desenvolvimento para que seja criada e implementada a solução definitiva na plataforma, garantindo a normalização do fluxo operacional."
+SI-10303,2026-08-07T01:05:34.674-0300,Sistema,Causa raiz potencial,,Ausência de inicialização automática de tabelas de controle de datas de processos antigos ou falta de validação estrutural do sistema ao tentar atualizar informações ligadas a relacionamentos inexistentes no banco de dados.
+SI-10303,2026-08-07T01:05:34.674-0300,Sistema,Causa raiz final,,"O impedimento para a conclusão das ações solicitadas nas ordens ocorria devido a uma interrupção na comunicação entre a nova interface do sistema e os registros históricos do processo. Durante as recentes atualizações na plataforma de fluxos de trabalho, uma nova estrutura interna de organização de datas foi implementada. Em alguns cenários específicos, o sistema exigia que as informações passassem por uma validação inicial a partir da tela antiga para conseguir estruturar esses novos registros pendentes. Como essa sincronização automática não havia sido concluída, qualquer tentativa de modificação ou exclusão gerava uma falha de integração. Ao efetuar o salvamento manual diretamente na aba de controle anterior, o sistema foi forçado a gerar e consolidar esses dados obrigatórios, restabelecendo o fluxo correto de operações e cessando o erro de forma imediata. O cenário mapeado foi associado ao INTAKE-1557 para que a equipe responsável aplique a correção estrutural definitiva na plataforma."
+SI-10303,2026-08-07T01:05:34.674-0300,Sistema,Justificativa Causa Raiz final,,"A falha ocorreu devido à não existência da tabela order_datecontrol no banco de dados para as ordens mapeadas, impedindo o processamento de ações no workflow atualizado. O nexo causal se confirma pelo fato de que a gravação manual de dados na aba de controle antiga acionou a rotina do sistema responsável por criar fisicamente a tabela order_datecontrol no banco de dados, interrompendo o erro e normalizando a operação de forma imediata. Com a associação do INTAKE-1557, a equipe de desenvolvimento e sustentação atuará diretamente no ajuste do pipeline de migração e na garantia de criação automática dessa estrutura no banco de dados para todos os processos legados, eliminando a necessidade de intervenções manuais paliativas e assegurando a melhoria contínua da estabilidade do sistema."
 SI-10302,2026-08-06T11:21:27.675-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10302,2026-08-06T11:21:27.675-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-10302,2026-08-06T11:21:28.506-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-10302,2026-08-07T01:05:33.975-0300,Sistema,Criticidade final,,P2 - Média
+SI-10302,2026-08-07T01:05:33.975-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10302,2026-08-07T01:05:33.975-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10302,2026-08-07T01:05:33.975-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10302,2026-08-07T01:05:33.975-0300,Sistema,Resolução do chamado,,"Foi verificado que a data de start date está dando para o dia 08/08/2026 sendo que hoje é 06/08/2026
+
+conforme o print ---> https://prnt.sc/1r0ZtlQS4nAd"
+SI-10302,2026-08-07T01:05:33.975-0300,Sistema,Causa raiz potencial,,Porposta com inicio para dia 8
+SI-10302,2026-08-07T01:05:33.975-0300,Sistema,Causa raiz final,,Porposta com inicio para dia 8
+SI-10302,2026-08-07T01:05:33.975-0300,Sistema,Justificativa Causa Raiz final,,Porposta com inicio para dia 8
 SI-10301,2026-08-06T10:06:36.488-0300,Sistema,Link,,This work item is blocked by GA-1423
 SI-10301,2026-08-06T10:17:52.659-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10301,2026-08-06T10:17:54.284-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10301,2026-08-06T10:17:54.497-0300,Rafael Ferreira,resolution,,Done
 SI-10301,2026-08-06T10:17:54.497-0300,Rafael Ferreira,status,Submissão,Done
+SI-10301,2026-08-07T01:05:33.351-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10301,2026-08-07T01:05:33.351-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10301,2026-08-07T01:05:33.351-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10301,2026-08-07T01:05:33.351-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10301,2026-08-07T01:05:33.351-0300,Sistema,Resolução do chamado,,Resolvido na sala do suporte.
+SI-10301,2026-08-07T01:05:33.351-0300,Sistema,Causa raiz potencial,,Resolvido na sala do suporte.
+SI-10301,2026-08-07T01:05:33.351-0300,Sistema,Causa raiz final,,Resolvido na sala do suporte.
+SI-10301,2026-08-07T01:05:33.351-0300,Sistema,Justificativa Causa Raiz final,,Resolvido na sala do suporte.
 SI-10308,2026-08-06T11:42:24.808-0300,Sistema,Link,,This work item is blocked by GA-1426
 SI-10308,2026-08-06T12:19:19.905-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10308,2026-08-06T12:19:20.155-0300,Rafael Ferreira,resolution,,Done
 SI-10308,2026-08-06T12:19:20.155-0300,Rafael Ferreira,status,Submissão,Done
 SI-10308,2026-08-06T12:19:23.239-0300,Rafael Ferreira,assignee,,Bruno Silva
+SI-10308,2026-08-07T01:05:37.432-0300,Sistema,Criticidade final,,P2 - Média
+SI-10308,2026-08-07T01:05:37.432-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10308,2026-08-07T01:05:37.432-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10308,2026-08-07T01:05:37.432-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10308,2026-08-07T01:05:37.432-0300,Sistema,Resolução do chamado,,"Verifiquei e vi que o master já está tudo certo. 
+
+conforme o print-->https://prnt.sc/VAnzx0WynZ3r"
+SI-10308,2026-08-07T01:05:37.432-0300,Sistema,Causa raiz potencial,,Aparentemente está tudo certo.
+SI-10308,2026-08-07T01:05:37.432-0300,Sistema,Causa raiz final,,Aparentemente está tudo certo.
+SI-10308,2026-08-07T01:05:37.432-0300,Sistema,Justificativa Causa Raiz final,,Aparentemente está tudo certo.
 SI-10307,2026-08-06T11:39:28.361-0300,Sistema,Link,,This work item is blocked by GA-1425
 SI-10307,2026-08-06T13:10:16.284-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-10307,2026-08-06T13:10:18.912-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10307,2026-08-06T13:10:18.912-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-10307,2026-08-07T01:05:36.774-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10307,2026-08-07T01:05:36.774-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10307,2026-08-07T01:05:36.774-0300,Sistema,Criticidade final,,P2 - Média
+SI-10307,2026-08-07T01:05:36.774-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10307,2026-08-07T01:05:36.774-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-10307,2026-08-07T01:05:36.774-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-10307,2026-08-07T01:05:36.774-0300,Sistema,Causa raiz final,,Em atendimento
+SI-10307,2026-08-07T01:05:36.774-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-10306,2026-08-06T12:20:02.927-0300,Bruno Silva,assignee,,Eduardo Felipe de Lima Rebello
 SI-10306,2026-08-06T12:20:06.624-0300,Bruno Silva,resolution,,Done
 SI-10306,2026-08-06T12:20:06.624-0300,Bruno Silva,status,Submissão,Done
+SI-10306,2026-08-07T01:05:35.971-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10306,2026-08-07T01:05:35.971-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10306,2026-08-07T01:05:35.971-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10306,2026-08-07T01:05:35.971-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10306,2026-08-07T01:05:35.971-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-10306,2026-08-07T01:05:35.971-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-10306,2026-08-07T01:05:35.971-0300,Sistema,Causa raiz final,,Em atendimento
+SI-10306,2026-08-07T01:05:35.971-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-10304,2026-08-06T10:59:28.206-0300,Sistema,Link,,This work item is blocked by GA-1424
 SI-10304,2026-08-06T13:36:52.299-0300,Rafael Ferreira,assignee,,Helena Almeida
 SI-10304,2026-08-06T13:36:54.885-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10304,2026-08-06T13:36:55.182-0300,Rafael Ferreira,resolution,,Done
 SI-10304,2026-08-06T13:36:55.182-0300,Rafael Ferreira,status,Submissão,Done
+SI-10304,2026-08-07T01:05:35.329-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10304,2026-08-07T01:05:35.329-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10304,2026-08-07T01:05:35.329-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10304,2026-08-07T01:05:35.329-0300,Sistema,Reclassificação solicitação,,Requisição
+SI-10304,2026-08-07T01:05:35.329-0300,Sistema,Resolução do chamado,,Ticket concluído. Ajuste realizado no cadastro.
+SI-10304,2026-08-07T01:05:35.329-0300,Sistema,Causa raiz potencial,,Ticket concluído. Ajuste realizado no cadastro.
+SI-10304,2026-08-07T01:05:35.329-0300,Sistema,Causa raiz final,,Ticket concluído. Ajuste realizado no cadastro.
+SI-10304,2026-08-07T01:05:35.329-0300,Sistema,Justificativa Causa Raiz final,,Ticket concluído. Ajuste realizado no cadastro.
 SI-10310,2026-08-06T12:17:51.173-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10310,2026-08-06T12:17:54.552-0300,Bruno Silva,resolution,,Done
 SI-10310,2026-08-06T12:17:54.552-0300,Bruno Silva,status,Submissão,Done
+SI-10310,2026-08-07T01:05:38.828-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10310,2026-08-07T01:05:38.828-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10310,2026-08-07T01:05:38.828-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-10310,2026-08-07T01:05:38.828-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10310,2026-08-07T01:05:38.828-0300,Sistema,Resolução do chamado,,Bom dia! documento enviado caso não leia por favor entrar na salinha (https://meet.google.com/wan-efbb-hhw?authuser=0)
+SI-10310,2026-08-07T01:05:38.828-0300,Sistema,Causa raiz potencial,,Bom dia! documento enviado caso não leia por favor entrar na salinha (https://meet.google.com/wan-efbb-hhw?authuser=0)
+SI-10310,2026-08-07T01:05:38.828-0300,Sistema,Causa raiz final,,Bom dia! documento enviado caso não leia por favor entrar na salinha (https://meet.google.com/wan-efbb-hhw?authuser=0)
+SI-10310,2026-08-07T01:05:38.828-0300,Sistema,Justificativa Causa Raiz final,,Bom dia! documento enviado caso não leia por favor entrar na salinha (https://meet.google.com/wan-efbb-hhw?authuser=0)
 SI-10309,2026-08-06T11:50:29.533-0300,Sistema,Link,,This work item is blocked by GA-1427
 SI-10309,2026-08-06T12:19:09.058-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10309,2026-08-06T12:19:10.894-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10309,2026-08-06T12:19:11.086-0300,Rafael Ferreira,resolution,,Done
 SI-10309,2026-08-06T12:19:11.086-0300,Rafael Ferreira,status,Submissão,Done
+SI-10309,2026-08-07T01:05:38.134-0300,Sistema,Reclassificação solicitação,,Solicitação de acesso
+SI-10309,2026-08-07T01:05:38.134-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10309,2026-08-07T01:05:38.134-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-10309,2026-08-07T01:05:38.134-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10309,2026-08-07T01:05:38.134-0300,Sistema,Resolução do chamado,,"Boa tarde joyce, pode fazer o logout e login e tentar novamente por favor?
+
+Caso não consiga pode vir a sala do suporte
+https://meet.google.com/byo-fwyt-uou?authuser=0"
+SI-10309,2026-08-07T01:05:38.134-0300,Sistema,Causa raiz potencial,,Colaboradora sem as devidas permissões de usuario
+SI-10309,2026-08-07T01:05:38.134-0300,Sistema,Causa raiz final,,"Colaboradora sem as devidas permissões de usuario, concedida as permissões"
+SI-10309,2026-08-07T01:05:38.134-0300,Sistema,Justificativa Causa Raiz final,,"Colaboradora sem as devidas permissões de usuario, concedida as permissões"
 SI-10313,2026-08-06T14:23:53.140-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10313,2026-08-06T14:23:57.034-0300,Bruno Silva,resolution,,Done
 SI-10313,2026-08-06T14:23:57.034-0300,Bruno Silva,status,Submissão,Done
+SI-10313,2026-08-07T01:05:40.159-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10313,2026-08-07T01:05:40.159-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10313,2026-08-07T01:05:40.159-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10313,2026-08-07T01:05:40.159-0300,Sistema,Criticidade final,,P2 - Média
+SI-10313,2026-08-07T01:05:40.159-0300,Sistema,Resolução do chamado,,Verificada a permanência do item na tela de controle do colaborador após ser ignorado na linha do tempo do processo. Foi solicitada a intervenção do time responsável para realizar a remoção manual do registro do painel.
+SI-10313,2026-08-07T01:05:40.159-0300,Sistema,Causa raiz potencial,,Assincronismo entre o encerramento do evento na linha do tempo e a atualização do status na tabela gerenciadora do painel do colaborador.
+SI-10313,2026-08-07T01:05:40.159-0300,Sistema,Causa raiz final,,"Identificou-se que a etapa ignorada na linha do tempo permaneceu visível no painel do colaborador devido a uma inconsistência de atualização nos registros do sistema. Foi direcionado o ajuste técnico para a remoção definitiva da pendência da exibição, restabelecendo a correta sincronização da tela."
+SI-10313,2026-08-07T01:05:40.159-0300,Sistema,Justificativa Causa Raiz final,,"Falha no disparo do evento de atualização entre a tabela da linha do tempo (order_soptracker) e a tabela de controle de exibição do painel (order_datecontrol), mantendo a flag de pendência ativa."
 SI-10312,2026-08-06T14:10:36.392-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10312,2026-08-06T14:10:39.997-0300,Bruno Silva,resolution,,Done
 SI-10312,2026-08-06T14:10:39.997-0300,Bruno Silva,status,Submissão,Done
+SI-10312,2026-08-07T01:05:39.536-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10312,2026-08-07T01:05:39.536-0300,Sistema,Criticidade final,,P2 - Média
+SI-10312,2026-08-07T01:05:39.536-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10312,2026-08-07T01:05:39.536-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10312,2026-08-07T01:05:39.536-0300,Sistema,Resolução do chamado,,"Verificada a necessidade de ajuste operacional na seção de taxas de transporte interno no modulo operacional. Realizada a solicitação de intervenção ao time responsável, garantindo a atualização do limite do valor estipulado e permitindo o correto fechamento da trava de segurança."
+SI-10312,2026-08-07T01:05:39.536-0300,Sistema,Causa raiz potencial,,"Inconsistência no cálculo limite de acréscimo dinâmico (Total Limit Value) com base no peso cobrável (Chargeable Weight), impedindo a liberação do fechamento da trava por ultrapassar a margem permitida no cadastro."
+SI-10312,2026-08-07T01:05:39.536-0300,Sistema,Causa raiz final,,Identificou-se um bloqueio ao fechar a trava de segurança na seção de cobranças de transporte interno (Pickup Charges). Isso ocorre porque o valor inserido ultrapassou o limite máximo de alteração permitido pela regra de acréscimo (Limit Value) baseada no peso da carga.
+SI-10312,2026-08-07T01:05:39.536-0300,Sistema,Justificativa Causa Raiz final,,A tentativa de fechamento da trava de segurança (lock) em Pickup Charges falhou pois o valor editado excedeu o limite máximo recalculado com base no Total Chargeable Weight.
 SI-10316,2026-08-06T14:42:24.563-0300,Sistema,Link,,This work item is blocked by GA-1429
+SI-10316,2026-08-07T01:05:42.208-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10316,2026-08-07T01:05:42.208-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10316,2026-08-07T01:05:42.208-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10316,2026-08-07T01:05:42.208-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10316,2026-08-07T01:05:42.208-0300,Sistema,Resolução do chamado,,Colaboradora foi adicionada ao grupo solicitado.
+SI-10316,2026-08-07T01:05:42.208-0300,Sistema,Causa raiz potencial,,Colaboradora foi adicionada ao grupo solicitado.
+SI-10316,2026-08-07T01:05:42.208-0300,Sistema,Causa raiz final,,Colaboradora foi adicionada ao grupo solicitado.
+SI-10316,2026-08-07T01:05:42.208-0300,Sistema,Justificativa Causa Raiz final,,Colaboradora foi adicionada ao grupo solicitado.
 SI-10315,2026-08-06T14:27:01.129-0300,Bruno Silva,assignee,,Rafael Ferreira
 SI-10315,2026-08-06T14:27:03.910-0300,Bruno Silva,resolution,,Done
 SI-10315,2026-08-06T14:27:03.910-0300,Bruno Silva,status,Submissão,Done
 SI-10315,2026-08-06T14:27:36.790-0300,Bruno Silva,assignee,Rafael Ferreira,
 SI-10315,2026-08-06T16:13:57.276-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-10315,2026-08-07T01:05:41.526-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10315,2026-08-07T01:05:41.526-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10315,2026-08-07T01:05:41.526-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10315,2026-08-07T01:05:41.526-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10315,2026-08-07T01:05:41.526-0300,Sistema,Resolução do chamado,,"Essa mensagem aparece por causa da regra que para confirmar a SI, o cargo received precisa estar confirmed, caso não esteja ele não autoriza que a si seja confirmada."
+SI-10315,2026-08-07T01:05:41.526-0300,Sistema,Causa raiz potencial,,Regra sistêmica
+SI-10315,2026-08-07T01:05:41.526-0300,Sistema,Causa raiz final,,Regra sistêmica
+SI-10315,2026-08-07T01:05:41.526-0300,Sistema,Justificativa Causa Raiz final,,Regra sistêmica
 SI-10314,2026-08-06T14:27:11.962-0300,Bruno Silva,assignee,,Rafael Ferreira
 SI-10314,2026-08-06T14:27:14.645-0300,Bruno Silva,resolution,,Done
 SI-10314,2026-08-06T14:27:14.645-0300,Bruno Silva,status,Submissão,Done
+SI-10314,2026-08-07T01:05:40.804-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10314,2026-08-07T01:05:40.804-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10314,2026-08-07T01:05:40.804-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10314,2026-08-07T01:05:40.804-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10314,2026-08-07T01:05:40.804-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-10314,2026-08-07T01:05:40.804-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-10314,2026-08-07T01:05:40.804-0300,Sistema,Causa raiz final,,Em atendimento
+SI-10314,2026-08-07T01:05:40.804-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-10320,2026-08-06T16:47:58.371-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10320,2026-08-06T16:48:23.380-0300,Rafael Ferreira,resolution,,Done
 SI-10320,2026-08-06T16:48:23.380-0300,Rafael Ferreira,status,Submissão,Done
+SI-10320,2026-08-07T01:05:45.162-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10320,2026-08-07T01:05:45.162-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10320,2026-08-07T01:05:45.162-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10320,2026-08-07T01:05:45.162-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10320,2026-08-07T01:05:45.162-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-10320,2026-08-07T01:05:45.162-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-10320,2026-08-07T01:05:45.162-0300,Sistema,Causa raiz final,,Em atendimento
+SI-10320,2026-08-07T01:05:45.162-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-10319,2026-08-06T16:00:01.894-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-10319,2026-08-06T16:00:04.696-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10319,2026-08-06T16:00:04.696-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-10319,2026-08-07T01:05:44.374-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10319,2026-08-07T01:05:44.374-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10319,2026-08-07T01:05:44.374-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10319,2026-08-07T01:05:44.374-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10319,2026-08-07T01:05:44.374-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-10319,2026-08-07T01:05:44.374-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-10319,2026-08-07T01:05:44.374-0300,Sistema,Causa raiz final,,Em atendimento
+SI-10319,2026-08-07T01:05:44.374-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-10318,2026-08-06T15:59:40.362-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10318,2026-08-06T15:59:42.790-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10318,2026-08-06T15:59:43.067-0300,Rafael Ferreira,resolution,,Done
 SI-10318,2026-08-06T15:59:43.067-0300,Rafael Ferreira,status,Submissão,Done
+SI-10318,2026-08-07T01:05:43.603-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10318,2026-08-07T01:05:43.603-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10318,2026-08-07T01:05:43.603-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10318,2026-08-07T01:05:43.603-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10318,2026-08-07T01:05:43.603-0300,Sistema,Resolução do chamado,,"Identificado que a inconsistência ocasionada pela duplicação de registros pôde ser tratada diretamente pelo próprio usuário através da rejeição do item sobressalente na interface do sistema, restabelecendo a normalidade do fluxo sem a necessidade de intervenção técnica."
+SI-10318,2026-08-07T01:05:43.603-0300,Sistema,Causa raiz potencial,,"Falha pontual no processamento de extração do documento via inteligência artificial na primeira tentativa, levando à falta de preenchimento do campo de data e à consequente criação de uma linha duplicada durante o reenvio do arquivo."
+SI-10318,2026-08-07T01:05:43.603-0300,Sistema,Causa raiz final,,"Durante o primeiro carregamento do documento Master Air Waybill (MAWB) no sistema, a ferramenta de leitura automática de documentos não realizou a captura e a transferência do campo referente à data de emissão. Para solucionar a ausência dessa informação, foi efetuado um novo envio do mesmo arquivo. Na segunda tentativa, a leitura automática obteve êxito e registrou os dados corretamente. Contudo, em razão da tentativa anterior ter sido gravada de forma parcial, o formulário do booking apresentou duas entradas para o mesmo documento: uma linha sem a informação da data e outra contendo todos os dados preenchidos. O registro sem data permaneceu visível até que fosse realizada a ação de rejeição da linha pendente diretamente na aba de documentos da tela operacional, procedimento que eliminou a linha duplicada e permitiu o prosseguimento normal do processo."
+SI-10318,2026-08-07T01:05:43.603-0300,Sistema,Justificativa Causa Raiz final,,"A falha na extração inicial da data pela ferramenta de leitura automática resultou na criação de um registro documental incompleto no booking do Módulo Operations. A posterior submissão do documento gerou um registro correto em paralelo, ocasionando a duplicidade exibida em tela. A eliminação do registro incorreto foi realizada via funcionalidade padrão do sistema, alterando o status do documento pendente para rejeitado. O procedimento saneou a base de dados do booking sem necessidade de ajustes em banco de dados ou correções de código, garantindo a integridade dos dados e estabelecendo a rejeição manual de registros incompletos como fluxo corretivo padrão para eventualidades semelhantes."
 SI-10317,2026-08-06T14:45:42.079-0300,Sistema,Link,,This work item is blocked by GA-1430
 SI-10317,2026-08-06T16:20:55.172-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-10317,2026-08-06T16:20:57.013-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10317,2026-08-06T16:20:57.013-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-10317,2026-08-07T01:05:42.976-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10317,2026-08-07T01:05:42.976-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10317,2026-08-07T01:05:42.976-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10317,2026-08-07T01:05:42.976-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10317,2026-08-07T01:05:42.976-0300,Sistema,Resolução do chamado,,Colaboradora foi adicionada ao grupo conforme solicitado.
+SI-10317,2026-08-07T01:05:42.976-0300,Sistema,Causa raiz potencial,,Colaboradora foi adicionada ao grupo conforme solicitado.
+SI-10317,2026-08-07T01:05:42.976-0300,Sistema,Causa raiz final,,Colaboradora foi adicionada ao grupo conforme solicitado.
+SI-10317,2026-08-07T01:05:42.976-0300,Sistema,Justificativa Causa Raiz final,,Colaboradora foi adicionada ao grupo conforme solicitado.
 SI-10330,2026-08-06T16:36:51.865-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10330,2026-08-06T16:36:54.860-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10330,2026-08-06T16:36:55.053-0300,Rafael Ferreira,resolution,,Done
 SI-10330,2026-08-06T16:36:55.053-0300,Rafael Ferreira,status,Submissão,Done
+SI-10330,2026-08-07T01:05:45.963-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10330,2026-08-07T01:05:45.963-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10330,2026-08-07T01:05:45.963-0300,Sistema,Criticidade final,,P2 - Média
+SI-10330,2026-08-07T01:05:45.963-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10330,2026-08-07T01:05:45.963-0300,Sistema,Resolução do chamado,,"Olá, Cássia! Tudo bem?
+
+Analisamos o chamado e a divergência de USD 30,55 (337,45 - 306,90).
+
+O valor que consta atualmente no Selling (USD 306,90) está alinhado com as datas do processo cadastradas hoje no sistema. A diferença ocorreu porque o valor da taxa de In/Out sofreu um recálculo automático de USD 40,75 para USD 10,20 (40,75 - 10,20 = 30,55).
+
+Abaixo, explicamos detalhadamente as regras do cálculo, o histórico de datas e o procedimento caso seja necessário retornar ao valor anterior.
+
+1. Como funciona a regra de cálculo do In/Out?
+A taxa de In/Out é determinada por dois fatores principais: o peso dos WRs (Warehouse Receipts) e a janela de tempo/período entre a data de recebimento da carga (CA - Cargo Arrival) e a data limite (Cut-off).
+
+Passo 1: Cálculo base por WR (Peso x Valor unitário)
+A regra aplica o valor unitário de USD 0,13 por kg, com uma taxa mínima de USD 5,00 por WR:
+
+WR 1 (12,890 kg):
+
+Cálculo por peso: 12,890 kg × 0,13 = USD 1,68
+
+Como USD 1,68 é menor que o mínimo estipulado, o sistema aplica a taxa mínima: USD 5,00.
+
+WR 2 (40,000 kg):
+
+Cálculo por peso: 40,000 kg × 0,13 = USD 5,20
+
+Como USD 5,20 é maior que o mínimo, o sistema aplica o valor calculado: USD 5,20.
+
+Valor base por período: USD 5,00 + USD 5,20 = USD 10,20
+
+Passo 2: Aplicação do período (CA vs. Cut-off)
+O valor base (USD 10,20) é multiplicado pela quantidade de períodos que a carga permaneceu no armazém, calculados pelo intervalo exato de datas entre o CA e o Cut-off:
+
+Por que o valor foi USD 40,75 anteriormente?
+O valor de USD 40,75 foi calculado para o período de 23/06/2026 a 02/07/2026. No histórico do processo, a data do CA esteve registrada originalmente como 23/06/2026. Como o intervalo entre 23/06/2026 e o Cut-off (02/07/2026) compreendia uma janela de dias maior, o sistema computou múltiplos períodos de permanência, resultando na taxa total de USD 40,75 (gerando o Selling total de USD 337,45).
+
+Por que o valor mudou para USD 10,20 agora?
+A data do CA foi atualizada no sistema para 01/07/2026. Para o período de 01/07/2026 a 02/07/2026 (1 período), o sistema calcula apenas a taxa base: USD 10,20 (gerando o Selling total atual de USD 306,90).
+
+2. Resumo da Divergência
+Cenário Anterior (Período de 23/06/2026 a 02/07/2026): CA em 23/06/2026 até Cut-off em 02/07/2026 → Taxa In/Out de USD 40,75 → Selling Total: USD 337,45
+
+Cenário Atual (Período de 01/07/2026 a 02/07/2026): CA em 01/07/2026 até Cut-off em 02/07/2026 → Taxa In/Out de USD 10,20 → Selling Total: USD 306,90
+
+Diferença Total: - USD 30,55
+
+3. Consulta ao Histórico de Datas
+Você pode verificar o histórico completo das alterações de datas diretamente nos steps do processo:
+
+Data do CA: Pode ser consultada no step WarehouseReceipt (CA).
+
+Data do Cut-off: Pode ser consultada no step HAWB Approved (Cut off).
+
+4. O que fazer para retornar ao valor anterior (USD 337,45)?
+Caso a operação entenda que o valor correto a ser cobrado deve ser o anterior (USD 337,45 com a taxa de In/Out em USD 40,75), orientamos seguir o procedimento abaixo:
+
+Alinhamento com a Operação: Entre em contato com os responsáveis operacionais do processo para confirmar qual é a data física/efetiva de recebimento da carga.
+
+Ajuste da Data do CA: Se for alinhado que a data operacional do CA deve voltar a ser a data inicial (23/06/2026), solicite à equipe responsável que realize a correção no step WarehouseReceipt (CA).
+
+Atualização Automática: Assim que a data for ajustada no sistema para 23/06/2026, o sistema refará o cálculo de períodos automaticamente, elevando a taxa de In/Out para USD 40,75 e retornando o Selling total para USD 337,45.
+
+(Nota: Lembre-se de que qualquer alteração posterior nos pesos dos WRs também recalculará o valor base automaticamente).
+
+Ficamos à disposição caso surja qualquer dúvida!"
+SI-10330,2026-08-07T01:05:45.963-0300,Sistema,Causa raiz potencial,,"Inconsistência ou atualização posterior no cadastro das datas operacionais de recebimento da carga ou de saída.
+
+Recálculo automático de taxas de armazenagem decorrente do ajuste de parâmetros temporais do processo.
+
+Divergência no lançamento manual dos pesos registrados nos documentos de entrada no armazém."
+SI-10330,2026-08-07T01:05:45.963-0300,Sistema,Causa raiz final,,"A alteração identificada no valor total do Selling decorre da atualização das datas operacionais do processo, o que acionou o recálculo automático previsto nas regras da plataforma. A taxa de In/Out é apurada a partir de dois fatores principais: o peso dos itens contidos nos documentos de recepção do armazém (Warehouse Receipts - WR) e a quantidade de períodos de permanência da carga, definida pelo intervalo entre a data de recebimento e a data limite de saída (Cut-off).
+
+A regra base aplica o valor de USD 0,13 por quilograma, com cobrança mínima fixada em USD 5,00 por documento de recebimento. No caso do processo analisado, o primeiro documento (WR 1, com 12,890 kg) atingiria USD 1,68 pelo peso, aplicando-se o piso mínimo de USD 5,00. O segundo documento (WR 2, com 40,000 kg) totalizou USD 5,20 pelo peso calculado. A soma das taxas base dos dois documentos resultou em USD 10,20 por período de permanência.
+
+Anteriormente, a data de recebimento da carga constava registrada como 23/06/2026. A extensão do período entre essa data e o Cut-off (02/07/2026) acumulou múltiplos períodos de armazenagem, gerando uma taxa de In/Out de USD 40,75 e um valor total de Selling de USD 337,45. Com a alteração da data de recebimento para 01/07/2026, o tempo de permanência passou a corresponder a apenas 1 período frente ao Cut-off. Com isso, a taxa foi reajustada para USD 10,20 e o Selling total para USD 306,90, refletindo a diferença exata de USD 30,55. O valor exibido na ferramenta corresponde com precisão às informações cadastradas."
+SI-10330,2026-08-07T01:05:45.963-0300,Sistema,Justificativa Causa Raiz final,,"A variação financeira observada no Selling (USD 337,45 para USD 306,90) decorre do nexo causal direto entre a modificação da data de recebimento da carga e a fórmula automatizada da unidade da taxa de In/Out. A regra do sistema calcula a cobrança por sublinha de WR através da fórmula de maior valor entre peso multiplicado pela taxa unitária ou taxa mínima, multiplicado pelo número de semanas/períodos acumulados entre o recebimento e o Cut-off. A atualização do dado de entrada de 23/06/2026 para 01/07/2026 reduziu a contagem para 1 período, recalculando a taxa de USD 40,75 para USD 10,20. O sistema funcionou em conformidade com as especificações de negócio configuradas. Como ação de melhoria contínua e prevenção de chamados reincidentes, recomenda-se reforçar junto às equipes operacionais o impacto direto da atualização de datas de processo sobre o recálculo dinâmico de taxas de armazenagem."
+SI-10332,2026-08-07T01:05:47.238-0300,Sistema,Reclassificação solicitação,,Solicitação de cadastro
+SI-10332,2026-08-07T01:05:47.238-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10332,2026-08-07T01:05:47.238-0300,Sistema,Resolução do chamado,,Ticket concluído. Cadastro realizado.
 SI-10331,2026-08-06T16:54:23.601-0300,Sistema,Link,,This work item is blocked by GA-1431
+SI-10331,2026-08-07T01:05:46.625-0300,Sistema,Reclassificação solicitação,,Solicitação de cadastro
+SI-10331,2026-08-07T01:05:46.625-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10331,2026-08-07T01:05:46.625-0300,Sistema,Resolução do chamado,,Ticket concluído. Ajuste realizado no cadastro.
 SI-10337,2026-08-06T18:12:25.014-0300,Sistema,Link,,This work item is blocked by GA-1432
