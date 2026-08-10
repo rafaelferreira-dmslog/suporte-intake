@@ -67353,6 +67353,10 @@ SI-8169,2026-07-29T19:03:20.019-0300,Sistema,Causa raiz potencial,,Em atendiment
 SI-8169,2026-07-29T19:03:20.019-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8169,2026-07-29T19:03:20.019-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8169,2026-08-10T08:00:24.600-0300,Bruno Silva,assignee,Ricardo Barbosa Machado,Bruno Silva
+SI-8169,2026-08-10T12:49:58.275-0300,Sistema,Resolução do chamado,Em atendimento,Chamado resolvido via salinha do suporte
+SI-8169,2026-08-10T12:49:58.275-0300,Sistema,Causa raiz potencial,Em atendimento,Chamado resolvido via salinha do suporte
+SI-8169,2026-08-10T12:49:58.275-0300,Sistema,Causa raiz final,Em atendimento,Chamado resolvido via salinha do suporte
+SI-8169,2026-08-10T12:49:58.275-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,Chamado resolvido via salinha do suporte
 SI-8168,2026-07-29T12:47:24.041-0300,Sistema,Link,,This work item is blocked by GA-1355
 SI-8168,2026-07-29T14:22:08.829-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8168,2026-07-29T14:22:11.202-0300,Bruno Silva,resolution,,Done
