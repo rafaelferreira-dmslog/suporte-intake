@@ -67352,6 +67352,7 @@ SI-8169,2026-07-29T19:03:20.019-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8169,2026-07-29T19:03:20.019-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8169,2026-07-29T19:03:20.019-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8169,2026-07-29T19:03:20.019-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8169,2026-08-10T08:00:24.600-0300,Bruno Silva,assignee,Ricardo Barbosa Machado,Bruno Silva
 SI-8168,2026-07-29T12:47:24.041-0300,Sistema,Link,,This work item is blocked by GA-1355
 SI-8168,2026-07-29T14:22:08.829-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8168,2026-07-29T14:22:11.202-0300,Bruno Silva,resolution,,Done
@@ -71178,3 +71179,9 @@ SI-10368,2026-08-07T16:49:22.995-0300,Sistema,Link,,This work item is blocked by
 SI-10372,2026-08-07T17:47:27.026-0300,Sistema,Link,,This work item is blocked by GA-1453
 SI-10373,2026-08-08T14:38:23.348-0300,Sistema,Link,,This work item is blocked by GA-1454
 SI-10374,2026-08-10T06:40:24.213-0300,Sistema,Link,,This work item is blocked by GA-1455
+SI-10374,2026-08-10T08:01:18.095-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10374,2026-08-10T08:01:32.364-0300,Bruno Silva,resolution,,Done
+SI-10374,2026-08-10T08:01:32.364-0300,Bruno Silva,status,Submissão,Done
+SI-10375,2026-08-10T08:03:06.602-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10375,2026-08-10T08:03:26.961-0300,Bruno Silva,resolution,,Done
+SI-10375,2026-08-10T08:03:26.961-0300,Bruno Silva,status,Submissão,Done
