@@ -70091,6 +70091,7 @@ SI-10264,2026-08-07T01:05:14.527-0300,Sistema,Causa raiz final,,Em atendimento
 SI-10264,2026-08-07T01:05:14.527-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-10263,2026-08-06T13:54:21.702-0300,Rafael Ferreira,resolution,,Done
 SI-10263,2026-08-06T13:54:21.702-0300,Rafael Ferreira,status,Submissão,Done
+SI-10263,2026-08-10T12:03:58.237-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-9539,2026-08-04T15:30:59.026-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-9539,2026-08-04T15:30:59.026-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-9539,2026-08-04T15:31:01.027-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
@@ -70966,6 +70967,8 @@ SI-10331,2026-08-07T09:59:59.627-0300,Rafael Ferreira,Classificação,,Ranked hi
 SI-10331,2026-08-07T09:59:59.844-0300,Rafael Ferreira,resolution,,Done
 SI-10331,2026-08-07T09:59:59.844-0300,Rafael Ferreira,status,Submissão,Done
 SI-10337,2026-08-06T18:12:25.014-0300,Sistema,Link,,This work item is blocked by GA-1432
+SI-10337,2026-08-10T12:00:50.942-0300,Bruno Silva,resolution,,Done
+SI-10337,2026-08-10T12:00:50.942-0300,Bruno Silva,status,Submissão,Done
 SI-10339,2026-08-07T09:25:11.733-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10339,2026-08-07T09:25:15.922-0300,Bruno Silva,resolution,,Done
 SI-10339,2026-08-07T09:25:15.922-0300,Bruno Silva,status,Submissão,Done
@@ -70977,6 +70980,10 @@ SI-10339,2026-08-08T07:01:39.163-0300,Sistema,Resolução do chamado,,Orientado 
 SI-10339,2026-08-08T07:01:39.163-0300,Sistema,Causa raiz potencial,,Bloqueio de segurança da interface no momento do salvamento do valor de venda da taxa devido ao status do cadeado de validação.
 SI-10339,2026-08-08T07:01:39.163-0300,Sistema,Causa raiz final,,"O sistema possui uma regra de negócio e trava de segurança que valida o limite do valor de edição das tarifas de venda (Selling) em Pickup Charges. Quando ocorre a mensagem de erro informando o limite máximo permitido de edição, a liberação e regularização da pendência dependem de ajuste de parâmetro e fechamento do cadeado pelo time de DS."
 SI-10339,2026-08-08T07:01:39.163-0300,Sistema,Justificativa Causa Raiz final,,A mecânica do sistema restringe o salvamento de valores acima do limite pré-calculado por diretriz de segurança de dados. A intervenção do time de DS no fechamento do cadeado garante a consistência do registro no módulo operacional antes da tramitação financeira.
+SI-10338,2026-08-10T12:00:55.220-0300,Bruno Silva,resolution,,Done
+SI-10338,2026-08-10T12:00:55.220-0300,Bruno Silva,status,Submissão,Done
+SI-10338,2026-08-10T12:19:31.751-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10338,2026-08-10T12:21:12.165-0300,Rafael Ferreira,Link,,This work item is blocked by SUS-232
 SI-10342,2026-08-07T10:03:58.741-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10342,2026-08-07T10:03:58.741-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-10342,2026-08-07T10:03:59.754-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
@@ -71015,6 +71022,8 @@ SI-10343,2026-08-07T11:10:38.124-0300,Bruno Silva,status,Submissão,Done
 SI-10343,2026-08-07T11:15:01.201-0300,Bruno Silva,assignee,Bruno Silva,
 SI-10343,2026-08-07T11:15:20.655-0300,Bruno Silva,resolution,Done,
 SI-10343,2026-08-07T11:15:20.655-0300,Bruno Silva,status,Done,Submissão
+SI-10343,2026-08-10T12:00:58.654-0300,Bruno Silva,resolution,,Done
+SI-10343,2026-08-10T12:00:58.654-0300,Bruno Silva,status,Submissão,Done
 SI-10347,2026-08-07T14:07:11.254-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10347,2026-08-07T14:07:15.608-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10347,2026-08-07T14:07:15.821-0300,Rafael Ferreira,resolution,,Done
@@ -71042,6 +71051,9 @@ SI-10345,2026-08-07T11:51:22.080-0300,Sistema,Link,,This work item is blocked by
 SI-10345,2026-08-10T09:52:38.499-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10345,2026-08-10T09:52:38.499-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-10345,2026-08-10T09:52:39.204-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-10345,2026-08-10T12:01:00.964-0300,Bruno Silva,status,Done,Done
+SI-10353,2026-08-10T12:01:06.821-0300,Bruno Silva,resolution,,Done
+SI-10353,2026-08-10T12:01:06.821-0300,Bruno Silva,status,Submissão,Done
 SI-10352,2026-08-07T13:39:19.380-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10352,2026-08-07T13:39:25.661-0300,Rafael Ferreira,resolution,,Done
 SI-10352,2026-08-07T13:39:25.661-0300,Rafael Ferreira,status,Submissão,Done
@@ -71064,6 +71076,9 @@ SI-10351,2026-08-08T07:01:45.416-0300,Sistema,Resolução do chamado,,Aguardando
 SI-10351,2026-08-08T07:01:45.416-0300,Sistema,Causa raiz potencial,,Aguardando correção
 SI-10351,2026-08-08T07:01:45.416-0300,Sistema,Causa raiz final,,Aguardando correção
 SI-10351,2026-08-08T07:01:45.416-0300,Sistema,Justificativa Causa Raiz final,,Aguardando correção
+SI-10350,2026-08-10T12:01:04.169-0300,Bruno Silva,resolution,,Done
+SI-10350,2026-08-10T12:01:04.169-0300,Bruno Silva,status,Submissão,Done
+SI-10350,2026-08-10T12:27:27.350-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10349,2026-08-07T14:02:05.088-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10349,2026-08-07T14:02:08.943-0300,Bruno Silva,resolution,,Done
 SI-10349,2026-08-07T14:02:08.943-0300,Bruno Silva,status,Submissão,Done
@@ -71100,6 +71115,9 @@ SI-10357,2026-08-08T07:01:47.980-0300,Sistema,Resolução do chamado,,Chamado en
 SI-10357,2026-08-08T07:01:47.980-0300,Sistema,Causa raiz potencial,,Chamado encaminhado ao time de responsável.
 SI-10357,2026-08-08T07:01:47.980-0300,Sistema,Causa raiz final,,Chamado encaminhado ao time de responsável.
 SI-10357,2026-08-08T07:01:47.980-0300,Sistema,Justificativa Causa Raiz final,,Chamado encaminhado ao time de responsável.
+SI-10356,2026-08-10T12:01:10.296-0300,Bruno Silva,resolution,,Done
+SI-10356,2026-08-10T12:01:10.296-0300,Bruno Silva,status,Submissão,Done
+SI-10356,2026-08-10T12:33:49.015-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10355,2026-08-07T14:08:19.430-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10355,2026-08-07T14:08:23.339-0300,Bruno Silva,resolution,,Done
 SI-10355,2026-08-07T14:08:23.339-0300,Bruno Silva,status,Submissão,Done
@@ -71154,10 +71172,14 @@ SI-10361,2026-08-08T07:01:49.171-0300,Sistema,Resolução do chamado,,Encaminhad
 SI-10361,2026-08-08T07:01:49.171-0300,Sistema,Causa raiz potencial,,Encaminhado a sustentação
 SI-10361,2026-08-08T07:01:49.171-0300,Sistema,Causa raiz final,,Encaminhado a sustentação
 SI-10361,2026-08-08T07:01:49.171-0300,Sistema,Justificativa Causa Raiz final,,Encaminhado a sustentação
+SI-10361,2026-08-10T12:35:23.549-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10360,2026-08-07T14:51:29.948-0300,Sistema,Link,,This work item is blocked by GA-1445
 SI-10360,2026-08-10T10:14:07.485-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10360,2026-08-10T10:14:07.485-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-10360,2026-08-10T10:14:07.818-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-10359,2026-08-10T12:01:15.273-0300,Bruno Silva,resolution,,Done
+SI-10359,2026-08-10T12:01:15.273-0300,Bruno Silva,status,Submissão,Done
+SI-10359,2026-08-10T12:16:00.256-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-10358,2026-08-07T14:47:27.964-0300,Sistema,Link,,This work item is blocked by GA-1444
 SI-10358,2026-08-08T07:01:48.559-0300,Sistema,Reclassificação solicitação,,Incidente
 SI-10358,2026-08-08T07:01:48.559-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
@@ -71167,6 +71189,10 @@ SI-10358,2026-08-08T07:01:48.559-0300,Sistema,Resolução do chamado,,Chamado en
 SI-10358,2026-08-08T07:01:48.559-0300,Sistema,Causa raiz potencial,,Chamado encaminhado ao time de responsável.
 SI-10358,2026-08-08T07:01:48.559-0300,Sistema,Causa raiz final,,Chamado encaminhado ao time de responsável.
 SI-10358,2026-08-08T07:01:48.559-0300,Sistema,Justificativa Causa Raiz final,,Chamado encaminhado ao time de responsável.
+SI-10358,2026-08-10T12:01:12.724-0300,Bruno Silva,resolution,,Done
+SI-10358,2026-08-10T12:01:12.724-0300,Bruno Silva,status,Submissão,Done
+SI-10358,2026-08-10T12:34:48.413-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10358,2026-08-10T12:34:48.638-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-10367,2026-08-08T07:01:51.675-0300,Sistema,Causa Raiz,,Impacto não mapeado
 SI-10367,2026-08-08T07:01:51.675-0300,Sistema,Criticidade final,,P2 - Média
 SI-10367,2026-08-08T07:01:51.675-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
@@ -71185,8 +71211,19 @@ SI-10371,2026-08-10T08:28:38.291-0300,Bruno Silva,resolution,,Done
 SI-10371,2026-08-10T08:28:38.291-0300,Bruno Silva,status,Finalizado Definitivamente,Done
 SI-10370,2026-08-07T17:15:23.521-0300,Sistema,Link,,This work item is blocked by GA-1452
 SI-10369,2026-08-07T16:59:33.117-0300,Sistema,Link,,This work item is blocked by GA-1451
+SI-10369,2026-08-10T12:07:40.980-0300,Helena Almeida,resolution,,Done
+SI-10369,2026-08-10T12:07:40.980-0300,Helena Almeida,status,Submissão,Done
+SI-10369,2026-08-10T12:07:42.058-0300,Helena Almeida,assignee,,Helena Almeida
+SI-10369,2026-08-10T12:07:54.812-0300,Helena Almeida,Impacto negócio,,Retrabalho Operacional
+SI-10369,2026-08-10T12:07:57.882-0300,Helena Almeida,Criticidade final,,P1 - Alta
+SI-10369,2026-08-10T12:09:47.514-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. Licença disponibilizada; a instalação será agendada com a colaboradora no privado.
 SI-10368,2026-08-07T16:49:22.995-0300,Sistema,Link,,This work item is blocked by GA-1450
 SI-10372,2026-08-07T17:47:27.026-0300,Sistema,Link,,This work item is blocked by GA-1453
+SI-10372,2026-08-10T12:13:09.977-0300,Helena Almeida,assignee,,Helena Almeida
+SI-10372,2026-08-10T12:13:13.255-0300,Helena Almeida,resolution,,Done
+SI-10372,2026-08-10T12:13:13.255-0300,Helena Almeida,status,Submissão,Done
+SI-10372,2026-08-10T12:13:25.120-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. Cadastro realizado.
+SI-10372,2026-08-10T12:13:29.123-0300,Helena Almeida,Criticidade final,,P2 - Média
 SI-10373,2026-08-08T14:38:23.348-0300,Sistema,Link,,This work item is blocked by GA-1454
 SI-10373,2026-08-10T08:38:34.846-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-10373,2026-08-10T08:38:37.343-0300,Nícollas Resende,resolution,,Done
@@ -71200,8 +71237,116 @@ SI-10375,2026-08-10T08:03:26.961-0300,Bruno Silva,resolution,,Done
 SI-10375,2026-08-10T08:03:26.961-0300,Bruno Silva,status,Submissão,Done
 SI-10376,2026-08-10T09:22:22.790-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-10376,2026-08-10T09:22:24.015-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10376,2026-08-10T11:41:10.480-0300,Rafael Ferreira,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+h3. 1️⃣ Identificação do Chamado
+
+* *Módulo:* Operations (Sea Booking / Ocean)
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção e Homologação (HML)
+* *Título Sugerido:* Erro 500 (ValueError) ao realizar cancelamento de SeaBooking no Módulo Operations
+
+h3. 2️⃣ Entendimento do Problema
+
+* *Passo a Passo:*
+*# Acessar o Módulo Operations e abrir a tela de um SeaBooking (ex: ID 17075 em PROD ou ID 17931 em HML).
+*# Realizar a desvinculação entre a Order e o Booking.
+*# Efetuar o cancelamento da Order com sucesso.
+*# Acionar a ação de cancelamento do Booking no sistema.
+*# O sistema retorna uma tela de erro interno.
+* *Comportamento Esperado vs. Atual:*
+** *Esperado:* O sistema deve concluir o cancelamento do {{SeaBooking}} sem interrupções após a desvinculação da ordem.
+** *Atual:* O sistema interrompe o processo e retorna Erro Interno do Servidor (HTTP 500).
+* *Evidências:*
+** Booking em Produção (ID 17075 / Nº 34649873): {{[https://operational.dmslog.com/booking/sea/17075/](https://operational.dmslog.com/booking/sea/17075/)}}
+** Booking em Homologação (ID 17931): {{[https://operational.hml.dmslog.com/booking/sea/17931/](https://operational.hml.dmslog.com/booking/sea/17931/)}}
+
+h3. 3️⃣ Análise Técnica Inicial
+
+* *Histórico/Logs:* Identificada a exceção {{ValueError: Cannot query ""<SeaBooking>"": Must be ""AirBooking"" instance.}} ocorrendo no endpoint {{POST /booking/sea/{id}/cancel/}}. A quebra acontece no arquivo {{src/booking/services/approved_house_deletion_validator.py}} durante a chamada de {{validate_booking_cancellation}}.
+* *Parametrização/Perfil:* O erro não está restrito a um usuário específico ou a um único ambiente, configurando um bug sistêmico de backend na rotina de cancelamento.
+
+h3. 4️⃣ Avaliação de Impacto
+
+* *Abrangência:* Afeta globalmente qualquer operador ou customer care que tente cancelar um booking do modal Marítimo após solicitação do cliente.
+* *Criticidade:* Alta
+* *Justificativa:* Interrompe a finalização do fluxo de cancelamento de processos no sistema operacional, mantendo os bookings com status incorreto e ocupando base ativa indevidamente.
+* *Workaround:* Não existe. A falha é em nível de ORM na validação do request, inviabilizando qualquer contorno via interface.
+
+h3. 5️⃣ Tentativas de Resolução
+
+* *Ações Realizadas:* O Service Desk validou o fluxo correto (desvincular e cancelar a order primeiro). Para descartar anomalias isoladas em Produção, a operação foi replicada em ambiente de Homologação (HML) com outro Booking, onde o mesmo erro 500 e o mesmo _traceback_ foram reproduzidos de forma idêntica.
+
+h3. 6️⃣ Justificativa Técnica para Escalonamento & Causa Raiz Potencial
+
+* *Motivo do Escalonamento:* Trata-se de um erro estrutural no código da aplicação (Backend/Django ORM), exigindo atuação direta do time de Engenharia (N3) para correção da classe de validação.
+* *Causa Raiz Potencial:* O método {{get_approved_houses_for_booking}}, localizado em {{ApprovedHouseDeletionValidator}}, possui uma instrução de filtro no banco de dados fixada para o modal aéreo: {{assembly__air_booking=booking}}. Como a FK {{assembly__air_booking}} aceita estritamente instâncias da classe {{AirBooking}}, o envio de uma instância de {{SeaBooking}} pela view marítima força o Django ORM a rejeitar a query por divergência de tipo, resultando no {{ValueError}}. O validador não está preparado para tratar instâncias de cancelamento originadas do modal Sea (Marítimo).
+
+
+
+{quote}*Prezados,*
+
+Estamos escalonando um incidente sistêmico (HTTP 500) que impede o cancelamento de embarques do tipo *SeaBooking* no módulo _Operations_.
+
+*Contexto Operacional e Testes Realizados:* Ao receber a solicitação de cancelamento pelo cliente, o operador desvincula e cancela a ordem com sucesso. No entanto, ao acionar o cancelamento do booking, a tela exibe um erro genérico. O Service Desk replicou o cenário com sucesso tanto em Produção quanto em Homologação (HML), confirmando que se trata de uma quebra padronizada do sistema.
+
+*Análise Técnica:*
+
+* *Endpoint Afetado:* {{POST /booking/sea/{id}/cancel/}}
+* *Exceção (Log):* {{ValueError: Cannot query ""<SeaBooking>"": Must be ""AirBooking"" instance.}}
+* *Arquivo/Método:* {{src/booking/services/approved_house_deletion_validator.py}} -> {{get_approved_houses_for_booking}}.
+
+*Causa Raiz e Sugestão:* O validador {{ApprovedHouseDeletionValidator}} está realizando uma consulta ORM utilizando o campo {{assembly__air_booking}}. Como o processo é do modal marítimo, a view passa uma instância de {{SeaBooking}}, ocasionando divergência de tipagem e a recusa da query pelo Django. É necessário ajustar o validador para identificar dinamicamente a instância do booking ({{AirBooking}} vs {{SeaBooking}}) e aplicar a Foreign Key correspondente no filtro do {{Assembly}}.
+
+*Evidências (Links para reprodução):*
+
+* Produção (ID 17075): [https://operational.dmslog.com/booking/sea/17075/|https://operational.dmslog.com/booking/sea/17075/]
+* Homologação (ID 17931): [https://operational.hml.dmslog.com/booking/sea/17931/|https://operational.hml.dmslog.com/booking/sea/17931/]{quote}
+
+
+
+Teste cancelamento booking marítimo PROD:
+
+[^TesteCancelarBookingMarítimoPROD.webm]
+
+Teste cancelamento booking marítimo HML:
+
+[^TesteCancelarBookingMarítimoHML.webm]"
+SI-10376,2026-08-10T11:41:11.110-0300,Rafael Ferreira,Attachment,,TesteCancelarBookingMarítimoHML.webm
+SI-10376,2026-08-10T11:41:11.110-0300,Rafael Ferreira,Attachment,,TesteCancelarBookingMarítimoPROD.webm
+SI-10376,2026-08-10T11:41:16.494-0300,Rafael Ferreira,Encaminhado para:,,Sustentação
+SI-10376,2026-08-10T11:41:19.993-0300,Sistema,Link,,This work item is blocked by SUS-294
+SI-10376,2026-08-10T11:44:04.490-0300,Rafael Ferreira,Encaminhado para:,Sustentação,
+SI-10376,2026-08-10T11:44:08.180-0300,Rafael Ferreira,resolution,,Done
+SI-10376,2026-08-10T11:44:08.180-0300,Rafael Ferreira,status,Em Atendimento,Done
+SI-10379,2026-08-10T12:04:31.608-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10379,2026-08-10T12:04:34.628-0300,Bruno Silva,resolution,,Done
+SI-10379,2026-08-10T12:04:34.628-0300,Bruno Silva,status,Submissão,Done
 SI-10378,2026-08-10T09:34:33.865-0300,Sistema,Link,,This work item is blocked by GA-1457
+SI-10378,2026-08-10T12:02:20.523-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10378,2026-08-10T12:02:25.116-0300,Bruno Silva,resolution,,Done
+SI-10378,2026-08-10T12:02:25.116-0300,Bruno Silva,status,Submissão,Done
 SI-10382,2026-08-10T11:19:11.281-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10382,2026-08-10T11:19:14.525-0300,Bruno Silva,resolution,,Done
 SI-10382,2026-08-10T11:19:14.525-0300,Bruno Silva,status,Submissão,Done
 SI-10381,2026-08-10T10:35:28.966-0300,Sistema,Link,,This work item is blocked by GA-1458
+SI-10381,2026-08-10T12:15:20.317-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-10381,2026-08-10T12:15:20.317-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-10381,2026-08-10T12:15:21.171-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-10380,2026-08-10T11:56:40.837-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10380,2026-08-10T11:56:44.563-0300,Bruno Silva,resolution,,Done
+SI-10380,2026-08-10T11:56:44.563-0300,Bruno Silva,status,Submissão,Done
+SI-10387,2026-08-10T12:12:14.304-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10387,2026-08-10T12:12:17.262-0300,Bruno Silva,resolution,,Done
+SI-10387,2026-08-10T12:12:17.262-0300,Bruno Silva,status,Submissão,Done
+SI-10386,2026-08-10T12:09:17.236-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10386,2026-08-10T12:09:20.568-0300,Bruno Silva,resolution,,Done
+SI-10386,2026-08-10T12:09:20.568-0300,Bruno Silva,status,Submissão,Done
+SI-10385,2026-08-10T11:44:09.396-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10385,2026-08-10T11:44:11.834-0300,Bruno Silva,status,Submissão,Finalizado Definitivamente
+SI-10385,2026-08-10T11:44:17.042-0300,Bruno Silva,resolution,,Done
+SI-10385,2026-08-10T11:44:17.042-0300,Bruno Silva,status,Finalizado Definitivamente,Done
+SI-10384,2026-08-10T11:44:44.560-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10384,2026-08-10T11:44:47.143-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10384,2026-08-10T11:44:47.419-0300,Rafael Ferreira,resolution,,Done
+SI-10384,2026-08-10T11:44:47.419-0300,Rafael Ferreira,status,Submissão,Done
