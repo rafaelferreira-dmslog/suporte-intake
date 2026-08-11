@@ -70134,6 +70134,10 @@ SI-10265,2026-08-04T20:52:25.254-0300,Sistema,Link,,This work item is blocked by
 SI-10265,2026-08-05T09:55:03.114-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10265,2026-08-05T09:55:03.400-0300,Rafael Ferreira,resolution,,Done
 SI-10265,2026-08-05T09:55:03.400-0300,Rafael Ferreira,status,Submissão,Done
+SI-10265,2026-08-11T16:27:08.368-0300,Helena Almeida,assignee,,Helena Almeida
+SI-10265,2026-08-11T16:27:21.081-0300,Helena Almeida,Criticidade final,,P3 - Baixa
+SI-10265,2026-08-11T16:27:25.873-0300,Helena Almeida,Impacto negócio,,Retrabalho Operacional
+SI-10265,2026-08-11T16:27:45.732-0300,Helena Almeida,Fluxo realizado,,Ticket concluído. Foi agendada com a colaboradora a retirada do cabo HDMI presencialmente no escritório. 
 SI-10266,2026-08-05T08:27:22.039-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10266,2026-08-05T08:27:24.196-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10266,2026-08-05T08:27:24.407-0300,Rafael Ferreira,resolution,,Done
@@ -70445,6 +70449,10 @@ SI-10292,2026-08-07T09:10:19.729-0300,Bruno Silva,status,Submissão,Done
 SI-10291,2026-08-05T15:57:22.749-0300,Sistema,Link,,This work item is blocked by GA-1421
 SI-10291,2026-08-07T09:10:21.919-0300,Bruno Silva,resolution,,Done
 SI-10291,2026-08-07T09:10:21.919-0300,Bruno Silva,status,Submissão,Done
+SI-10291,2026-08-11T16:22:55.480-0300,Helena Almeida,assignee,,Helena Almeida
+SI-10291,2026-08-11T16:23:07.693-0300,Helena Almeida,Criticidade final,,P3 - Baixa
+SI-10291,2026-08-11T16:23:12.049-0300,Helena Almeida,Impacto negócio,,Retrabalho Operacional
+SI-10291,2026-08-11T16:23:52.582-0300,Helena Almeida,Fluxo realizado,,Ticket concluído. Foi agendada com a colaboradora a retirada do acessório presencialmente no escritório. 
 SI-10290,2026-08-05T16:57:59.978-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10290,2026-08-05T16:58:03.248-0300,Rafael Ferreira,resolution,,Done
 SI-10290,2026-08-05T16:58:03.248-0300,Rafael Ferreira,status,Submissão,Done
@@ -71475,6 +71483,11 @@ SI-10414,2026-08-11T14:16:15.903-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10414,2026-08-11T14:16:17.102-0300,Rafael Ferreira,resolution,,Done
 SI-10414,2026-08-11T14:16:17.102-0300,Rafael Ferreira,status,Submissão,Done
 SI-10413,2026-08-11T12:00:26.367-0300,Sistema,Link,,This work item is blocked by GA-1466
+SI-10413,2026-08-11T16:18:16.452-0300,Helena Almeida,resolution,,Done
+SI-10413,2026-08-11T16:18:16.452-0300,Helena Almeida,status,Submissão,Done
+SI-10413,2026-08-11T16:18:18.629-0300,Helena Almeida,assignee,,Helena Almeida
+SI-10413,2026-08-11T16:18:32.998-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. Cadastro realizado. 
+SI-10413,2026-08-11T16:18:37.175-0300,Helena Almeida,Criticidade final,,P2 - Média
 SI-10412,2026-08-11T12:18:24.662-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10412,2026-08-11T12:18:27.631-0300,Bruno Silva,resolution,,Done
 SI-10412,2026-08-11T12:18:27.631-0300,Bruno Silva,status,Submissão,Done
@@ -71500,3 +71513,16 @@ SI-10420,2026-08-11T14:31:59.064-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10420,2026-08-11T14:32:00.794-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10420,2026-08-11T14:32:00.993-0300,Rafael Ferreira,resolution,,Done
 SI-10420,2026-08-11T14:32:00.993-0300,Rafael Ferreira,status,Submissão,Done
+SI-10428,2026-08-11T16:35:56.993-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10428,2026-08-11T16:35:59.304-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10428,2026-08-11T16:35:59.525-0300,Rafael Ferreira,resolution,,Done
+SI-10428,2026-08-11T16:35:59.525-0300,Rafael Ferreira,status,Submissão,Done
+SI-10427,2026-08-11T16:23:33.733-0300,Sistema,Link,,This work item is blocked by GA-1469
+SI-10427,2026-08-11T16:34:24.190-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-10427,2026-08-11T16:34:26.246-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-10427,2026-08-11T16:34:26.246-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-10422,2026-08-11T15:39:26.078-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-10422,2026-08-11T15:39:35.302-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10422,2026-08-11T16:09:54.455-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10422,2026-08-11T16:09:54.717-0300,Rafael Ferreira,resolution,,Done
+SI-10422,2026-08-11T16:09:54.717-0300,Rafael Ferreira,status,Submissão,Done
