@@ -59147,6 +59147,7 @@ SI-7545,2026-07-10T13:04:37.527-0300,Sistema,Resolução do chamado,,"Aguardando
 SI-7545,2026-07-10T13:04:37.527-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7545,2026-07-10T13:04:37.527-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7545,2026-07-10T13:04:37.527-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7545,2026-08-11T17:29:26.449-0300,Helena Almeida,Resolução do chamado,"Aguardando informação. Solicitamos, por gentileza, verificar e responder ao comentário inserido no ticket.",Ticket concluído. Cadastro realizado. 
 SI-7544,2026-07-07T14:58:19.643-0300,Sistema,Link,,This work item is blocked by GA-1166
 SI-7544,2026-07-08T10:59:46.848-0300,Rafael Ferreira,resolution,,Done
 SI-7544,2026-07-08T10:59:46.848-0300,Rafael Ferreira,status,Submissão,Done
@@ -59850,6 +59851,8 @@ SI-7598,2026-07-09T08:09:35.914-0300,Rafael Ferreira,Classificação,,Ranked hig
 SI-7598,2026-07-10T13:05:22.119-0300,Sistema,Criticidade final,,P2 - Média
 SI-7598,2026-07-10T13:05:22.119-0300,Sistema,Reclassificação solicitação,,Solicitação de cadastro
 SI-7598,2026-07-10T13:05:22.119-0300,Sistema,Resolução do chamado,,"Aguardando informação. Solicitamos, por gentileza, verificar e responder ao comentário inserido no ticket."
+SI-7598,2026-08-11T16:42:42.172-0300,Helena Almeida,assignee,,Helena Almeida
+SI-7598,2026-08-11T16:42:57.652-0300,Helena Almeida,Resolução do chamado,"Aguardando informação. Solicitamos, por gentileza, verificar e responder ao comentário inserido no ticket.",Ticket concluído. Cadastro realizado. 
 SI-7597,2026-07-08T17:14:28.402-0300,Sistema,Link,,This work item is blocked by GA-1186
 SI-7597,2026-07-09T08:09:37.874-0300,Rafael Ferreira,resolution,,Done
 SI-7597,2026-07-09T08:09:37.874-0300,Rafael Ferreira,status,Submissão,Done
