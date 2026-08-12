@@ -72027,6 +72027,10 @@ SI-10427,2026-08-11T19:04:32.655-0300,Sistema,Resolução do chamado,,"Foi reali
 SI-10427,2026-08-11T19:04:32.655-0300,Sistema,Causa raiz potencial,,"Foi realizado a inclusão daautorização de order complementar para o perfil solicitado, com isso precisa ser realizado o log out e o login novamente para que seja efetivado com sucesso."
 SI-10427,2026-08-11T19:04:32.655-0300,Sistema,Causa raiz final,,"Foi realizado a inclusão daautorização de order complementar para o perfil solicitado, com isso precisa ser realizado o log out e o login novamente para que seja efetivado com sucesso."
 SI-10427,2026-08-11T19:04:32.655-0300,Sistema,Justificativa Causa Raiz final,,"Foi realizado a inclusão daautorização de order complementar para o perfil solicitado, com isso precisa ser realizado o log out e o login novamente para que seja efetivado com sucesso."
+SI-10423,2026-08-12T12:00:42.886-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10423,2026-08-12T12:00:44.829-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10423,2026-08-12T12:00:45.151-0300,Rafael Ferreira,resolution,,Done
+SI-10423,2026-08-12T12:00:45.151-0300,Rafael Ferreira,status,Submissão,Done
 SI-10422,2026-08-11T15:39:26.078-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-10422,2026-08-11T15:39:35.302-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10422,2026-08-11T16:09:54.455-0300,Rafael Ferreira,Classificação,,Ranked higher
@@ -72053,6 +72057,9 @@ SI-10431,2026-08-11T19:04:33.953-0300,Sistema,Resolução do chamado,,Identifica
 SI-10431,2026-08-11T19:04:33.953-0300,Sistema,Causa raiz potencial,Em atendimento,Falha no disparo automático de atualização via integração para o CCT ou ausência da execução manual do fluxo de retificação após a invalidação do item na ordem.
 SI-10431,2026-08-11T19:04:33.953-0300,Sistema,Causa raiz final,Em atendimento,"O incidente ocorreu porque, no momento em que o documento House foi aprovado e subsequentemente transmitido ao portal CCT, a ordem possuía o registro de 2 itens. Posteriormente, um desses itens foi invalidado no sistema, reduzindo a quantidade real da ordem para 1 item. No entanto, não foi executado o procedimento de retificação na aba CCT da ordem para sincronizar essa alteração com o portal governamental, fazendo com que a informação desatualizada de 2 itens permanecesse refletida no CCT."
 SI-10431,2026-08-11T19:04:33.953-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A desconexão entre a quantidade de itens no sistema e a informação presente no portal CCT foi causada por uma lacuna operacional no fluxo pós-aprovação. Como o sistema realizou o envio inicial com base na estrutura da ordem naquele momento (2 itens), qualquer modificação posterior — tal qual a invalidação de um item — exige expressamente a ação de retificação na aba CCT para atualizar a transmissão via integração. A não realização desse passo operacional manteve o registro anterior na API/portal."
+SI-10439,2026-08-12T12:13:49.066-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10439,2026-08-12T12:13:53.012-0300,Bruno Silva,resolution,,Done
+SI-10439,2026-08-12T12:13:53.012-0300,Bruno Silva,status,Submissão,Done
 SI-10437,2026-08-12T10:29:12.033-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10437,2026-08-12T10:29:14.541-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10436,2026-08-12T08:25:48.556-0300,Sistema,Link,,This work item is blocked by GA-1471
@@ -72063,6 +72070,9 @@ SI-10435,2026-08-12T08:03:30.398-0300,Sistema,Link,,This work item is blocked by
 SI-10435,2026-08-12T08:25:01.912-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10435,2026-08-12T08:25:05.208-0300,Bruno Silva,resolution,,Done
 SI-10435,2026-08-12T08:25:05.208-0300,Bruno Silva,status,Submissão,Done
+SI-10434,2026-08-12T12:44:25.310-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10434,2026-08-12T12:44:29.509-0300,Bruno Silva,resolution,,Done
+SI-10434,2026-08-12T12:44:29.509-0300,Bruno Silva,status,Submissão,Done
 SI-10442,2026-08-12T11:34:00.796-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10442,2026-08-12T11:34:04.284-0300,Bruno Silva,resolution,,Done
 SI-10442,2026-08-12T11:34:04.284-0300,Bruno Silva,status,Submissão,Done
@@ -72070,6 +72080,9 @@ SI-10441,2026-08-12T11:23:43.478-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10441,2026-08-12T11:23:46.656-0300,Bruno Silva,status,Submissão,Finalizado Definitivamente
 SI-10441,2026-08-12T11:23:49.461-0300,Bruno Silva,resolution,,Done
 SI-10441,2026-08-12T11:23:49.461-0300,Bruno Silva,status,Finalizado Definitivamente,Done
+SI-10440,2026-08-12T11:59:53.712-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10440,2026-08-12T11:59:57.004-0300,Bruno Silva,resolution,,Done
+SI-10440,2026-08-12T11:59:57.004-0300,Bruno Silva,status,Submissão,Done
 SI-10448,2026-08-12T11:26:56.493-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10448,2026-08-12T11:27:01.560-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10448,2026-08-12T11:27:01.843-0300,Rafael Ferreira,resolution,,Done
@@ -72087,11 +72100,22 @@ SI-10446,2026-08-12T11:08:43.572-0300,Helena Almeida,resolution,,Done
 SI-10446,2026-08-12T11:08:43.572-0300,Helena Almeida,status,Submissão,Done
 SI-10445,2026-08-12T11:44:41.943-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10445,2026-08-12T11:44:43.329-0300,Rafael Ferreira,status,Submissão,Em Atendimento
+SI-10445,2026-08-12T11:55:14.552-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10445,2026-08-12T11:55:14.794-0300,Rafael Ferreira,resolution,,Done
+SI-10445,2026-08-12T11:55:14.794-0300,Rafael Ferreira,status,Em Atendimento,Done
 SI-10444,2026-08-12T10:35:24.659-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10444,2026-08-12T10:35:26.108-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
+SI-10444,2026-08-12T12:09:43.975-0300,Rafael Ferreira,status,Aguardando Informação,Aguardando correção
+SI-10444,2026-08-12T12:09:51.894-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-10444,2026-08-12T12:09:56.175-0300,Rafael Ferreira,resolution,,Done
+SI-10444,2026-08-12T12:09:56.175-0300,Rafael Ferreira,status,Aguardando correção,Done
 SI-10443,2026-08-12T09:58:22.872-0300,Sistema,Link,,This work item is blocked by GA-1472
 SI-10443,2026-08-12T10:16:39.978-0300,Helena Almeida,resolution,,Done
 SI-10443,2026-08-12T10:16:39.978-0300,Helena Almeida,status,Submissão,Done
 SI-10443,2026-08-12T10:16:40.820-0300,Helena Almeida,assignee,,Helena Almeida
 SI-10443,2026-08-12T10:16:51.206-0300,Helena Almeida,Criticidade final,,P2 - Média
 SI-10443,2026-08-12T10:16:55.406-0300,Helena Almeida,Resolução do chamado,,"Ticket concluído. E-mail adicionado ao grupo de e-mail, conforme solicitado.  "
+SI-10450,2026-08-12T12:09:19.502-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10450,2026-08-12T12:09:19.741-0300,Rafael Ferreira,resolution,,Done
+SI-10450,2026-08-12T12:09:19.741-0300,Rafael Ferreira,status,Submissão,Done
+SI-10450,2026-08-12T12:09:22.999-0300,Rafael Ferreira,assignee,,Rafael Ferreira
