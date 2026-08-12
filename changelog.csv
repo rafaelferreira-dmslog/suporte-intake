@@ -59919,6 +59919,8 @@ SI-7599,2026-07-10T13:05:23.201-0300,Sistema,Criticidade final,,P2 - Média
 SI-7599,2026-07-10T13:05:23.201-0300,Sistema,Reclassificação solicitação,,Solicitação de cadastro
 SI-7599,2026-07-10T13:05:23.201-0300,Sistema,Resolução do chamado,,"Aguardando informação. Solicitamos, por gentileza, verificar e responder ao comentário inserido no ticket."
 SI-7599,2026-08-11T18:59:33.363-0300,Sistema,Resolução do chamado,"Aguardando informação. Solicitamos, por gentileza, verificar e responder ao comentário inserido no ticket.",Ticket concluído. Cadastro realizado.
+SI-7599,2026-08-12T10:19:43.885-0300,Helena Almeida,assignee,,Helena Almeida
+SI-7599,2026-08-12T10:21:32.412-0300,Helena Almeida,Fluxo realizado,,Ticket concluído. Customer com modal validado.
 SI-7600,2026-07-09T08:40:09.924-0300,Bruno Silva,assignee,,Bruno Silva
 SI-7600,2026-07-09T08:40:13.306-0300,Bruno Silva,resolution,,Done
 SI-7600,2026-07-09T08:40:13.306-0300,Bruno Silva,status,Submissão,Done
@@ -68216,6 +68218,7 @@ SI-8234,2026-08-01T19:06:36.950-0300,Sistema,Resolução do chamado,,Em atendime
 SI-8234,2026-08-01T19:06:36.950-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-8234,2026-08-01T19:06:36.950-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8234,2026-08-01T19:06:36.950-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-8234,2026-08-12T10:42:48.016-0300,Helena Almeida,assignee,,Helena Almeida
 SI-8233,2026-07-30T16:55:52.959-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8233,2026-07-30T16:55:55.402-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8233,2026-07-30T16:55:55.402-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -68254,6 +68257,9 @@ SI-8231,2026-07-31T01:00:50.855-0300,Sistema,Justificativa Causa Raiz final,,"A 
 SI-8238,2026-07-30T16:03:28.451-0300,Sistema,Link,,This work item is blocked by GA-1372
 SI-8238,2026-07-30T17:49:14.088-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8238,2026-07-30T17:49:14.088-0300,Ricardo Barbosa Machado,status,Submissão,Done
+SI-8238,2026-08-12T10:26:21.229-0300,Helena Almeida,assignee,,Helena Almeida
+SI-8238,2026-08-12T10:26:29.662-0300,Helena Almeida,Criticidade final,,P1 - Alta
+SI-8238,2026-08-12T10:26:33.741-0300,Helena Almeida,Fluxo realizado,,"Ticket concluído. Cadastro bloqueado, conforme solicitado."
 SI-8248,2026-07-31T09:30:37.150-0300,Bruno Silva,assignee,,Bruno Silva
 SI-8248,2026-07-31T09:30:40.408-0300,Bruno Silva,resolution,,Done
 SI-8248,2026-07-31T09:30:40.408-0300,Bruno Silva,status,Submissão,Done
@@ -68764,6 +68770,7 @@ SI-8287,2026-07-31T16:29:25.134-0300,Sistema,Link,,This work item is blocked by 
 SI-8287,2026-08-05T17:00:54.782-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-8287,2026-08-05T17:00:55.053-0300,Rafael Ferreira,resolution,,Done
 SI-8287,2026-08-05T17:00:55.053-0300,Rafael Ferreira,status,Submissão,Done
+SI-8287,2026-08-12T10:24:32.190-0300,Helena Almeida,assignee,,Nícollas Resende
 SI-8286,2026-07-31T16:16:34.170-0300,Sistema,Link,,This work item is blocked by GA-1385
 SI-8286,2026-08-02T12:59:22.330-0300,Sistema,Resolução do chamado,,Em atendimento
 SI-8286,2026-08-03T08:10:27.308-0300,Bruno Silva,assignee,,luiz.henrique
@@ -69340,6 +69347,8 @@ SI-8313,2026-08-03T19:06:23.296-0300,Sistema,Justificativa Causa Raiz final,,Em 
 SI-8312,2026-08-03T15:50:26.429-0300,Sistema,Link,,This work item is blocked by GA-1400
 SI-8312,2026-08-04T12:14:26.129-0300,Bruno Silva,resolution,,Done
 SI-8312,2026-08-04T12:14:26.129-0300,Bruno Silva,status,Submissão,Done
+SI-8312,2026-08-12T10:01:03.719-0300,Helena Almeida,assignee,,Helena Almeida
+SI-8312,2026-08-12T10:01:27.985-0300,Helena Almeida,Fluxo realizado,,Ticket concluído. Cadastro realizado.
 SI-8314,2026-08-04T10:48:51.572-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-8314,2026-08-04T10:48:53.392-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-8314,2026-08-04T11:00:53.500-0300,Rafael Ferreira,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
@@ -70173,6 +70182,7 @@ SI-10267,2026-08-05T09:55:16.421-0300,Rafael Ferreira,status,Submissão,Done
 SI-10267,2026-08-05T19:03:54.717-0300,Sistema,Reclassificação solicitação,,Requisição
 SI-10267,2026-08-05T19:03:54.717-0300,Sistema,Criticidade final,,P1 - Alta
 SI-10267,2026-08-05T19:03:54.717-0300,Sistema,Resolução do chamado,,Ticket concluído. Conta de e-mail corporativa criada e acessos disponibilizados para a colaboradora.
+SI-10267,2026-08-12T09:59:29.804-0300,Helena Almeida,assignee,,Helena Almeida
 SI-10269,2026-08-05T08:44:26.016-0300,Sistema,Link,,This work item is blocked by GA-1413
 SI-10269,2026-08-05T09:16:25.205-0300,Rafael Ferreira,resolution,,Done
 SI-10269,2026-08-05T09:16:25.205-0300,Rafael Ferreira,status,Submissão,Done
@@ -70462,6 +70472,7 @@ SI-10292,2026-08-05T19:04:06.036-0300,Sistema,Reclassificação solicitação,,S
 SI-10292,2026-08-05T19:04:06.036-0300,Sistema,Resolução do chamado,,Ticket concluído. Cadastro realizado.
 SI-10292,2026-08-07T09:10:19.729-0300,Bruno Silva,resolution,,Done
 SI-10292,2026-08-07T09:10:19.729-0300,Bruno Silva,status,Submissão,Done
+SI-10292,2026-08-12T09:56:38.218-0300,Helena Almeida,assignee,,Helena Almeida
 SI-10291,2026-08-05T15:57:22.749-0300,Sistema,Link,,This work item is blocked by GA-1421
 SI-10291,2026-08-07T09:10:21.919-0300,Bruno Silva,resolution,,Done
 SI-10291,2026-08-07T09:10:21.919-0300,Bruno Silva,status,Submissão,Done
@@ -70791,6 +70802,7 @@ SI-10316,2026-08-07T01:05:42.208-0300,Sistema,Causa raiz final,,Colaboradora foi
 SI-10316,2026-08-07T01:05:42.208-0300,Sistema,Justificativa Causa Raiz final,,Colaboradora foi adicionada ao grupo solicitado.
 SI-10316,2026-08-07T09:10:02.683-0300,Bruno Silva,resolution,,Done
 SI-10316,2026-08-07T09:10:02.683-0300,Bruno Silva,status,Submissão,Done
+SI-10316,2026-08-12T09:52:29.564-0300,Helena Almeida,assignee,,Eduardo Felipe de Lima Rebello
 SI-10315,2026-08-06T14:27:01.129-0300,Bruno Silva,assignee,,Rafael Ferreira
 SI-10315,2026-08-06T14:27:03.910-0300,Bruno Silva,resolution,,Done
 SI-10315,2026-08-06T14:27:03.910-0300,Bruno Silva,status,Submissão,Done
@@ -72036,6 +72048,8 @@ SI-10431,2026-08-11T19:04:33.953-0300,Sistema,Resolução do chamado,,Identifica
 SI-10431,2026-08-11T19:04:33.953-0300,Sistema,Causa raiz potencial,Em atendimento,Falha no disparo automático de atualização via integração para o CCT ou ausência da execução manual do fluxo de retificação após a invalidação do item na ordem.
 SI-10431,2026-08-11T19:04:33.953-0300,Sistema,Causa raiz final,Em atendimento,"O incidente ocorreu porque, no momento em que o documento House foi aprovado e subsequentemente transmitido ao portal CCT, a ordem possuía o registro de 2 itens. Posteriormente, um desses itens foi invalidado no sistema, reduzindo a quantidade real da ordem para 1 item. No entanto, não foi executado o procedimento de retificação na aba CCT da ordem para sincronizar essa alteração com o portal governamental, fazendo com que a informação desatualizada de 2 itens permanecesse refletida no CCT."
 SI-10431,2026-08-11T19:04:33.953-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A desconexão entre a quantidade de itens no sistema e a informação presente no portal CCT foi causada por uma lacuna operacional no fluxo pós-aprovação. Como o sistema realizou o envio inicial com base na estrutura da ordem naquele momento (2 itens), qualquer modificação posterior — tal qual a invalidação de um item — exige expressamente a ação de retificação na aba CCT para atualizar a transmissão via integração. A não realização desse passo operacional manteve o registro anterior na API/portal."
+SI-10437,2026-08-12T10:29:12.033-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
+SI-10437,2026-08-12T10:29:14.541-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10436,2026-08-12T08:25:48.556-0300,Sistema,Link,,This work item is blocked by GA-1471
 SI-10436,2026-08-12T08:43:06.454-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10436,2026-08-12T08:43:06.454-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
@@ -72044,3 +72058,12 @@ SI-10435,2026-08-12T08:03:30.398-0300,Sistema,Link,,This work item is blocked by
 SI-10435,2026-08-12T08:25:01.912-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10435,2026-08-12T08:25:05.208-0300,Bruno Silva,resolution,,Done
 SI-10435,2026-08-12T08:25:05.208-0300,Bruno Silva,status,Submissão,Done
+SI-10446,2026-08-12T10:42:25.434-0300,Sistema,Link,,This work item is blocked by GA-1473
+SI-10444,2026-08-12T10:35:24.659-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10444,2026-08-12T10:35:26.108-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
+SI-10443,2026-08-12T09:58:22.872-0300,Sistema,Link,,This work item is blocked by GA-1472
+SI-10443,2026-08-12T10:16:39.978-0300,Helena Almeida,resolution,,Done
+SI-10443,2026-08-12T10:16:39.978-0300,Helena Almeida,status,Submissão,Done
+SI-10443,2026-08-12T10:16:40.820-0300,Helena Almeida,assignee,,Helena Almeida
+SI-10443,2026-08-12T10:16:51.206-0300,Helena Almeida,Criticidade final,,P2 - Média
+SI-10443,2026-08-12T10:16:55.406-0300,Helena Almeida,Resolução do chamado,,"Ticket concluído. E-mail adicionado ao grupo de e-mail, conforme solicitado.  "
