@@ -4254,6 +4254,8 @@ SI-7073,2026-06-26T13:49:36.128-0300,Helena Almeida,assignee,,Helena Almeida
 SI-7073,2026-06-26T18:54:37.839-0300,Sistema,Reclassificação solicitação,,Requisição
 SI-7073,2026-06-26T18:54:37.839-0300,Sistema,Criticidade final,,P3 - Baixa
 SI-7073,2026-06-26T18:54:37.839-0300,Sistema,Resolução do chamado,,"Aguardando informação. Solicitamos, por gentileza, verificar e responder ao comentário inserido no ticket."
+SI-7073,2026-08-12T13:01:13.121-0300,Helena Almeida,Resolução do chamado,"Aguardando informação. Solicitamos, por gentileza, verificar e responder ao comentário inserido no ticket.","Aguardando informação. Solicitamos, por gentileza, verificar e responder ao comentário inserido no ticket."
+SI-7073,2026-08-12T13:29:04.222-0300,Helena Almeida,Fluxo realizado,,Ticket concluído. Compra efetuada!
 SI-7072,2026-06-23T17:26:23.035-0300,Rafael Ferreira,resolution,,Done
 SI-7072,2026-06-23T17:26:23.035-0300,Rafael Ferreira,status,Submissão,Done
 SI-7072,2026-06-23T17:26:23.595-0300,Rafael Ferreira,Rank,,Ranked lower
@@ -59017,6 +59019,8 @@ SI-7528,2026-08-01T07:06:01.959-0300,Sistema,Resolução do chamado,Em atendimen
 SI-7528,2026-08-01T07:06:01.959-0300,Sistema,Causa raiz potencial,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-7528,2026-08-01T07:06:01.959-0300,Sistema,Causa raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
 SI-7528,2026-08-01T07:06:01.959-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"Ticket finalizado por inatividade. Em caso de necessidade de suporte adicional, favor registrar uma nova solicitação."
+SI-7528,2026-08-12T12:56:38.405-0300,Helena Almeida,resolution,Done,
+SI-7528,2026-08-12T12:56:38.405-0300,Helena Almeida,status,Done,Aguardando Informação
 SI-7551,2026-07-07T15:33:22.305-0300,Sistema,Link,,This work item is blocked by GA-1170
 SI-7551,2026-07-07T16:35:28.306-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-7551,2026-07-07T16:35:30.223-0300,Rafael Ferreira,resolution,,Done
@@ -72119,3 +72123,4 @@ SI-10450,2026-08-12T12:09:19.502-0300,Rafael Ferreira,Classificação,,Ranked hi
 SI-10450,2026-08-12T12:09:19.741-0300,Rafael Ferreira,resolution,,Done
 SI-10450,2026-08-12T12:09:19.741-0300,Rafael Ferreira,status,Submissão,Done
 SI-10450,2026-08-12T12:09:22.999-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10452,2026-08-12T13:29:21.542-0300,Sistema,Link,,This work item is blocked by GA-1476
