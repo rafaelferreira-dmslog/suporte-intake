@@ -67442,6 +67442,7 @@ SI-8180,2026-07-29T19:03:27.727-0300,Sistema,Causa raiz final,,Cliente liberado 
 SI-8180,2026-07-29T19:03:27.727-0300,Sistema,Justificativa Causa Raiz final,,Cliente liberado conforme solicitado
 SI-8180,2026-07-31T09:31:30.985-0300,Bruno Silva,resolution,,Done
 SI-8180,2026-07-31T09:31:30.985-0300,Bruno Silva,status,Submissão,Done
+SI-8180,2026-08-12T10:59:18.560-0300,Helena Almeida,assignee,,Eduardo Felipe de Lima Rebello
 SI-8179,2026-07-29T16:16:16.722-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8179,2026-07-29T16:16:19.486-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8179,2026-07-29T16:16:19.486-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -68219,6 +68220,7 @@ SI-8234,2026-08-01T19:06:36.950-0300,Sistema,Causa raiz potencial,,Em atendiment
 SI-8234,2026-08-01T19:06:36.950-0300,Sistema,Causa raiz final,,Em atendimento
 SI-8234,2026-08-01T19:06:36.950-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-8234,2026-08-12T10:42:48.016-0300,Helena Almeida,assignee,,Helena Almeida
+SI-8234,2026-08-12T10:57:17.878-0300,Helena Almeida,Resolução do chamado,Em atendimento,Ticket concluído. Cadastro realizado.
 SI-8233,2026-07-30T16:55:52.959-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-8233,2026-07-30T16:55:55.402-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-8233,2026-07-30T16:55:55.402-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -71998,6 +72000,9 @@ SI-10420,2026-08-11T19:04:31.295-0300,Sistema,Causa raiz final,,"O incidente oco
 SI-10420,2026-08-11T19:04:31.295-0300,Sistema,Justificativa Causa Raiz final,,"Conforme documentado nos requisitos técnicos da plataforma, a funcionalidade de consolidação exige simetria estrutural total entre os processos. O bloqueio de segurança foi acionado de forma correta para proteger a integridade do banco de dados operacionais, visto que a junção de workflows distintos geraria inconsistência na unificação das tabelas e rastreadores das linhas do tempo unificadas. A tratativa realizada reestabeleceu a conformidade processual exigida pela regra de negócio ao alinhar os registros para uma mesma referência estável, mitigando erros de concorrência ou herança de dados. Para evitar reincidências e promover a melhoria contínua, orienta-se a verificação prévia e a correta aplicação dos filtros de correspondência no momento de criação ou atribuição dos fluxos das ordens."
 SI-10419,2026-08-12T09:19:53.892-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10419,2026-08-12T09:19:57.427-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10419,2026-08-12T11:34:56.930-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-10419,2026-08-12T11:34:59.823-0300,Rafael Ferreira,resolution,,Done
+SI-10419,2026-08-12T11:34:59.823-0300,Rafael Ferreira,status,Aguardando Informação,Done
 SI-10428,2026-08-11T16:35:56.993-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10428,2026-08-11T16:35:59.304-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10428,2026-08-11T16:35:59.525-0300,Rafael Ferreira,resolution,,Done
@@ -72058,7 +72063,30 @@ SI-10435,2026-08-12T08:03:30.398-0300,Sistema,Link,,This work item is blocked by
 SI-10435,2026-08-12T08:25:01.912-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10435,2026-08-12T08:25:05.208-0300,Bruno Silva,resolution,,Done
 SI-10435,2026-08-12T08:25:05.208-0300,Bruno Silva,status,Submissão,Done
+SI-10442,2026-08-12T11:34:00.796-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10442,2026-08-12T11:34:04.284-0300,Bruno Silva,resolution,,Done
+SI-10442,2026-08-12T11:34:04.284-0300,Bruno Silva,status,Submissão,Done
+SI-10441,2026-08-12T11:23:43.478-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10441,2026-08-12T11:23:46.656-0300,Bruno Silva,status,Submissão,Finalizado Definitivamente
+SI-10441,2026-08-12T11:23:49.461-0300,Bruno Silva,resolution,,Done
+SI-10441,2026-08-12T11:23:49.461-0300,Bruno Silva,status,Finalizado Definitivamente,Done
+SI-10448,2026-08-12T11:26:56.493-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10448,2026-08-12T11:27:01.560-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10448,2026-08-12T11:27:01.843-0300,Rafael Ferreira,resolution,,Done
+SI-10448,2026-08-12T11:27:01.843-0300,Rafael Ferreira,status,Submissão,Done
+SI-10447,2026-08-12T11:26:59.361-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10447,2026-08-12T11:27:03.613-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10447,2026-08-12T11:27:03.824-0300,Rafael Ferreira,resolution,,Done
+SI-10447,2026-08-12T11:27:03.824-0300,Rafael Ferreira,status,Submissão,Done
 SI-10446,2026-08-12T10:42:25.434-0300,Sistema,Link,,This work item is blocked by GA-1473
+SI-10446,2026-08-12T11:07:58.621-0300,Helena Almeida,Fluxo realizado,,Ticket concluído. Pacote Office disponibilizado e a instalação será agendada.
+SI-10446,2026-08-12T11:08:34.460-0300,Helena Almeida,Impacto negócio,,Retrabalho Operacional
+SI-10446,2026-08-12T11:08:38.939-0300,Helena Almeida,Criticidade final,,P2 - Média
+SI-10446,2026-08-12T11:08:40.212-0300,Helena Almeida,assignee,,Helena Almeida
+SI-10446,2026-08-12T11:08:43.572-0300,Helena Almeida,resolution,,Done
+SI-10446,2026-08-12T11:08:43.572-0300,Helena Almeida,status,Submissão,Done
+SI-10445,2026-08-12T11:44:41.943-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10445,2026-08-12T11:44:43.329-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-10444,2026-08-12T10:35:24.659-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10444,2026-08-12T10:35:26.108-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10443,2026-08-12T09:58:22.872-0300,Sistema,Link,,This work item is blocked by GA-1472
