@@ -71401,6 +71401,13 @@ SI-10369,2026-08-10T12:09:47.514-0300,Helena Almeida,Resolução do chamado,,Tic
 SI-10369,2026-08-11T19:04:01.430-0300,Sistema,Reclassificação solicitação,,Requisição
 SI-10369,2026-08-11T19:04:01.430-0300,Sistema,Resolução do chamado,Ticket concluído. Licença disponibilizada; a instalação será agendada com a colaboradora no privado.,Ticket concluído. Licença disponibilizada; a instalação será agendada com a colaboradora no privado.
 SI-10368,2026-08-07T16:49:22.995-0300,Sistema,Link,,This work item is blocked by GA-1450
+SI-10368,2026-08-12T09:44:47.252-0300,Helena Almeida,resolution,,Done
+SI-10368,2026-08-12T09:44:47.252-0300,Helena Almeida,status,Submissão,Done
+SI-10368,2026-08-12T09:44:48.275-0300,Helena Almeida,assignee,,Helena Almeida
+SI-10368,2026-08-12T09:44:53.897-0300,Helena Almeida,Criticidade final,,P0 - Crítica
+SI-10368,2026-08-12T09:44:56.042-0300,Helena Almeida,Criticidade final,P0 - Crítica,P2 - Média
+SI-10368,2026-08-12T09:44:57.921-0300,Helena Almeida,Criticidade final,P2 - Média,P1 - Alta
+SI-10368,2026-08-12T09:45:08.554-0300,Helena Almeida,Fluxo realizado,,Ticket concluído. Customer com modal validado.
 SI-10372,2026-08-07T17:47:27.026-0300,Sistema,Link,,This work item is blocked by GA-1453
 SI-10372,2026-08-10T12:13:09.977-0300,Helena Almeida,assignee,,Helena Almeida
 SI-10372,2026-08-10T12:13:13.255-0300,Helena Almeida,resolution,,Done
@@ -71977,6 +71984,8 @@ SI-10420,2026-08-11T19:04:31.295-0300,Sistema,Resolução do chamado,,"Identific
 SI-10420,2026-08-11T19:04:31.295-0300,Sistema,Causa raiz potencial,,Incompatibilidade estrutural ou de regras de validação entre os fluxos operacionais cadastrados individualmente nas ordens selecionadas antes da tentativa de consolidação.
 SI-10420,2026-08-11T19:04:31.295-0300,Sistema,Causa raiz final,,"O incidente ocorreu devido a uma restrição nativa e mandatória nas regras de validação do sistema para o agrupamento de processos operacionais. Para que seja possível realizar a unificação de múltiplos embarques sob um mesmo grupo consolidador, a plataforma exige, por questões de consistência técnica, que todas as ordens envolvidas compartilhem do mesmo modelo de procedimento operacional padrão em suas diretrizes de fluxo de trabalho. Como os processos operacionais citados foram gerados com parametrizações individuais divergentes em seus históricos de linhas do tempo, o sistema impediu o agrupamento automático. A situação foi regularizada após a aplicação manual de uma configuração idêntica e padronizada para todas as ordens, conferindo a simetria necessária para que a plataforma processasse a consolidação sem conflitos de dados."
 SI-10420,2026-08-11T19:04:31.295-0300,Sistema,Justificativa Causa Raiz final,,"Conforme documentado nos requisitos técnicos da plataforma, a funcionalidade de consolidação exige simetria estrutural total entre os processos. O bloqueio de segurança foi acionado de forma correta para proteger a integridade do banco de dados operacionais, visto que a junção de workflows distintos geraria inconsistência na unificação das tabelas e rastreadores das linhas do tempo unificadas. A tratativa realizada reestabeleceu a conformidade processual exigida pela regra de negócio ao alinhar os registros para uma mesma referência estável, mitigando erros de concorrência ou herança de dados. Para evitar reincidências e promover a melhoria contínua, orienta-se a verificação prévia e a correta aplicação dos filtros de correspondência no momento de criação ou atribuição dos fluxos das ordens."
+SI-10419,2026-08-12T09:19:53.892-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
+SI-10419,2026-08-12T09:19:57.427-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10428,2026-08-11T16:35:56.993-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10428,2026-08-11T16:35:59.304-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10428,2026-08-11T16:35:59.525-0300,Rafael Ferreira,resolution,,Done
