@@ -64346,6 +64346,7 @@ SI-7944,2026-07-21T13:02:28.026-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7944,2026-07-21T13:02:28.026-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7944,2026-07-21T13:02:28.026-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7944,2026-07-21T13:02:28.026-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7944,2026-08-12T14:18:35.598-0300,Bruno Silva,assignee,Ricardo Barbosa Machado,Bruno Silva
 SI-7943,2026-07-21T11:41:23.533-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7943,2026-07-21T11:41:25.620-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7943,2026-07-21T11:41:25.620-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -64357,6 +64358,7 @@ SI-7943,2026-07-21T13:02:27.340-0300,Sistema,Resolução do chamado,,Em atendime
 SI-7943,2026-07-21T13:02:27.340-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-7943,2026-07-21T13:02:27.340-0300,Sistema,Causa raiz final,,Em atendimento
 SI-7943,2026-07-21T13:02:27.340-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-7943,2026-08-12T14:19:26.706-0300,Bruno Silva,assignee,Ricardo Barbosa Machado,Bruno Silva
 SI-7942,2026-07-21T11:33:08.406-0300,Ricardo Barbosa Machado,assignee,,Ricardo Barbosa Machado
 SI-7942,2026-07-21T11:33:16.438-0300,Ricardo Barbosa Machado,resolution,,Done
 SI-7942,2026-07-21T11:33:16.438-0300,Ricardo Barbosa Machado,status,Submissão,Done
@@ -72061,6 +72063,10 @@ SI-10431,2026-08-11T19:04:33.953-0300,Sistema,Resolução do chamado,,Identifica
 SI-10431,2026-08-11T19:04:33.953-0300,Sistema,Causa raiz potencial,Em atendimento,Falha no disparo automático de atualização via integração para o CCT ou ausência da execução manual do fluxo de retificação após a invalidação do item na ordem.
 SI-10431,2026-08-11T19:04:33.953-0300,Sistema,Causa raiz final,Em atendimento,"O incidente ocorreu porque, no momento em que o documento House foi aprovado e subsequentemente transmitido ao portal CCT, a ordem possuía o registro de 2 itens. Posteriormente, um desses itens foi invalidado no sistema, reduzindo a quantidade real da ordem para 1 item. No entanto, não foi executado o procedimento de retificação na aba CCT da ordem para sincronizar essa alteração com o portal governamental, fazendo com que a informação desatualizada de 2 itens permanecesse refletida no CCT."
 SI-10431,2026-08-11T19:04:33.953-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A desconexão entre a quantidade de itens no sistema e a informação presente no portal CCT foi causada por uma lacuna operacional no fluxo pós-aprovação. Como o sistema realizou o envio inicial com base na estrutura da ordem naquele momento (2 itens), qualquer modificação posterior — tal qual a invalidação de um item — exige expressamente a ação de retificação na aba CCT para atualizar a transmissão via integração. A não realização desse passo operacional manteve o registro anterior na API/portal."
+SI-10429,2026-08-12T13:52:18.024-0300,Rafael Ferreira,assignee,,Eduardo Felipe de Lima Rebello
+SI-10429,2026-08-12T13:52:19.739-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10429,2026-08-12T13:52:19.968-0300,Rafael Ferreira,resolution,,Done
+SI-10429,2026-08-12T13:52:19.968-0300,Rafael Ferreira,status,Submissão,Done
 SI-10439,2026-08-12T12:13:49.066-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10439,2026-08-12T12:13:53.012-0300,Bruno Silva,resolution,,Done
 SI-10439,2026-08-12T12:13:53.012-0300,Bruno Silva,status,Submissão,Done
@@ -72123,4 +72129,7 @@ SI-10450,2026-08-12T12:09:19.502-0300,Rafael Ferreira,Classificação,,Ranked hi
 SI-10450,2026-08-12T12:09:19.741-0300,Rafael Ferreira,resolution,,Done
 SI-10450,2026-08-12T12:09:19.741-0300,Rafael Ferreira,status,Submissão,Done
 SI-10450,2026-08-12T12:09:22.999-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10453,2026-08-12T13:46:51.075-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10453,2026-08-12T13:46:57.482-0300,Rafael Ferreira,resolution,,Done
+SI-10453,2026-08-12T13:46:57.482-0300,Rafael Ferreira,status,Submissão,Done
 SI-10452,2026-08-12T13:29:21.542-0300,Sistema,Link,,This work item is blocked by GA-1476
