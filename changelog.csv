@@ -71756,6 +71756,7 @@ SI-10395,2026-08-11T19:04:16.130-0300,Sistema,Causa raiz final,,Campo de currenc
 SI-10395,2026-08-11T19:04:16.130-0300,Sistema,Justificativa Causa Raiz final,,Campo de currency em branco em commercial invoice
 SI-10396,2026-08-11T12:19:36.678-0300,Bruno Silva,resolution,,Done
 SI-10396,2026-08-11T12:19:36.678-0300,Bruno Silva,status,Submissão,Done
+SI-10396,2026-08-12T17:23:38.134-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-10403,2026-08-11T12:13:15.930-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10403,2026-08-11T12:13:19.817-0300,Bruno Silva,resolution,,Done
 SI-10403,2026-08-11T12:13:19.817-0300,Bruno Silva,status,Submissão,Done
@@ -71793,6 +71794,7 @@ SI-10401,2026-08-11T19:04:18.803-0300,Sistema,Causa raiz final,,Foi Realizada a 
 SI-10401,2026-08-11T19:04:18.803-0300,Sistema,Justificativa Causa Raiz final,,Foi Realizada a troca da senha de acesso para o ambiente de produção do sistema.
 SI-10400,2026-08-11T12:19:41.014-0300,Bruno Silva,resolution,,Done
 SI-10400,2026-08-11T12:19:41.014-0300,Bruno Silva,status,Submissão,Done
+SI-10400,2026-08-12T17:10:51.556-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-10399,2026-08-11T12:19:25.212-0300,Bruno Silva,assignee,,Eduardo Felipe de Lima Rebello
 SI-10399,2026-08-11T12:19:28.309-0300,Bruno Silva,resolution,,Done
 SI-10399,2026-08-11T12:19:28.309-0300,Bruno Silva,status,Submissão,Done
@@ -72129,10 +72131,14 @@ SI-10450,2026-08-12T12:09:19.502-0300,Rafael Ferreira,Classificação,,Ranked hi
 SI-10450,2026-08-12T12:09:19.741-0300,Rafael Ferreira,resolution,,Done
 SI-10450,2026-08-12T12:09:19.741-0300,Rafael Ferreira,status,Submissão,Done
 SI-10450,2026-08-12T12:09:22.999-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10451,2026-08-12T17:00:57.097-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10453,2026-08-12T13:46:51.075-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10453,2026-08-12T13:46:57.482-0300,Rafael Ferreira,resolution,,Done
 SI-10453,2026-08-12T13:46:57.482-0300,Rafael Ferreira,status,Submissão,Done
 SI-10452,2026-08-12T13:29:21.542-0300,Sistema,Link,,This work item is blocked by GA-1476
+SI-10455,2026-08-12T17:34:34.379-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-10455,2026-08-12T17:34:34.379-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-10455,2026-08-12T17:34:35.855-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-10458,2026-08-12T16:26:35.486-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-10458,2026-08-12T16:26:36.992-0300,Nícollas Resende,resolution,,Done
 SI-10458,2026-08-12T16:26:36.992-0300,Nícollas Resende,status,Submissão,Done
