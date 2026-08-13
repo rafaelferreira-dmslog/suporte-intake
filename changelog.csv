@@ -72185,6 +72185,9 @@ SI-10437,2026-08-13T01:05:58.838-0300,Sistema,Resolução do chamado,,Aguardando
 SI-10437,2026-08-13T01:05:58.838-0300,Sistema,Causa raiz potencial,,Aguardando informação
 SI-10437,2026-08-13T01:05:58.838-0300,Sistema,Causa raiz final,,Aguardando informação
 SI-10437,2026-08-13T01:05:58.838-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
+SI-10437,2026-08-13T08:08:53.861-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10437,2026-08-13T08:08:54.124-0300,Rafael Ferreira,resolution,,Done
+SI-10437,2026-08-13T08:08:54.124-0300,Rafael Ferreira,status,Aguardando Informação,Done
 SI-10436,2026-08-12T08:25:48.556-0300,Sistema,Link,,This work item is blocked by GA-1471
 SI-10436,2026-08-12T08:43:06.454-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10436,2026-08-12T08:43:06.454-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
@@ -72377,6 +72380,9 @@ SI-10451,2026-08-13T01:06:09.715-0300,Sistema,Resolução do chamado,,Ao entrar 
 SI-10451,2026-08-13T01:06:09.715-0300,Sistema,Causa raiz potencial,,Cachê desatualizado
 SI-10451,2026-08-13T01:06:09.715-0300,Sistema,Causa raiz final,,Ao entrar na quote a mesma ja se encontrava aprovada não sendo necessária nenhuma intervenção
 SI-10451,2026-08-13T01:06:09.715-0300,Sistema,Justificativa Causa Raiz final,,Ao entrar na quote a mesma ja se encontrava aprovada não sendo necessária nenhuma intervenção
+SI-10451,2026-08-13T08:08:58.242-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10451,2026-08-13T08:08:58.525-0300,Rafael Ferreira,resolution,,Done
+SI-10451,2026-08-13T08:08:58.525-0300,Rafael Ferreira,status,Submissão,Done
 SI-10453,2026-08-12T13:46:51.075-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10453,2026-08-12T13:46:57.482-0300,Rafael Ferreira,resolution,,Done
 SI-10453,2026-08-12T13:46:57.482-0300,Rafael Ferreira,status,Submissão,Done
@@ -72437,3 +72443,29 @@ https://prnt.sc/7yVC07mQAVJG"
 SI-10456,2026-08-13T01:06:12.902-0300,Sistema,Causa raiz potencial,,Regra de negócio
 SI-10456,2026-08-13T01:06:12.902-0300,Sistema,Causa raiz final,,Regra de negócio
 SI-10456,2026-08-13T01:06:12.902-0300,Sistema,Justificativa Causa Raiz final,,Regra de negócio
+SI-10461,2026-08-13T08:26:20.215-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10461,2026-08-13T08:26:20.440-0300,Rafael Ferreira,resolution,,Done
+SI-10461,2026-08-13T08:26:20.440-0300,Rafael Ferreira,status,Submissão,Done
+SI-10462,2026-08-13T08:26:00.650-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10462,2026-08-13T08:26:00.873-0300,Rafael Ferreira,resolution,,Done
+SI-10462,2026-08-13T08:26:00.873-0300,Rafael Ferreira,status,Submissão,Done
+SI-10463,2026-08-13T08:25:51.421-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10463,2026-08-13T08:25:51.636-0300,Rafael Ferreira,resolution,,Done
+SI-10463,2026-08-13T08:25:51.636-0300,Rafael Ferreira,status,Submissão,Done
+SI-10463,2026-08-13T08:43:19.422-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10466,2026-08-13T08:38:25.216-0300,Sistema,Link,,This work item is blocked by GA-1481
+SI-10465,2026-08-13T08:28:24.318-0300,Sistema,Link,,This work item is blocked by GA-1480
+SI-10465,2026-08-13T08:42:43.776-0300,Helena Almeida,resolution,,Done
+SI-10465,2026-08-13T08:42:43.776-0300,Helena Almeida,status,Submissão,Done
+SI-10465,2026-08-13T08:42:45.755-0300,Helena Almeida,assignee,,Helena Almeida
+SI-10465,2026-08-13T08:42:55.908-0300,Helena Almeida,Criticidade final,,P1 - Alta
+SI-10465,2026-08-13T08:43:01.011-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. E-mails incluídos e removidos conforme solicitado.
+SI-10464,2026-08-13T08:14:22.648-0300,Sistema,Link,,This work item is blocked by GA-1479
+SI-10464,2026-08-13T08:25:19.752-0300,Helena Almeida,resolution,,Done
+SI-10464,2026-08-13T08:25:19.752-0300,Helena Almeida,status,Submissão,Done
+SI-10464,2026-08-13T08:25:20.538-0300,Helena Almeida,assignee,,Helena Almeida
+SI-10464,2026-08-13T08:25:24.227-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10464,2026-08-13T08:25:24.543-0300,Rafael Ferreira,status,Done,Done
+SI-10464,2026-08-13T08:25:46.006-0300,Helena Almeida,Impacto negócio,,Retrabalho Operacional
+SI-10464,2026-08-13T08:26:33.499-0300,Helena Almeida,Prioridade,P2 - Média,P3 - Baixa
+SI-10464,2026-08-13T08:26:36.383-0300,Helena Almeida,Criticidade final,,P3 - Baixa
