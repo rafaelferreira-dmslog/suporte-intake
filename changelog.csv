@@ -72443,17 +72443,29 @@ https://prnt.sc/7yVC07mQAVJG"
 SI-10456,2026-08-13T01:06:12.902-0300,Sistema,Causa raiz potencial,,Regra de negócio
 SI-10456,2026-08-13T01:06:12.902-0300,Sistema,Causa raiz final,,Regra de negócio
 SI-10456,2026-08-13T01:06:12.902-0300,Sistema,Justificativa Causa Raiz final,,Regra de negócio
+SI-10459,2026-08-13T09:30:31.709-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10459,2026-08-13T09:30:34.936-0300,Bruno Silva,resolution,,Done
+SI-10459,2026-08-13T09:30:34.936-0300,Bruno Silva,status,Submissão,Done
+SI-10460,2026-08-13T09:30:18.044-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10460,2026-08-13T09:30:21.122-0300,Bruno Silva,resolution,,Done
+SI-10460,2026-08-13T09:30:21.122-0300,Bruno Silva,status,Submissão,Done
 SI-10461,2026-08-13T08:26:20.215-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10461,2026-08-13T08:26:20.440-0300,Rafael Ferreira,resolution,,Done
 SI-10461,2026-08-13T08:26:20.440-0300,Rafael Ferreira,status,Submissão,Done
 SI-10462,2026-08-13T08:26:00.650-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10462,2026-08-13T08:26:00.873-0300,Rafael Ferreira,resolution,,Done
 SI-10462,2026-08-13T08:26:00.873-0300,Rafael Ferreira,status,Submissão,Done
+SI-10462,2026-08-13T08:49:20.373-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10463,2026-08-13T08:25:51.421-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10463,2026-08-13T08:25:51.636-0300,Rafael Ferreira,resolution,,Done
 SI-10463,2026-08-13T08:25:51.636-0300,Rafael Ferreira,status,Submissão,Done
 SI-10463,2026-08-13T08:43:19.422-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10466,2026-08-13T08:38:25.216-0300,Sistema,Link,,This work item is blocked by GA-1481
+SI-10466,2026-08-13T08:46:29.649-0300,Helena Almeida,resolution,,Done
+SI-10466,2026-08-13T08:46:29.649-0300,Helena Almeida,status,Submissão,Done
+SI-10466,2026-08-13T08:46:32.348-0300,Helena Almeida,assignee,,Helena Almeida
+SI-10466,2026-08-13T08:46:57.485-0300,Helena Almeida,Criticidade final,,P2 - Média
+SI-10466,2026-08-13T08:47:10.025-0300,Helena Almeida,Fluxo realizado,,Ticket concluído. E-mail removido conforme solicitado. 
 SI-10465,2026-08-13T08:28:24.318-0300,Sistema,Link,,This work item is blocked by GA-1480
 SI-10465,2026-08-13T08:42:43.776-0300,Helena Almeida,resolution,,Done
 SI-10465,2026-08-13T08:42:43.776-0300,Helena Almeida,status,Submissão,Done
@@ -72469,3 +72481,82 @@ SI-10464,2026-08-13T08:25:24.543-0300,Rafael Ferreira,status,Done,Done
 SI-10464,2026-08-13T08:25:46.006-0300,Helena Almeida,Impacto negócio,,Retrabalho Operacional
 SI-10464,2026-08-13T08:26:33.499-0300,Helena Almeida,Prioridade,P2 - Média,P3 - Baixa
 SI-10464,2026-08-13T08:26:36.383-0300,Helena Almeida,Criticidade final,,P3 - Baixa
+SI-10471,2026-08-13T09:33:40.227-0300,Rafael Ferreira,status,Submissão,Em Atendimento
+SI-10471,2026-08-13T09:33:45.447-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10471,2026-08-13T09:34:29.489-0300,Rafael Ferreira,Link,,This work item is blocked by SUS-295
+SI-10469,2026-08-13T09:33:16.349-0300,Rafael Ferreira,status,Submissão,Em Atendimento
+SI-10469,2026-08-13T09:33:43.167-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10469,2026-08-13T09:34:06.478-0300,Rafael Ferreira,Link,,This work item is blocked by SUS-295
+SI-10468,2026-08-13T09:24:23.070-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10468,2026-08-13T09:24:25.307-0300,Rafael Ferreira,status,Submissão,Em Atendimento
+SI-10468,2026-08-13T09:26:32.915-0300,Rafael Ferreira,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+1️⃣ *Identificação do Chamado*
+
+* *Módulo:* Financeiro / Câmbio
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção ({{financial.dmslog.com}})
+* *Título Sugerido:* Erro ({{AttributeError}}) ao carregar invoices na tela Câmbio Disponível
+
+2️⃣ *Entendimento do Problema*
+
+* *Passo a Passo:*
+*# Acessar o sistema e navegar até o módulo *Financeiro / Câmbio*.
+*# Entrar na tela *Câmbio Disponível*.
+*# A aplicação realiza a chamada {{GET}} para a API datatable.
+*# O carregamento da tabela de invoices falha e o sistema apresenta mensagem de erro.
+* *Comportamento Esperado vs. Atual:*
+** *Esperado:* A datatable deve listar todas as invoices disponíveis sem erros.
+** *Atual:* O carregamento falha completamente devido a um erro no backend ({{AttributeError: 'NoneType' object has no attribute 'currency'}}).
+* *Evidências:* Logs extraídos do Elastic/APM confirmando a exceção em {{src/cambio/api.py}}.
+
+3️⃣ *Análise Técnica Inicial*
+
+* *Histórico/Logs:*
+** *Endpoint:* {{GET [http://financial.dmslog.com/cambio/api/disponivel/datatable/](http://financial.dmslog.com/cambio/api/disponivel/datatable/)}}
+** *Arquivo/Linha:* {{src/cambio/api.py}} na linha 110 (método {{get_situacao}}).
+** *Rastreio:* {{get_invoice_list}} ➔ {{format_invoice_row}} ➔ {{get_situacao}}.
+** *Trecho com Falha:*
+{noformat}Python{noformat}
+{noformat}def get_situacao(currency, billed, assembly_number):
+    order = Order.objects.filter(assembly_number=assembly_number).first()
+    order_currency = order.currency  # Falha aqui se 'order' for None
+{noformat}
+** *Variáveis locais no momento do erro:* {{assembly_number = 250613674}}, {{order = N/A}} ({{None}}).
+* *Parametrização/Perfil:* {{[PENDENTE: SOLICITAR AO USUÁRIO]}}
+
+4️⃣ *Avaliação de Impacto*
+
+* *Abrangência:* Todos os usuários que tentam visualizar a datatable da tela de Câmbio Disponível quando a lista contém o {{assembly_number}} inconsistente.
+* *Criticidade:* Alta
+* *Justificativa:* O estouro do erro 500 bloqueia completamente a visualização da listagem de invoices no Câmbio Disponível, inviabilizando a operação financeira na tela.
+* *Workaround:* Não existe paliativo disponível no Nível 1 (exige ajuste em banco ou código).
+
+5️⃣ *Tentativas de Resolução*
+
+* *Ações Realizadas:* Análise técnica dos logs do Elastic e isolamento da linha exata da aplicação Python que ocasiona a quebra da requisição.
+
+6️⃣ *Justificativa Técnica para Escalonamento e Causa Raiz Potencial*
+
+* *Causa Raiz Potencial:* O método {{get_situacao}} realiza a busca de uma ordem via {{Order.objects.filter(assembly_number=assembly_number).first()}}. Quando a consulta não encontra uma ordem correspondente ao {{assembly_number}} (neste caso, o {{250613674}}), o retorno é {{None}}. O código tenta acessar {{order.currency}} sem validar previamente se o objeto {{order}} existe, disparando uma exceção de ponteiro nulo ({{AttributeError}}).
+* *Escalonamento:* O chamado deve ser encaminhado para N2/N3 (Sustentação/Desenvolvimento) para implementação de tratamento defensivo no código Python e verificação da ordem vinculada ao {{assembly_number}} 250613674 na base de dados.
+
+
+
+*Resumo do Incidente:* Identificada uma falha de carregamento  que impede a exibição das invoices na tela de *Câmbio Disponível* do Módulo de Câmbio.
+
+*Detalhamento Técnico:* A requisição {{GET [http://financial.dmslog.com/cambio/api/disponivel/datatable/](http://financial.dmslog.com/cambio/api/disponivel/datatable/)}} está estourando a exceção {{AttributeError: 'NoneType' object has no attribute 'currency'}}.
+
+Ao iterar e formatar as linhas da datatable, a função {{get_situacao}} localizada em {{src/cambio/api.py}} (linha 110) faz a busca do registro de ordem através de {{Order.objects.filter(assembly_number=assembly_number).first()}}. Para o registro com {{assembly_number}} *250613674*, a consulta retorna {{None}}. A tentativa de ler a propriedade {{order.currency}} sem validação prévia de existência gera o crash no backend e impede a renderização da tela.
+
+*Ação Solicitada para N2/N3:*
+
+# Tratar o código em {{src/cambio/api.py}} com validação defensiva ({{if order: ...}}) para evitar que consultas sem retorno quebrem a API do datatable.
+# Analisar a base de dados para averiguar por que o {{assembly_number}} 250613674 não retornou o registro de {{Order}} correspondente."
+SI-10468,2026-08-13T09:26:43.662-0300,Rafael Ferreira,Encaminhado para:,,Sustentação
+SI-10468,2026-08-13T09:26:47.695-0300,Sistema,Link,,This work item is blocked by SUS-295
+SI-10468,2026-08-13T09:28:00.039-0300,Rafael Ferreira,Encaminhado para:,Sustentação,
+SI-10467,2026-08-13T09:11:30.225-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10467,2026-08-13T09:11:33.451-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10467,2026-08-13T09:11:33.709-0300,Rafael Ferreira,resolution,,Done
+SI-10467,2026-08-13T09:11:33.709-0300,Rafael Ferreira,status,Submissão,Done
