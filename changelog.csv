@@ -72416,6 +72416,7 @@ SI-10453,2026-08-13T01:06:11.250-0300,Sistema,Justificativa Causa Raiz final,,"A
 SI-10452,2026-08-12T13:29:21.542-0300,Sistema,Link,,This work item is blocked by GA-1476
 SI-10452,2026-08-13T09:51:34.069-0300,Bruno Silva,resolution,,Done
 SI-10452,2026-08-13T09:51:34.069-0300,Bruno Silva,status,Submissão,Done
+SI-10452,2026-08-13T11:48:06.181-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10454,2026-08-13T09:51:37.004-0300,Bruno Silva,resolution,,Done
 SI-10454,2026-08-13T09:51:37.004-0300,Bruno Silva,status,Submissão,Done
 SI-10455,2026-08-12T17:34:34.379-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
@@ -72507,6 +72508,9 @@ SI-10464,2026-08-13T08:26:36.383-0300,Helena Almeida,Criticidade final,,P3 - Bai
 SI-10473,2026-08-13T11:43:55.699-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10473,2026-08-13T11:43:58.928-0300,Bruno Silva,resolution,,Done
 SI-10473,2026-08-13T11:43:58.928-0300,Bruno Silva,status,Submissão,Done
+SI-10472,2026-08-13T11:50:52.885-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10472,2026-08-13T11:50:56.205-0300,Bruno Silva,resolution,,Done
+SI-10472,2026-08-13T11:50:56.205-0300,Bruno Silva,status,Submissão,Done
 SI-10471,2026-08-13T09:33:40.227-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-10471,2026-08-13T09:33:45.447-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10471,2026-08-13T09:34:29.489-0300,Rafael Ferreira,Link,,This work item is blocked by SUS-295
@@ -72602,4 +72606,113 @@ SI-10474,2026-08-13T09:58:26.271-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10474,2026-08-13T09:58:28.068-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10474,2026-08-13T09:58:28.307-0300,Rafael Ferreira,resolution,,Done
 SI-10474,2026-08-13T09:58:28.307-0300,Rafael Ferreira,status,Submissão,Done
+SI-10482,2026-08-13T11:52:00.122-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10482,2026-08-13T11:52:03.512-0300,Bruno Silva,resolution,,Done
+SI-10482,2026-08-13T11:52:03.512-0300,Bruno Silva,status,Submissão,Done
+SI-10481,2026-08-13T12:22:25.442-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10481,2026-08-13T12:25:05.233-0300,Rafael Ferreira,assignee,Rafael Ferreira,Bruno Silva
+SI-10481,2026-08-13T12:25:34.590-0300,Bruno Silva,resolution,,Done
+SI-10481,2026-08-13T12:25:34.590-0300,Bruno Silva,status,Submissão,Done
+SI-10480,2026-08-13T11:55:00.832-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10480,2026-08-13T12:25:37.123-0300,Bruno Silva,resolution,,Done
+SI-10480,2026-08-13T12:25:37.123-0300,Bruno Silva,status,Submissão,Done
+SI-10477,2026-08-13T12:11:13.817-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10477,2026-08-13T12:11:22.316-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-10477,2026-08-13T12:11:25.231-0300,Rafael Ferreira,resolution,,Done
+SI-10477,2026-08-13T12:11:25.231-0300,Rafael Ferreira,status,Submissão,Done
+SI-10477,2026-08-13T12:20:03.872-0300,Rafael Ferreira,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+h3. 1️⃣ Identificação do Chamado
+
+* *Módulo:* DWSYS (Warehouse)
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção
+* *Título Sugerido:* Erro ""Tela Branca"" generalizado ao realizar exclusão de Warehouse Receipts (WR) no Módulo DWSYS em todas as estações
+
+h3. 2️⃣ Entendimento do Problema
+
+* *Passo a Passo:*
+*# Acessar o módulo DWSYS em qualquer estação (_station_).
+*# Localizar qualquer Warehouse Receipt (WR) cadastrado.
+*# Acionar o botão/opção para efetuar a exclusão do WR.
+*# Observar a renderização de uma tela em branco (_unhandled exception_), travando a aplicação sem exibir mensagem de erro tratada ou logs no frontend.
+* *Comportamento Esperado vs. Atual:*
+** *Comportamento Esperado:* O sistema deve processar a exclusão do registro de WR com sucesso ou exibir uma mensagem informativa amigável indicando travas operacionais, se houver.
+** *Comportamento Atual:* A aplicação sofre um travamento global (_crash_) e exibe uma tela branca em todas as estações para qualquer tentativa de exclusão de WR.
+* *Evidências:* Vídeo anexado demonstrando o comportamento e a falha de renderização na interface do DWSYS.
+
+h3. 3️⃣ Análise Técnica Inicial
+
+* *Histórico/Logs:* Ausência de logs amigáveis ou tratativa de exceção na interface do usuário no momento do travamento.
+* *Parametrização/Perfil:* Confirmado pelo N1 que o problema *não é pontual*. A falha ocorre de forma geral em múltiplos registros de WR e afeta todas as _stations_ ativas no DWSYS.
+
+h3. 4️⃣ Avaliação de Impacto
+
+* *Abrangência:* Geral (Afeta todas as estações e todos os usuários que tentam excluir registros de WR no DWSYS).
+* *Criticidade:* Baixa
+* *Justificativa:* Trata-se de uma falha funcional generalizada na funcionalidade de expurgo/deleção do módulo DWSYS, impedindo o cancelamento ou correção cadastral de WRs via sistema em toda a operação.
+* *Workaround:* *Sim.* Exclusão manual do registro diretamente no banco de dados operacional realizada pontualmente pelo time de Data Science (DS) mediante solicitação.
+
+h3. 5️⃣ Tentativas de Resolução
+
+* *Ações Realizadas:*
+** Testes de exclusão em diferentes registros de WR e em diferentes _stations_.
+** Validação de que a falha persiste mesmo em documentos sem vínculos com Handover, WRR, Pick List ou Cargo Acceptance.
+** Mapeamento do escopo do problema, confirmando que se trata de uma indisponibilidade generalizada do recurso de deleção via interface.
+
+h3. 6️⃣ Justificativa Técnica para Escalonamento
+
+Identificada uma falha estrutural/global no endpoint de exclusão de Warehouse Receipts no DWSYS, impactando todas as estações e registros. Como a equipe de Nível 1 não possui acesso ao código fonte, backend ou permissão de deleção direta no banco de dados operacional, escala-se o chamado para o time N2 / Sustentação / Data Science para:
+
+# Atuar pontualmente na remoção manual via banco de dados dos registros que necessitam de exclusão imediata.
+# Investigar e corrigir a exceção no backend da aplicação para restabelecer a funcionalidade de exclusão via interface.
+
+h3. 7️⃣ Causa Raiz Potencial
+
+Falha de código ou exceção não tratada (_Unhandled Exception_) na rota/endpoint de exclusão de WR no backend do DWSYS. O problema pode ser decorrente de uma quebra na regra de integridade referencial (_Foreign Key_) no banco de dados, falha no manipulador de requisição HTTP (retornando status de erro não capturado pelo frontend) ou alteração recente na API de controle do estoque do armazém.
+
+
+
+{quote}*Incidente:* Indisponibilidade generalizada da funcionalidade de exclusão de Warehouse Receipt (WR) - DWSYS
+
+Identificada falha sistêmica no módulo DWSYS ao tentar realizar a exclusão de registros de Warehouse Receipt (WR). O problema *não é pontual* e ocorre em *todas as estações (stations)* e para *qualquer WR selecionado*.
+
+*Sintoma:* Ao solicitar a exclusão do WR via interface gráfica, a aplicação sofre um travamento e exibe uma tela totalmente em branco (_unhandled exception_), sem apresentar feedbacks, mensagens tratadas ou logs na tela.
+
+*Validações do Service Desk:*
+
+* Confirmado que a falha afeta múltiplos registros e todas as _stations_.
+* Os documentos testados não possuem pendências ou travas operacionais (Handover, WRR, Pick List, Cargo Acceptance ou status de finalização).
+
+*Solicitação ao N2 / Data Science / Sustentação:* Solicitamos atuação do time técnico para:
+
+# Realizar a remoção manual via banco de dados dos registros de WR pendentes de exclusão (Workaround).
+# Analisar o motivo da falha/tela branca na rota de exclusão do DWSYS para correção definitiva da funcionalidade no sistema.
+
+*Evidências:* Vídeo demonstrativo anexado ao ticket.{quote}
+
+
+
+Video reprodução do fluxo em prod:
+
+[^google_screen_recording_2026-08-13T15-13-26.427Z.webm]
+
+
+
+Video reprodução do fluxo em HML, testando em station diferente:
+
+
+[^google_screen_recording_2026-08-13T15-17-38.602Z.webm]"
+SI-10477,2026-08-13T12:20:04.548-0300,Rafael Ferreira,Attachment,,google_screen_recording_2026-08-13T15-17-38.602Z.webm
+SI-10477,2026-08-13T12:20:04.548-0300,Rafael Ferreira,Attachment,,google_screen_recording_2026-08-13T15-13-26.427Z.webm
+SI-10477,2026-08-13T12:20:11.300-0300,Rafael Ferreira,Encaminhado para:,DS,Sustentação
+SI-10477,2026-08-13T12:20:14.800-0300,Sistema,Link,,This work item is blocked by SUS-296
+SI-10477,2026-08-13T12:20:25.052-0300,Rafael Ferreira,Encaminhado para:,Sustentação,
 SI-10476,2026-08-13T10:53:32.931-0300,Sistema,Link,,This work item is blocked by GA-1482
+SI-10476,2026-08-13T12:10:45.445-0300,Rafael Ferreira,assignee,,Nícollas Resende
+SI-10476,2026-08-13T12:10:47.901-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10476,2026-08-13T12:10:48.123-0300,Rafael Ferreira,resolution,,Done
+SI-10476,2026-08-13T12:10:48.123-0300,Rafael Ferreira,status,Submissão,Done
+SI-10483,2026-08-13T12:06:12.713-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10483,2026-08-13T12:06:17.328-0300,Bruno Silva,resolution,,Done
+SI-10483,2026-08-13T12:06:17.328-0300,Bruno Silva,status,Submissão,Done
