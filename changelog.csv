@@ -72068,6 +72068,9 @@ SI-10421,2026-08-13T01:05:47.242-0300,Sistema,Resolução do chamado,,Em atendim
 SI-10421,2026-08-13T01:05:47.242-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-10421,2026-08-13T01:05:47.242-0300,Sistema,Causa raiz final,,Em atendimento
 SI-10421,2026-08-13T01:05:47.242-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-10421,2026-08-13T09:56:51.209-0300,Bruno Silva,resolution,,Done
+SI-10421,2026-08-13T09:56:51.209-0300,Bruno Silva,status,Submissão,Done
+SI-10421,2026-08-13T10:05:17.918-0300,Bruno Silva,assignee,,Eduardo Felipe de Lima Rebello
 SI-10428,2026-08-11T16:35:56.993-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10428,2026-08-11T16:35:59.304-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10428,2026-08-11T16:35:59.525-0300,Rafael Ferreira,resolution,,Done
@@ -72092,6 +72095,13 @@ SI-10427,2026-08-11T19:04:32.655-0300,Sistema,Resolução do chamado,,"Foi reali
 SI-10427,2026-08-11T19:04:32.655-0300,Sistema,Causa raiz potencial,,"Foi realizado a inclusão daautorização de order complementar para o perfil solicitado, com isso precisa ser realizado o log out e o login novamente para que seja efetivado com sucesso."
 SI-10427,2026-08-11T19:04:32.655-0300,Sistema,Causa raiz final,,"Foi realizado a inclusão daautorização de order complementar para o perfil solicitado, com isso precisa ser realizado o log out e o login novamente para que seja efetivado com sucesso."
 SI-10427,2026-08-11T19:04:32.655-0300,Sistema,Justificativa Causa Raiz final,,"Foi realizado a inclusão daautorização de order complementar para o perfil solicitado, com isso precisa ser realizado o log out e o login novamente para que seja efetivado com sucesso."
+SI-10426,2026-08-13T09:56:40.865-0300,Bruno Silva,resolution,,Done
+SI-10426,2026-08-13T09:56:40.865-0300,Bruno Silva,status,Submissão,Done
+SI-10425,2026-08-13T09:56:43.582-0300,Bruno Silva,resolution,,Done
+SI-10425,2026-08-13T09:56:43.582-0300,Bruno Silva,status,Submissão,Done
+SI-10425,2026-08-13T09:58:12.517-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10424,2026-08-13T09:56:53.839-0300,Bruno Silva,resolution,,Done
+SI-10424,2026-08-13T09:56:53.839-0300,Bruno Silva,status,Submissão,Done
 SI-10423,2026-08-12T12:00:42.886-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10423,2026-08-12T12:00:44.829-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10423,2026-08-12T12:00:45.151-0300,Rafael Ferreira,resolution,,Done
@@ -72152,6 +72162,9 @@ SI-10431,2026-08-11T19:04:33.953-0300,Sistema,Resolução do chamado,,Identifica
 SI-10431,2026-08-11T19:04:33.953-0300,Sistema,Causa raiz potencial,Em atendimento,Falha no disparo automático de atualização via integração para o CCT ou ausência da execução manual do fluxo de retificação após a invalidação do item na ordem.
 SI-10431,2026-08-11T19:04:33.953-0300,Sistema,Causa raiz final,Em atendimento,"O incidente ocorreu porque, no momento em que o documento House foi aprovado e subsequentemente transmitido ao portal CCT, a ordem possuía o registro de 2 itens. Posteriormente, um desses itens foi invalidado no sistema, reduzindo a quantidade real da ordem para 1 item. No entanto, não foi executado o procedimento de retificação na aba CCT da ordem para sincronizar essa alteração com o portal governamental, fazendo com que a informação desatualizada de 2 itens permanecesse refletida no CCT."
 SI-10431,2026-08-11T19:04:33.953-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A desconexão entre a quantidade de itens no sistema e a informação presente no portal CCT foi causada por uma lacuna operacional no fluxo pós-aprovação. Como o sistema realizou o envio inicial com base na estrutura da ordem naquele momento (2 itens), qualquer modificação posterior — tal qual a invalidação de um item — exige expressamente a ação de retificação na aba CCT para atualizar a transmissão via integração. A não realização desse passo operacional manteve o registro anterior na API/portal."
+SI-10431,2026-08-13T09:55:51.161-0300,Bruno Silva,assignee,,Rafael Ferreira
+SI-10431,2026-08-13T09:55:54.325-0300,Bruno Silva,resolution,,Done
+SI-10431,2026-08-13T09:55:54.325-0300,Bruno Silva,status,Submissão,Done
 SI-10429,2026-08-12T13:52:18.024-0300,Rafael Ferreira,assignee,,Eduardo Felipe de Lima Rebello
 SI-10429,2026-08-12T13:52:19.739-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10429,2026-08-12T13:52:19.968-0300,Rafael Ferreira,resolution,,Done
@@ -72371,6 +72384,8 @@ O processo operou exatamente conforme a regra de negócio parametrizada!"
 SI-10450,2026-08-13T01:06:08.774-0300,Sistema,Causa raiz potencial,,Hipótese de não migração de valores financeiros do Booking para o Faturamento devido a pendência no fechamento de parâmetros operacionais ou falha na regra de integração.
 SI-10450,2026-08-13T01:06:08.774-0300,Sistema,Causa raiz final,,"A ausência do valor do frete na Nota de Débito (ND) do processo 159222 não se trata de um erro sistêmico, mas sim da aplicação exata das regras financeiras do processo. Em operações de exportação, os fretes registrados no Booking sob a modalidade Collect definem que o pagamento do serviço deve ser efetuado diretamente no destino final pelo destinatário da carga (consignee). Por esse motivo, a unidade local não realiza a cobrança desse montante e o sistema omite automaticamente o valor do faturamento local e da Nota de Débito. Apenas os fretes lançados na modalidade Prepaid em operações de exportação são transferidos para o módulo financeiro local para cobrança junto ao exportador no Brasil. Assim, o sistema operou perfeitamente e manteve a conformidade das diretrizes operacionais."
 SI-10450,2026-08-13T01:06:08.774-0300,Sistema,Justificativa Causa Raiz final,,"A verificação do processo de exportação 159222 confirmou que a lógica de negócio foi executada corretamente. Como a condição do frete no Booking consta como Collect, o sistema inibe a migração do lançamento para o Contas a Receber e para a ND local, prevenindo cobranças indevidas ao exportador. O comportamento previne inconsistências fiscais e assegura que os custos de destino sigam o fluxo financeiro apropriado."
+SI-10449,2026-08-13T09:51:31.680-0300,Bruno Silva,resolution,,Done
+SI-10449,2026-08-13T09:51:31.680-0300,Bruno Silva,status,Submissão,Done
 SI-10451,2026-08-12T17:00:57.097-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10451,2026-08-13T01:06:09.715-0300,Sistema,Causa Raiz,,Falha Operacional
 SI-10451,2026-08-13T01:06:09.715-0300,Sistema,Criticidade final,,P3 - Baixa
@@ -72395,6 +72410,10 @@ SI-10453,2026-08-13T01:06:11.250-0300,Sistema,Causa raiz potencial,,Ausência de
 SI-10453,2026-08-13T01:06:11.250-0300,Sistema,Causa raiz final,,"O impedimento ao tentar concluir as ações de desatrelar ou deletar as ordens ocorria devido a uma falha de comunicação entre as validações sistêmicas atuais e o histórico de cadastros da plataforma. Especificamente, após a desativação da aba anterior de controle de datas, algumas ordens ficaram sem esse registro de acompanhamento gerado na base. Sempre que um operador tentava realizar uma movimentação crítica na ordem, a plataforma tentava atualizar obrigatoriamente um status de ""aprovação de cliente"" que ficava dentro desse antigo controle de datas. Por não encontrar essa informação, o sistema não sabia como prosseguir, interrompendo a ação abruptamente e travando a tela. Como não foi realizada nenhuma tratativa paliativa ou definitiva até o momento para contornar essa exigência de sistema, a situação foi atrelada ao INTAKE-1557. A equipe de tecnologia trabalhará neste intake para reprogramar o sistema, ensinando a plataforma a verificar se a informação de data existe antes de tentar atualizá-la, ignorando a validação ou criando o dado sob demanda para que o trabalho do operador não seja mais interrompido."
 SI-10453,2026-08-13T01:06:11.250-0300,Sistema,Justificativa Causa Raiz final,,"A análise técnica do card SUS-215 atestou a ocorrência do erro relacional RelatedObjectDoesNotExist: Assembly has no datecontrol no arquivo src/booking/models/base.py (linha 489). A falha é engatilhada porque o backend, através da função update_customer_approval, tenta acessar de forma direta o atributo datecontrol.customer_approval_valid sem aplicar um tratamento defensivo para validar a existência do relacionamento OneToOne na tabela order_datecontrol. Considerando que nenhuma correção definitiva ou saneamento foi executado em ambiente produtivo, os processos que possuem essa lacuna de dados continuam apresentando o Erro 500. A resolução focada na melhoria contínua e eliminação da reincidência foi direcionada para o INTAKE-1557, que atuará na implementação de validações defensivas no código (para verificar a existência do objeto antes da manipulação) e na criação de rotinas para lidar com registros órfãos, mitigando o impacto na eficiência operacional apontado no discovery."
 SI-10452,2026-08-12T13:29:21.542-0300,Sistema,Link,,This work item is blocked by GA-1476
+SI-10452,2026-08-13T09:51:34.069-0300,Bruno Silva,resolution,,Done
+SI-10452,2026-08-13T09:51:34.069-0300,Bruno Silva,status,Submissão,Done
+SI-10454,2026-08-13T09:51:37.004-0300,Bruno Silva,resolution,,Done
+SI-10454,2026-08-13T09:51:37.004-0300,Bruno Silva,status,Submissão,Done
 SI-10455,2026-08-12T17:34:34.379-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10455,2026-08-12T17:34:34.379-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-10455,2026-08-12T17:34:35.855-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
@@ -72484,9 +72503,15 @@ SI-10464,2026-08-13T08:26:36.383-0300,Helena Almeida,Criticidade final,,P3 - Bai
 SI-10471,2026-08-13T09:33:40.227-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-10471,2026-08-13T09:33:45.447-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10471,2026-08-13T09:34:29.489-0300,Rafael Ferreira,Link,,This work item is blocked by SUS-295
+SI-10471,2026-08-13T10:32:23.605-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10471,2026-08-13T10:32:23.830-0300,Rafael Ferreira,resolution,,Done
+SI-10471,2026-08-13T10:32:23.830-0300,Rafael Ferreira,status,Em Atendimento,Done
 SI-10469,2026-08-13T09:33:16.349-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-10469,2026-08-13T09:33:43.167-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10469,2026-08-13T09:34:06.478-0300,Rafael Ferreira,Link,,This work item is blocked by SUS-295
+SI-10469,2026-08-13T10:32:21.823-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10469,2026-08-13T10:32:22.052-0300,Rafael Ferreira,resolution,,Done
+SI-10469,2026-08-13T10:32:22.052-0300,Rafael Ferreira,status,Em Atendimento,Done
 SI-10468,2026-08-13T09:24:23.070-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10468,2026-08-13T09:24:25.307-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-10468,2026-08-13T09:26:32.915-0300,Rafael Ferreira,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
@@ -72556,7 +72581,14 @@ Ao iterar e formatar as linhas da datatable, a função {{get_situacao}} localiz
 SI-10468,2026-08-13T09:26:43.662-0300,Rafael Ferreira,Encaminhado para:,,Sustentação
 SI-10468,2026-08-13T09:26:47.695-0300,Sistema,Link,,This work item is blocked by SUS-295
 SI-10468,2026-08-13T09:28:00.039-0300,Rafael Ferreira,Encaminhado para:,Sustentação,
+SI-10468,2026-08-13T10:32:20.387-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10468,2026-08-13T10:32:20.625-0300,Rafael Ferreira,resolution,,Done
+SI-10468,2026-08-13T10:32:20.625-0300,Rafael Ferreira,status,Em Atendimento,Done
 SI-10467,2026-08-13T09:11:30.225-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10467,2026-08-13T09:11:33.451-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10467,2026-08-13T09:11:33.709-0300,Rafael Ferreira,resolution,,Done
 SI-10467,2026-08-13T09:11:33.709-0300,Rafael Ferreira,status,Submissão,Done
+SI-10474,2026-08-13T09:58:26.271-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10474,2026-08-13T09:58:28.068-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10474,2026-08-13T09:58:28.307-0300,Rafael Ferreira,resolution,,Done
+SI-10474,2026-08-13T09:58:28.307-0300,Rafael Ferreira,status,Submissão,Done
