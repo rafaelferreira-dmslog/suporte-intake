@@ -72390,6 +72390,7 @@ SI-10450,2026-08-13T01:06:08.774-0300,Sistema,Causa raiz final,,"A ausência do 
 SI-10450,2026-08-13T01:06:08.774-0300,Sistema,Justificativa Causa Raiz final,,"A verificação do processo de exportação 159222 confirmou que a lógica de negócio foi executada corretamente. Como a condição do frete no Booking consta como Collect, o sistema inibe a migração do lançamento para o Contas a Receber e para a ND local, prevenindo cobranças indevidas ao exportador. O comportamento previne inconsistências fiscais e assegura que os custos de destino sigam o fluxo financeiro apropriado."
 SI-10449,2026-08-13T09:51:31.680-0300,Bruno Silva,resolution,,Done
 SI-10449,2026-08-13T09:51:31.680-0300,Bruno Silva,status,Submissão,Done
+SI-10449,2026-08-13T16:06:41.571-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10451,2026-08-12T17:00:57.097-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10451,2026-08-13T01:06:09.715-0300,Sistema,Causa Raiz,,Falha Operacional
 SI-10451,2026-08-13T01:06:09.715-0300,Sistema,Criticidade final,,P3 - Baixa
