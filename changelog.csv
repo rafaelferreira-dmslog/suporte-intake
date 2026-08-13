@@ -72738,7 +72738,96 @@ SI-10488,2026-08-13T13:54:04.665-0300,Rafael Ferreira,status,Submissão,Em Atend
 SI-10488,2026-08-13T13:56:16.741-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10488,2026-08-13T13:56:16.960-0300,Rafael Ferreira,resolution,,Done
 SI-10488,2026-08-13T13:56:16.960-0300,Rafael Ferreira,status,Em Atendimento,Done
+SI-10499,2026-08-13T17:13:41.433-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-10499,2026-08-13T17:13:43.208-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-10499,2026-08-13T17:13:43.208-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-10497,2026-08-13T15:37:37.251-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10497,2026-08-13T15:37:39.068-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10495,2026-08-13T15:18:36.283-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10495,2026-08-13T15:18:37.403-0300,Rafael Ferreira,status,Submissão,Aguardando correção
+SI-10504,2026-08-13T17:18:01.157-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10504,2026-08-13T17:18:03.364-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10504,2026-08-13T17:18:03.598-0300,Rafael Ferreira,resolution,,Done
+SI-10504,2026-08-13T17:18:03.598-0300,Rafael Ferreira,status,Submissão,Done
+SI-10501,2026-08-13T17:21:39.197-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-10501,2026-08-13T17:21:49.466-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
+SI-10501,2026-08-13T17:21:49.466-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-10500,2026-08-13T16:54:29.375-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10500,2026-08-13T17:07:39.613-0300,Rafael Ferreira,resolution,,Done
+SI-10500,2026-08-13T17:07:39.613-0300,Rafael Ferreira,status,Submissão,Done
+SI-10500,2026-08-13T17:10:31.763-0300,Rafael Ferreira,description,,"h3. 1️⃣ Identificação do Chamado
+
+* *Módulo:* Operacional / Order (ADD Selling / Pick Up Charges)
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção
+* *Título Sugerido:* Erro 500 no Update Quote por violação de constraint em {{order_pickupcharge}} — Order 260748008
+
+h3. 2️⃣ Entendimento do Problema
+
+* *Passo a Passo:*
+*# Acessar a Order *260748008* ({{ID: 171644}}).
+*# Navegar até a aba *ADD Selling*.
+*# Observar que os valores de Pick Up previstos na SD não foram refletidos na aba (permanecem zerados).
+*# Clicar em *Update Quote* para forçar a atualização e sincronização dos valores da cotação.
+*# O sistema interrompe o processamento e retorna *Erro 500*.
+* *Comportamento Esperado vs. Atual:*
+** *Esperado:* O procedimento de _Update Quote_ deve processar e migrar os valores de Pick Up previstos na SD para a aba ADD Selling da Order sem erros.
+** *Atual:* O procedimento resulta em erro interno (HTTP 500) e a aba ADD Selling permanece com o valor zerado no Pick Up.
+* *Evidências:*
+** Link direto do processo: {{[https://operational.dmslog.com/order/171644/selling/](https://operational.dmslog.com/order/171644/selling/)}}
+** Log extraído do Elastic Search indicando exceção {{IntegrityError}}: {{IntegrityError: null value in column ""value"" of relation ""order_pickupcharge"" violates not-null constraint DETAIL: Failing row contains (594134, null, Pick Up, USD, 0.000, null, 200.00, 200.00, t, {}, 164829, chargeable_weight, +45, 24, , 2026-08-13 19:41:14.82783+00, null, null, 372229, CHILE, A (1-2500 km), null, f, null, null, null, null, {}, LTL, null, f)}}
+
+h3. 3️⃣ Análise Técnica Inicial
+
+* *Histórico/Logs:*
+** Análise de log no Elastic confirmou falha de banco de dados ({{IntegrityError}}). A rotina de atualização tenta realizar a gravação na tabela {{order_pickupcharge}} enviando valor nulo ({{null}}) para a coluna {{value}}, violando a restrição de preenchimento obrigatório ({{NOT NULL constraint}}).
+* *Parametrização/Perfil:*
+** O campo afetado está bloqueado para edição manual via interface (front-end) para o perfil operacional do colaborador.
+** Foi relatada divergência na moeda vinculada à ordem/proposal (indicada como incorreta na triagem inicial).
+
+h3. 4️⃣ Avaliação de Impacto
+
+* *Abrangência:* Nota-se que este cenário não é isolado e já ocorreu em outros momentos.
+* *Criticidade:* Alta
+* *Justificativa:* O embarque encontra-se travado na operação, pois a equipe não consegue emitir o documento de transporte com os valores corretos.
+* *Workaround:* Não há paliativo via interface de usuário. A solução temporária depende de intervenção direta no banco de dados pela equipe de Data Science.
+
+h3. 5️⃣ Tentativas de Resolução
+
+* *Ações Realizadas:*
+** Tentativa de execução da rotina _Update Quote_ via front-end para sincronização dos dados.
+** Identificação e análise do erro HTTP 500 no Elastic Search, mapeando a falha de constraint de banco de dados na gravação de {{order_pickupcharge}}.
+
+h3. 6️⃣ Justificativa Técnica para Escalonamento
+
+* A resolução não é viável em Nível 1 devido ao bloqueio de edição do campo na interface do usuário e à necessidade de ajuste estrutural via SQL/banco de dados (preenchimento da coluna {{value}} com valor válido na tabela {{order_pickupcharge}}). Faz-se necessário o encaminhamento ao time de Data Science / Sustentação para correção da massa de dados e verificação do fluxo de sincronização.
+
+h3. 🔍 CAUSA RAIZ POTENCIAL
+
+A causa raiz provável é a passagem de um valor nulo ({{null}}) durante o mapeamento/cálculo da taxa de Pick Up vinda da cotação/SD para o banco de dados. Quando o backend executa o _Update Quote_, tenta inserir ou atualizar um registro na tabela {{order_pickupcharge}} onde o campo {{value}} vai zerado/nulo. Como existe uma constraint {{NOT NULL}} nessa coluna no PostgreSQL, o banco rejeita a instrução gerando um {{IntegrityError}} que explode em HTTP 500 na aplicação. A inconsistência apontada na moeda do processo também pode ser o fator gerador que impede a correta leitura/conversão do valor original da taxa.
+
+h3. *Incidente:* Falha ao executar Update Quote na Order 260748008 (Erro 500 em order_pickupcharge) *Order / Booking:* 260748008 ({{Order ID: 171644}}) *URL:* [https://operational.dmslog.com/order/171644/selling/|https://operational.dmslog.com/order/171644/selling/]
+
+{quote}*Descrição do Problema:* Ao acessar a Order 260748008, identifica-se que os valores previstos para o Pick Up na SD não foram refletidos na aba ADD Selling, mantendo a sefção zerada e bloqueando a emissão da documentação do embarque. Ao acionar o botão _Update Quote_ para recalcular/sincronizar os valores, o sistema retorna um Erro 500.
+
+*Análise Técnica:* Nos logs do Elastic foi identificada a seguinte exceção de banco de dados: {{IntegrityError: null value in column ""value"" of relation ""order_pickupcharge"" violates not-null constraint}}
+
+A rotina tenta gravar o registro na tabela {{order_pickupcharge}} com o campo {{value}} como {{null}} (Row ID de referência: 594134). Como o colaborador não possui acesso via front-end para ajustar esse campo diretamente na cotação, solicita-se o apoio da equipe técnica/Data Science para:
+
+# Realizar a correção paliativa do campo {{value}} diretamente na tabela {{order_pickupcharge}} para liberar o processo.
+# Verificar o alinhamento do cadastro da moeda na proposta/ordem para garantir o correto funcionamento das chamadas de cotação.{quote}
+
+Print do banco:
+
+!image-20260813-195442.png|width=673,alt=""image-20260813-195442.png""!
+
+
+Print PM:
+
+
+!image-20260813-195520.png|width=673,alt=""image-20260813-195520.png""!"
+SI-10500,2026-08-13T17:10:32.541-0300,Rafael Ferreira,Attachment,,image-20260813-195442.png
+SI-10500,2026-08-13T17:10:32.541-0300,Rafael Ferreira,Attachment,,image-20260813-195520.png
+SI-10500,2026-08-13T17:10:38.060-0300,Rafael Ferreira,Encaminhado para:,,Sustentação
+SI-10500,2026-08-13T17:10:41.949-0300,Sistema,Link,,This work item is blocked by SUS-297
+SI-10500,2026-08-13T17:10:50.150-0300,Rafael Ferreira,Encaminhado para:,Sustentação,
