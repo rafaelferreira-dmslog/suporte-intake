@@ -73204,3 +73204,9 @@ SI-10500,2026-08-13T19:05:38.037-0300,Sistema,Resolução do chamado,,"Valores n
 SI-10500,2026-08-13T19:05:38.037-0300,Sistema,Causa raiz potencial,,Valores nulos no PM
 SI-10500,2026-08-13T19:05:38.037-0300,Sistema,Causa raiz final,,Valores nulos no PM
 SI-10500,2026-08-13T19:05:38.037-0300,Sistema,Justificativa Causa Raiz final,,Valores nulos no PM
+SI-10508,2026-08-14T08:21:09.295-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10508,2026-08-14T08:21:11.711-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10508,2026-08-14T08:21:11.933-0300,Rafael Ferreira,resolution,,Done
+SI-10508,2026-08-14T08:21:11.933-0300,Rafael Ferreira,status,Submissão,Done
+SI-10513,2026-08-14T08:45:20.882-0300,Sistema,Link,,This work item is blocked by GA-1490
+SI-10510,2026-08-14T08:16:23.175-0300,Sistema,Link,,This work item is blocked by GA-1489
