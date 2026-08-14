@@ -72984,6 +72984,9 @@ SI-10485,2026-08-13T13:16:29.318-0300,Sistema,Link,,This work item is blocked by
 SI-10485,2026-08-13T19:05:32.986-0300,Sistema,Reclassificação solicitação,,Solicitação de cadastro
 SI-10485,2026-08-13T19:05:32.986-0300,Sistema,Criticidade final,,P1 - Alta
 SI-10485,2026-08-13T19:05:32.986-0300,Sistema,Resolução do chamado,,"Aguardando informação. Solicitamos, por gentileza, verificar e responder ao comentário inserido no ticket."
+SI-10485,2026-08-14T11:21:03.601-0300,Rafael Ferreira,assignee,,Helena Almeida
+SI-10485,2026-08-14T11:21:05.940-0300,Rafael Ferreira,resolution,,Done
+SI-10485,2026-08-14T11:21:05.940-0300,Rafael Ferreira,status,Submissão,Done
 SI-10492,2026-08-13T14:30:15.543-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10492,2026-08-13T14:31:02.529-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10492,2026-08-13T14:31:02.736-0300,Rafael Ferreira,resolution,,Done
@@ -73121,6 +73124,10 @@ SI-10502,2026-08-13T19:05:39.194-0300,Sistema,Resolução do chamado,,Aguardando
 SI-10502,2026-08-13T19:05:39.194-0300,Sistema,Causa raiz potencial,,Aguardando correção
 SI-10502,2026-08-13T19:05:39.194-0300,Sistema,Causa raiz final,,Aguardando correção
 SI-10502,2026-08-13T19:05:39.194-0300,Sistema,Justificativa Causa Raiz final,,Aguardando correção
+SI-10502,2026-08-14T11:27:10.002-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10502,2026-08-14T11:27:11.915-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10502,2026-08-14T11:27:12.282-0300,Rafael Ferreira,resolution,,Done
+SI-10502,2026-08-14T11:27:12.282-0300,Rafael Ferreira,status,Submissão,Done
 SI-10501,2026-08-13T17:21:39.197-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-10501,2026-08-13T17:21:49.466-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10501,2026-08-13T17:21:49.466-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
@@ -73299,8 +73306,12 @@ SI-10510,2026-08-14T08:16:23.175-0300,Sistema,Link,,This work item is blocked by
 SI-10510,2026-08-14T09:06:48.049-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10510,2026-08-14T09:07:06.044-0300,Bruno Silva,resolution,,Done
 SI-10510,2026-08-14T09:07:06.044-0300,Bruno Silva,status,Submissão,Done
+SI-10521,2026-08-14T11:20:15.793-0300,Bruno Silva,assignee,,Rafael Ferreira
+SI-10521,2026-08-14T11:20:19.998-0300,Bruno Silva,resolution,,Done
+SI-10521,2026-08-14T11:20:19.998-0300,Bruno Silva,status,Submissão,Done
 SI-10520,2026-08-14T09:59:14.821-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10520,2026-08-14T09:59:18.422-0300,Rafael Ferreira,status,Submissão,Em Atendimento
+SI-10520,2026-08-14T11:07:28.765-0300,Rafael Ferreira,status,Em Atendimento,Aguardando Informação
 SI-10516,2026-08-14T09:46:18.391-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-10516,2026-08-14T09:46:20.515-0300,Nícollas Resende,resolution,,Done
 SI-10516,2026-08-14T09:46:20.515-0300,Nícollas Resende,status,Submissão,Done
@@ -73310,11 +73321,30 @@ SI-10515,2026-08-14T09:26:42.044-0300,Bruno Silva,status,Submissão,Done
 SI-10514,2026-08-14T09:26:49.634-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10514,2026-08-14T09:26:52.644-0300,Bruno Silva,resolution,,Done
 SI-10514,2026-08-14T09:26:52.644-0300,Bruno Silva,status,Submissão,Done
+SI-10527,2026-08-14T11:06:37.760-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10527,2026-08-14T11:06:45.142-0300,Bruno Silva,resolution,,Done
+SI-10527,2026-08-14T11:06:45.142-0300,Bruno Silva,status,Submissão,Done
 SI-10526,2026-08-14T10:28:33.718-0300,Sistema,Link,,This work item is blocked by GA-1492
+SI-10526,2026-08-14T11:15:00.019-0300,Rafael Ferreira,assignee,,Helena Almeida
+SI-10526,2026-08-14T11:15:03.037-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10526,2026-08-14T11:15:03.300-0300,Rafael Ferreira,resolution,,Done
+SI-10526,2026-08-14T11:15:03.300-0300,Rafael Ferreira,status,Submissão,Done
 SI-10525,2026-08-14T10:39:30.053-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10525,2026-08-14T10:39:32.278-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10525,2026-08-14T10:39:32.489-0300,Rafael Ferreira,resolution,,Done
 SI-10525,2026-08-14T10:39:32.489-0300,Rafael Ferreira,status,Submissão,Done
+SI-10524,2026-08-14T11:02:18.758-0300,Bruno Silva,assignee,,Nícollas Resende
+SI-10524,2026-08-14T11:07:33.213-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10524,2026-08-14T11:07:33.457-0300,Rafael Ferreira,resolution,,Done
+SI-10524,2026-08-14T11:07:33.457-0300,Rafael Ferreira,status,Submissão,Done
+SI-10523,2026-08-14T11:07:14.373-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10523,2026-08-14T11:07:16.116-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
+SI-10523,2026-08-14T11:07:30.933-0300,Rafael Ferreira,status,Aguardando Informação,Em Atendimento
+SI-10523,2026-08-14T11:14:36.337-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10523,2026-08-14T11:14:36.580-0300,Rafael Ferreira,resolution,,Done
+SI-10523,2026-08-14T11:14:36.580-0300,Rafael Ferreira,status,Em Atendimento,Done
 SI-10522,2026-08-14T10:05:42.831-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10522,2026-08-14T10:05:46.108-0300,Bruno Silva,resolution,,Done
 SI-10522,2026-08-14T10:05:46.108-0300,Bruno Silva,status,Submissão,Done
+SI-10532,2026-08-14T11:36:23.122-0300,Sistema,Link,,This work item is blocked by GA-1495
+SI-10529,2026-08-14T10:58:25.425-0300,Sistema,Link,,This work item is blocked by GA-1494
