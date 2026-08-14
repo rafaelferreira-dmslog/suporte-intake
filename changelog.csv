@@ -72673,6 +72673,8 @@ SI-10470,2026-08-13T19:05:25.859-0300,Sistema,Resolução do chamado,,Encaminhad
 SI-10470,2026-08-13T19:05:25.859-0300,Sistema,Causa raiz potencial,,Encaminhado ao desenvolvedor responsável para análise.
 SI-10470,2026-08-13T19:05:25.859-0300,Sistema,Causa raiz final,,Encaminhado ao desenvolvedor responsável para análise.
 SI-10470,2026-08-13T19:05:25.859-0300,Sistema,Justificativa Causa Raiz final,,Encaminhado ao desenvolvedor responsável para análise.
+SI-10470,2026-08-14T09:22:05.387-0300,Rafael Ferreira,resolution,,Done
+SI-10470,2026-08-14T09:22:05.387-0300,Rafael Ferreira,status,Aguardando correção,Done
 SI-10469,2026-08-13T09:33:16.349-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-10469,2026-08-13T09:33:43.167-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10469,2026-08-13T09:34:06.478-0300,Rafael Ferreira,Link,,This work item is blocked by SUS-295
@@ -72857,6 +72859,9 @@ SI-10480,2026-08-13T19:05:30.562-0300,Sistema,Causa raiz potencial,,"Bom dia! do
 SI-10480,2026-08-13T19:05:30.562-0300,Sistema,Causa raiz final,,"Bom dia! documento enviado, caso não leia por favor entrar na sala de docs ia (https://meet.google.com/wan-efbb-hhw?authuser=0)"
 SI-10480,2026-08-13T19:05:30.562-0300,Sistema,Justificativa Causa Raiz final,,"Bom dia! documento enviado, caso não leia por favor entrar na sala de docs ia (https://meet.google.com/wan-efbb-hhw?authuser=0)"
 SI-10478,2026-08-13T13:54:15.753-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
+SI-10478,2026-08-14T09:22:10.683-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10478,2026-08-14T09:22:10.880-0300,Rafael Ferreira,resolution,,Done
+SI-10478,2026-08-14T09:22:10.880-0300,Rafael Ferreira,status,Aguardando Informação,Done
 SI-10477,2026-08-13T12:11:13.817-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10477,2026-08-13T12:11:22.316-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-10477,2026-08-13T12:11:25.231-0300,Rafael Ferreira,resolution,,Done
@@ -73065,6 +73070,9 @@ SI-10497,2026-08-13T19:05:36.600-0300,Sistema,Resolução do chamado,,Aguardando
 SI-10497,2026-08-13T19:05:36.600-0300,Sistema,Causa raiz potencial,,Aguardando informação
 SI-10497,2026-08-13T19:05:36.600-0300,Sistema,Causa raiz final,,Aguardando informação
 SI-10497,2026-08-13T19:05:36.600-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
+SI-10497,2026-08-14T09:22:09.084-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10497,2026-08-14T09:22:09.317-0300,Rafael Ferreira,resolution,,Done
+SI-10497,2026-08-14T09:22:09.317-0300,Rafael Ferreira,status,Aguardando Informação,Done
 SI-10495,2026-08-13T15:18:36.283-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10495,2026-08-13T15:18:37.403-0300,Rafael Ferreira,status,Submissão,Aguardando correção
 SI-10495,2026-08-13T19:05:35.974-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
@@ -73075,6 +73083,13 @@ SI-10495,2026-08-13T19:05:35.974-0300,Sistema,Resolução do chamado,,Encaminhad
 SI-10495,2026-08-13T19:05:35.974-0300,Sistema,Causa raiz potencial,,Encaminhado ao desenvolvedor responsável.
 SI-10495,2026-08-13T19:05:35.974-0300,Sistema,Causa raiz final,,Encaminhado ao desenvolvedor responsável.
 SI-10495,2026-08-13T19:05:35.974-0300,Sistema,Justificativa Causa Raiz final,,Encaminhado ao desenvolvedor responsável.
+SI-10495,2026-08-14T09:22:06.860-0300,Rafael Ferreira,resolution,,Done
+SI-10495,2026-08-14T09:22:06.860-0300,Rafael Ferreira,status,Aguardando correção,Done
+SI-10505,2026-08-14T08:58:33.697-0300,Rafael Ferreira,status,Submissão,Em Atendimento
+SI-10505,2026-08-14T08:58:35.962-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10505,2026-08-14T09:05:55.363-0300,Rafael Ferreira,Encaminhado para:,,DS
+SI-10505,2026-08-14T09:06:00.237-0300,Rafael Ferreira,resolution,,Done
+SI-10505,2026-08-14T09:06:00.237-0300,Rafael Ferreira,status,Em Atendimento,Done
 SI-10504,2026-08-13T17:18:01.157-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10504,2026-08-13T17:18:03.364-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10504,2026-08-13T17:18:03.598-0300,Rafael Ferreira,resolution,,Done
@@ -73208,5 +73223,82 @@ SI-10508,2026-08-14T08:21:09.295-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10508,2026-08-14T08:21:11.711-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10508,2026-08-14T08:21:11.933-0300,Rafael Ferreira,resolution,,Done
 SI-10508,2026-08-14T08:21:11.933-0300,Rafael Ferreira,status,Submissão,Done
+SI-10506,2026-08-14T09:26:10.957-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10506,2026-08-14T09:26:12.847-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10506,2026-08-14T09:26:13.159-0300,Rafael Ferreira,resolution,,Done
+SI-10506,2026-08-14T09:26:13.159-0300,Rafael Ferreira,status,Submissão,Done
 SI-10513,2026-08-14T08:45:20.882-0300,Sistema,Link,,This work item is blocked by GA-1490
+SI-10513,2026-08-14T09:35:03.022-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10513,2026-08-14T09:35:06.378-0300,Bruno Silva,resolution,,Done
+SI-10513,2026-08-14T09:35:06.378-0300,Bruno Silva,status,Submissão,Done
+SI-10512,2026-08-14T08:50:30.970-0300,Rafael Ferreira,status,Submissão,Em Atendimento
+SI-10512,2026-08-14T08:50:33.647-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10512,2026-08-14T09:14:24.097-0300,Rafael Ferreira,description,,"*CHECKLIST PADRÃO DE TRIAGEM (DMS)*
+
+h3. 1️⃣ Identificação do Chamado
+
+* *Módulo:* Operations
+* *Tipo/Classificação:* Incidente
+* *Ambiente:* Produção
+* *Título Sugerido:* Erro {{AWB Numbers not found}} ao vincular Order 260130093 ao Booking Air 001-27425414
+
+h3. 2️⃣ Entendimento do Problema
+
+* *Passo a Passo:*
+*# Acessar a Order {{260130093}} ({{[https://operational.dmslog.com/order/145909/](https://operational.dmslog.com/order/145909/)}}).
+*# Tentar vincular a Order ao Booking Aéreo {{001-27425414}} ({{[https://operational.dmslog.com/booking/air/50427/](https://operational.dmslog.com/booking/air/50427/)}}).
+*# Abrir a ferramenta de desenvolvedor (_DevTools_) na aba _Network_.
+*# Confirmar a ação de vínculo e observar a falha na requisição HTTP.
+* *Comportamento Esperado vs. Atual:*
+** _Comportamento Esperado:_ A Order deve ser associada com sucesso ao Booking Aéreo, sincronizando as etapas do workflow e os custos pertinentes.
+** _Comportamento Atual:_ A ação falha ao tentar consultar/validar o tarifário da AWB, exibindo o retorno de erro na API e impedindo a associação.
+* *Evidências:*
+** *Endpoint chamado:* {{GET [https://operational.dmslog.com/api/awb-pricing/?line_id=1686&origin_id=5](https://operational.dmslog.com/api/awb-pricing/?line_id=1686&origin_id=5)}}
+** *Response de erro:* {{{error: ""AWB Numbers not found""}}}
+
+h3. 3️⃣ Análise Técnica Inicial
+
+* *Histórico/Logs:* Mapeada requisição na aba _Network_ apontando para o endpoint {{/api/awb-pricing/}} que rejeita a chamada por não localizar os números/tabelas de AWB cadastrados para a linha ({{line_id=1686}}) e origem ({{origin_id=5}}).
+* *Parametrização/Perfil:* Permissão de usuário validada. Trata-se de uma exceção de regra de negócio/dados de AWB na API de precificação.
+
+h3. 4️⃣ Avaliação de Impacto
+
+* *Abrangência:* Pontual (Order {{260130093}} / Assembly {{260747575}}).
+* *Criticidade:* Média
+* *Justificativa:* Bloqueia a continuidade do fluxo operacional do frete aéreo e o andamento das etapas do Workflow vinculadas ao Booking.
+* *Workaround:* Não identificado no Nível 1.
+
+h3. 5️⃣ Tentativas de Resolução
+
+* *Ações Realizadas:*
+*# Reprodução do fluxo operacional em conjunto com o usuário via navegador.
+*# Inspeção de rede (_Network_) para captura do endpoint e payload com falha.
+*# Validação dos links diretos da Order e do Booking.
+
+h3. 6️⃣ Justificativa Técnica para Escalonamento
+
+* O atendimento de Nível 1 identificou que o vínculo da Order ao Booking está sendo bloqueado por uma exceção lançada na API {{/api/awb-pricing/}} ({{AWB Numbers not found}}). A resolução exige verificação no banco de dados / tabela de tarifário de AWB para a Cia Aérea ({{line_id: 1686}}) e Origem ({{origin_id: 5}}), ou ajuste no tratamento da chamada pelo time de Nível 2 / Desenvolvimento / DS.
+
+💡 *POTENCIAL CAUSA RAIZ*
+
+{quote}Inexistência ou inconsistência do cadastro da faixa/números de AWB ou da tabela de precificação aérea ({{awb-pricing}}) associada à linha aérea ID {{1686}} para a origem ID {{5}}, fazendo com que a API interrompa o processo de vínculo ao tentar forçar a busca/recálculo do AWB no Booking Air.{quote}
+
+Video fluxo reprodução do erro
+
+[^google_screen_recording_2026-08-14T11-54-50.368Z.webm]"
+SI-10512,2026-08-14T09:14:24.595-0300,Rafael Ferreira,Attachment,,google_screen_recording_2026-08-14T11-54-50.368Z.webm
+SI-10512,2026-08-14T09:14:35.199-0300,Rafael Ferreira,Encaminhado para:,,Sustentação
+SI-10512,2026-08-14T09:14:53.899-0300,Sistema,Link,,This work item is blocked by SUS-298
+SI-10512,2026-08-14T09:18:25.885-0300,Rafael Ferreira,Encaminhado para:,Sustentação,
+SI-10512,2026-08-14T09:22:22.696-0300,Rafael Ferreira,resolution,,Done
+SI-10512,2026-08-14T09:22:22.696-0300,Rafael Ferreira,status,Em Atendimento,Done
 SI-10510,2026-08-14T08:16:23.175-0300,Sistema,Link,,This work item is blocked by GA-1489
+SI-10510,2026-08-14T09:06:48.049-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10510,2026-08-14T09:07:06.044-0300,Bruno Silva,resolution,,Done
+SI-10510,2026-08-14T09:07:06.044-0300,Bruno Silva,status,Submissão,Done
+SI-10515,2026-08-14T09:26:38.529-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10515,2026-08-14T09:26:42.044-0300,Bruno Silva,resolution,,Done
+SI-10515,2026-08-14T09:26:42.044-0300,Bruno Silva,status,Submissão,Done
+SI-10514,2026-08-14T09:26:49.634-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10514,2026-08-14T09:26:52.644-0300,Bruno Silva,resolution,,Done
+SI-10514,2026-08-14T09:26:52.644-0300,Bruno Silva,status,Submissão,Done
