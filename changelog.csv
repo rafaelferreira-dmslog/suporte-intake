@@ -58336,6 +58336,7 @@ SI-7487,2026-07-06T19:02:46.535-0300,Sistema,Reclassificação solicitação,,So
 SI-7487,2026-07-06T19:02:46.535-0300,Sistema,Resolução do chamado,,"Aguardando informação. Solicitamos, por gentileza, verificar e responder ao comentário inserido no ticket."
 SI-7487,2026-08-14T14:03:47.067-0300,Helena Almeida,description,,"!image-20260814-170342.png|width=580,alt=""image-20260814-170342.png""!"
 SI-7487,2026-08-14T14:03:47.397-0300,Helena Almeida,Attachment,,image-20260814-170342.png
+SI-7487,2026-08-14T19:04:19.863-0300,Sistema,Resolução do chamado,"Aguardando informação. Solicitamos, por gentileza, verificar e responder ao comentário inserido no ticket.",Ticket concluído. Conta da ex-colaboradora foi reativada e documento teve propriedade transferida para Andrea Couto.
 SI-7493,2026-07-07T08:43:45.415-0300,Bruno Silva,resolution,,Done
 SI-7493,2026-07-07T08:43:45.415-0300,Bruno Silva,status,Submissão,Done
 SI-7493,2026-07-10T09:52:32.361-0300,Rafael Ferreira,assignee,,Rafael Ferreira
@@ -73413,6 +73414,10 @@ SI-10544,2026-08-14T16:56:10.685-0300,Rafael Ferreira,resolution,,Done
 SI-10544,2026-08-14T16:56:10.685-0300,Rafael Ferreira,status,Submissão,Done
 SI-10543,2026-08-14T16:04:36.855-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10543,2026-08-14T16:04:40.443-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10547,2026-08-14T18:46:00.801-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10547,2026-08-14T18:46:02.896-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10547,2026-08-14T18:46:03.123-0300,Rafael Ferreira,resolution,,Done
+SI-10547,2026-08-14T18:46:03.123-0300,Rafael Ferreira,status,Submissão,Done
 SI-10545,2026-08-14T17:18:34.713-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10545,2026-08-14T17:18:36.863-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10545,2026-08-14T17:18:37.182-0300,Rafael Ferreira,resolution,,Done
