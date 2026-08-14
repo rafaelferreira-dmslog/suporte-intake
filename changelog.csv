@@ -72862,6 +72862,7 @@ SI-10478,2026-08-13T13:54:15.753-0300,Rafael Ferreira,status,Submissão,Aguardan
 SI-10478,2026-08-14T09:22:10.683-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10478,2026-08-14T09:22:10.880-0300,Rafael Ferreira,resolution,,Done
 SI-10478,2026-08-14T09:22:10.880-0300,Rafael Ferreira,status,Aguardando Informação,Done
+SI-10478,2026-08-14T12:27:22.938-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10477,2026-08-13T12:11:13.817-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10477,2026-08-13T12:11:22.316-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-10477,2026-08-13T12:11:25.231-0300,Rafael Ferreira,resolution,,Done
@@ -72987,6 +72988,9 @@ SI-10485,2026-08-13T19:05:32.986-0300,Sistema,Resolução do chamado,,"Aguardand
 SI-10485,2026-08-14T11:21:03.601-0300,Rafael Ferreira,assignee,,Helena Almeida
 SI-10485,2026-08-14T11:21:05.940-0300,Rafael Ferreira,resolution,,Done
 SI-10485,2026-08-14T11:21:05.940-0300,Rafael Ferreira,status,Submissão,Done
+SI-10493,2026-08-14T12:18:27.772-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10493,2026-08-14T12:18:30.545-0300,Bruno Silva,resolution,,Done
+SI-10493,2026-08-14T12:18:30.545-0300,Bruno Silva,status,Submissão,Done
 SI-10492,2026-08-13T14:30:15.543-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10492,2026-08-13T14:31:02.529-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10492,2026-08-13T14:31:02.736-0300,Rafael Ferreira,resolution,,Done
@@ -73037,6 +73041,9 @@ SI-10490,2026-08-13T19:05:34.208-0300,Sistema,Causa raiz potencial,,"Atraso temp
 Verificação operacional realizada antes do tempo regular de conclusão da consulta assíncrona do sistema."
 SI-10490,2026-08-13T19:05:34.208-0300,Sistema,Causa raiz final,,"Durante o fluxo de envio e validação dos documentos de transporte internacional junto ao Controle de Cargas e Trânsito (CCT), os dados transmitidos passam por uma etapa de processamento. O status indicativo de pendência ocorre temporariamente enquanto a plataforma aguarda o retorno da validação dos arquivos. No caso em questão, o chamado foi aberto durante o intervalo em que a atualização do estado da carga ainda estava sendo concluída. Ao consultar os bookings informados, constatou-se que o processamento dos conhecimentos másteres já havia sido finalizado com sucesso, estando a documentação regularizada e pronta para a recepção pelo depositário sem necessidade de descarga de ações adicionais."
 SI-10490,2026-08-13T19:05:34.208-0300,Sistema,Justificativa Causa Raiz final,,"A verificação dos registros das ordens 992-10983350 e 369-10290361 confirmou que os arquivos de MAWB transicionaram corretamente para o status processado, descartando falhas no envio de XML ou erros na integração com o CCT. Trata-se de uma divergência de tempo entre a abertura da consulta operacional e a atualização do protocolo no sistema. Sob a ótica da melhoria contínua, recomenda-se reforçar junto ao time operacional a orientação sobre o tempo de atualização dos status do CCT na plataforma, prevenindo a abertura de chamados quando o fluxo de processamento estiver ocorrendo dentro dos prazos operacionais previstos."
+SI-10489,2026-08-14T12:16:25.871-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10489,2026-08-14T12:16:29.272-0300,Bruno Silva,resolution,,Done
+SI-10489,2026-08-14T12:16:29.272-0300,Bruno Silva,status,Submissão,Done
 SI-10488,2026-08-13T13:54:03.281-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10488,2026-08-13T13:54:04.665-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-10488,2026-08-13T13:56:16.741-0300,Rafael Ferreira,Classificação,,Ranked higher
@@ -73050,6 +73057,9 @@ SI-10488,2026-08-13T19:05:33.654-0300,Sistema,Resolução do chamado,,"Identific
 SI-10488,2026-08-13T19:05:33.654-0300,Sistema,Causa raiz potencial,,Ausência de inicialização automática de tabelas de controle de datas de processos antigos ou falta de validação estrutural do sistema ao tentar atualizar informações ligadas a relacionamentos inexistentes no banco de dados.
 SI-10488,2026-08-13T19:05:33.654-0300,Sistema,Causa raiz final,,"O impedimento ao tentar concluir as ações de desatrelar ou deletar as ordens ocorria devido a uma falha de comunicação entre as validações sistêmicas atuais e o histórico de cadastros da plataforma. Especificamente, após a desativação da aba anterior de controle de datas, algumas ordens ficaram sem esse registro de acompanhamento gerado na base. Sempre que um operador tentava realizar uma movimentação crítica na ordem, a plataforma tentava atualizar obrigatoriamente um status de ""aprovação de cliente"" que ficava dentro desse antigo controle de datas. Por não encontrar essa informação, o sistema não sabia como prosseguir, interrompendo a ação abruptamente e travando a tela. Como não foi realizada nenhuma tratativa paliativa ou definitiva até o momento para contornar essa exigência de sistema, a situação foi atrelada ao INTAKE-1557. A equipe de tecnologia trabalhará neste intake para reprogramar o sistema, ensinando a plataforma a verificar se a informação de data existe antes de tentar atualizá-la, ignorando a validação ou criando o dado sob demanda para que o trabalho do operador não seja mais interrompido."
 SI-10488,2026-08-13T19:05:33.654-0300,Sistema,Justificativa Causa Raiz final,,"A análise técnica do card SUS-215 atestou a ocorrência do erro relacional RelatedObjectDoesNotExist: Assembly has no datecontrol no arquivo src/booking/models/base.py (linha 489). A falha é engatilhada porque o backend, através da função update_customer_approval, tenta acessar de forma direta o atributo datecontrol.customer_approval_valid sem aplicar um tratamento defensivo para validar a existência do relacionamento OneToOne na tabela order_datecontrol. Considerando que nenhuma correção definitiva ou saneamento foi executado em ambiente produtivo, os processos que possuem essa lacuna de dados continuam apresentando o Erro 500. A resolução focada na melhoria contínua e eliminação da reincidência foi direcionada para o INTAKE-1557, que atuará na implementação de validações defensivas no código (para verificar a existência do objeto antes da manipulação) e na criação de rotinas para lidar com registros órfãos, mitigando o impacto na eficiência operacional apontado no discovery."
+SI-10487,2026-08-14T12:06:43.617-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10487,2026-08-14T12:06:47.905-0300,Bruno Silva,resolution,,Done
+SI-10487,2026-08-14T12:06:47.905-0300,Bruno Silva,status,Submissão,Done
 SI-10499,2026-08-13T17:13:41.433-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-10499,2026-08-13T17:13:43.208-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10499,2026-08-13T17:13:43.208-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
@@ -73088,6 +73098,9 @@ SI-10495,2026-08-13T19:05:35.974-0300,Sistema,Causa raiz final,,Encaminhado ao d
 SI-10495,2026-08-13T19:05:35.974-0300,Sistema,Justificativa Causa Raiz final,,Encaminhado ao desenvolvedor responsável.
 SI-10495,2026-08-14T09:22:06.860-0300,Rafael Ferreira,resolution,,Done
 SI-10495,2026-08-14T09:22:06.860-0300,Rafael Ferreira,status,Aguardando correção,Done
+SI-10494,2026-08-14T12:20:16.590-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10494,2026-08-14T12:20:19.641-0300,Bruno Silva,resolution,,Done
+SI-10494,2026-08-14T12:20:19.641-0300,Bruno Silva,status,Submissão,Done
 SI-10505,2026-08-14T08:58:33.697-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-10505,2026-08-14T08:58:35.962-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10505,2026-08-14T09:05:55.363-0300,Rafael Ferreira,Encaminhado para:,,DS
@@ -73230,6 +73243,9 @@ SI-10508,2026-08-14T08:21:09.295-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10508,2026-08-14T08:21:11.711-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10508,2026-08-14T08:21:11.933-0300,Rafael Ferreira,resolution,,Done
 SI-10508,2026-08-14T08:21:11.933-0300,Rafael Ferreira,status,Submissão,Done
+SI-10507,2026-08-14T12:27:54.769-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10507,2026-08-14T12:27:56.593-0300,Rafael Ferreira,resolution,,Done
+SI-10507,2026-08-14T12:27:56.593-0300,Rafael Ferreira,status,Submissão,Done
 SI-10506,2026-08-14T09:26:10.957-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10506,2026-08-14T09:26:12.847-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10506,2026-08-14T09:26:13.159-0300,Rafael Ferreira,resolution,,Done
@@ -73348,3 +73364,4 @@ SI-10522,2026-08-14T10:05:46.108-0300,Bruno Silva,resolution,,Done
 SI-10522,2026-08-14T10:05:46.108-0300,Bruno Silva,status,Submissão,Done
 SI-10532,2026-08-14T11:36:23.122-0300,Sistema,Link,,This work item is blocked by GA-1495
 SI-10529,2026-08-14T10:58:25.425-0300,Sistema,Link,,This work item is blocked by GA-1494
+SI-10536,2026-08-14T12:40:25.574-0300,Sistema,Link,,This work item is blocked by GA-1497
