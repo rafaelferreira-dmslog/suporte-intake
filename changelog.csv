@@ -70855,6 +70855,14 @@ SI-10314,2026-08-11T19:03:39.757-0300,Sistema,Resolução do chamado,Em atendime
 SI-10314,2026-08-11T19:03:39.757-0300,Sistema,Causa raiz potencial,Em atendimento,Inserção de documento em ordem divergente da informada; erro de salvamento no momento do lançamento pelo usuário; encerramento por falta de retorno de informações essenciais para validação.
 SI-10314,2026-08-11T19:03:39.757-0300,Sistema,Causa raiz final,Em atendimento,"Durante o acompanhamento da solicitação referente ao suposto desaparecimento de uma Debit Note do processo, foi executada uma verificação detalhada em todo o histórico da ordem. A análise constatou que não consta nenhum registro prévio de inclusão dessa instrução ou documento para o processo citado. Com o objetivo de esclarecer o ocorrido e validar se o documento em questão poderia ser outro arquivo ou ter sido associado a uma referência diferente, a equipe solicitou detalhes complementares à colaboradora. Como não houve o envio dessas informações para dar continuidade à análise, o chamado foi encerrado. Dessa forma, não se confirmou qualquer falha ou remoção indevida de dados no sistema."
 SI-10314,2026-08-11T19:03:39.757-0300,Sistema,Justificativa Causa Raiz final,Em atendimento,"A verificação de dados confirmou a inexistência de registros referentes à inclusão da Debit Note na ordem informada. A impossibilidade de prosseguir com o diagnóstico técnico ocorreu pela ausência de insumos e retorno da usuária durante a etapa de triagem. O encerramento por falta de interação previne a alocação desnecessária de esforços de sustentação em cenários sem evidência de inconsistência sistêmica, garantindo a eficiência do fluxo de suporte."
+SI-10314,2026-08-15T13:00:24.038-0300,Sistema,Resolução do chamado,"Realizada a verificação nos registros do sistema para a ordem informada, onde não foi identificado nenhum histórico de inclusão de Debit Note vinculada ao processo. Solicitadas informações adicionais à colaboradora para identificação do documento citado, porém, em razão da ausência de retorno, o chamado foi encerrado.","Verificado o histórico da ordem 260436915 e identificado que o registro BOOEFI0041626-27, criado em 06/08/2026, teve seu status alterado para rejeitado no dia 07/08/2026. Orientado o usuário sobre o comportamento padrão do sistema, no qual itens que sofrem rejeição deixam de ser exibidos na interface principal. Instruído quanto ao fluxo operacional adequado para continuidade do processo após uma rejeição."
+SI-10314,2026-08-15T13:00:24.038-0300,Sistema,Causa raiz potencial,Inserção de documento em ordem divergente da informada; erro de salvamento no momento do lançamento pelo usuário; encerramento por falta de retorno de informações essenciais para validação.,"Alteração do status do registro para um estado (ex: rejeitado) que possui regra de filtro para não exibição na tela (soft delete/ocultação em front-end).
+
+Falha de integração ou erro de salvamento gerando rollback sistêmico e desaparecimento do dado.
+
+Exclusão acidental por parte do usuário logo após a criação do registro."
+SI-10314,2026-08-15T13:00:24.038-0300,Sistema,Causa raiz final,"Durante o acompanhamento da solicitação referente ao suposto desaparecimento de uma Debit Note do processo, foi executada uma verificação detalhada em todo o histórico da ordem. A análise constatou que não consta nenhum registro prévio de inclusão dessa instrução ou documento para o processo citado. Com o objetivo de esclarecer o ocorrido e validar se o documento em questão poderia ser outro arquivo ou ter sido associado a uma referência diferente, a equipe solicitou detalhes complementares à colaboradora. Como não houve o envio dessas informações para dar continuidade à análise, o chamado foi encerrado. Dessa forma, não se confirmou qualquer falha ou remoção indevida de dados no sistema.","Durante a análise detalhada da ordem 260436915, foi identificado que o registro referenciado (BOOEFI0041626-27) foi criado e salvo com sucesso no dia 06/08/2026. No entanto, no dia seguinte, em 07/08/2026, o status desse mesmo registro foi alterado para ""rejeitado"" no sistema. É importante esclarecer que o sistema possui uma regra de funcionamento operacional padrão: assim que um documento, processo ou registro passa para o status de rejeitado, ele é automaticamente ocultado da visualização principal da tela. Isso ocorre propositalmente para evitar que as equipes utilizem, por engano, informações que não são mais válidas para o andamento do processo. Portanto, não houve uma falha técnica de salvamento ou perda indevida de informações, mas sim a aplicação correta da regra de ocultação sistêmica de itens rejeitados. Para dar prosseguimento ao trabalho, deve-se providenciar a inserção das informações corretas, substituindo o registro que foi invalidado."
+SI-10314,2026-08-15T13:00:24.038-0300,Sistema,Justificativa Causa Raiz final,"A verificação de dados confirmou a inexistência de registros referentes à inclusão da Debit Note na ordem informada. A impossibilidade de prosseguir com o diagnóstico técnico ocorreu pela ausência de insumos e retorno da usuária durante a etapa de triagem. O encerramento por falta de interação previne a alocação desnecessária de esforços de sustentação em cenários sem evidência de inconsistência sistêmica, garantindo a eficiência do fluxo de suporte.","Os logs e históricos de eventos do sistema comprovam que o item BOOEFI0041626-27, vinculado à ordem 260436915, não passou por qualquer falha de persistência de dados. Os timestamps literais demonstram o sucesso na criação (2026-08-06 17:17:02.630611+00) e a posterior ação que culminou na rejeição do item (2026-08-07 12:54:11.137747+00). O impacto (sensação de sumiço dos dados após o save) é puramente a mecânica esperada da aplicação, que retira da view principal os dados com status de rejeição. Como melhoria contínua, propõe-se um reforço nos treinamentos operacionais sobre o comportamento da interface frente às mudanças de status e regras de retificação."
 SI-10320,2026-08-06T16:47:58.371-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10320,2026-08-06T16:48:23.380-0300,Rafael Ferreira,resolution,,Done
 SI-10320,2026-08-06T16:48:23.380-0300,Rafael Ferreira,status,Submissão,Done
@@ -72505,6 +72513,14 @@ SI-10452,2026-08-13T19:05:17.196-0300,Sistema,Justificativa Causa Raiz final,,Re
 SI-10454,2026-08-13T09:51:37.004-0300,Bruno Silva,resolution,,Done
 SI-10454,2026-08-13T09:51:37.004-0300,Bruno Silva,status,Submissão,Done
 SI-10454,2026-08-14T16:19:20.808-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-10454,2026-08-15T13:01:16.281-0300,Sistema,Criticidade final,,P2 - Média
+SI-10454,2026-08-15T13:01:16.281-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10454,2026-08-15T13:01:16.281-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10454,2026-08-15T13:01:16.281-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10454,2026-08-15T13:01:16.281-0300,Sistema,Resolução do chamado,,"Identificado que o alerta de e-mail não foi disparado em virtude do volume dos arquivos anexados exceder o limite de 25 MB autorizado pela plataforma de e-mail (Google). Realizada a análise e o encaminhamento do cenário junto à equipe de desenvolvimento para estudo de melhoria técnica, verificar se todos os documentos que estão selecionados no alerta precisam ser disparados para o cliente."
+SI-10454,2026-08-15T13:01:16.281-0300,Sistema,Causa raiz potencial,,Ausência de trava ou validação preventiva no front-end durante a inclusão dos anexos para impedir arquivos com soma superior a 25 MB.
+SI-10454,2026-08-15T13:01:16.281-0300,Sistema,Causa raiz final,,"O bloqueio no disparo do alerta ocorreu devido a uma restrição estrutural da plataforma de e-mail do Google, utilizada na infraestrutura corporativa."
+SI-10454,2026-08-15T13:01:16.281-0300,Sistema,Justificativa Causa Raiz final,,A falha deriva de uma limitação técnica de payload na API/SMTP do Google Work
 SI-10455,2026-08-12T17:34:34.379-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10455,2026-08-12T17:34:34.379-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-10455,2026-08-12T17:34:35.855-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
@@ -72867,6 +72883,54 @@ SI-10478,2026-08-14T09:22:10.683-0300,Rafael Ferreira,Classificação,,Ranked hi
 SI-10478,2026-08-14T09:22:10.880-0300,Rafael Ferreira,resolution,,Done
 SI-10478,2026-08-14T09:22:10.880-0300,Rafael Ferreira,status,Aguardando Informação,Done
 SI-10478,2026-08-14T12:27:22.938-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10478,2026-08-15T13:01:24.649-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10478,2026-08-15T13:01:24.649-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10478,2026-08-15T13:01:24.649-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10478,2026-08-15T13:01:24.649-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10478,2026-08-15T13:01:24.649-0300,Sistema,Resolução do chamado,,"Identificado que as ordens e seus respectivos documentos de recebimento (WR e WRR) encontravam-se previamente atrelados a listas de separação (Pick Lists) ativas no sistema DWSYS. Foi realizada a verificação individual de cada registro e fornecida orientação para a remoção prévia das ordens de suas listas atuais, possibilitando a posterior inclusão em novos Pick Lists.
+
+Detalhamento individual das vinculações identificadas:
+
+Pick List PL-MIA26080009971:
+
+Ordem 260748080 vinculada ao WRR-MIA26080056953
+
+Ordem 260748066 vinculada ao WRR-MIA26080056922
+
+Ordem 260747955 vinculada ao WR-MIA26070056888
+
+Pick List PL-MIA26080010003:
+
+Ordem 260848130 vinculada ao WRR-MIA26080056989
+
+Ordem 260748030 vinculada ao WR-MIA26070056774
+
+Caso queira vincular em outros picklists você tem que remover o vínculo existente."
+SI-10478,2026-08-15T13:01:24.649-0300,Sistema,Causa raiz potencial,,"Permanência de vínculo de ordens e documentos de armazém em Pick Lists gerados em processos anteriores.
+
+Ausência de procedimento de desvinculação prévia das ordens e WRs/WRRs antes da criação de um novo agrupamento de separação.
+
+Validação de trava de integridade do sistema acionada para evitar duplicidade de alocação de cargas."
+SI-10478,2026-08-15T13:01:24.649-0300,Sistema,Causa raiz final,,"A impossibilidade de incluir as ordens e os documentos de recebimento em uma nova lista de separação ocorre devido a uma regra de consistência e integridade operacional do sistema DWSYS. Quando uma ordem ou um documento de armazém (WR ou WRR) é associado a um Pick List, o sistema bloqueia automaticamente novas associações para evitar riscos de duplicidade na movimentação e na expedição de mercadorias.
+
+Na verificação detalhada das informações contidas na base de dados, identificou-se a seguinte distribuição de vínculos ativos:
+
+No Pick List PL-MIA26080009971:
+
+A ordem 260748080 está atrelada ao documento WRR-MIA26080056953;
+
+A ordem 260748066 está atrelada ao documento WRR-MIA26080056922;
+
+A ordem 260747955 está atrelada ao documento WR-MIA26070056888.
+
+No Pick List PL-MIA26080010003:
+
+A ordem 260848130 está atrelada ao documento WRR-MIA26080056989;
+
+A ordem 260748030 está atrelada ao documento WR-MIA26070056774.
+
+Portanto, para permitir que estes itens sejam associados a um novo Pick List, a equipe operacional responsável deve obrigatoriamente realizar a remoção prévia de cada ordem e documento das listas antigas onde constam vinculados."
+SI-10478,2026-08-15T13:01:24.649-0300,Sistema,Justificativa Causa Raiz final,,"O incidente decorre de uma inconsistência no fluxo operacional de gerenciamento de Pick Lists no DWSYS. A verificação dos dados relacionais confirmou que as ordens (260748080, 260748066, 260747955, 260848130 e 260748030) e os respectivos documentos de recebimento (WRR-MIA26080056953, WRR-MIA26080056922, WR-MIA26070056888, WRR-MIA26080056989 e WR-MIA26070056774) mantinham vínculos ativos com as listas de separação PL-MIA26080009971 e PL-MIA26080010003. A trava de segurança do sistema atuou corretamente para impedir dupla alocação de cargas. Como ação de melhoria contínua e prevenção de reincidência, orienta-se o cumprimento rigoroso da rotina operacional de desvincular manualmente as ordens e WRs/WRRs do Pick List anterior antes de tentar atrelá-los a um novo documento de saída."
 SI-10477,2026-08-13T12:11:13.817-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10477,2026-08-13T12:11:22.316-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-10477,2026-08-13T12:11:25.231-0300,Rafael Ferreira,resolution,,Done
@@ -72995,6 +73059,14 @@ SI-10485,2026-08-14T11:21:05.940-0300,Rafael Ferreira,status,Submissão,Done
 SI-10493,2026-08-14T12:18:27.772-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10493,2026-08-14T12:18:30.545-0300,Bruno Silva,resolution,,Done
 SI-10493,2026-08-14T12:18:30.545-0300,Bruno Silva,status,Submissão,Done
+SI-10493,2026-08-15T13:01:29.401-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10493,2026-08-15T13:01:29.401-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10493,2026-08-15T13:01:29.401-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10493,2026-08-15T13:01:29.401-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10493,2026-08-15T13:01:29.401-0300,Sistema,Resolução do chamado,,"Ticket encerrado por insuficiência de dados. Para que possamos ajudar da melhor forma, por favor, abra uma nova solicitação detalhando o problema, incluindo prints ou mensagens de erro, se houver."
+SI-10493,2026-08-15T13:01:29.401-0300,Sistema,Causa raiz potencial,,"Ticket encerrado por insuficiência de dados. Para que possamos ajudar da melhor forma, por favor, abra uma nova solicitação detalhando o problema, incluindo prints ou mensagens de erro, se houver."
+SI-10493,2026-08-15T13:01:29.401-0300,Sistema,Causa raiz final,,"Ticket encerrado por insuficiência de dados. Para que possamos ajudar da melhor forma, por favor, abra uma nova solicitação detalhando o problema, incluindo prints ou mensagens de erro, se houver."
+SI-10493,2026-08-15T13:01:29.401-0300,Sistema,Justificativa Causa Raiz final,,"Ticket encerrado por insuficiência de dados. Para que possamos ajudar da melhor forma, por favor, abra uma nova solicitação detalhando o problema, incluindo prints ou mensagens de erro, se houver."
 SI-10492,2026-08-13T14:30:15.543-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10492,2026-08-13T14:31:02.529-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10492,2026-08-13T14:31:02.736-0300,Rafael Ferreira,resolution,,Done
@@ -73048,6 +73120,14 @@ SI-10490,2026-08-13T19:05:34.208-0300,Sistema,Justificativa Causa Raiz final,,"A
 SI-10489,2026-08-14T12:16:25.871-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10489,2026-08-14T12:16:29.272-0300,Bruno Silva,resolution,,Done
 SI-10489,2026-08-14T12:16:29.272-0300,Bruno Silva,status,Submissão,Done
+SI-10489,2026-08-15T13:01:27.838-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10489,2026-08-15T13:01:27.838-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10489,2026-08-15T13:01:27.838-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10489,2026-08-15T13:01:27.838-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10489,2026-08-15T13:01:27.838-0300,Sistema,Resolução do chamado,,Chamado concluído na sala do suporte
+SI-10489,2026-08-15T13:01:27.838-0300,Sistema,Causa raiz potencial,,Chamado concluído na sala do suporte
+SI-10489,2026-08-15T13:01:27.838-0300,Sistema,Causa raiz final,,Chamado concluído na sala do suporte
+SI-10489,2026-08-15T13:01:27.838-0300,Sistema,Justificativa Causa Raiz final,,Chamado concluído na sala do suporte
 SI-10488,2026-08-13T13:54:03.281-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10488,2026-08-13T13:54:04.665-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-10488,2026-08-13T13:56:16.741-0300,Rafael Ferreira,Classificação,,Ranked higher
@@ -73064,6 +73144,14 @@ SI-10488,2026-08-13T19:05:33.654-0300,Sistema,Justificativa Causa Raiz final,,"A
 SI-10487,2026-08-14T12:06:43.617-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10487,2026-08-14T12:06:47.905-0300,Bruno Silva,resolution,,Done
 SI-10487,2026-08-14T12:06:47.905-0300,Bruno Silva,status,Submissão,Done
+SI-10487,2026-08-15T13:01:26.922-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10487,2026-08-15T13:01:26.922-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10487,2026-08-15T13:01:26.922-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10487,2026-08-15T13:01:26.922-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10487,2026-08-15T13:01:26.922-0300,Sistema,Resolução do chamado,,"Verificada a necessidade de alinhamento das informações do processo após o vínculo do documento. Foi solicitada a atuação do time responsável para realizar o ajuste no painel e validar as atualizações, garantindo a adequada sincronização dos dados e o prosseguimento das etapas operacionais."
+SI-10487,2026-08-15T13:01:26.922-0300,Sistema,Causa raiz potencial,,"Inconsistência nos registros de datas durante a vinculação do documento de instrução e processo na base de dados, gerando conflitos na validação e falha na migração dos atributos."
+SI-10487,2026-08-15T13:01:26.922-0300,Sistema,Causa raiz final,,"Após o vínculo do documento ao processo, o sistema identificou inconsistências na validação das datas registradas na ordem. Essa condição impediu a correta atualização do status, sendo necessária a intervenção da equipe responsável para ajustar o painel do processo"
+SI-10487,2026-08-15T13:01:26.922-0300,Sistema,Justificativa Causa Raiz final,,Divergência técnica no tratamento de datas durante a associação do documento de instrução com o registro da ordem. A atuação técnica para correção da inconsistência e validação da estrutura de dados resolve o travamento e evita a reincidência de erros de gravação na tabela operacional.
 SI-10499,2026-08-13T17:13:41.433-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-10499,2026-08-13T17:13:43.208-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10499,2026-08-13T17:13:43.208-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
@@ -73090,6 +73178,15 @@ SI-10497,2026-08-13T19:05:36.600-0300,Sistema,Justificativa Causa Raiz final,,Ag
 SI-10497,2026-08-14T09:22:09.084-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10497,2026-08-14T09:22:09.317-0300,Rafael Ferreira,resolution,,Done
 SI-10497,2026-08-14T09:22:09.317-0300,Rafael Ferreira,status,Aguardando Informação,Done
+SI-10497,2026-08-15T13:01:30.903-0300,Sistema,Resolução do chamado,Aguardando informação,"Bom dia! Tudo bem?
+Avaliamos o comportamento do processo e identificamos que o sistema está operando exatamente conforme a regra de negócio parametrizada, não se tratando de um erro.
+O que ocorre aqui é uma pequena confusão conceitual entre a migração do processo (da ordem) para a tela de faturar e a migração dos valores do frete:
+Por que o processo (a ordem) migra para a tela de faturar? A migração das taxas de venda (Selling) para o Contas a Receber é realizada de forma unificada por processo (todas as taxas de Selling migram juntas)
+. O sistema precisa enviar o processo para a tela de faturar para permitir que a equipe local fature outras taxas e serviços que possam existir no embarque (como taxas de documentação, liberação, desconsolidação, etc.).
+Por que o valor do frete não migrou? Por tratar-se de uma Importação com frete Prepaid (Pré-pago), o sistema possui uma diretriz rígida de segurança que não migra o valor do frete para o financeiro da Ordem
+. Essa trava existe especificamente para impedir que valores já pagos na origem gerem duplicidade de cobrança ou pendências de faturas indevidas para o faturamento local
+.
+Portanto, o comportamento está correto: o processo está disponível na tela de faturar para faturamento de eventuais taxas locais, mas os valores correspondentes ao frete foram omitidos da migração, operando de forma 100% segura e correta!"
 SI-10495,2026-08-13T15:18:36.283-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10495,2026-08-13T15:18:37.403-0300,Rafael Ferreira,status,Submissão,Aguardando correção
 SI-10495,2026-08-13T19:05:35.974-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
@@ -73105,11 +73202,31 @@ SI-10495,2026-08-14T09:22:06.860-0300,Rafael Ferreira,status,Aguardando correç�
 SI-10494,2026-08-14T12:20:16.590-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10494,2026-08-14T12:20:19.641-0300,Bruno Silva,resolution,,Done
 SI-10494,2026-08-14T12:20:19.641-0300,Bruno Silva,status,Submissão,Done
+SI-10494,2026-08-15T13:01:30.004-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10494,2026-08-15T13:01:30.004-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10494,2026-08-15T13:01:30.004-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10494,2026-08-15T13:01:30.004-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10494,2026-08-15T13:01:30.004-0300,Sistema,Resolução do chamado,,Verificada a solicitação referente ao campo de data do documento na aba mencionada. Foi orientada a verificação junto ao colaborador quanto à existência de alguma mensagem do sistema ou se o campo se encontra desabilitado para alteração.
+SI-10494,2026-08-15T13:01:30.004-0300,Sistema,Causa raiz potencial,,Bloqueio de edição do campo devido à restrição de perfil/permissão de acesso ou presença de trava configurada por regra de negócio para a alteração de status e datas do documento.
+SI-10494,2026-08-15T13:01:30.004-0300,Sistema,Causa raiz final,,O campo de data do documento permanece bloqueado para alteração dependendo das travas operacionais e das permissões atreladas ao perfil do usuário no sistema.
+SI-10494,2026-08-15T13:01:30.004-0300,Sistema,Justificativa Causa Raiz final,,A funcionalidade de edição de datas em documentos no módulo de operações obedece a travas de permissão e regras de negócio sistêmicas para garantir a integridade dos registros. O alinhamento das permissões do perfil ou ajuste no fluxo do documento libera a edição sem comprometer as validações de segurança.
 SI-10505,2026-08-14T08:58:33.697-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-10505,2026-08-14T08:58:35.962-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10505,2026-08-14T09:05:55.363-0300,Rafael Ferreira,Encaminhado para:,,DS
 SI-10505,2026-08-14T09:06:00.237-0300,Rafael Ferreira,resolution,,Done
 SI-10505,2026-08-14T09:06:00.237-0300,Rafael Ferreira,status,Em Atendimento,Done
+SI-10505,2026-08-15T13:01:33.608-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10505,2026-08-15T13:01:33.608-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10505,2026-08-15T13:01:33.608-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10505,2026-08-15T13:01:33.608-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10505,2026-08-15T13:01:33.608-0300,Sistema,Resolução do chamado,,"Identificada uma inconsistência no registro de bloqueio interno da ordem no sistema. Realizada a restauração do estado do registro correspondente, permitindo a liberação imediata do acesso e o carregamento normal das informações da ordem para todos os usuários."
+SI-10505,2026-08-15T13:01:33.608-0300,Sistema,Causa raiz potencial,,"Inconsistência na rotina de consulta ORM devido à presença do campo deleted_at (soft delete) na tabela de bloqueio.
+
+Tentativa de inserção duplicada de registro na tabela order_assemblylock violando a restrição de unicidade da chave.
+
+Incompatibilidade na lógica de criação e reaproveitamento de travas de ordem (AssemblyLock)."
+SI-10505,2026-08-15T13:01:33.608-0300,Sistema,Causa raiz final,,"O impedimento no acesso à ordem ocorreu devido a um conflito interno no mecanismo de controle e segurança de navegação da plataforma. Quando uma ordem é aberta, o sistema realiza uma checagem para verificar se o processo está liberado ou se há alguma trava ativa para evitar edições simultâneas por múltiplos usuários. No caso específico dessa ordem, o registro responsável por esse controle estava marcado no banco de dados como removido. Isso gerou uma divergência de lógica: durante a tentativa de acesso, a checagem inicial do sistema indicava que não havia trava ativa, mas, ao tentar registrar a abertura da tela, o sistema identificou que o código da ordem já possuía uma trava associada. Esse conflito de informações travou o carregamento da tela e causou a falha de exibição. A situação foi completamente resolvida após a regularização e reativação do registro de controle da ordem."
+SI-10505,2026-08-15T13:01:33.608-0300,Sistema,Justificativa Causa Raiz final,,"Ao processar a requisição no endpoint de visualização da ordem, o método get_assembly_lock consultou a tabela order_assemblylock pelo instance_id (179736). Como a linha possuía valor no campo deleted_at, a consulta via ORM resultou na exceção DoesNotExist. A aplicação seguiu o fluxo para criar um novo bloqueio, mas ao tentar persistir o novo objeto, o banco de dados barrou a gravação lançando IntegrityError, pois a constraint de unicidade order_assemblylock_instance_id_key continuava considerando o ID existente. A remoção do deleted_at ajustou o registro e corrigiu o impacto imediato. Para prevenir a reincidência no âmbito da Melhoria Contínua, a lógica de consulta do modelo deve ser ajustada em desenvolvimento para tratar registros excluídos logicamente ou a constraint de unicidade deve considerar o filtro de soft delete."
 SI-10504,2026-08-13T17:18:01.157-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10504,2026-08-13T17:18:03.364-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10504,2026-08-13T17:18:03.598-0300,Rafael Ferreira,resolution,,Done
@@ -73145,6 +73262,12 @@ SI-10502,2026-08-14T11:27:10.002-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10502,2026-08-14T11:27:11.915-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10502,2026-08-14T11:27:12.282-0300,Rafael Ferreira,resolution,,Done
 SI-10502,2026-08-14T11:27:12.282-0300,Rafael Ferreira,status,Submissão,Done
+SI-10502,2026-08-15T13:01:32.489-0300,Sistema,Resolução do chamado,Aguardando correção,"Realizado o alinhamento com a equipe técnica especializada para a remoção da linha duplicada no processo. A inconsistência na aba de itens foi tratada, permitindo a atualização das informações e a invalidação de registros com sucesso."
+SI-10502,2026-08-15T13:01:32.489-0300,Sistema,Causa raiz potencial,Aguardando correção,"Duplicidade de dados na listagem de itens gerando falha de validação nas requisições da plataforma.
+
+Ausência de tratamento de exceção no sistema ao tentar processar ações em registros duplicados."
+SI-10502,2026-08-15T13:01:32.489-0300,Sistema,Causa raiz final,Aguardando correção,"A dificuldade enfrentada para atualizar a data no campo de prontidão da carga e efetuar a invalidação da segunda linha ocorreu devido à presença de um item duplicado na ordem. Quando há dois registros equivalentes na mesma estrutura, o sistema encontra um conflito de dados no processamento da solicitação, o que impede a plataforma de identificar corretamente qual linha deve ser alterada ou anulada. Essa divergência interrompe a conclusão da ação na tela. Com a atuação para rejeitar e remover a linha sobressalente, a coerência das informações foi restabelecida, permitindo a edição e invalidação normal dos dados do processo."
+SI-10502,2026-08-15T13:01:32.489-0300,Sistema,Justificativa Causa Raiz final,Aguardando correção,"A duplicidade de registros na aba de itens quebrou a lógica de processamento do backend durante as chamadas de atualização e invalidação do Cargo Readiness, resultando no retorno de erro interno do servidor (HTTP 500) na interface do usuário. A correção foi realizada via intervenção da equipe de Data Solutions (DS) mediante a rejeição da linha duplicada na base de dados. Para fins de melhoria contínua e prevenção de reincidências, recomenda-se a implementação de travas na aplicação que impeçam a inserção de itens duplicados e o aprimoramento do tratamento de exceções do sistema para essas operações."
 SI-10501,2026-08-13T17:21:39.197-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-10501,2026-08-13T17:21:49.466-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10501,2026-08-13T17:21:49.466-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
@@ -73247,20 +73370,73 @@ SI-10508,2026-08-14T08:21:09.295-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10508,2026-08-14T08:21:11.711-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10508,2026-08-14T08:21:11.933-0300,Rafael Ferreira,resolution,,Done
 SI-10508,2026-08-14T08:21:11.933-0300,Rafael Ferreira,status,Submissão,Done
+SI-10508,2026-08-15T13:01:35.498-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10508,2026-08-15T13:01:35.498-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10508,2026-08-15T13:01:35.498-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10508,2026-08-15T13:01:35.498-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10508,2026-08-15T13:01:35.498-0300,Sistema,Resolução do chamado,,"Bom dia, Beatriz! Tudo bem?
+Analisamos o caso do assembly 260130055 e o valor de 80,00 USD na taxa de SED está sendo calculado de forma automática pelo sistema.
+Para te ajudar a entender de onde vem esse número (e como corrigi-lo), precisamos olhar para duas regras do sistema:
+🔍 Como o sistema calcula a Taxa de SED?
+O sistema calcula a taxa multiplicando o Valor Unitário da cotação pela Quantidade de documentos de EEI REPORT aprovados na aba Documents inde.
+Como o seu processo é um Assembly (união de ordens), o sistema faz essa contagem somando os documentos aprovados de todas as ordens que fazem parte do grupo.
+Para dar os 80,00 USD, existem duas possibilidades na sua tela. Você pode conferir rapidamente qual delas ocorreu:
+Cenário 1 (Mais provável): Existem 4 documentos de EEI REPORT aprovados Se o valor unitário da taxa de SED for o padrão de 20,00 USD, o sistema identificou um total de 4 documentos com status ""Approved"" somando as pastas de todas as ordens desse assembly (4x 20,00 = 80,00 USD)."
+SI-10508,2026-08-15T13:01:35.498-0300,Sistema,Causa raiz potencial,,Regra de negócio
+SI-10508,2026-08-15T13:01:35.498-0300,Sistema,Causa raiz final,,Regra de negócio
+SI-10508,2026-08-15T13:01:35.498-0300,Sistema,Justificativa Causa Raiz final,,Regra de negócio
 SI-10507,2026-08-14T12:27:54.769-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10507,2026-08-14T12:27:56.593-0300,Rafael Ferreira,resolution,,Done
 SI-10507,2026-08-14T12:27:56.593-0300,Rafael Ferreira,status,Submissão,Done
+SI-10507,2026-08-15T13:01:34.905-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10507,2026-08-15T13:01:34.905-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10507,2026-08-15T13:01:34.905-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10507,2026-08-15T13:01:34.905-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10507,2026-08-15T13:01:34.905-0300,Sistema,Resolução do chamado,,"Identificado que as ordens em questão permaneciam atreladas a uma lista de separação (Pick List) anterior de numeração PL-MIA26080009971. Realizada a análise da demanda e orientado o alinhamento operacional para a correta desvinculação prévia dos registros, possibilitando a inclusão das ordens no Pick List correspondente ao MAWB 001-28577861."
+SI-10507,2026-08-15T13:01:34.905-0300,Sistema,Causa raiz potencial,,"Associação prévia e não finalizada das ordens a um Pick List antigo.
+
+Falha na validação operacional de desvinculação de ordens antes da criação de novos agrupamentos.
+
+Retenção de status de utilização das ordens no módulo DWSYS."
+SI-10507,2026-08-15T13:01:34.905-0300,Sistema,Causa raiz final,,"A mensagem indicando que as ordens já existiam ao tentar inseri-las no novo Pick List vinculado ao MAWB 001-28577861 ocorreu em razão de um duplo vínculo operacional no sistema. Durante o levantamento, verificou-se que as ordens 260848130, 260745294, 260747746 e 260748030 continuavam associadas a uma lista de separação antiga, registrada sob a numeração PL-MIA26080009971. Como o sistema possui regras para assegurar a consistência dos dados e impedir a duplicação de cargas em movimentações distintas, uma ordem não pode pertencer a dois Pick Lists simultaneamente. Portanto, a notificação exibida não refletia a inexistência das ordens, mas sim a impossibilidade técnica de vinculá-las a uma nova lista enquanto estivessem atreladas ao registro anterior."
+SI-10507,2026-08-15T13:01:34.905-0300,Sistema,Justificativa Causa Raiz final,,"O impacto relatado é de natureza operacional no fluxo do DWSYS. O nexo causal deriva do fato de que as ordens mantiveram a associação com o Pick List PL-MIA26080009971, o que acionou a trava do sistema para impedir que ordens já alocadas fossem inseridas no Pick List associado ao MAWB 001-28577861. A solução do problema e a prevenção da reincidência dependem do cumprimento do fluxo de trabalho adequado, garantindo que o Pick List anterior seja devidamente ajustado ou encerrado antes de tentar reatrelar as ordens a novos documentos de saída, reforçando as práticas de melhoria contínua e consistência operacional."
 SI-10506,2026-08-14T09:26:10.957-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10506,2026-08-14T09:26:12.847-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10506,2026-08-14T09:26:13.159-0300,Rafael Ferreira,resolution,,Done
 SI-10506,2026-08-14T09:26:13.159-0300,Rafael Ferreira,status,Submissão,Done
+SI-10506,2026-08-15T13:01:34.293-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-10506,2026-08-15T13:01:34.293-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10506,2026-08-15T13:01:34.293-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10506,2026-08-15T13:01:34.293-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10506,2026-08-15T13:01:34.293-0300,Sistema,Resolução do chamado,,"Verificado o status dos conhecimentos de carga (Houses) no sistema e constatado que as informações já se encontravam devidamente integradas e atualizadas, não sendo necessária nenhuma intervenção manual adicional."
+SI-10506,2026-08-15T13:01:34.293-0300,Sistema,Causa raiz potencial,,"Latência temporária na comunicação de dados e retorno do processamento por parte do CCT.
+
+Tempo de sincronização assíncrona entre o envio da retificação e a atualização em tela."
+SI-10506,2026-08-15T13:01:34.293-0300,Sistema,Causa raiz final,,"O processamento e a atualização de status dos documentos de transporte junto ao CCT dependem de um fluxo contínuo de envio e confirmação de dados com o Portal Único. Quando um procedimento de retificação é acionado, a requisição é transmitida e o sistema permanece aguardando a validação externa. Em alguns momentos, esse ciclo de validação e retorno de informações pode levar alguns minutos a mais do que o habitual, mantendo a exibição do status como pendente de forma temporária. No caso relatado, os processos encontravam-se justamente nesse intervalo de sincronização. Ao realizar a verificação posterior nas ordens, a comunicação havia sido concluída com sucesso e os registros dos Houses já constavam atualizados e corretos no sistema, sem a existência de bloqueios ou inconsistências documentais."
+SI-10506,2026-08-15T13:01:34.293-0300,Sistema,Justificativa Causa Raiz final,,"A ocorrência esteve associada à latência de resposta do ambiente externo do CCT durante a consulta e atualização dos dados retificados. Trata-se de um tempo de processamento assíncrono inerente à integração com órgãos externos, em que a requisição entra em fila de validação antes da alteração definitiva do status do protocolo. A validação posterior confirmou a integridade dos dados registrados, comprovando a ausência de falhas no desenvolvimento ou na estrutura de banco de dados. Com o objetivo de promover a melhoria contínua e otimizar o fluxo de atendimento, orienta-se o alinhamento com os times operacionais para que aguardem o tempo hábil de atualização e executem as consultas de verificação na aba do CCT antes de registrar incidentes para processos em transição recente."
 SI-10509,2026-08-14T10:01:57.792-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10509,2026-08-14T10:02:02.777-0300,Bruno Silva,resolution,,Done
 SI-10509,2026-08-14T10:02:02.777-0300,Bruno Silva,status,Submissão,Done
+SI-10509,2026-08-15T13:01:36.057-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10509,2026-08-15T13:01:36.057-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-10509,2026-08-15T13:01:36.057-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10509,2026-08-15T13:01:36.057-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10509,2026-08-15T13:01:36.057-0300,Sistema,Resolução do chamado,,"Identificado um ponto de atenção no painel de acompanhamento, onde o indicador do evento permaneceu com status pendente."
+SI-10509,2026-08-15T13:01:36.057-0300,Sistema,Causa raiz potencial,,"Geração e processamento de registros duplicados do mesmo evento na estrutura do banco de dados, resultando na falha de sincronização do status do card entre a timeline do workflow e a interface do cockpit."
+SI-10509,2026-08-15T13:01:36.057-0300,Sistema,Causa raiz final,,"O evento do processo foi registrado em duplicidade na linha do tempo do sistema. Por conta dessa duplicidade, o painel de monitoramento continuou apontando a pendência do item"
+SI-10509,2026-08-15T13:01:36.057-0300,Sistema,Justificativa Causa Raiz final,,"A presença de etapas duplicadas na tabela order_soptracker impede a alteração do status do card no cockpit, mantendo o evento em delay mesmo após sua confirmação."
 SI-10513,2026-08-14T08:45:20.882-0300,Sistema,Link,,This work item is blocked by GA-1490
 SI-10513,2026-08-14T09:35:03.022-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10513,2026-08-14T09:35:06.378-0300,Bruno Silva,resolution,,Done
 SI-10513,2026-08-14T09:35:06.378-0300,Bruno Silva,status,Submissão,Done
+SI-10513,2026-08-15T13:01:38.014-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10513,2026-08-15T13:01:38.014-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10513,2026-08-15T13:01:38.014-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10513,2026-08-15T13:01:38.014-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10513,2026-08-15T13:01:38.014-0300,Sistema,Resolução do chamado,,Colaboradora foi chamada via google chat para configuração das credenciais do app.
+SI-10513,2026-08-15T13:01:38.014-0300,Sistema,Causa raiz potencial,,Colaboradora foi chamada via google chat para configuração das credenciais do app.
+SI-10513,2026-08-15T13:01:38.014-0300,Sistema,Causa raiz final,,Colaboradora foi chamada via google chat para configuração das credenciais do app.
+SI-10513,2026-08-15T13:01:38.014-0300,Sistema,Justificativa Causa Raiz final,,Colaboradora foi chamada via google chat para configuração das credenciais do app.
 SI-10512,2026-08-14T08:50:30.970-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-10512,2026-08-14T08:50:33.647-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10512,2026-08-14T09:14:24.097-0300,Rafael Ferreira,description,,"*CHECKLIST PADRÃO DE TRIAGEM (DMS)*
@@ -73322,31 +73498,89 @@ SI-10512,2026-08-14T09:14:53.899-0300,Sistema,Link,,This work item is blocked by
 SI-10512,2026-08-14T09:18:25.885-0300,Rafael Ferreira,Encaminhado para:,Sustentação,
 SI-10512,2026-08-14T09:22:22.696-0300,Rafael Ferreira,resolution,,Done
 SI-10512,2026-08-14T09:22:22.696-0300,Rafael Ferreira,status,Em Atendimento,Done
+SI-10512,2026-08-15T13:01:37.293-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10512,2026-08-15T13:01:37.293-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10512,2026-08-15T13:01:37.293-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10512,2026-08-15T13:01:37.293-0300,Sistema,Criticidade final,,P2 - Média
+SI-10512,2026-08-15T13:01:37.293-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-10512,2026-08-15T13:01:37.293-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-10512,2026-08-15T13:01:37.293-0300,Sistema,Causa raiz final,,Em atendimento
+SI-10512,2026-08-15T13:01:37.293-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-10510,2026-08-14T08:16:23.175-0300,Sistema,Link,,This work item is blocked by GA-1489
 SI-10510,2026-08-14T09:06:48.049-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10510,2026-08-14T09:07:06.044-0300,Bruno Silva,resolution,,Done
 SI-10510,2026-08-14T09:07:06.044-0300,Bruno Silva,status,Submissão,Done
+SI-10510,2026-08-15T13:01:36.721-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10510,2026-08-15T13:01:36.721-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10510,2026-08-15T13:01:36.721-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10510,2026-08-15T13:01:36.721-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10510,2026-08-15T13:01:36.721-0300,Sistema,Resolução do chamado,,Chamado resolvido via salinha do suporte para colaboradora ter acesso as edições de data visto que o mesmo não utiliza docs ia.
+SI-10510,2026-08-15T13:01:36.721-0300,Sistema,Causa raiz potencial,,Chamado resolvido via salinha do suporte para colaboradora ter acesso as edições de data visto que o mesmo não utiliza docs ia.
+SI-10510,2026-08-15T13:01:36.721-0300,Sistema,Causa raiz final,,Chamado resolvido via salinha do suporte para colaboradora ter acesso as edições de data visto que o mesmo não utiliza docs ia.
+SI-10510,2026-08-15T13:01:36.721-0300,Sistema,Justificativa Causa Raiz final,,Chamado resolvido via salinha do suporte para colaboradora ter acesso as edições de data visto que o mesmo não utiliza docs ia.
 SI-10521,2026-08-14T11:20:15.793-0300,Bruno Silva,assignee,,Rafael Ferreira
 SI-10521,2026-08-14T11:20:19.998-0300,Bruno Silva,resolution,,Done
 SI-10521,2026-08-14T11:20:19.998-0300,Bruno Silva,status,Submissão,Done
+SI-10521,2026-08-15T13:01:41.384-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10521,2026-08-15T13:01:41.384-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10521,2026-08-15T13:01:41.384-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10521,2026-08-15T13:01:41.384-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10521,2026-08-15T13:01:41.384-0300,Sistema,Resolução do chamado,,"Identificada a indisponibilidade sistêmica ao tentar deletar ou desvincular ordens, ocasionada por uma inconsistência nos registros internos de controle de datas. Como a correção estrutural dessa validação requer uma alteração sistêmica para evitar que a operação seja interrompida, o cenário foi devidamente mapeado e vinculado ao INTAKE-1557. Este intake já se encontra sob a responsabilidade da equipe de desenvolvimento para que seja criada e implementada a solução definitiva na plataforma, garantindo a normalização do fluxo operacional."
+SI-10521,2026-08-15T13:01:41.384-0300,Sistema,Causa raiz potencial,,Ausência de inicialização automática de tabelas de controle de datas de processos antigos ou falta de validação estrutural do sistema ao tentar atualizar informações ligadas a relacionamentos inexistentes no banco de dados.
+SI-10521,2026-08-15T13:01:41.384-0300,Sistema,Causa raiz final,,"O impedimento ao tentar concluir as ações de desatrelar ou deletar as ordens ocorria devido a uma falha de comunicação entre as validações sistêmicas atuais e o histórico de cadastros da plataforma. Especificamente, após a desativação da aba anterior de controle de datas, algumas ordens ficaram sem esse registro de acompanhamento gerado na base. Sempre que um operador tentava realizar uma movimentação crítica na ordem, a plataforma tentava atualizar obrigatoriamente um status de ""aprovação de cliente"" que ficava dentro desse antigo controle de datas. Por não encontrar essa informação, o sistema não sabia como prosseguir, interrompendo a ação abruptamente e travando a tela. Como não foi realizada nenhuma tratativa paliativa ou definitiva até o momento para contornar essa exigência de sistema, a situação foi atrelada ao INTAKE-1557. A equipe de tecnologia trabalhará neste intake para reprogramar o sistema, ensinando a plataforma a verificar se a informação de data existe antes de tentar atualizá-la, ignorando a validação ou criando o dado sob demanda para que o trabalho do operador não seja mais interrompido."
+SI-10521,2026-08-15T13:01:41.384-0300,Sistema,Justificativa Causa Raiz final,,"A análise técnica do card SUS-215 atestou a ocorrência do erro relacional RelatedObjectDoesNotExist: Assembly has no datecontrol no arquivo src/booking/models/base.py (linha 489). A falha é engatilhada porque o backend, através da função update_customer_approval, tenta acessar de forma direta o atributo datecontrol.customer_approval_valid sem aplicar um tratamento defensivo para validar a existência do relacionamento OneToOne na tabela order_datecontrol. Considerando que nenhuma correção definitiva ou saneamento foi executado em ambiente produtivo, os processos que possuem essa lacuna de dados continuam apresentando o Erro 500. A resolução focada na melhoria contínua e eliminação da reincidência foi direcionada para o INTAKE-1557, que atuará na implementação de validações defensivas no código (para verificar a existência do objeto antes da manipulação) e na criação de rotinas para lidar com registros órfãos, mitigando o impacto na eficiência operacional apontado no discovery."
 SI-10520,2026-08-14T09:59:14.821-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10520,2026-08-14T09:59:18.422-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-10520,2026-08-14T11:07:28.765-0300,Rafael Ferreira,status,Em Atendimento,Aguardando Informação
 SI-10520,2026-08-14T14:43:59.013-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10520,2026-08-14T14:43:59.241-0300,Rafael Ferreira,resolution,,Done
 SI-10520,2026-08-14T14:43:59.241-0300,Rafael Ferreira,status,Aguardando Informação,Done
+SI-10520,2026-08-15T13:01:40.818-0300,Sistema,Criticidade final,,P2 - Média
+SI-10520,2026-08-15T13:01:40.818-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10520,2026-08-15T13:01:40.818-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10520,2026-08-15T13:01:40.818-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10520,2026-08-15T13:01:40.818-0300,Sistema,Resolução do chamado,,Aguardando informação
+SI-10520,2026-08-15T13:01:40.818-0300,Sistema,Causa raiz potencial,,Aguardando informação
+SI-10520,2026-08-15T13:01:40.818-0300,Sistema,Causa raiz final,,Aguardando informação
+SI-10520,2026-08-15T13:01:40.818-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
 SI-10516,2026-08-14T09:46:18.391-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-10516,2026-08-14T09:46:20.515-0300,Nícollas Resende,resolution,,Done
 SI-10516,2026-08-14T09:46:20.515-0300,Nícollas Resende,status,Submissão,Done
+SI-10516,2026-08-15T13:01:40.105-0300,Sistema,Criticidade final,,P2 - Média
+SI-10516,2026-08-15T13:01:40.105-0300,Sistema,Resolução do chamado,,Foi realizada a ativação da webcam do notebook do colaborador.
 SI-10515,2026-08-14T09:26:38.529-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10515,2026-08-14T09:26:42.044-0300,Bruno Silva,resolution,,Done
 SI-10515,2026-08-14T09:26:42.044-0300,Bruno Silva,status,Submissão,Done
+SI-10515,2026-08-15T13:01:39.385-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10515,2026-08-15T13:01:39.385-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10515,2026-08-15T13:01:39.385-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10515,2026-08-15T13:01:39.385-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10515,2026-08-15T13:01:39.385-0300,Sistema,Resolução do chamado,,Identificado um ponto de atenção no procedimento cadastral. Orientado o colaborador quanto à necessidade de adequação de perfil para prosseguir com a inserção da data no documento aprovado na aba mencionada.
+SI-10515,2026-08-15T13:01:39.385-0300,Sistema,Causa raiz potencial,,Tentativa de edição de dados em estágio concluído sem o nível de acesso ou permissão adequado exigido pela regra de negócio do processo.
+SI-10515,2026-08-15T13:01:39.385-0300,Sistema,Causa raiz final,,"O sistema possui regras internas que condicionam a inclusão ou alteração de datas em documentos aprovados ao perfil e nível de acesso do colaborador. A restrição observada ocorre para garantir a integridade dos dados registrados, sendo necessário possuir as permissões devidas para a realização do ajuste diretamente na interface."
+SI-10515,2026-08-15T13:01:39.385-0300,Sistema,Justificativa Causa Raiz final,,A funcionalidade restringe a modificação de dados após a etapa de aprovação como mecanismo de governança. A concessão do perfil correto ou alteração do fluxo de permissões garante o cumprimento das travas sistêmicas e previne inconsistências em registros finalizados.
 SI-10514,2026-08-14T09:26:49.634-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10514,2026-08-14T09:26:52.644-0300,Bruno Silva,resolution,,Done
 SI-10514,2026-08-14T09:26:52.644-0300,Bruno Silva,status,Submissão,Done
+SI-10514,2026-08-15T13:01:38.780-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10514,2026-08-15T13:01:38.780-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10514,2026-08-15T13:01:38.780-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10514,2026-08-15T13:01:38.780-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10514,2026-08-15T13:01:38.780-0300,Sistema,Resolução do chamado,,Identificado um ponto de atenção no procedimento cadastral. Orientado o colaborador quanto à necessidade de adequação de perfil para prosseguir com a inserção da data no documento aprovado na aba mencionada.
+SI-10514,2026-08-15T13:01:38.780-0300,Sistema,Causa raiz potencial,,Tentativa de edição de dados em estágio concluído sem o nível de acesso ou permissão adequado exigido pela regra de negócio do processo.
+SI-10514,2026-08-15T13:01:38.780-0300,Sistema,Causa raiz final,,"O sistema possui regras internas que condicionam a inclusão ou alteração de datas em documentos aprovados ao perfil e nível de acesso do colaborador. A restrição observada ocorre para garantir a integridade dos dados registrados, sendo necessário possuir as permissões devidas para a realização do ajuste diretamente na interface."
+SI-10514,2026-08-15T13:01:38.780-0300,Sistema,Justificativa Causa Raiz final,,A funcionalidade restringe a modificação de dados após a etapa de aprovação como mecanismo de governança. A concessão do perfil correto ou alteração do fluxo de permissões garante o cumprimento das travas sistêmicas e previne inconsistências em registros finalizados.
 SI-10527,2026-08-14T11:06:37.760-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10527,2026-08-14T11:06:45.142-0300,Bruno Silva,resolution,,Done
 SI-10527,2026-08-14T11:06:45.142-0300,Bruno Silva,status,Submissão,Done
+SI-10527,2026-08-15T13:01:44.867-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10527,2026-08-15T13:01:44.867-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10527,2026-08-15T13:01:44.867-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10527,2026-08-15T13:01:44.867-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-10527,2026-08-15T13:01:44.867-0300,Sistema,Resolução do chamado,,"Bom dia! documento enviado, caso não leia por favor entrar na sala de docs ia (https://meet.google.com/wan-efbb-hhw?authuser=0)"
+SI-10527,2026-08-15T13:01:44.867-0300,Sistema,Causa raiz potencial,,"Bom dia! documento enviado, caso não leia por favor entrar na sala de docs ia (https://meet.google.com/wan-efbb-hhw?authuser=0)"
+SI-10527,2026-08-15T13:01:44.867-0300,Sistema,Causa raiz final,,"Bom dia! documento enviado, caso não leia por favor entrar na sala de docs ia (https://meet.google.com/wan-efbb-hhw?authuser=0)"
+SI-10527,2026-08-15T13:01:44.867-0300,Sistema,Justificativa Causa Raiz final,,"Bom dia! documento enviado, caso não leia por favor entrar na sala de docs ia (https://meet.google.com/wan-efbb-hhw?authuser=0)"
 SI-10526,2026-08-14T10:28:33.718-0300,Sistema,Link,,This work item is blocked by GA-1492
 SI-10526,2026-08-14T11:15:00.019-0300,Rafael Ferreira,assignee,,Helena Almeida
 SI-10526,2026-08-14T11:15:03.037-0300,Rafael Ferreira,Classificação,,Ranked higher
@@ -73354,23 +73588,57 @@ SI-10526,2026-08-14T11:15:03.300-0300,Rafael Ferreira,resolution,,Done
 SI-10526,2026-08-14T11:15:03.300-0300,Rafael Ferreira,status,Submissão,Done
 SI-10526,2026-08-14T14:10:22.174-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. E-mail adicionado conforme solicitado. 
 SI-10526,2026-08-14T14:10:25.907-0300,Helena Almeida,Criticidade final,,P2 - Média
+SI-10526,2026-08-15T13:01:44.252-0300,Sistema,Reclassificação solicitação,,Requisição
+SI-10526,2026-08-15T13:01:44.252-0300,Sistema,Resolução do chamado,Ticket concluído. E-mail adicionado conforme solicitado. ,Ticket concluído. E-mail adicionado conforme solicitado.
 SI-10525,2026-08-14T10:39:30.053-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10525,2026-08-14T10:39:32.278-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10525,2026-08-14T10:39:32.489-0300,Rafael Ferreira,resolution,,Done
 SI-10525,2026-08-14T10:39:32.489-0300,Rafael Ferreira,status,Submissão,Done
+SI-10525,2026-08-15T13:01:43.747-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10525,2026-08-15T13:01:43.747-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10525,2026-08-15T13:01:43.747-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10525,2026-08-15T13:01:43.747-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10525,2026-08-15T13:01:43.747-0300,Sistema,Resolução do chamado,,Ao entrar em contato com o colaborador foi visto que o problema era que a cotação ainda não tinha sido atualizada.
+SI-10525,2026-08-15T13:01:43.747-0300,Sistema,Causa raiz potencial,,Falha operacional por parte do FD
+SI-10525,2026-08-15T13:01:43.747-0300,Sistema,Causa raiz final,,Falha operacional por parte do FD
+SI-10525,2026-08-15T13:01:43.747-0300,Sistema,Justificativa Causa Raiz final,,Falha operacional por parte do FD
 SI-10524,2026-08-14T11:02:18.758-0300,Bruno Silva,assignee,,Nícollas Resende
 SI-10524,2026-08-14T11:07:33.213-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10524,2026-08-14T11:07:33.457-0300,Rafael Ferreira,resolution,,Done
 SI-10524,2026-08-14T11:07:33.457-0300,Rafael Ferreira,status,Submissão,Done
+SI-10524,2026-08-15T13:01:43.194-0300,Sistema,Criticidade final,,P2 - Média
+SI-10524,2026-08-15T13:01:43.194-0300,Sistema,Resolução do chamado,,Foi realizada a ativação da webcam do colaborador.
 SI-10523,2026-08-14T11:07:14.373-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10523,2026-08-14T11:07:16.116-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10523,2026-08-14T11:07:30.933-0300,Rafael Ferreira,status,Aguardando Informação,Em Atendimento
 SI-10523,2026-08-14T11:14:36.337-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10523,2026-08-14T11:14:36.580-0300,Rafael Ferreira,resolution,,Done
 SI-10523,2026-08-14T11:14:36.580-0300,Rafael Ferreira,status,Em Atendimento,Done
+SI-10523,2026-08-15T13:01:42.606-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10523,2026-08-15T13:01:42.606-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10523,2026-08-15T13:01:42.606-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10523,2026-08-15T13:01:42.606-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10523,2026-08-15T13:01:42.606-0300,Sistema,Resolução do chamado,,"Bom dia, Tatiana! Tudo bem?
+Analisamos o caso da ordem 260747517 e o valor da taxa de DOC FEE estar aparecendo zerado (USD 0,00) em vez dos USD 75,00 esperados é reflexo de uma regra de cálculo automática do sistema.
+Aqui está a explicação de como essa taxa funciona no operacional e o que precisa ser feito:
+🔍 Por que o valor está zerado?
+A Regra da Unit: A taxa de DOC FEE sempre utiliza obrigatoriamente a unit WAREHOUSE RECEIPT no sistema (mesmo que alguma outra unit tenha sido selecionada na proposta comercial/PM).
+O Gatilho do Cálculo: No módulo operacional, a quantidade da taxa de DOC FEE é calculada automaticamente com base na quantidade de documentos de Warehouse Receipt (WR) que estão anexados e com status ""Approved"" na aba Documents da ordem.
+O Diagnóstico: Como a sua ordem atual não possui nenhum documento de Warehouse Receipt (WR) aprovado na pasta de documentos, o sistema entende que a quantidade é zero (0), deixando o valor final calculado como USD 0,00"
+SI-10523,2026-08-15T13:01:42.606-0300,Sistema,Causa raiz potencial,,Regra de negócio
+SI-10523,2026-08-15T13:01:42.606-0300,Sistema,Causa raiz final,,Regra de negócio
+SI-10523,2026-08-15T13:01:42.606-0300,Sistema,Justificativa Causa Raiz final,,Regra de negócio
 SI-10522,2026-08-14T10:05:42.831-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10522,2026-08-14T10:05:46.108-0300,Bruno Silva,resolution,,Done
 SI-10522,2026-08-14T10:05:46.108-0300,Bruno Silva,status,Submissão,Done
+SI-10522,2026-08-15T13:01:42.052-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-10522,2026-08-15T13:01:42.052-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10522,2026-08-15T13:01:42.052-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-10522,2026-08-15T13:01:42.052-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10522,2026-08-15T13:01:42.052-0300,Sistema,Resolução do chamado,,Identificada a indisponibilidade de visualização e o travamento do indicador no painel do colaborador referente ao evento mencionado.
+SI-10522,2026-08-15T13:01:42.052-0300,Sistema,Causa raiz potencial,,perda de sincronia do indicador e falha de atualização entre a linha do tempo e o painel de monitoramento.
+SI-10522,2026-08-15T13:01:42.052-0300,Sistema,Causa raiz final,,O evento sofreu um travamento na sincronização entre a linha do tempo do processo e o painel visual do colaborador.
+SI-10522,2026-08-15T13:01:42.052-0300,Sistema,Justificativa Causa Raiz final,,A ocorrência de inconsistências de estado entre os registros do workflow e a interface gráfica decorre de falhas de sincronização na camada de integração do sistema.
 SI-10532,2026-08-14T11:36:23.122-0300,Sistema,Link,,This work item is blocked by GA-1495
 SI-10531,2026-08-14T14:25:40.880-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10531,2026-08-14T14:25:42.782-0300,Rafael Ferreira,resolution,,Done
@@ -73382,38 +73650,129 @@ SI-10536,2026-08-14T13:50:45.405-0300,Rafael Ferreira,Classificação,,Ranked hi
 SI-10536,2026-08-14T13:50:45.640-0300,Rafael Ferreira,resolution,,Done
 SI-10536,2026-08-14T13:50:45.640-0300,Rafael Ferreira,status,Submissão,Done
 SI-10536,2026-08-14T13:54:19.855-0300,Rafael Ferreira,assignee,Rafael Ferreira,Eduardo Felipe de Lima Rebello
+SI-10536,2026-08-15T13:01:46.876-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10536,2026-08-15T13:01:46.876-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10536,2026-08-15T13:01:46.876-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10536,2026-08-15T13:01:46.876-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10536,2026-08-15T13:01:46.876-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-10536,2026-08-15T13:01:46.876-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-10536,2026-08-15T13:01:46.876-0300,Sistema,Causa raiz final,,Em atendimento
+SI-10536,2026-08-15T13:01:46.876-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-10535,2026-08-14T14:15:48.757-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10535,2026-08-14T14:15:52.300-0300,Bruno Silva,resolution,,Done
 SI-10535,2026-08-14T14:15:52.300-0300,Bruno Silva,status,Submissão,Done
+SI-10535,2026-08-15T13:01:46.256-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10535,2026-08-15T13:01:46.256-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10535,2026-08-15T13:01:46.256-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10535,2026-08-15T13:01:46.256-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10535,2026-08-15T13:01:46.256-0300,Sistema,Resolução do chamado,,"Bom dia! documento enviado, caso não leia por favor entrar na sala de docs ia (https://meet.google.com/wan-efbb-hhw?authuser=0)"
+SI-10535,2026-08-15T13:01:46.256-0300,Sistema,Causa raiz potencial,,"Bom dia! documento enviado, caso não leia por favor entrar na sala de docs ia (https://meet.google.com/wan-efbb-hhw?authuser=0)"
+SI-10535,2026-08-15T13:01:46.256-0300,Sistema,Causa raiz final,,"Bom dia! documento enviado, caso não leia por favor entrar na sala de docs ia (https://meet.google.com/wan-efbb-hhw?authuser=0)"
+SI-10535,2026-08-15T13:01:46.256-0300,Sistema,Justificativa Causa Raiz final,,"Bom dia! documento enviado, caso não leia por favor entrar na sala de docs ia (https://meet.google.com/wan-efbb-hhw?authuser=0)"
 SI-10534,2026-08-14T14:21:36.592-0300,Bruno Silva,assignee,,Rafael Ferreira
 SI-10534,2026-08-14T14:21:40.643-0300,Bruno Silva,resolution,,Done
 SI-10534,2026-08-14T14:21:40.643-0300,Bruno Silva,status,Submissão,Done
+SI-10534,2026-08-15T13:01:45.506-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10534,2026-08-15T13:01:45.506-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10534,2026-08-15T13:01:45.506-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10534,2026-08-15T13:01:45.506-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10534,2026-08-15T13:01:45.506-0300,Sistema,Resolução do chamado,,"Identificado que a ausência dos valores de pickup na aba de adição de vendas do módulo operacional decorre da falta desse cadastro na cotação vinculada ao processo. O fd deve revisar a cotação.
+
+!Prints(Você deve colar o link no navegador para que possa visualizar):
+https://prnt.sc/mfQGdtlnAQMh"
+SI-10534,2026-08-15T13:01:45.506-0300,Sistema,Causa raiz potencial,,Ausência de cadastro das taxas de pickup na cotação comercial vinculada ou falha na integração das informações financeiras entre a proposta comercial e o módulo operacional.
+SI-10534,2026-08-15T13:01:45.506-0300,Sistema,Causa raiz final,,"A indisponibilidade dos valores na aba de adição de vendas ocorre devido à mecânica de integração da plataforma, em que os dados e cobranças exibidos no módulo operacional são herdados diretamente das informações inseridas e cadastradas na proposta comercial associada ao processo. No caso em questão, verificou-se que a cotação atrelada à ordem não continha as taxas de pickup registradas em sua estrutura inicial. Como a aba de vendas reflete estritamente o que foi configurado na proposta comercial, a ausência prévia desse lançamento impediu a exibição automática dos valores na ordem, mantendo o campo zerado até que a proposta seja devidamente atualizada."
+SI-10534,2026-08-15T13:01:45.506-0300,Sistema,Justificativa Causa Raiz final,,"A migração automática de cobranças para as abas operacionais do sistema depende estritamente do preenchimento prévio dessas taxas na cotação cadastrada no módulo comercial. Como a cotação vinculada à ordem 260848373 não continha os valores de pickup cadastrados, a rotina de sincronização não identificou registros para popular a aba de vendas na ordem operacional. A atualização do cadastro na cotação atrelada corrige a inconsistência na origem e assegura a integridade das informações do processo, prevenindo a reincidência do problema."
 SI-10537,2026-08-14T13:50:36.470-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10537,2026-08-14T13:50:40.951-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10537,2026-08-14T13:50:41.184-0300,Rafael Ferreira,resolution,,Done
 SI-10537,2026-08-14T13:50:41.184-0300,Rafael Ferreira,status,Submissão,Done
+SI-10537,2026-08-15T13:01:47.500-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10537,2026-08-15T13:01:47.500-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10537,2026-08-15T13:01:47.500-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10537,2026-08-15T13:01:47.500-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10537,2026-08-15T13:01:47.500-0300,Sistema,Resolução do chamado,,"Identificada a indisponibilidade sistêmica ao tentar deletar ou desvincular ordens, ocasionada por uma inconsistência nos registros internos de controle de datas. Como a correção estrutural dessa validação requer uma alteração sistêmica para evitar que a operação seja interrompida, o cenário foi devidamente mapeado e vinculado ao INTAKE-1557. Este intake já se encontra sob a responsabilidade da equipe de desenvolvimento para que seja criada e implementada a solução definitiva na plataforma, garantindo a normalização do fluxo operacional."
+SI-10537,2026-08-15T13:01:47.500-0300,Sistema,Causa raiz potencial,,Ausência de inicialização automática de tabelas de controle de datas de processos antigos ou falta de validação estrutural do sistema ao tentar atualizar informações ligadas a relacionamentos inexistentes no banco de dados.
+SI-10537,2026-08-15T13:01:47.500-0300,Sistema,Causa raiz final,,"O impedimento ao tentar concluir as ações de desatrelar ou deletar as ordens ocorria devido a uma falha de comunicação entre as validações sistêmicas atuais e o histórico de cadastros da plataforma. Especificamente, após a desativação da aba anterior de controle de datas, algumas ordens ficaram sem esse registro de acompanhamento gerado na base. Sempre que um operador tentava realizar uma movimentação crítica na ordem, a plataforma tentava atualizar obrigatoriamente um status de ""aprovação de cliente"" que ficava dentro desse antigo controle de datas. Por não encontrar essa informação, o sistema não sabia como prosseguir, interrompendo a ação abruptamente e travando a tela. Como não foi realizada nenhuma tratativa paliativa ou definitiva até o momento para contornar essa exigência de sistema, a situação foi atrelada ao INTAKE-1557. A equipe de tecnologia trabalhará neste intake para reprogramar o sistema, ensinando a plataforma a verificar se a informação de data existe antes de tentar atualizá-la, ignorando a validação ou criando o dado sob demanda para que o trabalho do operador não seja mais interrompido."
+SI-10537,2026-08-15T13:01:47.500-0300,Sistema,Justificativa Causa Raiz final,,"A análise técnica do card SUS-215 atestou a ocorrência do erro relacional RelatedObjectDoesNotExist: Assembly has no datecontrol no arquivo src/booking/models/base.py (linha 489). A falha é engatilhada porque o backend, através da função update_customer_approval, tenta acessar de forma direta o atributo datecontrol.customer_approval_valid sem aplicar um tratamento defensivo para validar a existência do relacionamento OneToOne na tabela order_datecontrol. Considerando que nenhuma correção definitiva ou saneamento foi executado em ambiente produtivo, os processos que possuem essa lacuna de dados continuam apresentando o Erro 500. A resolução focada na melhoria contínua e eliminação da reincidência foi direcionada para o INTAKE-1557, que atuará na implementação de validações defensivas no código (para verificar a existência do objeto antes da manipulação) e na criação de rotinas para lidar com registros órfãos, mitigando o impacto na eficiência operacional apontado no discovery."
 SI-10539,2026-08-14T14:40:26.449-0300,Sistema,Link,,This work item is blocked by GA-1500
 SI-10539,2026-08-14T14:43:45.741-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10539,2026-08-14T14:43:52.880-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10539,2026-08-14T14:43:53.145-0300,Rafael Ferreira,resolution,,Done
 SI-10539,2026-08-14T14:43:53.145-0300,Rafael Ferreira,status,Submissão,Done
+SI-10539,2026-08-15T13:01:48.946-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10539,2026-08-15T13:01:48.946-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-10539,2026-08-15T13:01:48.946-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10539,2026-08-15T13:01:48.946-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10539,2026-08-15T13:01:48.946-0300,Sistema,Resolução do chamado,,"Acesso liberado a colaboradora, deve-se realizar o logout e login para que as alterações propaguem, caso não vá após o logout e login deve-se realizar a limpeza de cachê."
+SI-10539,2026-08-15T13:01:48.946-0300,Sistema,Causa raiz potencial,,Requisição de acesso
+SI-10539,2026-08-15T13:01:48.946-0300,Sistema,Causa raiz final,,Requisição de acesso
+SI-10539,2026-08-15T13:01:48.946-0300,Sistema,Justificativa Causa Raiz final,,Requisição de acesso
 SI-10538,2026-08-14T14:37:23.567-0300,Sistema,Link,,This work item is blocked by GA-1499
 SI-10538,2026-08-14T14:43:48.545-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10538,2026-08-14T14:43:56.219-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10538,2026-08-14T14:43:56.518-0300,Rafael Ferreira,resolution,,Done
 SI-10538,2026-08-14T14:43:56.518-0300,Rafael Ferreira,status,Submissão,Done
+SI-10538,2026-08-15T13:01:48.261-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10538,2026-08-15T13:01:48.261-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10538,2026-08-15T13:01:48.261-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10538,2026-08-15T13:01:48.261-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-10538,2026-08-15T13:01:48.261-0300,Sistema,Resolução do chamado,,"Acesso liberado a colaboradora, deve-se realizar o logout e login para que as alterações propaguem, caso não vá após o logout e login deve-se realizar a limpeza de cachê."
+SI-10538,2026-08-15T13:01:48.261-0300,Sistema,Causa raiz potencial,,Requisição de acesso
+SI-10538,2026-08-15T13:01:48.261-0300,Sistema,Causa raiz final,,Requisição de acesso
+SI-10538,2026-08-15T13:01:48.261-0300,Sistema,Justificativa Causa Raiz final,,Requisição de acesso
 SI-10542,2026-08-14T15:54:02.928-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10542,2026-08-14T15:54:04.853-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-10540,2026-08-14T15:38:31.837-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10540,2026-08-14T15:38:34.209-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10540,2026-08-14T15:38:34.438-0300,Rafael Ferreira,resolution,,Done
 SI-10540,2026-08-14T15:38:34.438-0300,Rafael Ferreira,status,Submissão,Done
+SI-10540,2026-08-15T13:01:49.440-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10540,2026-08-15T13:01:49.440-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-10540,2026-08-15T13:01:49.440-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10540,2026-08-15T13:01:49.440-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10540,2026-08-15T13:01:49.440-0300,Sistema,Resolução do chamado,,"Realizada a correção da data do processo por meio da rejeição do documento Master na aba de documentos do booking, liberando o campo para inserção da data correta (14/08/2026) e atualização do registro."
+SI-10540,2026-08-15T13:01:49.440-0300,Sistema,Causa raiz potencial,,"Leitura e extração incorreta de data pelo serviço de inteligência artificial durante o processamento do documento.
+
+Bloqueio de edição do campo no booking após o envio do documento ao sistema de controle governamental (CCT)."
+SI-10540,2026-08-15T13:01:49.440-0300,Sistema,Causa raiz final,,O problema aconteceu porque o leitor automático de documentos baseou-se em uma data incorreta presente no arquivo digital e preencheu o sistema com essa informação errada
+SI-10540,2026-08-15T13:01:49.440-0300,Sistema,Justificativa Causa Raiz final,,"A falha decorreu do erro de extração da ferramenta DOCs IA, que capturou a data como 15/08/2028 em vez da data correta (14/08/2026)"
 SI-10544,2026-08-14T16:56:08.250-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10544,2026-08-14T16:56:10.433-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10544,2026-08-14T16:56:10.685-0300,Rafael Ferreira,resolution,,Done
 SI-10544,2026-08-14T16:56:10.685-0300,Rafael Ferreira,status,Submissão,Done
+SI-10544,2026-08-15T13:01:50.594-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10544,2026-08-15T13:01:50.594-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10544,2026-08-15T13:01:50.594-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10544,2026-08-15T13:01:50.594-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10544,2026-08-15T13:01:50.594-0300,Sistema,Resolução do chamado,,"Identificada a divergência na cobrança da taxa de SED na ordem 260848304. Realizada a interação no campo para desmarcar o encargo, o que acionou o recálculo automático pelo sistema e zerou o valor conforme o esperado, regularizando a ordem."
+SI-10544,2026-08-15T13:01:50.594-0300,Sistema,Causa raiz potencial,,"Permanência da taxa padrão comercial após a conversão da proposta para o fluxo operacional.
+
+Falha no disparo automático da rotina de atualização de encargos no momento da criação da ordem."
+SI-10544,2026-08-15T13:01:50.594-0300,Sistema,Causa raiz final,,"As taxas do tipo SED constituem encargos inseridos durante a etapa comercial para cobrir eventuais custos operacionais do processo. Quando a ordem é criada e integrada ao sistema operacional, esses valores devem ser atualizados e validados de acordo com as especificidades do embarque. Em cenários nos quais a operação não gera esse tipo de custo, a taxa precisa ser zerada. No incidente relatado, o processo manteve o valor incialmente herdado da cotação. Ao realizar a tentativa de desmarcar o campo, o sistema executou a verificação das regras financeiras do processo, reprocessou as informações da ordem e ajustou automaticamente o valor para zero, corrigindo a inconsistência apresentada."
+SI-10544,2026-08-15T13:01:50.594-0300,Sistema,Justificativa Causa Raiz final,,"A ordem 260848304 manteve a taxa de SED com o valor inicial de 20,00 herdado da proposta comercial, em vez de aplicar o valor zerado correspondente às condições da operação. A ação manual de alterar o campo funcionou como um gatilho para o reprocessamento da lógica de negócio das taxas, fazendo com que o sistema recalculasse o encargo para 0,00."
 SI-10543,2026-08-14T16:04:36.855-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10543,2026-08-14T16:04:40.443-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10543,2026-08-15T13:01:50.002-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10543,2026-08-15T13:01:50.002-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10543,2026-08-15T13:01:50.002-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10543,2026-08-15T13:01:50.002-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10543,2026-08-15T13:01:50.002-0300,Sistema,Resolução do chamado,,"Informações divergentes entre ordem e workflow, shipper não selecionado.
+
+Prints(Você deve colar o link no navegador para que possa visualizar):
+https://prnt.sc/Md6ywRZcvf1v"
+SI-10543,2026-08-15T13:01:50.002-0300,Sistema,Causa raiz potencial,,"Informações divergentes entre ordem e workflow, shipper não selecionado.
+
+Prints(Você deve colar o link no navegador para que possa visualizar):
+https://prnt.sc/Md6ywRZcvf1v"
+SI-10543,2026-08-15T13:01:50.002-0300,Sistema,Causa raiz final,,"Informações divergentes entre ordem e workflow, shipper não selecionado.
+
+Prints(Você deve colar o link no navegador para que possa visualizar):
+https://prnt.sc/Md6ywRZcvf1v"
+SI-10543,2026-08-15T13:01:50.002-0300,Sistema,Justificativa Causa Raiz final,,"Informações divergentes entre ordem e workflow, shipper não selecionado.
+
+Prints(Você deve colar o link no navegador para que possa visualizar):
+https://prnt.sc/Md6ywRZcvf1v"
 SI-10547,2026-08-14T18:46:00.801-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10547,2026-08-14T18:46:02.896-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10547,2026-08-14T18:46:03.123-0300,Rafael Ferreira,resolution,,Done
@@ -73422,3 +73781,11 @@ SI-10545,2026-08-14T17:18:34.713-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10545,2026-08-14T17:18:36.863-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10545,2026-08-14T17:18:37.182-0300,Rafael Ferreira,resolution,,Done
 SI-10545,2026-08-14T17:18:37.182-0300,Rafael Ferreira,status,Submissão,Done
+SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Resolução do chamado,,Chamado encerrado
+SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Causa raiz potencial,,Chamado encerrado
+SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Causa raiz final,,Chamado encerrado
+SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Justificativa Causa Raiz final,,Chamado encerrado
