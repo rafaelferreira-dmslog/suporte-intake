@@ -1,5 +1,32 @@
 Chave,Resumo,Responsável,Criticidade final,Prioridade,Status,Resolução,Criado,Atualizado(a),Resolvido,Subproduto,Colaborador,email,Cargo,Causa Raiz,Causa raiz final,Causa raiz potencial,Justificativa Causa Raiz final,Resolução do chamado,Descrição do problema,Encaminhado para:,Departamento,Líder direto,Clusters DOC IA,Itens associados,Link da ordem,Módulo,Number,Qual a numeração do house?,Qual a numeração do master?,Qual a numeração da Order/Booking afetada ou do Master/House?,Qual numeração do master que o house deve estar associado?,Qual o link da ordem/booking?,Qual o link do alerta?,Qual o nome do alerta?,Qual o nome do programa?,Qual o nome e e-mail do grupo?,Qual o número da fatura/NF?,Qual o número da ordem/booking?,Qual o número da ND?,Qual o número da quote/proposal?
-SI-10562,Requisição,,,P0 - Crítica,Submissão,,Mon Aug 17 2026 09:34:27 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 09:34:30 GMT-0300 (Brasilia Standard Time),,Computador Lento,Renan Martins dos Santos,Renan Martins dos Santos,Ocean Freight Customer Care Analyst,,,,,,,,Ocean Operations,,,GA-1505,,,,,,,,,,,,,,,,
+SI-10567,Requisição,,,P2 - Média,Submissão,,Mon Aug 17 2026 10:15:18 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 10:15:22 GMT-0300 (Brasilia Standard Time),,Computador não funciona Microfone,Bruno Andres Silva Fernandes,Bruno Andres Silva Fernandes,Business Development Executive,,,,,,,,Healthcare Industry,,,GA-1510,,,,,,,,,,,,,,,,
+SI-10566,Solicitação de cadastro,,,P1 - Alta,Submissão,,Mon Aug 17 2026 10:01:44 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 10:01:49 GMT-0300 (Brasilia Standard Time),,Cliente não aparece no CRM,Gabriela Rocha Paschoal,Luis Felipe Eleoterio,Air Strategy Development Specialist,,,,,,"Criar cadastro customer para Routing Order + Validar no aéreo:
+COMPANY NAME: B&H UK
+COMPANY GROUP: B&H UK
+ID/VAT/CNPJ: GB493825508
+ADDRESS LINE: 1 Saxon Way Trading Estate, Harmondsworth, West Drayton, Middlesex, UB7 0LW
+ZIP/POSTAL CODE: UB7 0LW
+CITY: West Drayton
+STATE/PROVINCE: Middlesex
+COUNTRY: United Kingdom
+
+STRONG RELANTIONSHIP
+31/03/2029",,Air Product,,,GA-1509,,Módulo CRM,,,,,,,,,,,,,,
+SI-10565,Solicitação de cadastro,,,P1 - Alta,Submissão,,Mon Aug 17 2026 09:51:23 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 09:51:27 GMT-0300 (Brasilia Standard Time),,Cliente não aparece no CRM,Gabriela Rocha Paschoal,Luis Felipe Eleoterio,Air Strategy Development Specialist,,,,,,"Criar cadastro de customer Routing Order para o OFF + validar no Aéreo: 
+Trading Name:  PentaKUHL
+Group Company name: Penta Freight Pvt Ltd
+Company Name: Penta Freight Pvt Ltd
+Address Line: A Wing, Times Square 902, Andheri - Kurla Rd, Marol, Andheri East
+Country: India
+State Province: HO-Mumbai, Maharashtra 
+ID number/VAT: 27AAACP4657M1ZZ
+
+Strong: Relantionship
+Date: 31/03/2029
+Product Air",,Air Product,,,GA-1508,,Módulo CRM,,,,,,,,,,,,,,
+SI-10564,Solicitação de cadastro,Nícollas Resende,,P1 - Alta,Concluído,Itens concluídos,Mon Aug 17 2026 09:47:23 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 10:33:36 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 10:33:36 GMT-0300 (Brasilia Standard Time),Cadastro de City,Rose Ribeiro,Rose Ribeiro,Operations Agent,,,,,,"Cidade: Leesburg - Estado: Virginia - USA (GENERAL GUIDANCE, LLC)",,Overland,,,GA-1507,,Módulo Basic Registration,,,,,,,,,,,,,,
+SI-10563,Solicitação de acesso,,,P2 - Média,Submissão,,Mon Aug 17 2026 09:43:16 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 09:43:20 GMT-0300 (Brasilia Standard Time),,Liberação ao Drive,Ully Santos Sá de Lima,Ully Santos Sá de Lima,Air Freight Operations Analyst,,,,,,Gostaria de ter acesso ao app ONE NOTE,,Air Operations,,,GA-1506,,,,,,,,,,,,,,,,
+SI-10562,Requisição,Nícollas Resende,,P0 - Crítica,Concluído,Itens concluídos,Mon Aug 17 2026 09:34:27 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 09:52:59 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 09:52:59 GMT-0300 (Brasilia Standard Time),Computador Lento,Renan Martins dos Santos,Renan Martins dos Santos,Ocean Freight Customer Care Analyst,,,,,,,,Ocean Operations,,,GA-1505,,,,,,,,,,,,,,,,
 SI-10561,Incidente,,,P0 - Crítica,Submissão,,Mon Aug 17 2026 09:05:27 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 09:05:28 GMT-0300 (Brasilia Standard Time),,Fatura não consta no a receber,Juliana de Mello Romao,Juliana de Mello Romao,Financial Assistant,,,,,,"Os processos faturados no dia 14/08/2026 estão como ""Invalid date"" na aba de Contas a receber. Consequentemente, os valores faturados não migram para o BI de faturados.",,Financial,,,,,Módulo Financial,,,,,,,,,,,,,,
 SI-10560,Incidente,,,P1 - Alta,Submissão,,Mon Aug 17 2026 08:57:20 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 08:57:20 GMT-0300 (Brasilia Standard Time),,Os valores de buying estão divergentes,Luciana Yumi Shimizu,Luciana Yumi Shimizu,Air Freight Operations Analyst,,,,,,"O peso cubado da ordem principal estava divergente das demais ordens do assembly, vcs arrumaram, mas o valor do frete ainda continua diferente. Valor do frete no buying na ordem principal está 703,17, e nas demais ordens está 717,04. Esse é o valor que aparece no financial.",,Air Operations,,,,,Módulo Operations,,,,,,https://operational.dmslog.com/order/155891/,,,,,,260435772 Ordem principal,,
 SI-10559,Incidente,Bruno Silva,,P2 - Média,Concluído,Itens concluídos,Mon Aug 17 2026 08:53:27 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 09:36:33 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 09:36:33 GMT-0300 (Brasilia Standard Time),Card ficou preso no cockpit,Susanne Caldas Alves,Susanne Caldas Alves,Air Freight Operations Analyst,,,,,,"Card on time na aba ""Items"" contudo, está como ""warning"" na timeline e no cockpit",,Air Operations,,,,,,,,,,,Order 260848535: https://operational.dmslog.com/order/172597/,,,,,,Order 260848535,,
