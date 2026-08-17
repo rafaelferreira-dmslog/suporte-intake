@@ -73723,6 +73723,9 @@ SI-10538,2026-08-15T13:01:48.261-0300,Sistema,Causa raiz final,,Requisição de 
 SI-10538,2026-08-15T13:01:48.261-0300,Sistema,Justificativa Causa Raiz final,,Requisição de acesso
 SI-10542,2026-08-14T15:54:02.928-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10542,2026-08-14T15:54:04.853-0300,Rafael Ferreira,status,Submissão,Em Atendimento
+SI-10542,2026-08-17T08:30:18.073-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10542,2026-08-17T08:30:18.285-0300,Rafael Ferreira,resolution,,Done
+SI-10542,2026-08-17T08:30:18.285-0300,Rafael Ferreira,status,Em Atendimento,Done
 SI-10540,2026-08-14T15:38:31.837-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10540,2026-08-14T15:38:34.209-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10540,2026-08-14T15:38:34.438-0300,Rafael Ferreira,resolution,,Done
@@ -73773,6 +73776,9 @@ SI-10543,2026-08-15T13:01:50.002-0300,Sistema,Justificativa Causa Raiz final,,"I
 
 Prints(Você deve colar o link no navegador para que possa visualizar):
 https://prnt.sc/Md6ywRZcvf1v"
+SI-10543,2026-08-17T08:30:16.503-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10543,2026-08-17T08:30:16.752-0300,Rafael Ferreira,resolution,,Done
+SI-10543,2026-08-17T08:30:16.752-0300,Rafael Ferreira,status,Aguardando Informação,Done
 SI-10547,2026-08-14T18:46:00.801-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10547,2026-08-14T18:46:02.896-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10547,2026-08-14T18:46:03.123-0300,Rafael Ferreira,resolution,,Done
@@ -73789,3 +73795,16 @@ SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Resolução do chamado,,Chamado en
 SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Causa raiz potencial,,Chamado encerrado
 SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Causa raiz final,,Chamado encerrado
 SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Justificativa Causa Raiz final,,Chamado encerrado
+SI-10551,2026-08-17T08:30:11.069-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10551,2026-08-17T08:30:14.657-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10551,2026-08-17T08:30:14.882-0300,Rafael Ferreira,resolution,,Done
+SI-10551,2026-08-17T08:30:14.882-0300,Rafael Ferreira,status,Submissão,Done
+SI-10553,2026-08-17T08:40:43.412-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10553,2026-08-17T08:40:45.712-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10553,2026-08-17T08:40:45.933-0300,Rafael Ferreira,resolution,,Done
+SI-10553,2026-08-17T08:40:45.933-0300,Rafael Ferreira,status,Submissão,Done
+SI-10557,2026-08-17T08:07:27.212-0300,Sistema,Link,,This work item is blocked by GA-1504
+SI-10556,2026-08-17T07:47:23.071-0300,Sistema,Link,,This work item is blocked by GA-1503
+SI-10556,2026-08-17T08:39:57.507-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10556,2026-08-17T08:40:00.554-0300,Bruno Silva,resolution,,Done
+SI-10556,2026-08-17T08:40:00.554-0300,Bruno Silva,status,Submissão,Done
