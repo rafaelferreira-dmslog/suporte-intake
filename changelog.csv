@@ -72259,6 +72259,7 @@ SI-10439,2026-08-13T01:05:59.516-0300,Sistema,Resolução do chamado,,Em atendim
 SI-10439,2026-08-13T01:05:59.516-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-10439,2026-08-13T01:05:59.516-0300,Sistema,Causa raiz final,,Em atendimento
 SI-10439,2026-08-13T01:05:59.516-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-10439,2026-08-17T14:08:08.322-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
 SI-10437,2026-08-12T10:29:12.033-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10437,2026-08-12T10:29:14.541-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10437,2026-08-13T01:05:58.838-0300,Sistema,Criticidade final,,P1 - Alta
@@ -72521,6 +72522,8 @@ SI-10454,2026-08-15T13:01:16.281-0300,Sistema,Resolução do chamado,,"Identific
 SI-10454,2026-08-15T13:01:16.281-0300,Sistema,Causa raiz potencial,,Ausência de trava ou validação preventiva no front-end durante a inclusão dos anexos para impedir arquivos com soma superior a 25 MB.
 SI-10454,2026-08-15T13:01:16.281-0300,Sistema,Causa raiz final,,"O bloqueio no disparo do alerta ocorreu devido a uma restrição estrutural da plataforma de e-mail do Google, utilizada na infraestrutura corporativa."
 SI-10454,2026-08-15T13:01:16.281-0300,Sistema,Justificativa Causa Raiz final,,A falha deriva de uma limitação técnica de payload na API/SMTP do Google Work
+SI-10454,2026-08-17T14:08:00.626-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
+SI-10454,2026-08-17T14:09:19.534-0300,Ana Beatriz Rodriguez,Qual versão foi?,12.22.0,
 SI-10455,2026-08-12T17:34:34.379-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10455,2026-08-12T17:34:34.379-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-10455,2026-08-12T17:34:35.855-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
@@ -72711,6 +72714,7 @@ SI-10469,2026-08-13T19:05:25.125-0300,Sistema,Causa raiz potencial,,"Intermitên
 Timeout na resposta do banco de dados na tentativa de renderização da lista de invoices."
 SI-10469,2026-08-13T19:05:25.125-0300,Sistema,Causa raiz final,,"O problema relatado na visualização das faturas na tela de Câmbio, na aba Disponível, ocorreu devido a uma instabilidade temporária no processamento de dados do sistema. Quando o usuário tentava acessar a tela, a comunicação necessária para consultar e retornar os registros de invoices sofria uma interrupção de resposta, impedindo que os dados fossem carregados corretamente e resultando na exibição do erro em tela. Após a verificação e atuação da equipe especializada para regularizar o fluxo e a estabilidade da consulta de dados, o comportamento foi corrigido e a navegação voltou ao seu funcionamento normal."
 SI-10469,2026-08-13T19:05:25.125-0300,Sistema,Justificativa Causa Raiz final,,"A indisponibilidade temporária no carregamento das faturas decorreu de uma intermitência no banco de dados, impactando a execução das consultas enviadas pela aplicação. A intervenção da equipe de Data Science corrigiu a inconsistência operacional na consulta da base, reestabelecendo a fluidez na transmissão de informações para a interface de Câmbio Disponível. A otimização e o acompanhamento desse fluxo evitam reincidências de travamento na exibição de dados e garantem a continuidade dos processos."
+SI-10469,2026-08-17T14:07:40.187-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
 SI-10468,2026-08-13T09:24:23.070-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10468,2026-08-13T09:24:25.307-0300,Rafael Ferreira,status,Submissão,Em Atendimento
 SI-10468,2026-08-13T09:26:32.915-0300,Rafael Ferreira,description,,"📘 *CHECKLIST PADRÃO DE TRIAGEM (DMS)*
@@ -72793,6 +72797,7 @@ SI-10468,2026-08-13T19:05:24.423-0300,Sistema,Causa raiz potencial,,"Intermitên
 Timeout na resposta do banco de dados na tentativa de renderização da lista de invoices."
 SI-10468,2026-08-13T19:05:24.423-0300,Sistema,Causa raiz final,,"O problema relatado na visualização das faturas na tela de Câmbio, na aba Disponível, ocorreu devido a uma instabilidade temporária no processamento de dados do sistema. Quando o usuário tentava acessar a tela, a comunicação necessária para consultar e retornar os registros de invoices sofria uma interrupção de resposta, impedindo que os dados fossem carregados corretamente e resultando na exibição do erro em tela. Após a verificação e atuação da equipe especializada para regularizar o fluxo e a estabilidade da consulta de dados, o comportamento foi corrigido e a navegação voltou ao seu funcionamento normal."
 SI-10468,2026-08-13T19:05:24.423-0300,Sistema,Justificativa Causa Raiz final,,"A indisponibilidade temporária no carregamento das faturas decorreu de uma intermitência no banco de dados, impactando a execução das consultas enviadas pela aplicação. A intervenção da equipe de Data Science corrigiu a inconsistência operacional na consulta da base, reestabelecendo a fluidez na transmissão de informações para a interface de Câmbio Disponível. A otimização e o acompanhamento desse fluxo evitam reincidências de travamento na exibição de dados e garantem a continuidade dos processos."
+SI-10468,2026-08-17T14:07:42.712-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
 SI-10467,2026-08-13T09:11:30.225-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10467,2026-08-13T09:11:33.451-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10467,2026-08-13T09:11:33.709-0300,Rafael Ferreira,resolution,,Done
@@ -72882,6 +72887,8 @@ SI-10479,2026-08-17T11:49:53.723-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10479,2026-08-17T11:49:56.015-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10479,2026-08-17T11:49:56.216-0300,Rafael Ferreira,resolution,,Done
 SI-10479,2026-08-17T11:49:56.216-0300,Rafael Ferreira,status,Submissão,Done
+SI-10479,2026-08-17T14:07:03.072-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
+SI-10479,2026-08-17T14:09:13.669-0300,Ana Beatriz Rodriguez,Qual versão foi?,12.22.0,
 SI-10478,2026-08-13T13:54:15.753-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10478,2026-08-14T09:22:10.683-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10478,2026-08-14T09:22:10.880-0300,Rafael Ferreira,resolution,,Done
@@ -73042,6 +73049,9 @@ SI-10476,2026-08-13T12:10:48.123-0300,Rafael Ferreira,resolution,,Done
 SI-10476,2026-08-13T12:10:48.123-0300,Rafael Ferreira,status,Submissão,Done
 SI-10476,2026-08-13T19:05:29.343-0300,Sistema,Criticidade final,,P2 - Média
 SI-10476,2026-08-13T19:05:29.343-0300,Sistema,Resolução do chamado,,O cadastro foi realizado no SYS.
+SI-10484,2026-08-17T15:25:01.860-0300,Rafael Ferreira,resolution,,Done
+SI-10484,2026-08-17T15:25:01.860-0300,Rafael Ferreira,status,Submissão,Done
+SI-10484,2026-08-17T15:25:02.738-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10483,2026-08-13T12:06:12.713-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10483,2026-08-13T12:06:17.328-0300,Bruno Silva,resolution,,Done
 SI-10483,2026-08-13T12:06:17.328-0300,Bruno Silva,status,Submissão,Done
@@ -73053,6 +73063,11 @@ SI-10483,2026-08-13T19:05:32.439-0300,Sistema,Resolução do chamado,,Identifica
 SI-10483,2026-08-13T19:05:32.439-0300,Sistema,Causa raiz potencial,,data extraída do arquivo quando a flag de routing order está ativa.
 SI-10483,2026-08-13T19:05:32.439-0300,Sistema,Causa raiz final,,"Essa condição provocou o preenchimento incorreto da data no registro do documento. Para solucionar a necessidade imediata e manter a precisão das informações, a data foi corrigida manualmente na interface para 11/08/2026."
 SI-10483,2026-08-13T19:05:32.439-0300,Sistema,Justificativa Causa Raiz final,,O ajuste manual do campo na tabela de documentos contorna a falha no registro específico e alinha as informações do HAWB para a continuidade das etapas operacionais sem impactar as validações subsequentes.
+SI-10486,2026-08-17T14:06:55.563-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
+SI-10486,2026-08-17T14:09:10.374-0300,Ana Beatriz Rodriguez,Qual versão foi?,12.22.0,
+SI-10486,2026-08-17T15:27:32.561-0300,Rafael Ferreira,resolution,,Done
+SI-10486,2026-08-17T15:27:32.561-0300,Rafael Ferreira,status,Submissão,Done
+SI-10486,2026-08-17T15:27:33.338-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10485,2026-08-13T13:16:29.318-0300,Sistema,Link,,This work item is blocked by GA-1484
 SI-10485,2026-08-13T19:05:32.986-0300,Sistema,Reclassificação solicitação,,Solicitação de cadastro
 SI-10485,2026-08-13T19:05:32.986-0300,Sistema,Criticidade final,,P1 - Alta
@@ -73121,6 +73136,7 @@ SI-10490,2026-08-13T19:05:34.208-0300,Sistema,Causa raiz potencial,,"Atraso temp
 Verificação operacional realizada antes do tempo regular de conclusão da consulta assíncrona do sistema."
 SI-10490,2026-08-13T19:05:34.208-0300,Sistema,Causa raiz final,,"Durante o fluxo de envio e validação dos documentos de transporte internacional junto ao Controle de Cargas e Trânsito (CCT), os dados transmitidos passam por uma etapa de processamento. O status indicativo de pendência ocorre temporariamente enquanto a plataforma aguarda o retorno da validação dos arquivos. No caso em questão, o chamado foi aberto durante o intervalo em que a atualização do estado da carga ainda estava sendo concluída. Ao consultar os bookings informados, constatou-se que o processamento dos conhecimentos másteres já havia sido finalizado com sucesso, estando a documentação regularizada e pronta para a recepção pelo depositário sem necessidade de descarga de ações adicionais."
 SI-10490,2026-08-13T19:05:34.208-0300,Sistema,Justificativa Causa Raiz final,,"A verificação dos registros das ordens 992-10983350 e 369-10290361 confirmou que os arquivos de MAWB transicionaram corretamente para o status processado, descartando falhas no envio de XML ou erros na integração com o CCT. Trata-se de uma divergência de tempo entre a abertura da consulta operacional e a atualização do protocolo no sistema. Sob a ótica da melhoria contínua, recomenda-se reforçar junto ao time operacional a orientação sobre o tempo de atualização dos status do CCT na plataforma, prevenindo a abertura de chamados quando o fluxo de processamento estiver ocorrendo dentro dos prazos operacionais previstos."
+SI-10490,2026-08-17T14:06:47.340-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
 SI-10489,2026-08-14T12:16:25.871-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10489,2026-08-14T12:16:29.272-0300,Bruno Silva,resolution,,Done
 SI-10489,2026-08-14T12:16:29.272-0300,Bruno Silva,status,Submissão,Done
@@ -73169,6 +73185,8 @@ Print----> https://prnt.sc/aTRasIS23yGw"
 SI-10499,2026-08-13T19:05:37.269-0300,Sistema,Causa raiz potencial,,O alerta estava invalidado
 SI-10499,2026-08-13T19:05:37.269-0300,Sistema,Causa raiz final,,O alerta estava invalidado
 SI-10499,2026-08-13T19:05:37.269-0300,Sistema,Justificativa Causa Raiz final,,O alerta estava invalidado
+SI-10498,2026-08-17T15:35:27.742-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10498,2026-08-17T15:35:30.753-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10497,2026-08-13T15:37:37.251-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10497,2026-08-13T15:37:39.068-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10497,2026-08-13T19:05:36.600-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
@@ -73418,6 +73436,7 @@ SI-10506,2026-08-15T13:01:34.293-0300,Sistema,Causa raiz potencial,,"Latência t
 Tempo de sincronização assíncrona entre o envio da retificação e a atualização em tela."
 SI-10506,2026-08-15T13:01:34.293-0300,Sistema,Causa raiz final,,"O processamento e a atualização de status dos documentos de transporte junto ao CCT dependem de um fluxo contínuo de envio e confirmação de dados com o Portal Único. Quando um procedimento de retificação é acionado, a requisição é transmitida e o sistema permanece aguardando a validação externa. Em alguns momentos, esse ciclo de validação e retorno de informações pode levar alguns minutos a mais do que o habitual, mantendo a exibição do status como pendente de forma temporária. No caso relatado, os processos encontravam-se justamente nesse intervalo de sincronização. Ao realizar a verificação posterior nas ordens, a comunicação havia sido concluída com sucesso e os registros dos Houses já constavam atualizados e corretos no sistema, sem a existência de bloqueios ou inconsistências documentais."
 SI-10506,2026-08-15T13:01:34.293-0300,Sistema,Justificativa Causa Raiz final,,"A ocorrência esteve associada à latência de resposta do ambiente externo do CCT durante a consulta e atualização dos dados retificados. Trata-se de um tempo de processamento assíncrono inerente à integração com órgãos externos, em que a requisição entra em fila de validação antes da alteração definitiva do status do protocolo. A validação posterior confirmou a integridade dos dados registrados, comprovando a ausência de falhas no desenvolvimento ou na estrutura de banco de dados. Com o objetivo de promover a melhoria contínua e otimizar o fluxo de atendimento, orienta-se o alinhamento com os times operacionais para que aguardem o tempo hábil de atualização e executem as consultas de verificação na aba do CCT antes de registrar incidentes para processos em transição recente."
+SI-10506,2026-08-17T14:06:31.546-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
 SI-10509,2026-08-14T10:01:57.792-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10509,2026-08-14T10:02:02.777-0300,Bruno Silva,resolution,,Done
 SI-10509,2026-08-14T10:02:02.777-0300,Bruno Silva,status,Submissão,Done
@@ -73510,6 +73529,11 @@ SI-10512,2026-08-15T13:01:37.293-0300,Sistema,Resolução do chamado,,Em atendim
 SI-10512,2026-08-15T13:01:37.293-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-10512,2026-08-15T13:01:37.293-0300,Sistema,Causa raiz final,,Em atendimento
 SI-10512,2026-08-15T13:01:37.293-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-10511,2026-08-17T14:06:22.586-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
+SI-10511,2026-08-17T14:09:03.856-0300,Ana Beatriz Rodriguez,Qual versão foi?,12.22.0,
+SI-10511,2026-08-17T15:37:10.914-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10511,2026-08-17T15:37:13.668-0300,Rafael Ferreira,resolution,,Done
+SI-10511,2026-08-17T15:37:13.668-0300,Rafael Ferreira,status,Submissão,Done
 SI-10510,2026-08-14T08:16:23.175-0300,Sistema,Link,,This work item is blocked by GA-1489
 SI-10510,2026-08-14T09:06:48.049-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10510,2026-08-14T09:07:06.044-0300,Bruno Silva,resolution,,Done
@@ -73547,6 +73571,16 @@ SI-10520,2026-08-15T13:01:40.818-0300,Sistema,Resolução do chamado,,Aguardando
 SI-10520,2026-08-15T13:01:40.818-0300,Sistema,Causa raiz potencial,,Aguardando informação
 SI-10520,2026-08-15T13:01:40.818-0300,Sistema,Causa raiz final,,Aguardando informação
 SI-10520,2026-08-15T13:01:40.818-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
+SI-10519,2026-08-17T14:06:10.671-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
+SI-10519,2026-08-17T14:08:48.911-0300,Ana Beatriz Rodriguez,Qual versão foi?,12.22.0,
+SI-10519,2026-08-17T15:42:52.233-0300,Rafael Ferreira,resolution,,Done
+SI-10519,2026-08-17T15:42:52.233-0300,Rafael Ferreira,status,Submissão,Done
+SI-10519,2026-08-17T15:42:52.970-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10518,2026-08-17T15:39:27.763-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10518,2026-08-17T15:39:30.092-0300,Rafael Ferreira,resolution,,Done
+SI-10518,2026-08-17T15:39:30.092-0300,Rafael Ferreira,status,Submissão,Done
+SI-10517,2026-08-17T14:06:15.417-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
+SI-10517,2026-08-17T14:08:52.855-0300,Ana Beatriz Rodriguez,Qual versão foi?,12.22.0,
 SI-10516,2026-08-14T09:46:18.391-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-10516,2026-08-14T09:46:20.515-0300,Nícollas Resende,resolution,,Done
 SI-10516,2026-08-14T09:46:20.515-0300,Nícollas Resende,status,Submissão,Done
@@ -73643,6 +73677,7 @@ SI-10522,2026-08-15T13:01:42.052-0300,Sistema,Resolução do chamado,,Identifica
 SI-10522,2026-08-15T13:01:42.052-0300,Sistema,Causa raiz potencial,,perda de sincronia do indicador e falha de atualização entre a linha do tempo e o painel de monitoramento.
 SI-10522,2026-08-15T13:01:42.052-0300,Sistema,Causa raiz final,,O evento sofreu um travamento na sincronização entre a linha do tempo do processo e o painel visual do colaborador.
 SI-10522,2026-08-15T13:01:42.052-0300,Sistema,Justificativa Causa Raiz final,,A ocorrência de inconsistências de estado entre os registros do workflow e a interface gráfica decorre de falhas de sincronização na camada de integração do sistema.
+SI-10522,2026-08-17T14:06:02.908-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
 SI-10532,2026-08-14T11:36:23.122-0300,Sistema,Link,,This work item is blocked by GA-1495
 SI-10531,2026-08-14T14:25:40.880-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10531,2026-08-14T14:25:42.782-0300,Rafael Ferreira,resolution,,Done
@@ -73730,6 +73765,8 @@ SI-10542,2026-08-14T15:54:04.853-0300,Rafael Ferreira,status,Submissão,Em Atend
 SI-10542,2026-08-17T08:30:18.073-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10542,2026-08-17T08:30:18.285-0300,Rafael Ferreira,resolution,,Done
 SI-10542,2026-08-17T08:30:18.285-0300,Rafael Ferreira,status,Em Atendimento,Done
+SI-10541,2026-08-17T14:05:37.660-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
+SI-10541,2026-08-17T14:08:44.472-0300,Ana Beatriz Rodriguez,Qual versão foi?,12.22.0,
 SI-10540,2026-08-14T15:38:31.837-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10540,2026-08-14T15:38:34.209-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10540,2026-08-14T15:38:34.438-0300,Rafael Ferreira,resolution,,Done
@@ -73787,6 +73824,9 @@ SI-10547,2026-08-14T18:46:00.801-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10547,2026-08-14T18:46:02.896-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10547,2026-08-14T18:46:03.123-0300,Rafael Ferreira,resolution,,Done
 SI-10547,2026-08-14T18:46:03.123-0300,Rafael Ferreira,status,Submissão,Done
+SI-10547,2026-08-17T14:05:26.144-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
+SI-10546,2026-08-17T14:05:30.420-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
+SI-10546,2026-08-17T14:08:41.226-0300,Ana Beatriz Rodriguez,Qual versão foi?,12.22.0,
 SI-10545,2026-08-14T17:18:34.713-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10545,2026-08-14T17:18:36.863-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10545,2026-08-14T17:18:37.182-0300,Rafael Ferreira,resolution,,Done
@@ -73799,6 +73839,9 @@ SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Resolução do chamado,,Chamado en
 SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Causa raiz potencial,,Chamado encerrado
 SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Causa raiz final,,Chamado encerrado
 SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Justificativa Causa Raiz final,,Chamado encerrado
+SI-10549,2026-08-17T14:06:35.236-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10549,2026-08-17T14:06:38.490-0300,Bruno Silva,resolution,,Done
+SI-10549,2026-08-17T14:06:38.490-0300,Bruno Silva,status,Submissão,Done
 SI-10551,2026-08-17T08:30:11.069-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10551,2026-08-17T08:30:14.657-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10551,2026-08-17T08:30:14.882-0300,Rafael Ferreira,resolution,,Done
