@@ -1,4 +1,36 @@
 Chave,Resumo,Responsável,Criticidade final,Prioridade,Status,Resolução,Criado,Atualizado(a),Resolvido,Subproduto,Colaborador,email,Cargo,Causa Raiz,Causa raiz final,Causa raiz potencial,Justificativa Causa Raiz final,Resolução do chamado,Descrição do problema,Encaminhado para:,Departamento,Líder direto,Clusters DOC IA,Itens associados,Link da ordem,Módulo,Number,Qual a numeração do house?,Qual a numeração do master?,Qual a numeração da Order/Booking afetada ou do Master/House?,Qual numeração do master que o house deve estar associado?,Qual o link da ordem/booking?,Qual o link do alerta?,Qual o nome do alerta?,Qual o nome do programa?,Qual o nome e e-mail do grupo?,Qual o número da fatura/NF?,Qual o número da ordem/booking?,Qual o número da ND?,Qual o número da quote/proposal?
+SI-10570,Incidente,,,P0 - Crítica,Submissão,,Mon Aug 17 2026 12:04:46 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 12:04:46 GMT-0300 (Brasilia Standard Time),,Cadastro de City,Nicole Barbosa Ferreira,Nicole Barbosa Ferreira,Air Freight Customer Care Intern,,,,,,"Poderiam cadastrar no SYS o vendor abaixo, por favor?
+Trading Name: Mamute Carga Logística LTDA
+Company Name: Mamute Carga Logística LTDA
+Id ou CNPJ: 12522813000120
+Address line: Rua Isaura Barroncas número 62
+Zip/Postal Code: 69043180
+Country: Brasil
+State/Province: Amazonas
+City: Manaus
+Qual tipo de Vendor: Shipper/Consignee",,Air Operations,,,,,Módulo Basic Registration,,,,,,,,,,,,,,
+SI-10569,Incidente,,,P1 - Alta,Submissão,,Mon Aug 17 2026 12:02:37 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 12:02:37 GMT-0300 (Brasilia Standard Time),,Não recebemos a atualização do terminal 49,Gabriela Salviano de Brito,Gabriela Salviano de Brito,Ocean Freight Operations Assistant,,,,,,"O terminal 49 só está atualizando o card do ETA final desses 5 processos, não todas pernadas.
+
+1) COSU6508515730 https://operational.dmslog.com/booking/sea/17237/ | Last Update 17/08/2026 03:28
+ETD - LAEM CHABANG > MANUAL
+ETA - SINGAPORE > MANUAL
+ETD - SINGRAPORE > MANUAL
+ETA - SANTOS > T49
+
+2) COSU6507299860 https://operational.dmslog.com/booking/sea/17192/ | Last Update 17/08/2026 00:47
+ETD - NINGBO > MANUAL
+ETA - SANTOS > T49
+
+3) COSU6462391510 https://operational.dmslog.com/booking/sea/17809/ | Last Update 17/08/2026 03:14
+ETD - SHANGHAI > MANUAL
+ETA - SANTOS > T49
+
+4) COSU6462391490 https://operational.dmslog.com/booking/sea/17468/ | Last Update 05/08/2026 09:52
+ETD - SHANGHAI > MANUAL
+ETA - SANTOS > T49
+
+5) 95751791 https://operational.dmslog.com/booking/sea/17380/ | Last Update 13/08/2026 06:34
+ETD - ROTTERDAM > MANUAL",,Ocean Operations,,,,,Módulo Operations,,,,,,VÁRIOS,,,,,,COSU6508515730 COSU6507299860 COSU6462391510 COSU6462391490 95751791,,
 SI-10568,Incidente,,,P1 - Alta,Submissão,,Mon Aug 17 2026 11:05:22 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 11:05:22 GMT-0300 (Brasilia Standard Time),,Erro 500,Juliana de Mello Romao,Juliana de Mello Romao,Financial Assistant,,,,,,"Cliente Gol - Projeto Stratos. Fazer o ajuste do frete prepaid para collect no booking.
 Segue abaixo as orders:
 260643893
@@ -8,7 +40,7 @@ Segue abaixo as orders:
 260746812
 260747227
 260746813",,Financial,,,,,Módulo Operations,,,,,,,,,,,,,,
-SI-10567,Requisição,,,P2 - Média,Submissão,,Mon Aug 17 2026 10:15:18 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 10:15:22 GMT-0300 (Brasilia Standard Time),,Computador não funciona Microfone,Bruno Andres Silva Fernandes,Bruno Andres Silva Fernandes,Business Development Executive,,,,,,,,Healthcare Industry,,,GA-1510,,,,,,,,,,,,,,,,
+SI-10567,Requisição,Nícollas Resende,,P2 - Média,Concluído,Itens concluídos,Mon Aug 17 2026 10:15:18 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 12:08:41 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 12:08:41 GMT-0300 (Brasilia Standard Time),Computador não funciona Microfone,Bruno Andres Silva Fernandes,Bruno Andres Silva Fernandes,Business Development Executive,,,,,,,,Healthcare Industry,,,GA-1510,,,,,,,,,,,,,,,,
 SI-10566,Solicitação de cadastro,,,P1 - Alta,Submissão,,Mon Aug 17 2026 10:01:44 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 10:01:49 GMT-0300 (Brasilia Standard Time),,Cliente não aparece no CRM,Gabriela Rocha Paschoal,Luis Felipe Eleoterio,Air Strategy Development Specialist,,,,,,"Criar cadastro customer para Routing Order + Validar no aéreo:
 COMPANY NAME: B&H UK
 COMPANY GROUP: B&H UK
@@ -216,7 +248,7 @@ SI-10483,Incidente,Bruno Silva,P0 - Crítica,P0 - Crítica,Concluído,Itens conc
 SI-10482,Incidente,Bruno Silva,P2 - Média,P2 - Média,Concluído,Itens concluídos,Thu Aug 13 2026 11:44:26 GMT-0300 (Brasilia Standard Time),Thu Aug 13 2026 19:05:31 GMT-0300 (Brasilia Standard Time),Thu Aug 13 2026 11:52:03 GMT-0300 (Brasilia Standard Time),IA classificou incorretamente o documento,Luana Silva Sousa,472150008/42,Air Freight Operations Assistant,Falha Desenvolvimento,"Caso resolvido via salinha de dosc ia. O campo estava sem moeda impossibilitando edição, após ajuste colaboradora conseguiu remover o campo.","Caso resolvido via salinha de dosc ia. O campo estava sem moeda impossibilitando edição, após ajuste colaboradora conseguiu remover o campo.","Caso resolvido via salinha de dosc ia. O campo estava sem moeda impossibilitando edição, após ajuste colaboradora conseguiu remover o campo.","Caso resolvido via salinha de dosc ia. O campo estava sem moeda impossibilitando edição, após ajuste colaboradora conseguiu remover o campo.",Não consigo apagar um caixa que subiu como iNV e não consigo add a label,,Air Operations,,,,,Módulo Operations,,,,,,,,,,,,260848891,,
 SI-10481,Incidente,Bruno Silva,P0 - Crítica,P0 - Crítica,Concluído,Itens concluídos,Thu Aug 13 2026 11:34:21 GMT-0300 (Brasilia Standard Time),Thu Aug 13 2026 19:05:31 GMT-0300 (Brasilia Standard Time),Thu Aug 13 2026 12:25:34 GMT-0300 (Brasilia Standard Time),Os valores de selling estão divergentes,Beatriz Nascimento Rodrigues,488920618/36,Ocean Freight Customer Care Analyst,Regra de Negócio,"A cobrança de SED na seção de venda é vinculada à quantidade de documentos de EEI Report aprovados anexados à ordem. Embora a cotação inicial traga o valor fixo por unidade, a lógica do sistema na operação exige que a quantidade de cobranças reflita exatamente o total de comprovantes devidamente validados. Como havia múltiplos documentos aprovados no processo, o valor total foi atualizado multiplicando a taxa unitária pela quantidade real de registros.",Aplicação de quantidade fixa padrão oriunda da cotação em detrimento da contagem dinâmica de documentos EEI Report aprovados na ordem.,"A regra de negócio determina que a charge SED (unit EEI Report) em Add Selling tenha seu campo Qty atualizado automaticamente pelo somatório de documentos EEI Report com status ""Approved"" na aba Documents. O recálculo manual ou via update quote não altera a cobrança se houver mais de um documento aprovado anexado, garantindo a paridade entre a documentação operacional e a cobrança financeira.",Identificada a divergência no valor do serviço de liberação de exportação (SED) na seção de venda. Realizado o ajuste no cálculo automático para considerar a quantidade de comprovantes aprovados do registro de exportação (EEI Report) vinculados ao processo.,"O FD JÁ CONFIRMOU QUE NA TELA DELES A TAXA DE SED ESTÁ COM QUANTIDADE (1) VALOR 20,00 USD - MAS NO SYS NA ABA DE SELLING A TAXA ESTÁ SENDO CALCULADA POR QUANTI (2) DANDO TOTAL DE 40,00 USD. UPDATE QUOTE JÁ FOI FEITO E O PROBLEMA PERSISTE.",,Ocean Operations,,,,,Módulo Operations,,,,,,https://operational.dmslog.com/order/153285/selling/,,,,,,assembly 260334378,,
 SI-10480,Incidente,Bruno Silva,P0 - Crítica,P0 - Crítica,Concluído,Itens concluídos,Thu Aug 13 2026 11:32:19 GMT-0300 (Brasilia Standard Time),Thu Aug 13 2026 19:05:30 GMT-0300 (Brasilia Standard Time),Thu Aug 13 2026 12:25:37 GMT-0300 (Brasilia Standard Time),IA não separou os docs corretamente,Marina Julia dos Santos Oliveira Marcelo,176624497/18,Air Freight Operations Intern,Falha Desenvolvimento,"Bom dia! documento enviado, caso não leia por favor entrar na sala de docs ia (https://meet.google.com/wan-efbb-hhw?authuser=0)","Bom dia! documento enviado, caso não leia por favor entrar na sala de docs ia (https://meet.google.com/wan-efbb-hhw?authuser=0)","Bom dia! documento enviado, caso não leia por favor entrar na sala de docs ia (https://meet.google.com/wan-efbb-hhw?authuser=0)","Bom dia! documento enviado, caso não leia por favor entrar na sala de docs ia (https://meet.google.com/wan-efbb-hhw?authuser=0)",IA ESTÁ LENDO DEBIT NOTE COMO INVOICE,,Air Operations,,,,,Módulo Operations,,,,,,https://operational.dmslog.com/order/168288/,,,,,,260745591,,
-SI-10479,Incidente,,,P1 - Alta,Submissão,,Thu Aug 13 2026 11:30:49 GMT-0300 (Brasilia Standard Time),Thu Aug 13 2026 11:30:49 GMT-0300 (Brasilia Standard Time),,Alerta não disparou,Renan Martins dos Santos,339155058/97,Ocean Freight Customer Care Analyst,,,,,,Alerta de ETD CONFIRMED não enviado.,,Ocean Operations,,,,,Módulo Operations,,,,,,https://operational.dmslog.com/order/152179/,https://operational.dmslog.com/order/152179/,etd confirmed,,,,260333882 / 260437417 / 260746227,,
+SI-10479,Incidente,Rafael Ferreira,,P1 - Alta,Concluído,Itens concluídos,Thu Aug 13 2026 11:30:49 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 11:49:56 GMT-0300 (Brasilia Standard Time),Mon Aug 17 2026 11:49:56 GMT-0300 (Brasilia Standard Time),Alerta não disparou,Renan Martins dos Santos,339155058/97,Ocean Freight Customer Care Analyst,,,,,,Alerta de ETD CONFIRMED não enviado.,,Ocean Operations,,,,,Módulo Operations,,,,,,https://operational.dmslog.com/order/152179/,https://operational.dmslog.com/order/152179/,etd confirmed,,,,260333882 / 260437417 / 260746227,,
 SI-10478,Incidente,Rafael Ferreira,P3 - Baixa,P0 - Crítica,Concluído,Itens concluídos,Thu Aug 13 2026 11:05:26 GMT-0300 (Brasilia Standard Time),Sat Aug 15 2026 13:01:24 GMT-0300 (Brasilia Standard Time),Fri Aug 14 2026 09:22:10 GMT-0300 (Brasilia Standard Time),Não consigo inserir ordem ao PL,Rose Ribeiro,52372207,Operations Agent,Falha Operacional,"A impossibilidade de incluir as ordens e os documentos de recebimento em uma nova lista de separação ocorre devido a uma regra de consistência e integridade operacional do sistema DWSYS. Quando uma ordem ou um documento de armazém (WR ou WRR) é associado a um Pick List, o sistema bloqueia automaticamente novas associações para evitar riscos de duplicidade na movimentação e na expedição de mercadorias.
 
 Na verificação detalhada das informações contidas na base de dados, identificou-se a seguinte distribuição de vínculos ativos:
