@@ -73679,10 +73679,14 @@ SI-10522,2026-08-15T13:01:42.052-0300,Sistema,Causa raiz final,,O evento sofreu 
 SI-10522,2026-08-15T13:01:42.052-0300,Sistema,Justificativa Causa Raiz final,,A ocorrência de inconsistências de estado entre os registros do workflow e a interface gráfica decorre de falhas de sincronização na camada de integração do sistema.
 SI-10522,2026-08-17T14:06:02.908-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
 SI-10532,2026-08-14T11:36:23.122-0300,Sistema,Link,,This work item is blocked by GA-1495
+SI-10532,2026-08-17T15:47:01.321-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10532,2026-08-17T15:47:03.554-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10531,2026-08-14T14:25:40.880-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10531,2026-08-14T14:25:42.782-0300,Rafael Ferreira,resolution,,Done
 SI-10531,2026-08-14T14:25:42.782-0300,Rafael Ferreira,status,Submissão,Done
 SI-10529,2026-08-14T10:58:25.425-0300,Sistema,Link,,This work item is blocked by GA-1494
+SI-10529,2026-08-17T15:46:46.160-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
+SI-10529,2026-08-17T15:46:47.675-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10536,2026-08-14T12:40:25.574-0300,Sistema,Link,,This work item is blocked by GA-1497
 SI-10536,2026-08-14T13:50:39.043-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10536,2026-08-14T13:50:45.405-0300,Rafael Ferreira,Classificação,,Ranked higher
@@ -73722,6 +73726,9 @@ https://prnt.sc/mfQGdtlnAQMh"
 SI-10534,2026-08-15T13:01:45.506-0300,Sistema,Causa raiz potencial,,Ausência de cadastro das taxas de pickup na cotação comercial vinculada ou falha na integração das informações financeiras entre a proposta comercial e o módulo operacional.
 SI-10534,2026-08-15T13:01:45.506-0300,Sistema,Causa raiz final,,"A indisponibilidade dos valores na aba de adição de vendas ocorre devido à mecânica de integração da plataforma, em que os dados e cobranças exibidos no módulo operacional são herdados diretamente das informações inseridas e cadastradas na proposta comercial associada ao processo. No caso em questão, verificou-se que a cotação atrelada à ordem não continha as taxas de pickup registradas em sua estrutura inicial. Como a aba de vendas reflete estritamente o que foi configurado na proposta comercial, a ausência prévia desse lançamento impediu a exibição automática dos valores na ordem, mantendo o campo zerado até que a proposta seja devidamente atualizada."
 SI-10534,2026-08-15T13:01:45.506-0300,Sistema,Justificativa Causa Raiz final,,"A migração automática de cobranças para as abas operacionais do sistema depende estritamente do preenchimento prévio dessas taxas na cotação cadastrada no módulo comercial. Como a cotação vinculada à ordem 260848373 não continha os valores de pickup cadastrados, a rotina de sincronização não identificou registros para popular a aba de vendas na ordem operacional. A atualização do cadastro na cotação atrelada corrige a inconsistência na origem e assegura a integridade das informações do processo, prevenindo a reincidência do problema."
+SI-10533,2026-08-17T15:47:36.759-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10533,2026-08-17T15:47:39.266-0300,Rafael Ferreira,resolution,,Done
+SI-10533,2026-08-17T15:47:39.266-0300,Rafael Ferreira,status,Submissão,Done
 SI-10537,2026-08-14T13:50:36.470-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10537,2026-08-14T13:50:40.951-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10537,2026-08-14T13:50:41.184-0300,Rafael Ferreira,resolution,,Done
@@ -73767,6 +73774,9 @@ SI-10542,2026-08-17T08:30:18.285-0300,Rafael Ferreira,resolution,,Done
 SI-10542,2026-08-17T08:30:18.285-0300,Rafael Ferreira,status,Em Atendimento,Done
 SI-10541,2026-08-17T14:05:37.660-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
 SI-10541,2026-08-17T14:08:44.472-0300,Ana Beatriz Rodriguez,Qual versão foi?,12.22.0,
+SI-10541,2026-08-17T15:49:48.916-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10541,2026-08-17T15:49:52.045-0300,Rafael Ferreira,resolution,,Done
+SI-10541,2026-08-17T15:49:52.045-0300,Rafael Ferreira,status,Submissão,Done
 SI-10540,2026-08-14T15:38:31.837-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10540,2026-08-14T15:38:34.209-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10540,2026-08-14T15:38:34.438-0300,Rafael Ferreira,resolution,,Done
@@ -73827,6 +73837,11 @@ SI-10547,2026-08-14T18:46:03.123-0300,Rafael Ferreira,status,Submissão,Done
 SI-10547,2026-08-17T14:05:26.144-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
 SI-10546,2026-08-17T14:05:30.420-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
 SI-10546,2026-08-17T14:08:41.226-0300,Ana Beatriz Rodriguez,Qual versão foi?,12.22.0,
+SI-10546,2026-08-17T15:51:04.440-0300,Rafael Ferreira,resolution,,Done
+SI-10546,2026-08-17T15:51:04.440-0300,Rafael Ferreira,status,Submissão,Done
+SI-10546,2026-08-17T15:51:05.303-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10546,2026-08-17T15:51:18.611-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10546,2026-08-17T15:51:18.823-0300,Rafael Ferreira,status,Done,Done
 SI-10545,2026-08-14T17:18:34.713-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10545,2026-08-14T17:18:36.863-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10545,2026-08-14T17:18:37.182-0300,Rafael Ferreira,resolution,,Done
@@ -73846,6 +73861,8 @@ SI-10551,2026-08-17T08:30:11.069-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10551,2026-08-17T08:30:14.657-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10551,2026-08-17T08:30:14.882-0300,Rafael Ferreira,resolution,,Done
 SI-10551,2026-08-17T08:30:14.882-0300,Rafael Ferreira,status,Submissão,Done
+SI-10550,2026-08-17T15:53:11.033-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
+SI-10550,2026-08-17T15:53:12.833-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10553,2026-08-17T08:40:43.412-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10553,2026-08-17T08:40:45.712-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10553,2026-08-17T08:40:45.933-0300,Rafael Ferreira,resolution,,Done
@@ -73858,6 +73875,9 @@ SI-10554,2026-08-17T09:09:20.147-0300,Rafael Ferreira,Classificação,,Ranked hi
 SI-10554,2026-08-17T09:09:20.401-0300,Rafael Ferreira,resolution,,Done
 SI-10554,2026-08-17T09:09:20.401-0300,Rafael Ferreira,status,Submissão,Done
 SI-10557,2026-08-17T08:07:27.212-0300,Sistema,Link,,This work item is blocked by GA-1504
+SI-10557,2026-08-17T16:08:33.051-0300,Rafael Ferreira,assignee,,Nícollas Resende
+SI-10557,2026-08-17T16:08:38.348-0300,Rafael Ferreira,resolution,,Done
+SI-10557,2026-08-17T16:08:38.348-0300,Rafael Ferreira,status,Submissão,Done
 SI-10556,2026-08-17T07:47:23.071-0300,Sistema,Link,,This work item is blocked by GA-1503
 SI-10556,2026-08-17T08:39:57.507-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10556,2026-08-17T08:40:00.554-0300,Bruno Silva,resolution,,Done
@@ -73866,6 +73886,8 @@ SI-10562,2026-08-17T09:34:30.843-0300,Sistema,Link,,This work item is blocked by
 SI-10562,2026-08-17T09:52:56.745-0300,Bruno Silva,assignee,,Nícollas Resende
 SI-10562,2026-08-17T09:52:59.777-0300,Bruno Silva,resolution,,Done
 SI-10562,2026-08-17T09:52:59.777-0300,Bruno Silva,status,Submissão,Done
+SI-10560,2026-08-17T16:24:53.552-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
+SI-10560,2026-08-17T16:24:56.354-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10559,2026-08-17T09:36:30.089-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10559,2026-08-17T09:36:33.045-0300,Bruno Silva,resolution,,Done
 SI-10559,2026-08-17T09:36:33.045-0300,Bruno Silva,status,Submissão,Done
@@ -73877,12 +73899,30 @@ SI-10567,2026-08-17T12:08:39.411-0300,Nícollas Resende,assignee,,Nícollas Rese
 SI-10567,2026-08-17T12:08:41.551-0300,Nícollas Resende,resolution,,Done
 SI-10567,2026-08-17T12:08:41.551-0300,Nícollas Resende,status,Submissão,Done
 SI-10566,2026-08-17T10:01:49.694-0300,Sistema,Link,,This work item is blocked by GA-1509
+SI-10566,2026-08-17T16:17:22.604-0300,Helena Almeida,resolution,,Done
+SI-10566,2026-08-17T16:17:22.604-0300,Helena Almeida,status,Submissão,Done
+SI-10566,2026-08-17T16:17:23.622-0300,Helena Almeida,assignee,,Helena Almeida
+SI-10566,2026-08-17T16:17:42.292-0300,Helena Almeida,Fluxo realizado,,"Cadastro já existia e foi atualizado. 
+Ticket concluído. Cadastro e validação realizados."
+SI-10566,2026-08-17T16:17:46.706-0300,Helena Almeida,Resolução do chamado,,"Cadastro já existia e foi atualizado. 
+Ticket concluído. Cadastro e validação realizados."
+SI-10566,2026-08-17T16:17:49.263-0300,Helena Almeida,Criticidade final,,P1 - Alta
 SI-10565,2026-08-17T09:51:27.475-0300,Sistema,Link,,This work item is blocked by GA-1508
+SI-10565,2026-08-17T16:16:11.391-0300,Helena Almeida,resolution,,Done
+SI-10565,2026-08-17T16:16:11.391-0300,Helena Almeida,status,Submissão,Done
+SI-10565,2026-08-17T16:16:12.330-0300,Helena Almeida,assignee,,Helena Almeida
+SI-10565,2026-08-17T16:16:21.282-0300,Helena Almeida,Criticidade final,,P1 - Alta
+SI-10565,2026-08-17T16:16:27.280-0300,Helena Almeida,Resolução do chamado,,Ticket concluído. Cadastro e validação realizados. 
 SI-10564,2026-08-17T09:47:27.637-0300,Sistema,Link,,This work item is blocked by GA-1507
 SI-10564,2026-08-17T10:33:34.397-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-10564,2026-08-17T10:33:36.443-0300,Nícollas Resende,resolution,,Done
 SI-10564,2026-08-17T10:33:36.443-0300,Nícollas Resende,status,Submissão,Done
 SI-10563,2026-08-17T09:43:20.776-0300,Sistema,Link,,This work item is blocked by GA-1506
+SI-10563,2026-08-17T16:14:14.288-0300,Helena Almeida,resolution,,Done
+SI-10563,2026-08-17T16:14:14.288-0300,Helena Almeida,status,Submissão,Done
+SI-10563,2026-08-17T16:14:14.958-0300,Helena Almeida,assignee,,Helena Almeida
+SI-10563,2026-08-17T16:14:23.565-0300,Helena Almeida,Criticidade final,,P3 - Baixa
+SI-10563,2026-08-17T16:14:32.872-0300,Helena Almeida,Resolução do chamado,,Ticket encerrado. A usuária foi orientada sobre a utilização das ferramentas do Google Workspace (Google Keep e Google Docs) em substituição às soluções da Microsoft.
 SI-10570,2026-08-17T12:34:13.859-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-10570,2026-08-17T12:34:16.188-0300,Nícollas Resende,resolution,,Done
 SI-10570,2026-08-17T12:34:16.188-0300,Nícollas Resende,status,Submissão,Done
@@ -73890,3 +73930,12 @@ SI-10572,2026-08-17T13:25:50.921-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10572,2026-08-17T13:25:52.741-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10572,2026-08-17T13:25:52.964-0300,Rafael Ferreira,resolution,,Done
 SI-10572,2026-08-17T13:25:52.964-0300,Rafael Ferreira,status,Submissão,Done
+SI-10578,2026-08-17T16:37:28.500-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10578,2026-08-17T16:37:30.981-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10578,2026-08-17T16:37:31.213-0300,Rafael Ferreira,resolution,,Done
+SI-10578,2026-08-17T16:37:31.213-0300,Rafael Ferreira,status,Submissão,Done
+SI-10577,2026-08-17T15:56:29.166-0300,Sistema,Link,,This work item is blocked by GA-1511
+SI-10577,2026-08-17T16:05:06.930-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10577,2026-08-17T16:05:09.245-0300,Rafael Ferreira,Classificação,,Ranked higher
+SI-10577,2026-08-17T16:05:09.531-0300,Rafael Ferreira,resolution,,Done
+SI-10577,2026-08-17T16:05:09.531-0300,Rafael Ferreira,status,Submissão,Done
