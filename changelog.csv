@@ -74220,6 +74220,18 @@ SI-10576,2026-08-18T07:06:34.570-0300,Sistema,Resolução do chamado,,Em atendim
 SI-10576,2026-08-18T07:06:34.570-0300,Sistema,Causa raiz potencial,,Em atendimento
 SI-10576,2026-08-18T07:06:34.570-0300,Sistema,Causa raiz final,,Em atendimento
 SI-10576,2026-08-18T07:06:34.570-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-10586,2026-08-18T09:29:14.501-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10586,2026-08-18T09:33:05.118-0300,Rafael Ferreira,status,Submissão,Aguardando correção
+SI-10585,2026-08-18T09:29:16.289-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10585,2026-08-18T09:33:03.010-0300,Rafael Ferreira,status,Submissão,Aguardando correção
+SI-10584,2026-08-18T09:29:18.637-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10584,2026-08-18T09:33:01.308-0300,Rafael Ferreira,status,Submissão,Aguardando correção
+SI-10583,2026-08-18T09:29:20.610-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10583,2026-08-18T09:32:59.508-0300,Rafael Ferreira,status,Submissão,Aguardando correção
+SI-10582,2026-08-18T09:29:22.503-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10582,2026-08-18T09:32:57.391-0300,Rafael Ferreira,status,Submissão,Aguardando correção
+SI-10581,2026-08-18T09:29:24.556-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10581,2026-08-18T09:32:55.703-0300,Rafael Ferreira,status,Submissão,Aguardando correção
 SI-10580,2026-08-18T07:06:36.633-0300,Sistema,Criticidade final,,P1 - Alta
 SI-10580,2026-08-18T07:06:36.633-0300,Sistema,Causa Raiz,,Falha Operacional
 SI-10580,2026-08-18T07:06:36.633-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
@@ -74271,4 +74283,10 @@ SI-10590,2026-08-18T07:06:37.296-0300,Sistema,Causa raiz final,,"Durante o proce
 SI-10590,2026-08-18T07:06:37.296-0300,Sistema,Justificativa Causa Raiz final,,"A falha ocorreu devido à gravação do atributo value como nulo nas taxas de pickup vinculadas à cotação no módulo PM, divergindo da regra de negócio que define esse campo como obrigatório para a migração até a aba ADD Selling da ordem. A ausência do valor impediu a execução adequada do cálculo no módulo operacional. A correção direta da informação nos registros do sistema restabeleceu o fluxo. Visando a melhoria contínua do processo e para evitar a reincidência do problema, recomenda-se o ajuste das regras de validação no formulário de cotação para proibir o salvamento de taxas de pickup que estejam com o campo value nulo ou desprovido de valor válido."
 SI-10589,2026-08-17T17:04:26.277-0300,Sistema,Link,,This work item is blocked by GA-1513
 SI-10588,2026-08-17T16:49:25.428-0300,Sistema,Link,,This work item is blocked by GA-1512
+SI-10594,2026-08-18T09:41:10.276-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10594,2026-08-18T09:41:13.124-0300,Bruno Silva,resolution,,Done
+SI-10594,2026-08-18T09:41:13.124-0300,Bruno Silva,status,Submissão,Done
 SI-10593,2026-08-17T17:59:33.600-0300,Sistema,Link,,This work item is blocked by GA-1514
+SI-10595,2026-08-18T09:05:02.888-0300,Bruno Silva,assignee,,Bruno Silva
+SI-10595,2026-08-18T09:05:06.563-0300,Bruno Silva,resolution,,Done
+SI-10595,2026-08-18T09:05:06.563-0300,Bruno Silva,status,Submissão,Done
