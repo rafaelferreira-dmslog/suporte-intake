@@ -72889,6 +72889,18 @@ SI-10479,2026-08-17T11:49:56.216-0300,Rafael Ferreira,resolution,,Done
 SI-10479,2026-08-17T11:49:56.216-0300,Rafael Ferreira,status,Submissão,Done
 SI-10479,2026-08-17T14:07:03.072-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
 SI-10479,2026-08-17T14:09:13.669-0300,Ana Beatriz Rodriguez,Qual versão foi?,12.22.0,
+SI-10479,2026-08-18T07:05:55.002-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10479,2026-08-18T07:05:55.002-0300,Sistema,Incidente Pós-Deploy de Projeto?,,SIM
+SI-10479,2026-08-18T07:05:55.002-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10479,2026-08-18T07:05:55.002-0300,Sistema,Criticidade final,,P2 - Média
+SI-10479,2026-08-18T07:05:55.002-0300,Sistema,Resolução do chamado,,"Identificada inconsistência no mecanismo de limpeza temporária de dados, o que ocasionava a não emissão dos alertas automáticos do sistema. A configuração foi ajustada e o comportamento do serviço foi devidamente reestabelecido. Foi associado o registro INTAKE-1839 para o acompanhamento da solução definitiva do caso."
+SI-10479,2026-08-18T07:05:55.002-0300,Sistema,Causa raiz potencial,,"Incompatibilidade ou divergência na URL de conexão do Redis após atualização do ambiente.
+
+Ausência de prefixo exclusivo nas chaves de armazenamento temporário (KEY_PREFIX).
+
+Execução de comando de exclusão global da memória temporária por outro microserviço."
+SI-10479,2026-08-18T07:05:55.002-0300,Sistema,Causa raiz final,,"Durante a atualização de versões e centralização dos serviços, um serviço secundário responsável pelo gerenciamento de processos executou uma rotina de limpeza de memória temporária que apagou indevidamente as informações armazenadas por outros serviços do sistema. Como o serviço de notificações depende desses dados em memória para processar e disparar os e-mails e alertas agendados, a limpeza global fazia com que o sistema não encontrasse os registros necessários no momento do envio, gerando falhas e impedindo que os alertas fossem entregues aos destinatários. O direcionamento do serviço de gerenciamento foi corrigido temporariamente para o ambiente anterior até que a rotina de limpeza seja reescrita para apagar apenas seus próprios registros."
+SI-10479,2026-08-18T07:05:55.002-0300,Sistema,Justificativa Causa Raiz final,,"O incidente originou-se no serviço dms-pm, onde uma instrução de rotina estava executando o expurgo total do banco de dados temporário (Redis centralizado) em vez de aplicar a exclusão pontual restrita às suas próprias chaves de contexto. Como as chaves de cache do serviço de alertas não utilizavam um KEY_PREFIX isolado, a execução da rotina no dms-pm invalidava os registros de order_sendalerthistory de forma assíncrona, resultando nas exceções do tipo Cache not found e no travamento de tarefas nos status ERROR e WAITING. A mitigação foi efetuada redefinindo a variável de conexão do dms-pm para a instância isolada anterior, isolando o impacto enquanto a correção do escopo de deleção de chaves é implementada no INTAKE-1839."
 SI-10478,2026-08-13T13:54:15.753-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10478,2026-08-14T09:22:10.683-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10478,2026-08-14T09:22:10.880-0300,Rafael Ferreira,resolution,,Done
@@ -73052,6 +73064,18 @@ SI-10476,2026-08-13T19:05:29.343-0300,Sistema,Resolução do chamado,,O cadastro
 SI-10484,2026-08-17T15:25:01.860-0300,Rafael Ferreira,resolution,,Done
 SI-10484,2026-08-17T15:25:01.860-0300,Rafael Ferreira,status,Submissão,Done
 SI-10484,2026-08-17T15:25:02.738-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10484,2026-08-18T07:05:57.202-0300,Sistema,Incidente Pós-Deploy de Projeto?,,SIM
+SI-10484,2026-08-18T07:05:57.202-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10484,2026-08-18T07:05:57.202-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10484,2026-08-18T07:05:57.202-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10484,2026-08-18T07:05:57.202-0300,Sistema,Resolução do chamado,,"Identificada inconsistência no mecanismo de limpeza temporária de dados, o que ocasionava a não emissão dos alertas automáticos do sistema. A configuração foi ajustada e o comportamento do serviço foi devidamente reestabelecido. Foi associado o registro INTAKE-1839 para o acompanhamento da solução definitiva do caso."
+SI-10484,2026-08-18T07:05:57.202-0300,Sistema,Causa raiz potencial,,"Incompatibilidade ou divergência na URL de conexão do Redis após atualização do ambiente.
+
+Ausência de prefixo exclusivo nas chaves de armazenamento temporário (KEY_PREFIX).
+
+Execução de comando de exclusão global da memória temporária por outro microserviço."
+SI-10484,2026-08-18T07:05:57.202-0300,Sistema,Causa raiz final,,"Durante a atualização de versões e centralização dos serviços, um serviço secundário responsável pelo gerenciamento de processos executou uma rotina de limpeza de memória temporária que apagou indevidamente as informações armazenadas por outros serviços do sistema. Como o serviço de notificações depende desses dados em memória para processar e disparar os e-mails e alertas agendados, a limpeza global fazia com que o sistema não encontrasse os registros necessários no momento do envio, gerando falhas e impedindo que os alertas fossem entregues aos destinatários. O direcionamento do serviço de gerenciamento foi corrigido temporariamente para o ambiente anterior até que a rotina de limpeza seja reescrita para apagar apenas seus próprios registros."
+SI-10484,2026-08-18T07:05:57.202-0300,Sistema,Justificativa Causa Raiz final,,"Durante a atualização de versões e centralização dos serviços, um serviço secundário responsável pelo gerenciamento de processos executou uma rotina de limpeza de memória temporária que apagou indevidamente as informações armazenadas por outros serviços do sistema. Como o serviço de notificações depende desses dados em memória para processar e disparar os e-mails e alertas agendados, a limpeza global fazia com que o sistema não encontrasse os registros necessários no momento do envio, gerando falhas e impedindo que os alertas fossem entregues aos destinatários. O direcionamento do serviço de gerenciamento foi corrigido temporariamente para o ambiente anterior até que a rotina de limpeza seja reescrita para apagar apenas seus próprios registros."
 SI-10483,2026-08-13T12:06:12.713-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10483,2026-08-13T12:06:17.328-0300,Bruno Silva,resolution,,Done
 SI-10483,2026-08-13T12:06:17.328-0300,Bruno Silva,status,Submissão,Done
@@ -73068,6 +73092,18 @@ SI-10486,2026-08-17T14:09:10.374-0300,Ana Beatriz Rodriguez,Qual versão foi?,12
 SI-10486,2026-08-17T15:27:32.561-0300,Rafael Ferreira,resolution,,Done
 SI-10486,2026-08-17T15:27:32.561-0300,Rafael Ferreira,status,Submissão,Done
 SI-10486,2026-08-17T15:27:33.338-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10486,2026-08-18T07:05:58.363-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10486,2026-08-18T07:05:58.363-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10486,2026-08-18T07:05:58.363-0300,Sistema,Criticidade final,,P2 - Média
+SI-10486,2026-08-18T07:05:58.363-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10486,2026-08-18T07:05:58.363-0300,Sistema,Resolução do chamado,,"Identificada inconsistência no mecanismo de limpeza temporária de dados, o que ocasionava a não emissão dos alertas automáticos do sistema. A configuração foi ajustada e o comportamento do serviço foi devidamente reestabelecido. Foi associado o registro INTAKE-1839 para o acompanhamento da solução definitiva do caso."
+SI-10486,2026-08-18T07:05:58.363-0300,Sistema,Causa raiz potencial,,"Incompatibilidade ou divergência na URL de conexão do Redis após atualização do ambiente.
+
+Ausência de prefixo exclusivo nas chaves de armazenamento temporário (KEY_PREFIX).
+
+Execução de comando de exclusão global da memória temporária por outro microserviço."
+SI-10486,2026-08-18T07:05:58.363-0300,Sistema,Causa raiz final,,"Durante a atualização de versões e centralização dos serviços, um serviço secundário responsável pelo gerenciamento de processos executou uma rotina de limpeza de memória temporária que apagou indevidamente as informações armazenadas por outros serviços do sistema. Como o serviço de notificações depende desses dados em memória para processar e disparar os e-mails e alertas agendados, a limpeza global fazia com que o sistema não encontrasse os registros necessários no momento do envio, gerando falhas e impedindo que os alertas fossem entregues aos destinatários. O direcionamento do serviço de gerenciamento foi corrigido temporariamente para o ambiente anterior até que a rotina de limpeza seja reescrita para apagar apenas seus próprios registros."
+SI-10486,2026-08-18T07:05:58.363-0300,Sistema,Justificativa Causa Raiz final,,"O incidente originou-se no serviço dms-pm, onde uma instrução de rotina estava executando o expurgo total do banco de dados temporário (Redis centralizado) em vez de aplicar a exclusão pontual restrita às suas próprias chaves de contexto. Como as chaves de cache do serviço de alertas não utilizavam um KEY_PREFIX isolado, a execução da rotina no dms-pm invalidava os registros de order_sendalerthistory de forma assíncrona, resultando nas exceções do tipo Cache not found e no travamento de tarefas nos status ERROR e WAITING. A mitigação foi efetuada redefinindo a variável de conexão do dms-pm para a instância isolada anterior, isolando o impacto enquanto a correção do escopo de deleção de chaves é implementada no INTAKE-1839."
 SI-10485,2026-08-13T13:16:29.318-0300,Sistema,Link,,This work item is blocked by GA-1484
 SI-10485,2026-08-13T19:05:32.986-0300,Sistema,Reclassificação solicitação,,Solicitação de cadastro
 SI-10485,2026-08-13T19:05:32.986-0300,Sistema,Criticidade final,,P1 - Alta
@@ -73187,6 +73223,14 @@ SI-10499,2026-08-13T19:05:37.269-0300,Sistema,Causa raiz final,,O alerta estava 
 SI-10499,2026-08-13T19:05:37.269-0300,Sistema,Justificativa Causa Raiz final,,O alerta estava invalidado
 SI-10498,2026-08-17T15:35:27.742-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10498,2026-08-17T15:35:30.753-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
+SI-10498,2026-08-18T07:06:03.236-0300,Sistema,Criticidade final,,P2 - Média
+SI-10498,2026-08-18T07:06:03.236-0300,Sistema,Reclassificação solicitação,,Requisição
+SI-10498,2026-08-18T07:06:03.236-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10498,2026-08-18T07:06:03.236-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10498,2026-08-18T07:06:03.236-0300,Sistema,Resolução do chamado,,Aguardando informação
+SI-10498,2026-08-18T07:06:03.236-0300,Sistema,Causa raiz potencial,,Aguardando informação
+SI-10498,2026-08-18T07:06:03.236-0300,Sistema,Causa raiz final,,Aguardando informação
+SI-10498,2026-08-18T07:06:03.236-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
 SI-10497,2026-08-13T15:37:37.251-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10497,2026-08-13T15:37:39.068-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10497,2026-08-13T19:05:36.600-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
@@ -73209,6 +73253,9 @@ Por que o valor do frete não migrou? Por tratar-se de uma Importação com fret
 . Essa trava existe especificamente para impedir que valores já pagos na origem gerem duplicidade de cobrança ou pendências de faturas indevidas para o faturamento local
 .
 Portanto, o comportamento está correto: o processo está disponível na tela de faturar para faturamento de eventuais taxas locais, mas os valores correspondentes ao frete foram omitidos da migração, operando de forma 100% segura e correta!"
+SI-10497,2026-08-18T07:06:02.623-0300,Sistema,Causa raiz potencial,Aguardando informação,Regra de negócio
+SI-10497,2026-08-18T07:06:02.623-0300,Sistema,Causa raiz final,Aguardando informação,Regra de negócio
+SI-10497,2026-08-18T07:06:02.623-0300,Sistema,Justificativa Causa Raiz final,Aguardando informação,Regra de negócio
 SI-10495,2026-08-13T15:18:36.283-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10495,2026-08-13T15:18:37.403-0300,Rafael Ferreira,status,Submissão,Aguardando correção
 SI-10495,2026-08-13T19:05:35.974-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
@@ -73534,6 +73581,18 @@ SI-10511,2026-08-17T14:09:03.856-0300,Ana Beatriz Rodriguez,Qual versão foi?,12
 SI-10511,2026-08-17T15:37:10.914-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10511,2026-08-17T15:37:13.668-0300,Rafael Ferreira,resolution,,Done
 SI-10511,2026-08-17T15:37:13.668-0300,Rafael Ferreira,status,Submissão,Done
+SI-10511,2026-08-18T07:06:08.320-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10511,2026-08-18T07:06:08.320-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10511,2026-08-18T07:06:08.320-0300,Sistema,Criticidade final,,P2 - Média
+SI-10511,2026-08-18T07:06:08.320-0300,Sistema,Incidente Pós-Deploy de Projeto?,,SIM
+SI-10511,2026-08-18T07:06:08.320-0300,Sistema,Resolução do chamado,,"Identificada inconsistência no mecanismo de limpeza temporária de dados, o que ocasionava a não emissão dos alertas automáticos do sistema. A configuração foi ajustada e o comportamento do serviço foi devidamente reestabelecido. Foi associado o registro INTAKE-1839 para o acompanhamento da solução definitiva do caso."
+SI-10511,2026-08-18T07:06:08.320-0300,Sistema,Causa raiz potencial,,"Incompatibilidade ou divergência na URL de conexão do Redis após atualização do ambiente.
+
+Ausência de prefixo exclusivo nas chaves de armazenamento temporário (KEY_PREFIX).
+
+Execução de comando de exclusão global da memória temporária por outro microserviço."
+SI-10511,2026-08-18T07:06:08.320-0300,Sistema,Causa raiz final,,"Durante a atualização de versões e centralização dos serviços, um serviço secundário responsável pelo gerenciamento de processos executou uma rotina de limpeza de memória temporária que apagou indevidamente as informações armazenadas por outros serviços do sistema. Como o serviço de notificações depende desses dados em memória para processar e disparar os e-mails e alertas agendados, a limpeza global fazia com que o sistema não encontrasse os registros necessários no momento do envio, gerando falhas e impedindo que os alertas fossem entregues aos destinatários. O direcionamento do serviço de gerenciamento foi corrigido temporariamente para o ambiente anterior até que a rotina de limpeza seja reescrita para apagar apenas seus próprios registros."
+SI-10511,2026-08-18T07:06:08.320-0300,Sistema,Justificativa Causa Raiz final,,"O incidente originou-se no serviço dms-pm, onde uma instrução de rotina estava executando o expurgo total do banco de dados temporário (Redis centralizado) em vez de aplicar a exclusão pontual restrita às suas próprias chaves de contexto. Como as chaves de cache do serviço de alertas não utilizavam um KEY_PREFIX isolado, a execução da rotina no dms-pm invalidava os registros de order_sendalerthistory de forma assíncrona, resultando nas exceções do tipo Cache not found e no travamento de tarefas nos status ERROR e WAITING. A mitigação foi efetuada redefinindo a variável de conexão do dms-pm para a instância isolada anterior, isolando o impacto enquanto a correção do escopo de deleção de chaves é implementada no INTAKE-1839."
 SI-10510,2026-08-14T08:16:23.175-0300,Sistema,Link,,This work item is blocked by GA-1489
 SI-10510,2026-08-14T09:06:48.049-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10510,2026-08-14T09:07:06.044-0300,Bruno Silva,resolution,,Done
@@ -73576,9 +73635,29 @@ SI-10519,2026-08-17T14:08:48.911-0300,Ana Beatriz Rodriguez,Qual versão foi?,12
 SI-10519,2026-08-17T15:42:52.233-0300,Rafael Ferreira,resolution,,Done
 SI-10519,2026-08-17T15:42:52.233-0300,Rafael Ferreira,status,Submissão,Done
 SI-10519,2026-08-17T15:42:52.970-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10519,2026-08-18T07:06:11.325-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10519,2026-08-18T07:06:11.325-0300,Sistema,Incidente Pós-Deploy de Projeto?,,SIM
+SI-10519,2026-08-18T07:06:11.325-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10519,2026-08-18T07:06:11.325-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10519,2026-08-18T07:06:11.325-0300,Sistema,Resolução do chamado,,"Identificada inconsistência no mecanismo de limpeza temporária de dados, o que ocasionava a não emissão dos alertas automáticos do sistema. A configuração foi ajustada e o comportamento do serviço foi devidamente reestabelecido. Foi associado o registro INTAKE-1839 para o acompanhamento da solução definitiva do caso."
+SI-10519,2026-08-18T07:06:11.325-0300,Sistema,Causa raiz potencial,,"Incompatibilidade ou divergência na URL de conexão do Redis após atualização do ambiente.
+
+Ausência de prefixo exclusivo nas chaves de armazenamento temporário (KEY_PREFIX).
+
+Execução de comando de exclusão global da memória temporária por outro microserviço."
+SI-10519,2026-08-18T07:06:11.325-0300,Sistema,Causa raiz final,,"Durante a atualização de versões e centralização dos serviços, um serviço secundário responsável pelo gerenciamento de processos executou uma rotina de limpeza de memória temporária que apagou indevidamente as informações armazenadas por outros serviços do sistema. Como o serviço de notificações depende desses dados em memória para processar e disparar os e-mails e alertas agendados, a limpeza global fazia com que o sistema não encontrasse os registros necessários no momento do envio, gerando falhas e impedindo que os alertas fossem entregues aos destinatários. O direcionamento do serviço de gerenciamento foi corrigido temporariamente para o ambiente anterior até que a rotina de limpeza seja reescrita para apagar apenas seus próprios registros."
+SI-10519,2026-08-18T07:06:11.325-0300,Sistema,Justificativa Causa Raiz final,,"O incidente originou-se no serviço dms-pm, onde uma instrução de rotina estava executando o expurgo total do banco de dados temporário (Redis centralizado) em vez de aplicar a exclusão pontual restrita às suas próprias chaves de contexto. Como as chaves de cache do serviço de alertas não utilizavam um KEY_PREFIX isolado, a execução da rotina no dms-pm invalidava os registros de order_sendalerthistory de forma assíncrona, resultando nas exceções do tipo Cache not found e no travamento de tarefas nos status ERROR e WAITING. A mitigação foi efetuada redefinindo a variável de conexão do dms-pm para a instância isolada anterior, isolando o impacto enquanto a correção do escopo de deleção de chaves é implementada no INTAKE-1839."
 SI-10518,2026-08-17T15:39:27.763-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10518,2026-08-17T15:39:30.092-0300,Rafael Ferreira,resolution,,Done
 SI-10518,2026-08-17T15:39:30.092-0300,Rafael Ferreira,status,Submissão,Done
+SI-10518,2026-08-18T07:06:10.696-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10518,2026-08-18T07:06:10.696-0300,Sistema,Reclassificação solicitação,,Requisição
+SI-10518,2026-08-18T07:06:10.696-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10518,2026-08-18T07:06:10.696-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10518,2026-08-18T07:06:10.696-0300,Sistema,Resolução do chamado,,Realizada a alteração da responsável BD da conta SEAGEMS para Nathalia Cordeiro no Módulo CRM.
+SI-10518,2026-08-18T07:06:10.696-0300,Sistema,Causa raiz potencial,,Instabilidade momentânea de comunicação na interface do usuário do CRM ou inconsistência temporária de cache do navegador no momento da tentativa de salvar o formulário.
+SI-10518,2026-08-18T07:06:10.696-0300,Sistema,Causa raiz final,,"A solicitação de alteração do responsável pelo desenvolvimento de negócios (BD) vinculado à conta do cliente SEAGEMS foi concluída com sucesso no sistema. Durante a análise técnica do incidente, os testes de atualização e persistência de dados no perfil do cliente foram executados e a alteração para a colaboradora Nathalia Cordeiro foi processada sem o surgimento de bloqueios ou mensagens de erro. O sintoma relatado anteriormente, em que a modificação não era salva, pode ter sido ocasionado por uma oscilação pontual na conexão no momento da requisição ou pelo acúmulo de arquivos temporários e cache no navegador da usuária, o que impedia a atualização visual imediata do campo. A verificação confirmou que os dados estão devidamente atualizados e consolidados na plataforma."
+SI-10518,2026-08-18T07:06:10.696-0300,Sistema,Justificativa Causa Raiz final,,"A análise baseou-se no fato de que a tentativa de replicação do erro não apresentou falhas de validação, permitindo a atualização direta do registro do cliente na interface do Módulo CRM. Não havendo evidências de erro em código ou restrições de banco de dados nos logs disponibilizados, a lógica do incidente aponta para um comportamento inconsistente no lado do cliente no momento da ação original. A execução manual da alteração confirmou a correta vinculação sem necessidade de scripts de correção, restabelecendo a consistência cadastral da conta."
 SI-10517,2026-08-17T14:06:15.417-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
 SI-10517,2026-08-17T14:08:52.855-0300,Ana Beatriz Rodriguez,Qual versão foi?,12.22.0,
 SI-10516,2026-08-14T09:46:18.391-0300,Nícollas Resende,assignee,,Nícollas Resende
@@ -73681,12 +73760,36 @@ SI-10522,2026-08-17T14:06:02.908-0300,Ana Beatriz Rodriguez,Qual versão foi?,,1
 SI-10532,2026-08-14T11:36:23.122-0300,Sistema,Link,,This work item is blocked by GA-1495
 SI-10532,2026-08-17T15:47:01.321-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10532,2026-08-17T15:47:03.554-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
+SI-10532,2026-08-18T07:06:16.075-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10532,2026-08-18T07:06:16.075-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10532,2026-08-18T07:06:16.075-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10532,2026-08-18T07:06:16.075-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10532,2026-08-18T07:06:16.075-0300,Sistema,Resolução do chamado,,Aguardando informação
+SI-10532,2026-08-18T07:06:16.075-0300,Sistema,Causa raiz potencial,,Aguardando informação
+SI-10532,2026-08-18T07:06:16.075-0300,Sistema,Causa raiz final,,Aguardando informação
+SI-10532,2026-08-18T07:06:16.075-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
 SI-10531,2026-08-14T14:25:40.880-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10531,2026-08-14T14:25:42.782-0300,Rafael Ferreira,resolution,,Done
 SI-10531,2026-08-14T14:25:42.782-0300,Rafael Ferreira,status,Submissão,Done
+SI-10530,2026-08-18T07:06:15.457-0300,Sistema,Criticidade final,,P2 - Média
+SI-10530,2026-08-18T07:06:15.457-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10530,2026-08-18T07:06:15.457-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10530,2026-08-18T07:06:15.457-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10530,2026-08-18T07:06:15.457-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-10530,2026-08-18T07:06:15.457-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-10530,2026-08-18T07:06:15.457-0300,Sistema,Causa raiz final,,Em atendimento
+SI-10530,2026-08-18T07:06:15.457-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-10529,2026-08-14T10:58:25.425-0300,Sistema,Link,,This work item is blocked by GA-1494
 SI-10529,2026-08-17T15:46:46.160-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10529,2026-08-17T15:46:47.675-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10529,2026-08-18T07:06:14.892-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10529,2026-08-18T07:06:14.892-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10529,2026-08-18T07:06:14.892-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10529,2026-08-18T07:06:14.892-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10529,2026-08-18T07:06:14.892-0300,Sistema,Resolução do chamado,,Aguardando informação
+SI-10529,2026-08-18T07:06:14.892-0300,Sistema,Causa raiz potencial,,Aguardando informação
+SI-10529,2026-08-18T07:06:14.892-0300,Sistema,Causa raiz final,,Aguardando informação
+SI-10529,2026-08-18T07:06:14.892-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
 SI-10536,2026-08-14T12:40:25.574-0300,Sistema,Link,,This work item is blocked by GA-1497
 SI-10536,2026-08-14T13:50:39.043-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10536,2026-08-14T13:50:45.405-0300,Rafael Ferreira,Classificação,,Ranked higher
@@ -73729,6 +73832,18 @@ SI-10534,2026-08-15T13:01:45.506-0300,Sistema,Justificativa Causa Raiz final,,"A
 SI-10533,2026-08-17T15:47:36.759-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10533,2026-08-17T15:47:39.266-0300,Rafael Ferreira,resolution,,Done
 SI-10533,2026-08-17T15:47:39.266-0300,Rafael Ferreira,status,Submissão,Done
+SI-10533,2026-08-18T07:06:16.720-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10533,2026-08-18T07:06:16.720-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10533,2026-08-18T07:06:16.720-0300,Sistema,Criticidade final,,P2 - Média
+SI-10533,2026-08-18T07:06:16.720-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10533,2026-08-18T07:06:16.720-0300,Sistema,Resolução do chamado,,"Identificada inconsistência no mecanismo de limpeza temporária de dados, o que ocasionava a não emissão dos alertas automáticos do sistema. A configuração foi ajustada e o comportamento do serviço foi devidamente reestabelecido. Foi associado o registro INTAKE-1839 para o acompanhamento da solução definitiva do caso."
+SI-10533,2026-08-18T07:06:16.720-0300,Sistema,Causa raiz potencial,,"Incompatibilidade ou divergência na URL de conexão do Redis após atualização do ambiente.
+
+Ausência de prefixo exclusivo nas chaves de armazenamento temporário (KEY_PREFIX).
+
+Execução de comando de exclusão global da memória temporária por outro microserviço."
+SI-10533,2026-08-18T07:06:16.720-0300,Sistema,Causa raiz final,,"Durante a atualização de versões e centralização dos serviços, um serviço secundário responsável pelo gerenciamento de processos executou uma rotina de limpeza de memória temporária que apagou indevidamente as informações armazenadas por outros serviços do sistema. Como o serviço de notificações depende desses dados em memória para processar e disparar os e-mails e alertas agendados, a limpeza global fazia com que o sistema não encontrasse os registros necessários no momento do envio, gerando falhas e impedindo que os alertas fossem entregues aos destinatários. O direcionamento do serviço de gerenciamento foi corrigido temporariamente para o ambiente anterior até que a rotina de limpeza seja reescrita para apagar apenas seus próprios registros."
+SI-10533,2026-08-18T07:06:16.720-0300,Sistema,Justificativa Causa Raiz final,,"O incidente originou-se no serviço dms-pm, onde uma instrução de rotina estava executando o expurgo total do banco de dados temporário (Redis centralizado) em vez de aplicar a exclusão pontual restrita às suas próprias chaves de contexto. Como as chaves de cache do serviço de alertas não utilizavam um KEY_PREFIX isolado, a execução da rotina no dms-pm invalidava os registros de order_sendalerthistory de forma assíncrona, resultando nas exceções do tipo Cache not found e no travamento de tarefas nos status ERROR e WAITING. A mitigação foi efetuada redefinindo a variável de conexão do dms-pm para a instância isolada anterior, isolando o impacto enquanto a correção do escopo de deleção de chaves é implementada no INTAKE-1839."
 SI-10537,2026-08-14T13:50:36.470-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10537,2026-08-14T13:50:40.951-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10537,2026-08-14T13:50:41.184-0300,Rafael Ferreira,resolution,,Done
@@ -73772,11 +73887,31 @@ SI-10542,2026-08-14T15:54:04.853-0300,Rafael Ferreira,status,Submissão,Em Atend
 SI-10542,2026-08-17T08:30:18.073-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10542,2026-08-17T08:30:18.285-0300,Rafael Ferreira,resolution,,Done
 SI-10542,2026-08-17T08:30:18.285-0300,Rafael Ferreira,status,Em Atendimento,Done
+SI-10542,2026-08-18T07:06:20.718-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10542,2026-08-18T07:06:20.718-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10542,2026-08-18T07:06:20.718-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10542,2026-08-18T07:06:20.718-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10542,2026-08-18T07:06:20.718-0300,Sistema,Resolução do chamado,,Reenvio do documento com novo hash
+SI-10542,2026-08-18T07:06:20.718-0300,Sistema,Causa raiz potencial,,Erro no Extrator
+SI-10542,2026-08-18T07:06:20.718-0300,Sistema,Causa raiz final,,Erro no Extrator
+SI-10542,2026-08-18T07:06:20.718-0300,Sistema,Justificativa Causa Raiz final,,Erro no Extrator
 SI-10541,2026-08-17T14:05:37.660-0300,Ana Beatriz Rodriguez,Qual versão foi?,,12.22.0
 SI-10541,2026-08-17T14:08:44.472-0300,Ana Beatriz Rodriguez,Qual versão foi?,12.22.0,
 SI-10541,2026-08-17T15:49:48.916-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10541,2026-08-17T15:49:52.045-0300,Rafael Ferreira,resolution,,Done
 SI-10541,2026-08-17T15:49:52.045-0300,Rafael Ferreira,status,Submissão,Done
+SI-10541,2026-08-18T07:06:20.032-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10541,2026-08-18T07:06:20.032-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10541,2026-08-18T07:06:20.032-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10541,2026-08-18T07:06:20.032-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10541,2026-08-18T07:06:20.032-0300,Sistema,Resolução do chamado,,"Identificada inconsistência no mecanismo de limpeza temporária de dados, o que ocasionava a não emissão dos alertas automáticos do sistema. A configuração foi ajustada e o comportamento do serviço foi devidamente reestabelecido. Foi associado o registro INTAKE-1839 para o acompanhamento da solução definitiva do caso."
+SI-10541,2026-08-18T07:06:20.032-0300,Sistema,Causa raiz potencial,,"Incompatibilidade ou divergência na URL de conexão do Redis após atualização do ambiente.
+
+Ausência de prefixo exclusivo nas chaves de armazenamento temporário (KEY_PREFIX).
+
+Execução de comando de exclusão global da memória temporária por outro microserviço."
+SI-10541,2026-08-18T07:06:20.032-0300,Sistema,Causa raiz final,,"Durante a atualização de versões e centralização dos serviços, um serviço secundário responsável pelo gerenciamento de processos executou uma rotina de limpeza de memória temporária que apagou indevidamente as informações armazenadas por outros serviços do sistema. Como o serviço de notificações depende desses dados em memória para processar e disparar os e-mails e alertas agendados, a limpeza global fazia com que o sistema não encontrasse os registros necessários no momento do envio, gerando falhas e impedindo que os alertas fossem entregues aos destinatários. O direcionamento do serviço de gerenciamento foi corrigido temporariamente para o ambiente anterior até que a rotina de limpeza seja reescrita para apagar apenas seus próprios registros."
+SI-10541,2026-08-18T07:06:20.032-0300,Sistema,Justificativa Causa Raiz final,,"O incidente originou-se no serviço dms-pm, onde uma instrução de rotina estava executando o expurgo total do banco de dados temporário (Redis centralizado) em vez de aplicar a exclusão pontual restrita às suas próprias chaves de contexto. Como as chaves de cache do serviço de alertas não utilizavam um KEY_PREFIX isolado, a execução da rotina no dms-pm invalidava os registros de order_sendalerthistory de forma assíncrona, resultando nas exceções do tipo Cache not found e no travamento de tarefas nos status ERROR e WAITING. A mitigação foi efetuada redefinindo a variável de conexão do dms-pm para a instância isolada anterior, isolando o impacto enquanto a correção do escopo de deleção de chaves é implementada no INTAKE-1839."
 SI-10540,2026-08-14T15:38:31.837-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10540,2026-08-14T15:38:34.209-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10540,2026-08-14T15:38:34.438-0300,Rafael Ferreira,resolution,,Done
@@ -73842,6 +73977,18 @@ SI-10546,2026-08-17T15:51:04.440-0300,Rafael Ferreira,status,Submissão,Done
 SI-10546,2026-08-17T15:51:05.303-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10546,2026-08-17T15:51:18.611-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10546,2026-08-17T15:51:18.823-0300,Rafael Ferreira,status,Done,Done
+SI-10546,2026-08-18T07:06:22.528-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10546,2026-08-18T07:06:22.528-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10546,2026-08-18T07:06:22.528-0300,Sistema,Incidente Pós-Deploy de Projeto?,,SIM
+SI-10546,2026-08-18T07:06:22.528-0300,Sistema,Criticidade final,,P2 - Média
+SI-10546,2026-08-18T07:06:22.528-0300,Sistema,Resolução do chamado,,"Identificada inconsistência no mecanismo de limpeza temporária de dados, o que ocasionava a não emissão dos alertas automáticos do sistema. A configuração foi ajustada e o comportamento do serviço foi devidamente reestabelecido. Foi associado o registro INTAKE-1839 para o acompanhamento da solução definitiva do caso."
+SI-10546,2026-08-18T07:06:22.528-0300,Sistema,Causa raiz potencial,,"Incompatibilidade ou divergência na URL de conexão do Redis após atualização do ambiente.
+
+Ausência de prefixo exclusivo nas chaves de armazenamento temporário (KEY_PREFIX).
+
+Execução de comando de exclusão global da memória temporária por outro microserviço."
+SI-10546,2026-08-18T07:06:22.528-0300,Sistema,Causa raiz final,,"Durante a atualização de versões e centralização dos serviços, um serviço secundário responsável pelo gerenciamento de processos executou uma rotina de limpeza de memória temporária que apagou indevidamente as informações armazenadas por outros serviços do sistema. Como o serviço de notificações depende desses dados em memória para processar e disparar os e-mails e alertas agendados, a limpeza global fazia com que o sistema não encontrasse os registros necessários no momento do envio, gerando falhas e impedindo que os alertas fossem entregues aos destinatários. O direcionamento do serviço de gerenciamento foi corrigido temporariamente para o ambiente anterior até que a rotina de limpeza seja reescrita para apagar apenas seus próprios registros."
+SI-10546,2026-08-18T07:06:22.528-0300,Sistema,Justificativa Causa Raiz final,,"O incidente originou-se no serviço dms-pm, onde uma instrução de rotina estava executando o expurgo total do banco de dados temporário (Redis centralizado) em vez de aplicar a exclusão pontual restrita às suas próprias chaves de contexto. Como as chaves de cache do serviço de alertas não utilizavam um KEY_PREFIX isolado, a execução da rotina no dms-pm invalidava os registros de order_sendalerthistory de forma assíncrona, resultando nas exceções do tipo Cache not found e no travamento de tarefas nos status ERROR e WAITING. A mitigação foi efetuada redefinindo a variável de conexão do dms-pm para a instância isolada anterior, isolando o impacto enquanto a correção do escopo de deleção de chaves é implementada no INTAKE-1839."
 SI-10545,2026-08-14T17:18:34.713-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10545,2026-08-14T17:18:36.863-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10545,2026-08-14T17:18:37.182-0300,Rafael Ferreira,resolution,,Done
@@ -73857,23 +74004,86 @@ SI-10545,2026-08-15T13:01:51.256-0300,Sistema,Justificativa Causa Raiz final,,Ch
 SI-10549,2026-08-17T14:06:35.236-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10549,2026-08-17T14:06:38.490-0300,Bruno Silva,resolution,,Done
 SI-10549,2026-08-17T14:06:38.490-0300,Bruno Silva,status,Submissão,Done
+SI-10549,2026-08-18T07:06:23.247-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10549,2026-08-18T07:06:23.247-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10549,2026-08-18T07:06:23.247-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10549,2026-08-18T07:06:23.247-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10549,2026-08-18T07:06:23.247-0300,Sistema,Resolução do chamado,,"Verificado o processo e identificado um ponto de atenção no mapeamento dos marcos do agendamento. Solicitado o ajuste técnico junto à equipe de DS para alinhar as etapas do percurso, garantindo que a linha do tempo do agendamento e da ordem reflitam corretamente o local de transbordo em Santos"
+SI-10549,2026-08-18T07:06:23.247-0300,Sistema,Causa raiz potencial,,Inconsistência no cadastro da rota ou falha na sincronização dos dados do agendamento com a linha do tempo principal.
+SI-10549,2026-08-18T07:06:23.247-0300,Sistema,Causa raiz final,,"O sistema gerou o marco da linha do tempo com base nos parâmetros padrão da rota cadastrada, exibindo o local de transbordo incorreto. A solicitação enviada à equipe de DS realiza o ajuste na amarração dos locais, assegurando que o ponto intermediário seja registrado adequadamente e mantendo a visibilidade correta para o processo."
+SI-10549,2026-08-18T07:06:23.247-0300,Sistema,Justificativa Causa Raiz final,,Divergência na regra de mapeamento de locais intermediários no workflow do agendamento. O ajuste dos parâmetros de rota via DS corrige a amarração dos dados e previne a exibição incorreta de transbordos em processos futuros.
 SI-10551,2026-08-17T08:30:11.069-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10551,2026-08-17T08:30:14.657-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10551,2026-08-17T08:30:14.882-0300,Rafael Ferreira,resolution,,Done
 SI-10551,2026-08-17T08:30:14.882-0300,Rafael Ferreira,status,Submissão,Done
+SI-10551,2026-08-18T07:06:24.510-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10551,2026-08-18T07:06:24.510-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10551,2026-08-18T07:06:24.510-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10551,2026-08-18T07:06:24.510-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10551,2026-08-18T07:06:24.510-0300,Sistema,Resolução do chamado,,"Identificada uma divergência de parametrização entre os processos operacionais indicados, o que impedia a unificação das suas respectivas linhas do tempo. Foi realizado o alinhamento e a aplicação de um procedimento operacional padrão idêntico para todas as ordens afetadas, regularizando o fluxo do sistema e permitindo a conclusão bem-sucedida do agrupamento."
+SI-10551,2026-08-18T07:06:24.510-0300,Sistema,Causa raiz potencial,,Incompatibilidade estrutural ou de regras de validação entre os fluxos operacionais cadastrados individualmente nas ordens selecionadas antes da tentativa de consolidação.
+SI-10551,2026-08-18T07:06:24.510-0300,Sistema,Causa raiz final,,"O incidente ocorreu devido a uma restrição nativa e mandatória nas regras de validação do sistema para o agrupamento de processos operacionais. Para que seja possível realizar a unificação de múltiplos embarques sob um mesmo grupo consolidador, a plataforma exige, por questões de consistência técnica, que todas as ordens envolvidas compartilhem do mesmo modelo de procedimento operacional padrão em suas diretrizes de fluxo de trabalho. Como os processos operacionais citados foram gerados com parametrizações individuais divergentes em seus históricos de linhas do tempo, o sistema impediu o agrupamento automático. A situação foi regularizada após a aplicação manual de uma configuração idêntica e padronizada para todas as ordens, conferindo a simetria necessária para que a plataforma processasse a consolidação sem conflitos de dados."
+SI-10551,2026-08-18T07:06:24.510-0300,Sistema,Justificativa Causa Raiz final,,"Conforme documentado nos requisitos técnicos da plataforma, a funcionalidade de consolidação exige simetria estrutural total entre os processos. O bloqueio de segurança foi acionado de forma correta para proteger a integridade do banco de dados operacionais, visto que a junção de workflows distintos geraria inconsistência na unificação das tabelas e rastreadores das linhas do tempo unificadas. A tratativa realizada reestabeleceu a conformidade processual exigida pela regra de negócio ao alinhar os registros para uma mesma referência estável, mitigando erros de concorrência ou herança de dados. Para evitar reincidências e promover a melhoria contínua, orienta-se a verificação prévia e a correta aplicação dos filtros de correspondência no momento de criação ou atribuição dos fluxos das ordens."
 SI-10550,2026-08-17T15:53:11.033-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10550,2026-08-17T15:53:12.833-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10550,2026-08-18T07:06:23.840-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10550,2026-08-18T07:06:23.840-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10550,2026-08-18T07:06:23.840-0300,Sistema,Criticidade final,,P2 - Média
+SI-10550,2026-08-18T07:06:23.840-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10550,2026-08-18T07:06:23.840-0300,Sistema,Resolução do chamado,,Aguardando informação
+SI-10550,2026-08-18T07:06:23.840-0300,Sistema,Causa raiz potencial,,Aguardando informação
+SI-10550,2026-08-18T07:06:23.840-0300,Sistema,Causa raiz final,,Aguardando informação
+SI-10550,2026-08-18T07:06:23.840-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
 SI-10553,2026-08-17T08:40:43.412-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10553,2026-08-17T08:40:45.712-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10553,2026-08-17T08:40:45.933-0300,Rafael Ferreira,resolution,,Done
 SI-10553,2026-08-17T08:40:45.933-0300,Rafael Ferreira,status,Submissão,Done
+SI-10553,2026-08-18T07:06:25.117-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-10553,2026-08-18T07:06:25.117-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10553,2026-08-18T07:06:25.117-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10553,2026-08-18T07:06:25.117-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10553,2026-08-18T07:06:25.117-0300,Sistema,Resolução do chamado,,"Identificado que os valores constantes no booking para o house e as informações presentes no portal já se encontravam ajustados e condizentes com o montante esperado de 1857,95 USD. Orientado a verificação no sistema, visto que os dados foram atualizados com sucesso."
+SI-10553,2026-08-18T07:06:25.117-0300,Sistema,Causa raiz potencial,,Atraso no tempo de resposta do serviço do CCT para processar a retificação ou oscilação temporária de sincronização entre a interface do sistema e o portal.
+SI-10553,2026-08-18T07:06:25.117-0300,Sistema,Causa raiz final,,"Após a verificação do processo no módulo operacional, constatou-se que as informações referentes aos valores do documento house já haviam sido devidamente processadas e refletiam o valor correto esperado de 1857,95 USD, assim como no portal. Em cenários de retificação ou atualização de dados junto a integrações externas como o CCT, a plataforma do órgão competente pode levar alguns minutos para processar a requisição e retornar o status atualizado para a interface local. Como os procedimentos de atualização foram executados, o sistema concluiu a sincronização e os valores passaram a ser exibidos corretamente sem a necessidade de intervenções adicionais no banco."
+SI-10553,2026-08-18T07:06:25.117-0300,Sistema,Justificativa Causa Raiz final,,"A análise lógica do caso aponta para um delay pontual de sincronização/retorno da API do CCT após os comandos executados no sistema. Quando foram consultados os dados no booking e no portal do CCT, a paridade do valor de 1857,95 USD já estava estabelecida. Não houve falha na regra de negócio ou erro de desenvolvimento, tratando-se apenas do tempo de processamento assíncrono do portal externo. A resolução confirma que o fluxo de retificação funciona conforme projetado, bastando aguardar a janela de atualização do serviço integrado para a consolidação das informações."
 SI-10555,2026-08-17T11:19:59.022-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10555,2026-08-17T11:20:03.177-0300,Bruno Silva,resolution,,Done
 SI-10555,2026-08-17T11:20:03.177-0300,Bruno Silva,status,Submissão,Done
+SI-10555,2026-08-18T07:06:26.354-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10555,2026-08-18T07:06:26.354-0300,Sistema,Criticidade final,,P0 - Crítica
+SI-10555,2026-08-18T07:06:26.354-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10555,2026-08-18T07:06:26.354-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10555,2026-08-18T07:06:26.354-0300,Sistema,Resolução do chamado,,Verificado o processo de validação de documentos e identificado que o fluxo de verificação no salvamento apresentou divergência
+SI-10555,2026-08-18T07:06:26.354-0300,Sistema,Causa raiz potencial,,"Falha na rotina de tratamento da resposta de validação manual, onde o status de pendência não é atualizado ou limpo após a confirmação"
+SI-10555,2026-08-18T07:06:26.354-0300,Sistema,Causa raiz final,,"O sistema processa o documento extraído e exige a validação das informações em tela. No entanto, ao salvar o formulário conferido, a rotina de envio não consome o sinal de validação concluída e mantém o alerta de validação pendente. Com isso, o envio dos dados para o processo principal fica bloqueado até o ajuste do fluxo."
+SI-10555,2026-08-18T07:06:26.354-0300,Sistema,Justificativa Causa Raiz final,,"Exceção na regra de salvamento/callback do modal de validação do DOCS IA, fazendo com que a sinalização de validação manual permaneça ativa no banco de dados e impeça o disparo da migração automática para a ordem."
 SI-10554,2026-08-17T09:09:18.415-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10554,2026-08-17T09:09:20.147-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10554,2026-08-17T09:09:20.401-0300,Rafael Ferreira,resolution,,Done
 SI-10554,2026-08-17T09:09:20.401-0300,Rafael Ferreira,status,Submissão,Done
+SI-10554,2026-08-18T07:06:25.741-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10554,2026-08-18T07:06:25.741-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10554,2026-08-18T07:06:25.741-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10554,2026-08-18T07:06:25.741-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10554,2026-08-18T07:06:25.741-0300,Sistema,Resolução do chamado,,"Bom dia, Rayssa! Tudo bem?
+O motivo de você não estar conseguindo rejeitar os documentos de Invoice e Packing List nessas ordens (e a aba não atualizar ou salvar as alterações) é que há um bloqueio de validação oculto na tela, causado por um documento na seção Others.
+Quando o sistema detecta qualquer classificação incorreta ou aviso pendente nessa seção, ele ""trava"" o salvamento de toda a aba Documents, impedindo que você altere o status de qualquer outro arquivo (como a Invoice ou o Packing List).
+No seu caso, o documento classificado atualmente como LIC (referente ao item CI-LIS26050005356 de USD 10.290,00) está gerando o seguinte conflito com o catálogo: ⚠️ This document already exists in the catalog as LINE ITEM CHECK REPORT
+🛠️ Como destravar a tela e resolver o problema (Passo a Passo)
+Para conseguir salvar a rejeição das suas Invoices e Packing Lists, você precisará corrigir essa classificação nas ordens afetadas (como a 159137). Siga estes passos simples:
+Acesse a aba Documents da ordem desejada (ex: https://operational.dmslog.com/order/159137/documents).
+Role a tela até a seção Others (outros documentos).
+Localize o documento que está com o campo Type (Tipo) preenchido como LIC.
+Altere a opção selecionada no campo Type de Others para LINE ITEM CHECK REPORT (que é a nomenclatura exata exigida pelo catálogo).
+Assim que você fizer esse ajuste, o aviso de erro sumirá da tela.
+Agora, altere o status da sua Invoice e do seu Packing List para Rejected e clique em salvar. A aba atualizará e gravará as suas alterações instantaneamente!
+Nota: Caso o erro persista nas ordens 154045 ou 159136, dê uma olhadinha se elas também possuem algum documento na seção Others com o tipo incorreto (como LIC ou outro depará) e faça o mesmo ajuste.
+
+Caso tenha dificuldades pode vir a sala do suporte:
+https://meet.google.com/byo-fwyt-uou?authuser=0"
+SI-10554,2026-08-18T07:06:25.741-0300,Sistema,Causa raiz potencial,,Regra de negócio
+SI-10554,2026-08-18T07:06:25.741-0300,Sistema,Causa raiz final,,Regra de negócio
+SI-10554,2026-08-18T07:06:25.741-0300,Sistema,Justificativa Causa Raiz final,,Regra de negócio
 SI-10557,2026-08-17T08:07:27.212-0300,Sistema,Link,,This work item is blocked by GA-1504
 SI-10557,2026-08-17T16:08:33.051-0300,Rafael Ferreira,assignee,,Nícollas Resende
 SI-10557,2026-08-17T16:08:38.348-0300,Rafael Ferreira,resolution,,Done
@@ -73882,22 +74092,66 @@ SI-10556,2026-08-17T07:47:23.071-0300,Sistema,Link,,This work item is blocked by
 SI-10556,2026-08-17T08:39:57.507-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10556,2026-08-17T08:40:00.554-0300,Bruno Silva,resolution,,Done
 SI-10556,2026-08-17T08:40:00.554-0300,Bruno Silva,status,Submissão,Done
+SI-10556,2026-08-18T07:06:27.017-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10556,2026-08-18T07:06:27.017-0300,Sistema,Criticidade final,,P2 - Média
+SI-10556,2026-08-18T07:06:27.017-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10556,2026-08-18T07:06:27.017-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10556,2026-08-18T07:06:27.017-0300,Sistema,Resolução do chamado,,Atendido. Solicitados os detalhes referentes à documentação a ser vinculada e ao comportamento apresentado ao tentar salvar o processo na ordem 260539368 do pedido.
+SI-10556,2026-08-18T07:06:27.017-0300,Sistema,Causa raiz potencial,,Instabilidade momentânea de comunicação com a base de dados ou pendência no preenchimento de campos obrigatórios no registro.
+SI-10556,2026-08-18T07:06:27.017-0300,Sistema,Causa raiz final,,O sistema exige a identificação precisa do tipo de documento e o mapeamento correto dos parâmetros necessários antes de efetivar o salvamento da informação no processo. A verificação das condições de entrada e das mensagens apresentadas é necessária para garantir a correta gravação do registro e a continuidade do fluxo.
+SI-10556,2026-08-18T07:06:27.017-0300,Sistema,Justificativa Causa Raiz final,,Necessidade de mapeamento dos parâmetros de entrada para identificação do impedimento e tratativa da regra de validação no salvamento do documento.
 SI-10562,2026-08-17T09:34:30.843-0300,Sistema,Link,,This work item is blocked by GA-1505
 SI-10562,2026-08-17T09:52:56.745-0300,Bruno Silva,assignee,,Nícollas Resende
 SI-10562,2026-08-17T09:52:59.777-0300,Bruno Silva,resolution,,Done
 SI-10562,2026-08-17T09:52:59.777-0300,Bruno Silva,status,Submissão,Done
+SI-10562,2026-08-18T07:06:30.136-0300,Sistema,Criticidade final,,P2 - Média
+SI-10562,2026-08-18T07:06:30.136-0300,Sistema,Resolução do chamado,,Foi realizada uma limpeza e desativação de serviços do Windows.
+SI-10561,2026-08-18T07:06:29.599-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10561,2026-08-18T07:06:29.599-0300,Sistema,Criticidade final,,P2 - Média
+SI-10561,2026-08-18T07:06:29.599-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-10561,2026-08-18T07:06:29.599-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10561,2026-08-18T07:06:29.599-0300,Sistema,Resolução do chamado,,Aguardando informação
+SI-10561,2026-08-18T07:06:29.599-0300,Sistema,Causa raiz potencial,,Aguardando informação
+SI-10561,2026-08-18T07:06:29.599-0300,Sistema,Causa raiz final,,Aguardando informação
+SI-10561,2026-08-18T07:06:29.599-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
 SI-10560,2026-08-17T16:24:53.552-0300,Rafael Ferreira,status,Submissão,Aguardando Informação
 SI-10560,2026-08-17T16:24:56.354-0300,Rafael Ferreira,assignee,,Rafael Ferreira
+SI-10560,2026-08-18T07:06:28.888-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10560,2026-08-18T07:06:28.888-0300,Sistema,Criticidade final,,P2 - Média
+SI-10560,2026-08-18T07:06:28.888-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10560,2026-08-18T07:06:28.888-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10560,2026-08-18T07:06:28.888-0300,Sistema,Resolução do chamado,,Aguardando informação
+SI-10560,2026-08-18T07:06:28.888-0300,Sistema,Causa raiz potencial,,Aguardando informação
+SI-10560,2026-08-18T07:06:28.888-0300,Sistema,Causa raiz final,,Aguardando informação
+SI-10560,2026-08-18T07:06:28.888-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
 SI-10559,2026-08-17T09:36:30.089-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10559,2026-08-17T09:36:33.045-0300,Bruno Silva,resolution,,Done
 SI-10559,2026-08-17T09:36:33.045-0300,Bruno Silva,status,Submissão,Done
+SI-10559,2026-08-18T07:06:28.246-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10559,2026-08-18T07:06:28.246-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10559,2026-08-18T07:06:28.246-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10559,2026-08-18T07:06:28.246-0300,Sistema,Criticidade final,,P2 - Média
+SI-10559,2026-08-18T07:06:28.246-0300,Sistema,Resolução do chamado,,"Verificado o processo e identificado que o duplo registro do estágio no acompanhamento gerava duplicidade na visualização. Orientada a invalidação do item com apontamento desatualizado na linha do tempo para manter ativo apenas o registro atualizado de prontidão da carga, restabelecendo a visualização correta dos prazos."
+SI-10559,2026-08-18T07:06:28.246-0300,Sistema,Causa raiz potencial,,"Duplicação manual ou sistêmica de itens na aba correspondente, gerando múltiplos acompanhamentos para o mesmo marco operacional."
+SI-10559,2026-08-18T07:06:28.246-0300,Sistema,Causa raiz final,,"O sistema gera dinamicamente um acompanhamento para cada item cadastrado na aba correspondente. Identificou-se que um dos registros permanecia ativo com status pendente no acompanhamento e nos prazos operacionais, mantendo o item travado na visualização consolidada. O procedimento de invalidação e desativação do item sobressalente na linha do tempo normaliza o indicador de prioridade e ajusta as métricas."
+SI-10559,2026-08-18T07:06:28.246-0300,Sistema,Justificativa Causa Raiz final,,A coexistência de múltiplos acompanhamentos vinculados a itens duplicados afeta a atualização dos prazos no painel operacional. A invalidação manual do registro descontinuado na linha do tempo limpa a fila de acompanhamento e assegura a acurácia dos prazos.
 SI-10558,2026-08-17T09:08:35.571-0300,Bruno Silva,assignee,,Bruno Silva
 SI-10558,2026-08-17T09:08:39.133-0300,Bruno Silva,resolution,,Done
 SI-10558,2026-08-17T09:08:39.133-0300,Bruno Silva,status,Submissão,Done
+SI-10558,2026-08-18T07:06:27.627-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10558,2026-08-18T07:06:27.627-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10558,2026-08-18T07:06:27.627-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10558,2026-08-18T07:06:27.627-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10558,2026-08-18T07:06:27.627-0300,Sistema,Resolução do chamado,,Realizada a verificação do processo e identificado que as datas de partida e chegada não foram associadas ao agendamento. Solicitado o ajuste técnico junto ao time de DS para garantir a correta exibição das informações na linha do tempo da ordem para visualização do cliente.
+SI-10558,2026-08-18T07:06:27.627-0300,Sistema,Causa raiz potencial,,"Ausência de preenchimento ou associação dos parâmetros de ETD e ETA no cadastro do booking, impedindo a migração automática dos dados para a linha do tempo da ordem."
+SI-10558,2026-08-18T07:06:27.627-0300,Sistema,Causa raiz final,,"Verificado que o agendamento foi vinculado ao processo, mas os marcos de partida e chegada não foram associados corretamente no cadastro inicial. Orientado o acionamento do time de DS para realizar a correção necessária, restabelecendo a visibilidade das informações na linha do tempo."
+SI-10558,2026-08-18T07:06:27.627-0300,Sistema,Justificativa Causa Raiz final,,"A ausência de vínculo dos campos de ETD e ETA no booking interrompe a propagação de dados para a order. O ajuste técnico pelo time de DS corrige a inconsistência, assegurando a integridade da timeline e prevenindo falhas na visualização de prazos."
 SI-10567,2026-08-17T10:15:22.252-0300,Sistema,Link,,This work item is blocked by GA-1510
 SI-10567,2026-08-17T12:08:39.411-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-10567,2026-08-17T12:08:41.551-0300,Nícollas Resende,resolution,,Done
 SI-10567,2026-08-17T12:08:41.551-0300,Nícollas Resende,status,Submissão,Done
+SI-10567,2026-08-18T07:06:31.979-0300,Sistema,Criticidade final,,P2 - Média
+SI-10567,2026-08-18T07:06:31.979-0300,Sistema,Resolução do chamado,,Foi realizada a atualização dos drivers de áudio.
 SI-10566,2026-08-17T10:01:49.694-0300,Sistema,Link,,This work item is blocked by GA-1509
 SI-10566,2026-08-17T16:17:22.604-0300,Helena Almeida,resolution,,Done
 SI-10566,2026-08-17T16:17:22.604-0300,Helena Almeida,status,Submissão,Done
@@ -73917,38 +74171,104 @@ SI-10564,2026-08-17T09:47:27.637-0300,Sistema,Link,,This work item is blocked by
 SI-10564,2026-08-17T10:33:34.397-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-10564,2026-08-17T10:33:36.443-0300,Nícollas Resende,resolution,,Done
 SI-10564,2026-08-17T10:33:36.443-0300,Nícollas Resende,status,Submissão,Done
+SI-10564,2026-08-18T07:06:31.389-0300,Sistema,Criticidade final,,P2 - Média
+SI-10564,2026-08-18T07:06:31.389-0300,Sistema,Resolução do chamado,,O cadastro da cidade foi realizado.
 SI-10563,2026-08-17T09:43:20.776-0300,Sistema,Link,,This work item is blocked by GA-1506
 SI-10563,2026-08-17T16:14:14.288-0300,Helena Almeida,resolution,,Done
 SI-10563,2026-08-17T16:14:14.288-0300,Helena Almeida,status,Submissão,Done
 SI-10563,2026-08-17T16:14:14.958-0300,Helena Almeida,assignee,,Helena Almeida
 SI-10563,2026-08-17T16:14:23.565-0300,Helena Almeida,Criticidade final,,P3 - Baixa
 SI-10563,2026-08-17T16:14:32.872-0300,Helena Almeida,Resolução do chamado,,Ticket encerrado. A usuária foi orientada sobre a utilização das ferramentas do Google Workspace (Google Keep e Google Docs) em substituição às soluções da Microsoft.
+SI-10563,2026-08-18T07:06:30.736-0300,Sistema,Reclassificação solicitação,,Requisição
+SI-10563,2026-08-18T07:06:30.736-0300,Sistema,Resolução do chamado,Ticket encerrado. A usuária foi orientada sobre a utilização das ferramentas do Google Workspace (Google Keep e Google Docs) em substituição às soluções da Microsoft.,Ticket encerrado. A usuária foi orientada sobre a utilização das ferramentas do Google Workspace (Google Keep e Google Docs) em substituição às soluções da Microsoft.
 SI-10568,2026-08-17T16:48:43.774-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
 SI-10568,2026-08-17T16:48:46.956-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10568,2026-08-17T16:48:46.956-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
+SI-10568,2026-08-18T07:06:32.614-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10568,2026-08-18T07:06:32.614-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10568,2026-08-18T07:06:32.614-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10568,2026-08-18T07:06:32.614-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10568,2026-08-18T07:06:32.614-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-10568,2026-08-18T07:06:32.614-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-10568,2026-08-18T07:06:32.614-0300,Sistema,Causa raiz final,,Em atendimento
+SI-10568,2026-08-18T07:06:32.614-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
 SI-10570,2026-08-17T12:34:13.859-0300,Nícollas Resende,assignee,,Nícollas Resende
 SI-10570,2026-08-17T12:34:16.188-0300,Nícollas Resende,resolution,,Done
 SI-10570,2026-08-17T12:34:16.188-0300,Nícollas Resende,status,Submissão,Done
+SI-10570,2026-08-18T07:06:33.290-0300,Sistema,Criticidade final,,P2 - Média
+SI-10570,2026-08-18T07:06:33.290-0300,Sistema,Resolução do chamado,,O cadastro foi realizado no SYS.
 SI-10572,2026-08-17T13:25:50.921-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10572,2026-08-17T13:25:52.741-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10572,2026-08-17T13:25:52.964-0300,Rafael Ferreira,resolution,,Done
 SI-10572,2026-08-17T13:25:52.964-0300,Rafael Ferreira,status,Submissão,Done
+SI-10572,2026-08-18T07:06:33.916-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10572,2026-08-18T07:06:33.916-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10572,2026-08-18T07:06:33.916-0300,Sistema,Incidente Pós-Deploy de Projeto?,,SIM
+SI-10572,2026-08-18T07:06:33.916-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10572,2026-08-18T07:06:33.916-0300,Sistema,Resolução do chamado,,"Identificada a indisponibilidade sistêmica ao tentar deletar ou desvincular ordens, ocasionada por uma inconsistência nos registros internos de controle de datas. Como a correção estrutural dessa validação requer uma alteração sistêmica para evitar que a operação seja interrompida, o cenário foi devidamente mapeado e vinculado ao INTAKE-1557. Este intake já se encontra sob a responsabilidade da equipe de desenvolvimento para que seja criada e implementada a solução definitiva na plataforma, garantindo a normalização do fluxo operacional."
+SI-10572,2026-08-18T07:06:33.916-0300,Sistema,Causa raiz potencial,,Ausência de inicialização automática de tabelas de controle de datas de processos antigos ou falta de validação estrutural do sistema ao tentar atualizar informações ligadas a relacionamentos inexistentes no banco de dados.
+SI-10572,2026-08-18T07:06:33.916-0300,Sistema,Causa raiz final,,"O impedimento ao tentar concluir as ações de desatrelar ou deletar as ordens ocorria devido a uma falha de comunicação entre as validações sistêmicas atuais e o histórico de cadastros da plataforma. Especificamente, após a desativação da aba anterior de controle de datas, algumas ordens ficaram sem esse registro de acompanhamento gerado na base. Sempre que um operador tentava realizar uma movimentação crítica na ordem, a plataforma tentava atualizar obrigatoriamente um status de ""aprovação de cliente"" que ficava dentro desse antigo controle de datas. Por não encontrar essa informação, o sistema não sabia como prosseguir, interrompendo a ação abruptamente e travando a tela. Como não foi realizada nenhuma tratativa paliativa ou definitiva até o momento para contornar essa exigência de sistema, a situação foi atrelada ao INTAKE-1557. A equipe de tecnologia trabalhará neste intake para reprogramar o sistema, ensinando a plataforma a verificar se a informação de data existe antes de tentar atualizá-la, ignorando a validação ou criando o dado sob demanda para que o trabalho do operador não seja mais interrompido."
+SI-10572,2026-08-18T07:06:33.916-0300,Sistema,Justificativa Causa Raiz final,,"A análise técnica do card SUS-215 atestou a ocorrência do erro relacional RelatedObjectDoesNotExist: Assembly has no datecontrol no arquivo src/booking/models/base.py (linha 489). A falha é engatilhada porque o backend, através da função update_customer_approval, tenta acessar de forma direta o atributo datecontrol.customer_approval_valid sem aplicar um tratamento defensivo para validar a existência do relacionamento OneToOne na tabela order_datecontrol. Considerando que nenhuma correção definitiva ou saneamento foi executado em ambiente produtivo, os processos que possuem essa lacuna de dados continuam apresentando o Erro 500. A resolução focada na melhoria contínua e eliminação da reincidência foi direcionada para o INTAKE-1557, que atuará na implementação de validações defensivas no código (para verificar a existência do objeto antes da manipulação) e na criação de rotinas para lidar com registros órfãos, mitigando o impacto na eficiência operacional apontado no discovery."
 SI-10576,2026-08-17T16:59:47.909-0300,Eduardo Felipe de Lima Rebello,resolution,,Done
 SI-10576,2026-08-17T16:59:47.909-0300,Eduardo Felipe de Lima Rebello,status,Submissão,Done
 SI-10576,2026-08-17T16:59:51.217-0300,Eduardo Felipe de Lima Rebello,assignee,,Eduardo Felipe de Lima Rebello
+SI-10576,2026-08-18T07:06:34.570-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10576,2026-08-18T07:06:34.570-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10576,2026-08-18T07:06:34.570-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10576,2026-08-18T07:06:34.570-0300,Sistema,Causa Raiz,,Regra de Negócio
+SI-10576,2026-08-18T07:06:34.570-0300,Sistema,Resolução do chamado,,Em atendimento
+SI-10576,2026-08-18T07:06:34.570-0300,Sistema,Causa raiz potencial,,Em atendimento
+SI-10576,2026-08-18T07:06:34.570-0300,Sistema,Causa raiz final,,Em atendimento
+SI-10576,2026-08-18T07:06:34.570-0300,Sistema,Justificativa Causa Raiz final,,Em atendimento
+SI-10580,2026-08-18T07:06:36.633-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10580,2026-08-18T07:06:36.633-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10580,2026-08-18T07:06:36.633-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10580,2026-08-18T07:06:36.633-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10580,2026-08-18T07:06:36.633-0300,Sistema,Resolução do chamado,,Aguardando informação
+SI-10580,2026-08-18T07:06:36.633-0300,Sistema,Causa raiz potencial,,Aguardando informação
+SI-10580,2026-08-18T07:06:36.633-0300,Sistema,Causa raiz final,,Aguardando informação
+SI-10580,2026-08-18T07:06:36.633-0300,Sistema,Justificativa Causa Raiz final,,Aguardando informação
 SI-10578,2026-08-17T16:37:28.500-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10578,2026-08-17T16:37:30.981-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10578,2026-08-17T16:37:31.213-0300,Rafael Ferreira,resolution,,Done
 SI-10578,2026-08-17T16:37:31.213-0300,Rafael Ferreira,status,Submissão,Done
+SI-10578,2026-08-18T07:06:35.856-0300,Sistema,Causa Raiz,,Falha Operacional
+SI-10578,2026-08-18T07:06:35.856-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10578,2026-08-18T07:06:35.856-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10578,2026-08-18T07:06:35.856-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10578,2026-08-18T07:06:35.856-0300,Sistema,Resolução do chamado,,"Realizada a inclusão da data no campo ""Buying Demurrage Start Date"" para 14/07/2026 no contêiner SEKU4683296, referente à Ordem 260539542 e Booking COSU6500865340, no Módulo Operacional. A ação possibilitou a abertura e a correta atualização da linha financeira de compra (BUY), refletindo o Free Time de 28 dias e contabilizando 02 diárias ao valor unitário de USD 50,00, resultando no montante total de USD 100,00."
+SI-10578,2026-08-18T07:06:35.856-0300,Sistema,Causa raiz potencial,,"Ausência de funcionalidade na interface do Módulo Operacional para inserção ou edição direta do campo de data de início de demurrage de compra pelo próprio usuário.
+
+Inexistência de gatilho automático no sistema para abertura da linha financeira de compra (BUY) e recálculo de diárias a partir da atualização de datas operacionais do contêiner."
+SI-10578,2026-08-18T07:06:35.856-0300,Sistema,Causa raiz final,,"A indisponibilidade para preencher a data de início da contagem de demurrage e visualizar os lançamentos de custo na linha de compra ocorreu devido à ausência de uma funcionalidade nativa na interface do sistema que permita ao usuário realizar essa inclusão diretamente na tela do Módulo Operacional. No fluxo atual da plataforma, ao necessitar do registro da data inicial de demurrage — neste caso, o marco de 14/07/2026 —, a tela não oferece um campo editável com atualização em tempo real. Como consequência, o sistema não ativa automaticamente a linha financeira de compra (BUY) e não executa o processamento das regras de deduções do período de isenção (Free Time) nem o cálculo do excedente. Para regularizar a situação na ordem 260539542 (unidade SEKU4683296), foi necessária a intervenção de suporte técnico para registrar o parâmetro temporal e garantir que os 28 dias de Free Time e as 02 diárias acumuladas, no valor unitário de USD 50,00, fossem consolidados no valor correto de USD 100,00."
+SI-10578,2026-08-18T07:06:35.856-0300,Sistema,Justificativa Causa Raiz final,,"O incidente origina-se na falta de especificação e implementação de um requisito funcional na interface do módulo operacional que autorize a edição da data de início de demurrage de compra (Buying Demurrage Start Date) acompanhada da geração e recálculo dinâmico das linhas de custo de compra (BUY). A ausência dessa regra no Módulo Operacional impede a atuação autônoma do colaborador e exige suporte para alinhamento dos dados. Sob a perspectiva da Melhoria Contínua, o mapeamento dessa limitação reforça a necessidade de desenvolvimento de um fluxo automático no Módulo Operacional que recalcule o Free Time e as diárias sempre que houver inserções ou alterações em datas operacionais, eliminando chamados recorrentes."
 SI-10577,2026-08-17T15:56:29.166-0300,Sistema,Link,,This work item is blocked by GA-1511
 SI-10577,2026-08-17T16:05:06.930-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10577,2026-08-17T16:05:09.245-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10577,2026-08-17T16:05:09.531-0300,Rafael Ferreira,resolution,,Done
 SI-10577,2026-08-17T16:05:09.531-0300,Rafael Ferreira,status,Submissão,Done
+SI-10577,2026-08-18T07:06:35.264-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10577,2026-08-18T07:06:35.264-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10577,2026-08-18T07:06:35.264-0300,Sistema,Criticidade final,,P3 - Baixa
+SI-10577,2026-08-18T07:06:35.264-0300,Sistema,Causa Raiz,,Impacto não mapeado
+SI-10577,2026-08-18T07:06:35.264-0300,Sistema,Resolução do chamado,,Instalação do software claude realizada.
+SI-10577,2026-08-18T07:06:35.264-0300,Sistema,Causa raiz potencial,,Instalação do software claude realizada.
+SI-10577,2026-08-18T07:06:35.264-0300,Sistema,Causa raiz final,,Instalação do software claude realizada.
+SI-10577,2026-08-18T07:06:35.264-0300,Sistema,Justificativa Causa Raiz final,,Instalação do software claude realizada.
 SI-10590,2026-08-17T17:32:33.431-0300,Rafael Ferreira,assignee,,Rafael Ferreira
 SI-10590,2026-08-17T17:32:35.828-0300,Rafael Ferreira,Classificação,,Ranked higher
 SI-10590,2026-08-17T17:32:36.067-0300,Rafael Ferreira,resolution,,Done
 SI-10590,2026-08-17T17:32:36.067-0300,Rafael Ferreira,status,Submissão,Done
+SI-10590,2026-08-18T07:06:37.296-0300,Sistema,Causa Raiz,,Falha Desenvolvimento
+SI-10590,2026-08-18T07:06:37.296-0300,Sistema,Criticidade final,,P1 - Alta
+SI-10590,2026-08-18T07:06:37.296-0300,Sistema,Reclassificação solicitação,,Incidente
+SI-10590,2026-08-18T07:06:37.296-0300,Sistema,Incidente Pós-Deploy de Projeto?,,NÃO
+SI-10590,2026-08-18T07:06:37.296-0300,Sistema,Resolução do chamado,,"Identificada a inconsistência na transferência dos valores de recolhimento (pickup) da proposta comercial para o módulo operacional. Realizada a regularização técnica dos dados da cotação atrelada ao processo, permitindo a atualização da aba de vendas e a liberação para a emissão documental."
+SI-10590,2026-08-18T07:06:37.296-0300,Sistema,Causa raiz potencial,,"Ausência de preenchimento ou inconsistência de dados no campo de valor da taxa de pickup dentro da cotação comercial.
+
+Interrupção na rotina de sincronização de dados entre a cotação e a aba de vendas da ordem."
+SI-10590,2026-08-18T07:06:37.296-0300,Sistema,Causa raiz final,,"Durante o processamento das informações do embarque, a plataforma buscou realizar o espelhamento automático dos valores de recolhimento (pickup) cadastrados na cotação para a aba de vendas do processo. No entanto, as taxas registradas na cotação de origem não possuíam valores numéricos definidos. Como a plataforma exige o preenchimento obrigatório do valor do serviço para autorizar a integração dos dados financeiros, a falta dessa informação interrompeu o cálculo automático. Por razões de consistência dos dados, a aba de vendas permaneceu zerada, o que inviabilizou a finalização e emissão dos documentos até que as informações do serviço fossem devidamente corrigidas."
+SI-10590,2026-08-18T07:06:37.296-0300,Sistema,Justificativa Causa Raiz final,,"A falha ocorreu devido à gravação do atributo value como nulo nas taxas de pickup vinculadas à cotação no módulo PM, divergindo da regra de negócio que define esse campo como obrigatório para a migração até a aba ADD Selling da ordem. A ausência do valor impediu a execução adequada do cálculo no módulo operacional. A correção direta da informação nos registros do sistema restabeleceu o fluxo. Visando a melhoria contínua do processo e para evitar a reincidência do problema, recomenda-se o ajuste das regras de validação no formulário de cotação para proibir o salvamento de taxas de pickup que estejam com o campo value nulo ou desprovido de valor válido."
 SI-10589,2026-08-17T17:04:26.277-0300,Sistema,Link,,This work item is blocked by GA-1513
 SI-10588,2026-08-17T16:49:25.428-0300,Sistema,Link,,This work item is blocked by GA-1512
 SI-10593,2026-08-17T17:59:33.600-0300,Sistema,Link,,This work item is blocked by GA-1514
